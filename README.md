@@ -1,4 +1,4 @@
-# cubvillages.org
+# negevvillages.org
 
 האתר של המועצה למען הכפרים הבדואיים הלא מוכרים.
 
@@ -9,6 +9,6 @@
 - `ar/plan/` – אותו דף בערבית
 - `en/plan/` – אותו דף באנגלית
 - `assets/img/` – כל התמונות
-- `CNAME` – הדומיין cubvillages.org
+- `CNAME` – הדומיין negevvillages.org
 
 כל פרויקט חדש מקבל תיקייה משלו, ובמקביל `ar/<שם>/` ו־`en/<שם>/`.
