@@ -27,6 +27,8 @@ a{color:#A63A17}a:hover{color:#7A2A10}
 .mobilebar{display:none}
 @media (max-width: 860px){.navlinks{display:none!important}.navlinks.open{display:flex!important;position:absolute;top:100%;left:0;right:0;z-index:20;flex-direction:column;align-items:stretch!important;gap:0!important;background:#FFFFFF;padding:4px 24px 10px;border-bottom:4px solid #F5B321;box-shadow:0 8px 16px rgba(0,0,0,0.10)}.navlinks.open a{padding:14px 0!important;border-bottom:1px solid #F3E2B8}.navlinks.open a:last-child{border-bottom:0}.navtoggle{display:inline-flex}.hdrname{font-size:14px!important}.deskonly{display:none!important}.mobilebar{display:flex!important}}
 html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
+#zoombox::backdrop{background:rgba(35,17,8,.82)}
+@media (max-width: 860px){#zoombox .zx{top:6px!important;inset-inline-end:6px!important}}
 </style>
 <style>
 .prj *{box-sizing:border-box}
@@ -77,7 +79,7 @@ button.ph{border:0;padding:0;width:100%;cursor:zoom-in;font:inherit}
 <span class="hdrname" style="font-size: 15px; font-weight: 700; line-height: 1.25; white-space: nowrap">המועצה למען הכפרים<br>הבדואיים הלא מוכרים</span>
 </a>
 <nav id="navlinks" class="navlinks" aria-label="ניווט ראשי" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2px">
-<a href="/plan/" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">"תוכנית המועצות האזוריות"</a>
+<a href="/plan/" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">תוכנית המועצות האזוריות</a>
 <a href="/projects/" aria-current="page" style="padding: 12px 10px; font-size: 15px; font-weight: 800; color: #B8451F; text-decoration: none">הפרויקטים שלנו</a>
 <a href="/#goals" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">המטרות שלנו</a>
 <a href="/#team" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">צוות</a>
@@ -111,7 +113,7 @@ button.ph{border:0;padding:0;width:100%;cursor:zoom-in;font:inherit}
 <section class="prj-hero"><div class="in"><h1>הפרויקטים שלנו</h1><p>המועצה מבצעת פרויקטים רבים שמטרתם לשפר את חייהם של תושבי הכפרים</p></div></section>
 <section class="prj-wrap" aria-label="פרויקטים">
 <div class="prj-grid">
-<article class="prj-card"><div class="ph"><img src="/assets/img/prj-demolitions.jpg" alt="בית הרוס בכפר לא מוכר" loading="lazy"></div><div class="bd"><h2>מאבק בהריסות הבתים ובמדיניות המפלה</h2><p>כ-320 אלף בדואים חיים בנגב, כ-38% מתושביו. כ-150 אלף מהם חיים בכפרים לא מוכרים או בתנאים של כפר לא מוכר. כל הכפרים הלא מוכרים יחד יושבים על פחות מאחוז אחד משטח הנגב.</p><details><summary>קראו עוד ↓</summary><p>בכפרים האלה חסרים שירותים בסיסיים: חשמל, מים, בריאות וחינוך. אף בית לא יכול לקבל היתר בנייה, ולכן כל בית מאוים בהריסה. מאז שנות ה-70 נהרסו אלפי בתים, ומאז 2023 לבדה כ-2,900 בתי מגורים.</p><p>הבעיה מתחילה בתכנון. המדינה מנסה לרכז את הבדואים בשטח קטן ככל האפשר: יהודי כפרי בצפון הנגב מקבל ממנה כ-28 דונם, בדואי כפרי כחצי דונם. פער של פי 56.</p><p>המועצה פועלת נגד ההריסות ונגד המדיניות שמולידה אותן, ומציעה חלופה: <a href="/plan/">"תוכנית המועצות האזוריות"</a>.</p><button type="button" class="prj-less">פחות ↑</button></details></div></article>
+<article class="prj-card"><div class="ph"><img src="/assets/img/prj-demolitions.jpg" alt="בית הרוס בכפר לא מוכר" loading="lazy"></div><div class="bd"><h2>מאבק בהריסות הבתים ובמדיניות המפלה</h2><p>כ-360 אלף בדואים חיים בנגב, כ-40% מתושביו. כ-150 אלף מהם חיים בכפרים לא מוכרים או בתנאים של כפר לא מוכר. כל הכפרים הלא מוכרים יחד יושבים על פחות מאחוז אחד משטח הנגב.</p><details><summary>קראו עוד ↓</summary><p>בכפרים האלה חסרים שירותים בסיסיים: חשמל, מים, בריאות וחינוך. אף בית לא יכול לקבל היתר בנייה, ולכן כל בית מאוים בהריסה. מאז שנות ה-70 נהרסו אלפי בתים, ומאז 2023 לבדה כ-2,900 בתי מגורים.</p><p>הבעיה מתחילה בתכנון. המדינה מנסה לרכז את הבדואים בשטח קטן ככל האפשר: יהודי כפרי בצפון הנגב מקבל ממנה כ-28 דונם, בדואי כפרי כחצי דונם. פער של פי 56.</p><p>המועצה פועלת נגד ההריסות ונגד המדיניות שמולידה אותן, ומציעה חלופה: <a href="/plan/">"תוכנית המועצות האזוריות"</a>.</p><button type="button" class="prj-less">פחות ↑</button></details></div></article>
 <article class="prj-card"><div class="ph"><img src="/assets/img/prj-legal.jpg" alt="מקרר ישן בשטח, ועליו צו הריסה אדום" loading="lazy"></div><div class="bd"><h2>שירות ייעוץ משפטי</h2><p>המועצה מפעילה שירות ייעוץ משפטי לתושבי הכפרים הלא מוכרים, בהובלת עורכת דין. השירות מעניק תמיכה וליווי משפטי במגוון נושאים, לפי צורכי התושבים.</p><a class="prj-wa" href="https://wa.me/972546307685" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>לפנייה בוואטסאפ</a></div></article>
 <article class="prj-card"><div class="ph"><img src="/assets/img/prj-community.jpg" alt="ילדים יושבים במעגל עם בלונים בפעילות קהילתית" loading="lazy"></div><div class="bd"><h2>ארגון קהילתי</h2><p>בכפרים הלא מוכרים אין מערכת רווחה ואין מארגני קהילה, ולכן קשה לתושבים להתארגן ולדרוש את מה שמגיע להם. פרויקט הארגון הקהילתי של המועצה נועד למלא את החסר.</p><details><summary>קראו עוד ↓</summary><p>מארגני הקהילה עוזרים לתושבים לייצג את עצמם, לבנות יכולות, לשתף פעולה ולפתור סכסוכים, ומחזקים את המעורבות האזרחית ואת הלכידות בכפר.</p><p>המטרה: קהילות חזקות ופעילות, שמתמודדות בעצמן עם האתגרים שלהן ומובילות שינוי.</p><button type="button" class="prj-less">פחות ↑</button></details></div></article>
 <article class="prj-card"><div class="ph"><img src="/assets/img/prj-opinion.jpg" alt="איור של אגודל למעלה ואגודל למטה" loading="lazy"></div><div class="bd"><h2>שינוי דעת הקהל</h2><p>הפרויקט התקשורתי של המועצה נועד לשנות את המבט של החברה הישראלית על האזרחים הבדואים בנגב, על תושבי הכפרים הלא מוכרים ועל שאלת ההכרה בהם.</p><details><summary>קראו עוד ↓</summary><p>המטרה היא לקדם שינוי מדיניות: הכרה בכפרים, סוף להריסות ושילוב הכפרים במסגרת מוניציפלית, עם תקציב ושירותים כמו בכל יישוב אחר בישראל.</p><button type="button" class="prj-less">פחות ↑</button></details></div></article>
@@ -141,6 +143,11 @@ button.ph{border:0;padding:0;width:100%;cursor:zoom-in;font:inherit}
 (function(){var b=document.getElementById('navtoggle'),n=document.getElementById('navlinks');if(!b||!n)return;
 b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});
 n.addEventListener('click',function(e){if(e.target.closest('a')){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});})();
+</script>
+<script>
+(function(){var d=document.getElementById('zoombox');if(!d)return;var im=d.querySelector('img');
+document.querySelectorAll('img[data-big]').forEach(function(i){i.addEventListener('click',function(){im.src=i.getAttribute('data-big');im.alt=i.alt;if(d.showModal)d.showModal();else window.open(im.src,'_blank')})});
+d.querySelector('.zx').addEventListener('click',function(){d.close()});d.addEventListener('click',function(e){if(e.target===d)d.close()});})();
 </script>
 <script>
 (function(){
