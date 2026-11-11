@@ -13,13 +13,14 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="../assets/img/logo-home.png">
+<link rel="icon" href="/assets/img/logo-home.png">
 <link rel="alternate" hreflang="he" href="https://negevvillages.org/">
 <link rel="alternate" hreflang="ar" href="https://negevvillages.org/ar/">
 <link rel="alternate" hreflang="en" href="https://negevvillages.org/en/">
+<link rel="alternate" hreflang="x-default" href="https://negevvillages.org/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;700;800&family=Heebo:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;600;700;800&amp;family=Noto+Sans+Arabic:wght@400;500;600;700;800&amp;family=Heebo:wght@400;500;600;700;800&amp;display=swap">
 <style>
 body{margin:0}
 a{color:#A63A17}a:hover{color:#7A2A10}
@@ -27,6 +28,28 @@ a{color:#A63A17}a:hover{color:#7A2A10}
 .mobilebar{display:none}
 @media (max-width: 860px){.navlinks{display:none!important}.navlinks.open{display:flex!important;position:absolute;top:100%;left:0;right:0;z-index:20;flex-direction:column;align-items:stretch!important;gap:0!important;background:#FFFFFF;padding:4px 24px 10px;border-bottom:4px solid #F5B321;box-shadow:0 8px 16px rgba(0,0,0,0.10)}.navlinks.open a{padding:14px 0!important;border-bottom:1px solid #F3E2B8}.navlinks.open a:last-child{border-bottom:0}.navtoggle{display:inline-flex}.hdrname{font-size:14px!important}.deskonly{display:none!important}.mobilebar{display:flex!important}}
 html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
+#zoombox::backdrop{background:rgba(35,17,8,.82)}
+@media (max-width: 860px){#zoombox .zx{top:6px!important;inset-inline-end:6px!important}}
+</style>
+<style>
+/* רצועת ההריסות */
+.dv *{box-sizing:border-box}
+.dv h2{margin:0}
+.dv .src{font-size:14px;line-height:1.5}
+.dv .punch{margin:22px 0 0;font-size:clamp(22px,2.4vw,28px);font-weight:800;line-height:1.35;color:#B8451F}
+.dv .wrap{max-width:1160px;margin:0 auto;padding:44px 24px}
+.dv .num{font-weight:800;line-height:1;white-space:nowrap}
+.dvB .k{font-size:15px;font-weight:700;color:#B8451F;margin-bottom:6px}
+.dvB h2{font-size:28px;font-weight:800;line-height:1.25;margin-bottom:20px}
+.dvB .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.dvB .card{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/5;border-top:5px solid #B8451F;background:#3B1D12}
+.dvB .card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.dvB .card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(35,17,8,.9) 0%,rgba(35,17,8,.5) 32%,rgba(35,17,8,0) 60%)}
+.dvB .cap{position:absolute;z-index:2;inset-inline:0;bottom:0;padding:18px 20px;color:#FFF4D6}
+.dvB .num{font-size:clamp(40px,5vw,60px);color:#F5B321}
+.dvB .lb{margin-top:6px;font-size:18px;line-height:1.35}
+.dvB .src{margin-top:14px;color:#6B4A3A}
+@media(max-width:760px){.dvB .grid{grid-template-columns:1fr}.dvB .card{aspect-ratio:4/3}}
 </style>
 </head>
 <body>
@@ -35,22 +58,23 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 <header style="position: relative; z-index: 20; background: #FFFFFF; border-bottom: 4px solid #F5B321">
 <div style="max-width: 1160px; margin: 0 auto; padding: 10px 24px; display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 8px 16px">
 <a href="/ar/" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #3B1D12">
-<img src="../assets/img/logo-home.png" alt="" style="width: 56px; height: 56px; object-fit: contain; flex-shrink: 0">
+<img src="/assets/img/logo-home.png" alt="" style="width: 56px; height: 56px; object-fit: contain; flex-shrink: 0">
 <span class="hdrname" style="font-size: 15px; font-weight: 700; line-height: 1.25; white-space: nowrap">المجلس من أجل القرى<br>البدوية غير المعترف بها</span>
 </a>
 <nav id="navlinks" class="navlinks" aria-label="التنقل الرئيسي" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2px">
-<a href="#topics" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">مواضيع ومشاريع</a>
-<a href="#goals" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">أهدافنا</a>
-<a href="#team" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">الطاقم</a>
-<a href="#donors" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">المتبرعون</a>
-<a href="#contact" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">اتصل بنا</a>
+<a href="/ar/plan/" style="padding: 12px 8px; font-size: 14.5px; white-space: nowrap; font-weight: 500; color: #3B1D12; text-decoration: none">خطة المجالس الإقليمية</a>
+<a href="/ar/projects/" style="padding: 12px 8px; font-size: 14.5px; white-space: nowrap; font-weight: 500; color: #3B1D12; text-decoration: none">مشاريعنا</a>
+<a href="#goals" style="padding: 12px 8px; font-size: 14.5px; white-space: nowrap; font-weight: 500; color: #3B1D12; text-decoration: none">أهدافنا</a>
+<a href="#team" style="padding: 12px 8px; font-size: 14.5px; white-space: nowrap; font-weight: 500; color: #3B1D12; text-decoration: none">الطاقم</a>
+<a href="#donors" style="padding: 12px 8px; font-size: 14.5px; white-space: nowrap; font-weight: 500; color: #3B1D12; text-decoration: none">المتبرعون</a>
+<a href="#contact" style="padding: 12px 8px; font-size: 14.5px; white-space: nowrap; font-weight: 500; color: #3B1D12; text-decoration: none">اتصل بنا</a>
 </nav>
 <div style="display: flex; align-items: center; gap: 6px; flex: none">
 <button type="button" class="navtoggle" aria-label="القائمة" aria-controls="navlinks" aria-expanded="false" id="navtoggle" style="align-items: center; justify-content: center; width: 44px; height: 44px; border: 0; border-radius: 8px; background: transparent; color: #3B1D12; cursor: pointer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
 <div class="deskonly" aria-label="اللغة" style="display: flex; align-items: center; gap: 2px; font-size: 14px">
-<a href="../" lang="he" style="padding: 12px 8px; color: #6B4A3A; text-decoration: none">עב</a>
-<a href="../ar/" aria-current="true" style="padding: 12px 8px; font-weight: 800; color: #3B1D12; text-decoration: none">عر</a>
-<a href="../en/" lang="en" style="padding: 12px 8px; color: #6B4A3A; text-decoration: none">En</a>
+<a href="/ar/" lang="he" style="padding: 12px 8px; color: #6B4A3A; text-decoration: none">עב</a>
+<a href="/ar/" aria-current="true" style="padding: 12px 8px; font-weight: 800; color: #3B1D12; text-decoration: none">عر</a>
+<a href="/en/" lang="en" style="padding: 12px 8px; color: #6B4A3A; text-decoration: none">En</a>
 </div>
 <a class="deskonly" href="https://secure.nif.org/a/emergency-response-unrecognized-arab-villages-in-the-negev" style="padding: 10px 22px; background: #B8451F; color: #FFFFFF; font-size: 15px; font-weight: 700; border-radius: 999px; text-decoration: none">تبرّع</a>
 </div>
@@ -60,9 +84,9 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 <div class="mobilebar" style="background: #FFF4D6; border-bottom: 1px solid #F3E2B8">
 <div style="width: 100%; max-width: 1160px; margin: 0 auto; padding: 4px 24px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 12px">
 <div aria-label="اللغة" style="display: flex; align-items: center; gap: 2px; font-size: 14px">
-<a href="../" lang="he" style="padding: 10px 8px; color: #6B4A3A; text-decoration: none">עב</a>
-<a href="../ar/" aria-current="true" style="padding: 10px 8px; font-weight: 800; color: #3B1D12; text-decoration: none">عر</a>
-<a href="../en/" lang="en" style="padding: 10px 8px; color: #6B4A3A; text-decoration: none">En</a>
+<a href="/ar/" lang="he" style="padding: 10px 8px; color: #6B4A3A; text-decoration: none">עב</a>
+<a href="/ar/" aria-current="true" style="padding: 10px 8px; font-weight: 800; color: #3B1D12; text-decoration: none">عر</a>
+<a href="/en/" lang="en" style="padding: 10px 8px; color: #6B4A3A; text-decoration: none">En</a>
 </div>
 <a href="https://secure.nif.org/a/emergency-response-unrecognized-arab-villages-in-the-negev" style="padding: 7px 18px; background: #B8451F; color: #FFFFFF; font-size: 14px; font-weight: 700; border-radius: 999px; text-decoration: none">تبرّع</a>
 </div>
@@ -71,14 +95,14 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 <main id="top">
 
 <section style="position: relative; overflow: hidden; background: #3B1D12">
-<img src="../assets/img/home-hero.jpg" alt="جمال ترعى في حقل أخضر في النقب" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%">
+<img src="/assets/img/home-hero.jpg" alt="جمال ترعى في حقل أخضر في النقب" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%">
 <div aria-hidden="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(40, 20, 10, 0.62)"></div>
 <div style="position: relative; max-width: 1160px; margin: 0 auto; padding: 44px 24px 40px">
 <h1 style="margin: 0; font-size: clamp(28px, 4vw, 44px); font-weight: 800; line-height: 1.15; color: #FFFFFF; max-width: 720px">صوت 150 ألف مواطن في 46 قرية بدوية في النقب</h1>
-<p style="margin: 14px 0 0; font-size: 18px; color: #FFF4D6; max-width: 640px">المجلس من أجل القرى البدوية غير المعترف بها منظمة ديمقراطية، يُنتخب ممثلوها من قِبل لجان القرى. نعمل من أجل الاعتراف بالقرى، ووقف هدم البيوت، وإتاحة الخدمات التي يستحقها كل مواطن</p>
+<p style="margin: 14px 0 0; font-size: 18px; color: #FFF4D6; max-width: 640px">المجلس من أجل القرى البدوية غير المعترف بها منظمة ديمقراطية، يُنتخب ممثلوها من لجان القرى. نعمل من أجل الاعتراف بالقرى ووقف هدم البيوت وتوفير الخدمات التي يستحقها كل مواطن</p>
 <div style="margin-top: 22px; display: flex; flex-wrap: wrap; gap: 12px">
-<a href="#topics" style="padding: 12px 26px; background: #F5B321; color: #3B1D12; font-size: 16px; font-weight: 800; border-radius: 999px; text-decoration: none">إلى المواضيع والمشاريع</a>
-<a href="#contact" style="padding: 11px 26px; border: 1px solid #FFFFFF; color: #FFFFFF; font-size: 16px; font-weight: 500; border-radius: 999px; text-decoration: none">للصحفيين والاستفسارات</a>
+<a href="/ar/plan/" style="padding: 12px 26px; background: #F5B321; color: #3B1D12; font-size: 16px; font-weight: 800; border-radius: 999px; text-decoration: none">خطة المجالس الإقليمية</a>
+<a href="#contact" style="padding: 11px 26px; border: 1px solid #FFFFFF; color: #FFFFFF; font-size: 16px; font-weight: 500; border-radius: 999px; text-decoration: none">للصحفيين ووسائل الإعلام</a>
 </div>
 </div>
 </section>
@@ -87,7 +111,7 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 <div style="max-width: 1160px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; gap: 14px 32px">
 <div style="flex: 1 1 180px; display: flex; align-items: baseline; gap: 10px">
 <span style="font-size: 38px; font-weight: 800; line-height: 1; color: #3B1D12; white-space: nowrap">46</span>
-<span style="font-size: 15px; font-weight: 500; color: #3B1D12">قرية بدوية في النقب</span>
+<span style="font-size: 15px; font-weight: 500; color: #3B1D12">قرى بدوية في النقب</span>
 </div>
 <div style="flex: 1 1 180px; display: flex; align-items: baseline; gap: 10px">
 <span style="font-size: 38px; font-weight: 800; line-height: 1; color: #3B1D12; white-space: nowrap">35</span>
@@ -95,26 +119,11 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 </div>
 <div style="flex: 1 1 180px; display: flex; align-items: baseline; gap: 10px">
 <span style="font-size: 38px; font-weight: 800; line-height: 1; color: #3B1D12; white-space: nowrap">11</span>
-<span style="font-size: 15px; font-weight: 500; color: #3B1D12">معترف بها وما زالت غير منظَّمة</span>
+<span style="font-size: 15px; font-weight: 500; color: #3B1D12">معترف بها وما زالت غير مسوّاة</span>
 </div>
 <div style="flex: 1 1 180px; display: flex; align-items: baseline; gap: 10px">
-<span style="font-size: 38px; font-weight: 800; line-height: 1; color: #3B1D12; white-space: nowrap">نحو 150 ألف</span>
-<span style="font-size: 15px; font-weight: 500; color: #3B1D12">نسمة</span>
-</div>
-</div>
-</section>
-
-<section id="reality" style="background: #FFF4D6">
-<div style="max-width: 1160px; margin: 0 auto; padding: 44px 24px">
-<h2 style="margin: 0 0 6px; font-size: 28px; font-weight: 800; line-height: 1.2">ثمن الوضع القائم</h2>
-<p style="margin: 0 0 22px; font-size: 17px; color: #4F3226; max-width: 780px">القرية غير المعترف بها هي قرية بلا كهرباء ولا صرف صحي ولا جمع نفايات ولا شارع معبّد، وكل بيت فيها معرّض للهدم. السكان يدفعون الثمن، والدولة أيضًا: مخصصات بدل الضرائب، ومصالح تجارية لا تقوم، وإنتاج يضيع هباءً</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, calc(50% - 7px)), 1fr)); gap: 14px">
-<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">نحو 70%</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">من سكان القرى يعيشون في فقر، مقابل نحو النصف في البلدات البدوية</div><div style="margin-top: 8px; font-size: 12px; color: #6B4A3A">دائرة الإحصاء المركزية وتقديرات المجلس</div></div>
-<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">900 سنة</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">الوقت اللازم لتسوية أوضاع 30 ألف عائلة في القرى، بوتيرة التسوية الحالية البالغة نحو 40 عائلة في السنة. دون احتساب الزيادة الطبيعية، نحو 4,000 مولود في السنة</div></div>
-<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">100 ألف شيكل</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">متوسط الضرر للعائلة التي يُهدم بيتها، من تمثيل قانوني وتكاليف الهدم وتكاليف السكن البديل. الضرر لآلاف العائلات منذ 2023: نحو 300 مليون شيكل</div><div style="margin-top: 8px; font-size: 12px; color: #6B4A3A">تقدير المجلس</div></div>
-<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">5,045</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">طفلًا بدويًا بعمر 3–5 سنوات في النقب غير مسجّلين في روضة. في القرية غير المعترف بها لا يمكن بناء روضة بترخيص</div><div style="margin-top: 8px; font-size: 12px; color: #6B4A3A">مركز الأبحاث والمعلومات التابع للكنيست، 2023</div></div>
-<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">25%</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">من النساء البدويات يعملن، مقابل 83% من النساء اليهوديات في الجنوب. بلا مواصلات عامة، العمل بعيد</div><div style="margin-top: 8px; font-size: 12px; color: #6B4A3A">دائرة التشغيل، 2021</div></div>
-<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">54.7%</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">من الشابات البدويات لا يعملن ولا يدرسن، وكذلك 32.6% من الشبان</div><div style="margin-top: 8px; font-size: 12px; color: #6B4A3A">مراقب الدولة، 2023</div></div>
+<span style="font-size: 38px; font-weight: 800; line-height: 1; color: #3B1D12; white-space: nowrap">نحو 150 ألفًا</span>
+<span style="font-size: 15px; font-weight: 500; color: #3B1D12">مقيمًا</span>
 </div>
 </div>
 </section>
@@ -123,32 +132,84 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 <div style="max-width: 1160px; margin: 0 auto; padding: 48px 24px; display: flex; flex-wrap: wrap-reverse; align-items: center; gap: 28px 40px">
 <div style="flex: 1 1 380px; min-width: 0">
 <h2 style="margin: 0 0 14px; font-size: 28px; font-weight: 800; line-height: 1.2">رؤيتنا</h2>
-<p style="margin: 0; font-size: 19px; line-height: 1.7; color: #4F3226">نسعى إلى مستقبل تزدهر فيه المجتمعات البدوية في النقب، وتحافظ على ثقافتها الفريدة وتحقق تطلعاتها. نريد أن تُخطَّط القرى وتُبنى وفقًا لقوانين التخطيط والبناء في الدولة، وأن تُستخدم الأرض لتنمية اقتصادية مستدامة تستند أيضًا إلى التقاليد والثقافة البدوية. نعمل كي يتمتع جميع المواطنين البدو في النقب بوصول متساوٍ إلى خدمات الدولة ومواردها، وبمشاركة كاملة في الحياة الديمقراطية، مثل أي مواطن آخر.</p>
+<p style="margin: 0; font-size: 19px; line-height: 1.7; color: #4F3226">قرى معترف بها ومطوّرة، على نموذج موشاف العمّال. لدينا بيوت قانونية وآمنة، ومياه وكهرباء وشوارع، وتعليم جيد وخدمات صحية. نعتاش من أرضنا، من الزراعة أو من أي عمل آخر، ونحافظ على التراث البدوي الذي هو ثروة لجميع الإسرائيليين. نحن شركاء كاملون في الحياة الديمقراطية، ونتمتع بموارد الدولة، مثل أي مواطن آخر.</p>
 </div>
 <figure style="flex: 1 1 320px; margin: 0">
-<img src="/assets/img/vision-aerial.jpg" alt="منظر جوي لقرية بدوية في النقب" style="display: block; width: 100%; height: 340px; object-fit: cover; border-radius: 14px">
-<figcaption style="margin-top: 6px; font-size: 12px; color: #6B4A3A">تصوير: Waleed Alobra</figcaption>
+<img src="/assets/img/vision-village.jpg" alt="قرية بدوية في وادٍ، ومن خلفها جبال الصحراء" style="display: block; width: 100%; height: 340px; object-fit: cover; border-radius: 14px">
 </figure>
 </div>
 </section>
 
-<section id="social" style="background: #FFF4D6">
-<div style="max-width: 1160px; margin: 0 auto; padding: 32px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 32px">
-<div>
-<h2 style="margin: 0 0 4px; font-size: 24px; font-weight: 800; line-height: 1.2">المجلس على شبكات التواصل الاجتماعي</h2>
-<p style="margin: 0; font-size: 16px; color: #6B4A3A">مستجدات وصور وفيديوهات من القرى</p>
+<section id="reality" style="background: #FFF4D6">
+<div style="max-width: 1160px; margin: 0 auto; padding: 44px 24px">
+<h2 style="margin: 0 0 6px; font-size: 28px; font-weight: 800; line-height: 1.2">ثمن الوضع القائم</h2>
+<p style="margin: 0 0 22px; font-size: 17px; color: #4F3226; max-width: 780px">القرية غير المعترف بها هي قرية بلا كهرباء ولا صرف صحي ولا مواصلات عامة ولا رياض أطفال ولا جمع نفايات، وكل بيت فيها معرّض للهدم. يدفع السكان الثمن، وتدفعه الدولة أيضًا: مخصصات بدل الضرائب، ومصالح تجارية لا تقوم، وأضرار اجتماعية، وناتج سنوي ضائع بعشرات مليارات الشواقل</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, calc(50% - 7px)), 1fr)); gap: 14px">
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">نحو 70%</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">من سكان القرى يعيشون في فقر، مقابل نحو النصف في البلدات البدوية</div><div style="margin-top: 8px; font-size: 12px; color: #6B4A3A">دائرة الإحصاء المركزية وتقديرات المجلس</div></div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">900 سنة</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">الوقت اللازم لتسوية أوضاع 30 ألف عائلة في القرى، بوتيرة التسوية الحالية البالغة نحو 33 عائلة في السنة. دون احتساب الزيادة الطبيعية البالغة نحو 4,000 مولود في السنة</div></div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">300 مليون شيكل</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">تقدير الضرر المالي المباشر لنحو 3,000 عائلة هُدمت بيوتها منذ عام 2023، من تمثيل قانوني وتمويل الهدم وتمويل بدائل السكن</div><div style="margin-top: 8px; font-size: 12px; color: #6B4A3A">تقدير المجلس</div></div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">5,045</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">أطفال بدو بعمر 3–5 سنوات في النقب لا يداومون في الروضة. في القرى غير المعترف بها ترفض الدولة بناء رياض الأطفال</div><div style="margin-top: 8px; font-size: 12px; color: #6B4A3A">مركز الأبحاث والمعلومات في الكنيست، 2023</div></div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">25%</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">من النساء البدويات يعملن، مقابل 83% من النساء اليهوديات في الجنوب. بلا مواصلات عامة، العمل بعيد</div><div style="margin-top: 8px; font-size: 12px; color: #6B4A3A">دائرة التشغيل، 2021</div></div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">54.7%</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">من الشابات البدويات لا يعملن ولا يدرسن، وكذلك 32.6% من الشبان</div><div style="margin-top: 8px; font-size: 12px; color: #6B4A3A">مراقب الدولة، 2023</div></div>
 </div>
-<div style="display: flex; flex-wrap: wrap; gap: 12px"><a href="https://www.facebook.com/rcuvn" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: #1877F2"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21z"/></svg></span>فيسبوك</a><a href="https://www.instagram.com/negevrcuv" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(45deg,#F58529,#DD2A7B 55%,#8134AF)"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r="1" fill="#fff" stroke="none"/></svg></span>إنستغرام</a><a href="https://www.twitter.com/rcuvnegev" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: #000"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#fff" d="M17.8 3.5h3l-6.6 7.5 7.8 9.5h-6.1l-4.8-6-5.4 6h-3l7-8L2 3.5h6.2l4.3 5.5zm-1 15.2h1.7L7.3 5.2H5.5z"/></svg></span>X</a><a href="https://www.tiktok.com/@negev.villages" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: #000"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M16.6 3c.4 2.1 1.7 3.5 3.9 3.7v3a7 7 0 0 1-3.8-1.2v6.4A5.9 5.9 0 1 1 10.8 9v3.1a2.9 2.9 0 1 0 2.8 2.9V3z"/></svg></span>تيك توك</a></div>
 </div>
 </section>
 
-<section id="topics" style="background: #FFF4D6">
-<div style="max-width: 1160px; margin: 0 auto; padding: 36px 24px 48px">
-<h2 style="margin: 0 0 4px; font-size: 28px; font-weight: 800; line-height: 1.2">مواضيع ومشاريع</h2>
-<p style="margin: 0 0 20px; font-size: 16px; color: #6B4A3A">لكل موضوع صفحة خاصة به، مع المعطيات والوثائق</p>
+<section id="demolitions" class="dv dvB" data-opt="B" style="background:#FFFFFF;border-bottom:1px solid #EAD9B0"><div class="wrap"><div class="k">حتى تشرين الأول 2026</div><h2>تقدير عمليات الهدم في النقب منذ 2023</h2><div class="grid"><div class="card"><img src="/assets/img/demolition-dome.jpg" alt="جرّافة تفكك مبنى في قرية بالنقب، وشرطيون يقفون في المكان" loading="lazy" class=""><div class="cap"><div class="num">19,300</div><div class="lb">مبنى ومنشأة</div></div></div><div class="card"><img src="/assets/img/demolition-police.jpg" alt="قوات شرطة وجرّار أثناء هدم في إحدى القرى" loading="lazy" class=""><div class="cap"><div class="num">2,900</div><div class="lb">منها بيوت سكنية</div></div></div><div class="card"><img src="/assets/img/demolition-family.jpg" alt="سكان ينتظرون على شاحنة مع فرشات وأمتعة" loading="lazy" class=""><div class="cap"><div class="num">13,640</div><div class="lb">شخصًا فقدوا بيوتهم</div></div></div></div><div class="src">بيانات 2023–2025: إدارة الإنفاذ جنوب. 2026: تقدير المجلس</div><p class="punch">الجرّافة تعمل يومًا واحدًا. والدمار يبقى سنوات</p></div></section>
+
+<section id="social" style="background: #FFF4D6">
+<div style="max-width: 1160px; margin: 0 auto; padding: 32px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 32px">
+<div>
+<h2 style="margin: 0 0 4px; font-size: 24px; font-weight: 800; line-height: 1.2">المجلس على شبكات التواصل</h2>
+<p style="margin: 0; font-size: 16px; color: #6B4A3A">تحديثات وصور ومقاطع فيديو من القرى</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px"><a href="https://www.facebook.com/rcuvn" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: #1877F2"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21z"/></svg></span>فيسبوك</a><a href="https://www.instagram.com/negevrcuv" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(45deg,#F58529,#DD2A7B 55%,#8134AF)"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r="1" fill="#fff" stroke="none"/></svg></span>إنستغرام</a><a href="https://www.twitter.com/rcuvnegev" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: #000"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#fff" d="M17.8 3.5h3l-6.6 7.5 7.8 9.5h-6.1l-4.8-6-5.4 6h-3l7-8L2 3.5h6.2l4.3 5.5zm-1 15.2h1.7L7.3 5.2H5.5z"/></svg></span>X</a><a href="https://www.tiktok.com/@negev.villages" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: #000"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M16.6 3c.4 2.1 1.7 3.5 3.9 3.7v3a7 7 0 0 1-3.8-1.2v6.4A5.9 5.9 0 1 1 10.8 9v3.1a2.9 2.9 0 1 0 2.8 2.9V3z"/></svg></span>تيك توك</a><a href="https://chat.whatsapp.com/BRg2BQ8WIedFiJMSqSYUYo" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: #25D366"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm0 16.3a7.3 7.3 0 0 1-3.7-1l-.3-.2-2.7.7.7-2.6-.2-.3A7.3 7.3 0 1 1 12 19.3zm4-5.5c-.2-.1-1.3-.7-1.5-.7-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6 6 0 0 1-3-2.6c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.4a.8.8 0 0 0-.6.3 2.5 2.5 0 0 0-.8 1.9c0 1.1.8 2.2.9 2.3.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.3-.6 1.5-1.1.2-.5.2-1 .1-1.1l-.6-.4z"/></svg></span>انضموا إلى تحديثات المجلس (بالعبرية)</a></div>
+</div>
+</section>
+
+<section id="goals" style="max-width: 1160px; margin: 0 auto; padding: 48px 24px">
+<h2 style="margin: 0 0 20px; font-size: 28px; font-weight: 800; line-height: 1.2">أهدافنا</h2>
 <div style="display: flex; flex-wrap: wrap; gap: 16px">
-<a href="../ar/plan/" style="flex: 1 1 100%; box-sizing: border-box; background: #B8451F; border-radius: 14px; overflow: hidden; text-decoration: none; color: #FFFFFF; display: flex; flex-wrap: wrap">
-<span style="flex: 1 1 280px; min-width: 0; height: 200px; position: relative; display: block"><img src="/assets/img/nahala-render-v2.jpg" alt="تصوّر لقسيمة عائلية مع بيوت ومزرعة مساعدة" style="width: 100%; height: 100%; object-fit: cover; display: block"><span style="position: absolute; top: 10px; inset-inline-start: 10px; background: rgba(59,29,18,0.8); color: #FFF4D6; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px">تصوّر بالذكاء الاصطناعي</span></span>
+<div style="flex: 1 1 300px; box-sizing: border-box; padding: 18px 20px; background: #FFF4D6; border-radius: 12px; border-top: 6px solid #B8451F">
+<h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 800">الاعتراف</h3>
+<p style="margin: 0; font-size: 15px; color: #4F3226">اعتراف رسمي من الدولة بالقرى البدوية</p>
+</div>
+<div style="flex: 1 1 300px; box-sizing: border-box; padding: 18px 20px; background: #FFF4D6; border-radius: 12px; border-top: 6px solid #F5B321">
+<h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 800">تخطيط من داخل المجتمع</h3>
+<p style="margin: 0; font-size: 15px; color: #4F3226">خطط تحافظ على بنية القرى والتقاليد المحلية، مع أرض للرزق</p>
+</div>
+<div style="flex: 1 1 300px; box-sizing: border-box; padding: 18px 20px; background: #FFF4D6; border-radius: 12px; border-top: 6px solid #2F6B2A">
+<h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 800">قيادة محلية</h3>
+<p style="margin: 0; font-size: 15px; color: #4F3226">تدريب القيادات وتعزيز قدرات السكان في التعليم والرفاه والتشغيل والتمثيل أمام السلطات</p>
+</div>
+<div style="flex: 1 1 300px; box-sizing: border-box; padding: 18px 20px; background: #FFF4D6; border-radius: 12px; border-top: 6px solid #1D6FA8">
+<h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 800">إنهاء التمييز</h3>
+<p style="margin: 0; font-size: 15px; color: #4F3226">خدمات حكومية متاحة، ووقف هدم البيوت، ووقف مصادرة الأراضي</p>
+</div>
+<div style="flex: 1 1 300px; box-sizing: border-box; padding: 18px 20px; background: #FFF4D6; border-radius: 12px; border-top: 6px solid #B8451F">
+<h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 800">دعم جماهيري</h3>
+<p style="margin: 0; font-size: 15px; color: #4F3226">العمل مع قادة الرأي وصنّاع القرار لتوسيع الدعم للاعتراف بالقرى</p>
+</div>
+<div style="flex: 1 1 300px; box-sizing: border-box; padding: 18px 20px; background: #FFF4D6; border-radius: 12px; border-top: 6px solid #2F6B2A">
+<h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 800">تضامن</h3>
+<p style="margin: 0; font-size: 15px; color: #4F3226">توحيد المجتمعات البدوية في النقب للعمل المشترك من أجل تحسين الحياة في القرى</p>
+</div>
+</div>
+</section>
+
+<section aria-label="صور من القرى" style="background: #FFFFFF">
+<div style="max-width: 1160px; margin: 0 auto; padding: 0 24px 48px; display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory">
+<img src="/assets/img/strip-sheep.jpg" alt="قطيع أغنام يرعى في تلال النقب" loading="lazy" style="flex: 1 0 280px; min-width: 0; height: 260px; object-fit: cover; border-radius: 12px; scroll-snap-align: start; display: block">
+<img src="/assets/img/strip-village3.jpg" alt="قرية بدوية على تلة في الصحراء" loading="lazy" style="flex: 1 0 280px; min-width: 0; height: 260px; object-fit: cover; border-radius: 12px; scroll-snap-align: start; display: block">
+<img src="/assets/img/strip-kids.jpg" alt="أطفال يتعلمون ويرسمون على الأرض" loading="lazy" style="flex: 1 0 280px; min-width: 0; height: 260px; object-fit: cover; border-radius: 12px; scroll-snap-align: start; display: block">
+</div>
+</section>
+
+<section id="plan" aria-label="خطة المجالس الإقليمية" style="background: #FFF4D6">
+<div style="max-width: 1160px; margin: 0 auto; padding: 48px 24px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<a href="/ar/plan/" style="flex: 1 1 100%; box-sizing: border-box; background: #B8451F; border-radius: 14px; overflow: hidden; text-decoration: none; color: #FFFFFF; display: flex; flex-wrap: wrap">
+<span style="flex: 1 1 280px; min-width: 0; height: 200px; position: relative; display: block"><img src="/assets/img/nahala-render-v2.jpg" alt="تصوّر لمزرعة عائلية فيها بيوت ومزرعة مساعدة" style="width: 100%; height: 100%; object-fit: cover; display: block"><span style="position: absolute; top: 10px; inset-inline-start: 10px; background: rgba(59,29,18,0.8); color: #FFF4D6; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px">تصوّر بالذكاء الاصطناعي</span></span>
 <span style="flex: 2 1 340px; box-sizing: border-box; padding: 22px 24px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px">
 <span>
 <span style="display: block; font-size: 24px; font-weight: 800; line-height: 1.25">خطة المجالس الإقليمية: من البقاء إلى الازدهار</span>
@@ -161,69 +222,21 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 </div>
 </section>
 
-<section id="video" style="background: #FFFFFF">
-<div style="max-width: 688px; margin: 0 auto; padding: 48px 24px">
-<h2 style="margin: 0 0 6px; font-size: 28px; font-weight: 800; line-height: 1.2">سكان القرى غير المعترف بها يروون قصتهم</h2>
-<p style="margin: 0 0 18px; font-size: 16px; color: #6B4A3A">بالعبرية والعربية</p>
-<div style="position: relative; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; background: #3B1D12">
-<iframe src="https://www.youtube-nocookie.com/embed/nFDfrqAQk2M?rel=0" title="سكان القرى غير المعترف بها يروون قصتهم" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0"></iframe>
-</div>
-<p style="margin: 10px 0 0; font-size: 13px; color: #6B4A3A">من برنامج «بلا مؤاخذة»، الموسم 3 · مكان، هيئة البث العامة</p>
-</div>
-</section>
-
-<section id="goals" style="max-width: 1160px; margin: 0 auto; padding: 48px 24px">
-<h2 style="margin: 0 0 20px; font-size: 28px; font-weight: 800; line-height: 1.2">أهدافنا</h2>
-<div style="display: flex; flex-wrap: wrap; gap: 16px">
-<div style="flex: 1 1 300px; box-sizing: border-box; padding: 18px 20px; background: #FFF4D6; border-radius: 12px; border-top: 6px solid #B8451F">
-<h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 800">الاعتراف</h3>
-<p style="margin: 0; font-size: 15px; color: #4F3226">اعتراف رسمي من الدولة بالقرى البدوية</p>
-</div>
-<div style="flex: 1 1 300px; box-sizing: border-box; padding: 18px 20px; background: #FFF4D6; border-radius: 12px; border-top: 6px solid #F5B321">
-<h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 800">تخطيط نابع من المجتمع</h3>
-<p style="margin: 0; font-size: 15px; color: #4F3226">مخططات تحافظ على بنية القرى وتقاليدها المحلية، مع أراضٍ لكسب الرزق</p>
-</div>
-<div style="flex: 1 1 300px; box-sizing: border-box; padding: 18px 20px; background: #FFF4D6; border-radius: 12px; border-top: 6px solid #2F6B2A">
-<h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 800">قيادة محلية</h3>
-<p style="margin: 0; font-size: 15px; color: #4F3226">تأهيل قيادات وتعزيز قدرات السكان في التعليم والرفاه والتشغيل والمرافعة</p>
-</div>
-<div style="flex: 1 1 300px; box-sizing: border-box; padding: 18px 20px; background: #FFF4D6; border-radius: 12px; border-top: 6px solid #1D6FA8">
-<h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 800">وقف التمييز</h3>
-<p style="margin: 0; font-size: 15px; color: #4F3226">خدمات حكومية متاحة، وقف هدم البيوت وإنهاء مصادرة الأراضي</p>
-</div>
-<div style="flex: 1 1 300px; box-sizing: border-box; padding: 18px 20px; background: #FFF4D6; border-radius: 12px; border-top: 6px solid #B8451F">
-<h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 800">دعم جماهيري</h3>
-<p style="margin: 0; font-size: 15px; color: #4F3226">العمل مع قادة الرأي وصنّاع القرار لتوسيع الدعم للاعتراف بالقرى</p>
-</div>
-<div style="flex: 1 1 300px; box-sizing: border-box; padding: 18px 20px; background: #FFF4D6; border-radius: 12px; border-top: 6px solid #2F6B2A">
-<h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 800">تضامن</h3>
-<p style="margin: 0; font-size: 15px; color: #4F3226">توحيد المجتمعات البدوية في النقب للعمل المشترك من أجل تحسين ظروف الحياة في القرى</p>
-</div>
-</div>
-</section>
-
-<section aria-label="صور من القرى" style="background: #FFFFFF">
-<div style="max-width: 1160px; margin: 0 auto; padding: 0 24px 48px; display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory">
-<img src="/assets/img/strip-sheep.jpg" alt="قطيع أغنام يرعى في تلال النقب" loading="lazy" style="flex: 1 0 280px; min-width: 0; height: 260px; object-fit: cover; border-radius: 12px; scroll-snap-align: start; display: block">
-<img src="/assets/img/strip-village.jpg" alt="بيوت وخزانات مياه في قرية غير معترف بها" loading="lazy" style="flex: 1 0 280px; min-width: 0; height: 260px; object-fit: cover; border-radius: 12px; scroll-snap-align: start; display: block">
-<img src="/assets/img/strip-kids.jpg" alt="أطفال يتعلمون ويرسمون على الأرض" loading="lazy" style="flex: 1 0 280px; min-width: 0; height: 260px; object-fit: cover; border-radius: 12px; scroll-snap-align: start; display: block">
-</div>
-</section>
-
 <section id="alfuhari" style="background: #FFFFFF">
 <div style="max-width: 1160px; margin: 0 auto; padding: 48px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 28px 40px">
 <div style="flex: 1 1 380px; min-width: 0">
 <div style="font-size: 15px; font-weight: 700; color: #B8451F; margin-bottom: 6px">الدليل</div>
-<h2 style="margin: 0 0 14px; font-size: 28px; font-weight: 800; line-height: 1.2; text-wrap: balance">الفخاري: خطة المجالس الإقليمية تعمل منذ 40 عامًا</h2>
+<h2 style="margin: 0 0 14px; font-size: 28px; font-weight: 800; line-height: 1.2; text-wrap: balance">الفخاري: «خطة&nbsp;المجالس الإقليمية» تعمل منذ 40 عامًا</h2>
 <p style="margin: 0 0 14px; font-size: 18px; line-height: 1.7; color: #4F3226">في القرية الخلّابة جنوبي لهافيم لا فقر ولا بطالة ولا جريمة ولا عنف، ولا تسرّب من المدارس، ولا هدم للبيوت.</p>
 <p style="margin: 0 0 14px; font-size: 18px; line-height: 1.7; color: #4F3226">ماذا فيها؟ مجتمع مزدهر اقتصاديًا واجتماعيًا وتعليميًا.</p>
-<p style="margin: 0 0 18px; font-size: 19px; font-weight: 700; color: #3B1D12">ولماذا؟ لأنه بفعل ظروف استثنائية، طُبّقت فيها مبادئ خطة المجالس الإقليمية قبل 40 عامًا.</p>
+<p style="margin: 0 0 18px; font-size: 19px; font-weight: 700; color: #3B1D12">ولماذا؟ لأنه بفعل ظروف استثنائية، طُبّقت فيها مبادئ «خطة المجالس الإقليمية» قبل 40 عامًا.</p>
 <a href="plan/#alfuhari" style="font-size: 16px; font-weight: 800; color: #B8451F; text-decoration: none">للقصة الكاملة ←</a>
 </div>
-<div style="flex: 1 1 380px; min-width: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 200px 150px; gap: 10px">
-<div style="grid-column: span 2"><img src="/assets/img/fuhari-flock.jpg" alt="راعٍ وقطيع أغنام على تلة خضراء في الفخاري" loading="lazy" style="display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 12px"></div>
-<div><img src="/assets/img/fuhari-horses.jpg" alt="خيول ترعى بين الأشجار" loading="lazy" style="display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 12px"></div>
-<div><img src="/assets/img/fuhari-calf.jpg" alt="عجل أبيض في حقل أخضر" loading="lazy" style="display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 12px"></div>
+<div style="flex: 1 1 380px; min-width: 0; display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 220px 130px; gap: 10px">
+<div style="grid-column: span 3"><img src="/assets/img/fuhari-hill.jpg" data-big="/assets/img/fuhari-hill.jpg" alt="بيوت قرية الفخاري على سفح أخضر، وأمامها حظائر وحقل" loading="lazy" style="cursor: zoom-in; display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 12px"></div>
+<div><img src="/assets/img/fuhari-flock-crop.jpg" data-big="/assets/img/fuhari-flock.jpg" alt="راعٍ وقطيع أغنام على تلة خضراء في الفخاري" loading="lazy" style="cursor: zoom-in; display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 12px"></div>
+<div><img src="/assets/img/fuhari-horses.jpg" data-big="/assets/img/fuhari-horses.jpg" alt="خيول ترعى بين الأشجار" loading="lazy" style="cursor: zoom-in; display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 12px"></div>
+<div><img src="/assets/img/fuhari-calf.jpg" data-big="/assets/img/fuhari-calf.jpg" alt="عجل أبيض في حقل أخضر" loading="lazy" style="cursor: zoom-in; display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 12px"></div>
 </div>
 </div>
 </section>
@@ -233,49 +246,49 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 <h2 style="margin: 0 0 24px; font-size: 28px; font-weight: 800; line-height: 1.2">طاقم المجلس</h2>
 <div style="display: flex; flex-wrap: wrap; gap: 24px 20px">
 <div style="flex: 1 1 140px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
-<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="../assets/img/t-atiya.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
+<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="/assets/img/t-atiya.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
 <div>
 <div style="font-size: 16px; font-weight: 700">عطية الأعسم</div>
 <div style="font-size: 14px; color: #E6F2E3">رئيس المجلس</div>
 </div>
 </div>
 <div style="flex: 1 1 140px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
-<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="../assets/img/t-meigal.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
+<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="/assets/img/t-meigal.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
 <div>
 <div style="font-size: 16px; font-weight: 700">معيجل الهواشلة</div>
 <div style="font-size: 14px; color: #E6F2E3">نائب رئيس المجلس</div>
 </div>
 </div>
 <div style="flex: 1 1 140px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
-<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="../assets/img/t-suleiman.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
+<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="/assets/img/t-suleiman.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
 <div>
 <div style="font-size: 16px; font-weight: 700">سليمان الهواشلة</div>
 <div style="font-size: 14px; color: #E6F2E3">المدير العام</div>
 </div>
 </div>
 <div style="flex: 1 1 140px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
-<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="../assets/img/t-nati.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
+<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="/assets/img/t-nati.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
 <div>
 <div style="font-size: 16px; font-weight: 700">ناتي يفات</div>
 <div style="font-size: 14px; color: #E6F2E3">المتحدث ومدير المناصرة</div>
 </div>
 </div>
 <div style="flex: 1 1 140px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
-<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="../assets/img/t-laila.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
+<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="/assets/img/t-laila.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
 <div>
 <div style="font-size: 16px; font-weight: 700">ليلى فريجات</div>
 <div style="font-size: 14px; color: #E6F2E3">منظِّمة مجتمعية</div>
 </div>
 </div>
 <div style="flex: 1 1 140px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
-<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="../assets/img/t-osnat.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
+<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="/assets/img/t-osnat.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
 <div>
 <div style="font-size: 16px; font-weight: 700">المحامية أوسنات بارتور</div>
 <div style="font-size: 14px; color: #E6F2E3">المستشارة القانونية</div>
 </div>
 </div>
 <div style="flex: 1 1 140px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
-<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="../assets/img/t-shehadeh.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
+<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="/assets/img/t-shehadeh.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
 <div>
 <div style="font-size: 16px; font-weight: 700">شحادة أبو عسى</div>
 <div style="font-size: 14px; color: #E6F2E3">مدير المكتب</div>
@@ -283,6 +296,17 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 </div>
 </div>
 <p style="margin: 32px 0 0; padding-top: 18px; border-top: 1px solid #7FA97A; font-size: 15px; color: #E6F2E3; max-width: 860px"><strong style="color: #FFFFFF">مجلس الإدارة:</strong> سلامة الأعسم، موسى الهواشلة، موسى أبو بنيه، علي أبو سبيلة، محمد أبو قويدر، جمعة طنطاوي، لباد أبو عفاش</p>
+</div>
+</section>
+
+<section id="video" style="background: #FFFFFF">
+<div style="max-width: 688px; margin: 0 auto; padding: 48px 24px">
+<h2 style="margin: 0 0 6px; font-size: 28px; font-weight: 800; line-height: 1.2">سكان القرى غير المعترف بها يروون قصتهم</h2>
+<p style="margin: 0 0 18px; font-size: 16px; color: #6B4A3A">بالعربية (ترجمة عبرية)</p>
+<div style="position: relative; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; background: #3B1D12">
+<iframe src="https://www.youtube-nocookie.com/embed/nFDfrqAQk2M?rel=0" title="سكان القرى غير المعترف بها يروون قصتهم" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0"></iframe>
+</div>
+<p style="margin: 10px 0 0; font-size: 13px; color: #6B4A3A">من برنامج «عفوًا على السؤال»، الموسم الثالث · «مكان»، هيئة البث الإسرائيلية</p>
 </div>
 </section>
 
@@ -315,7 +339,7 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 <div style="max-width: 1160px; margin: 0 auto; padding: 48px 24px; display: flex; flex-wrap: wrap; gap: 32px">
 <div style="flex: 1 1 320px">
 <h2 style="margin: 0 0 10px; font-size: 28px; font-weight: 800; line-height: 1.2; color: #F5B321">اتصل بنا</h2>
-<p style="margin: 0; font-size: 16px; color: #FFF4D6; max-width: 420px">الصحفيون والباحثون وكل من يرغب في زيارة القرى: تواصلوا معنا مباشرة</p>
+<a href="mailto:Rdrcuv@unrecognizedvillages.org" style="font-size: 18px; font-weight: 700; color: #FFF4D6; text-decoration: underline; text-underline-offset: 3px; word-break: break-all" dir="ltr">Rdrcuv@unrecognizedvillages.org</a>
 </div>
 <div style="flex: 1 1 240px">
 <div style="font-size: 19px; font-weight: 700">للاستفسارات الإعلامية</div>
@@ -328,6 +352,7 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 </div>
 </section>
 
+<dialog id="zoombox" aria-label="صورة مكبّرة" style="border: 0; padding: 0; background: transparent; max-width: 96vw; max-height: 94vh; overflow: visible"><button type="button" class="zx" aria-label="إغلاق" style="position: absolute; top: -14px; inset-inline-end: -14px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: #FFF4D6; color: #3B1D12; font-size: 24px; line-height: 40px; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,.3)">×</button><img src="" alt="" style="display: block; max-width: 96vw; max-height: 90vh; width: auto; height: auto; border-radius: 10px"></dialog>
 </main>
 
 <footer style="background: #FFF4D6">
@@ -347,6 +372,11 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 (function(){var b=document.getElementById('navtoggle'),n=document.getElementById('navlinks');if(!b||!n)return;
 b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});
 n.addEventListener('click',function(e){if(e.target.closest('a')){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});})();
+</script>
+<script>
+(function(){var d=document.getElementById('zoombox');if(!d)return;var im=d.querySelector('img');
+document.querySelectorAll('img[data-big]').forEach(function(i){i.addEventListener('click',function(){im.src=i.getAttribute('data-big');im.alt=i.alt;if(d.showModal)d.showModal();else window.open(im.src,'_blank')})});
+d.querySelector('.zx').addEventListener('click',function(){d.close()});d.addEventListener('click',function(e){if(e.target===d)d.close()});})();
 </script>
 </body>
 </html>

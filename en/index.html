@@ -4,19 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Council for the Unrecognized Bedouin Villages</title>
-<meta name="description" content="The voice of 150,000 citizens in 46 Bedouin villages in the Negev. Working for recognition of the villages, an end to home demolitions and equal services">
+<meta name="description" content="The voice of 150,000 citizens in 46 Bedouin villages in the Negev. Working for recognition of the villages, an end to home demolitions and the services every citizen deserves">
 <meta property="og:title" content="The Council for the Unrecognized Bedouin Villages">
-<meta property="og:description" content="The voice of 150,000 citizens in 46 Bedouin villages in the Negev. Working for recognition of the villages, an end to home demolitions and equal services">
+<meta property="og:description" content="The voice of 150,000 citizens in 46 Bedouin villages in the Negev. Working for recognition of the villages, an end to home demolitions and the services every citizen deserves">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://negevvillages.org/en/">
 <meta property="og:image" content="https://negevvillages.org/assets/img/share-logo.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="../assets/img/logo-home.png">
+<link rel="icon" href="/assets/img/logo-home.png">
 <link rel="alternate" hreflang="he" href="https://negevvillages.org/">
 <link rel="alternate" hreflang="ar" href="https://negevvillages.org/ar/">
 <link rel="alternate" hreflang="en" href="https://negevvillages.org/en/">
+<link rel="alternate" hreflang="x-default" href="https://negevvillages.org/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap">
@@ -25,8 +26,30 @@ body{margin:0}
 a{color:#A63A17}a:hover{color:#7A2A10}
 .navtoggle{display:none}
 .mobilebar{display:none}
-@media (max-width: 860px){.navlinks{display:none!important}.navlinks.open{display:flex!important;position:absolute;top:100%;left:0;right:0;z-index:20;flex-direction:column;align-items:stretch!important;gap:0!important;background:#FFFFFF;padding:4px 24px 10px;border-bottom:4px solid #F5B321;box-shadow:0 8px 16px rgba(0,0,0,0.10)}.navlinks.open a{padding:14px 0!important;border-bottom:1px solid #F3E2B8}.navlinks.open a:last-child{border-bottom:0}.navtoggle{display:inline-flex}.hdrname{font-size:13px!important}.deskonly{display:none!important}.mobilebar{display:flex!important}}
+@media (max-width: 860px){.navlinks{display:none!important}.navlinks.open{display:flex!important;position:absolute;top:100%;left:0;right:0;z-index:20;flex-direction:column;align-items:stretch!important;gap:0!important;background:#FFFFFF;padding:4px 24px 10px;border-bottom:4px solid #F5B321;box-shadow:0 8px 16px rgba(0,0,0,0.10)}.navlinks.open a{padding:14px 0!important;border-bottom:1px solid #F3E2B8}.navlinks.open a:last-child{border-bottom:0}.navtoggle{display:inline-flex}.hdrname{font-size:14px!important}.deskonly{display:none!important}.mobilebar{display:flex!important}}
 html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
+#zoombox::backdrop{background:rgba(35,17,8,.82)}
+@media (max-width: 860px){#zoombox .zx{top:6px!important;inset-inline-end:6px!important}}
+</style>
+<style>
+/* רצועת ההריסות */
+.dv *{box-sizing:border-box}
+.dv h2{margin:0}
+.dv .src{font-size:14px;line-height:1.5}
+.dv .punch{margin:22px 0 0;font-size:clamp(22px,2.4vw,28px);font-weight:800;line-height:1.35;color:#B8451F}
+.dv .wrap{max-width:1160px;margin:0 auto;padding:44px 24px}
+.dv .num{font-weight:800;line-height:1;white-space:nowrap}
+.dvB .k{font-size:15px;font-weight:700;color:#B8451F;margin-bottom:6px}
+.dvB h2{font-size:28px;font-weight:800;line-height:1.25;margin-bottom:20px}
+.dvB .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.dvB .card{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/5;border-top:5px solid #B8451F;background:#3B1D12}
+.dvB .card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.dvB .card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(35,17,8,.9) 0%,rgba(35,17,8,.5) 32%,rgba(35,17,8,0) 60%)}
+.dvB .cap{position:absolute;z-index:2;inset-inline:0;bottom:0;padding:18px 20px;color:#FFF4D6}
+.dvB .num{font-size:clamp(40px,5vw,60px);color:#F5B321}
+.dvB .lb{margin-top:6px;font-size:18px;line-height:1.35}
+.dvB .src{margin-top:14px;color:#6B4A3A}
+@media(max-width:760px){.dvB .grid{grid-template-columns:1fr}.dvB .card{aspect-ratio:4/3}}
 </style>
 </head>
 <body>
@@ -35,22 +58,23 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 <header style="position: relative; z-index: 20; background: #FFFFFF; border-bottom: 4px solid #F5B321">
 <div style="max-width: 1160px; margin: 0 auto; padding: 10px 24px; display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 8px 16px">
 <a href="/en/" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #3B1D12">
-<img src="../assets/img/logo-home.png" alt="" style="width: 56px; height: 56px; object-fit: contain; flex-shrink: 0">
+<img src="/assets/img/logo-home.png" alt="" style="width: 56px; height: 56px; object-fit: contain; flex-shrink: 0">
 <span class="hdrname" style="font-size: 15px; font-weight: 700; line-height: 1.25; white-space: nowrap">The Council for the<br>Unrecognized Bedouin Villages</span>
 </a>
 <nav id="navlinks" class="navlinks" aria-label="Main navigation" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2px">
-<a href="#topics" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">Topics and projects</a>
-<a href="#goals" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">Our goals</a>
-<a href="#team" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">Team</a>
-<a href="#donors" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">Donors</a>
-<a href="#contact" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">Contact</a>
+<a href="/en/plan/" style="padding: 12px 8px; font-size: 14.5px; white-space: nowrap; font-weight: 500; color: #3B1D12; text-decoration: none">Regional Councils Plan</a>
+<a href="/en/projects/" style="padding: 12px 8px; font-size: 14.5px; white-space: nowrap; font-weight: 500; color: #3B1D12; text-decoration: none">Our projects</a>
+<a href="#goals" style="padding: 12px 8px; font-size: 14.5px; white-space: nowrap; font-weight: 500; color: #3B1D12; text-decoration: none">Our goals</a>
+<a href="#team" style="padding: 12px 8px; font-size: 14.5px; white-space: nowrap; font-weight: 500; color: #3B1D12; text-decoration: none">Team</a>
+<a href="#donors" style="padding: 12px 8px; font-size: 14.5px; white-space: nowrap; font-weight: 500; color: #3B1D12; text-decoration: none">Donors</a>
+<a href="#contact" style="padding: 12px 8px; font-size: 14.5px; white-space: nowrap; font-weight: 500; color: #3B1D12; text-decoration: none">Contact</a>
 </nav>
 <div style="display: flex; align-items: center; gap: 6px; flex: none">
 <button type="button" class="navtoggle" aria-label="Menu" aria-controls="navlinks" aria-expanded="false" id="navtoggle" style="align-items: center; justify-content: center; width: 44px; height: 44px; border: 0; border-radius: 8px; background: transparent; color: #3B1D12; cursor: pointer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
 <div class="deskonly" aria-label="Language" style="display: flex; align-items: center; gap: 2px; font-size: 14px">
-<a href="../" lang="he" style="padding: 12px 8px; color: #6B4A3A; text-decoration: none">עב</a>
-<a href="../ar/" lang="ar" style="padding: 12px 8px; color: #6B4A3A; text-decoration: none">عر</a>
-<a href="../en/" aria-current="true" style="padding: 12px 8px; font-weight: 800; color: #3B1D12; text-decoration: none">En</a>
+<a href="/en/" lang="he" style="padding: 12px 8px; color: #6B4A3A; text-decoration: none">עב</a>
+<a href="/ar/" lang="ar" style="padding: 12px 8px; color: #6B4A3A; text-decoration: none">عر</a>
+<a href="/en/" aria-current="true" style="padding: 12px 8px; font-weight: 800; color: #3B1D12; text-decoration: none">En</a>
 </div>
 <a class="deskonly" href="https://secure.nif.org/a/emergency-response-unrecognized-arab-villages-in-the-negev" style="padding: 10px 22px; background: #B8451F; color: #FFFFFF; font-size: 15px; font-weight: 700; border-radius: 999px; text-decoration: none">Donate</a>
 </div>
@@ -60,9 +84,9 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 <div class="mobilebar" style="background: #FFF4D6; border-bottom: 1px solid #F3E2B8">
 <div style="width: 100%; max-width: 1160px; margin: 0 auto; padding: 4px 24px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 12px">
 <div aria-label="Language" style="display: flex; align-items: center; gap: 2px; font-size: 14px">
-<a href="../" lang="he" style="padding: 10px 8px; color: #6B4A3A; text-decoration: none">עב</a>
-<a href="../ar/" lang="ar" style="padding: 10px 8px; color: #6B4A3A; text-decoration: none">عر</a>
-<a href="../en/" aria-current="true" style="padding: 10px 8px; font-weight: 800; color: #3B1D12; text-decoration: none">En</a>
+<a href="/en/" lang="he" style="padding: 10px 8px; color: #6B4A3A; text-decoration: none">עב</a>
+<a href="/ar/" lang="ar" style="padding: 10px 8px; color: #6B4A3A; text-decoration: none">عر</a>
+<a href="/en/" aria-current="true" style="padding: 10px 8px; font-weight: 800; color: #3B1D12; text-decoration: none">En</a>
 </div>
 <a href="https://secure.nif.org/a/emergency-response-unrecognized-arab-villages-in-the-negev" style="padding: 7px 18px; background: #B8451F; color: #FFFFFF; font-size: 14px; font-weight: 700; border-radius: 999px; text-decoration: none">Donate</a>
 </div>
@@ -71,14 +95,14 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 <main id="top">
 
 <section style="position: relative; overflow: hidden; background: #3B1D12">
-<img src="../assets/img/home-hero.jpg" alt="Camels grazing in a green field in the Negev" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%">
+<img src="/assets/img/home-hero.jpg" alt="Camels grazing in a green field in the Negev" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%">
 <div aria-hidden="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(40, 20, 10, 0.62)"></div>
 <div style="position: relative; max-width: 1160px; margin: 0 auto; padding: 44px 24px 40px">
 <h1 style="margin: 0; font-size: clamp(28px, 4vw, 44px); font-weight: 800; line-height: 1.15; color: #FFFFFF; max-width: 720px">The voice of 150,000 citizens in 46 Bedouin villages in the Negev</h1>
-<p style="margin: 14px 0 0; font-size: 18px; color: #FFF4D6; max-width: 640px">The Council for the Unrecognized Bedouin Villages is a democratic organization whose representatives are elected by the village committees. We work for recognition of the villages, an end to home demolitions, and access to the services every citizen is entitled to</p>
+<p style="margin: 14px 0 0; font-size: 18px; color: #FFF4D6; max-width: 640px">The Council for the Unrecognized Bedouin Villages is a democratic organization whose representatives are elected by the village committees. We work to win recognition for the villages, stop home demolitions and make available the services every citizen is entitled to</p>
 <div style="margin-top: 22px; display: flex; flex-wrap: wrap; gap: 12px">
-<a href="#topics" style="padding: 12px 26px; background: #F5B321; color: #3B1D12; font-size: 16px; font-weight: 800; border-radius: 999px; text-decoration: none">Topics and projects</a>
-<a href="#contact" style="padding: 11px 26px; border: 1px solid #FFFFFF; color: #FFFFFF; font-size: 16px; font-weight: 500; border-radius: 999px; text-decoration: none">Press and inquiries</a>
+<a href="/en/plan/" style="padding: 12px 26px; background: #F5B321; color: #3B1D12; font-size: 16px; font-weight: 800; border-radius: 999px; text-decoration: none">The Regional Councils Plan</a>
+<a href="#contact" style="padding: 11px 26px; border: 1px solid #FFFFFF; color: #FFFFFF; font-size: 16px; font-weight: 500; border-radius: 999px; text-decoration: none">Press and media inquiries</a>
 </div>
 </div>
 </section>
@@ -104,71 +128,42 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 </div>
 </section>
 
-<section id="reality" style="background: #FFF4D6">
-<div style="max-width: 1160px; margin: 0 auto; padding: 44px 24px">
-<h2 style="margin: 0 0 6px; font-size: 28px; font-weight: 800; line-height: 1.2">The price of the status quo</h2>
-<p style="margin: 0 0 22px; font-size: 17px; color: #4F3226; max-width: 780px">An unrecognized village is a village with no electricity, sewage, garbage collection or paved road, where any house can be demolished. The residents pay the price, and so does the state: benefits instead of taxes, businesses that never open, and output that goes to waste</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, calc(50% - 7px)), 1fr)); gap: 14px">
-<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">About 70%</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">of village residents live in poverty, compared with about half in the Bedouin towns</div><div style="margin-top: 8px; font-size: 12px; color: #6B4A3A">Central Bureau of Statistics and Council estimates</div></div>
-<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">900 years</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">The time it would take to regularize 30,000 families in the villages, at the current pace of about 40 families a year. Not counting natural growth of about 4,000 babies a year</div></div>
-<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">NIS 100,000</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">The average damage to a family whose home is demolished, for legal representation, demolition costs and temporary housing. The damage to thousands of families since 2023: about NIS 300 million</div><div style="margin-top: 8px; font-size: 12px; color: #6B4A3A">Council estimate</div></div>
-<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">5,045</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">Bedouin children aged 3–5 in the Negev are not enrolled in preschool. In an unrecognized village, a preschool cannot be built with a permit</div><div style="margin-top: 8px; font-size: 12px; color: #6B4A3A">Knesset Research and Information Center, 2023</div></div>
-<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">25%</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">of Bedouin women work, compared with 83% of Jewish women in the south. With no public transport, work is far away</div><div style="margin-top: 8px; font-size: 12px; color: #6B4A3A">Employment Service, 2021</div></div>
-<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">54.7%</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">of young Bedouin women are neither working nor studying, and so are 32.6% of young men</div><div style="margin-top: 8px; font-size: 12px; color: #6B4A3A">State Comptroller, 2023</div></div>
-</div>
-</div>
-</section>
-
 <section id="vision" style="background: #FFFFFF">
 <div style="max-width: 1160px; margin: 0 auto; padding: 48px 24px; display: flex; flex-wrap: wrap-reverse; align-items: center; gap: 28px 40px">
 <div style="flex: 1 1 380px; min-width: 0">
 <h2 style="margin: 0 0 14px; font-size: 28px; font-weight: 800; line-height: 1.2">Our vision</h2>
-<p style="margin: 0; font-size: 19px; line-height: 1.7; color: #4F3226">We strive for a future in which the Bedouin communities of the Negev thrive, preserve their unique culture and fulfill their aspirations. We want the villages to be planned and built according to the state's planning and building laws, and the land to be used for sustainable economic development that also draws on Bedouin tradition and culture. We work so that all Bedouin citizens of the Negev enjoy equal access to state services and resources, and full participation in democratic life, like any other citizen.</p>
+<p style="margin: 0; font-size: 19px; line-height: 1.7; color: #4F3226">Recognized, developed villages, on the model of a workers' moshav. We have legal, safe homes, water, electricity, roads, good schools and health services. We make our living from our own land, from farming or any other business, and we preserve the Bedouin heritage, which is a national asset for all Israelis. We are full partners in democratic life and enjoy the state's resources, like every other citizen.</p>
 </div>
 <figure style="flex: 1 1 320px; margin: 0">
-<img src="/assets/img/vision-aerial.jpg" alt="Aerial view of a Bedouin village in the Negev" style="display: block; width: 100%; height: 340px; object-fit: cover; border-radius: 14px">
-<figcaption style="margin-top: 6px; font-size: 12px; color: #6B4A3A">Photo: Waleed Alobra</figcaption>
+<img src="/assets/img/vision-village.jpg" alt="A Bedouin village in a valley, with desert mountains behind it" style="display: block; width: 100%; height: 340px; object-fit: cover; border-radius: 14px">
 </figure>
 </div>
 </section>
 
+<section id="reality" style="background: #FFF4D6">
+<div style="max-width: 1160px; margin: 0 auto; padding: 44px 24px">
+<h2 style="margin: 0 0 6px; font-size: 28px; font-weight: 800; line-height: 1.2">The price of the status quo</h2>
+<p style="margin: 0 0 22px; font-size: 17px; color: #4F3226; max-width: 780px">An unrecognized village is a village with no electricity, sewage, public transport, kindergartens or garbage collection, where every home is under threat of demolition. The residents pay the price, and so does the state: benefits instead of taxes, businesses that never open, social damage and an annual loss of tens of billions of shekels in output</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, calc(50% - 7px)), 1fr)); gap: 14px">
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">About 70%</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">of village residents live in poverty, compared with about half in the Bedouin towns</div><div style="margin-top: 8px; font-size: 12px; color: #6B4A3A">Central Bureau of Statistics and Council estimates</div></div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">900 years</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">The time it would take to regularize 30,000 families in the villages, at the current pace of about 33 families a year. Not counting natural growth of about 4,000 babies a year</div></div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">NIS 300 million</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">Estimated direct financial damage to about 3,000 families whose homes have been demolished since 2023, for legal representation, financing the demolitions and financing alternative housing</div><div style="margin-top: 8px; font-size: 12px; color: #6B4A3A">Council estimate</div></div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">5,045</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">Bedouin children aged 3–5 in the Negev are not in preschool. In the unrecognized villages the state refuses to build preschools</div><div style="margin-top: 8px; font-size: 12px; color: #6B4A3A">Knesset Research and Information Center, 2023</div></div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">25%</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">of Bedouin women work, compared with 83% of Jewish women in the south. With no public transport, work is far away</div><div style="margin-top: 8px; font-size: 12px; color: #6B4A3A">Employment Service, 2021</div></div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #B8451F; padding: 16px 18px"><div style="font-size: clamp(22px, 6vw, 32px); font-weight: 800; line-height: 1.1; color: #B8451F; white-space: nowrap">54.7%</div><div style="margin-top: 6px; font-size: 16px; line-height: 1.45; color: #3B1D12">of young Bedouin women are neither working nor studying, and neither are 32.6% of young men</div><div style="margin-top: 8px; font-size: 12px; color: #6B4A3A">State Comptroller, 2023</div></div>
+</div>
+</div>
+</section>
+
+<section id="demolitions" class="dv dvB" data-opt="B" style="background:#FFFFFF;border-bottom:1px solid #EAD9B0"><div class="wrap"><div class="k">As of October 2026</div><h2>Estimated demolitions in the Negev since 2023</h2><div class="grid"><div class="card"><img src="/assets/img/demolition-dome.jpg" alt="A bulldozer dismantles a structure in a Negev village while police stand by" loading="lazy" class=""><div class="cap"><div class="num">19,300</div><div class="lb">structures and facilities</div></div></div><div class="card"><img src="/assets/img/demolition-police.jpg" alt="Police forces and a tractor during a demolition in a village" loading="lazy" class=""><div class="cap"><div class="num">2,900</div><div class="lb">of them residential homes</div></div></div><div class="card"><img src="/assets/img/demolition-family.jpg" alt="Residents waiting on a truck with mattresses and belongings" loading="lazy" class=""><div class="cap"><div class="num">13,640</div><div class="lb">people lost their homes</div></div></div></div><div class="src">2023–2025 data: Enforcement Administration, South. 2026: Council estimate</div><p class="punch">A bulldozer works for a day. The destruction stays for years</p></div></section>
+
 <section id="social" style="background: #FFF4D6">
 <div style="max-width: 1160px; margin: 0 auto; padding: 32px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 32px">
 <div>
-<h2 style="margin: 0 0 4px; font-size: 24px; font-weight: 800; line-height: 1.2">The council on social media</h2>
+<h2 style="margin: 0 0 4px; font-size: 24px; font-weight: 800; line-height: 1.2">The Council on social media</h2>
 <p style="margin: 0; font-size: 16px; color: #6B4A3A">Updates, photos and videos from the villages</p>
 </div>
-<div style="display: flex; flex-wrap: wrap; gap: 12px"><a href="https://www.facebook.com/rcuvn" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: #1877F2"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21z"/></svg></span>Facebook</a><a href="https://www.instagram.com/negevrcuv" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(45deg,#F58529,#DD2A7B 55%,#8134AF)"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r="1" fill="#fff" stroke="none"/></svg></span>Instagram</a><a href="https://www.twitter.com/rcuvnegev" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: #000"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#fff" d="M17.8 3.5h3l-6.6 7.5 7.8 9.5h-6.1l-4.8-6-5.4 6h-3l7-8L2 3.5h6.2l4.3 5.5zm-1 15.2h1.7L7.3 5.2H5.5z"/></svg></span>X</a><a href="https://www.tiktok.com/@negev.villages" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: #000"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M16.6 3c.4 2.1 1.7 3.5 3.9 3.7v3a7 7 0 0 1-3.8-1.2v6.4A5.9 5.9 0 1 1 10.8 9v3.1a2.9 2.9 0 1 0 2.8 2.9V3z"/></svg></span>TikTok</a></div>
-</div>
-</section>
-
-<section id="topics" style="background: #FFF4D6">
-<div style="max-width: 1160px; margin: 0 auto; padding: 36px 24px 48px">
-<h2 style="margin: 0 0 4px; font-size: 28px; font-weight: 800; line-height: 1.2">Topics and projects</h2>
-<p style="margin: 0 0 20px; font-size: 16px; color: #6B4A3A">Each topic has its own page, with the data and the documents</p>
-<div style="display: flex; flex-wrap: wrap; gap: 16px">
-<a href="../en/plan/" style="flex: 1 1 100%; box-sizing: border-box; background: #B8451F; border-radius: 14px; overflow: hidden; text-decoration: none; color: #FFFFFF; display: flex; flex-wrap: wrap">
-<span style="flex: 1 1 280px; min-width: 0; height: 200px; position: relative; display: block"><img src="/assets/img/nahala-render-v2.jpg" alt="Rendering of a family plot with homes and an auxiliary farm" style="width: 100%; height: 100%; object-fit: cover; display: block"><span style="position: absolute; top: 10px; inset-inline-start: 10px; background: rgba(59,29,18,0.8); color: #FFF4D6; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px">AI rendering</span></span>
-<span style="flex: 2 1 340px; box-sizing: border-box; padding: 22px 24px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px">
-<span>
-<span style="display: block; font-size: 24px; font-weight: 800; line-height: 1.25">The Regional Councils Plan: From Survival to Prosperity</span>
-<span style="display: block; margin-top: 8px; font-size: 16px; color: #FFF4D6">An alternative to 55 years of failed policy that will boost the Negev economy for all its residents</span>
-</span>
-<span style="font-size: 15px; font-weight: 700; color: #FFFFFF">Go to the plan →</span>
-</span>
-</a>
-</div>
-</div>
-</section>
-
-<section id="video" style="background: #FFFFFF">
-<div style="max-width: 688px; margin: 0 auto; padding: 48px 24px">
-<h2 style="margin: 0 0 6px; font-size: 28px; font-weight: 800; line-height: 1.2">Residents of the unrecognized villages tell their story</h2>
-<p style="margin: 0 0 18px; font-size: 16px; color: #6B4A3A">In Hebrew and Arabic</p>
-<div style="position: relative; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; background: #3B1D12">
-<iframe src="https://www.youtube-nocookie.com/embed/nFDfrqAQk2M?rel=0" title="Residents of the unrecognized villages tell their story" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0"></iframe>
-</div>
-<p style="margin: 10px 0 0; font-size: 13px; color: #6B4A3A">From "Excuse Me for Asking", season 3 · Makan, Israeli Public Broadcasting Corporation</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px"><a href="https://www.facebook.com/rcuvn" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: #1877F2"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21z"/></svg></span>Facebook</a><a href="https://www.instagram.com/negevrcuv" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(45deg,#F58529,#DD2A7B 55%,#8134AF)"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r="1" fill="#fff" stroke="none"/></svg></span>Instagram</a><a href="https://www.twitter.com/rcuvnegev" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: #000"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#fff" d="M17.8 3.5h3l-6.6 7.5 7.8 9.5h-6.1l-4.8-6-5.4 6h-3l7-8L2 3.5h6.2l4.3 5.5zm-1 15.2h1.7L7.3 5.2H5.5z"/></svg></span>X</a><a href="https://www.tiktok.com/@negev.villages" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: #000"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M16.6 3c.4 2.1 1.7 3.5 3.9 3.7v3a7 7 0 0 1-3.8-1.2v6.4A5.9 5.9 0 1 1 10.8 9v3.1a2.9 2.9 0 1 0 2.8 2.9V3z"/></svg></span>TikTok</a><a href="https://chat.whatsapp.com/BRg2BQ8WIedFiJMSqSYUYo" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: #25D366"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm0 16.3a7.3 7.3 0 0 1-3.7-1l-.3-.2-2.7.7.7-2.6-.2-.3A7.3 7.3 0 1 1 12 19.3zm4-5.5c-.2-.1-1.3-.7-1.5-.7-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6 6 0 0 1-3-2.6c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.4a.8.8 0 0 0-.6.3 2.5 2.5 0 0 0-.8 1.9c0 1.1.8 2.2.9 2.3.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.3-.6 1.5-1.1.2-.5.2-1 .1-1.1l-.6-.4z"/></svg></span>Join the Council's updates (Hebrew)</a></div>
 </div>
 </section>
 
@@ -181,23 +176,23 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 </div>
 <div style="flex: 1 1 300px; box-sizing: border-box; padding: 18px 20px; background: #FFF4D6; border-radius: 12px; border-top: 6px solid #F5B321">
 <h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 800">Community-based planning</h3>
-<p style="margin: 0; font-size: 15px; color: #4F3226">Plans that keep the villages' structure and local traditions, with land to make a living from</p>
+<p style="margin: 0; font-size: 15px; color: #4F3226">Plans that preserve the structure of the villages and the local tradition, with land for livelihoods</p>
 </div>
 <div style="flex: 1 1 300px; box-sizing: border-box; padding: 18px 20px; background: #FFF4D6; border-radius: 12px; border-top: 6px solid #2F6B2A">
 <h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 800">Local leadership</h3>
-<p style="margin: 0; font-size: 15px; color: #4F3226">Training leaders and strengthening residents' capacities in education, welfare, employment and advocacy</p>
+<p style="margin: 0; font-size: 15px; color: #4F3226">Leadership training and strengthening residents' capacities in education, welfare, employment and representation before the authorities</p>
 </div>
 <div style="flex: 1 1 300px; box-sizing: border-box; padding: 18px 20px; background: #FFF4D6; border-radius: 12px; border-top: 6px solid #1D6FA8">
 <h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 800">An end to discrimination</h3>
-<p style="margin: 0; font-size: 15px; color: #4F3226">Accessible government services, a stop to home demolitions and an end to land expropriation</p>
+<p style="margin: 0; font-size: 15px; color: #4F3226">Accessible government services, a halt to home demolitions and an end to land expropriation</p>
 </div>
 <div style="flex: 1 1 300px; box-sizing: border-box; padding: 18px 20px; background: #FFF4D6; border-radius: 12px; border-top: 6px solid #B8451F">
 <h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 800">Public support</h3>
-<p style="margin: 0; font-size: 15px; color: #4F3226">Working with opinion leaders and policymakers to widen support for recognizing the villages</p>
+<p style="margin: 0; font-size: 15px; color: #4F3226">Working with opinion leaders and policymakers to broaden support for recognition of the villages</p>
 </div>
 <div style="flex: 1 1 300px; box-sizing: border-box; padding: 18px 20px; background: #FFF4D6; border-radius: 12px; border-top: 6px solid #2F6B2A">
 <h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 800">Solidarity</h3>
-<p style="margin: 0; font-size: 15px; color: #4F3226">Uniting the Bedouin communities of the Negev to act together for better living conditions in the villages</p>
+<p style="margin: 0; font-size: 15px; color: #4F3226">Uniting the Bedouin communities of the Negev for joint action to improve life in the villages</p>
 </div>
 </div>
 </section>
@@ -205,8 +200,25 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 <section aria-label="Photos from the villages" style="background: #FFFFFF">
 <div style="max-width: 1160px; margin: 0 auto; padding: 0 24px 48px; display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory">
 <img src="/assets/img/strip-sheep.jpg" alt="A flock of sheep grazing in the Negev hills" loading="lazy" style="flex: 1 0 280px; min-width: 0; height: 260px; object-fit: cover; border-radius: 12px; scroll-snap-align: start; display: block">
-<img src="/assets/img/strip-village.jpg" alt="Homes and water tanks in an unrecognized village" loading="lazy" style="flex: 1 0 280px; min-width: 0; height: 260px; object-fit: cover; border-radius: 12px; scroll-snap-align: start; display: block">
+<img src="/assets/img/strip-village3.jpg" alt="A Bedouin village on a hill in the desert" loading="lazy" style="flex: 1 0 280px; min-width: 0; height: 260px; object-fit: cover; border-radius: 12px; scroll-snap-align: start; display: block">
 <img src="/assets/img/strip-kids.jpg" alt="Children learning and drawing on the floor" loading="lazy" style="flex: 1 0 280px; min-width: 0; height: 260px; object-fit: cover; border-radius: 12px; scroll-snap-align: start; display: block">
+</div>
+</section>
+
+<section id="plan" aria-label="The Regional Councils Plan" style="background: #FFF4D6">
+<div style="max-width: 1160px; margin: 0 auto; padding: 48px 24px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<a href="/en/plan/" style="flex: 1 1 100%; box-sizing: border-box; background: #B8451F; border-radius: 14px; overflow: hidden; text-decoration: none; color: #FFFFFF; display: flex; flex-wrap: wrap">
+<span style="flex: 1 1 280px; min-width: 0; height: 200px; position: relative; display: block"><img src="/assets/img/nahala-render-v2.jpg" alt="Rendering of a family homestead with houses and an auxiliary farm" style="width: 100%; height: 100%; object-fit: cover; display: block"><span style="position: absolute; top: 10px; inset-inline-start: 10px; background: rgba(59,29,18,0.8); color: #FFF4D6; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px">AI rendering</span></span>
+<span style="flex: 2 1 340px; box-sizing: border-box; padding: 22px 24px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px">
+<span>
+<span style="display: block; font-size: 24px; font-weight: 800; line-height: 1.25">The Regional Councils Plan: From Survival to Prosperity</span>
+<span style="display: block; margin-top: 8px; font-size: 16px; color: #FFF4D6">An alternative to 55 years of failed policy that will boost the Negev's economy for the benefit of all its residents</span>
+</span>
+<span style="font-size: 15px; font-weight: 700; color: #FFFFFF">To the plan page →</span>
+</span>
+</a>
+</div>
 </div>
 </section>
 
@@ -214,75 +226,87 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 <div style="max-width: 1160px; margin: 0 auto; padding: 48px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 28px 40px">
 <div style="flex: 1 1 380px; min-width: 0">
 <div style="font-size: 15px; font-weight: 700; color: #B8451F; margin-bottom: 6px">The proof</div>
-<h2 style="margin: 0 0 14px; font-size: 28px; font-weight: 800; line-height: 1.2; text-wrap: balance">Al-Fuhari: the Regional Councils Plan has been working for 40 years</h2>
-<p style="margin: 0 0 14px; font-size: 18px; line-height: 1.7; color: #4F3226">In the picturesque village south of Lehavim there is no poverty, no unemployment, no crime or violence, no school dropout, and no home demolitions.</p>
+<h2 style="margin: 0 0 14px; font-size: 28px; font-weight: 800; line-height: 1.2; text-wrap: balance">Al-Fuhari: the "Regional&nbsp;Councils Plan" has been working for 40 years</h2>
+<p style="margin: 0 0 14px; font-size: 18px; line-height: 1.7; color: #4F3226">In the picturesque village south of Lehavim there is no poverty, no unemployment, no crime or violence, no school dropout and no home demolitions.</p>
 <p style="margin: 0 0 14px; font-size: 18px; line-height: 1.7; color: #4F3226">What does it have? A community that thrives economically, socially and educationally.</p>
-<p style="margin: 0 0 18px; font-size: 19px; font-weight: 700; color: #3B1D12">And why? Because of unique circumstances, the principles of the Regional Councils Plan were applied there 40 years ago.</p>
+<p style="margin: 0 0 18px; font-size: 19px; font-weight: 700; color: #3B1D12">And why? Because of unique circumstances, the principles of the "Regional Councils Plan" were applied there 40 years ago.</p>
 <a href="plan/#alfuhari" style="font-size: 16px; font-weight: 800; color: #B8451F; text-decoration: none">The full story →</a>
 </div>
-<div style="flex: 1 1 380px; min-width: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 200px 150px; gap: 10px">
-<div style="grid-column: span 2"><img src="/assets/img/fuhari-flock.jpg" alt="A shepherd and a flock of sheep on a green hill in Al-Fuhari" loading="lazy" style="display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 12px"></div>
-<div><img src="/assets/img/fuhari-horses.jpg" alt="Horses grazing among trees" loading="lazy" style="display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 12px"></div>
-<div><img src="/assets/img/fuhari-calf.jpg" alt="A white calf in a green field" loading="lazy" style="display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 12px"></div>
+<div style="flex: 1 1 380px; min-width: 0; display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 220px 130px; gap: 10px">
+<div style="grid-column: span 3"><img src="/assets/img/fuhari-hill.jpg" data-big="/assets/img/fuhari-hill.jpg" alt="Houses of the village of Al-Fuhari on a green slope, with pens and a field in the foreground" loading="lazy" style="cursor: zoom-in; display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 12px"></div>
+<div><img src="/assets/img/fuhari-flock-crop.jpg" data-big="/assets/img/fuhari-flock.jpg" alt="A shepherd and a flock of sheep on a green hill in Al-Fuhari" loading="lazy" style="cursor: zoom-in; display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 12px"></div>
+<div><img src="/assets/img/fuhari-horses.jpg" data-big="/assets/img/fuhari-horses.jpg" alt="Horses grazing among trees" loading="lazy" style="cursor: zoom-in; display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 12px"></div>
+<div><img src="/assets/img/fuhari-calf.jpg" data-big="/assets/img/fuhari-calf.jpg" alt="A white calf in a green field" loading="lazy" style="cursor: zoom-in; display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 12px"></div>
 </div>
 </div>
 </section>
 
 <section id="team" style="background: #2F6B2A; color: #FFFFFF">
 <div style="max-width: 1160px; margin: 0 auto; padding: 48px 24px">
-<h2 style="margin: 0 0 24px; font-size: 28px; font-weight: 800; line-height: 1.2">The council's team</h2>
+<h2 style="margin: 0 0 24px; font-size: 28px; font-weight: 800; line-height: 1.2">The Council's team</h2>
 <div style="display: flex; flex-wrap: wrap; gap: 24px 20px">
 <div style="flex: 1 1 140px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
-<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="../assets/img/t-atiya.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
+<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="/assets/img/t-atiya.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
 <div>
 <div style="font-size: 16px; font-weight: 700">Atiya Al-Asam</div>
 <div style="font-size: 14px; color: #E6F2E3">Head of the Council</div>
 </div>
 </div>
 <div style="flex: 1 1 140px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
-<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="../assets/img/t-meigal.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
+<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="/assets/img/t-meigal.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
 <div>
 <div style="font-size: 16px; font-weight: 700">Me'igal Al-Hawashleh</div>
 <div style="font-size: 14px; color: #E6F2E3">Deputy Head of the Council</div>
 </div>
 </div>
 <div style="flex: 1 1 140px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
-<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="../assets/img/t-suleiman.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
+<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="/assets/img/t-suleiman.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
 <div>
 <div style="font-size: 16px; font-weight: 700">Suleiman Al-Hawashleh</div>
 <div style="font-size: 14px; color: #E6F2E3">CEO</div>
 </div>
 </div>
 <div style="flex: 1 1 140px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
-<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="../assets/img/t-nati.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
+<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="/assets/img/t-nati.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
 <div>
 <div style="font-size: 16px; font-weight: 700">Nati Yafet</div>
 <div style="font-size: 14px; color: #E6F2E3">Spokesperson and Advocacy Director</div>
 </div>
 </div>
 <div style="flex: 1 1 140px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
-<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="../assets/img/t-laila.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
+<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="/assets/img/t-laila.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
 <div>
 <div style="font-size: 16px; font-weight: 700">Laila Freijat</div>
 <div style="font-size: 14px; color: #E6F2E3">Community Organizer</div>
 </div>
 </div>
 <div style="flex: 1 1 140px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
-<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="../assets/img/t-osnat.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
+<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="/assets/img/t-osnat.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
 <div>
 <div style="font-size: 16px; font-weight: 700">Adv. Osnat Bartor</div>
 <div style="font-size: 14px; color: #E6F2E3">Legal Advisor</div>
 </div>
 </div>
 <div style="flex: 1 1 140px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
-<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="../assets/img/t-shehadeh.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
+<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="/assets/img/t-shehadeh.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
 <div>
 <div style="font-size: 16px; font-weight: 700">Shehadeh Abu Assa</div>
 <div style="font-size: 14px; color: #E6F2E3">Office Manager</div>
 </div>
 </div>
 </div>
-<p style="margin: 32px 0 0; padding-top: 18px; border-top: 1px solid #7FA97A; font-size: 15px; color: #E6F2E3; max-width: 860px"><strong style="color: #FFFFFF">Board:</strong> Salameh Al-Asam, Musa Al-Hawashleh, Musa Abu Bneiyeh, Ali Abu Sbeileh, Muhammad Abu Kweider, Jum'a Tantawi, Labbad Abu Afash</p>
+<p style="margin: 32px 0 0; padding-top: 18px; border-top: 1px solid #7FA97A; font-size: 15px; color: #E6F2E3; max-width: 860px"><strong style="color: #FFFFFF">Board:</strong> Salameh Al-Asam, Musa Al-Hawashleh, Musa Abu Bneiyeh, Ali Abu Sbeila, Mohammed Abu Quider, Jum'a Tantawi, Labad Abu Afash</p>
+</div>
+</section>
+
+<section id="video" style="background: #FFFFFF">
+<div style="max-width: 688px; margin: 0 auto; padding: 48px 24px">
+<h2 style="margin: 0 0 6px; font-size: 28px; font-weight: 800; line-height: 1.2">Residents of the unrecognized villages tell their story</h2>
+<p style="margin: 0 0 18px; font-size: 16px; color: #6B4A3A">In Arabic (Hebrew subtitles)</p>
+<div style="position: relative; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; background: #3B1D12">
+<iframe src="https://www.youtube-nocookie.com/embed/nFDfrqAQk2M?rel=0" title="Residents of the unrecognized villages tell their story" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0"></iframe>
+</div>
+<p style="margin: 10px 0 0; font-size: 13px; color: #6B4A3A">From "Excuse Me for Asking", season 3 · Makan, the Israeli Public Broadcasting Corporation</p>
 </div>
 </section>
 
@@ -315,7 +339,7 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 <div style="max-width: 1160px; margin: 0 auto; padding: 48px 24px; display: flex; flex-wrap: wrap; gap: 32px">
 <div style="flex: 1 1 320px">
 <h2 style="margin: 0 0 10px; font-size: 28px; font-weight: 800; line-height: 1.2; color: #F5B321">Contact</h2>
-<p style="margin: 0; font-size: 16px; color: #FFF4D6; max-width: 420px">Journalists, researchers and anyone who wants to visit the villages: contact us directly</p>
+<a href="mailto:Rdrcuv@unrecognizedvillages.org" style="font-size: 18px; font-weight: 700; color: #FFF4D6; text-decoration: underline; text-underline-offset: 3px; word-break: break-all" dir="ltr">Rdrcuv@unrecognizedvillages.org</a>
 </div>
 <div style="flex: 1 1 240px">
 <div style="font-size: 19px; font-weight: 700">Media inquiries</div>
@@ -328,6 +352,7 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 </div>
 </section>
 
+<dialog id="zoombox" aria-label="Enlarged image" style="border: 0; padding: 0; background: transparent; max-width: 96vw; max-height: 94vh; overflow: visible"><button type="button" class="zx" aria-label="Close" style="position: absolute; top: -14px; inset-inline-end: -14px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: #FFF4D6; color: #3B1D12; font-size: 24px; line-height: 40px; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,.3)">×</button><img src="" alt="" style="display: block; max-width: 96vw; max-height: 90vh; width: auto; height: auto; border-radius: 10px"></dialog>
 </main>
 
 <footer style="background: #FFF4D6">
@@ -347,6 +372,11 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 (function(){var b=document.getElementById('navtoggle'),n=document.getElementById('navlinks');if(!b||!n)return;
 b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});
 n.addEventListener('click',function(e){if(e.target.closest('a')){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});})();
+</script>
+<script>
+(function(){var d=document.getElementById('zoombox');if(!d)return;var im=d.querySelector('img');
+document.querySelectorAll('img[data-big]').forEach(function(i){i.addEventListener('click',function(){im.src=i.getAttribute('data-big');im.alt=i.alt;if(d.showModal)d.showModal();else window.open(im.src,'_blank')})});
+d.querySelector('.zx').addEventListener('click',function(){d.close()});d.addEventListener('click',function(e){if(e.target===d)d.close()});})();
 </script>
 </body>
 </html>
