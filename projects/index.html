@@ -37,35 +37,34 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 .prj-wrap{max-width:1160px;margin:0 auto;padding:40px 24px 56px}
 .prj-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start}
 .prj-card{background:#FFFFFF;border:1px solid #EAD9B0;border-top:5px solid #B8451F;border-radius:14px;overflow:hidden}
-.prj-card .ph{display:block;aspect-ratio:16/9;background:#EAD9B0}
+.prj-card .ph{display:block;aspect-ratio:567/302;background:#EAD9B0}
 .prj-card .ph img{width:100%;height:100%;object-fit:cover;display:block}
-.prj-card .ph.map{aspect-ratio:auto;background:#FFFFFF}
-.prj-card .ph.map img{height:auto}
 .prj-card .bd{padding:20px 22px 22px}
 .prj-card h2{margin:0 0 10px;font-size:23px;font-weight:800;line-height:1.25;color:#3B1D12}
 .prj-card p{margin:0 0 12px;font-size:17px;line-height:1.7;color:#3B1D12}
-.prj-card details{margin-top:2px}
+.prj-card p:last-child{margin-bottom:0}
 .prj-card summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:6px;font-size:16px;font-weight:800;color:#B8451F;padding:6px 0}
 .prj-card summary::-webkit-details-marker{display:none}
-.prj-card summary::after{content:"↓";font-size:15px}
-.prj-card details[open] summary{margin-bottom:10px}
-.prj-card details[open] summary::after{content:"↑"}
-.prj-card details[open] summary .more{display:none}
-.prj-card summary .less{display:none}
-.prj-card details[open] summary .less{display:inline}
-.prj-info{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 12px}
-.prj-info span{background:#FFF4D6;border:1px solid #EAD9B0;border-radius:999px;padding:6px 14px;font-size:15px;font-weight:700;color:#3B1D12}
+.prj-card details[open]>summary{display:none}
+.prj-less{font:inherit;font-size:16px;font-weight:800;color:#B8451F;background:none;border:0;padding:6px 0;cursor:pointer}
 .prj-cap{font-size:14px;color:#6B4A3A;margin:-4px 0 12px}
+.prj-wa{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 20px;background:#F5B321;color:#3B1D12;font-size:16px;font-weight:800;border-radius:999px;text-decoration:none;margin-top:4px}
+.prj-wa:hover{background:#E9A612;color:#3B1D12}
 .prj-arch{margin-top:48px;padding-top:28px;border-top:1px solid #EAD9B0}
 .prj-arch .k{font-size:15px;font-weight:700;color:#6B4A3A;margin-bottom:12px}
 .prj-arch .prj-card{border-top-color:#6B4A3A}
 .prj-card.wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:start}
-.prj-card.wide .ph{aspect-ratio:auto;height:100%;min-height:320px}
-.prj-card.wide .ph img{height:100%}
-.prj-card.wide .ph.map{min-height:0;height:auto}
-.prj-card.wide .ph.map img{height:auto;object-fit:contain}
 .prj-card.wide .bd{padding:24px 26px}
-@media(max-width:820px){.prj-grid{grid-template-columns:1fr}.prj-card.wide{display:block}.prj-card.wide .ph{min-height:0;aspect-ratio:16/9}.prj-card.wide .ph.map{aspect-ratio:auto}}
+button.ph{border:0;padding:0;width:100%;cursor:zoom-in;font:inherit}
+.prj-card .ph.map{aspect-ratio:1359/943;background:#FFFFFF}
+.prj-card .ph.map img{object-fit:contain}
+.prj-zoom{position:absolute;bottom:10px;inset-inline-start:10px;background:rgba(59,29,18,.82);color:#FFF4D6;font-size:13px;font-weight:700;border-radius:999px;padding:4px 12px}
+.ph{position:relative}
+#mapbox{border:0;padding:0;background:transparent;max-width:min(96vw,1400px);max-height:94vh;overflow:visible}
+#mapbox::backdrop{background:rgba(35,17,8,.82)}
+#mapbox img{display:block;max-width:min(96vw,1400px);max-height:90vh;width:auto;height:auto;border-radius:10px}
+#mapbox .x{position:absolute;top:-14px;inset-inline-end:-14px;width:40px;height:40px;border-radius:50%;border:0;background:#FFF4D6;color:#3B1D12;font-size:24px;line-height:40px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+@media(max-width:820px){.prj-grid{grid-template-columns:1fr}.prj-card.wide{display:block}#mapbox .x{top:6px;inset-inline-end:6px}}
 </style>
 </head>
 <body>
@@ -78,7 +77,7 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 <span class="hdrname" style="font-size: 15px; font-weight: 700; line-height: 1.25; white-space: nowrap">המועצה למען הכפרים<br>הבדואיים הלא מוכרים</span>
 </a>
 <nav id="navlinks" class="navlinks" aria-label="ניווט ראשי" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2px">
-<a href="/plan/" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">תוכנית המועצות האזוריות</a>
+<a href="/plan/" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">"תוכנית המועצות האזוריות"</a>
 <a href="/projects/" aria-current="page" style="padding: 12px 10px; font-size: 15px; font-weight: 800; color: #B8451F; text-decoration: none">הפרויקטים שלנו</a>
 <a href="/#goals" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">המטרות שלנו</a>
 <a href="/#team" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">צוות</a>
@@ -109,19 +108,20 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 </div>
 
 <main id="top" class="prj">
-<section class="prj-hero"><div class="in"><h1>הפרויקטים שלנו</h1><p>המועצה למען הכפרים הבדואיים הלא מוכרים מבצעת פרויקטים רבים שמטרתם לשפר את חייהם של תושבי האזור.</p></div></section>
+<section class="prj-hero"><div class="in"><h1>הפרויקטים שלנו</h1><p>המועצה מבצעת פרויקטים רבים שמטרתם לשפר את חייהם של תושבי הכפרים</p></div></section>
 <section class="prj-wrap" aria-label="פרויקטים">
 <div class="prj-grid">
-<article class="prj-card"><div class="ph"><img src="/assets/img/prj-demolitions.jpg" alt="הריסות של בית שנהרס בכפר לא מוכר" loading="lazy"></div><div class="bd"><h2>התנגדות להריסות בתים ולמדיניות הרסנית אחרת</h2><p>הנגב, בו חיים כשלוש מאות אלף ערבים, מייצג נוף דמוגרפי ייחודי המהווה כ-40% מכלל תושבי האזור. אולם קהילה זו עומדת בפני פרדוקס - בעוד שחלק ניכר מתגורר בנגב, תפוסת הקרקעות שלה מוגבלת באופן לא פרופורציונלי. כמעט מחצית מהפרטים הללו מוצאים את עצמם גרים בכפרים לא מוכרים, תופסים יחד רק 3.5% מנוף הנגב העצום. נקודת מחלוקת קריטית סובבת סביב 1.5% בלבד משטחי הנגב, מה שמביא השלכות עמוקות על תושבי יישובים אלו.</p><details><summary><span class="more">קראו עוד</span><span class="less">פחות</span></summary><p>חלוקה לא שוויונית זו משתרעת מעבר לאדמה. החיים ביישובים לא מוכרים מאופיינים במחסור בשירותים בסיסיים כמו מים, חשמל, בריאות וחינוך. יתר על כן, התושבים מתמודדים עם חוסר ביטחון קרקעי עמוק, עדים לאלפי הריסות מאז שנות ה-70. גם היום, בתיהם עומדים בפני איום מתמשך של הריסות עד היסוד. המצוקה של ההכרה בכפרים הבדואים הללו חורגת מההקשר המקומי; היא עומדת כאחד האתגרים הסביבתיים והתכנונים המרכזיים העומדים בפני המיעוט הפלסטיני בישראל.</p><p>התכנון המרחבי בישראל, המשובץ במארג מורכב של מבני כוח פוליטיים, כלכליים ואתניים, ממלא תפקיד מרכזי בעיצוב הנוף. מדיניות התכנון של המדינה נועדה היסטורית לרכז יישובים בדואים בשטחים מצומצמים, לשבש את המרחב ההיסטורי שלהם ולהאיץ תהליכי מודרניזציה ועיור. גישה זו מתייחסת אל הנגב כאל יריעה ריקה, המעדיפה פיתוח אזורים יהודיים על חשבון זכויות ערבים. זכויות היסוד של הערבים בנגב על אדמות אבותיהם עומדות בפני אתגרים מערכתיים, המדגישים את הצורך הדחוף בהסברה ובשינוי.</p></details></div></article>
-<article class="prj-card"><div class="ph"><img src="/assets/img/prj-legal.jpg" alt="מקרר ישן בשטח, ועליו צו הריסה אדום" loading="lazy"></div><div class="bd"><h2>שירות ייעוץ משפטי</h2><p>אנו שמחים להודיע על פתיחת שירות ייעוץ משפטי לתושבי הכפרים הלא מוכרים, בהובלת עורכת דין.</p><p>השירות נועד להעניק תמיכה וליווי משפטי במגוון נושאים, בהתאם לצרכי התושבים.</p><div class="prj-info"><span>ימי רביעי, 09:00–15:00</span><span>בתיאום מראש בלבד</span></div></div></article>
-<article class="prj-card"><div class="ph"><img src="/assets/img/prj-community.jpg" alt="ילדים יושבים במעגל עם בלונים בפעילות קהילתית" loading="lazy"></div><div class="bd"><h2>ארגון קהילתי</h2><p>מארגני קהילה הם הכרחיים בכל חברה, ומשמעותם בולטת עוד יותר בהקשר של קהילות בדואיות המתגוררות בכפרים לא מוכרים, שבהם היעדר מערכת רווחה ומארגני קהילה ייעודיים מרחיב את האתגרים.</p><details><summary><span class="more">קראו עוד</span><span class="less">פחות</span></summary><p>חשיבות ההתארגנות הקהילתית מודגשת על ידי גורמים שונים, ביניהם: העצמה, שינוי חברתי, ייצוג, בניית יכולות, שיתוף פעולה, דמוקרטיה ומעורבות אזרחית, לכידות חברתית, שירותים רספונסיביים, פתרון סכסוכים, קיימות ארוכת טווח ועוד.</p><p>למעשה, מארגני קהילה חיוניים ליצירת קהילות מועצמות, מעורבות וגמישות המסוגלות להתמודד עם האתגרים שלהן ולהשתתף באופן פעיל בשינוי חברתי חיובי.</p></details></div></article>
-<article class="prj-card"><div class="ph"><img src="/assets/img/prj-opinion.jpg" alt="איור של אגודל למעלה ואגודל למטה" loading="lazy"></div><div class="bd"><h2>שינוי דעת הקהל</h2><p>הפרויקט התקשורתי נועד לשנות את נקודת המבט של החברה הישראלית לגבי אזרחים ערבים בנגב, תושבי כפרים לא מוכרים ועניין ההכרה. מטרתו היא לעודד רפורמה במדיניות, לשנות את הדינמיקה הפוליטית הישראלית ולבלום את הפגיעה בזכויות האדם של ערביי הנגב על ידי הכרה בכפרים, וכתוצאה מכך לשים קץ להריסות. יתרה מכך, היא מבקשת לשלב את הכפרים הללו במסגרת תקציבית, ארגונית ותומכת מקיפה יותר בסמכותנו.</p></div></article>
-<article class="prj-card wide"><a class="ph map" href="/assets/img/prj-mapping.jpg" target="_blank" rel="noopener" title="לחצו להגדלה"><img src="/assets/img/prj-mapping.jpg" alt="מפת צילום אוויר של בקעת באר שבע, עם מבני הכפרים הלא מוכרים בצבעים לפי כפר" loading="lazy"></a><div class="bd"><h2>מיפוי ותכנון הכפרים</h2><div class="prj-cap">בקעת באר שבע: מבני הכפרים בצבעים לפי כפר. לחצו על המפה להגדלה</div><p>במועצה למען הכפרים הבדואיים הלא מוכרים הדגש העיקרי שלנו הוא במעקב אחר מפות ממשלתיות והקלת הגישה של האזרחים למידע לגבי תוכניות ופעולות. עם זאת, ישנם מקרים בהם מתבצעות פעולות בכפרים ללא התחשבות מספקת. כדי לטפל בנושא זה באופן יזום, ייעדה המועצה את השנה הנוכחית לתחילתה של מתודולוגיית מיפוי מקיפה, תוך התמקדות ספציפית בכפרים בדואים לא מוכרים.</p><details><summary><span class="more">קראו עוד</span><span class="less">פחות</span></summary><p>יוזמה אסטרטגית זו תרכז את מאמציה בעמק באר שבע, אזור רחב ידיים המאופיין בריכוז הגבוה ביותר של כפרים לא מוכרים. מטרת העל היא לפתח מרקם בדואי מקומי ייחודי ואותנטי באזור זה. באמצעות התעמקות במיפוי הכפרים הללו, שואפת המועצה לשפוך אור על מאפייניהם, צרכיהם ופוטנציאלם הייחודיים, תוך טיפוח גישה כוללת ומתחשבת יותר בפיתוח ובתכנון.</p><p>עמק באר שבע, לאור רוחבו וריבוי הכפרים הלא מוכרים, מהווה אתגר משמעותי והזדמנות לא פחות משכנעת. מתודולוגיית המיפוי לא רק תתעד את ההיבטים הגיאוגרפיים והתשתיותיים אלא גם תתעמק בניואנסים התרבותיים והחברתיים המגדירים קהילות אלו. גישה הוליסטית זו שמה לה למטרה ליצור הבנה מקיפה של המרקם הבדואי באזור זה, מעבר לקרטוגרפיה בלבד.</p><p>באמצעות מאמץ מיפוי זה, מבקשת המועצה להעצים הן את הקהילות המקומיות והן את בעלי העניין החיצוניים. על ידי הצגת ניואנסים ומפורטים של הכפרים הבדואים הבלתי מוכרים, מפות אלה ישמשו משאבים יקרי ערך עבור חוקרים ומתכננים. הנתונים שייווצרו יאפשרו מאמצים משותפים בתכנון כפר נכון, ויבטיחו שפעולות ויוזמות עתידיות מתחשבות בדינמיקה ובצרכים הייחודיים של קהילות אלו.</p><p>בעצם, יוזמות המיפוי שמבצעת המועצה מייצגות צעד יזום לקראת טיפוח גישה מכילה ומושכלת יותר לפיתוח אזורי. בהתמקדות בעמק באר שבע ושלל הכפרים הבדואים הבלתי מוכרים שבו, שואפת המועצה לא רק ליצור מפות מעשיות אלא גם לתרום ליצירת סביבה תומכת המכבדת את המורכבויות התרבותיות, החברתיות והגיאוגרפיות של קהילות אלו. המפות שיתקבלו ישמשו גשר, שיחבר בין חוקרים, מתכננים ומועצה במאמץ משותף לשיפור איכות החיים של התושבים בכפרים הלא מוכרים באמצעות תכנון מתחשב ומתחשב.</p></details></div></article>
+<article class="prj-card"><div class="ph"><img src="/assets/img/prj-demolitions.jpg" alt="בית הרוס בכפר לא מוכר" loading="lazy"></div><div class="bd"><h2>מאבק בהריסות הבתים ובמדיניות המפלה</h2><p>כ-320 אלף בדואים חיים בנגב, כ-38% מתושביו. כ-150 אלף מהם חיים בכפרים לא מוכרים או בתנאים של כפר לא מוכר. כל הכפרים הלא מוכרים יחד יושבים על פחות מאחוז אחד משטח הנגב.</p><details><summary>קראו עוד ↓</summary><p>בכפרים האלה חסרים שירותים בסיסיים: חשמל, מים, בריאות וחינוך. אף בית לא יכול לקבל היתר בנייה, ולכן כל בית מאוים בהריסה. מאז שנות ה-70 נהרסו אלפי בתים, ומאז 2023 לבדה כ-2,900 בתי מגורים.</p><p>הבעיה מתחילה בתכנון. המדינה מנסה לרכז את הבדואים בשטח קטן ככל האפשר: יהודי כפרי בצפון הנגב מקבל ממנה כ-28 דונם, בדואי כפרי כחצי דונם. פער של פי 56.</p><p>המועצה פועלת נגד ההריסות ונגד המדיניות שמולידה אותן, ומציעה חלופה: <a href="/plan/">"תוכנית המועצות האזוריות"</a>.</p><button type="button" class="prj-less">פחות ↑</button></details></div></article>
+<article class="prj-card"><div class="ph"><img src="/assets/img/prj-legal.jpg" alt="מקרר ישן בשטח, ועליו צו הריסה אדום" loading="lazy"></div><div class="bd"><h2>שירות ייעוץ משפטי</h2><p>המועצה מפעילה שירות ייעוץ משפטי לתושבי הכפרים הלא מוכרים, בהובלת עורכת דין. השירות מעניק תמיכה וליווי משפטי במגוון נושאים, לפי צורכי התושבים.</p><a class="prj-wa" href="https://wa.me/972546307685" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>לפנייה בוואטסאפ</a></div></article>
+<article class="prj-card"><div class="ph"><img src="/assets/img/prj-community.jpg" alt="ילדים יושבים במעגל עם בלונים בפעילות קהילתית" loading="lazy"></div><div class="bd"><h2>ארגון קהילתי</h2><p>בכפרים הלא מוכרים אין מערכת רווחה ואין מארגני קהילה, ולכן קשה לתושבים להתארגן ולדרוש את מה שמגיע להם. פרויקט הארגון הקהילתי של המועצה נועד למלא את החסר.</p><details><summary>קראו עוד ↓</summary><p>מארגני הקהילה עוזרים לתושבים לייצג את עצמם, לבנות יכולות, לשתף פעולה ולפתור סכסוכים, ומחזקים את המעורבות האזרחית ואת הלכידות בכפר.</p><p>המטרה: קהילות חזקות ופעילות, שמתמודדות בעצמן עם האתגרים שלהן ומובילות שינוי.</p><button type="button" class="prj-less">פחות ↑</button></details></div></article>
+<article class="prj-card"><div class="ph"><img src="/assets/img/prj-opinion.jpg" alt="איור של אגודל למעלה ואגודל למטה" loading="lazy"></div><div class="bd"><h2>שינוי דעת הקהל</h2><p>הפרויקט התקשורתי של המועצה נועד לשנות את המבט של החברה הישראלית על האזרחים הבדואים בנגב, על תושבי הכפרים הלא מוכרים ועל שאלת ההכרה בהם.</p><details><summary>קראו עוד ↓</summary><p>המטרה היא לקדם שינוי מדיניות: הכרה בכפרים, סוף להריסות ושילוב הכפרים במסגרת מוניציפלית, עם תקציב ושירותים כמו בכל יישוב אחר בישראל.</p><button type="button" class="prj-less">פחות ↑</button></details></div></article>
+<article class="prj-card wide"><button type="button" class="ph map" data-big="/assets/img/prj-mapping.jpg" aria-label="הגדלת המפה"><img src="/assets/img/prj-mapping.jpg" alt="מפת צילום אוויר של בקעת באר שבע, עם מבני הכפרים הלא מוכרים בצבעים לפי כפר" loading="lazy"><span class="prj-zoom">הגדלה</span></button><div class="bd"><h2>מיפוי ותכנון הכפרים</h2><div class="prj-cap">בקעת באר שבע: מבני הכפרים בצבע לפי כפר. מתוך דו"ח שלב א' של פרויקט המיפוי</div><p>המועצה עוקבת אחרי תוכניות הממשלה בכפרים ומנגישה אותן לתושבים. כדי שהתכנון לא ייעשה מעל ראשם, היא יזמה פרויקט מיפוי מקיף שמתחיל בבקעת באר שבע: כ-45 אלף דונם בין באר שבע לנבטים, ובכפרים הלא מוכרים שבה חיים כ-39 אלף תושבים.</p><details><summary>קראו עוד ↓</summary><p>המיפוי מתעד לא רק גיאוגרפיה ותשתיות, אלא גם את המרקם החברתי והתרבותי של הכפרים, את הצרכים שלהם ואת הפוטנציאל שלהם.</p><p>המפות ישמשו את התושבים, את החוקרים ואת המתכננים, ויאפשרו לתכנן את הכפרים יחד עם תושביהם, לפי הדרך שבה הם חיים בפועל.</p><button type="button" class="prj-less">פחות ↑</button></details></div></article>
 </div>
 <div class="prj-arch"><div class="k">מהארכיון</div><div class="prj-grid">
-<article class="prj-card wide"><div class="ph"><img src="/assets/img/prj-oct7.jpg" alt="שני קשישים באוהל עם ערכת עזרה ראשונה וחבילות סיוע" loading="lazy"></div><div class="bd"><h2>מלחמת 7 באוקטובר – סיוע לשעת חירום</h2><p>השביעי באוקטובר עומד כרגע נוקב בזיכרון הקולקטיבי של תושבי הכפרים הבלתי מוכרים. זה היה יום שבו הם התמודדו עם מצוקה ללא מגני ההגנה של כיפת הברזל, או הזמינות המיידית של שירותים רפואיים. יחד עם השתלבותם בכלכלת הנגב המערבי, רבים נפגעו באופן משמעותי.</p><details><summary><span class="more">קראו עוד</span><span class="less">פחות</span></summary><p>בתוך המשבר הזה הפגינה האוכלוסייה הערבית בנגב חוסן וסולידריות. בהיעדר מגנים רשמיים, הם התגייסו לסייע לנפגעים בהובלה, בפעולות חילוץ ודיווח מיידי לעבודה במוקדי חירום. הפגנת תמיכה קהילתית זו מדגישה את החיבור והאחריות המשותפת בקרב האוכלוסייה הערבית בנגב, ומדגישה את הכוח הנגזר מאחדות בעתות משבר.</p><p>ההשלכות של השביעי באוקטובר דחפו את תושבי הכפרים הבלתי מוכרים למצב של פגיעות, יחד עם היעדר סמכות עירונית לפקח על הטיפול והשיקום שלהם. בוואקום הזה, מועצת הכפרים הבלתי מוכרים קיבלה תפקיד מרכזי. תגובתם המיידית כללה מיפוי הצרכים המיידיים של האוכלוסייה המושפעת, תוך שימוש בגישה מקיפה שכבר קיימת עבור כל תושבי הכפר. ננקטו פעולות מהירות לטיפול בפציעות פיזיות ונפשיות, תמיכה בתביעות בגין נזקי רכוש, רכישת ביטוח ושיתוף פעולה עם משרדי הממשלה לאבטחת והצבת ביטוח.</p><p>בנוסף, עמדה המועצה בראש חלוקת אלפי חבילות מזון, המותאמות בקפידה לצרכים הייחודיים של החברה הבדואית. במקביל, הם רכשו וחילקו מאות ערכות עזרה ראשונה, תוך שימת דגש על הדחיפות של מתן הקלה ותמיכה מיידית לנפגעים. מאמצי התקשורת של המועצה הפכו מכריעים באתגר ועיצוב מחדש של תפיסת הציבור הישראלי את הקהילה הבדואית. ההתמקדות הייתה בטיפוח הכרה, הבנה והערכה לתרומות הקהילה, הערכים והאתגרים העומדים בפניהם.</p><p>למעשה, השביעי באוקטובר שימש כזרז למועצת הכפרים הבלתי מוכרים להתגייס במהירות וביעילות. מעבר למאמצי הסיוע המיידיים, עסקה המועצה ביוזמות תקשורת מתמשכות, במטרה לשנות את דעת הקהל, לעורר שינוי חברתי רחב יותר, ובסופו של דבר לגייס הכרה וכבוד לקהילה הבדואית.</p><p>התגובה המקיפה של המועצה בעקבות השביעי באוקטובר מעידה על מחויבותה לרווחה, חוסן והעצמה של התושבים בכפרים הבלתי מוכרים. על ידי מתן מענה לצרכים מיידיים והתחייבות להסברה ארוכת טווח, המועצה ממלאת תפקיד מרכזי לא רק בתגובה למשברים אלא גם בעיצוב עתיד שוויוני ומכיל יותר עבור קהילות שוליים אלו.</p></details></div></article>
+<article class="prj-card wide"><div class="ph"><img src="/assets/img/prj-oct7.jpg" alt="שני קשישים באוהל עם ערכת עזרה ראשונה וחבילות סיוע" loading="lazy"></div><div class="bd"><h2>מלחמת 7 באוקטובר: סיוע בשעת חירום</h2><p>ב-7 באוקטובר 2023 נשארו תושבי הכפרים הלא מוכרים בלי ההגנה של כיפת ברזל ובלי מענה רפואי מיידי. רבים מהם עבדו ביישובי מערב הנגב, ונפגעו בעצמם.</p><details><summary>קראו עוד ↓</summary><p>באותם ימים גילו הבדואים בנגב חוסן וסולידריות: בהיעדר כוחות הצלה, הם יצאו לפנות ולחלץ נפגעים ודיווחו למוקדי החירום.</p><p>בכפרים הלא מוכרים אין רשות מקומית שתדאג לתושבים, ולכן המועצה נכנסה לחלל: מיפתה את צורכי הנפגעים, סייעה בטיפול בפגיעות גוף ונפש ובתביעות על נזקי רכוש, ועבדה מול משרדי הממשלה.</p><p>המועצה חילקה אלפי חבילות מזון שהותאמו לחברה הבדואית ומאות ערכות עזרה ראשונה. במקביל פעלה בתקשורת כדי לשנות את האופן שבו הציבור הישראלי רואה את הבדואים.</p><button type="button" class="prj-less">פחות ↑</button></details></div></article>
 </div></div>
 </section>
+<dialog id="mapbox" aria-label="מפת בקעת באר שבע"><button type="button" class="x" aria-label="סגירה">×</button><img src="" alt="מפת צילום אוויר של בקעת באר שבע, עם מבני הכפרים הלא מוכרים בצבעים לפי כפר"></dialog>
 </main>
 
 <footer style="background: #FFF4D6">
@@ -141,6 +141,15 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 (function(){var b=document.getElementById('navtoggle'),n=document.getElementById('navlinks');if(!b||!n)return;
 b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});
 n.addEventListener('click',function(e){if(e.target.closest('a')){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});})();
+</script>
+<script>
+(function(){
+document.querySelectorAll('.prj-less').forEach(function(b){b.addEventListener('click',function(){var d=b.closest('details');d.open=false;var c=b.closest('.prj-card');if(c&&c.getBoundingClientRect().top<0)c.scrollIntoView({block:'start'})})});
+var dlg=document.getElementById('mapbox');if(!dlg)return;var im=dlg.querySelector('img');
+document.querySelectorAll('button.ph[data-big]').forEach(function(b){b.addEventListener('click',function(){im.src=b.getAttribute('data-big');if(dlg.showModal)dlg.showModal();else window.open(im.src,'_blank')})});
+dlg.querySelector('.x').addEventListener('click',function(){dlg.close()});
+dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+})();
 </script>
 </body>
 </html>
