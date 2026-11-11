@@ -28,6 +28,26 @@ a{color:#A63A17}a:hover{color:#7A2A10}
 @media (max-width: 860px){.navlinks{display:none!important}.navlinks.open{display:flex!important;position:absolute;top:100%;left:0;right:0;z-index:20;flex-direction:column;align-items:stretch!important;gap:0!important;background:#FFFFFF;padding:4px 24px 10px;border-bottom:4px solid #F5B321;box-shadow:0 8px 16px rgba(0,0,0,0.10)}.navlinks.open a{padding:14px 0!important;border-bottom:1px solid #F3E2B8}.navlinks.open a:last-child{border-bottom:0}.navtoggle{display:inline-flex}.hdrname{font-size:14px!important}.deskonly{display:none!important}.mobilebar{display:flex!important}}
 html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 </style>
+<style>
+/* רצועת ההריסות */
+.dv *{box-sizing:border-box}
+.dv h2{margin:0}
+.dv .src{font-size:14px;line-height:1.5}
+.dv .punch{margin:22px 0 0;font-size:clamp(22px,2.4vw,28px);font-weight:800;line-height:1.35;color:#B8451F}
+.dv .wrap{max-width:1160px;margin:0 auto;padding:44px 24px}
+.dv .num{font-weight:800;line-height:1;white-space:nowrap}
+.dvB .k{font-size:15px;font-weight:700;color:#B8451F;margin-bottom:6px}
+.dvB h2{font-size:28px;font-weight:800;line-height:1.25;margin-bottom:20px}
+.dvB .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.dvB .card{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/5;border-top:5px solid #B8451F;background:#3B1D12}
+.dvB .card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.dvB .card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(35,17,8,.9) 0%,rgba(35,17,8,.5) 32%,rgba(35,17,8,0) 60%)}
+.dvB .cap{position:absolute;z-index:2;inset-inline:0;bottom:0;padding:18px 20px;color:#FFF4D6}
+.dvB .num{font-size:clamp(40px,5vw,60px);color:#F5B321}
+.dvB .lb{margin-top:6px;font-size:18px;line-height:1.35}
+.dvB .src{margin-top:14px;color:#6B4A3A}
+@media(max-width:760px){.dvB .grid{grid-template-columns:1fr}.dvB .card{aspect-ratio:4/3}}
+</style>
 </head>
 <body>
 <div dir="rtl" style="font-family: 'Heebo', system-ui, sans-serif; color: #3B1D12; background: #FFFFFF; line-height: 1.55">
@@ -119,20 +139,7 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 </div>
 </section>
 
-<section id="demolitions" style="background: #FFFFFF; border-bottom: 1px solid #EAD9B0">
-<div style="max-width: 1160px; margin: 0 auto; padding: 44px 24px">
-<div style="font-size: 15px; font-weight: 700; color: #B8451F; margin-bottom: 6px">נכון לאוקטובר 2026</div>
-<h2 style="margin: 0 0 20px; font-size: 28px; font-weight: 800; line-height: 1.25">אומדן ההריסות בנגב מאז 2023</h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 12px">
-<div style="background: #FFF4D6; border-top: 5px solid #B8451F; border-radius: 12px; padding: 16px 20px"><div style="font-size: clamp(34px, 7vw, 52px); font-weight: 800; line-height: 1.05; color: #B8451F; white-space: nowrap">19,300</div><div style="margin-top: 6px; font-size: 18px; line-height: 1.4; color: #3B1D12">מבנים ומתקנים</div></div>
-<div style="background: #FFF4D6; border-top: 5px solid #B8451F; border-radius: 12px; padding: 16px 20px"><div style="font-size: clamp(34px, 7vw, 52px); font-weight: 800; line-height: 1.05; color: #B8451F; white-space: nowrap">2,900</div><div style="margin-top: 6px; font-size: 18px; line-height: 1.4; color: #3B1D12">מהם בתי מגורים</div></div>
-<div style="background: #FFF4D6; border-top: 5px solid #B8451F; border-radius: 12px; padding: 16px 20px"><div style="font-size: clamp(34px, 7vw, 52px); font-weight: 800; line-height: 1.05; color: #B8451F; white-space: nowrap">13,640</div><div style="margin-top: 6px; font-size: 18px; line-height: 1.4; color: #3B1D12">איש איבדו את בתיהם</div></div>
-</div>
-<p style="margin: 16px 0 0; max-width: 860px; font-size: 14px; line-height: 1.55; color: #6B4A3A">נתוני 2023-2025: מינהלת אכיפה דרום. 2026: הערכת המועצה</p>
-<!-- מקום לתמונות / סרטונים על ההריסות: לשלב כאן שורת מדיה (למשל grid של 2-3 תמונות או iframe של סרטון) לפני המשפט הבא -->
-<p style="margin: 22px 0 0; font-size: clamp(22px, 2.4vw, 28px); font-weight: 800; line-height: 1.35; color: #B8451F">השופלים עובדים יום אחד. ההרס נשאר לשנים.</p>
-</div>
-</section>
+<section id="demolitions" class="dv dvB" data-opt="B" style="background:#FFFFFF;border-bottom:1px solid #EAD9B0"><div class="wrap"><div class="k">נכון לאוקטובר 2026</div><h2>אומדן ההריסות בנגב מאז 2023</h2><div class="grid"><div class="card"><img src="/assets/img/demolition-dome.jpg" alt="שופל מפרק מבנה בכפר בנגב, ושוטרים עומדים במקום" loading="lazy" class=""><div class="cap"><div class="num">19,300</div><div class="lb">מבנים ומתקנים</div></div></div><div class="card"><img src="/assets/img/demolition-police.jpg" alt="כוחות שיטור וטרקטור בזמן הריסה בכפר" loading="lazy" class=""><div class="cap"><div class="num">2,900</div><div class="lb">מהם בתי מגורים</div></div></div><div class="card"><img src="/assets/img/demolition-family.jpg" alt="תושבים ממתינים על משאית עם מזרנים וחפצים" loading="lazy" class=""><div class="cap"><div class="num">13,640</div><div class="lb">איש איבדו את בתיהם</div></div></div></div><div class="src">נתוני 2023-2025: מינהלת אכיפה דרום. 2026: הערכת המועצה</div><p class="punch">השופלים עובדים יום אחד. ההרס נשאר לשנים.</p></div></section>
 
 <section id="vision" style="background: #FFFFFF">
 <div style="max-width: 1160px; margin: 0 auto; padding: 48px 24px; display: flex; flex-wrap: wrap-reverse; align-items: center; gap: 28px 40px">
