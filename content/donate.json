@@ -21,14 +21,14 @@
     "ar": "انضموا إلى أول مئة داعم شهري"
   },
   "signup_title": {
-    "he": "רוצים להכיר לפני תרומה? הירשמו לעדכונים",
-    "en": "Want to get to know us before donating? Sign up for updates",
-    "ar": "تريدون التعرّف علينا قبل التبرع؟ اشتركوا في التحديثات"
+    "he": "הירשמו לניוזלטר שלנו",
+    "en": "Sign up for our newsletter",
+    "ar": "اشتركوا في نشرتنا الإخبارية"
   },
   "subs_meter_text": {
-    "he": "{n} מתוך {g} נרשמו לעדכונים",
-    "en": "{n} of {g} people have signed up for updates",
-    "ar": "{n} من أصل {g} اشتركوا في التحديثات"
+    "he": "{n} מתוך {g} נרשמו לניוזלטר",
+    "en": "{n} of {g} have subscribed",
+    "ar": "{n} من أصل {g} مشتركين"
   },
   "signup_email_label": {
     "he": "כתובת מייל",
@@ -46,9 +46,9 @@
     "ar": "أوافق على تلقّي تحديثات من المجلس عبر البريد الإلكتروني. يمكنكم إلغاء الاشتراك في أي لحظة، وتفاصيل أكثر في <a href=\"/ar/privacy/\">سياسة الخصوصية</a>"
   },
   "signup_button": {
-    "he": "הצטרפו לעדכונים",
-    "en": "Join our updates",
-    "ar": "اشتركوا في التحديثات"
+    "he": "הצטרפו לניוזלטר",
+    "en": "Join the newsletter",
+    "ar": "انضموا إلى النشرة"
   },
   "signup_sending": {
     "he": "שולחים...",
@@ -299,5 +299,25 @@
     "he": "הצטרפו לניוזלטר",
     "en": "Join the newsletter",
     "ar": "انضموا إلى النشرة"
+  },
+  "lb_label": {
+    "he": "תמונה מוגדלת",
+    "en": "Enlarged image",
+    "ar": "صورة مكبّرة"
+  },
+  "lb_close": {
+    "he": "סגירה",
+    "en": "Close",
+    "ar": "إغلاق"
+  },
+  "lb_prev": {
+    "he": "התמונה הקודמת",
+    "en": "Previous image",
+    "ar": "الصورة السابقة"
+  },
+  "lb_next": {
+    "he": "התמונה הבאה",
+    "en": "Next image",
+    "ar": "الصورة التالية"
   }
 }
