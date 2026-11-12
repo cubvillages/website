@@ -274,5 +274,15 @@
     "he": "ליווי וסיוע תקשורתי למשפחתו של איוב אטוחי מביר הדאג', שנורה למוות בדצמבר 2025 על ידי אזרח יהודי תוך כדי נסיעה",
     "en": "Media guidance and support for the family of Ayub Atuhi of Bir Hadaj, who was shot dead in December 2025 by a Jewish civilian while driving",
     "ar": "مرافقة ودعم إعلامي لعائلة أيوب عطوحي من بير هداج، الذي قُتل بالرصاص في كانون الأول/ديسمبر 2025 على يد مواطن يهودي أثناء قيادته"
+  },
+  "xp_open": {
+    "he": "קראו עוד על המועצה והמאבק",
+    "en": "Read more about the Council",
+    "ar": "اقرأوا المزيد عن المجلس"
+  },
+  "xp_close": {
+    "he": "סגירה",
+    "en": "Show less",
+    "ar": "إغلاق"
   }
 }
