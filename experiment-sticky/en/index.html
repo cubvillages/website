@@ -79,18 +79,22 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 .xp-hero>*{position:relative}
 .xp-hero p a{color:#F5B321;font-weight:700;text-decoration:underline}
 .xp-hero .h1{font-size:40px!important}
-.xp-aside{grid-area:aside;position:sticky;top:16px;align-self:start;height:calc(100vh - 32px);min-height:560px;display:flex;flex-direction:column;gap:12px}
-.xp-aside .card{box-shadow:0 8px 30px rgba(59,29,18,.22);flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
-.xp-aside .card .nifwrap{flex:1 1 auto;min-height:0;overflow-y:auto;scrollbar-width:thin}
-.xp-aside .card>*:not(.nifwrap){flex:none}
-.xp-aside .nlwrap{margin:0;max-width:none;flex:none;padding:16px 20px;border:1px solid #EBD3A0;box-shadow:0 4px 18px rgba(59,29,18,.12)}
-.xp-aside .nlhead{font-size:17px;margin-bottom:8px}
-.xp-aside .nlwrap .meter-text{font-size:14px;margin-bottom:5px}
+.xp-aside{grid-area:aside;position:sticky;top:12px;align-self:start;max-height:calc(100vh - 24px);overflow-y:auto;display:flex;flex-direction:column;gap:8px;scrollbar-width:thin}
+.xp-aside .card{box-shadow:0 8px 30px rgba(59,29,18,.22);flex:none}
+.xp-aside .card>div:first-child{padding:10px 16px!important}
+.xp-aside .card>div:first-child>div:first-child{font-size:19px!important}
+.xp-aside .card>div:first-child>div:last-child{font-size:13px!important;margin-top:2px!important}
+.xp-aside .card>div:last-child{padding:6px 16px 8px!important;font-size:11.5px!important;line-height:1.35!important;display:flex;flex-wrap:wrap;gap:0 10px}
+.xp-aside .card>div:last-child br{display:none}
+.xp-aside .nlwrap{margin:0;max-width:none;flex:none;padding:10px 14px;border:1px solid #EBD3A0;box-shadow:0 4px 18px rgba(59,29,18,.12)}
+.xp-aside .nlhead{font-size:17px;margin-bottom:6px;white-space:nowrap}
+.xp-aside .nlwrap .meter-text{font-size:13.5px;margin-bottom:4px;white-space:nowrap;font-weight:600}
+.xp-aside .nlwrap .meter-track{height:8px}
 .xp-aside .nlwrap .nl{margin-top:8px}
-.xp-aside .nlwrap .nl label[for]{margin-bottom:4px!important;font-size:14px}
-.xp-aside .nlwrap .nl input[type=email]{padding:9px 12px;font-size:16px}
-.xp-aside .nlwrap .nl .consent{margin-top:8px;font-size:12.5px}
-.xp-aside .nlwrap .nl button{margin-top:8px;padding:10px 18px;font-size:16px}
+.xp-aside .nlwrap .nl label[for]{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);margin:0!important}
+.xp-aside .nlwrap .nl input[type=email]{padding:8px 12px;font-size:15px}
+.xp-aside .nlwrap .nl .consent{margin-top:6px;font-size:11.5px;line-height:1.35}
+.xp-aside .nlwrap .nl button{margin-top:6px;padding:8px 18px;font-size:15.5px}
 .xp-rest{grid-area:rest;display:flex;flex-direction:column;gap:28px;min-width:0}
 .xp-rest>section{max-width:none!important;margin:0!important;padding:0!important}
 .xp-rest>section.why{border-radius:16px}
@@ -100,25 +104,21 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 .xp-more{display:none;grid-area:more}
 @media (min-width:1101px){.xp-rest .acts{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:900px){
-.xp-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"hero" "aside" "more" "rest";padding:14px;gap:16px}
+.xp-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"hero" "rest" "more" "aside";padding:14px;gap:16px}
 .xp-hero{padding:24px 20px 22px}.xp-hero .h1{font-size:30px!important}
 .xp-hero p{font-size:17px!important}
-.xp-aside{position:static;height:auto;min-height:0}
-.xp-aside .card{display:block}.xp-aside .card .nifwrap{overflow:visible}
+.xp-aside{position:static;max-height:none;overflow:visible}
+.xp-aside .card>div:first-child{padding:14px 20px!important}
 .xp-more{display:block}
 .xp-more button{width:100%;padding:13px 18px;font:inherit;font-size:17px;font-weight:800;color:#3B1D12;background:#fff;border:2px solid #3B1D12;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
 .xp-more button svg{transition:transform .2s}
 .xp-grid.open .xp-more button svg{transform:rotate(180deg)}
-.xp-rest{display:none}.xp-grid.open .xp-rest{display:flex}
+.xp-grid:not(.open) .xp-rest{max-height:158px;overflow:hidden;position:relative}
+.xp-grid:not(.open) .xp-rest:after{content:"";position:absolute;inset:auto 0 0 0;height:84px;background:linear-gradient(rgba(255,244,214,0),#FFF4D6 92%);pointer-events:none;border-radius:0 0 12px 12px}
 .xp-rest>section.why{border-radius:12px}
+.xp-rest .why .wrap{padding:20px}
+.xp-aside .nlhead{white-space:normal}
 }
-
-.xp-rest img,.xp-hero img{cursor:zoom-in}
-#lb{border:0;padding:0;background:transparent;max-width:96vw;max-height:94vh;overflow:visible}
-#lb::backdrop{background:rgba(20,8,4,.88)}
-#lb img{display:block;max-width:96vw;max-height:84vh;width:auto;height:auto;border-radius:10px;margin:0 auto}
-#lb .cap{color:#fff;text-align:center;font-size:15px;line-height:1.4;padding:10px 12px 0;max-width:900px;margin:0 auto}
-#lb .x{position:absolute;top:-14px;inset-inline-end:-6px;width:42px;height:42px;border-radius:50%;border:0;background:#FFF4D6;color:#3B1D12;font-size:26px;line-height:42px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.4)}
 </style>
 <link rel="stylesheet" href="https://static.everyaction.com/ea-actiontag/at.min.css">
 <link rel="stylesheet" href="https://static.everyaction.com/ea-actiontag/extra.min.css">
@@ -173,12 +173,12 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 <script type="text/javascript" src="https://static.everyaction.com/ea-actiontag/at.js" crossorigin="anonymous" charset="utf-8"></script>
 <div style="padding:12px 20px 16px;font-size:14px;color:#4F3226;line-height:1.5;border-top:1px solid #F3E2B8"><span data-t="form_secure_note">Donations are securely processed by the New Israel Fund (NIF)</span><br><a href="https://secure.nif.org/a/emergency-response-unrecognized-arab-villages-in-the-negev" rel="noopener" style="font-weight:700" data-t="form_fallback_link">Form not loading? Give on the New Israel Fund page</a></div>
 </div>
-<div class="nlwrap"><div class="nlhead" data-t="signup_title">Want to get to know us before donating? Sign up for updates</div><div class="meter meter-light" data-key="subscribers" data-goal="1500" data-tpl="{n} of {g} people have signed up for updates" data-tpl0="{n} of {g} people have signed up for updates" data-t-attr="data-tpl:subs_meter_text;data-tpl0:subs_meter_text"><span class="meter-text">1,076 of 1,500 people have signed up for updates</span><div class="meter-track" role="progressbar" aria-valuemin="0" aria-valuemax="1500" aria-valuenow="1076"><div class="meter-fill" style="width:71.7%"></div></div></div><form class="nl" id="nl-form" action="https://gmail.us13.list-manage.com/subscribe/post?u=fbc284987838687856154daa0&amp;id=37f69b5bae" method="post" target="_blank" novalidate>
+<div class="nlwrap"><div class="nlhead" data-t="xp_nl_title">Sign up for our newsletter</div><div class="meter meter-light" data-key="subscribers" data-goal="1500" data-tpl="{n} of {g} have subscribed" data-tpl0="{n} of {g} have subscribed" data-t-attr="data-tpl:xp_nl_meter;data-tpl0:xp_nl_meter"><span class="meter-text">1,076 of 1,500 people have signed up for updates</span><div class="meter-track" role="progressbar" aria-valuemin="0" aria-valuemax="1500" aria-valuenow="1076"><div class="meter-fill" style="width:71.7%"></div></div></div><form class="nl" id="nl-form" action="https://gmail.us13.list-manage.com/subscribe/post?u=fbc284987838687856154daa0&amp;id=37f69b5bae" method="post" target="_blank" novalidate>
 <label for="nl-email" style="display:block;font-weight:700;margin-bottom:6px" data-t="signup_email_label">Email address</label>
 <input type="email" id="nl-email" name="EMAIL" required autocomplete="email" placeholder="Your email address" data-t-attr="placeholder:signup_email_placeholder">
 <div aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;opacity:0"><input type="text" name="b_fbc284987838687856154daa0_37f69b5bae" tabindex="-1" value=""></div>
 <label class="consent"><input type="checkbox" id="nl-consent" required><span data-t="signup_consent">I agree to receive email updates from the Council. You can unsubscribe at any time. More in the <a href="/en/privacy/">privacy policy</a></span></label>
-<button type="submit" id="nl-btn" data-t="signup_button">Join our updates</button>
+<button type="submit" id="nl-btn" data-t="xp_nl_button">Join the newsletter</button>
 <div class="msg" id="nl-msg" role="status" aria-live="polite"></div>
 </form></div></aside>
 <div class="xp-more"><button type="button" id="xp-toggle" aria-expanded="false"><span data-t="xp_open">Read more about the Council</span><span data-t="xp_close" hidden>Show less</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></div>

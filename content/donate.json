@@ -284,5 +284,20 @@
     "he": "סגירה",
     "en": "Show less",
     "ar": "إغلاق"
+  },
+  "xp_nl_title": {
+    "he": "הירשמו לניוזלטר שלנו",
+    "en": "Sign up for our newsletter",
+    "ar": "اشتركوا في نشرتنا الإخبارية"
+  },
+  "xp_nl_meter": {
+    "he": "{n} מתוך {g} נרשמו לניוזלטר",
+    "en": "{n} of {g} have subscribed",
+    "ar": "{n} من أصل {g} مشتركين"
+  },
+  "xp_nl_button": {
+    "he": "הצטרפו לניוזלטר",
+    "en": "Join the newsletter",
+    "ar": "انضموا إلى النشرة"
   }
 }
