@@ -28,7 +28,26 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 .card{background:#fff;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.28);overflow:hidden}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 @media (max-width:860px){.hero{grid-template-columns:1fr;gap:24px}.grid3{grid-template-columns:1fr}.dn h2{font-size:26px}.h1{font-size:32px!important}}
+
+.meter{max-width:460px}
+.meter-text{display:block;font-size:17px;font-weight:700;margin-bottom:8px}
+.meter-track{height:14px;border-radius:999px;overflow:hidden}
+.meter-fill{height:100%;border-radius:999px;transition:width .8s ease}
+.meter-dark .meter-text{color:#FFF4D6}.meter-dark .meter-track{background:rgba(255,255,255,.22)}.meter-dark .meter-fill{background:#F5B321}
+.meter-light .meter-text{color:#3B1D12}.meter-light .meter-track{background:#F3E2B8}.meter-light .meter-fill{background:#B8451F}
+.nl{background:#fff;border:1px solid #F3E2B8;border-radius:16px;padding:22px;box-shadow:0 6px 20px rgba(59,29,18,.08)}
+.nl input[type=email]{width:100%;box-sizing:border-box;padding:13px 14px;font:inherit;font-size:17px;border:2px solid #E5CFA0;border-radius:10px;background:#fff;color:#3B1D12}
+.nl input[type=email]:focus{outline:none;border-color:#B8451F}
+.nl button{margin-top:12px;width:100%;padding:14px 20px;font:inherit;font-size:18px;font-weight:800;color:#fff;background:#B8451F;border:0;border-radius:999px;cursor:pointer}
+.nl button:hover{background:#9A3718}.nl button[disabled]{opacity:.6;cursor:wait}
+.nl .consent{display:flex;gap:10px;align-items:flex-start;margin-top:12px;font-size:14px;line-height:1.5;color:#4F3226}
+.nl .consent input{margin-top:3px;flex:none;width:18px;height:18px;accent-color:#B8451F}
+.nl .msg{margin-top:12px;font-size:16px;font-weight:700;line-height:1.5}
+.nl .msg.ok{color:#2F6B2A}.nl .msg.err{color:#A63A17}
+.nifwrap{padding:8px 14px 6px}
 </style>
+<link rel="stylesheet" href="https://static.everyaction.com/ea-actiontag/at.min.css">
+<link rel="stylesheet" href="https://static.everyaction.com/ea-actiontag/extra.min.css">
 </head>
 <body>
 <div dir="rtl" style="font-family: 'Heebo', system-ui, sans-serif; color: #3B1D12; background: #FFFFFF; line-height: 1.55">
@@ -78,16 +97,28 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 <div style="display:inline-block;background:#F5B321;color:#3B1D12;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px">הצטרפו לתומכים החודשיים</div>
 <h1 class="h1" style="margin:18px 0 16px;font-size:44px;font-weight:800;line-height:1.15">כך ישראל מתייחסת לאזרחים הבדואים שלה. זה המבחן שלה כדמוקרטיה</h1>
 <p style="color:#FFF4D6;font-size:19px">בנגב חיים כ־150 אלף אזרחים ישראלים בכפרים בדואיים. כ־70% מהם בעוני, בלי חשמל ומים מסודרים, ובלי הכרה. אנחנו המועצה שהם בחרו לייצג אותם, והשנה אנחנו בונים בסיס של תומכים חודשיים</p>
-<div style="margin-top:22px;display:inline-block;border:2px solid #F5B321;border-radius:12px;padding:10px 18px;font-weight:800;font-size:20px;color:#F5B321">היעד: 5,000 תומכים חודשיים</div>
+<div style="margin-top:22px"><div class="meter meter-dark" data-key="donors" data-goal="100" data-tpl="{n} מתוך {g} תומכים חודשיים" data-tpl0="{g} התומכים החודשיים הראשונים. היו הראשונים להצטרף"><span class="meter-text">100 התומכים החודשיים הראשונים. היו הראשונים להצטרף</span><div class="meter-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="meter-fill" style="width:0.0%"></div></div></div></div>
 </div>
 <div class="card" id="give">
 <div style="background:#B8451F;color:#fff;padding:16px 20px"><div style="font-size:22px;font-weight:800">תמכו בעבודה שלנו</div><div style="margin-top:4px;font-size:15px;line-height:1.45;opacity:.95">תרומה חודשית קטנה מחזיקה אותנו לאורך זמן. הכי הרבה כוח יש להרשמה קבועה</div></div>
-<!-- NIF donation plug-in: replace the iframe below with the embed code from the NIF page if it differs -->
-<iframe id="nif-form" src="https://secure.nif.org/a/emergency-response-unrecognized-arab-villages-in-the-negev" title="תמכו בעבודה שלנו" loading="lazy" style="display:block;width:100%;height:640px;border:0;background:#f5f5f5"></iframe>
+<div class="nifwrap" dir="ltr"><div class="ngp-form" data-form-url="https://secure.everyaction.com/v1/Forms/-7pDPZmvWEmL8yc_edvBmA2" data-fastaction-endpoint="https://fastaction.ngpvan.com" data-inline-errors="true" data-fastaction-nologin="true" data-databag="everybody" data-mobile-autofocus="false"></div></div>
+<script type="text/javascript" src="https://static.everyaction.com/ea-actiontag/at.js" crossorigin="anonymous" charset="utf-8"></script>
 <div style="padding:12px 20px 16px;font-size:14px;color:#4F3226;line-height:1.5;border-top:1px solid #F3E2B8">התרומות מעובדות בבטחה על ידי הקרן החדשה לישראל (NIF)<br><a href="https://secure.nif.org/a/emergency-response-unrecognized-arab-villages-in-the-negev" rel="noopener" style="font-weight:700">הטופס לא נטען? לתרומה בדף של הקרן החדשה לישראל</a></div>
 </div>
 </div>
 </section>
+<section style="background:#FFF4D6"><div class="hero" style="max-width:1160px;margin:0 auto;padding:44px 24px;align-items:center">
+<div><h2>לא מוכנים לתרום עכשיו? הישארו מעודכנים</h2><p style="margin-bottom:20px">עדכונים על מה שקורה בכפרים ועל מה שאנחנו עושים בעניין. אפשר להצטרף בלי לתרום</p>
+<div class="meter meter-light" data-key="subscribers" data-goal="1500" data-tpl="{n} מתוך {g} נרשמו לעדכונים" data-tpl0="{n} מתוך {g} נרשמו לעדכונים"><span class="meter-text">1,076 מתוך 1,500 נרשמו לעדכונים</span><div class="meter-track" role="progressbar" aria-valuemin="0" aria-valuemax="1500" aria-valuenow="1076"><div class="meter-fill" style="width:71.7%"></div></div></div></div>
+<form class="nl" id="nl-form" action="https://gmail.us13.list-manage.com/subscribe/post?u=fbc284987838687856154daa0&amp;id=37f69b5bae" method="post" target="_blank" novalidate>
+<label for="nl-email" style="display:block;font-weight:700;margin-bottom:6px">כתובת מייל</label>
+<input type="email" id="nl-email" name="EMAIL" required autocomplete="email" placeholder="כתובת המייל שלכם">
+<div aria-hidden="true" style="position:absolute;left:-5000px"><input type="text" name="b_fbc284987838687856154daa0_37f69b5bae" tabindex="-1" value=""></div>
+<label class="consent"><input type="checkbox" id="nl-consent" required><span>אני מאשר/ת לקבל עדכונים במייל מהמועצה. אפשר להסיר את עצמכם בכל רגע, ופרטים נוספים ב<a href="/privacy/">מדיניות הפרטיות</a></span></label>
+<button type="submit" id="nl-btn">הצטרפו לעדכונים</button>
+<div class="msg" id="nl-msg" role="status" aria-live="polite"></div>
+</form>
+</div></section>
 <section style="max-width:1160px;margin:0 auto;padding:56px 24px 40px">
 <h2>מה שקורה בנגב לא נשאר בנגב</h2><p style="max-width:760px;margin-bottom:24px">מדינה שמוכנה להשאיר 150 אלף אזרחים בלי בית מוכר, בלי תשתיות ועם דחפור מעל הראש, אומרת משהו על כל השאר. מי שאכפת לו מהדמוקרטיה הישראלית, מוצא את המבחן שלה כאן</p>
 <div class="grid3"><div style="background:#fff;border:1px solid #F3E2B8;border-top:6px solid #B8451F;border-radius:12px;padding:20px"><div style="font-size:40px;font-weight:800;color:#B8451F;line-height:1.1">כ־3,000</div><div style="margin-top:8px;font-size:17px;line-height:1.4;font-weight:500">משפחות שבתיהן נהרסו מאז 2023</div><div style="margin-top:8px;font-size:13px;color:#6B4A3A">הערכת המועצה</div></div><div style="background:#fff;border:1px solid #F3E2B8;border-top:6px solid #B8451F;border-radius:12px;padding:20px"><div style="font-size:40px;font-weight:800;color:#B8451F;line-height:1.1">900 שנה</div><div style="margin-top:8px;font-size:17px;line-height:1.4;font-weight:500">הזמן שיידרש להסדיר את הכפרים בקצב של היום</div><div style="margin-top:8px;font-size:13px;color:#6B4A3A">חישוב המועצה</div></div><div style="background:#fff;border:1px solid #F3E2B8;border-top:6px solid #B8451F;border-radius:12px;padding:20px"><div style="font-size:40px;font-weight:800;color:#B8451F;line-height:1.1">פי 56</div><div style="margin-top:8px;font-size:17px;line-height:1.4;font-weight:500">פער בקרקע לנפש בין כפריים יהודים לבדואים בצפון הנגב</div><div style="margin-top:8px;font-size:13px;color:#6B4A3A">28 דונם מול חצי דונם</div></div></div>
@@ -108,7 +139,7 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 
 <footer style="background: #FFF4D6">
 <div style="max-width: 1160px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; font-size: 14px; color: #4F3226">
-<div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap"><a href="/" aria-label="לעמוד הבית" style="display: inline-flex; flex: none"><img src="/assets/img/logo-home.png" alt="" style="width: 30px; height: 30px; object-fit: contain; display: block"></a><span>© 2026 המועצה למען הכפרים הבדואיים הלא מוכרים · negevvillages.org · <a href="/donate/" style="color: #3B1D12; font-weight: 700">מדיניות פרטיות</a></span></div>
+<div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap"><a href="/" aria-label="לעמוד הבית" style="display: inline-flex; flex: none"><img src="/assets/img/logo-home.png" alt="" style="width: 30px; height: 30px; object-fit: contain; display: block"></a><span>© 2026 המועצה למען הכפרים הבדואיים הלא מוכרים · negevvillages.org · <a href="/privacy/" style="color: #3B1D12; font-weight: 700">מדיניות פרטיות</a></span></div>
 <nav aria-label="רשתות חברתיות" style="display: flex; flex-wrap: wrap; gap: 4px">
 <a href="https://www.facebook.com/rcuvn" style="padding: 12px 10px; color: #3B1D12; text-decoration: none; font-weight: 700">פייסבוק</a>
 <a href="https://www.instagram.com/negevrcuv" style="padding: 12px 10px; color: #3B1D12; text-decoration: none; font-weight: 700">אינסטגרם</a>
@@ -123,6 +154,29 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 (function(){var b=document.getElementById('navtoggle'),n=document.getElementById('navlinks');if(!b||!n)return;
 b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});
 n.addEventListener('click',function(e){if(e.target.closest('a')){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});})();
+</script>
+<script>
+(function(){
+var fmt=new Intl.NumberFormat('en-US');
+function paint(c){document.querySelectorAll('.meter[data-key]').forEach(function(m){
+var k=m.getAttribute('data-key'),n=Number(c[k])||0,g=Number(c[k+'Goal'])||Number(m.getAttribute('data-goal'));
+var t=n>0?m.getAttribute('data-tpl'):m.getAttribute('data-tpl0');
+m.querySelector('.meter-text').textContent=t.replace('{n}',fmt.format(n)).replace('{g}',fmt.format(g));
+var b=m.querySelector('[role=progressbar]');b.setAttribute('aria-valuenow',n);b.setAttribute('aria-valuemax',g);
+m.querySelector('.meter-fill').style.width=Math.max(0,Math.min(100,n/g*100))+'%';});}
+try{fetch('/assets/counts.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null}).then(function(c){if(c)paint(c)}).catch(function(){});}catch(e){}
+
+var f=document.getElementById('nl-form');if(!f)return;
+var msg=document.getElementById('nl-msg'),btn=document.getElementById('nl-btn'),em=document.getElementById('nl-email'),ck=document.getElementById('nl-consent');
+f.addEventListener('submit',function(e){
+e.preventDefault();msg.className='msg';msg.textContent='';
+if(!f.reportValidity()){return;}
+btn.disabled=true;var old=btn.textContent;btn.textContent="שולחים...";
+fetch(f.action,{method:'POST',mode:'no-cors',body:new FormData(f)}).then(function(){
+msg.className='msg ok';msg.textContent="תודה! אם לא הגיע אליכם מייל אישור בדקות הקרובות, כדאי להציץ בספאם";f.reset();
+}).catch(function(){msg.className='msg err';msg.textContent="משהו השתבש. אפשר לנסות שוב, או לכתוב לנו";}).then(function(){btn.disabled=false;btn.textContent=old;});
+});
+})();
 </script>
 </body>
 </html>
