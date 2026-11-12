@@ -79,9 +79,18 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 .xp-hero>*{position:relative}
 .xp-hero p a{color:#F5B321;font-weight:700;text-decoration:underline}
 .xp-hero .h1{font-size:40px!important}
-.xp-aside{grid-area:aside;position:sticky;top:16px;align-self:start;max-height:calc(100vh - 32px);overflow-y:auto;display:flex;flex-direction:column;gap:16px;scrollbar-width:thin}
-.xp-aside .card{box-shadow:0 8px 30px rgba(59,29,18,.22);flex:none}
-.xp-aside .nlwrap{margin:0;max-width:none;flex:none;border:1px solid #EBD3A0;box-shadow:0 4px 18px rgba(59,29,18,.12)}
+.xp-aside{grid-area:aside;position:sticky;top:16px;align-self:start;height:calc(100vh - 32px);min-height:560px;display:flex;flex-direction:column;gap:12px}
+.xp-aside .card{box-shadow:0 8px 30px rgba(59,29,18,.22);flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
+.xp-aside .card .nifwrap{flex:1 1 auto;min-height:0;overflow-y:auto;scrollbar-width:thin}
+.xp-aside .card>*:not(.nifwrap){flex:none}
+.xp-aside .nlwrap{margin:0;max-width:none;flex:none;padding:16px 20px;border:1px solid #EBD3A0;box-shadow:0 4px 18px rgba(59,29,18,.12)}
+.xp-aside .nlhead{font-size:17px;margin-bottom:8px}
+.xp-aside .nlwrap .meter-text{font-size:14px;margin-bottom:5px}
+.xp-aside .nlwrap .nl{margin-top:8px}
+.xp-aside .nlwrap .nl label[for]{margin-bottom:4px!important;font-size:14px}
+.xp-aside .nlwrap .nl input[type=email]{padding:9px 12px;font-size:16px}
+.xp-aside .nlwrap .nl .consent{margin-top:8px;font-size:12.5px}
+.xp-aside .nlwrap .nl button{margin-top:8px;padding:10px 18px;font-size:16px}
 .xp-rest{grid-area:rest;display:flex;flex-direction:column;gap:28px;min-width:0}
 .xp-rest>section{max-width:none!important;margin:0!important;padding:0!important}
 .xp-rest>section.why{border-radius:16px}
@@ -94,7 +103,8 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 .xp-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"hero" "aside" "more" "rest";padding:14px;gap:16px}
 .xp-hero{padding:24px 20px 22px}.xp-hero .h1{font-size:30px!important}
 .xp-hero p{font-size:17px!important}
-.xp-aside{position:static;max-height:none;overflow:visible}
+.xp-aside{position:static;height:auto;min-height:0}
+.xp-aside .card{display:block}.xp-aside .card .nifwrap{overflow:visible}
 .xp-more{display:block}
 .xp-more button{width:100%;padding:13px 18px;font:inherit;font-size:17px;font-weight:800;color:#3B1D12;background:#fff;border:2px solid #3B1D12;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
 .xp-more button svg{transition:transform .2s}
@@ -102,6 +112,13 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 .xp-rest{display:none}.xp-grid.open .xp-rest{display:flex}
 .xp-rest>section.why{border-radius:12px}
 }
+
+.xp-rest img,.xp-hero img{cursor:zoom-in}
+#lb{border:0;padding:0;background:transparent;max-width:96vw;max-height:94vh;overflow:visible}
+#lb::backdrop{background:rgba(20,8,4,.88)}
+#lb img{display:block;max-width:96vw;max-height:84vh;width:auto;height:auto;border-radius:10px;margin:0 auto}
+#lb .cap{color:#fff;text-align:center;font-size:15px;line-height:1.4;padding:10px 12px 0;max-width:900px;margin:0 auto}
+#lb .x{position:absolute;top:-14px;inset-inline-end:-6px;width:42px;height:42px;border-radius:50%;border:0;background:#FFF4D6;color:#3B1D12;font-size:26px;line-height:42px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.4)}
 </style>
 <link rel="stylesheet" href="https://static.everyaction.com/ea-actiontag/at.min.css">
 <link rel="stylesheet" href="https://static.everyaction.com/ea-actiontag/extra.min.css">
@@ -175,6 +192,7 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 <a href="#give" style="display:inline-block;padding:16px 40px;background:#B8451F;color:#fff;font-size:20px;font-weight:800;border-radius:999px;text-decoration:none" data-t="join_button">לתרומה</a></div></section>
 </div>
 </div></main>
+<dialog id="lb" aria-label="תמונה מוגדלת"><button type="button" class="x" aria-label="סגירה">×</button><img src="" alt=""><div class="cap"></div></dialog>
 
 <footer style="background: #FFF4D6">
 <div class="ftrow" style="max-width: 1160px; margin: 0 auto; padding: 18px 24px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; font-size: 14px"><a href="/accessibility/" style="color: #3B1D12; font-weight: 700; padding: 10px 0">הצהרת נגישות</a></div>
@@ -231,6 +249,11 @@ msg.className='msg ok';msg.textContent=M.ok;f.reset();
 var o=b.querySelector('[data-t=xp_open]'),c=b.querySelector('[data-t=xp_close]');
 function set(x){g.classList.toggle('open',x);b.setAttribute('aria-expanded',x?'true':'false');o.hidden=x;c.hidden=!x;}
 b.addEventListener('click',function(){set(!g.classList.contains('open'))});set(false);
+})();
+(function(){var d=document.getElementById('lb');if(!d||!d.showModal)return;var im=d.querySelector('img'),cp=d.querySelector('.cap');
+document.querySelector('main').addEventListener('click',function(e){var i=e.target.closest('img');if(!i||i.closest('a')||i.closest('#lb')||i.closest('.nifwrap'))return;
+var f=i.closest('figure'),c=f&&f.querySelector('figcaption');im.src=i.currentSrc||i.src;im.alt=i.alt;cp.textContent=c?c.textContent:'';d.showModal();});
+d.addEventListener('click',function(e){if(e.target===d||e.target.closest('.x'))d.close();});
 })();
 </script>
 </body>
