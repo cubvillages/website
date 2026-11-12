@@ -6,9 +6,9 @@
     "ar": "التعامل مع المواطنين البدو هو محكّ الديمقراطية الإسرائيلية"
   },
   "hero_lead": {
-    "he": "עזרו לנו לקדם את <a href=\"/plan/\">תוכנית ההכרה בכפרים הלא מוכרים</a>, להביא שוויון ל-150 אלף אזרחים ולקדם את שגשוג הנגב לטובת כל תושביו",
-    "en": "Help us advance the <a href=\"/en/plan/\">plan to recognize the unrecognized villages</a>, bring equality to 150,000 citizens and advance the prosperity of the Negev for the benefit of all its residents",
-    "ar": "ساعدونا في دفع <a href=\"/ar/plan/\">خطة الاعتراف بالقرى غير المعترف بها</a>، وتحقيق المساواة لـ150 ألف مواطن، ودفع ازدهار النقب لصالح جميع سكانه"
+    "he": "עזרו לנו להביא שוויון ל-150 אלף תושבי הכפרים הלא מוכרים, לטובת תושבי הנגב וישראל כולה, יהודים וערבים",
+    "en": "Help us bring equality to the 150,000 residents of the unrecognized villages, for the benefit of the residents of the Negev and of Israel as a whole, Jews and Arabs",
+    "ar": "ساعدونا في تحقيق المساواة لـ150 ألف من سكان القرى غير المعترف بها، لصالح سكان النقب وإسرائيل كلها، يهودًا وعربًا"
   },
   "donors_meter_text": {
     "he": "{n} מתוך {g} תומכים חודשיים",
@@ -129,21 +129,6 @@
     "he": "סגן יו\"ר המועצה מעיגל אלהואשלה (משמאל) בשיחה עם קאדי עלי אבו עתייג אסרעיאה, בכפר באט אסרעיאה",
     "en": "Deputy Head of the Council Me'igal Al-Hawashleh (left) in conversation with Qadi Ali Abu Atayeg Al-Sraiya, in the village of Bat Al-Sraiya",
     "ar": "نائب رئيس المجلس معيجل الهواشلة (على اليسار) في حديث مع القاضي علي أبو عتيّج السراعية، في قرية بات السراعية"
-  },
-  "solution_title": {
-    "he": "יש פתרון, והוא על השולחן",
-    "en": "There is a solution, and it is on the table",
-    "ar": "هناك حل، وهو على الطاولة"
-  },
-  "solution_text": {
-    "he": "תוכנית המועצות האזוריות: במקום עוד הריסות, כפרים מוכרים עם מועצות משלהם, ומשק עזר של 5 דונם לכל משפחה. אנחנו כבר עובדים מול כמה מהמפלגות שעשויות להרכיב את הממשלה הבאה, ושכנענו חלק מהן לאמץ אותה. זה רגע מכריע, והוא חלקי ובתחילת הדרך. ליווי של הליך היישום, שייקח שנים, הוא מה שיכריע אם התוכנית תקרה",
-    "en": "The Regional Councils Plan: instead of more demolitions, recognized villages with their own councils, and a five-dunam family farm for every family. We are already working with several of the parties that may form the next government, and have persuaded some of them to adopt it. This is a decisive moment, but it is partial and at an early stage. Close accompaniment of the implementation, which will take years, is what will decide whether the plan actually happens",
-    "ar": "خطة المجالس الإقليمية: بدل المزيد من الهدم، قرى معترف بها لها مجالسها، ومزرعة مساعدة بمساحة 5 دونمات لكل عائلة. نعمل منذ الآن مع عدد من الأحزاب التي قد تشكّل الحكومة المقبلة، وأقنعنا بعضها بتبنّيها. هذه لحظة حاسمة، لكنها جزئية وفي بدايتها. مرافقة عملية التنفيذ، التي ستستغرق سنوات، هي التي ستحسم ما إذا كانت الخطة ستتحقق"
-  },
-  "solution_button": {
-    "he": "לקריאת התוכנית",
-    "en": "Read the plan",
-    "ar": "اقرؤوا الخطة"
   },
   "trust_title": {
     "he": "למה לתרום דרכנו",
@@ -319,5 +304,20 @@
     "he": "התמונה הבאה",
     "en": "Next image",
     "ar": "الصورة التالية"
+  },
+  "flag_text": {
+    "he": "פרויקט הדגל שאנו מקדמים בימים אלה הוא <a href=\"/plan/\">\"תוכנית המועצות האזוריות\"</a> - תוכנית כלכלית להכרה ולפיתוח כל הכפרים, שיישום מלא שלה צפוי להגדיל את התוצר בנגב בקרוב ל-30 מיליארד שקל בשנה. מימוש התוכנית יצמצם את העוני בכפרים הלא מוכרים, יביא שגשוג גם לתושבי הנגב היהודים, וישפר את היחסים בין הקהילות. אחרי עשורים של כשלונות, הקרקע בשלה לשינוי כיוון.",
+    "en": "The flagship project we are advancing these days is the <a href=\"/en/plan/\">\"Regional Councils Plan\"</a>, an economic plan to recognize and develop all the villages, whose full implementation is expected to increase the Negev's output by nearly NIS 30 billion a year. Carrying out the plan will reduce poverty in the unrecognized villages, bring prosperity to the Negev's Jewish residents as well, and improve relations between the communities. After decades of failure, the ground is ripe for a change of direction.",
+    "ar": "مشروعنا الرئيسي الذي نعمل على دفعه في هذه الأيام هو <a href=\"/ar/plan/\">\"خطة المجالس الإقليمية\"</a>، وهي خطة اقتصادية للاعتراف بجميع القرى وتطويرها، ويُتوقع أن يؤدي تنفيذها الكامل إلى رفع الناتج في النقب بنحو 30 مليار شيكل سنويًا. وسيؤدي تنفيذ الخطة إلى تقليص الفقر في القرى غير المعترف بها، وإلى تحقيق الازدهار لسكان النقب اليهود أيضًا، وإلى تحسين العلاقات بين المجتمعين. وبعد عقود من الإخفاقات، باتت الأرضية مهيأة لتغيير الاتجاه."
+  },
+  "flag_alt": {
+    "he": "הדמיה של כפר חקלאי בנגב: בתים, חממות ופרדסים",
+    "en": "Visualization of a farming village in the Negev: houses, greenhouses and orchards",
+    "ar": "تصوّر لقرية زراعية في النقب: بيوت وبيوت زجاجية وبساتين"
+  },
+  "flag_caption": {
+    "he": "הדמיה: כפר חקלאי בנגב",
+    "en": "Visualization: a farming village in the Negev",
+    "ar": "تصوّر: قرية زراعية في النقب"
   }
 }
