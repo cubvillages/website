@@ -59,6 +59,12 @@ AR={
 "תודה! אם לא הגיע אליכם מייל אישור בדקות הקרובות, כדאי להציץ בספאם":"شكرًا! إذا لم تصلكم رسالة تأكيد خلال دقائق، يُرجى فحص مجلد الرسائل غير المرغوب فيها",
 "משהו השתבש. אפשר לנסות שוב, או לכתוב לנו":"حدث خطأ. يمكنكم المحاولة مرة أخرى أو مراسلتنا",
 }
+# Arabic texts of the donate page live in content/donate.json (key -> he/en/ar); they win over the dictionary above.
+try:
+    import json
+    for _k,_v in json.load(open(R+'content/donate.json',encoding='utf-8')).items():
+        if isinstance(_v,dict) and _v.get('he') and _v.get('ar') and '<' not in _v['he']: AR[_v['he'].strip()]=_v['ar'].strip()
+except Exception as _e: print('content/donate.json not read:',_e)
 DYN=[(re.compile(r'(\d[\d,]*) מתוך (\d[\d,]*) נרשמו לעדכונים'),r'\1 من أصل \2 اشتركوا في التحديثات'),
      (re.compile(r'(\d[\d,]*) מתוך (\d[\d,]*) תומכים חודשיים'),r'\1 من أصل \2 داعمين شهريين')]
 def tr(x,miss):

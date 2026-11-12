@@ -1,0 +1,273 @@
+{
+  "_readme": "עריכת טקסטים בעמוד התרומות: משנים את הערך בשפה הרצויה (he עברית, en אנגלית, ar ערבית) ושומרים. העמוד החי מתעדכן תוך כדקה. אפשר לכתוב בתוך הטקסט את {n} ו-{g} במדים (הם יוחלפו במספרים), ובטקסטים שיש בהם קישור (signup_consent) לא לגעת בתגיות <a>. לא לשנות את שמות המפתחות. אל תשנו את המבנה של הקובץ: כל מפתח הוא אובייקט עם he, en, ar.",
+  "hero_badge": {
+    "he": "הצטרפו לתומכים החודשיים",
+    "en": "Become a monthly supporter",
+    "ar": "انضموا إلى الداعمين الشهريين"
+  },
+  "hero_title": {
+    "he": "כך ישראל מתייחסת לאזרחים הבדואים שלה. זה המבחן שלה כדמוקרטיה",
+    "en": "How Israel treats its Bedouin citizens is the test of its democracy",
+    "ar": "طريقة تعامل إسرائيل مع مواطنيها البدو هي اختبارها كديمقراطية"
+  },
+  "hero_lead": {
+    "he": "בנגב חיים כ־150 אלף אזרחים ישראלים בכפרים בדואיים. כ־70% מהם בעוני, בלי חשמל ומים מסודרים, ובלי הכרה. אנחנו המועצה שהם בחרו לייצג אותם, והשנה אנחנו בונים בסיס של תומכים חודשיים",
+    "en": "About 150,000 Israeli citizens live in Bedouin villages in the Negev. Around 70% of them live in poverty, many without reliable electricity or water, and without recognition. We are the council they chose to represent them, and this year we are building a base of monthly supporters",
+    "ar": "يعيش في النقب نحو 150 ألف مواطن إسرائيلي في قرى بدوية. نحو 70% منهم تحت خط الفقر، بلا كهرباء ومياه منتظمة، وبلا اعتراف. نحن المجلس الذي اختاروه ليمثّلهم، وهذا العام نبني قاعدة من الداعمين الشهريين"
+  },
+  "donors_meter_text": {
+    "he": "{n} מתוך {g} תומכים חודשיים",
+    "en": "{n} of {g} monthly supporters",
+    "ar": "{n} من أصل {g} داعمين شهريين"
+  },
+  "donors_meter_empty": {
+    "he": "{g} התומכים החודשיים הראשונים. היו הראשונים להצטרף",
+    "en": "The first {g} monthly supporters. Be one of them",
+    "ar": "أول {g} داعم شهري. كونوا أول المنضمّين"
+  },
+  "signup_title": {
+    "he": "לא מוכנים לתרום עכשיו? הישארו מעודכנים",
+    "en": "Not ready to give yet? Stay in the loop",
+    "ar": "لستم جاهزين للتبرع الآن؟ ابقوا على اطلاع"
+  },
+  "subs_meter_text": {
+    "he": "{n} מתוך {g} נרשמו לעדכונים",
+    "en": "{n} of {g} people have signed up for updates",
+    "ar": "{n} من أصل {g} اشتركوا في التحديثات"
+  },
+  "signup_email_label": {
+    "he": "כתובת מייל",
+    "en": "Email address",
+    "ar": "البريد الإلكتروني"
+  },
+  "signup_email_placeholder": {
+    "he": "כתובת המייל שלכם",
+    "en": "Your email address",
+    "ar": "عنوان بريدكم الإلكتروني"
+  },
+  "signup_consent": {
+    "he": "אני מאשר/ת לקבל עדכונים במייל מהמועצה. אפשר להסיר את עצמכם בכל רגע, ופרטים נוספים ב<a href=\"/privacy/\">מדיניות הפרטיות</a>",
+    "en": "I agree to receive email updates from the Council. You can unsubscribe at any time. More in the <a href=\"/en/privacy/\">privacy policy</a>",
+    "ar": "أوافق على تلقّي تحديثات من المجلس عبر البريد الإلكتروني. يمكنكم إلغاء الاشتراك في أي لحظة، وتفاصيل أكثر في <a href=\"/ar/privacy/\">سياسة الخصوصية</a>"
+  },
+  "signup_button": {
+    "he": "הצטרפו לעדכונים",
+    "en": "Join our updates",
+    "ar": "اشتركوا في التحديثات"
+  },
+  "form_title": {
+    "he": "תמכו בעבודה שלנו",
+    "en": "Support our work",
+    "ar": "ادعموا عملنا"
+  },
+  "form_subtitle": {
+    "he": "תרומה חודשית קטנה מחזיקה אותנו לאורך זמן. הכי הרבה כוח יש להרשמה קבועה",
+    "en": "A small monthly gift keeps us going over time. A recurring gift is the most powerful one",
+    "ar": "تبرّع شهري صغير يُبقينا صامدين على المدى الطويل. أقوى دعم هو الاشتراك الدائم"
+  },
+  "form_secure_note": {
+    "he": "התרומות מעובדות בבטחה על ידי הקרן החדשה לישראל (NIF)",
+    "en": "Donations are securely processed by the New Israel Fund (NIF)",
+    "ar": "تُعالَج التبرعات بأمان عبر الصندوق الجديد لإسرائيل (NIF)"
+  },
+  "form_fallback_link": {
+    "he": "הטופס לא נטען? לתרומה בדף של הקרן החדשה לישראל",
+    "en": "Form not loading? Give on the New Israel Fund page",
+    "ar": "النموذج لا يظهر؟ تبرّعوا عبر صفحة الصندوق الجديد لإسرائيل"
+  },
+  "problem_title": {
+    "he": "מה שקורה בנגב לא נשאר בנגב",
+    "en": "What happens in the Negev doesn’t stay in the Negev",
+    "ar": "ما يحدث في النقب لا يبقى في النقب"
+  },
+  "problem_text": {
+    "he": "מדינה שמוכנה להשאיר 150 אלף אזרחים בלי בית מוכר, בלי תשתיות ועם דחפור מעל הראש, אומרת משהו על כל השאר. מי שאכפת לו מהדמוקרטיה הישראלית, מוצא את המבחן שלה כאן",
+    "en": "A state that leaves 150,000 of its own citizens without recognized homes or basic infrastructure, and with a bulldozer overhead, tells you something about everything else. If you care about Israeli democracy, this is where it is being tested",
+    "ar": "دولة ترضى أن تترك 150 ألف مواطن بلا بيت معترف به، وبلا بنى تحتية، وبجرّافة فوق رؤوسهم، تقول شيئًا عن كل ما عدا ذلك. ومن يهمّه مصير الديمقراطية الإسرائيلية يجد اختبارها هنا"
+  },
+  "stat1_number": {
+    "he": "כ־3,000",
+    "en": "~3,000",
+    "ar": "نحو 3,000"
+  },
+  "stat1_text": {
+    "he": "משפחות שבתיהן נהרסו מאז 2023",
+    "en": "families whose homes were demolished since 2023",
+    "ar": "عائلة هُدمت بيوتها منذ عام 2023"
+  },
+  "stat1_source": {
+    "he": "הערכת המועצה",
+    "en": "Council estimate",
+    "ar": "تقدير المجلس"
+  },
+  "stat2_number": {
+    "he": "900 שנה",
+    "en": "900 years",
+    "ar": "900 سنة"
+  },
+  "stat2_text": {
+    "he": "הזמן שיידרש להסדיר את הכפרים בקצב של היום",
+    "en": "the time it would take to regularize the villages at today’s pace",
+    "ar": "الوقت اللازم لتسوية أوضاع القرى بالوتيرة الحالية"
+  },
+  "stat2_source": {
+    "he": "חישוב המועצה",
+    "en": "Council calculation",
+    "ar": "حساب المجلس"
+  },
+  "stat3_number": {
+    "he": "פי 56",
+    "en": "56x",
+    "ar": "56 ضعفًا"
+  },
+  "stat3_text": {
+    "he": "פער בקרקע לנפש בין כפריים יהודים לבדואים בצפון הנגב",
+    "en": "gap in land per person between Jewish and Bedouin villagers in the northern Negev",
+    "ar": "فجوة في الأرض للفرد بين القرويين اليهود والبدو في شمال النقب"
+  },
+  "stat3_source": {
+    "he": "28 דונם מול חצי דונם",
+    "en": "28 dunams vs. half a dunam",
+    "ar": "28 دونمًا مقابل نصف دونم"
+  },
+  "photo1_alt": {
+    "he": "בית שנהרס בכפר בדואי בנגב",
+    "en": "A demolished home in a Bedouin village in the Negev",
+    "ar": "بيت هُدم في قرية بدوية في النقب"
+  },
+  "photo1_caption": {
+    "he": "הריסה בכפר בנגב",
+    "en": "A demolition in a Negev village",
+    "ar": "عملية هدم في قرية في النقب"
+  },
+  "need_title": {
+    "he": "למה אנחנו צריכים אתכם",
+    "en": "Why we need you",
+    "ar": "لماذا نحتاج إليكم"
+  },
+  "need_text": {
+    "he": "מול המדינה עומדים 150 אלף תושבים עם גוף אחד שמייצג אותם. אנחנו לא פועלים בתקציב ממשלתי, ואין לנו גייסות של דוברים. מה שיש לנו זה נתונים, עובדות, והרצון לשנות את הסיפור שהישראלים שומעים. התמיכה החודשית שלכם מאפשרת לנו לתכנן קדימה, ולא לרוץ מגיוס לגיוס",
+    "en": "Against the state stand 150,000 residents and one body that represents them. We don’t run on a government budget, and we have no army of spokespeople. What we have is data, facts, and the determination to change the story Israelis hear. Your monthly support lets us plan ahead instead of running from one fundraising push to the next",
+    "ar": "في مواجهة الدولة يقف 150 ألف مقيم وجسم واحد يمثّلهم. لا نعمل بميزانية حكومية، وليس لدينا جيوش من المتحدثين. ما لدينا هو المعطيات والحقائق والإصرار على تغيير الرواية التي يسمعها الإسرائيليون. دعمكم الشهري يتيح لنا التخطيط للمستقبل بدل الركض من حملة تبرعات إلى أخرى"
+  },
+  "use1_title": {
+    "he": "ייצוג משפטי בהריסות",
+    "en": "Legal defense against demolitions",
+    "ar": "تمثيل قانوني في قضايا الهدم"
+  },
+  "use1_text": {
+    "he": "להגן על בתים ולעצור הריסות בבתי המשפט",
+    "en": "Defending homes and stopping demolitions in court",
+    "ar": "الدفاع عن البيوت ووقف الهدم في المحاكم"
+  },
+  "use2_title": {
+    "he": "סיפור אחר בתקשורת",
+    "en": "A different story in the media",
+    "ar": "رواية مختلفة في الإعلام"
+  },
+  "use2_text": {
+    "he": "תכנים, גרפיקה ווידאו, ועבודה מול התקשורת הישראלית המרכזית",
+    "en": "Content, graphics and video, and work with mainstream Israeli media",
+    "ar": "محتوى وتصميم وفيديو، والعمل مع وسائل الإعلام الإسرائيلية المركزية"
+  },
+  "use3_title": {
+    "he": "תוכנית המועצות",
+    "en": "The Regional Councils Plan",
+    "ar": "خطة المجالس الإقليمية"
+  },
+  "use3_text": {
+    "he": "ליווי צמוד של קובעי המדיניות עד שהתוכנית תהפוך למעשה",
+    "en": "Close accompaniment of policymakers until the plan becomes reality",
+    "ar": "مرافقة وثيقة لصانعي القرار إلى أن تتحول الخطة إلى واقع"
+  },
+  "photo2_alt": {
+    "he": "שני גברים משוחחים בתוך מבנה פח בכפר בדואי בנגב",
+    "en": "Two men talking inside a tin-roofed structure in a Bedouin village in the Negev",
+    "ar": "رجلان يتحدثان داخل بناء من الصفيح في قرية بدوية في النقب"
+  },
+  "photo2_caption": {
+    "he": "שיחה בכפר בנגב",
+    "en": "A conversation in a Negev village",
+    "ar": "حوار في قرية في النقب"
+  },
+  "solution_title": {
+    "he": "יש פתרון, והוא על השולחן",
+    "en": "There is a solution, and it is on the table",
+    "ar": "هناك حل، وهو على الطاولة"
+  },
+  "solution_text": {
+    "he": "תוכנית המועצות האזוריות: במקום עוד הריסות, כפרים מוכרים עם מועצות משלהם, ומשק עזר של 5 דונם לכל משפחה. אנחנו כבר עובדים מול כמה מהמפלגות שעשויות להרכיב את הממשלה הבאה, ושכנענו חלק מהן לאמץ אותה. זה רגע מכריע, והוא חלקי ובתחילת הדרך. ליווי של הליך היישום, שייקח שנים, הוא מה שיכריע אם התוכנית תקרה",
+    "en": "The Regional Councils Plan: instead of more demolitions, recognized villages with their own councils, and a five-dunam family farm for every family. We are already working with several of the parties that may form the next government, and have persuaded some of them to adopt it. This is a decisive moment, but it is partial and at an early stage. Close accompaniment of the implementation, which will take years, is what will decide whether the plan actually happens",
+    "ar": "خطة المجالس الإقليمية: بدل المزيد من الهدم، قرى معترف بها لها مجالسها، ومزرعة مساعدة بمساحة 5 دونمات لكل عائلة. نعمل منذ الآن مع عدد من الأحزاب التي قد تشكّل الحكومة المقبلة، وأقنعنا بعضها بتبنّيها. هذه لحظة حاسمة، لكنها جزئية وفي بدايتها. مرافقة عملية التنفيذ، التي ستستغرق سنوات، هي التي ستحسم ما إذا كانت الخطة ستتحقق"
+  },
+  "solution_button": {
+    "he": "לקריאת התוכנית",
+    "en": "Read the plan",
+    "ar": "اقرؤوا الخطة"
+  },
+  "trust_title": {
+    "he": "למה לתרום דרכנו",
+    "en": "Why give through us",
+    "ar": "لماذا التبرع عبرنا"
+  },
+  "trust1_title": {
+    "he": "ארגון נבחר",
+    "en": "A council elected by the villages",
+    "ar": "منظمة منتخبة"
+  },
+  "trust1_text": {
+    "he": "המועצה מייצגת את ועדי הכפרים, ופועלת כחברה לתועלת הציבור (חל\"צ 513813584)",
+    "en": "We represent the village committees, and operate as a registered public-benefit company (Israeli registration no. 513813584)",
+    "ar": "يمثّل المجلس لجان القرى، ويعمل كشركة لمنفعة الجمهور (رقم التسجيل 513813584)"
+  },
+  "trust2_title": {
+    "he": "תרומה דרך הקרן החדשה לישראל",
+    "en": "Giving through the New Israel Fund",
+    "ar": "التبرع عبر الصندوق الجديد لإسرائيل"
+  },
+  "trust2_text": {
+    "he": "הטופס מנוהל על ידי NIF, אחת מהקרנות שתומכות בנו",
+    "en": "The form is run by NIF, one of the foundations that support us",
+    "ar": "النموذج تديره NIF، إحدى المؤسسات التي تدعمنا"
+  },
+  "trust3_title": {
+    "he": "שקיפות",
+    "en": "Transparency",
+    "ar": "شفافية"
+  },
+  "trust3_text": {
+    "he": "כל המספרים באתר מגובים במקורות, ומי שמוצא טעות מקבל תיקון",
+    "en": "Every number on our site is backed by sources, and if you find an error we correct it",
+    "ar": "كل الأرقام في الموقع مدعومة بمصادر، ومن يجد خطأً يحصل على تصحيح"
+  },
+  "join_title": {
+    "he": "הצטרפו עכשיו",
+    "en": "Join us now",
+    "ar": "انضموا الآن"
+  },
+  "join_text": {
+    "he": "תרומה חודשית היא הדרך הכי טובה לעמוד לצידם של תושבי הכפרים",
+    "en": "A monthly gift is the best way to stand with the residents of the villages",
+    "ar": "التبرع الشهري هو أفضل طريقة للوقوف إلى جانب سكان القرى"
+  },
+  "join_button": {
+    "he": "לתרומה",
+    "en": "Donate",
+    "ar": "تبرّع"
+  },
+  "signup_sending": {
+    "he": "שולחים...",
+    "en": "Sending...",
+    "ar": "جارٍ الإرسال..."
+  },
+  "signup_ok": {
+    "he": "תודה! אם לא הגיע אליכם מייל אישור בדקות הקרובות, כדאי להציץ בספאם",
+    "en": "Thank you! If a confirmation email does not arrive in a few minutes, check your spam folder",
+    "ar": "شكرًا! إذا لم تصلكم رسالة تأكيد خلال دقائق، يُرجى فحص مجلد الرسائل غير المرغوب فيها"
+  },
+  "signup_err": {
+    "he": "משהו השתבש. אפשר לנסות שוב, או לכתוב לנו",
+    "en": "Something went wrong. Please try again, or write to us",
+    "ar": "حدث خطأ. يمكنكم المحاولة مرة أخرى أو مراسلتنا"
+  }
+}
