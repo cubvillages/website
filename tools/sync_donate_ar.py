@@ -6,7 +6,7 @@ Also keeps the 'عر' language links in the he/en donate pages pointing to /ar/d
 import re,os,sys
 R=os.path.join(os.path.dirname(os.path.abspath(__file__)),'..')+'/'
 H=re.compile(r'[֐-׿]')
-AR={
+AR={'הצהרת נגישות':'بيان إمكانية الوصول',
 "תמכו בנו: המבחן של הדמוקרטיה הישראלית נמצא בנגב | המועצה למען הכפרים הבדואיים הלא מוכרים":"ادعمونا: اختبار الديمقراطية الإسرائيلية يجري في النقب | المجلس من أجل القرى البدوية غير المعترف بها",
 "הצטרפו לתומכים החודשיים של המועצה למען הכפרים הבדואיים הלא מוכרים. כך ישראל מתייחסת לאזרחים הבדואים שלה, זה המבחן שלה כדמוקרטיה":"انضموا إلى الداعمين الشهريين للمجلس من أجل القرى البدوية غير المعترف بها. طريقة تعامل إسرائيل مع مواطنيها البدو هي اختبارها كديمقراطية",
 "המועצה למען הכפרים":"المجلس من أجل القرى",
@@ -76,6 +76,9 @@ def tr(x,miss):
 def main():
     miss=[]
     src=open(R+'donate/index.html',encoding='utf-8').read()
+    sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
+    import donate_text
+    src=donate_text.bake(src,'ar')   # texts that live in content/donate.json come straight from there
     parts=re.split(r'(?s)(<style.*?</style>)',src)
     for i in range(0,len(parts),2):
         t=parts[i]
@@ -90,7 +93,7 @@ def main():
     s=s.replace("'Heebo', system-ui, sans-serif","'Noto Sans Arabic', 'Heebo', system-ui, sans-serif").replace("'Heebo', sans-serif","'Noto Kufi Arabic', sans-serif")
     s=re.sub(r'<link rel="stylesheet" href="https://fonts.googleapis.com/css2\?[^"]*">','<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;600;700;800&amp;family=Noto+Sans+Arabic:wght@400;500;600;700;800&amp;family=Heebo:wght@400;500;600;700;800&amp;display=swap">',s)
     # links
-    for a,b in (('href="/plan/"','href="/ar/plan/"'),('href="/projects/"','href="/ar/projects/"'),('href="/#','href="/ar/#'),('href="/privacy/"','href="/ar/privacy/"')):
+    for a,b in (('href="/plan/"','href="/ar/plan/"'),('href="/projects/"','href="/ar/projects/"'),('href="/#','href="/ar/#'),('href="/privacy/"','href="/ar/privacy/"'),('href="/accessibility/"','href="/ar/accessibility/"')):
         s=s.replace(a,b)
     s=re.sub(r'<a href="/" ',r'<a href="/ar/" ',s)           # logos
     s=s.replace('href="/ar/#','href="/ar/#')

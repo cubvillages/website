@@ -51,6 +51,15 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 .dvB .src{margin-top:14px;color:#6B4A3A}
 @media(max-width:760px){.dvB .grid{grid-template-columns:1fr}.dvB .card{aspect-ratio:4/3}}
 </style>
+<style>
+.hnl input[type=email]{width:100%;box-sizing:border-box;padding:12px 14px;font:inherit;font-size:16px;border:2px solid #E5CFA0;border-radius:10px;background:#fff;color:#3B1D12}
+.hnl input[type=email]:focus{outline:none;border-color:#B8451F}
+.hnl button{margin-top:10px;width:100%;padding:13px 20px;font:inherit;font-size:17px;font-weight:800;color:#fff;background:#B8451F;border:0;border-radius:999px;cursor:pointer}
+.hnl button:hover{background:#9A3718}.hnl button[disabled]{opacity:.6;cursor:wait}
+.hnl .consent{display:flex;gap:10px;align-items:flex-start;margin-top:10px;font-size:13px;line-height:1.5;color:#4F3226}
+.hnl .consent input{margin-top:3px;flex:none;width:18px;height:18px;accent-color:#B8451F}
+.hnl .msg{margin-top:10px;font-size:15px;font-weight:700;line-height:1.5}.hnl .msg.ok{color:#2F6B2A}.hnl .msg.err{color:#A63A17}
+</style>
 </head>
 <body>
 <div dir="rtl" style="font-family: 'Heebo', system-ui, sans-serif; color: #3B1D12; background: #FFFFFF; line-height: 1.55">
@@ -158,12 +167,23 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 <section id="demolitions" class="dv dvB" data-opt="B" style="background:#FFFFFF;border-bottom:1px solid #EAD9B0"><div class="wrap"><div class="k">נכון לאוקטובר 2026</div><h2>אומדן ההריסות בנגב מאז 2023</h2><div class="grid"><div class="card"><img src="/assets/img/demolition-dome.jpg" alt="שופל מפרק מבנה בכפר בנגב, ושוטרים עומדים במקום" loading="lazy" class=""><div class="cap"><div class="num">19,300</div><div class="lb">מבנים ומתקנים</div></div></div><div class="card"><img src="/assets/img/demolition-police.jpg" alt="כוחות שיטור וטרקטור בזמן הריסה בכפר" loading="lazy" class=""><div class="cap"><div class="num">2,900</div><div class="lb">מהם בתי מגורים</div></div></div><div class="card"><img src="/assets/img/demolition-family.jpg" alt="תושבים ממתינים על משאית עם מזרנים וחפצים" loading="lazy" class=""><div class="cap"><div class="num">13,640</div><div class="lb">איש איבדו את בתיהם</div></div></div></div><div class="src">נתוני 2023-2025: מינהלת אכיפה דרום. 2026: הערכת המועצה</div><p class="punch">השופלים עובדים יום אחד. ההרס נשאר לשנים</p></div></section>
 
 <section id="social" style="background: #FFF4D6">
-<div style="max-width: 1160px; margin: 0 auto; padding: 32px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 32px">
-<div>
-<h2 style="margin: 0 0 4px; font-size: 24px; font-weight: 800; line-height: 1.2">המועצה ברשתות החברתיות</h2>
-<p style="margin: 0; font-size: 16px; color: #6B4A3A">עדכונים, תמונות וסרטונים מהכפרים</p>
+<div style="max-width: 1160px; margin: 0 auto; padding: 36px 24px; display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 28px 48px">
+<div style="flex: 1 1 340px; max-width: 460px">
+<h2 style="margin: 0 0 4px; font-size: 24px; font-weight: 800; line-height: 1.2">הירשמו לעדכונים</h2>
+<p style="margin: 0 0 14px; font-size: 16px; color: #6B4A3A">עדכונים על הכפרים ועל מה שאנחנו עושים בעניין, ישר למייל</p>
+<form class="hnl" id="hnl-form" action="https://gmail.us13.list-manage.com/subscribe/post?u=fbc284987838687856154daa0&amp;id=37f69b5bae" method="post" target="_blank" novalidate>
+<label for="hnl-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">כתובת מייל</label>
+<input type="email" id="hnl-email" name="EMAIL" required autocomplete="email" placeholder="כתובת המייל שלכם">
+<div aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;opacity:0"><input type="text" name="b_fbc284987838687856154daa0_37f69b5bae" tabindex="-1" value=""></div>
+<label class="consent"><input type="checkbox" required><span>אני מאשר/ת לקבל עדכונים במייל מהמועצה. אפשר להסיר את עצמכם בכל רגע, ופרטים נוספים ב<a href="/privacy/">מדיניות הפרטיות</a></span></label>
+<button type="submit" id="hnl-btn">הצטרפו לעדכונים</button>
+<div class="msg" id="hnl-msg" role="status" aria-live="polite"></div>
+</form>
 </div>
+<div style="flex: 1 1 340px">
+<h2 style="margin: 0 0 14px; font-size: 24px; font-weight: 800; line-height: 1.2">עקבו אחרינו</h2>
 <div style="display: flex; flex-wrap: wrap; gap: 12px"><a href="https://www.facebook.com/rcuvn" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: #1877F2"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21z"/></svg></span>פייסבוק</a><a href="https://www.instagram.com/negevrcuv" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(45deg,#F58529,#DD2A7B 55%,#8134AF)"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r="1" fill="#fff" stroke="none"/></svg></span>אינסטגרם</a><a href="https://www.twitter.com/rcuvnegev" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: #000"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#fff" d="M17.8 3.5h3l-6.6 7.5 7.8 9.5h-6.1l-4.8-6-5.4 6h-3l7-8L2 3.5h6.2l4.3 5.5zm-1 15.2h1.7L7.3 5.2H5.5z"/></svg></span>X</a><a href="https://www.tiktok.com/@negev.villages" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: #000"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M16.6 3c.4 2.1 1.7 3.5 3.9 3.7v3a7 7 0 0 1-3.8-1.2v6.4A5.9 5.9 0 1 1 10.8 9v3.1a2.9 2.9 0 1 0 2.8 2.9V3z"/></svg></span>טיקטוק</a><a href="https://chat.whatsapp.com/BRg2BQ8WIedFiJMSqSYUYo" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: #25D366"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm0 16.3a7.3 7.3 0 0 1-3.7-1l-.3-.2-2.7.7.7-2.6-.2-.3A7.3 7.3 0 1 1 12 19.3zm4-5.5c-.2-.1-1.3-.7-1.5-.7-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6 6 0 0 1-3-2.6c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.4a.8.8 0 0 0-.6.3 2.5 2.5 0 0 0-.8 1.9c0 1.1.8 2.2.9 2.3.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.3-.6 1.5-1.1.2-.5.2-1 .1-1.1l-.6-.4z"/></svg></span>הצטרפו לעדכוני המועצה לכפרים (עברית)</a></div>
+</div>
 </div>
 </section>
 
@@ -290,7 +310,7 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 <div style="flex: 1 1 140px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
 <div style="width: 96px; height: 96px; border-radius: 50%; background: #FFF4D6; border: 3px solid #F5B321; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B4A3A"><img src="assets/img/t-shehadeh.jpg" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover"></div>
 <div>
-<div style="font-size: 16px; font-weight: 700">שחדה אבו אסא</div>
+<div style="font-size: 16px; font-weight: 700">שחדה אבו עסא</div>
 <div style="font-size: 14px; color: #E6F2E3">מנהל משרד</div>
 </div>
 </div>
@@ -327,6 +347,12 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 <figcaption style="font-size: 17px; font-weight: 800; line-height: 1.3">Social Venture Fund (SVF)</figcaption>
 </figure>
 <figure style="flex: 1 1 240px; margin: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="height: 170px; box-sizing: border-box; padding: 18px; background: #FFFFFF; border: 1px solid #F3E2B8; border-top: 6px solid #1B5E8C; border-radius: 12px; display: flex; align-items: center; justify-content: center">
+<img src="assets/img/donor-mazon.png" alt="לוגו MAZON" style="max-width: 100%; max-height: 100%; object-fit: contain">
+</div>
+<figcaption style="font-size: 17px; font-weight: 800; line-height: 1.3">MAZON</figcaption>
+</figure>
+<figure style="flex: 1 1 240px; margin: 0; display: flex; flex-direction: column; gap: 10px">
 <div style="height: 170px; box-sizing: border-box; padding: 18px; background: #FFFFFF; border: 1px solid #F3E2B8; border-top: 6px solid #2F6B2A; border-radius: 12px; display: flex; align-items: center; justify-content: center">
 <img src="assets/img/donor-gimprich.jpg" alt="לוגו קרן משפחת גימפריץ'" style="max-width: 100%; max-height: 100%; object-fit: contain">
 </div>
@@ -356,6 +382,7 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 </main>
 
 <footer style="background: #FFF4D6">
+<div class="ftrow" style="max-width: 1160px; margin: 0 auto; padding: 18px 24px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; font-size: 14px"><a href="/donate/" style="background: #B8451F; color: #FFFFFF; font-weight: 800; text-decoration: none; padding: 11px 24px; border-radius: 999px; font-size: 15px">תרמו למועצה</a><a href="/accessibility/" style="color: #3B1D12; font-weight: 700; padding: 10px 0">הצהרת נגישות</a></div>
 <div style="max-width: 1160px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; font-size: 14px; color: #4F3226">
 <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap"><a href="/" aria-label="לעמוד הבית" style="display: inline-flex; flex: none"><img src="/assets/img/logo-home.png" alt="" style="width: 30px; height: 30px; object-fit: contain; display: block"></a><span>© 2026 המועצה למען הכפרים הבדואיים הלא מוכרים · negevvillages.org · <a href="/privacy/" style="color: #3B1D12; font-weight: 700">מדיניות פרטיות</a></span></div>
 <nav aria-label="רשתות חברתיות" style="display: flex; flex-wrap: wrap; gap: 4px">
@@ -377,6 +404,16 @@ n.addEventListener('click',function(e){if(e.target.closest('a')){n.classList.rem
 (function(){var d=document.getElementById('zoombox');if(!d)return;var im=d.querySelector('img');
 document.querySelectorAll('img[data-big]').forEach(function(i){i.addEventListener('click',function(){im.src=i.getAttribute('data-big');im.alt=i.alt;if(d.showModal)d.showModal();else window.open(im.src,'_blank')})});
 d.querySelector('.zx').addEventListener('click',function(){d.close()});d.addEventListener('click',function(e){if(e.target===d)d.close()});})();
+</script>
+<script>
+(function(){var f=document.getElementById('hnl-form');if(!f)return;
+var msg=document.getElementById('hnl-msg'),btn=document.getElementById('hnl-btn');
+f.addEventListener('submit',function(e){e.preventDefault();msg.className='msg';msg.textContent='';
+if(!f.reportValidity())return;
+btn.disabled=true;var old=btn.textContent;btn.textContent="שולחים...";
+fetch(f.action,{method:'POST',mode:'no-cors',body:new FormData(f)}).then(function(){msg.className='msg ok';msg.textContent="תודה! אם לא הגיע אליכם מייל אישור בדקות הקרובות, כדאי להציץ בספאם";f.reset();
+}).catch(function(){msg.className='msg err';msg.textContent="משהו השתבש. אפשר לנסות שוב, או לכתוב לנו";}).then(function(){btn.disabled=false;btn.textContent=old;});});
+})();
 </script>
 </body>
 </html>
