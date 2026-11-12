@@ -95,45 +95,30 @@
     "en": "Demolition of 40 homes in the Abu Wadi neighborhood north of Rahat, October 2026",
     "ar": "هدم 40 منزلًا في حي أبو وادي شمال رهط، تشرين الأول/أكتوبر 2026"
   },
-  "need_title": {
-    "he": "למה אנחנו צריכים אתכם",
-    "en": "Why we need you",
-    "ar": "لماذا نحتاج إليكم"
-  },
-  "need_text": {
-    "he": "מול המדינה עומדים 150 אלף תושבים עם גוף אחד שמייצג אותם. אנחנו לא פועלים בתקציב ממשלתי, ואין לנו גייסות של דוברים. מה שיש לנו זה נתונים, עובדות, והרצון לשנות את הסיפור שהישראלים שומעים. התמיכה החודשית שלכם מאפשרת לנו לתכנן קדימה, ולא לרוץ מגיוס לגיוס",
-    "en": "Against the state stand 150,000 residents and one body that represents them. We don’t run on a government budget, and we have no army of spokespeople. What we have is data, facts, and the determination to change the story Israelis hear. Your monthly support lets us plan ahead instead of running from one fundraising push to the next",
-    "ar": "في مواجهة الدولة يقف 150 ألف مقيم وجسم واحد يمثّلهم. لا نعمل بميزانية حكومية، وليس لدينا جيوش من المتحدثين. ما لدينا هو المعطيات والحقائق والإصرار على تغيير الرواية التي يسمعها الإسرائيليون. دعمكم الشهري يتيح لنا التخطيط للمستقبل بدل الركض من حملة تبرعات إلى أخرى"
-  },
-  "act_title": {
-    "he": "מה אנחנו עושים עם התרומות?",
-    "en": "What do we do with the donations?",
-    "ar": "ماذا نفعل بالتبرعات؟"
-  },
   "act1_text": {
-    "he": "תיעוד הריסות בתים ופגיעה בזכויות החברה הבדואית",
-    "en": "Documenting home demolitions and violations of the Bedouin community's rights",
-    "ar": "توثيق هدم البيوت والمساس بحقوق المجتمع البدوي"
+    "he": "ליווי וסיוע לכפרים הנתונים בסכנת מחיקה",
+    "en": "Accompanying and assisting villages facing erasure",
+    "ar": "مرافقة ومساعدة القرى المهدَّدة بالمحو"
   },
   "act2_text": {
-    "he": "אדבוקציה בקרב מקבלי ההחלטות לקידום הפתרון שלנו ולעצירת ההריסות",
-    "en": "Advocacy with decision-makers to advance our solution and stop the demolitions",
-    "ar": "العمل المناصِر لدى صناع القرار لدفع حلّنا ووقف عمليات الهدم"
+    "he": "נוכחות קבועה באתרי הריסות בתים וכפרים, תיעוד ההריסות והגשת סיוע לתושבים",
+    "en": "A regular presence at home and village demolition sites, documenting the demolitions and assisting residents",
+    "ar": "حضور دائم في مواقع هدم البيوت والقرى، وتوثيق عمليات الهدم وتقديم العون للسكان"
   },
   "act3_text": {
-    "he": "סיוע משפטי במיצוי זכויות של תושבי הכפרים",
-    "en": "Legal aid so village residents can exercise their rights",
-    "ar": "مساعدة قانونية لتمكين سكان القرى من استيفاء حقوقهم"
+    "he": "התמודדות יומיומית עם שקרים והסתה קשה נגד החברה הבדואית",
+    "en": "Daily response to lies and vicious incitement against the Bedouin community",
+    "ar": "التصدي اليومي للأكاذيب والتحريض الشديد ضد المجتمع البدوي"
   },
   "act4_text": {
-    "he": "קידום והכשרת מנהיגות מקומית",
-    "en": "Developing and training local leadership",
-    "ar": "تعزيز القيادات المحلية وتأهيلها"
-  },
-  "act5_text": {
     "he": "חשיפת סיפור הכפרים ותושביו בתקשורת ההמונים ולכ-30 אלף עוקבים ברשתות החברתיות",
     "en": "Telling the story of the villages and their residents in the mass media and to some 30,000 followers on social media",
     "ar": "إبراز قصة القرى وسكانها في وسائل الإعلام الجماهيرية ولنحو 30 ألف متابع على الشبكات الاجتماعية"
+  },
+  "act5_text": {
+    "he": "ארגון הפגנות ואירועים ציבוריים",
+    "en": "Organizing demonstrations and public events",
+    "ar": "تنظيم المظاهرات والفعاليات العامة"
   },
   "photo2_alt": {
     "he": "שני גברים משוחחים בתוך מבנה פח בכפר בדואי בנגב",
@@ -209,5 +194,85 @@
     "he": "לתרומה",
     "en": "Donate",
     "ar": "تبرّع"
+  },
+  "why_title": {
+    "he": "מדוע חשוב לתמוך במועצה",
+    "en": "Why supporting the Council matters",
+    "ar": "لماذا من المهم دعم المجلس"
+  },
+  "why_text": {
+    "he": "מצב הכפרים הלא מוכרים הוא תזכורת כואבת לפגמי הדמוקרטיה הישראלית. כשהכפרים יוכרו ותושביהם ייהנו משוויון אזרחי מלא, נדע שמצבה של ישראל כולה משופר.",
+    "en": "The situation of the unrecognized villages is a painful reminder of the flaws in Israeli democracy. When the villages are recognized and their residents enjoy full civil equality, we will know that Israel as a whole is in better shape.",
+    "ar": "وضع القرى غير المعترف بها تذكير مؤلم بعيوب الديمقراطية الإسرائيلية. عندما يُعترف بالقرى ويتمتع سكانها بمساواة مدنية كاملة، سنعرف أن حال إسرائيل كلها قد تحسّن."
+  },
+  "acts_intro": {
+    "he": "אנו ארגון קטן והמשימות שלנו רבות ומורכבות:",
+    "en": "We are a small organization, and our tasks are many and complex:",
+    "ar": "نحن منظمة صغيرة ومهامنا كثيرة ومعقّدة:"
+  },
+  "act6_text": {
+    "he": "אדבוקציה שוטפת בכנסת, בממשלה, בוועדות תכנון ומול גופים נוספים",
+    "en": "Ongoing advocacy in the Knesset, the government, planning committees and other bodies",
+    "ar": "عمل مناصِر متواصل في الكنيست والحكومة ولجان التخطيط وأمام جهات أخرى"
+  },
+  "act7_text": {
+    "he": "מענה לפניות דחופות של תושבי הכפרים",
+    "en": "Responding to urgent requests from village residents",
+    "ar": "الاستجابة للمناشدات العاجلة من سكان القرى"
+  },
+  "act8_text": {
+    "he": "סיוע בגיוסי כספים דחופים למאבקי כפרים ולתושבים במצוקה",
+    "en": "Helping raise urgent funds for village struggles and residents in distress",
+    "ar": "المساعدة في جمع تبرعات عاجلة لنضالات القرى والسكان في ضائقة"
+  },
+  "act9_text": {
+    "he": "סיוע משפטי למיצוי זכויות של תושבי הכפרים",
+    "en": "Legal aid so village residents can exercise their rights",
+    "ar": "مساعدة قانونية لتمكين سكان القرى من استيفاء حقوقهم"
+  },
+  "act10_text": {
+    "he": "קידום והכשרת מנהיגות מקומית",
+    "en": "Developing and training local leadership",
+    "ar": "تعزيز القيادات المحلية وتأهيلها"
+  },
+  "why_punch": {
+    "he": "מאז קמה המועצה לכפרים הלא מוכרים ב-1997 היא לא קיבלה אפילו שקל מהמדינה, וכל פעילותה מתקיימת מתרומות.",
+    "en": "Since the Council for the Unrecognized Villages was founded in 1997, it has not received a single shekel from the state. All of its activity is funded by donations.",
+    "ar": "منذ تأسيس المجلس للقرى غير المعترف بها عام 1997 لم يتلقَّ شيقلًا واحدًا من الدولة، وكل نشاطه يقوم على التبرعات."
+  },
+  "ph_protest": {
+    "he": "הפגנה בבאר שבע בעקבות הרס מאות בתים בכפר א-סר",
+    "en": "Demonstration in Beersheba after the demolition of hundreds of homes in the village of Al-Sir",
+    "ar": "مظاهرة في بئر السبع إثر هدم مئات المنازل في قرية السر"
+  },
+  "ph_telarad": {
+    "he": "יוני 2026, אחרי תחילת הריסות של 40 בתים בכפר תל ערד",
+    "en": "June 2026, after the start of the demolition of 40 homes in the village of Tel Arad",
+    "ar": "حزيران/يونيو 2026، بعد بدء هدم 40 منزلًا في قرية تل عراد"
+  },
+  "ph_conf": {
+    "he": "כנס ראשי ועדים לדיון בתוכנית המועצות האזוריות, אוקטובר 2025",
+    "en": "Conference of village committee heads to discuss the regional councils plan, October 2025",
+    "ar": "مؤتمر لرؤساء اللجان لمناقشة خطة المجالس الإقليمية، تشرين الأول/أكتوبر 2025"
+  },
+  "ph_rj": {
+    "he": "הכפר ראס ג'ראבה שליד דימונה, הנמצא בסכנת הריסה מיידית",
+    "en": "The village of Ras Jrabah near Dimona, under immediate threat of demolition",
+    "ar": "قرية رأس جرابة قرب ديمونا، المهدَّدة بالهدم الفوري"
+  },
+  "ph_rje": {
+    "he": "כינוס חירום בראס ג'ראבה",
+    "en": "Emergency gathering in Ras Jrabah",
+    "ar": "اجتماع طارئ في رأس جرابة"
+  },
+  "ph_aro": {
+    "he": "מפגש תכנון עם ועד הכפר ארואיס, עם שותפינו מארגון המתכננים \"במקום\"",
+    "en": "A planning meeting with the Arouis village committee, with our partners from the planners' organization Bimkom",
+    "ar": "لقاء تخطيط مع لجنة قرية العرويس، مع شركائنا من منظمة المخططين \"بمكوم\""
+  },
+  "ph_ayub": {
+    "he": "ליווי וסיוע תקשורתי למשפחתו של איוב אטוחי מביר הדאג', שנורה למוות בדצמבר 2025 על ידי אזרח יהודי תוך כדי נסיעה",
+    "en": "Media guidance and support for the family of Ayub Atuhi of Bir Hadaj, who was shot dead in December 2025 by a Jewish civilian while driving",
+    "ar": "مرافقة ودعم إعلامي لعائلة أيوب عطوحي من بير هداج، الذي قُتل بالرصاص في كانون الأول/ديسمبر 2025 على يد مواطن يهودي أثناء قيادته"
   }
 }
