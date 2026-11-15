@@ -103,23 +103,18 @@ section[id]{scroll-margin-top:12px}
 .fuhari-gallery img[src*="private"]{object-position:center 26%}
 @media(max-width:760px){.fuhari-hero{grid-template-columns:1fr;padding:16px;gap:16px}.fuhari-gallery{max-height:320px}.fuhari-copy{padding:2px}}
 .fuhari-copy .fuhari-punch{color:#F5B321}
-/* Chapter 02: the "settlement" fiction. Photo stays visible under a light translucent overlay. */
+/* Chapter 02: the "settlement" fiction. Headline above, photo banner with text on both sides, punch line below. */
 .fic-slide{max-width:1180px;margin:0 auto;padding:24px}
-.fic-hero{position:relative;isolation:isolate;overflow:hidden;border-radius:16px;color:#FFF;min-height:min(500px,68vh);display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:clamp(10px,2vh,20px);padding:clamp(16px,3vh,26px) clamp(16px,3vw,34px);text-align:center;text-shadow:0 1px 3px rgba(0,0,0,.7),0 0 14px rgba(0,0,0,.35)}
-.fic-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 44%;z-index:-2;filter:brightness(1.12) saturate(1.1)}
-.fic-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(rgba(59,29,18,.16),rgba(59,29,18,.4) 50%,rgba(59,29,18,.66))}
-.fic-pill{margin:0;background:#F5B321;color:#3B1D12;border:2px solid #3B1D12;border-radius:999px;padding:7px 26px;font-size:clamp(18px,2.1vw,24px);font-weight:800;line-height:1.3;text-shadow:none}
-.fic-stats{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:center;gap:10px clamp(24px,4vw,48px)}
-.fic-num{font-weight:800;line-height:1;font-size:clamp(34px,4.2vw,52px)}
-.fic-num sup{font-size:.5em;vertical-align:top}
-.fic-label{font-size:clamp(15px,1.5vw,18px);font-weight:600;margin-top:4px;max-width:320px}
-.fic-arrow{font-size:clamp(26px,3vw,36px);line-height:1.2;opacity:.85}
-.fic-years{font-weight:800;line-height:1;font-size:clamp(46px,6vw,76px);color:#FFE45C}
-.fic-years-note{font-size:clamp(15px,1.6vw,19px);font-weight:600;margin-top:6px}
-.fic-demo{background:rgba(184,69,31,.93);border-radius:999px;padding:8px 26px;font-size:clamp(17px,1.9vw,22px);font-weight:800;line-height:1.35;text-shadow:none}
-.fic-punch{margin:0;max-width:640px;font-weight:800;font-size:clamp(18px,2vw,23px);line-height:1.4;color:#FFE45C}
-.fic-foot{margin:8px 0 0;font-size:13px;color:#6B4A3A}
-@media(max-width:700px){.fic-slide{padding:20px}.fic-arrow{display:none}.fic-demo{border-radius:18px}}
+.fic-slide h2{font-weight:800;font-size:clamp(22px,2.05vw,32px);line-height:1.25;margin:0 0 clamp(12px,2vh,18px)}
+.fic-banner{position:relative;isolation:isolate;overflow:hidden;border-radius:16px;color:#FFF;min-height:clamp(210px,36vh,300px);display:grid;grid-template-columns:minmax(0,1fr) minmax(60px,.7fr) minmax(0,1fr);align-items:center;padding:clamp(14px,2.6vh,26px) clamp(18px,3vw,36px);text-shadow:0 1px 3px rgba(0,0,0,.7),0 0 14px rgba(0,0,0,.35)}
+.fic-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 46%;z-index:-2;filter:brightness(1.12) saturate(1.1)}
+.fic-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(to left,rgba(59,29,18,.7),rgba(59,29,18,.38) 38%,rgba(59,29,18,.1) 50%,rgba(59,29,18,.38) 62%,rgba(59,29,18,.7))}
+.fic-side p{margin:0;font-size:clamp(16px,1.6vw,20px);font-weight:700;line-height:1.4}
+.fic-big{font-weight:800;line-height:1.05;color:#FFE45C;font-size:clamp(46px,5.6vw,72px);margin:4px 0}
+.fic-side--end{grid-column:3}
+.fic-punch{margin:clamp(12px,2vh,18px) 0 0;padding:2px 16px 2px 0;border-inline-start:4px solid #B8451F;font-weight:800;font-size:clamp(19px,2vw,24px);line-height:1.4;color:#3B1D12}
+.fic-foot{margin:10px 0 0;font-size:13px;color:#6B4A3A}
+@media(max-width:700px){.fic-slide{padding:20px}.fic-banner{grid-template-columns:1fr;gap:12px;min-height:0}.fic-side--end{grid-column:1}}
 
 @media(max-width:900px){.problem-stats{grid-template-rows:repeat(3,auto)}.problem-stats>div{padding:24px!important}}
 .macro-map{margin:0;min-width:0}.macro-map svg{display:block;width:100%;height:auto;border-radius:12px;background:#FFFDF5}.macro-map figcaption{font-size:12px;font-weight:400;margin-top:6px;color:#6B4A3A}.macro-note{align-self:center;background:#F5B321;border-radius:14px;padding:28px;box-sizing:border-box;font-size:clamp(18px,1.8vw,24px);font-weight:700;line-height:1.65}.macro-slide{padding-top:32px;padding-bottom:32px}@media(max-width:900px){.macro-note{padding:24px;font-size:19px}}
@@ -213,19 +208,16 @@ section[id]{scroll-margin-top:12px}
 </section>
 
 <section id="fiction" class="fic-slide" aria-labelledby="fic-title">
-<div class="fic-hero">
+<div class="problem-kicker">02 · ה"הסדרה" היא פיקציה</div>
+<h2 id="fic-title">כ־30 אלף משפחות בכפרים.<br>כ־33 משפחות בשנה עברו למגרש מוסדר*.</h2>
+<div class="fic-banner">
 <img class="fic-bg" src="/assets/img/demolition-site.jpg" alt="" aria-hidden="true" loading="lazy">
 <div class="fic-shade" aria-hidden="true"></div>
-<h2 class="fic-pill" id="fic-title">02 · ה"הסדרה" היא פיקציה</h2>
-<div class="fic-stats">
-<div><div class="fic-num">כ־30 אלף</div><div class="fic-label">משפחות בכפרים</div></div>
-<div class="fic-arrow" aria-hidden="true">←</div>
-<div><div class="fic-num">כ־33<sup>*</sup></div><div class="fic-label">משפחות בשנה עברו למגרש מוסדר</div></div>
+<div class="fic-side"><p>הקצב להסדרה מלאה, לא כולל ריבוי טבעי, הוא</p><div class="fic-big">כ־900 שנה</div></div>
+<div></div>
+<div class="fic-side fic-side--end"><p>ובינתיים: המדינה הורסת</p><div class="fic-big">800</div><p>בתי מגורים בשנה</p></div>
 </div>
-<div><div class="fic-years">כ־900 שנה</div><div class="fic-years-note">הקצב להסדרה מלאה, לא כולל ריבוי טבעי</div></div>
-<div class="fic-demo">ובינתיים: המדינה הורסת 800 בתי מגורים בשנה</div>
 <p class="fic-punch">המדיניות הנוכחית היא אשליה מסוכנת: במקום לפתור את הבעיה, היא יוצרת בעיות חדשות</p>
-</div>
 <p class="fic-foot">* נתוני רשות הבדואים ל־2017–2022</p>
 </section>
 
