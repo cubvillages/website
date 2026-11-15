@@ -22,17 +22,156 @@ a{color:#2F6B2A}a:hover{color:#1F4D1B}
 .mobilebar{display:none}
 @media (max-width: 860px){.navlinks{display:none!important}.navlinks.open{display:flex!important;position:absolute;top:100%;left:0;right:0;z-index:20;flex-direction:column;align-items:stretch!important;gap:0!important;background:#FFFFFF;padding:4px 24px 10px;border-bottom:4px solid #F5B321;box-shadow:0 8px 16px rgba(0,0,0,0.10)}.navlinks.open a{padding:14px 0!important;border-bottom:1px solid #F3E2B8}.navlinks.open a:last-child{border-bottom:0}.navtoggle{display:inline-flex}.hdrname{font-size:14px!important}.deskonly{display:none!important}.mobilebar{display:flex!important}}
 section[id]{scroll-margin-top:12px}
-.pl-grid{display:grid;grid-template-columns:220px minmax(0,1fr);align-items:start}
+.pl-grid{display:block}
 .pl-main{min-width:0}
-.pl-side{position:sticky;top:14px;margin:26px 14px 26px 18px;background:#FFFFFF;border:1px solid #EBD3A0;border-radius:14px;padding:14px 8px 10px}
-.pl-side .t{font-size:13px;font-weight:800;letter-spacing:.02em;color:#B8451F;padding:2px 12px 8px}
-.pl-side nav{display:flex;flex-direction:column}
-.pl-side a{display:block;padding:9px 12px;border-radius:8px;color:#3B1D12;text-decoration:none;font-size:16px;font-weight:700;line-height:1.3;border-inline-start:3px solid transparent}
-.pl-side a:hover{background:#FFF4D6}.pl-side a.on{background:#FFF4D6;border-inline-start-color:#B8451F;color:#B8451F}
-@media (max-width: 1000px){.pl-grid{display:block}.pl-side{position:sticky;top:0;z-index:9;margin:0;border-radius:0;border-width:0 0 1px;padding:0}.pl-side .t{display:none}.pl-side nav{flex-direction:row;overflow-x:auto;white-space:nowrap;scrollbar-width:none;padding:0 10px}.pl-side nav::-webkit-scrollbar{display:none}.pl-side a{flex:none;padding:13px 12px;border-radius:0;border-inline-start:0;border-bottom:3px solid transparent}.pl-side a.on{background:transparent;border-bottom-color:#B8451F}section[id]{scroll-margin-top:58px}}
+/* Chapter 01: aligned map and compact comparison panel. */
+.problem-slide{max-width:1180px;margin:0 auto;padding:24px}
+.problem-intro{font-weight:800;font-size:clamp(28px,2.6vw,42px);line-height:1.22;margin:0 0 clamp(24px,4vh,40px)}
+.problem-intro span{color:#B8451F}
+.problem-kicker{font-size:15px;font-weight:700;color:#A63A17;margin-bottom:4px}
+.problem-slide h2{font-weight:800;font-size:clamp(22px,2.05vw,32px);line-height:1.2;margin:0 0 16px}
+.pl-gap{position:relative;display:grid;grid-template-columns:minmax(0,2.3fr) minmax(0,1fr);gap:20px}
+.problem-map{margin:0;min-width:0;position:relative}
+.problem-map img{display:block;width:100%;height:auto;border-radius:12px;cursor:zoom-in}
+.problem-map-caption{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.problem-stats{position:absolute;inset-block:0;inset-inline-end:0;width:calc((100% - 20px)/3.3);box-sizing:border-box;min-width:0;background:#FFF;border:1px solid #EBD3A0;border-top:4px solid #F5B321;border-radius:12px;padding:18px 22px;display:flex;flex-direction:column;justify-content:space-between;font-size:13px;font-weight:500;line-height:1.55}
+.problem-ratio{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
+.problem-ratio strong{font-size:36px;line-height:1.1;color:#B8451F;font-weight:800}
+.problem-ratio span{font-size:14px;font-weight:600}
+.problem-per-person-values{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.problem-per-person-values strong{display:block;font-size:22px;font-weight:800;line-height:1.25;margin-bottom:2px}
+.problem-per-person-values span{display:block;font-size:12px;font-weight:500;line-height:1.4}
+.problem-stats>div+div{border-top:1px solid #EBD3A0;margin-top:20px;padding-top:18px}
+.problem-stat-group h3{font-size:13px;font-weight:600;line-height:1.4;margin:0 0 8px}
+.problem-stat-row>div:first-child{display:flex;align-items:baseline;gap:5px;white-space:nowrap}
+.problem-stat-row+.problem-stat-row{margin-top:7px}
+.problem-stat-row strong{font-size:21px;font-weight:700;line-height:1.2;white-space:nowrap}
+.stat-jewish{color:#2F6B2A}.stat-bedouin{color:#B8451F}
+.problem-bar{height:4px;border-radius:5px;background:currentColor;margin-top:6px;min-width:6px}
+@media(min-width:901px) and (max-width:1440px){
+.problem-stats{padding:14px 18px}
+.problem-stats>div+div{margin-top:14px;padding-top:14px}
+.problem-stat-row strong{font-size:20px}
+}
+@media(min-width:901px) and (max-height:740px){
+.problem-slide{padding-top:18px;padding-bottom:18px}
+.problem-intro{font-size:clamp(28px,2.4vw,38px);margin-bottom:24px}
+}
+@media(max-width:900px){
+.problem-slide{padding:24px 20px}
+.problem-intro{font-size:clamp(28px,4vw,36px);margin-bottom:28px}
+.pl-gap{grid-template-columns:1fr;gap:18px}
+.problem-stats{position:static;width:100%;padding:20px 24px}
+.problem-stats>div+div{margin-top:24px;padding-top:20px}
+}
+
+@media(min-width:901px) and (max-width:1280px){
+.problem-stats{padding:12px 16px;font-size:12px}
+.problem-stats>div+div{margin-top:10px;padding-top:12px}
+.problem-stat-row strong{font-size:19px}
+.problem-ratio strong{font-size:32px}
+.problem-ratio{margin-bottom:8px}
+.problem-per-person-values strong{font-size:20px}
+.problem-stat-group h3{font-size:12px;margin-bottom:7px}
+.problem-intro{font-size:clamp(28px,2.6vw,36px)}
+}
+.fuhari-slide{max-width:1180px;margin:0 auto;padding:24px}
+.fuhari-hero{position:relative;isolation:isolate;overflow:hidden;border-radius:16px;color:#FFF}
+.fuhari-background{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%;z-index:-2}
+.fuhari-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(to left,rgba(12,24,10,.8),rgba(12,24,10,.65) 65%,rgba(12,24,10,.24))}
+.fuhari-copy{position:relative;padding:clamp(20px,3vh,30px) clamp(20px,3vw,34px);max-width:980px;text-shadow:0 1px 3px rgba(0,0,0,.3)}
+.fuhari-kicker{font-size:15px;font-weight:700;color:#F5B321;margin-bottom:6px}
+.fuhari-copy h2{font-size:clamp(26px,2.7vw,34px);font-weight:800;line-height:1.2;margin:0 0 16px}
+.fuhari-copy p{font-size:clamp(16px,2.4vh,18px);font-weight:500;line-height:1.6;margin:0 0 14px}
+.fuhari-copy .fuhari-punch{font-weight:800;font-size:clamp(18px,2vw,23px);line-height:1.4;margin:18px 0 0}
+.fuhari-gallery{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 0 10px;margin-top:18px;scrollbar-color:#B6A587 #FFF}
+.fuhari-gallery figure{position:relative;overflow:hidden;flex:0 0 clamp(240px,26vw,320px);height:clamp(145px,22vh,190px);margin:0;border-radius:12px;scroll-snap-align:start}
+.fuhari-gallery img{display:block;width:100%;height:100%;object-fit:cover;cursor:zoom-in}
+.fuhari-gallery figcaption{position:absolute;inset:auto 0 0;padding:30px 14px 10px;background:linear-gradient(transparent,rgba(0,0,0,.78));color:#FFF;font-size:13px;line-height:1.4;pointer-events:none}
+.fuhari-gallery img:focus-visible{outline:3px solid #F5B321;outline-offset:-4px}
+@media(max-width:700px){.fuhari-slide{padding:20px}.fuhari-copy{padding:22px 20px}.fuhari-shade{background:rgba(12,24,10,.68)}.fuhari-gallery figure{flex-basis:78vw;height:190px}}
+
+/* Center each complete data group between its dividers. */
+.problem-stats{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));padding:0!important}
+.problem-stats>div{box-sizing:border-box;min-height:0;display:flex;flex-direction:column;justify-content:center;margin:0!important;padding:12px 18px!important}
+.problem-stats>div+div{border-top:1px solid #EBD3A0}
+.fuhari-hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:center;gap:20px;padding:clamp(18px,3vh,32px);min-height:min(510px,68vh)}
+.fuhari-copy{padding:8px}
+.fuhari-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:clamp(92px,15vh,130px);gap:8px;max-height:calc(clamp(92px,15vh,130px)*4 + 24px);overflow:auto;scroll-snap-type:y proximity;margin:0;padding:0 4px;scrollbar-width:thin;scrollbar-color:rgba(245,179,33,.75) transparent}
+.fuhari-gallery::-webkit-scrollbar{width:6px}.fuhari-gallery::-webkit-scrollbar-track{background:transparent}.fuhari-gallery::-webkit-scrollbar-thumb{background:rgba(245,179,33,.75);border-radius:3px}
+.fuhari-gallery figure{height:auto;border-radius:8px}
+.fuhari-gallery img[src*="private"]{object-position:center 26%}
+@media(max-width:760px){.fuhari-hero{grid-template-columns:1fr;padding:16px;gap:16px}.fuhari-gallery{max-height:320px}.fuhari-copy{padding:2px}}
+.fuhari-copy .fuhari-punch{color:#F5B321}
+.intro-band{border-bottom:1px solid #EBD3A0}
+.intro-inner{max-width:1180px;margin:0 auto;padding:clamp(16px,2.8vh,26px) 24px}
+.intro-inner .problem-intro{margin:0}
+/* Chapter 02: the "settlement" fiction. Headline above, photo banner with text on both sides, punch line below. */
+.fic-slide{max-width:1180px;margin:0 auto;padding:24px}
+.fic-slide h2{font-weight:800;font-size:clamp(26px,2.7vw,36px);line-height:1.2;margin:0 0 clamp(12px,2vh,18px)}
+.fic-sub{font-size:clamp(15px,1.5vw,18px);font-weight:600;color:#6B4A3A;white-space:nowrap}
+.fic-banner{position:relative;isolation:isolate;overflow:hidden;border-radius:16px;color:#FFF;min-height:clamp(260px,44vh,360px);display:grid;align-content:center;grid-template-columns:minmax(0,1fr) minmax(60px,.7fr) minmax(0,1fr);align-items:center;padding:clamp(14px,2.6vh,26px) clamp(18px,3vw,36px);text-shadow:0 1px 3px rgba(0,0,0,.7),0 0 14px rgba(0,0,0,.35)}
+.fic-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 46%;z-index:-2;filter:brightness(1.12) saturate(1.1)}
+.fic-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(59,29,18,.72),rgba(59,29,18,0) 45%),linear-gradient(to left,rgba(59,29,18,.7),rgba(59,29,18,.38) 38%,rgba(59,29,18,.1) 50%,rgba(59,29,18,.38) 62%,rgba(59,29,18,.7))}
+.fic-side p{margin:0;font-size:clamp(16px,1.6vw,20px);font-weight:700;line-height:1.4}
+.fic-big{font-weight:800;line-height:1.05;color:#F5B321;font-size:clamp(44px,5.2vw,64px);margin:4px 0}
+.fic-side--end{grid-column:3}
+.fic-big--2{margin-top:10px}.fic-big sup{font-size:.45em;vertical-align:top}
+.fic-punch{grid-column:1/-1;margin:clamp(10px,2vh,18px) 0 0;font-weight:800;font-size:clamp(18px,2vw,23px);line-height:1.4;color:#F5B321}
+.fic-foot{margin:10px 0 0;font-size:13px;color:#6B4A3A}
+@media(max-width:700px){.fic-slide{padding:20px}.fic-banner{grid-template-columns:1fr;gap:12px;min-height:0}.fic-side--end{grid-column:1}}
+
+@media(max-width:900px){.problem-stats{grid-template-rows:repeat(3,auto)}.problem-stats>div{padding:24px!important}}
+.macro-map{margin:0;min-width:0}.macro-map svg{display:block;width:100%;height:auto;border-radius:12px;background:#FFFDF5}.macro-map figcaption{font-size:12px;font-weight:400;margin-top:6px;color:#6B4A3A}.macro-note{align-self:center;background:#F5B321;border-radius:14px;padding:28px;box-sizing:border-box;font-size:clamp(18px,1.8vw,24px);font-weight:700;line-height:1.65}.macro-slide{padding-top:32px;padding-bottom:32px}@media(max-width:900px){.macro-note{padding:24px;font-size:19px}}
+.macro-map img{display:block;width:100%;height:auto;aspect-ratio:1918/1078;border-radius:12px;cursor:zoom-in}.micro-slide{max-width:1180px;margin:0 auto;padding:24px}.micro-slide h2{font-size:clamp(24px,2.2vw,32px);line-height:1.2;margin:0 0 18px;font-weight:800}.micro-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px;align-items:center}.micro-allocation{display:grid;grid-template-columns:2fr 3fr;gap:6px}.micro-allocation>div{border-radius:10px;padding:12px 16px;background:#F2C46D}.micro-allocation>div+div{background:#6FA06F;color:#10200F}.micro-allocation strong{font-size:24px;line-height:1.1;display:block}.micro-allocation span{display:block;font-size:13px;line-height:1.4;margin-top:6px}.micro-switch{display:flex;flex-wrap:wrap;gap:4px;border:1px solid #D6B88C;border-radius:24px;padding:4px;width:fit-content;margin:12px 0}.micro-switch button{font:700 14px Heebo,sans-serif;border:0;border-radius:999px;padding:8px 16px;cursor:pointer;background:transparent;color:#3B1D12}.micro-switch button[aria-pressed=true]{background:#2F6B2A;color:#FFF}.micro-render{margin:0}.micro-render img{display:block;width:100%;height:clamp(220px,32vh,330px);object-fit:contain;border-radius:12px;cursor:zoom-in}.micro-render figcaption{font-size:12px;line-height:1.5;margin-top:6px;color:#4F3226}.micro-business{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:14px}.micro-copy{font-size:clamp(15px,1.25vw,18px);font-weight:500;line-height:1.65}.micro-copy p{margin:0 0 20px}.micro-copy p:last-child{margin-bottom:0}.micro-source{font-size:13px;color:#6B4A3A}@media(max-width:900px){.micro-grid{grid-template-columns:1fr;gap:22px}.micro-slide{padding:24px 20px}.micro-copy{font-size:17px}.micro-render img{height:auto}.micro-business{gap:6px}}
+.macro-grid,.micro-grid{isolation:isolate;position:relative;margin-top:36px;margin-bottom:32px}.macro-grid:before,.micro-grid:before{content:"";position:absolute;inset:-20px;background:#FFF;border:1px solid #EBD3A0;border-radius:22px;z-index:-1;pointer-events:none}.macro-note{background:transparent;padding:0;font-size:clamp(15px,1.25vw,18px);font-weight:500;line-height:1.65}.macro-note p{margin:0 0 18px}.macro-note p:last-child{margin-bottom:0}.micro-grid{grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:28px}.micro-allocation{grid-template-columns:1fr;gap:10px;margin:0 0 22px}.micro-allocation>div{padding:15px 18px}.micro-allocation strong{font-size:clamp(18px,1.7vw,23px);line-height:1.35}.micro-switch{margin:0 0 12px}.micro-switch button{font-size:16px;min-width:44px;padding:8px 14px}.micro-render img{height:auto;max-height:calc(100svh - 380px);object-fit:contain}.micro-business img{height:48px!important}.micro-copy p{margin-bottom:18px}@media(max-width:900px){.micro-grid{grid-template-columns:1fr}.macro-grid:before,.micro-grid:before{inset:-12px;border-radius:18px}.macro-note{font-size:17px}.micro-render img{max-height:none}.micro-allocation strong{font-size:21px}}
+.micro-media{position:relative;min-width:0}.micro-switch{position:absolute;top:12px;right:12px;z-index:2;margin:0;background:rgba(255,255,255,.94);box-shadow:0 2px 8px rgba(0,0,0,.12)}.micro-render img{display:block;width:100%;height:auto;max-height:none;aspect-ratio:1918/1078;object-fit:cover;object-position:center;border-radius:12px}.micro-render figcaption{margin-top:8px}@media(max-width:600px){.micro-switch{top:8px;right:8px}.micro-switch button{padding:6px 10px;min-width:36px}}
+
+/* Fuhari key line, macro and micro text columns. */
+.fuhari-slide>h2{font-size:clamp(26px,2.7vw,36px);font-weight:800;line-height:1.2;margin:0 0 clamp(12px,2vh,18px);color:#3B1D12}
+.fuhari-copy .fuhari-punch{line-height:1.3}
+.fuhari-key{display:block;margin-top:4px;font-size:clamp(22px,2.5vw,30px);line-height:1.25}
+.fuhari-gallery img[src*="fuhari-girl-private"]{object-position:center 6%}
+.macro-facts{align-self:stretch;height:auto;display:flex;flex-direction:column;gap:0;font-size:16px;font-weight:500;line-height:1.45}
+.mf{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:16px;padding:clamp(10px,1.8vh,16px) 0;border-top:1px solid #EBD3A0}
+.mf:first-child{border-top:0;padding-top:0}.mf:last-child{padding-bottom:0}
+.mf-num{font-weight:800;font-size:clamp(24px,2.4vw,34px);line-height:1.05;color:#B8451F;white-space:nowrap;min-width:6.2ch}
+.mf-num--sm{font-size:clamp(20px,2vw,28px)}
+.mf-text strong{display:block;font-weight:800;font-size:clamp(16px,1.4vw,19px);line-height:1.3;color:#3B1D12}
+.mf-text span{display:block;margin-top:3px;font-size:clamp(13px,1.1vw,15px);color:#6B4A3A}
+.micro-facts{font-size:16px;font-weight:500;line-height:1.5}
+.mi-split{display:flex;gap:6px;margin:0 0 14px}
+.mi-split>div{border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;justify-content:center}
+.mi-h{flex:1;background:#F5B321;color:#3B1D12}.mi-e{flex:1;background:#2F6B2A;color:#FFF4D6}
+.mi-split strong{font-weight:800;font-size:clamp(22px,2.3vw,30px);line-height:1.05;display:block}
+.mi-split span{font-size:clamp(13px,1.1vw,15px);font-weight:600;margin-top:3px;display:block}
+.micro-copy .mi-lead{margin:0 0 12px;font-size:clamp(15px,1.25vw,18px)}
+.mi-lead strong{font-weight:800}
+.mi-list{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.15vw,16px)}
+.mi-list li{position:relative;padding:0 18px 0 0;margin:0 0 9px;line-height:1.5}
+.mi-list li:last-child{margin-bottom:0}
+.mi-list li:before{content:"";position:absolute;right:0;top:.55em;width:8px;height:8px;border-radius:2px;background:#F5B321}
+.mi-list strong{font-weight:800}
+@media(max-width:900px){.mf{grid-template-columns:1fr;gap:4px}}
+/* Round: Fuhari text larger, macro/micro side columns aligned to the map/render */
+.fuhari-copy p{font-size:clamp(17px,2.8vh,21px);line-height:1.55}
+.fuhari-copy .fuhari-punch{margin-top:clamp(26px,4.5vh,40px);font-size:clamp(19px,2.1vw,25px)}
+.macro-grid{align-items:stretch}
+.macro-facts{align-self:stretch;height:auto;display:flex;flex-direction:column;justify-content:space-between;padding:10px 0 34px}
+.mf{display:block;padding:0}
+.mf:not(:first-child){padding-top:clamp(10px,1.8vh,16px)}
+.mf-num{display:block;min-width:0;margin-bottom:4px}
+.mf-num--sm{font-size:inherit}
+.micro-grid{align-items:stretch}
+.micro-copy.micro-facts{display:flex;flex-direction:column;justify-content:space-between;padding:10px 0 36px}
+.mi-sum{margin:0;padding-top:clamp(10px,1.8vh,16px);border-top:1px solid #EBD3A0;font-size:clamp(16px,1.4vw,19px);line-height:1.5}
+.mi-sum strong{font-weight:800}
+
 </style>
 <style>html{scroll-behavior:smooth} :root{color-scheme:light}</style><script src="/assets/a11y.js" defer></script>
 <link rel="stylesheet" href="/assets/site-scale.css">
+
+<style>.problem-stat-row>div:first-child{white-space:normal;flex-wrap:wrap;row-gap:0}.problem-stat-row strong{max-width:100%}.problem-stats{position:static;width:auto;grid-column:2;grid-row:1}.problem-map{align-self:center}@media(max-width:900px){.problem-stats{grid-column:1;grid-row:auto}}</style>
 </head><body>
 
 <div dir="rtl" style="font-family: 'Noto Sans Arabic', 'Heebo', system-ui, sans-serif; font-weight: 600; color: #3B1D12; background: #FFF4D6; font-size: 18px; line-height: 1.6; width: 100%">
@@ -76,207 +215,156 @@ section[id]{scroll-margin-top:12px}
 </div>
 </div>
 <header style="position: relative; min-height: 0; display: flex; align-items: flex-start; overflow: hidden">
-<img src="/assets/img/nahala-render-v2.jpg" alt="تصوّر لمزرعة عائلية فيها بيوت ومزرعة مساعدة، وحولها مزارع الجيران" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 55%"><span style="position: absolute; z-index: 2; bottom: 12px; inset-inline-end: 12px; background: rgba(59,29,18,0.8); color: #FFF4D6; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px">تصوّر بالذكاء الاصطناعي</span>
+<img src="/assets/img/nahala-render-v2.jpg" alt="تصوّر لأرض عائلية تضمّ مساكن ومزرعة صغيرة، تحيط بها أراضي العائلات المجاورة" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 55%"><span style="position: absolute; z-index: 2; bottom: 12px; inset-inline-end: 12px; background: rgba(59,29,18,0.8); color: #FFF4D6; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px">تصوّر بالذكاء الاصطناعي</span>
 <div style="position: absolute; inset: 0; background: rgba(40,20,10,0.62)"></div>
-<div style="position: relative; max-width: 1180px; width: 100%; margin: 0 auto; padding: 32px 24px 40px; color: #FFFFFF">
-<h1 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(33px, 4vw, 53px); line-height: 1.08; margin: 0 0 16px; max-width: 820px">خطة المجالس الإقليمية:<br>من البقاء إلى الازدهار</h1>
-<ul style="font-size: clamp(16.5px, 1.43vw, 20px); font-weight: 700; line-height: 1.4; max-width: 1020px; margin: 0; padding: 0 22px 0 0; list-style: disc; text-shadow: 0 1px 3px rgba(0,0,0,0.45)"><li style="margin: 0 0 5px">نحو 30 ألف عائلة تعيش في قرى غير معترف بها في النقب، بلا بنى تحتية وخدمات أساسية، وتحت تهديد دائم بهدم بيوتها</li><li style="margin: 0 0 5px">55 عامًا من محاولات التمدين فشلت: ارتفع عدد سكان القرى من 25 ألفًا إلى 150 ألفًا، وهو يواصل الارتفاع بنحو 4,000 في السنة</li><li style="margin: 0 0 5px">ثمن الوضع القائم: ناتج ضائع بعشرات مليارات الشواقل في السنة، وأضرار اجتماعية جسيمة، وإنفاذ وحشي يولّد اليأس والاغتراب</li><li style="margin: 0 0 5px">ستغيّر خطة المجالس الإقليمية الوضع من جذوره، وتدفع اقتصاد النقب إلى الأمام، وتجلب الازدهار لجميع سكانه، يهودًا وعربًا</li></ul>
+<div style="position: relative; max-width: 1180px; width: 100%; margin: 0 auto; padding: clamp(38px,6vh,64px) 24px clamp(46px,7vh,76px); color: #FFFFFF">
+<h1 style="font-family: 'Noto Sans Arabic',sans-serif; font-weight: 800; font-size: clamp(36px, 4.4vw, 60px); line-height: 1.08; margin: 0 0 16px; max-width: 820px">خطة المجالس الإقليمية:<br>من البقاء إلى الازدهار</h1>
+<ul style="font-size: clamp(17px, 1.55vw, 22px); font-weight: 700; line-height: 1.4; max-width: 1020px; margin: 0; padding: 0 22px 0 0; list-style: disc; text-shadow: 0 1px 3px rgba(0,0,0,0.45)"><li style="margin: 0 0 5px">تعيش نحو 30 ألف أسرة في قرى غير معترف بها في النقب، تفتقر إلى البنية التحتية والخدمات الأساسية، تحت تهديد دائم بهدم بيوتها.</li><li style="margin: 0 0 5px">أخفقت محاولات نقل السكان إلى البلدات على مدى 55 عامًا. فقد ارتفع عدد سكان القرى من 25 ألفًا إلى 150 ألفًا، ولا يزال يزداد بنحو 4 آلاف نسمة سنويًا.</li><li style="margin: 0 0 5px">يكلّف الوضع القائم الاقتصاد عشرات مليارات الشواقل من الناتج المفقود سنويًا، وترافقه أضرار اجتماعية جسيمة، وإنفاذ قاسٍ للقانون، ويأس واغتراب.</li></ul>
+<p style="font-size: clamp(17px, 1.55vw, 22px); font-weight: 700; line-height: 1.4; max-width: 1020px; margin: 14px 0 0; color: #F5B321; text-shadow: 0 1px 3px rgba(0,0,0,0.45)">تهدف «خطة المجالس الإقليمية» إلى تغيير هذا الوضع من جذوره، والنهوض باقتصاد النقب وتحقيق الازدهار لجميع سكانه، يهودًا وعربًا.</p>
 </div>
 </header>
-<div style="background: #FFFFFF; border-bottom: 1px solid #EBD3A0"><div style="max-width: 1180px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px"><span style="font-size: 15px; font-weight: 700; color: #4F3226">بالشراكة مع الجمعيات</span><img src="/assets/img/logo-keshet2.png" alt="جمعية كيشت – مجتمع، ثقافة، بيئة" style="height: 46px; width: auto; display: block"><img src="/assets/img/logo-forum-h.png" alt="منتدى التعايش السلمي في النقب من أجل المساواة المدنية" style="height: 30px; width: auto; max-width: 100%; display: block"></div></div>
-<div class="pl-grid"><aside class="pl-side" aria-label="في هذه الصفحة"><div class="t">في هذه الصفحة</div><nav><a href="#problem">المشكلة</a><a href="#plan">الخطة</a><a href="#village">نحال حَفاه</a><a href="#gain">ما الفائدة</a><a href="#steps">ما المطلوب</a></nav></aside><div class="pl-main">
-<section aria-label="" style="background: #FFF4D6; border-block: 1px solid #EBD3A0"><div style="max-width: 1180px; margin: 0 auto; padding: 26px 24px 28px; display: flex; flex-wrap: wrap; gap: 20px 28px">
-<div style="flex: 1 1 220px; border-top: 4px solid #F5B321; padding-top: 10px">
-<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: #B8451F">35</div>
-<div style="font-size: 17px; color: #4F3226">قرية غير معترف بها</div>
-</div>
-<div style="flex: 1 1 220px; border-top: 4px solid #F5B321; padding-top: 10px">
-<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: #B8451F">11</div>
-<div style="font-size: 17px; color: #4F3226">قرية اعتُرف بها لكنها لم تُنظَّم</div>
-</div>
-<div style="flex: 1 1 220px; border-top: 4px solid #F5B321; padding-top: 10px">
-<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: #B8451F"><span dir="ltr">~150</span> ألف</div>
-<div style="font-size: 17px; color: #4F3226">نسمة يعيشون في ظروف القرى غير المعترف بها</div>
-</div>
-</div></section>
-
-
-<section>
-<div style="max-width: 1180px; margin: 0 auto; padding: 34px 24px 28px">
-<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">01 · الحل القديم</div>
-<h2 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(24px, 2.6vw, 30px); line-height: 1.2; margin: 0 0 16px; max-width: 760px">وتيرة هدم البيوت أعلى 20 ضعفًا من وتيرة التسوية</h2>
-<div style="position: relative; overflow: hidden; border-radius: 16px; color: #FFF4D6">
-<img src="/assets/img/demolition-site.jpg" alt="كومة أنقاض بيوت مهدومة في قرية بدوية، ومن خلفها كرفان وسيارات" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 44%">
-<div style="position: absolute; inset: 0; background: rgba(30,15,8,0.52)"></div>
-<div style="position: relative; padding: 34px 36px; min-height: 330px; text-shadow: 0 1px 4px rgba(0,0,0,0.6)">
-<div style="display: flex; flex-wrap: wrap; gap: 28px 48px; align-items: flex-start">
-<div><div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; line-height: 1; color: #F5B321; font-size: clamp(44px, 5.2vw, 64px)">2,900</div><div style="font-size: 18px; font-weight: 700; margin-top: 8px; max-width: 230px">عائلة هُدمت بيوتها منذ مطلع 2023</div></div>
-<div><div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; line-height: 1; color: #F5B321; font-size: clamp(44px, 5.2vw, 64px)">33*</div><div style="font-size: 18px; font-weight: 700; margin-top: 8px; max-width: 230px">عائلة في السنة تنتقل إلى قسيمة منظّمة</div></div>
-<div style="flex: 1 1 360px; min-width: 0"><div style="display: flex; align-items: baseline; gap: 12px"><span style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; line-height: 1; color: #F5B321; font-size: clamp(44px, 5.2vw, 64px)">900</span><span style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 22px">سنة للتسوية</span></div>
-<p style="margin: 10px 0 0; font-size: 18px; font-weight: 600; line-height: 1.55">الوقت اللازم لتمدين جميع سكان القرى بوتيرة التسوية الحالية (دون احتساب الزيادة الطبيعية). وفي كل حال، أزمة السكن في رهط وفي البلدات حادة: 93 بالمئة ممن هم في سن 30 وما دون ما زالوا يعيشون مع أهلهم، وفي رهط وحدها، بحسب معطيات البلدية، أكثر من 8,500 مقيم بلا سكن</p></div>
-</div>
-</div>
-</div>
-<p style="margin: 8px 0 0; font-size: 13px; color: #6B4A3A">* معطيات سلطة البدو، 2017–2022. لا توجد معطيات رسمية حديثة</p>
-</div>
-</section>
-
-<section id="problem" style="max-width: 1180px; margin: 0 auto; padding: 40px 24px">
-<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">02 · جذر المشكلة</div>
-<h2 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(26px, 2.7vw, 34px); line-height: 1.2; margin: 0 0 14px">فجوة هائلة في تخصيص الأراضي للاستيطان القروي</h2>
-<p style="margin: 0 0 18px; max-width: 760px">يعيش في شمال النقب 220 ألف قروي، منهم 70 ألف يهودي و150 ألف بدوي. خُصصت لليهود مجالس إقليمية على 1.87 مليون دونم. وللبدو: 71 ألف دونم</p>
-<div style="display: flex; flex-wrap: wrap; gap: 28px 40px; align-items: center">
-<figure style="flex: 1 1 380px; min-width: 0; max-width: 470px; margin: 0">
-<img src="/assets/img/councils.jpg" alt="خريطة المجالس الإقليمية في شمال النقب: مجالس يهودية كبيرة في الغرب، ومساحات المجالس البدوية كبقع برتقالية صغيرة شرق بئر السبع" data-zoom="1" title="انقروا للتكبير" style="cursor: zoom-in; width: 100%; height: auto; border-radius: 12px; display: block">
-<figcaption style="font-size: 15px; color: #4F3226; margin-top: 8px">تواصل بلدي للمجالس اليهودية، وجُزر (باللون البرتقالي) للمجالس البدوية، داخل «أرض جليلية» بلا سلطة بلدية</figcaption>
+<div style="background: #FFFFFF; border-bottom: 1px solid #EBD3A0"><div style="max-width: 1180px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px"><span style="font-size: 15px; font-weight: 700; color: #4F3226">بالشراكة مع</span><img src="/assets/img/logo-keshet2.png" alt="جمعية كيشت للمجتمع والثقافة والبيئة" style="height: 46px; width: auto; display: block"><img src="/assets/img/logo-forum-h.png" alt="منتدى التعايش السلمي في النقب من أجل المساواة المدنية" style="height: 43px; width: auto; max-width: 100%; object-fit: contain; display: block"></div></div>
+<div class="pl-grid"><div class="pl-main">
+<div class="intro-band"><div class="intro-inner"><p class="problem-intro">قصة القرى البدوية في النقب هي في المقام الأول قصة أرض. <span>قصة عقارات.</span></p></div></div>
+<section id="problem" class="problem-slide" aria-labelledby="problem-title">
+<div class="problem-kicker">01 · أصل المشكلة</div>
+<h2 id="problem-title">فجوة كبيرة في تخصيص الأراضي للتجمعات الريفية في شمال النقب</h2>
+<div class="pl-gap">
+<figure class="problem-map">
+<img src="/assets/img/councils.jpg" alt="المجالس الإقليمية في شمال النقب: مساحات واسعة للمجالس اليهودية غربًا، وبقع برتقالية صغيرة تمثّل أراضي المجالس البدوية شرق بئر السبع" data-zoom="1" title="اضغط للتكبير" width="1918" height="1078">
+<figcaption class="problem-map-caption">تتمتع المجالس اليهودية بتواصل جغرافي، بينما تظهر أراضي المجالس البدوية كجزر برتقالية وسط أراضٍ خارج نطاق نفوذ أي سلطة محلية.</figcaption>
 </figure>
-<div style="flex: 1 1 380px; min-width: 0">
-<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(22px, 2.4vw, 28px); line-height: 1.2; margin: 0 0 18px">فجوة بـ56 ضعفًا للفرد</div>
-<div style="display: flex; flex-direction: column; gap: 22px">
-<div><div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px"><span style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; line-height: 1; font-size: clamp(38px, 4.4vw, 54px); color: #2F6B2A">28</span><span style="font-weight: 700; font-size: 17px">دونمًا للفرد للقرويين اليهود</span></div><div style="display: flex; flex-wrap: wrap; gap: 6px; max-width: 358px"><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span></div></div>
-<div><div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px"><span style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; line-height: 1; font-size: clamp(38px, 4.4vw, 54px); color: #B8451F">0.5</span><span style="font-weight: 700; font-size: 17px">دونم للفرد للقرويين البدو</span></div><div style="display: flex; flex-wrap: wrap; gap: 6px; max-width: 358px"><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; border: 2px solid #B8451F; box-sizing: border-box; background: linear-gradient(to left, #B8451F 50%, transparent 50%)"></span></div></div>
+<div class="problem-stats" aria-label="الفجوات في الأرض والسكان">
+<div class="problem-stat-group">
+<h3>مساحة المجالس الإقليمية في شمال النقب</h3>
+<div class="problem-stat-row"><div><strong class="stat-jewish">1.875 مليون</strong> دونم للسكان اليهود <span class="stat-jewish">(96.4%)</span></div><div class="problem-bar stat-jewish" style="width:96.4%" aria-hidden="true"></div></div>
+<div class="problem-stat-row"><div><strong class="stat-bedouin">71 ألف</strong> دونم للسكان البدو <span class="stat-bedouin">(3.6%)</span></div><div class="problem-bar stat-bedouin" style="width:3.6%" aria-hidden="true"></div></div>
 </div>
+<div class="problem-stat-group">
+<h3>نحو 217 ألف نسمة في ريف شمال النقب</h3>
+<div class="problem-stat-row"><div><strong class="stat-jewish">67 ألف</strong> يهودي <span class="stat-jewish">(31%)</span></div><div class="problem-bar stat-jewish" style="width:31%" aria-hidden="true"></div></div>
+<div class="problem-stat-row"><div><strong class="stat-bedouin">150 ألف</strong> بدوي <span class="stat-bedouin">(69%)</span></div><div class="problem-bar stat-bedouin" style="width:69%" aria-hidden="true"></div></div>
 </div>
+<div class="problem-per-person">
+<div class="problem-ratio"><span>الفجوة للفرد</span><strong>56 ضعفًا</strong></div>
+<div class="problem-per-person-values">
+<div><strong class="stat-jewish">28</strong><span>دونمًا للفرد اليهودي</span></div>
+<div><strong class="stat-bedouin">0.5</strong><span>دونم للفرد البدوي</span></div>
 </div>
-</section>
-
-<section id="plan" style="max-width: 1180px; margin: 0 auto; padding: 52px 24px">
-<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">03 · الخطة</div>
-<div style="margin-top: 28px; display: flex; flex-wrap: wrap; gap: 24px 40px; align-items: center">
-<figure style="flex: 1 1 380px; min-width: 0; max-width: 560px; margin: 0">
-<div style="border-radius: 14px; overflow: hidden; border: 1px solid #E8D9AE"><svg viewBox="0 0 640 577" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="mt" style="display:block;width:100%;height:auto;font-family:'Noto Kufi Arabic',sans-serif">
-<title id="mt">خريطة تخطيطية: المجالس الإقليمية البدوية الثلاثة بحسب الخطة، م.إ. القسوم، م.إ. سهل بئر السبع، م.إ. نيفي مدبار</title>
-<rect width="640" height="577" fill="#FBF3DC"/>
-<path d="M304.0,0.0 L307.0,50.0 L309.0,78.0 L338.0,108.0 L366.0,138.0 L313.0,175.0 L305.0,183.0 L301.0,190.0 L299.0,203.0 L289.0,219.0 L289.0,227.0 L314.0,278.0 L319.0,285.0 L326.0,292.0 L353.0,311.0 L360.0,314.0 L370.0,313.0 L391.0,300.0 L415.0,283.0 L423.0,283.0 L433.0,291.0 L457.0,323.0 L485.0,367.0 L491.0,373.0 L500.0,378.0 L509.0,380.0 L519.0,379.0 L529.0,375.0 L542.0,358.0 L551.0,338.0 L552.0,326.0 L555.0,315.0 L569.0,298.0 L577.0,284.0 L591.0,278.0 L603.0,268.0 L616.0,254.0 L617.0,248.0 L611.0,233.0 L610.0,222.0 L602.0,212.0 L597.0,199.0 L590.0,198.0 L581.0,209.0 L573.0,211.0 L564.0,205.0 L560.0,196.0 L560.0,0.0Z M0.0,0.0 L0.0,576.0 L446.0,576.0 L438.0,569.0 L437.0,561.0 L453.0,530.0 L454.0,525.0 L451.0,519.0 L443.0,515.0 L432.0,514.0 L392.0,504.0 L383.0,496.0 L378.0,487.0 L372.0,481.0 L369.0,480.0 L365.0,481.0 L364.0,485.0 L366.0,500.0 L371.0,517.0 L366.0,528.0 L354.0,540.0 L343.0,546.0 L335.0,548.0 L310.0,547.0 L298.0,541.0 L287.0,530.0 L263.0,498.0 L249.0,476.0 L239.0,464.0 L231.0,451.0 L210.0,407.0 L205.0,401.0 L197.0,396.0 L171.0,392.0 L99.0,386.0 L42.0,379.0 L29.0,381.0 L13.0,392.0 L10.0,392.0 L4.0,388.0 L2.0,384.0 L2.0,135.0 L6.0,127.0 L12.0,121.0 L21.0,116.0 L26.0,110.0 L28.0,105.0 L28.0,100.0 L26.0,96.0 L27.0,84.0 L36.0,74.0 L44.0,68.0 L48.0,60.0 L48.0,50.0 L44.0,30.0 L40.0,24.0 L29.0,14.0 L29.0,8.0 L36.0,2.0 L74.0,2.0 L84.0,10.0 L88.0,20.0 L95.0,26.0 L108.0,30.0 L126.0,30.0 L133.0,25.0 L135.0,21.0 L135.0,12.0 L144.0,3.0 L184.0,2.0 L187.0,0.0Z " fill="#F7EBCB" stroke="#FFFBEF" stroke-width="1.6" stroke-linejoin="round"/><path d="M561.0,0.0 L561.0,196.0 L565.0,205.0 L573.0,210.0 L581.0,208.0 L590.0,197.0 L597.0,198.0 L599.0,200.0 L603.0,212.0 L611.0,222.0 L612.0,233.0 L618.0,251.0 L610.0,262.0 L594.0,277.0 L578.0,284.0 L570.0,298.0 L556.0,315.0 L553.0,326.0 L552.0,338.0 L546.0,349.0 L545.0,354.0 L533.0,373.0 L529.0,376.0 L529.0,378.0 L533.0,379.0 L538.0,386.0 L539.0,403.0 L535.0,417.0 L521.0,440.0 L511.0,450.0 L501.0,455.0 L463.0,458.0 L454.0,467.0 L452.0,481.0 L454.0,485.0 L462.0,491.0 L499.0,492.0 L556.0,489.0 L564.0,495.0 L566.0,500.0 L565.0,510.0 L572.0,524.0 L573.0,531.0 L567.0,541.0 L551.0,556.0 L541.0,570.0 L541.0,574.0 L552.0,576.0 L639.0,576.0 L639.0,0.0Z M307.0,50.0 L270.0,46.0 L240.0,40.0 L213.0,37.0 L201.0,36.0 L182.0,25.0 L172.0,15.0 L171.0,10.0 L173.0,4.0 L171.0,3.0 L147.0,3.0 L141.0,6.0 L136.0,12.0 L136.0,21.0 L134.0,25.0 L126.0,32.0 L126.0,43.0 L111.0,59.0 L96.0,88.0 L87.0,98.0 L78.0,102.0 L58.0,102.0 L43.0,106.0 L39.0,106.0 L30.0,102.0 L27.0,110.0 L22.0,116.0 L22.0,119.0 L27.0,122.0 L41.0,139.0 L62.0,159.0 L73.0,164.0 L94.0,165.0 L100.0,168.0 L107.0,177.0 L109.0,202.0 L104.0,218.0 L102.0,242.0 L98.0,253.0 L86.0,270.0 L84.0,278.0 L85.0,288.0 L83.0,294.0 L75.0,306.0 L75.0,312.0 L77.0,316.0 L93.0,328.0 L106.0,331.0 L120.0,325.0 L137.0,312.0 L140.0,306.0 L140.0,297.0 L137.0,283.0 L137.0,248.0 L141.0,228.0 L145.0,219.0 L155.0,206.0 L161.0,192.0 L167.0,185.0 L171.0,183.0 L180.0,182.0 L190.0,186.0 L198.0,187.0 L213.0,181.0 L223.0,182.0 L239.0,193.0 L252.0,199.0 L269.0,214.0 L276.0,216.0 L286.0,222.0 L298.0,203.0 L299.0,194.0 L302.0,186.0 L313.0,174.0 L366.0,137.0 L338.0,108.0 L309.0,78.0Z " fill="#ECE3D0" stroke="#FFFBEF" stroke-width="1.6" stroke-linejoin="round"/><path d="M171.0,0.0 L171.0,10.0 L172.0,15.0 L182.0,25.0 L201.0,36.0 L213.0,37.0 L240.0,40.0 L270.0,46.0 L307.0,50.0 L304.0,0.0Z " fill="#F4E0D2" stroke="#FFFBEF" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.0,127.0 L3.0,135.0 L3.0,349.0 L7.0,358.0 L21.0,371.0 L30.0,376.0 L43.0,379.0 L130.0,388.0 L141.0,388.0 L160.0,391.0 L171.0,391.0 L200.0,396.0 L212.0,408.0 L236.0,457.0 L272.0,505.0 L288.0,529.0 L298.0,539.0 L313.0,546.0 L332.0,547.0 L341.0,545.0 L354.0,538.0 L365.0,528.0 L369.0,520.0 L369.0,512.0 L364.0,498.0 L363.0,482.0 L367.0,478.0 L372.0,479.0 L379.0,486.0 L384.0,496.0 L392.0,503.0 L432.0,513.0 L443.0,514.0 L452.0,519.0 L455.0,527.0 L438.0,562.0 L439.0,568.0 L447.0,576.0 L533.0,576.0 L544.0,566.0 L550.0,556.0 L569.0,537.0 L572.0,531.0 L572.0,527.0 L565.0,514.0 L565.0,500.0 L563.0,495.0 L556.0,490.0 L499.0,493.0 L462.0,492.0 L453.0,485.0 L451.0,481.0 L452.0,470.0 L455.0,464.0 L460.0,459.0 L466.0,456.0 L488.0,456.0 L501.0,454.0 L511.0,449.0 L520.0,440.0 L534.0,417.0 L538.0,403.0 L538.0,395.0 L536.0,388.0 L532.0,383.0 L503.0,380.0 L491.0,374.0 L484.0,367.0 L461.0,330.0 L428.0,287.0 L423.0,284.0 L415.0,284.0 L374.0,312.0 L367.0,315.0 L357.0,314.0 L330.0,296.0 L318.0,285.0 L313.0,278.0 L287.0,226.0 L278.0,218.0 L266.0,213.0 L252.0,200.0 L242.0,196.0 L240.0,203.0 L230.0,214.0 L226.0,221.0 L226.0,253.0 L229.0,261.0 L239.0,274.0 L241.0,282.0 L236.0,298.0 L237.0,307.0 L235.0,309.0 L226.0,305.0 L217.0,305.0 L209.0,307.0 L188.0,318.0 L162.0,317.0 L156.0,315.0 L144.0,305.0 L142.0,305.0 L138.0,312.0 L132.0,318.0 L120.0,326.0 L106.0,332.0 L95.0,330.0 L81.0,321.0 L76.0,316.0 L74.0,312.0 L74.0,306.0 L82.0,294.0 L84.0,288.0 L83.0,278.0 L85.0,270.0 L97.0,253.0 L101.0,242.0 L103.0,218.0 L108.0,202.0 L106.0,177.0 L100.0,169.0 L94.0,166.0 L73.0,165.0 L62.0,160.0 L40.0,139.0 L33.0,129.0 L24.0,121.0 L16.0,120.0Z M36.0,3.0 L30.0,8.0 L30.0,14.0 L41.0,24.0 L45.0,30.0 L49.0,50.0 L49.0,60.0 L45.0,68.0 L29.0,82.0 L27.0,87.0 L27.0,95.0 L33.0,102.0 L39.0,105.0 L58.0,101.0 L82.0,100.0 L93.0,91.0 L106.0,65.0 L113.0,55.0 L125.0,43.0 L126.0,36.0 L121.0,31.0 L108.0,31.0 L95.0,27.0 L87.0,20.0 L83.0,10.0 L74.0,3.0Z " fill="#E4E6C6" stroke="#FFFBEF" stroke-width="1.6" stroke-linejoin="round"/><path d="M220.0,182.0 L213.0,182.0 L202.0,187.0 L194.0,188.0 L180.0,183.0 L171.0,184.0 L164.0,189.0 L156.0,206.0 L146.0,219.0 L142.0,228.0 L138.0,248.0 L138.0,283.0 L142.0,301.0 L154.0,313.0 L162.0,316.0 L188.0,317.0 L212.0,305.0 L226.0,304.0 L233.0,308.0 L236.0,307.0 L235.0,298.0 L240.0,282.0 L238.0,274.0 L228.0,261.0 L225.0,253.0 L225.0,221.0 L229.0,214.0 L239.0,203.0 L239.0,196.0 L233.0,189.0Z " fill="#DCD2BC" stroke="#FFFBEF" stroke-width="1.6" stroke-linejoin="round"/><path d="M335.0,389.0 L322.0,380.0 L318.0,380.0 L314.0,385.0 L309.0,387.0 L298.0,384.0 L279.0,384.0 L270.0,381.0 L258.0,382.0 L243.0,388.0 L241.0,391.0 L241.0,396.0 L246.0,414.0 L250.0,422.0 L250.0,431.0 L254.0,442.0 L258.0,446.0 L262.0,447.0 L271.0,446.0 L275.0,448.0 L282.0,448.0 L294.0,444.0 L305.0,435.0 L317.0,427.0 L324.0,424.0 L335.0,415.0 L337.0,411.0 L334.0,406.0 L334.0,397.0 L336.0,392.0Z M462.0,294.0 L457.0,289.0 L445.0,289.0 L439.0,291.0 L412.0,290.0 L407.0,292.0 L394.0,292.0 L384.0,295.0 L378.0,300.0 L374.0,309.0 L375.0,333.0 L378.0,336.0 L390.0,340.0 L419.0,342.0 L431.0,340.0 L434.0,338.0 L455.0,332.0 L459.0,327.0 L459.0,308.0 L462.0,300.0Z " fill="#F1E8D4" stroke="#FFFBEF" stroke-width="1.6" stroke-linejoin="round"/>
-<path d="M285.0,219.0 L284.0,235.0 L288.0,243.0 L294.0,243.0 L304.0,239.0 L325.0,237.0 L329.0,239.0 L333.0,244.0 L337.0,257.0 L340.0,262.0 L347.0,267.0 L362.0,272.0 L398.0,270.0 L404.0,268.0 L410.0,268.0 L414.0,271.0 L415.0,275.0 L414.0,276.0 L414.0,287.0 L416.0,289.0 L422.0,290.0 L439.0,290.0 L445.0,288.0 L459.0,289.0 L463.0,294.0 L463.0,300.0 L460.0,308.0 L460.0,330.0 L461.0,332.0 L475.0,345.0 L481.0,353.0 L490.0,361.0 L496.0,364.0 L510.0,381.0 L517.0,385.0 L524.0,386.0 L532.0,390.0 L538.0,390.0 L540.0,387.0 L541.0,359.0 L544.0,348.0 L550.0,337.0 L562.0,324.0 L564.0,320.0 L564.0,316.0 L560.0,308.0 L561.0,305.0 L617.0,255.0 L627.0,244.0 L625.0,237.0 L596.0,209.0 L589.0,208.0 L577.0,214.0 L571.0,214.0 L558.0,202.0 L540.0,198.0 L523.0,198.0 L522.0,197.0 L505.0,197.0 L504.0,196.0 L487.0,196.0 L468.0,194.0 L436.0,194.0 L435.0,195.0 L380.0,198.0 L303.0,207.0Z " fill="#B8451F" stroke="#FFFBEF" stroke-width="2.4" stroke-linejoin="round"/><path d="M227.0,213.0 L226.0,229.0 L229.0,242.0 L225.0,250.0 L225.0,254.0 L227.0,258.0 L240.0,272.0 L243.0,280.0 L246.0,283.0 L267.0,291.0 L270.0,290.0 L275.0,284.0 L278.0,283.0 L282.0,286.0 L285.0,292.0 L295.0,304.0 L302.0,310.0 L352.0,330.0 L365.0,338.0 L372.0,337.0 L374.0,334.0 L373.0,309.0 L377.0,300.0 L384.0,294.0 L395.0,291.0 L406.0,291.0 L412.0,287.0 L414.0,275.0 L413.0,271.0 L410.0,269.0 L404.0,269.0 L398.0,271.0 L362.0,273.0 L345.0,267.0 L337.0,259.0 L334.0,248.0 L330.0,241.0 L325.0,238.0 L304.0,240.0 L294.0,244.0 L288.0,244.0 L285.0,241.0 L283.0,235.0 L284.0,232.0 L283.0,223.0 L278.0,219.0 L271.0,218.0 L264.0,215.0 L259.0,210.0 L258.0,203.0 L255.0,200.0 L247.0,202.0 L239.0,210.0 L235.0,212.0Z " fill="#F5B321" stroke="#FFFBEF" stroke-width="2.4" stroke-linejoin="round"/><path d="M202.0,307.0 L202.0,313.0 L205.0,320.0 L205.0,337.0 L202.0,346.0 L203.0,370.0 L205.0,375.0 L205.0,383.0 L203.0,391.0 L209.0,400.0 L217.0,419.0 L235.0,455.0 L241.0,464.0 L255.0,481.0 L267.0,502.0 L281.0,517.0 L288.0,530.0 L300.0,542.0 L306.0,545.0 L313.0,546.0 L342.0,545.0 L352.0,540.0 L365.0,528.0 L370.0,520.0 L370.0,513.0 L366.0,505.0 L363.0,502.0 L362.0,497.0 L366.0,488.0 L372.0,482.0 L381.0,477.0 L384.0,473.0 L386.0,466.0 L385.0,451.0 L390.0,444.0 L402.0,440.0 L418.0,438.0 L422.0,436.0 L435.0,423.0 L452.0,415.0 L457.0,415.0 L461.0,417.0 L466.0,423.0 L466.0,431.0 L461.0,449.0 L461.0,452.0 L464.0,455.0 L488.0,455.0 L500.0,453.0 L509.0,450.0 L516.0,444.0 L528.0,428.0 L534.0,414.0 L537.0,403.0 L536.0,393.0 L527.0,388.0 L517.0,386.0 L510.0,382.0 L496.0,365.0 L490.0,362.0 L478.0,351.0 L471.0,342.0 L459.0,333.0 L453.0,333.0 L431.0,341.0 L419.0,343.0 L391.0,341.0 L383.0,338.0 L365.0,339.0 L352.0,331.0 L302.0,311.0 L294.0,304.0 L284.0,292.0 L281.0,286.0 L278.0,284.0 L275.0,285.0 L270.0,291.0 L267.0,292.0 L242.0,283.0 L227.0,290.0 L221.0,298.0 L214.0,300.0Z M336.0,390.0 L335.0,405.0 L337.0,408.0 L336.0,415.0 L324.0,425.0 L317.0,428.0 L297.0,443.0 L282.0,449.0 L275.0,449.0 L270.0,447.0 L266.0,448.0 L259.0,447.0 L252.0,440.0 L249.0,431.0 L249.0,422.0 L245.0,414.0 L240.0,395.0 L241.0,390.0 L245.0,386.0 L250.0,385.0 L255.0,382.0 L265.0,380.0 L280.0,383.0 L298.0,383.0 L304.0,385.0 L312.0,385.0 L319.0,379.0 L321.0,379.0 L330.0,384.0Z " fill="#2F6B2A" stroke="#FFFBEF" stroke-width="2.4" stroke-linejoin="round"/>
-<defs><pattern id="wbhatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="9" stroke="#8A7458" stroke-width="1.6" stroke-opacity="0.35"/></pattern></defs>
-<path d="M304,0 L307,50 L309,78 L360,98 L420,112 L470,122 L509,126 L545,110 L585,88 L640,70 L640,0 L304,0Z" fill="url(#wbhatch)"/>
-<path d="M304,0 L307,50 L309,78 L360,98 L420,112 L470,122 L509,126 L545,110 L585,88 L640,70" fill="none" stroke="#FFFBEF" stroke-width="6" stroke-linejoin="round"/>
-<path d="M304,0 L307,50 L309,78 L360,98 L420,112 L470,122 L509,126 L545,110 L585,88 L640,70" fill="none" stroke="#2E9E4F" stroke-width="3" stroke-dasharray="9 6" stroke-linejoin="round"/>
-<text x="478" y="143" font-size="13" fill="#2E7D3F" text-anchor="middle" font-weight="700" paint-order="stroke" stroke="#FBF3DC" stroke-width="3">الخط الأخضر</text>
-<text x="440" y="50" font-size="15" fill="#6B5640" text-anchor="middle" font-weight="700" paint-order="stroke" stroke="#F7EBCB" stroke-width="3">الضفة الغربية</text>
-<g font-size="14.5" fill="#8A7458" text-anchor="middle" font-weight="500">
-<text x="245" y="28">لخيش</text><text x="205" y="108">بني شمعون</text><text x="440" y="72">جنوب جبل الخليل</text><text x="175" y="282">بئر السبع</text><text x="38" y="248">مرحافيم</text><text x="590" y="372">تامار</text><text x="86" y="492">رمات هنيغيف</text><text x="546" y="538">ديمونا</text>
-</g>
-<text x="430" y="177" font-size="13" fill="#6E8450" text-anchor="middle" font-style="italic" font-weight="500">أحراش ميتار ويتير</text>
-<g font-weight="800" text-anchor="middle" paint-order="stroke" stroke-linejoin="round">
-<text x="470" y="262" font-size="19" fill="#FFFFFF" stroke="#B8451F" stroke-width="3.2">م.إ. القسوم</text>
-<text x="330" y="300" font-size="12.5" fill="#3B1D12" stroke="#F5B321" stroke-width="3"><tspan x="330">م.إ. سهل</tspan><tspan x="330" dy="14">بئر السبع</tspan></text>
-<text x="448" y="418" font-size="19" fill="#FFFFFF" stroke="#2F6B2A" stroke-width="3.2">م.إ. نيفي مدبار</text>
-</g>
-</svg></div>
-<figcaption style="font-size: 14px; color: #4F3226; margin-top: 8px">خريطة تخطيطية. حدود المجالس المقترحة تقريبية</figcaption>
-</figure>
-<div style="flex: 1 1 340px; min-width: 0">
-<h3 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.25; margin: 0 0 18px">توسيع المجالس الإقليمية البدوية إلى نحو 600 ألف دونم، فيها 39 من أصل 46 قرية</h3>
-<p style="margin: 0; background: #F5B321; color: #3B1D12; font-weight: 700; font-size: 19px; line-height: 1.5; border-radius: 16px; padding: 16px 22px">يرفع الحل المساحة المتوسطة للفرد إلى 4 دونمات، مقابل 28 دونمًا في المجالس اليهودية في شمال النقب</p>
-</div>
-</div>
-<div style="margin-top: 28px; background: #FFFFFF; border-radius: 16px; padding: 26px 28px; display: flex; flex-wrap: wrap; gap: 24px 40px; align-items: center">
-<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-<div><div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px"><span style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; line-height: 1; font-size: clamp(38px, 4.4vw, 54px); color: #2F6B2A">28</span><span style="font-weight: 700; font-size: 17px">دونمًا للفرد، يهودي في شمال النقب</span></div><div style="display: flex; flex-wrap: wrap; gap: 6px; max-width: 358px"><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #2F6B2A"></span></div></div>
-<div><div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px"><span style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; line-height: 1; font-size: clamp(38px, 4.4vw, 54px); color: #B8451F">4</span><span style="font-weight: 700; font-size: 17px">دونمات للفرد، بدوي، بحسب الخطة</span></div><div style="display: flex; flex-wrap: wrap; gap: 6px; max-width: 358px"><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #B8451F"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #B8451F"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #B8451F"></span><span style="width: 20px; height: 20px; border-radius: 50%; flex: none; background: #B8451F"></span></div></div>
-</div>
-<div style="flex: 1 1 320px; min-width: 0">
-<p style="margin: 0">حتى بعد الخطة ستبقى الفجوة سبعة أضعاف. هذا ليس استيلاءً على النقب. هذا تقليص لفجوة.</p>
-<p style="margin: 18px 0 0; font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 700; font-size: clamp(20px, 2vw, 24px); line-height: 1.35">لو كان القرويون البدو يهودًا، لحوّلتهم الدولة منذ زمن إلى أهل موشافيم.</p>
-</div>
-</div>
-</section>
-
-<section style="background: #FBE7B5">
-<div style="max-width: 1180px; margin: 0 auto; padding: 52px 24px">
-<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">04 · المزرعة المساعدة</div>
-<h2 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(26px, 2.7vw, 34px); line-height: 1.2; margin: 0 0 14px">مزرعة مساعدة واحدة، 5 دونمات</h2>
-<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; max-width: 980px">
-<div style="grid-column: span 2; background: #F2C46D; border-radius: 10px; padding: 22px; min-height: 110px">
-<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 30px; line-height: 1">دونمان</div>
-<div style="font-weight: 700; margin: 6px 0 4px">بيت</div>
-<div style="font-size: 17px">مكان لجيلين على الأقل</div>
-</div>
-<div style="grid-column: span 3; background: #6FA06F; color: #10200F; border-radius: 10px; padding: 22px; min-height: 110px">
-<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 30px; line-height: 1">3 دونمات</div>
-<div style="font-weight: 700; margin: 6px 0 4px">مصدر رزق</div>
-<div style="font-size: 17px">حظيرة، قنّ دجاج، دفيئة، ألواح شمسية، غرف ضيافة، كراج، ورشة حدادة</div>
-</div>
-</div>
-<figure style="margin: 24px 0 0; max-width: 980px"><img src="/assets/img/nahala-render-v2.jpg" alt="تصوّر لمزرعة عائلية فيها بيوت ومزرعة مساعدة" loading="lazy" style="width: 100%; max-height: 460px; object-fit: cover; border-radius: 12px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">تصوّر بالذكاء الاصطناعي: قسيمة عائلية، مع بيوت ومزرعة مساعدة</figcaption></figure>
-<div style="margin-top: 16px; max-width: 980px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px">
-<figure style="margin: 0"><img src="/assets/img/biz-greenhouse.jpg" alt="دفيئات ومخازن في الصحراء" loading="lazy" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">دفيئة</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/biz-solar.jpg" alt="حقل ألواح شمسية قرب قرية" loading="lazy" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">ألواح شمسية</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/biz-chickens.jpg" alt="دجاج في القن" loading="lazy" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">قن دجاج</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/biz-tent.jpg" alt="خيمة ضيافة بالسجاد والوسائد" loading="lazy" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">ضيافة في الخيمة</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/biz-welding.jpg" alt="لحّام يعمل في ورشة حدادة" loading="lazy" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">ورشة حدادة</figcaption></figure>
-</div>
-<p style="margin: 22px 0 0; max-width: 780px">هكذا بنت الدولة الموشافيم، ونجح الأمر. أكثر من 90% من المصالح في إسرائيل هي مصالح صغيرة وصغيرة جدًا. حين تصبح الأرض وسيلة إنتاج، تستطيع آلاف العائلات أن تفتح مصلحة وتدفع الضرائب.</p>
-<p style="margin: 28px 0 4px; max-width: 820px; font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 700; font-size: clamp(20px, 2vw, 24px); line-height: 1.35">وثلاثة دونمات أمر متواضع. وفق خطة الدولة نفسها، العائلة في المجلس الإقليمي تمار تعتاش من مزرعة مساحتها 65 دونمًا.</p>
-<div style="font-size: 15px; color: #4F3226">المخطط الإقليمي للنقب الشرقي، مديرية التخطيط (مسودة، نيسان 2026)</div>
-</div>
-</section>
-
-<section>
-<div style="max-width: 1180px; margin: 0 auto; padding: 52px 24px">
-<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">05 · التاريخ</div>
-<div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center">
-<figure style="flex: 0 1 340px; min-width: 0; max-width: 340px; margin: 0">
-<div style="display: inline-flex; gap: 6px; background: #FBE7B5; padding: 5px; border-radius: 999px; margin-bottom: 12px">
-<button type="button" id="eOld" onclick="se(1)" style="font-family: Heebo, sans-serif; font-weight: 700; font-size: 16px; border: 0; border-radius: 999px; padding: 10px 20px; min-height: 44px; cursor: pointer;background:#3B1D12;color:#FFFFFF">1945</button>
-<button type="button" id="eNew" onclick="se(0)" style="font-family: Heebo, sans-serif; font-weight: 700; font-size: 16px; border: 0; border-radius: 999px; padding: 10px 20px; min-height: 44px; cursor: pointer;background:transparent;color:#3B1D12">اليوم</button>
-</div>
-<div class="eOld">
-<img src="/assets/img/aerial1945-hq.jpg" alt="صورة جوية بريطانية من 1945 لسهل بئر السبع: حقول مقسّمة إلى قطع، طرق ترابية ووديان" data-zoom="1" title="انقروا للتكبير" style="cursor: zoom-in; width: 100%; height: auto; border-radius: 10px; display: block">
-<figcaption style="font-size: 15px; color: #4F3226; margin-top: 8px">النقع، سهل بئر السبع، 1945. صورة جوية من فترة الانتداب</figcaption>
-</div>
-<div class="eNew" style="display:none">
-<img src="/assets/img/agri-today.jpg" alt="المنطقة نفسها اليوم: أراضٍ مزروعة بالأخضر، وبيوت القرى منتشرة بينها" data-zoom="1" title="انقروا للتكبير" style="cursor: zoom-in; width: 100%; height: auto; border-radius: 10px; display: block">
-<figcaption style="font-size: 15px; color: #4F3226; margin-top: 8px">المنطقة نفسها اليوم. بالأخضر: أراضٍ مزروعة</figcaption>
-</div>
-</figure>
-<div style="flex: 1 1 340px; min-width: 0">
-<h2 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(26px, 2.7vw, 34px); line-height: 1.2; margin: 0 0 14px">لسنا رحّلًا. نحن مزارعون</h2>
-<p style="margin: 0 0 14px">هذا سهل بئر السبع عام 1945، المنطقة الواقعة اليوم بين شارعي 25 و31. الحقول مقسّمة إلى قطع، بحدود وطرق ترابية، ولا تكاد تظهر في الصورة أرض غير مزروعة. اليوم، في المنطقة نفسها، ما زالت الحقول مزروعة والبيوت قائمة بينها.</p>
-<p style="margin: 0 0 14px">في الإحصاء البريطاني عام 1931 صُنّف نحو 12% فقط من البدو في النقب كمن يعتاشون من الرعي وحده. جميع الباقين فلحوا الأرض. وفي منتصف الثلاثينيات زُرع في لواء بئر السبع أكثر من مليوني دونم.</p>
-<p style="margin: 0; font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 700; font-size: 21px; line-height: 1.4">الموشاف البدوي لا يحتاج إلى اختراع. لقد كان هنا من قبل.</p>
 </div>
 </div>
 </div>
 </section>
 
+<section id="fiction" class="fic-slide" aria-labelledby="fic-title">
+<div class="problem-kicker">02 · وهم «التسوية»</div>
+<h2 id="fic-title">بهذه الوتيرة تستغرق التسوية الشاملة نحو 900 سنة <small class="fic-sub">(من دون احتساب الزيادة الطبيعية للسكان)</small></h2>
+<div class="fic-banner">
+<img class="fic-bg" src="/assets/img/demolition-site.jpg" alt="" aria-hidden="true" loading="lazy">
+<div class="fic-shade" aria-hidden="true"></div>
+<div class="fic-side"><div class="fic-big">نحو 30 ألف</div><p>أسرة تعيش في القرى</p><div class="fic-big fic-big--2">نحو 33<sup>*</sup></div><p>أسرة انتقلت سنويًا إلى قسيمة سكنية منظّمة</p></div>
+<div></div>
+<div class="fic-side fic-side--end"><p>وفي المقابل، تهدم الدولة</p><div class="fic-big">800</div><p>منزل سنويًا</p></div>
+<p class="fic-punch">تقوم السياسة الحالية على وهم خطير. فبدلًا من حلّ المشكلة، تخلق مشكلات جديدة.</p>
+</div>
+<p class="fic-foot">* بيانات سلطة تطوير وإسكان البدو في النقب للأعوام 2017–2022.</p>
+</section>
 
-
-<section id="alfuhari" style="background: #3B1D12; color: #FFF4D6">
-<div style="max-width: 1180px; margin: 0 auto; padding: 52px 24px">
-<div style="font-size: 16px; font-weight: 700; color: #F5B321; margin-bottom: 8px">06 · إثبات الجدوى</div>
-<h2 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(26px, 2.7vw, 34px); line-height: 1.2; margin: 0 0 18px; max-width: 820px">الفخاري: الخطة جُرّبت بالفعل، منذ 40 عامًا</h2>
-<div style="display: flex; flex-wrap: wrap; gap: 32px 40px; align-items: flex-start">
-<div style="flex: 1 1 460px; min-width: 0">
-<p style="margin: 0 0 16px">على بُعد بضع مئات من الأمتار جنوبي لهافيم، بين التلال الخضراء، تقع قرية غير معترف بها يسكنها نحو 300 نسمة من عائلتي أبو راشد والهواشلة. سُمّيت على اسم بئر الفخاري، وهي بئر قديمة واسعة، نُحتت حول فوهتها أربعة أحواض لسقي قطيع كامل دفعة واحدة.</p>
-<p style="margin: 0 0 16px">في عام 1985 طلبت الدولة من العائلات مغادرة بيوتها قرب سديه تيمان. فوقّعت اتفاقًا مع دائرة أراضي إسرائيل وانتقلت. وفي عام 1996، حين توسّعت لهافيم، انتقلت مرة أخرى، هذه المرة بموجب اتفاق حصل على قوة حكم قضائي:</p>
-</div>
-<div style="flex: 1 1 380px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
-<div style="background: rgba(255,244,214,0.08); border-top: 4px solid #F5B321; border-radius: 10px; padding: 16px 18px"><div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 28px; line-height: 1.1; color: #F5B321">750 دونمًا</div><div style="margin-top: 6px; font-size: 16px">للسكن</div></div>
-<div style="background: rgba(255,244,214,0.08); border-top: 4px solid #F5B321; border-radius: 10px; padding: 16px 18px"><div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 28px; line-height: 1.1; color: #F5B321">2,000 دونم</div><div style="margin-top: 6px; font-size: 16px">للزراعة</div></div>
-<div style="background: rgba(255,244,214,0.08); border-top: 4px solid #F5B321; border-radius: 10px; padding: 16px 18px"><div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 28px; line-height: 1.1; color: #F5B321">1,027 ₪</div><div style="margin-top: 6px; font-size: 16px">بدل إيجار سنوي</div></div>
-<div style="background: rgba(255,244,214,0.08); border-top: 4px solid #F5B321; border-radius: 10px; padding: 16px 18px"><div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 28px; line-height: 1.1; color: #F5B321">تصريح</div><div style="margin-top: 6px; font-size: 16px">ببناء بيوت وحظائر، وخط مياه وطريق للحافلات</div></div>
+<section id="cost" aria-labelledby="cost-title" style="color: #FFFFFF; max-width: 1180px; margin: 0 auto; padding: clamp(14px, 2.4vh, 24px) 24px clamp(14px, 2.4vh, 24px)">
+<div class="problem-kicker">03 · ثمن الوضع القائم</div>
+<h2 id="cost-title" style="font-family: 'Noto Sans Arabic',sans-serif; font-weight: 800; font-size: clamp(26px, 2.7vw, 36px); line-height: 1.2; margin: 0 0 clamp(12px, 2vh, 18px); color: #3B1D12">يعيش نحو 50% من سكان البلدات ونحو 70% من سكان القرى في فقر</h2>
+<div style="border-radius: 16px; overflow: hidden">
+<div style="position: relative; overflow: hidden; min-height: clamp(120px, 18vh, 190px); display: flex; align-items: center">
+<img src="/assets/img/gal-rasjraba.jpg" alt="بيوت من الصفيح في قرية غير معترف بها قرب ديمونا، وتظهر مباني المدينة خلفها" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 62%">
+<div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(18,10,4,0.68) 0%, rgba(18,10,4,0.55) 50%, rgba(18,10,4,0.32) 100%)"></div>
+<div style="position: relative; width: 100%; padding: clamp(14px, 2.6vh, 24px) 30px">
+<p style="font-family: 'Noto Sans Arabic',sans-serif; font-weight: 800; font-size: clamp(22px, min(2.9vw, 5vh), 38px); line-height: 1.15; margin: 0; max-width: 980px; text-shadow: 0 2px 10px rgba(0,0,0,0.65)"><span style="color: #F5B321">تخسر دولة إسرائيل عشرات مليارات الشواقل سنويًا بسبب الوضع القائم.</span> وترافق ذلك أضرار اجتماعية نشأ عن بعضها خطاب «الحوكمة».</p>
 </div>
 </div>
-<p style="margin: 26px 0 16px; max-width: 820px">النتيجة: قرية شبه خالية من الفقر والبطالة. لا يُعرف عن أي من سكانها ضلوعه في الجريمة، ولم تشهد القرية نزاعًا عنيفًا قط. التسرّب من المدارس قريب من الصفر، مقابل ما يصل إلى نصف الطلاب في قرى أخرى. عشر عائلات تعتاش من قطعان كبيرة، يبلغ مجموعها نحو 5,000 رأس من الأغنام والماعز. وخرج من القرية أيضًا خمسة مقاولي أعمال ترابية، ومدير مصنع، ومعلمون، والدكتور علي الهواشلة، المدير الطبي للواء الجنوب في كلاليت.</p>
-<p style="margin: 0 0 24px; max-width: 820px">طالب أبو راشد، البالغ 50 عامًا، لا يتذكر سوى حالة هدم مبنى واحدة في القرية.</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(250px, calc(50% - 6px)), 1fr)); gap: 12px">
-<figure style="margin: 0"><img src="/assets/img/fuhari-fields.jpg" alt="حقول خضراء وطرق ترابية بين التلال" loading="lazy" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 6px; color: #F2DDB0">جزء من الـ2,000 دونم الزراعية</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/fuhari-flock.jpg" alt="راعٍ وقطيع أغنام على تلة خضراء" loading="lazy" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 6px; color: #F2DDB0">راعٍ وقطيع</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/fuhari-horses.jpg" alt="خيول ترعى بين الأشجار" loading="lazy" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 6px; color: #F2DDB0">خيول في المرعى</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/fuhari-calf.jpg" alt="عجل أبيض في حقل أخضر" loading="lazy" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 6px; color: #F2DDB0">عجل في الحقل</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/fuhari-camels.jpg" alt="قطيع أغنام وجِمال في الوادي" loading="lazy" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 6px; color: #F2DDB0">قطيع وجِمال في الوادي</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/fuhari-sheep.jpg" alt="قطيع أغنام يرعى قرب بقايا بناء حجري قديم" loading="lazy" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 6px; color: #F2DDB0">قطيع قرب بقايا بناء حجري قديم</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/fuhari-hill.jpg" alt="بيوت القرية على سفح أخضر، وأمامها حظائر وحقل" loading="lazy" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 6px; color: #F2DDB0">القرية وحظائرها</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/fuhari-well.jpg" alt="منظر من الأعلى إلى بئر ماء قديمة ممتلئة" loading="lazy" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 6px; color: #F2DDB0">إحدى الآبار القديمة حول القرية</figcaption></figure>
+<div style="position: relative; overflow: hidden">
+<img src="/assets/img/village.jpg" alt="" aria-hidden="true" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 58%">
+<div style="position: absolute; inset: 0; background: rgba(18,10,4,0.66)"></div>
+<div style="position: relative; padding: clamp(14px, 2.6vh, 24px) clamp(16px, 3vw, 30px) clamp(16px, 3vh, 28px)">
+<div style="display: inline-block; background: #F5B321; color: #2A1608; font-family: 'Noto Sans Arabic',sans-serif; font-weight: 800; font-size: clamp(18px, min(5vw, 3.4vh), 24px); padding: 5px 22px; border-radius: 999px; margin: -4px 0 clamp(24px, 4vh, 36px)">الخسائر الاجتماعية والاقتصادية</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(max(120px, 18%), 1fr)); gap: clamp(28px, 4.5vh, 42px) 18px"><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/blocks.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">3,200 طفل بلا روضة</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/bubbles.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">عدم إتقان العبرية</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/briefcase.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">عشرات الآلاف خارج أطر العمل والتعليم</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/banknote.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">مدفوعات المخصّصات</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/coins.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">خسارة إيرادات ضريبية</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/bus.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">غياب البنية التحتية للنقل</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/bulldozer.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">هدم المنازل</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/health.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">تكاليف الرعاية الصحية</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/police.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">الجريمة</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/trash.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">الضرر البيئي</div></div></div>
 </div>
-<p style="margin: 32px 0 16px; max-width: 820px">في عام 2014 أعلنت سلطة أراضي إسرائيل انسحابها من الاتفاق، وطالبت بإخلاء القرية. وفي عام 2020 قبلت المحكمة الدعوى، وفي شباط 2026 ردّت المحكمة العليا التماس السكان. وهم لم يطلبوا سوى أمر واحد: الاندماج في توسعة لهافيم المخططة على أرضهم، والحفاظ على حقولهم.</p>
-<p style="margin: 0; max-width: 820px; font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 700; font-size: clamp(20px, 2vw, 24px); line-height: 1.4; color: #F5B321">الفخاري لا يحتاج إلى دراسة جدوى. هو الدراسة. ما نجح في قرية واحدة 40 عامًا، تقترحه خطة المجالس الإقليمية على كل القرى: أرض للسكن ومزرعة مساعدة وحقول</p>
-<div style="font-size: 14px; color: #F2DDB0; margin-top: 18px">المصادر: <a href="https://rcuv.substack.com/p/3f1" target="_blank" rel="noopener" style="color: #F2DDB0">مقال المجلس (بالعبرية)، آذار 2026</a>، استنادًا إلى مقابلة مع طالب أبو راشد. عدد رؤوس الماشية: من أحد سكان القرية، تشرين الثاني 2026</div>
+</div>
 </div>
 </section>
+
+<section id="alfuhari" class="fuhari-slide" aria-labelledby="fuhari-title">
+<div class="problem-kicker">04 · هناك بديل</div>
+<h2 id="fuhari-title">الفخّاري: القرية التي أُتيحت لها الأرض فازدهرت</h2>
+<div class="fuhari-hero">
+<img class="fuhari-background" src="/assets/img/fuhari-flock.jpg" alt="" aria-hidden="true" loading="lazy">
+<div class="fuhari-shade" aria-hidden="true"></div>
+<div class="fuhari-copy">
+<p>بفضل ظروف استثنائية، تمكّن سكان قرية الفخّاري الجميلة، جنوب لهافيم، على مدى السنوات الأربعين الماضية من بناء البيوت وحظائر المواشي من دون تهديد بالهدم، وأُتيحت لهم ألفا دونم للزراعة.</p>
+<p>والنتيجة: لا فقر ولا بطالة، ولا جريمة ولا عنف، ولا تسرّب من المدارس. وتزدهر تربية الأغنام، التي كادت تندثر في سائر القرى، إذ يبلغ القطيع نحو خمسة آلاف رأس. ومن أبناء القرية مقاولون ناجحون ومديرو مصانع ومؤسسات تعليمية، وكذلك كبير أطباء صندوق المرضى «كلاليت» في لواء الجنوب.</p>
+<p class="fuhari-punch">هذا هو النموذج الذي تستند إليه «خطة المجالس الإقليمية»:<span class="fuhari-key">الأرض محرّك للنمو وليست ساحة معركة.</span></p>
+</div>
+<div class="fuhari-gallery" data-gallery="alfuhari" role="region" aria-label="صور من الفخّاري" tabindex="0">
+<figure><img src="/assets/img/fuhari-children-private.webp" alt="طفلان بجانب النار" loading="lazy" tabindex="0" role="button" aria-label="تكبير الصورة: طفلان بجانب النار"></figure>
+<figure><img src="/assets/img/fuhari-coffee-fire.jpg" alt="إعداد القهوة على النار" loading="lazy" tabindex="0" role="button" aria-label="تكبير الصورة: إعداد القهوة على النار"></figure>
+<figure><img src="/assets/img/fuhari-girl-private.webp" alt="طفلة تجلس في الحقل بعد الحصاد" loading="lazy" tabindex="0" role="button" aria-label="تكبير الصورة: طفلة تجلس في الحقل بعد الحصاد"></figure>
+<figure><img src="/assets/img/fuhari-child-private.webp" alt="طفل يحمل دجاجة" loading="lazy" tabindex="0" role="button" aria-label="تكبير الصورة: طفل يحمل دجاجة"></figure>
+<figure><img src="/assets/img/fuhari-village.jpg" alt="بيوت الفخّاري" loading="lazy" tabindex="0" role="button" aria-label="تكبير الصورة: بيوت الفخّاري"></figure>
+<figure><img src="/assets/img/fuhari-plants.jpg" alt="أحد سكان القرية في الحقل" loading="lazy" tabindex="0" role="button" aria-label="تكبير الصورة: أحد سكان القرية في الحقل"></figure>
+<figure><img src="/assets/img/fuhari-horses.jpg" alt="خيول ترعى" loading="lazy" tabindex="0" role="button" aria-label="تكبير الصورة: خيول ترعى"></figure>
+<figure><img src="/assets/img/fuhari-fields.jpg" alt="حقول القرية" loading="lazy" tabindex="0" role="button" aria-label="تكبير الصورة: حقول القرية"></figure>
+<figure><img src="/assets/img/fuhari-fields-wide.webp" alt="حقول وأزهار برية" loading="lazy" tabindex="0" role="button" aria-label="تكبير الصورة: حقول وأزهار برية"></figure>
+<figure><img src="/assets/img/fuhari-cows.webp" alt="بقرة وعجل في المرعى" loading="lazy" tabindex="0" role="button" aria-label="تكبير الصورة: بقرة وعجل في المرعى"></figure>
+<figure><img src="/assets/img/fuhari-calf.jpg" alt="عجل أبيض في الحقل" loading="lazy" tabindex="0" role="button" aria-label="تكبير الصورة: عجل أبيض في الحقل"></figure>
+<figure><img src="/assets/img/fuhari-camels.jpg" alt="قطيع وإبل" loading="lazy" tabindex="0" role="button" aria-label="تكبير الصورة: قطيع وإبل"></figure>
+<figure><img src="/assets/img/fuhari-sheep.jpg" alt="أغنام ترعى" loading="lazy" tabindex="0" role="button" aria-label="تكبير الصورة: أغنام ترعى"></figure>
+<figure><img src="/assets/img/fuhari-hill.jpg" alt="بيوت القرية وتلالها" loading="lazy" tabindex="0" role="button" aria-label="تكبير الصورة: بيوت القرية وتلالها"></figure>
+<figure><img src="/assets/img/fuhari-well.jpg" alt="بئر قديمة" loading="lazy" tabindex="0" role="button" aria-label="تكبير الصورة: بئر قديمة"></figure>
+<figure><img src="/assets/img/fuhari-goats.webp" alt="ماعز ترعى" loading="lazy" tabindex="0" role="button" aria-label="تكبير الصورة: ماعز ترعى"></figure>
+</div>
+</div>
+</section>
+<section id="macro" class="problem-slide macro-slide" aria-labelledby="macro-title">
+<div class="problem-kicker">05 · الحلّ على مستوى المنطقة</div>
+<h2 id="macro-title">توسيع مساحة المجالس الإقليمية البدوية إلى نحو 600 ألف دونم</h2>
+<div class="pl-gap macro-grid">
+<figure class="macro-map"><img src="/assets/img/councils-expanded.webp" alt="خريطة تخطيطية للمجالس البدوية بعد توسيعها، جنوب غابتي ميتار ويتير" width="1918" height="1078" loading="lazy"><figcaption>خريطة تخطيطية للتوضيح فقط</figcaption></figure>
+<div class="macro-note macro-facts">
+<div class="mf"><div class="mf-num">39 من أصل 46</div><div class="mf-text"><strong>قرية ستدخل ضمن نطاق سلطة محلية فاعلة</strong><span>توسيع مجلسَي القيصوم وواحة الصحراء وإقامة مجلس إقليمي في سهل بئر السبع.</span></div></div>
+<div class="mf"><div class="mf-num">نحو 4 دونمات</div><div class="mf-text"><strong>للفرد، مقارنةً بنصف دونم اليوم</strong><span>ستأتي معظم الأراضي من مناطق خارج نطاق نفوذ أي سلطة محلية.</span></div></div>
+<div class="mf"><div class="mf-num">الأرنونا</div><div class="mf-text"><strong>إيرادات لتطوير البنية التحتية والخدمات</strong><span>مصادرها الزراعة والطاقة المتجددة والطرق التجارية ومناطق العمل وغيرها.</span></div></div>
+</div>
+</div>
+</section>
+<section id="micro" class="micro-slide" aria-labelledby="micro-title">
+<div class="problem-kicker">06 · الحلّ على مستوى الأسرة</div>
+<h2 id="micro-title">تخصيص 150 ألف دونم لإقامة 30 ألف حيازة عائلية في القرى</h2>
+<div class="micro-grid">
+<div class="micro-media">
+<div class="micro-switch" role="group" aria-label="اختيار تصوّر للحيازة العائلية"><button type="button" data-render="garden" aria-pressed="true" aria-label="التصوّر 1: حيازة عائلية مع دفيئات">1</button><button type="button" data-render="sheep" aria-pressed="false" aria-label="التصوّر 2: حيازة عائلية مع حظائر أغنام">2</button></div>
+<figure class="micro-render" data-gallery="micro"><img id="micro-render-image" src="/assets/img/nahala-render-v2.jpg" alt="تصوّر لحيازة عائلية تضمّ مساكن ودفيئات" width="1536" height="1024" loading="lazy"><figcaption>تصوّرات للتوضيح فقط. هكذا أنشأت الدولة قرى الموشاف الزراعية، ونجح هذا النموذج.</figcaption></figure>
+<!-- Business photos retained for possible reuse: biz-greenhouse.jpg, biz-solar.jpg, biz-chickens.jpg, biz-tent.jpg, biz-welding.jpg. -->
+</div>
+<div class="micro-copy micro-facts">
+<div class="mi-split"><div class="mi-h"><strong>60 ألف</strong><span>دونم للسكن</span></div><div class="mi-e"><strong>90 ألف</strong><span>دونم لمصادر الرزق</span></div></div>
+<p class="mi-lead"><strong>تحصل كل أسرة على دونمين للسكن وثلاثة دونمات لكسب الرزق</strong>، ولا يُشترط أن تكون القطعتان متجاورتين.</p>
+<ul class="mi-list">
+<li><strong>البناء العمودي على مراحل</strong> يتيح السكن للأهل وأبنائهم وبعض أحفادهم.</li>
+<li><strong>المزرعة العائلية</strong> تتيح للأسرة إقامة مشاريع من مختلف الأنواع، أو تأجير الأرض، أو إنتاج الغذاء للاستهلاك المنزلي.</li>
+</ul>
+<p class="mi-sum">نتوقّع أن <strong>يؤدي تخصيص هذه الحيازات إلى إنشاء آلاف المشاريع الصغيرة في غضون بضع سنوات</strong>، وإلى انخفاض ملموس في الفقر والبطالة والجريمة، إلى جانب نتائج إيجابية أخرى.</p>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
 
 <section id="village" style="background: #FBE7B5">
 <div style="max-width: 1180px; margin: 0 auto; padding: 52px 24px">
@@ -397,7 +485,7 @@ section[id]{scroll-margin-top:12px}
 
 <section style="max-width: 1180px; margin: 0 auto; padding: 52px 24px">
 <div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">12 · ما لا تطلبه الخطة</div>
-<h2 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(26px, 2.7vw, 34px); line-height: 1.2; margin: 0 0 32px">ثلاثة أسئلة يسألها الجميع</h2>
+<h2 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(26px, 2.7vw, 34px); line-height: 1.2; margin: 0 0 32px">أسئلة وأجوبة</h2>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px">
 <div>
 <h3 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 700; font-size: 22px; margin: 0 0 8px">وماذا عن دعاوى الملكية؟</h3>
@@ -462,4 +550,6 @@ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInter
 Object.keys(map).forEach(function(id){io.observe(document.getElementById(id))});})();
 </script>
 <script src="/assets/lightbox.js" defer></script>
+<script>document.querySelectorAll('[data-gallery] img[role="button"]').forEach(function(img){img.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();img.click();}});});</script>
+<script>(function(){var image=document.getElementById('micro-render-image');var buttons=document.querySelectorAll('[data-render]');var renders={garden:['/assets/img/nahala-render-v2.jpg','تصوّر لحيازة عائلية تضمّ مساكن ودفيئات'],sheep:['/assets/img/nahala-sheep-farm.webp','تصوّر لحيازة عائلية تضمّ مساكن وحظائر أغنام']};buttons.forEach(function(button){button.addEventListener('click',function(){var render=renders[button.dataset.render];image.src=render[0];image.alt=render[1];buttons.forEach(function(other){other.setAttribute('aria-pressed',String(other===button));});});});})();</script>
 </body></html>
