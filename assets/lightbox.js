@@ -58,7 +58,8 @@
   document.addEventListener('click', function (e) {
     var i = e.target.closest && e.target.closest('img,svg[role="img"]');
     if (!i || !ok(i)) return;
-    list = Array.prototype.filter.call(document.querySelectorAll('img,svg[role="img"]'), ok);
+    var scope = i.closest('[data-gallery]') || document;
+    list = Array.prototype.filter.call(scope.querySelectorAll('img,svg[role="img"]'), ok);
     var n = list.indexOf(i); if (n < 0) return;
     show(n); L.hidden = R.hidden = list.length < 2; d.showModal();
   });
