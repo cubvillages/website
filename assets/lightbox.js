@@ -38,6 +38,7 @@
     if (i.closest('a,button,nav,header,footer,dialog,[data-nozoom],.nifwrap,#donors')) return false;
     var cs = getComputedStyle(i);
     if (cs.position === 'absolute' || cs.position === 'fixed') return false;
+    if (i.closest('[data-gallery]')) return true;
     var r = i.getBoundingClientRect();
     return r.width >= 150 && r.height >= 100;
   }
