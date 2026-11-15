@@ -1,0 +1,2 @@
+/* Shared 80% display scale for every language and page. */
+html { zoom: 0.8; }
