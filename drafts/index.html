@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="he" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><title>טיוטות</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#fff4d6;color:#3b1d12;font:17px/1.6 Arial,sans-serif}header,form,nav,#message{max-width:1180px;margin:auto;padding:16px 24px}input,button,select{font:inherit;padding:6px 12px}input{max-width:100%}img{max-width:100%}</style>
+<header><h1>טיוטות</h1></header>
+<form><label>מפתח גישה אישי <input type="password" dir="ltr" autocomplete="current-password" required></label> <button>פתיחה</button></form>
+<p id="message" role="status"></p>
+<nav hidden><label>שפה <select><option value="he">עברית</option><option value="ar">العربية</option><option value="en">English</option></select></label> <button id="lock">נעילה</button></nav><main></main>
+<script>
+const form=document.querySelector('form'), input=form.querySelector('input'), main=document.querySelector('main'), nav=document.querySelector('nav'), select=nav.querySelector('select'), statusText=document.querySelector('#message');
+let sections;
+function show(){main.lang=select.value; main.dir=select.value==='en'?'ltr':'rtl'; main.innerHTML=sections[select.value].join('\n');}
+form.onsubmit=async event=>{
+ event.preventDefault(); statusText.textContent='';
+ try{
+ const raw=Uint8Array.from(atob(input.value.trim().replace(/-/g,'+').replace(/_/g,'/')),c=>c.charCodeAt(0));
+ const key=await crypto.subtle.importKey('raw',raw,'AES-GCM',false,['decrypt']);
+ const response=await fetch('content.enc');if(!response.ok)throw Error();
+ const data=Uint8Array.from(atob(await response.text()),c=>c.charCodeAt(0));
+ const plain=await crypto.subtle.decrypt({name:'AES-GCM',iv:data.slice(0,12)},key,data.slice(12));
+ sections=JSON.parse(new TextDecoder().decode(plain));show();input.value='';form.hidden=true;nav.hidden=false;
+ }catch{statusText.textContent='פתיחת הטיוטות נכשלה. בדוק את המפתח ונסה שוב.';}
+};
+select.onchange=show;document.querySelector('#lock').onclick=()=>location.reload();
+</script></html>
