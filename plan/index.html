@@ -105,16 +105,16 @@ section[id]{scroll-margin-top:12px}
 .fuhari-copy .fuhari-punch{color:#F5B321}
 /* Chapter 02: the "settlement" fiction. Headline above, photo banner with text on both sides, punch line below. */
 .fic-slide{max-width:1180px;margin:0 auto;padding:24px}
-.fic-slide h2{font-weight:800;font-size:clamp(26px,2.7vw,36px);line-height:1.2;margin:0 0 6px}
-.fic-sub{margin:0 0 clamp(12px,2vh,18px);font-size:clamp(15px,1.5vw,18px);font-weight:600;color:#6B4A3A}
-.fic-banner{position:relative;isolation:isolate;overflow:hidden;border-radius:16px;color:#FFF;min-height:clamp(230px,38vh,310px);display:grid;grid-template-columns:minmax(0,1fr) minmax(60px,.7fr) minmax(0,1fr);align-items:center;padding:clamp(14px,2.6vh,26px) clamp(18px,3vw,36px);text-shadow:0 1px 3px rgba(0,0,0,.7),0 0 14px rgba(0,0,0,.35)}
+.fic-slide h2{font-weight:800;font-size:clamp(26px,2.7vw,36px);line-height:1.2;margin:0 0 clamp(12px,2vh,18px)}
+.fic-sub{font-size:clamp(15px,1.5vw,18px);font-weight:600;color:#6B4A3A;white-space:nowrap}
+.fic-banner{position:relative;isolation:isolate;overflow:hidden;border-radius:16px;color:#FFF;min-height:clamp(260px,44vh,360px);display:grid;align-content:center;grid-template-columns:minmax(0,1fr) minmax(60px,.7fr) minmax(0,1fr);align-items:center;padding:clamp(14px,2.6vh,26px) clamp(18px,3vw,36px);text-shadow:0 1px 3px rgba(0,0,0,.7),0 0 14px rgba(0,0,0,.35)}
 .fic-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 46%;z-index:-2;filter:brightness(1.12) saturate(1.1)}
-.fic-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(to left,rgba(59,29,18,.7),rgba(59,29,18,.38) 38%,rgba(59,29,18,.1) 50%,rgba(59,29,18,.38) 62%,rgba(59,29,18,.7))}
+.fic-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(59,29,18,.72),rgba(59,29,18,0) 45%),linear-gradient(to left,rgba(59,29,18,.7),rgba(59,29,18,.38) 38%,rgba(59,29,18,.1) 50%,rgba(59,29,18,.38) 62%,rgba(59,29,18,.7))}
 .fic-side p{margin:0;font-size:clamp(16px,1.6vw,20px);font-weight:700;line-height:1.4}
-.fic-big{font-weight:800;line-height:1.05;color:#FFE45C;font-size:clamp(46px,5.6vw,72px);margin:4px 0}
+.fic-big{font-weight:800;line-height:1.05;color:#F5B321;font-size:clamp(44px,5.2vw,64px);margin:4px 0}
 .fic-side--end{grid-column:3}
 .fic-big--2{margin-top:10px}.fic-big sup{font-size:.45em;vertical-align:top}
-.fic-punch{margin:clamp(12px,2vh,18px) 0 0;padding:2px 16px 2px 0;border-inline-start:4px solid #B8451F;font-weight:800;font-size:clamp(19px,2vw,24px);line-height:1.4;color:#3B1D12}
+.fic-punch{grid-column:1/-1;margin:clamp(10px,2vh,18px) 0 0;font-weight:800;font-size:clamp(18px,2vw,23px);line-height:1.4;color:#F5B321}
 .fic-foot{margin:10px 0 0;font-size:13px;color:#6B4A3A}
 @media(max-width:700px){.fic-slide{padding:20px}.fic-banner{grid-template-columns:1fr;gap:12px;min-height:0}.fic-side--end{grid-column:1}}
 
@@ -211,16 +211,15 @@ section[id]{scroll-margin-top:12px}
 
 <section id="fiction" class="fic-slide" aria-labelledby="fic-title">
 <div class="problem-kicker">02 · ה"הסדרה" היא פיקציה</div>
-<h2 id="fic-title">הקצב להסדרה מלאה: כ־900 שנה</h2>
-<p class="fic-sub">לא כולל ריבוי טבעי</p>
+<h2 id="fic-title">הקצב להסדרה מלאה: כ־900 שנה <small class="fic-sub">(לא כולל ריבוי טבעי)</small></h2>
 <div class="fic-banner">
 <img class="fic-bg" src="/assets/img/demolition-site.jpg" alt="" aria-hidden="true" loading="lazy">
 <div class="fic-shade" aria-hidden="true"></div>
 <div class="fic-side"><div class="fic-big">כ־30 אלף</div><p>משפחות בכפרים</p><div class="fic-big fic-big--2">כ־33<sup>*</sup></div><p>משפחות בשנה עברו למגרש מוסדר</p></div>
 <div></div>
 <div class="fic-side fic-side--end"><p>ובינתיים: המדינה הורסת</p><div class="fic-big">800</div><p>בתי מגורים בשנה</p></div>
-</div>
 <p class="fic-punch">המדיניות הנוכחית היא אשליה מסוכנת: במקום לפתור את הבעיה, היא יוצרת בעיות חדשות</p>
+</div>
 <p class="fic-foot">* נתוני רשות הבדואים ל־2017–2022</p>
 </section>
 
