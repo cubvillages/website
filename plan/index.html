@@ -123,6 +123,32 @@ section[id]{scroll-margin-top:12px}
 .macro-map img{display:block;width:100%;height:auto;aspect-ratio:1918/1078;border-radius:12px;cursor:zoom-in}.micro-slide{max-width:1180px;margin:0 auto;padding:24px}.micro-slide h2{font-size:clamp(24px,2.2vw,32px);line-height:1.2;margin:0 0 18px;font-weight:800}.micro-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px;align-items:center}.micro-allocation{display:grid;grid-template-columns:2fr 3fr;gap:6px}.micro-allocation>div{border-radius:10px;padding:12px 16px;background:#F2C46D}.micro-allocation>div+div{background:#6FA06F;color:#10200F}.micro-allocation strong{font-size:24px;line-height:1.1;display:block}.micro-allocation span{display:block;font-size:13px;line-height:1.4;margin-top:6px}.micro-switch{display:flex;flex-wrap:wrap;gap:4px;border:1px solid #D6B88C;border-radius:24px;padding:4px;width:fit-content;margin:12px 0}.micro-switch button{font:700 14px Heebo,sans-serif;border:0;border-radius:999px;padding:8px 16px;cursor:pointer;background:transparent;color:#3B1D12}.micro-switch button[aria-pressed=true]{background:#2F6B2A;color:#FFF}.micro-render{margin:0}.micro-render img{display:block;width:100%;height:clamp(220px,32vh,330px);object-fit:contain;border-radius:12px;cursor:zoom-in}.micro-render figcaption{font-size:12px;line-height:1.5;margin-top:6px;color:#4F3226}.micro-business{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:14px}.micro-copy{font-size:clamp(15px,1.25vw,18px);font-weight:500;line-height:1.65}.micro-copy p{margin:0 0 20px}.micro-copy p:last-child{margin-bottom:0}.micro-source{font-size:13px;color:#6B4A3A}@media(max-width:900px){.micro-grid{grid-template-columns:1fr;gap:22px}.micro-slide{padding:24px 20px}.micro-copy{font-size:17px}.micro-render img{height:auto}.micro-business{gap:6px}}
 .macro-grid,.micro-grid{isolation:isolate;position:relative;margin-top:36px;margin-bottom:32px}.macro-grid:before,.micro-grid:before{content:"";position:absolute;inset:-20px;background:#FFF;border:1px solid #EBD3A0;border-radius:22px;z-index:-1;pointer-events:none}.macro-note{background:transparent;padding:0;font-size:clamp(15px,1.25vw,18px);font-weight:500;line-height:1.65}.macro-note p{margin:0 0 18px}.macro-note p:last-child{margin-bottom:0}.micro-grid{grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:28px}.micro-allocation{grid-template-columns:1fr;gap:10px;margin:0 0 22px}.micro-allocation>div{padding:15px 18px}.micro-allocation strong{font-size:clamp(18px,1.7vw,23px);line-height:1.35}.micro-switch{margin:0 0 12px}.micro-switch button{font-size:16px;min-width:44px;padding:8px 14px}.micro-render img{height:auto;max-height:calc(100svh - 380px);object-fit:contain}.micro-business img{height:48px!important}.micro-copy p{margin-bottom:18px}@media(max-width:900px){.micro-grid{grid-template-columns:1fr}.macro-grid:before,.micro-grid:before{inset:-12px;border-radius:18px}.macro-note{font-size:17px}.micro-render img{max-height:none}.micro-allocation strong{font-size:21px}}
 .micro-media{position:relative;min-width:0}.micro-switch{position:absolute;top:12px;right:12px;z-index:2;margin:0;background:rgba(255,255,255,.94);box-shadow:0 2px 8px rgba(0,0,0,.12)}.micro-render img{display:block;width:100%;height:auto;max-height:none;aspect-ratio:1918/1078;object-fit:cover;object-position:center;border-radius:12px}.micro-render figcaption{margin-top:8px}@media(max-width:600px){.micro-switch{top:8px;right:8px}.micro-switch button{padding:6px 10px;min-width:36px}}
+
+/* Fuhari key line, macro and micro text columns. */
+.fuhari-copy .fuhari-punch{line-height:1.3}
+.fuhari-key{display:block;margin-top:4px;font-size:clamp(22px,2.5vw,30px);line-height:1.25}
+.fuhari-gallery img[src*="fuhari-girl-private"]{object-position:center 6%}
+.macro-facts{display:flex;flex-direction:column;gap:0;font-size:16px;font-weight:500;line-height:1.45}
+.mf{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:16px;padding:clamp(10px,1.8vh,16px) 0;border-top:1px solid #EBD3A0}
+.mf:first-child{border-top:0;padding-top:0}.mf:last-child{padding-bottom:0}
+.mf-num{font-weight:800;font-size:clamp(24px,2.4vw,34px);line-height:1.05;color:#B8451F;white-space:nowrap;min-width:6.2ch}
+.mf-num--sm{font-size:clamp(20px,2vw,28px)}
+.mf-text strong{display:block;font-weight:800;font-size:clamp(16px,1.4vw,19px);line-height:1.3;color:#3B1D12}
+.mf-text span{display:block;margin-top:3px;font-size:clamp(13px,1.1vw,15px);color:#6B4A3A}
+.micro-facts{font-size:16px;font-weight:500;line-height:1.5}
+.mi-split{display:flex;gap:6px;margin:0 0 14px}
+.mi-split>div{border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;justify-content:center}
+.mi-h{flex:2;background:#F5B321;color:#3B1D12}.mi-e{flex:3;background:#2F6B2A;color:#FFF4D6}
+.mi-split strong{font-weight:800;font-size:clamp(22px,2.3vw,30px);line-height:1.05;display:block}
+.mi-split span{font-size:clamp(13px,1.1vw,15px);font-weight:600;margin-top:3px;display:block}
+.micro-copy .mi-lead{margin:0 0 12px;font-size:clamp(15px,1.25vw,18px)}
+.mi-lead strong{font-weight:800}
+.mi-list{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.15vw,16px)}
+.mi-list li{position:relative;padding:0 18px 0 0;margin:0 0 9px;line-height:1.5}
+.mi-list li:last-child{margin-bottom:0}
+.mi-list li:before{content:"";position:absolute;right:0;top:.55em;width:8px;height:8px;border-radius:2px;background:#F5B321}
+.mi-list strong{font-weight:800}
+@media(max-width:900px){.mf{grid-template-columns:1fr;gap:4px}}
 </style>
 <style>html{scroll-behavior:smooth} :root{color-scheme:light}</style><script src="/assets/a11y.js" defer></script>
 <link rel="stylesheet" href="/assets/site-scale.css">
@@ -254,7 +280,7 @@ section[id]{scroll-margin-top:12px}
 <h2 id="fuhari-title">אלפוח'ארי: הכפר שקיבל שטח ושיגשג</h2>
 <p>בזכות צירוף נסיבות נדיר, תושבי הכפר הציורי אלפוח'ארי שמדרום ללהבים נהנו ב-40 השנים האחרונות מאפשרות לבנות בתים ומכלאות ללא איום בהריסות, ומ-2,000 דונם לחקלאות.</p>
 <p>התוצאה: אין עוני ואבטלה, אין פשיעה ואלימות, אין נשירה מבתי הספר. ענף הצאן, שכמעט הוכחד בשאר הכפרים, משגשג עם כ-5,000 כבשים, ומהכפר יצאו קבלנים מצליחים, מנהלי מפעלים ומוסדות חינוך והרופא הראשי של קופת חולים כללית במחוז דרום.</p>
-<p class="fuhari-punch">זהו המודל ל"תוכנית המועצות האזוריות": האדמה היא מנוע צמיחה, לא שדה קרב.</p>
+<p class="fuhari-punch">זהו המודל ל"תוכנית המועצות האזוריות":<span class="fuhari-key">האדמה היא מנוע צמיחה, לא שדה קרב.</span></p>
 </div>
 <div class="fuhari-gallery" data-gallery="alfuhari" role="region" aria-label="תמונות מאלפוח'ארי" tabindex="0">
 <figure><img src="/assets/img/fuhari-children-private.webp" alt="שני ילדים ליד המדורה" loading="lazy" tabindex="0" role="button" aria-label="הגדלת תמונה: שני ילדים ליד המדורה"></figure>
@@ -281,10 +307,10 @@ section[id]{scroll-margin-top:12px}
 <h2 id="macro-title">הרחבת המועצות האזוריות הבדואיות לכ־600 אלף דונם</h2>
 <div class="pl-gap macro-grid">
 <figure class="macro-map"><img src="/assets/img/councils-expanded.webp" alt="מפה סכמטית של המועצות הבדואיות המורחבות, מדרום ליערות מיתר ויתיר" width="1918" height="1078" loading="lazy"><figcaption>מפה סכמטית, להמחשה בלבד</figcaption></figure>
-<div class="macro-note">
-<p>הרחבת אל־קסום ונווה מדבר והקמת מועצה אזורית בבקעת באר שבע, יכניסו 39 מ־46 הכפרים למסגרת מוניציפלית מתפקדת.</p>
-<p>רוב השטח יגיע משטחים גליליים, שאינם שייכים לרשות מקומית. השטח לנפש יגדל מחצי דונם לכ־4 דונם, לעומת 28 במועצות היהודיות בצפון הנגב.</p>
-<p>חקלאות, אנרגיה מתחדשת, דרכי מסחר, אזורי תעסוקה ומקורות נוספים ייצרו הכנסות מארנונה, ויאפשרו למועצות לפתח תשתיות ולספק שירותים.</p>
+<div class="macro-note macro-facts">
+<div class="mf"><div class="mf-num">39 מ־46</div><div class="mf-text"><strong>הכפרים ייכנסו למסגרת מוניציפלית מתפקדת</strong><span>הרחבת אל־קסום ונווה מדבר, והקמת מועצה אזורית בבקעת באר שבע</span></div></div>
+<div class="mf"><div class="mf-num">כ־4 דונם</div><div class="mf-text"><strong>לנפש, במקום חצי דונם היום</strong><span>לעומת 28 במועצות היהודיות בצפון הנגב. רוב השטח יגיע משטחים גליליים, שאינם שייכים לאף רשות מקומית</span></div></div>
+<div class="mf"><div class="mf-num mf-num--sm">ארנונה</div><div class="mf-text"><strong>הכנסות לפיתוח תשתיות ושירותים</strong><span>חקלאות, אנרגיה מתחדשת, דרכי מסחר ואזורי תעסוקה</span></div></div>
 </div>
 </div>
 </section>
@@ -297,11 +323,14 @@ section[id]{scroll-margin-top:12px}
 <figure class="micro-render" data-gallery="micro"><img id="micro-render-image" src="/assets/img/nahala-render-v2.jpg" alt="הדמיה של נחלה משפחתית עם בתים וחממות" width="1536" height="1024" loading="lazy"><figcaption>הדמיות להמחשה בלבד. כך בנתה המדינה את המושבים וזה עבד</figcaption></figure>
 <!-- Business photos retained for possible reuse: biz-greenhouse.jpg, biz-solar.jpg, biz-chickens.jpg, biz-tent.jpg, biz-welding.jpg. -->
 </div>
-<div class="micro-copy">
-<div class="micro-allocation"><div><strong>60 אלף דונם למגורים</strong></div><div><strong>90 אלף דונם לכלכלה</strong></div></div>
-<p>לכל משפחה יוקצו 2 דונם למגורים ו־3 דונם לפרנסה, לא בהכרח בצמוד.</p>
-<p>בנייה מדורגת לגובה תאפשר מגורים להורים, לילדיהם ולחלק מהנכדים. משק העזר יאפשר להקים עסקים מכל הסוגים, להשכיר שטח או לגדל מזון לצריכה עצמית.</p>
-<p>הנגשת האדמה כאמצעי ייצור תאפשר לאלפי משפחות להגדיל הכנסות, להקים עסקים ולשלם מסים.</p>
+<div class="micro-copy micro-facts">
+<div class="mi-split"><div class="mi-h"><strong>60 אלף</strong><span>דונם למגורים</span></div><div class="mi-e"><strong>90 אלף</strong><span>דונם לכלכלה</span></div></div>
+<p class="mi-lead"><strong>לכל משפחה: 2 דונם למגורים ו־3 דונם לפרנסה</strong>, לא בהכרח בצמוד.</p>
+<ul class="mi-list">
+<li><strong>בנייה מדורגת לגובה</strong> תאפשר מגורים להורים, לילדיהם ולחלק מהנכדים.</li>
+<li><strong>משק העזר</strong> יאפשר להקים עסקים מכל הסוגים, להשכיר שטח או לגדל מזון לצריכה עצמית.</li>
+<li><strong>הנגשת האדמה</strong> כאמצעי ייצור תאפשר לאלפי משפחות להגדיל הכנסות, להקים עסקים ולשלם מסים.</li>
+</ul>
 </div>
 </div>
 </section>
