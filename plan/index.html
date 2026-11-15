@@ -132,7 +132,7 @@ section[id]{scroll-margin-top:12px}
 .fuhari-copy .fuhari-punch{line-height:1.3}
 .fuhari-key{display:block;margin-top:4px;font-size:clamp(22px,2.5vw,30px);line-height:1.25}
 .fuhari-gallery img[src*="fuhari-girl-private"]{object-position:center 6%}
-.macro-facts{display:flex;flex-direction:column;gap:0;font-size:16px;font-weight:500;line-height:1.45}
+.macro-facts{align-self:stretch;height:auto;display:flex;flex-direction:column;gap:0;font-size:16px;font-weight:500;line-height:1.45}
 .mf{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:16px;padding:clamp(10px,1.8vh,16px) 0;border-top:1px solid #EBD3A0}
 .mf:first-child{border-top:0;padding-top:0}.mf:last-child{padding-bottom:0}
 .mf-num{font-weight:800;font-size:clamp(24px,2.4vw,34px);line-height:1.05;color:#B8451F;white-space:nowrap;min-width:6.2ch}
@@ -153,6 +153,20 @@ section[id]{scroll-margin-top:12px}
 .mi-list li:before{content:"";position:absolute;right:0;top:.55em;width:8px;height:8px;border-radius:2px;background:#F5B321}
 .mi-list strong{font-weight:800}
 @media(max-width:900px){.mf{grid-template-columns:1fr;gap:4px}}
+/* Round: Fuhari text larger, macro/micro side columns aligned to the map/render */
+.fuhari-copy p{font-size:clamp(17px,2.8vh,21px);line-height:1.55}
+.fuhari-copy .fuhari-punch{margin-top:clamp(26px,4.5vh,40px);font-size:clamp(19px,2.1vw,25px)}
+.macro-grid{align-items:stretch}
+.macro-facts{align-self:stretch;height:auto;display:flex;flex-direction:column;justify-content:space-between;padding:10px 0 34px}
+.mf{display:block;padding:0}
+.mf:not(:first-child){padding-top:clamp(10px,1.8vh,16px)}
+.mf-num{display:block;min-width:0;margin-bottom:4px}
+.mf-num--sm{font-size:inherit}
+.micro-grid{align-items:stretch}
+.micro-copy.micro-facts{display:flex;flex-direction:column;justify-content:space-between;padding:10px 0 36px}
+.mi-sum{margin:0;padding-top:clamp(10px,1.8vh,16px);border-top:1px solid #EBD3A0;font-size:clamp(16px,1.4vw,19px);line-height:1.5}
+.mi-sum strong{font-weight:800}
+
 </style>
 <style>html{scroll-behavior:smooth} :root{color-scheme:light}</style><script src="/assets/a11y.js" defer></script>
 <link rel="stylesheet" href="/assets/site-scale.css">
@@ -314,8 +328,8 @@ section[id]{scroll-margin-top:12px}
 <figure class="macro-map"><img src="/assets/img/councils-expanded.webp" alt="מפה סכמטית של המועצות הבדואיות המורחבות, מדרום ליערות מיתר ויתיר" width="1918" height="1078" loading="lazy"><figcaption>מפה סכמטית, להמחשה בלבד</figcaption></figure>
 <div class="macro-note macro-facts">
 <div class="mf"><div class="mf-num">39 מ־46</div><div class="mf-text"><strong>הכפרים ייכנסו למסגרת מוניציפלית מתפקדת</strong><span>הרחבת אל־קסום ונווה מדבר, והקמת מועצה אזורית בבקעת באר שבע</span></div></div>
-<div class="mf"><div class="mf-num">כ־4 דונם</div><div class="mf-text"><strong>לנפש, במקום חצי דונם היום</strong><span>לעומת 28 במועצות היהודיות בצפון הנגב. רוב השטח יגיע משטחים גליליים, שאינם שייכים לאף רשות מקומית</span></div></div>
-<div class="mf"><div class="mf-num mf-num--sm">ארנונה</div><div class="mf-text"><strong>הכנסות לפיתוח תשתיות ושירותים</strong><span>חקלאות, אנרגיה מתחדשת, דרכי מסחר ואזורי תעסוקה</span></div></div>
+<div class="mf"><div class="mf-num">כ־4 דונם</div><div class="mf-text"><strong>לנפש, במקום חצי דונם היום</strong><span>רוב השטח יגיע משטחים גליליים, שאינם שייכים לאף רשות מקומית</span></div></div>
+<div class="mf"><div class="mf-num">ארנונה</div><div class="mf-text"><strong>הכנסות לפיתוח תשתיות ושירותים</strong><span>חקלאות, אנרגיה מתחדשת, דרכי מסחר, אזורי תעסוקה ועוד</span></div></div>
 </div>
 </div>
 </section>
@@ -334,8 +348,8 @@ section[id]{scroll-margin-top:12px}
 <ul class="mi-list">
 <li><strong>בנייה מדורגת לגובה</strong> תאפשר מגורים להורים, לילדיהם ולחלק מהנכדים.</li>
 <li><strong>משק העזר</strong> יאפשר להקים עסקים מכל הסוגים, להשכיר שטח או לגדל מזון לצריכה עצמית.</li>
-<li>אנו מעריכים כי <strong>הקצאת משקי העזר תביא להקמת אלפי עסקים קטנים בתוך שנים ספורות</strong>, לצמצום משמעותי בעוני, באבטלה ובפשיעה ולתוצאות חיוביות רבות אחרות.</li>
 </ul>
+<p class="mi-sum">אנו מעריכים כי <strong>הקצאת משקי העזר תביא להקמת אלפי עסקים קטנים בתוך שנים ספורות</strong>, לצמצום משמעותי בעוני, באבטלה ובפשיעה ולתוצאות חיוביות רבות אחרות.</p>
 </div>
 </div>
 </section>
