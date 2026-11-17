@@ -1,2 +1,52 @@
 /* Shared 90% display scale for every language and page. */
 html { zoom: 0.9; }
+
+/* Mobile: no text under 14px. Covers inline styles; page rules listed below. */
+@media (max-width: 700px) {
+  [style*="font-size: 10px"],
+  [style*="font-size:10px"],
+  [style*="font-size: 10.5px"],
+  [style*="font-size:10.5px"],
+  [style*="font-size: 11px"],
+  [style*="font-size:11px"],
+  [style*="font-size: 11.5px"],
+  [style*="font-size:11.5px"],
+  [style*="font-size: 12px"],
+  [style*="font-size:12px"],
+  [style*="font-size: 12.5px"],
+  [style*="font-size:12.5px"],
+  [style*="font-size: 13px"],
+  [style*="font-size:13px"],
+  [style*="font-size: 13.5px"],
+  [style*="font-size:13.5px"] { font-size: 14px !important; }
+  .chip, .hdrname, .meter-text, .prj-zoom, .fic-foot, .stat-jewish, .stat-bedouin { font-size: 14px !important; }
+}
+@media (max-width: 700px) {
+  .fic-foot,
+  .flag .ph figcaption,
+  .fuhari-gallery figcaption,
+  .hdrname,
+  .hnl .consent,
+  .macro-map figcaption,
+  .micro-allocation span,
+  .micro-render figcaption,
+  .micro-source,
+  .om .chip,
+  .prj-zoom,
+  .problem-per-person-values span,
+  .problem-stat-group h3,
+  .problem-stats,
+  .tile small,
+  .why .ph figcaption,
+  .xp-aside .card > div:first-child > div:last-child,
+  .xp-aside .card > div:last-child,
+  .xp-aside .nlwrap .meter-text,
+  .xp-aside .nlwrap .nl .consent,
+  .hnl .consent span,
+  .xp-aside .nlwrap .nl .consent span,
+  .hnl .consent a,
+  .xp-aside .nlwrap .nl .consent a { font-size: 14px !important; }
+}
+@media (max-width: 700px) {
+  .mf-text span, .mi-split span { font-size: 14px !important; }
+}
