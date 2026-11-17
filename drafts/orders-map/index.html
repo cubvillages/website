@@ -1,0 +1,325 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>מפת הצווים (טיוטה)</title><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">
+<link rel="icon" href="/assets/img/logo-home.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="/assets/site-scale.css">
+<style>
+body{margin:0;background:#FFF4D6}
+a{color:#2F6B2A}a:hover{color:#1F4D1B}
+.navtoggle{display:none}
+.mobilebar{display:none}
+@media (max-width: 860px){.navlinks{display:none!important}.navlinks.open{display:flex!important;position:absolute;top:100%;left:0;right:0;z-index:20;flex-direction:column;align-items:stretch!important;gap:0!important;background:#FFFFFF;padding:4px 24px 10px;border-bottom:4px solid #F5B321;box-shadow:0 8px 16px rgba(0,0,0,0.10)}.navlinks.open a{padding:14px 0!important;border-bottom:1px solid #F3E2B8}.navlinks.open a:last-child{border-bottom:0}.navtoggle{display:inline-flex}.hdrname{font-size:14px!important}.deskonly{display:none!important}.mobilebar{display:flex!important}}
+section[id]{scroll-margin-top:12px}
+.pl-grid{display:block}
+.pl-main{min-width:0}
+
+*{box-sizing:border-box}
+main.om{max-width:1100px;margin:0 auto;padding:24px 24px 8px;font-weight:500;color:#3B1D12}
+.om h1,.om h2,.om h3{margin:0;font-family:'Heebo',sans-serif}
+.om .draftbar{background:#F5B321;color:#3B1D12;border-radius:12px;padding:12px 18px;font-weight:700;font-size:16px;margin:0 0 22px;line-height:1.5}
+.om .chip{display:inline-block;background:#FFE9B0;border:1px solid #F5B321;color:#7A3B14;border-radius:999px;padding:0 9px;font-size:13px;font-weight:700;line-height:1.6;white-space:nowrap}
+.om-hero{position:relative;border-radius:18px;overflow:hidden;background:linear-gradient(135deg,#FBE7B5 0%,#FFF4D6 55%,#F9DCA0 100%);border:1px solid #EBD3A0;border-top:6px solid #F5B321;padding:clamp(22px,4vh,38px) clamp(20px,3vw,36px);margin-bottom:26px}
+.om-hero .kick{font-size:15px;font-weight:700;color:#A63A17;margin-bottom:6px}
+.om-hero h1{font-size:clamp(30px,4vw,50px);line-height:1.1;font-weight:800;margin-bottom:12px}
+.om-hero h1 span{color:#B8451F}
+.om-hero p{font-size:clamp(17px,1.6vw,21px);line-height:1.5;font-weight:600;max-width:720px;margin:0 0 18px}
+.btn{display:inline-block;border:0;cursor:pointer;font:800 17px/1.2 'Heebo',sans-serif;background:#B8451F;color:#fff;padding:14px 30px;border-radius:999px;text-decoration:none}
+.btn:hover{background:#9C3A19;color:#fff}.btn:focus-visible,.om input:focus-visible,.om select:focus-visible,.om textarea:focus-visible,.om summary:focus-visible,.tile:focus-visible{outline:3px solid #2F6B2A;outline-offset:2px}
+.btn.ghost{background:transparent;color:#3B1D12;border:2px solid #3B1D12;padding:12px 26px}.btn.ghost:hover{background:#3B1D12;color:#fff}
+.card{background:#fff;border:1px solid #EBD3A0;border-radius:16px;padding:clamp(18px,2.4vw,28px);margin-bottom:26px}
+.card>h2{font-size:clamp(22px,2.2vw,30px);font-weight:800;line-height:1.2;margin-bottom:6px}
+.card .sub{font-size:16px;color:#6B4A3A;margin:0 0 16px;line-height:1.5}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 16px}
+.stat{border:1px solid #EBD3A0;border-top:4px solid #F5B321;border-radius:12px;padding:12px 16px;background:#FFFBEF}
+.stat strong{display:block;font-size:clamp(26px,3vw,38px);font-weight:800;line-height:1.05;color:#B8451F}
+.stat span{font-size:15px;font-weight:600}
+.tools{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:0 0 14px}
+.tools label{font-weight:700;font-size:15px}
+.om input[type=search],.om input[type=text],.om input[type=number],.om input[type=date],.om select,.om textarea{font:500 17px/1.3 'Heebo',sans-serif;color:#3B1D12;background:#fff;border:2px solid #D6B88C;border-radius:10px;padding:11px 14px;min-height:46px;width:100%;max-width:100%}
+.tools input[type=search]{width:min(320px,100%)}
+.demo{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;cursor:pointer}
+.demo input{width:22px;height:22px;accent-color:#2F6B2A}
+.demonote{display:none;background:#FFE9B0;border:1px solid #F5B321;border-radius:10px;padding:8px 14px;font-weight:700;font-size:15px;margin:0 0 14px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;font-weight:600;margin:0 0 14px;align-items:center}
+.legend i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid #D6B88C;vertical-align:-3px;margin-inline-end:5px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.tile{border:1px solid #D6B88C;border-radius:10px;padding:9px 12px;background:#fff;text-align:start;font:600 15px/1.3 'Heebo',sans-serif;color:#3B1D12;cursor:pointer;min-height:64px;display:flex;flex-direction:column;justify-content:space-between;gap:4px}
+.tile b{font-size:22px;font-weight:800;line-height:1}
+.tile small{font-size:12px;font-weight:600;opacity:.85}
+.tile.l0{background:#fff}.tile.l1{background:#FFE9B0}.tile.l2{background:#F5B321}.tile.l3{background:#B8451F;color:#fff;border-color:#B8451F}
+.group{font-weight:800;font-size:15px;color:#A63A17;margin:16px 0 6px}
+.group:first-of-type{margin-top:0}
+form.rep{display:grid;gap:20px}
+fieldset{border:0;padding:0;margin:0;min-width:0}
+legend{font-weight:800;font-size:18px;padding:0;margin:0 0 8px}
+.hint{font-size:14px;color:#6B4A3A;font-weight:500;margin:4px 0 0;line-height:1.45}
+.types{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.types label{display:flex;gap:10px;align-items:flex-start;border:2px solid #E6D0A5;border-radius:10px;padding:10px 12px;font-size:16px;font-weight:600;cursor:pointer;line-height:1.35}
+.types input{width:22px;height:22px;margin:1px 0 0;accent-color:#2F6B2A;flex:none}
+.types label:has(input:checked){border-color:#2F6B2A;background:#EEF6E8}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.stepper{display:flex;align-items:center;gap:8px}
+.stepper button{width:46px;height:46px;border-radius:10px;border:2px solid #D6B88C;background:#fff;font:800 24px/1 'Heebo',sans-serif;cursor:pointer;color:#3B1D12}
+.stepper input{width:90px!important;text-align:center}
+.privbox{background:#EEF6E8;border:1px solid #BFD9B2;border-radius:12px;padding:14px 16px;font-size:16px;line-height:1.55;font-weight:600}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:16px;font-weight:600;line-height:1.45}
+.consent input{width:22px;height:22px;margin-top:2px;accent-color:#2F6B2A;flex:none}
+.err{color:#A02512;font-weight:700;font-size:15px;min-height:1.2em}
+.thanks{display:none;border:2px solid #2F6B2A;background:#F3F9EE;border-radius:14px;padding:20px 22px}
+.thanks h3{font-size:24px;font-weight:800;margin-bottom:6px;color:#2F6B2A}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;counter-reset:s;margin:0;padding:0;list-style:none}
+.steps li{counter-increment:s;border:1px solid #EBD3A0;border-radius:12px;padding:14px 16px;background:#FFFBEF;font-size:16px;line-height:1.5;font-weight:600}
+.steps li:before{content:counter(s);display:inline-flex;width:30px;height:30px;border-radius:50%;background:#F5B321;color:#3B1D12;font-weight:800;align-items:center;justify-content:center;margin-bottom:6px}
+.steps strong{display:block;font-weight:800;font-size:17px}
+details{border-top:1px solid #EBD3A0;padding:12px 0}details:first-of-type{border-top:0}
+summary{cursor:pointer;font-weight:800;font-size:17px;line-height:1.4}
+details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
+.notes h3{font-size:18px;font-weight:800;margin:18px 0 6px;color:#A63A17}
+.notes ul{margin:0;padding:0 20px 0 0;line-height:1.6;font-size:16px}
+.notes li{margin:0 0 6px}
+.notes a{overflow-wrap:anywhere}
+@media(max-width:760px){.stats,.steps,.types,.row2{grid-template-columns:1fr}.tiles{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}}
+</style>
+<script src="/assets/a11y.js" defer></script>
+</head><body>
+<div dir="rtl" style="font-family: 'Heebo', system-ui, sans-serif; font-weight: 600; color: #3B1D12; background: #FFF4D6; font-size: 18px; line-height: 1.6; width: 100%">
+
+<div style="font-weight: 400; font-size: 16px; line-height: 1.55">
+<header style="position: relative; z-index: 20; background: #FFFFFF; border-bottom: 4px solid #F5B321">
+<div style="max-width: 1160px; margin: 0 auto; padding: 10px 24px; display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 8px 16px">
+<a href="/" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #3B1D12">
+<img src="/assets/img/logo-home.png" alt="" style="width: 56px; height: 56px; object-fit: contain; flex-shrink: 0">
+<span class="hdrname" style="font-size: 15px; font-weight: 700; line-height: 1.25; white-space: nowrap">המועצה למען הכפרים<br>הבדואיים הלא מוכרים</span>
+</a>
+<nav id="navlinks" class="navlinks" aria-label="ניווט ראשי" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2px">
+<a href="/plan/" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">תוכנית המועצות האזוריות</a>
+<a href="/projects/" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">הפרויקטים שלנו</a>
+<a href="/#goals" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">המטרות שלנו</a>
+<a href="/#team" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">צוות</a>
+<a href="/#donors" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">תורמים</a>
+<a href="/#contact" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">צרו קשר</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 6px; flex: none">
+<button type="button" class="navtoggle" aria-label="תפריט" aria-controls="navlinks" aria-expanded="false" id="navtoggle" style="align-items: center; justify-content: center; width: 44px; height: 44px; border: 0; border-radius: 8px; background: transparent; color: #3B1D12; cursor: pointer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<div class="deskonly" aria-label="שפה" style="display: flex; align-items: center; gap: 2px; font-size: 14px">
+</div>
+<a class="deskonly" href="/donate/" style="padding: 10px 22px; background: #B8451F; color: #FFFFFF; font-size: 15px; font-weight: 700; border-radius: 999px; text-decoration: none">תרומה</a>
+</div>
+</div>
+</header>
+
+<div class="mobilebar" style="background: #FFF4D6; border-bottom: 1px solid #F3E2B8">
+<div style="width: 100%; max-width: 1160px; margin: 0 auto; padding: 4px 24px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<div aria-label="שפה" style="display: flex; align-items: center; gap: 2px; font-size: 14px">
+</div>
+<a href="/donate/" style="padding: 7px 18px; background: #B8451F; color: #FFFFFF; font-size: 14px; font-weight: 700; border-radius: 999px; text-decoration: none">תרומה</a>
+</div>
+</div>
+</div>
+
+<main class="om" id="main">
+<div class="draftbar">טיוטת עבודה · העמוד אינו מקושר מהאתר, אינו משמר נתונים ואינו מיועד לפרסום. הטופס בטיוטה לא שולח דבר, והמפה מציגה נתוני הדגמה רק אם מפעילים אותם. בתחתית העמוד: <a href="#notes" style="color:#3B1D12">הערות עבודה והחלטות</a>.</div>
+
+<section class="om-hero" aria-labelledby="t">
+<div class="kick">מפת הצווים · סימון אנונימי, דקה אחת</div>
+<h1 id="t">קיבלתם צו? <span>סמנו אותו על המפה.</span></h1>
+<p>כל צו שמסומן הופך מסיפור של משפחה אחת לנתון שאי אפשר להתעלם ממנו. המועצה אוספת את הדיווחים, בודקת אותם ומציגה לעיתונאים ולמקבלי ההחלטות כמה צווים מתקבלים בכל כפר. בלי שמות, בלי כתובות.</p>
+<a class="btn" href="#report">לסימון צו</a> <a class="btn ghost" href="#map">לראות את המפה</a>
+</section>
+
+<section class="card" id="map" aria-labelledby="mt">
+<h2 id="mt">כמה צווים סומנו, ובאיזה כפר</h2>
+<p class="sub">הספירה היא לפי כפר בלבד. מי שמדווח לא מופיע, ושום בית לא מסומן בנפרד.</p>
+<div class="stats" aria-live="polite">
+<div class="stat"><strong id="sTotal">0</strong><span>צווים שדווחו</span></div>
+<div class="stat"><strong id="sVill">0</strong><span>כפרים עם דיווח</span></div>
+<div class="stat"><strong id="sVer">0</strong><span>מתוכם נבדקו על ידי צוות המועצה</span></div>
+</div>
+<div class="tools">
+<label for="q">חיפוש כפר</label><input id="q" type="search" placeholder="הקלידו שם כפר" autocomplete="off">
+<label class="demo"><input id="demo" type="checkbox"> הצגת נתוני הדגמה (לא אמיתיים)</label>
+</div>
+<div class="demonote" id="demonote" role="status">אלה נתוני הדגמה אקראיים כדי להראות איך המפה תיראה. אין בהם אף דיווח אמיתי.</div>
+<div class="legend" aria-hidden="true"><span><i style="background:#fff"></i>אין דיווח</span><span><i style="background:#FFE9B0"></i>1–2</span><span><i style="background:#F5B321"></i>3–5</span><span><i style="background:#B8451F"></i>6 ומעלה</span></div>
+<div id="tiles"></div>
+<p class="hint">מפה גאוגרפית עם מיקום כל כפר תבוא בשלב הבא, כשיהיו קואורדינטות מרכז לכל כפר. בינתיים הכפרים מוצגים כרשימה לפי סטטוס.</p>
+</section>
+
+<section class="card" id="report" aria-labelledby="rt">
+<h2 id="rt">סימון צו</h2>
+<p class="sub">חמש שאלות קצרות. שום שם ושום כתובת לא נדרשים.</p>
+<form class="rep" id="form" novalidate>
+<fieldset><legend><label for="village">1. באיזה כפר?</label></legend>
+<select id="village" required><option value="">בחרו כפר</option><optgroup label="לא מוכרים"><option>אם נמילה</option><option>אום רתאם</option><option>אום אלבדון</option><option>אז־זערורה</option><option>אז־זרנוג</option><option>אל־באט</option><option>אל־באטל</option><option>אל־בחירה</option><option>אל־בקיעה</option><option>גטמאת (אל־מטהר)</option><option>אל־גרין (אל־עוקבי)</option><option>אל־חמרה</option><option>אל־מד׳בח</option><option>אל־מזרעה (אל־שהבא)</option><option>אל־מכימן</option><option>אל־מסאעדיה</option><option>אל־סרה</option><option>אל־עזה</option><option>אלע׳רה</option><option>ארואיס</option><option>אס־סדיר</option><option>אס־סר</option><option>באט אל־סראיעה</option><option>ביר אל־חמאם</option><option>ביר אל־משאש</option><option>דחייה</option><option>ואדי אל־משאש</option><option>ח׳רבת אל־וטן</option><option>ח׳רבת זבאלה</option><option>כרכור</option><option>נחל אריכא</option><option>נחל חווה</option><option>סהל אלבגאר</option><option>סוואווין</option><option>עוג׳א</option><option>עוג׳אן</option><option>עתיר</option><option>תל אל־מלח</option><option>תל ערד</option></optgroup><optgroup label="מוכרים (אל־קסום ונווה מדבר)"><option>אום בטין</option><option>א־סייד</option><option>דריג׳את</option><option>כוחלה</option><option>מולדה</option><option>מכחול</option><option>תראבין א־צאנע</option><option>אבו תלול</option><option>אבו קרינאת</option><option>ביר הדאג׳</option><option>קסר א־סר</option></optgroup><optgroup label="בהליכי הכרה או הקמה"><option>ח׳שם זנה</option><option>עבדה</option><option>רח׳מה</option><option>ואדי אן־נעם</option><option>אל־פורעה</option></optgroup><optgroup label="הוחרבו"><option>אל־עראקיב</option><option>אום אל־חיראן</option></optgroup><option value="other">כפר אחר, או לא ברשימה</option></select>
+<p class="hint">בחרו את הכפר, לא את השכונה או המגרש.</p></fieldset>
+
+<fieldset><legend>2. איזה סוג צו? אפשר לסמן כמה</legend>
+<div class="types">
+<label><input type="checkbox" name="t" value="pinui"> צו לפינוי קרקע (רשות מקרקעי ישראל)</label>
+<label><input type="checkbox" name="t" value="admin"> צו הריסה מנהלי</label>
+<label><input type="checkbox" name="t" value="court"> צו הריסה של בית משפט</label>
+<label><input type="checkbox" name="t" value="stop"> צו הפסקת עבודה או איסור שימוש</label>
+<label><input type="checkbox" name="t" value="fine"> קנס או היטל</label>
+<label><input type="checkbox" name="t" value="warn"> הודעה או אזהרה בכתב</label>
+<label><input type="checkbox" name="t" value="other"> אחר, לא בטוחים</label>
+</div></fieldset>
+
+<div class="row2">
+<fieldset><legend><label for="cnt">3. כמה צווים התקבלו?</label></legend>
+<div class="stepper"><button type="button" id="minus" aria-label="פחות">−</button><input id="cnt" type="number" min="1" max="50" value="1" inputmode="numeric"><button type="button" id="plus" aria-label="יותר">+</button></div>
+<p class="hint">צו אחד לכל בית, מבנה או חלקה.</p></fieldset>
+<fieldset><legend><label for="dt">4. מתי התקבל?</label></legend>
+<input id="dt" type="date"><p class="hint">התאריך המשוער מספיק.</p></fieldset>
+</div>
+
+<fieldset><legend>5. אפשר לצרף צילום של הצו (לא חובה)</legend>
+<input id="ph" type="file" accept="image/*" capture="environment">
+<p class="hint">הצילום לא יפורסם. רק צוות המועצה רואה אותו, והוא משמש לבדיקה בלבד.</p></fieldset>
+
+<fieldset><legend><label for="ct">רוצים שנחזור אליכם? (לא חובה)</label></legend>
+<input id="ct" type="text" placeholder="מספר טלפון או וואטסאפ" autocomplete="off" inputmode="tel">
+<p class="hint">פרטי הקשר נשמרים בנפרד מהמפה ואינם מופיעים בה בשום צורה.</p></fieldset>
+
+<div class="privbox">לפני שליחה: <b>אל תכתבו שם, מספר זהות או כתובת מדויקת.</b> כדי לסמן צו על המפה מספיק לדעת באיזה כפר הוא התקבל.</div>
+<label class="consent"><input type="checkbox" id="ok"> אני מבין שהדיווח יתווסף כנתון מצטבר לכפר, בלי שם ובלי מיקום מדויק.</label>
+<div class="err" id="err" role="alert"></div>
+<div><button class="btn" type="submit">שליחת הדיווח</button></div>
+</form>
+<div class="thanks" id="thanks" role="status" tabindex="-1">
+<h3>תודה. הדיווח התקבל.</h3>
+<p id="tsum" style="margin:0 0 10px;font-size:17px;line-height:1.55"></p>
+<p class="hint" style="margin:0 0 14px"><b>טיוטה:</b> בגרסה הזאת לא נשלח דבר לשום מקום, והתצוגה הזאת נועדה רק לבדיקה.</p>
+<button type="button" class="btn ghost" id="again">דיווח נוסף</button>
+</div>
+</section>
+
+<section class="card" aria-labelledby="ht">
+<h2 id="ht">מה קורה אחרי הדיווח</h2>
+<ol class="steps">
+<li><strong>הדיווח מגיע לצוות</strong>רק צוות המועצה רואה את הפרטים, כולל הצילום אם צירפתם.</li>
+<li><strong>בודקים אותו</strong>דיווח שנבדק מסומן בנפרד, כדי שלא יהיה אפשר להכניס למפה נתונים שלא קרו.</li>
+<li><strong>נכנס למספר של הכפר</strong>מוצג רק הסכום לכל כפר. שום שם ושום בית.</li>
+</ol>
+</section>
+
+<section class="card" aria-labelledby="st">
+<h2 id="st">קיבלתם צו? כדאי לדעת</h2>
+<ul style="margin:0;padding:0 22px 0 0;font-size:17px;line-height:1.65;font-weight:600">
+<li><b>אל תחכו.</b> בצו לפינוי קרקע ציבורית יש מועדים קצרים להשגות ולפנייה לבית משפט, שמתחילים ביום שהצו נמסר או הודבק. <span class="chip">לאימות משפטי</span></li>
+<li>צלמו את הצו ואת המקום שבו נמצא, כולל התאריך.</li>
+<li>אל תבנו, אל תחרשו ואל תטעו במקום עד שדיברתם עם עורך דין. פעולה כזאת יכולה להאיץ את הביצוע. <span class="chip">לאימות משפטי</span></li>
+<li>סימון הצו על המפה אינו תחליף לייעוץ משפטי.</li>
+</ul>
+</section>
+
+<section class="card" aria-labelledby="ft">
+<h2 id="ft" style="margin-bottom:8px">שאלות ותשובות</h2>
+<details><summary>מי רואה את מה שאני מדווח?</summary><p>רק צוות המועצה. הציבור רואה רק את מספר הצווים בכל כפר.</p></details>
+<details><summary>אפשר לדווח בלי להשאיר טלפון?</summary><p>כן. פרטי קשר הם לא חובה, והם נחוצים רק אם תרצו שנחזור אליכם.</p></details>
+<details><summary>קיבלתי הודעה בעל פה ולא צו בכתב. מה לסמן?</summary><p>סמנו "הודעה או אזהרה", או "אחר". הצוות יעבור על זה.</p></details>
+<details><summary>לדווח על צו שקיבל השכן או קרוב משפחה?</summary><p>כן, אם אתם יודעים את הפרטים. אל תצרפו את שמו ואל תצלמו את הצו בלי אישור שלו.</p></details>
+<details><summary>מה יעשו עם המספרים?</summary><p>המועצה תשתמש בהם בפניות לעיתונאים, למשרדי הממשלה ולגורמים משפטיים, כדי להראות את ההיקף האמיתי של האכיפה בכל כפר.</p></details>
+</section>
+
+<section class="card notes" id="notes" aria-labelledby="nt">
+<h2 id="nt">הערות עבודה (יוסרו לפני פרסום)</h2>
+<p class="sub">מה למדתי מפרויקטים דומים, מה החלטתי לבד בזמן שלא היית זמין, ומה פתוח.</p>
+
+<h3>מה למדתי מפרויקטים דומים</h3>
+<ul>
+<li><b>פרטיות לפני הכול.</b> חומרי הלקחים של Ushahidi, הפלטפורמה הידועה למיפוי דיווחי אזרחים, מדגישים שבסביבה רגישה צריך להגן על זהות המדווחים. בדיון על תקני הגנת נתונים בהתאגדויות הומניטריות מומלץ להפריד בין מאגר שמכיל פרטים מזהים לבין המפה הציבורית. <b>יישום כאן:</b> רק סכום לכל כפר, ופרטי קשר ותמונה נשמרים בנפרד ואינם מוצגים.</li>
+<li><b>אימות.</b> Ushahidi ממליצה להבחין בין דיווח "לא מאומת" ל"מאומת". מאגר ההריסות של האו"ם בגדה המערבית נשען על ביקורי שטח, עדויות ותצלומים, ומוצג לפי קהילות ולא לפי בתים. <b>יישום כאן:</b> המפה מציגה את שני המספרים, וסך הדיווחים נפרד ממה שצוות המועצה בדק.</li>
+<li><b>נגישות לכל מדווח.</b> Ushahidi מדווחת שהיה צורך בגרסה "קלה" לחיבורים איטיים. <b>יישום כאן:</b> עמוד קל, טופס אחד, שדות גדולים לטלפון.</li>
+<li><b>אנונימיות.</b> פרויקט המיפוי נגד פינויים (Anti-Eviction Mapping Project) מבקש מהמדווחים להשתמש בדפדפן Tor כשאפשר, ומגדיר מסמך שימוש בנתונים. <b>יישום כאן:</b> אין עוגיות מעקב ואין חשבונות.</li>
+<li><b>מוטיבציה ואמון.</b> לקחי Ushahidi מראים שמיפוי אזרחי מצליח כשיש תגובה למדווחים, ושקשה לשמור על מתנדבים לאורך זמן. <b>יישום כאן:</b> אפשרות להשאיר פרטי קשר כדי שנציג המועצה יחזור, והבטחה מדויקת מה קורה עם הדיווח.</li>
+<li><b>תקדים מקומי.</b> פורום דו־קיום בנגב מפרסם מדי שנה דוחות הריסות ורשימות הריסות מדווחות, ויש לו מפה אינטראקטיבית של הכפרים. מומלץ לתאם מולו כדי להצליב ולא לפעול במקביל.</li>
+</ul>
+
+<h3>מה החלטתי לבד</h3>
+<ul>
+<li>העמוד בעברית בלבד, לא מקושר, עם <code>noindex</code>. תרגום לערבית אחרי שתאשר את הקונספט, כי הערבית היא השפה שבה התושבים ידווחו בפועל.</li>
+<li>רשימת הכפרים לקוחה מ"רשימת הכפרים - סיווג מאוחד" בפרויקט, בלי הכוכביות. שלושה כפרים בה עדיין לא אומתו, ויש צורך להוסיף יישובים מוכרים אחרים שיש בהם צווים.</li>
+<li>סוגי הצווים הם ניחוש שלי לפי הצו שצילמת ושיחות קודמות, וצריך לאמת אותם מול עורך דין.</li>
+<li>מדד "נבדקו על ידי צוות המועצה" מבוסס על כך שיש מי שיבדוק. אם אין, כדאי להסיר אותו.</li>
+<li>הטופס לא שולח כלום, ונתוני ההדגמה אקראיים ונשמרים רק בדפדפן שלך.</li>
+</ul>
+
+<h3>מה פתוח, ומה צריך ממך</h3>
+<ul>
+<li><b>איפה נשמרים הדיווחים?</b> GitHub Pages הוא אתר סטטי, ולכן צריך שירות לקבלת טפסים. אפשרויות: טופס Google שמוזן לגיליון (קל ומוכר, אבל הנתונים אצל גוגל), שירות טפסים כמו Tally או Formspree, או Ushahidi בהתקנה עצמית. אני לא פותח חשבונות בלי אישור שלך.</li>
+<li><b>ערוץ דיווח בוואטסאפ?</b> בכפרים רבים זה הערוץ הטבעי, וכבר יש לך קבוצות עם כ־1,400 חברים. אפשר להוסיף כפתור "לדווח בוואטסאפ" לצד הטופס.</li>
+<li><b>מי בודק את הדיווחים,</b> ובתוך כמה זמן. בלי בודק, המפה תתמלא בנתונים לא מהימנים וזה יפגע באמינות שהיא נכס המרכזי.</li>
+<li><b>מפה גאוגרפית.</b> צריך מרכז לכל כפר, שאפשר להוציא ממפת הכפרים של פורום דו־קיום או של המועצה.</li>
+<li><b>ייעוץ משפטי</b> על הניסוח ב"קיבלתם צו? כדאי לדעת", ועל חובות המועצה כמי שאוספת מידע אישי (חוק הגנת הפרטיות). סימנתי "לאימות משפטי".</li>
+<li><b>תרגום לערבית</b> בידי דובר ערבית שמכיר את המונחים המשפטיים, ולא תרגום מכונה.</li>
+</ul>
+
+<h3>מקורות</h3>
+<ul>
+<li><a href="https://mediashift.org/2012/09/lessons-ushahidi-learned-from-knight-crowdglobe-reports251" rel="noopener">מדיה־שיפט: מה Ushahidi למדה מדוחות Knight ו־CrowdGlobe</a></li>
+<li><a href="https://www.thenewhumanitarian.org/node/253830" rel="noopener">The New Humanitarian: אימות מידע שנאסף מהקהל</a></li>
+<li><a href="https://irevolutions.org/category/social-media/page/21" rel="noopener">iRevolutions: מיפוי משבר והגנת נתונים</a></li>
+<li><a href="https://antievictionmap.com/data-use-agreement" rel="noopener">Anti-Eviction Mapping Project: הסכם שימוש בנתונים</a></li>
+<li><a href="https://ochaopt.org/data/demolition" rel="noopener">OCHA: נתוני הריסות ועקירה בגדה המערבית</a></li>
+<li><a href="https://www.dukium.org/articles-reports/house-demolitions-and-destruction-of-crops/house-demolitions/" rel="noopener">פורום דו־קיום בנגב: הריסות בתים</a></li>
+</ul>
+</section>
+</main>
+<footer style="background: #FFF4D6; border-top: 1px solid #EBD3A0; font-weight: 400">
+<div class="ftrow" style="max-width: 1160px; margin: 0 auto; padding: 22px 24px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px"><a href="/donate/" style="background: #B8451F; color: #FFFFFF; font-weight: 800; text-decoration: none; padding: 11px 24px; border-radius: 999px; font-size: 15px">תרמו למועצה</a><nav aria-label="רשתות חברתיות" style="display: flex; flex-wrap: wrap; gap: 10px"><a href="https://www.facebook.com/rcuvn" target="_blank" rel="noopener" aria-label="פייסבוק" title="פייסבוק" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #1877F2"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21z"/></svg></a><a href="https://www.instagram.com/negevrcuv" target="_blank" rel="noopener" aria-label="אינסטגרם" title="אינסטגרם" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(45deg,#F58529,#DD2A7B 55%,#8134AF)"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r="1" fill="#fff" stroke="none"/></svg></a><a href="https://www.twitter.com/rcuvnegev" target="_blank" rel="noopener" aria-label="X" title="X" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #000"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#fff" d="M17.8 3.5h3l-6.6 7.5 7.8 9.5h-6.1l-4.8-6-5.4 6h-3l7-8L2 3.5h6.2l4.3 5.5zm-1 15.2h1.7L7.3 5.2H5.5z"/></svg></a><a href="https://www.tiktok.com/@negev.villages" target="_blank" rel="noopener" aria-label="טיקטוק" title="טיקטוק" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #000"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M16.6 3c.4 2.1 1.7 3.5 3.9 3.7v3a7 7 0 0 1-3.8-1.2v6.4A5.9 5.9 0 1 1 10.8 9v3.1a2.9 2.9 0 1 0 2.8 2.9V3z"/></svg></a><a href="https://chat.whatsapp.com/BRg2BQ8WIedFiJMSqSYUYo" target="_blank" rel="noopener" aria-label="הצטרפו לעדכוני המועצה בוואטסאפ" title="הצטרפו לעדכוני המועצה בוואטסאפ" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #25D366"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm0 16.3a7.3 7.3 0 0 1-3.7-1l-.3-.2-2.7.7.7-2.6-.2-.3A7.3 7.3 0 1 1 12 19.3zm4-5.5c-.2-.1-1.3-.7-1.5-.7-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6 6 0 0 1-3-2.6c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.4a.8.8 0 0 0-.6.3 2.5 2.5 0 0 0-.8 1.9c0 1.1.8 2.2.9 2.3.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.3-.6 1.5-1.1.2-.5.2-1 .1-1.1l-.6-.4z"/></svg></a></nav></div>
+<div style="max-width: 1160px; margin: 0 auto; padding: 8px 24px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0 26px; font-size: 14px"><a href="/privacy/" style="color: #3B1D12; font-weight: 700; padding: 10px 0">מדיניות פרטיות</a><a href="/accessibility/" style="color: #3B1D12; font-weight: 700; padding: 10px 0">הצהרת נגישות</a></div>
+<div style="max-width: 1160px; margin: 0 auto; padding: 6px 24px 22px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 14px; color: #4F3226"><a href="/" aria-label="לעמוד הבית" style="display: inline-flex; flex: none"><img src="/assets/img/logo-home.png" alt="" style="width: 30px; height: 30px; object-fit: contain; display: block"></a><span>© 2026 המועצה למען הכפרים הבדואיים הלא מוכרים · negevvillages.org</span></div>
+</footer>
+</div>
+<script>
+(function(){
+var V={"לא מוכרים": ["אם נמילה", "אום רתאם", "אום אלבדון", "אז־זערורה", "אז־זרנוג", "אל־באט", "אל־באטל", "אל־בחירה", "אל־בקיעה", "גטמאת (אל־מטהר)", "אל־גרין (אל־עוקבי)", "אל־חמרה", "אל־מד׳בח", "אל־מזרעה (אל־שהבא)", "אל־מכימן", "אל־מסאעדיה", "אל־סרה", "אל־עזה", "אלע׳רה", "ארואיס", "אס־סדיר", "אס־סר", "באט אל־סראיעה", "ביר אל־חמאם", "ביר אל־משאש", "דחייה", "ואדי אל־משאש", "ח׳רבת אל־וטן", "ח׳רבת זבאלה", "כרכור", "נחל אריכא", "נחל חווה", "סהל אלבגאר", "סוואווין", "עוג׳א", "עוג׳אן", "עתיר", "תל אל־מלח", "תל ערד"], "מוכרים (אל־קסום ונווה מדבר)": ["אום בטין", "א־סייד", "דריג׳את", "כוחלה", "מולדה", "מכחול", "תראבין א־צאנע", "אבו תלול", "אבו קרינאת", "ביר הדאג׳", "קסר א־סר"], "בהליכי הכרה או הקמה": ["ח׳שם זנה", "עבדה", "רח׳מה", "ואדי אן־נעם", "אל־פורעה"], "הוחרבו": ["אל־עראקיב", "אום אל־חיראן"]};
+var COUNTS={},VER={},DEMO=false,real={};
+var names=[];Object.keys(V).forEach(function(g){V[g].forEach(function(n){names.push([g,n]);});});
+function seed(){var s=7;function r(){s=(s*9301+49297)%233280;return s/233280;}
+ var c={},v={};names.forEach(function(p){var x=r();var n=x<.45?0:x<.7?1+Math.floor(r()*2):x<.9?3+Math.floor(r()*3):6+Math.floor(r()*8);c[p[1]]=n;v[p[1]]=Math.floor(n*r()*.8);});return [c,v];}
+var demoData=seed();
+function cur(){return DEMO?{c:demoData[0],v:demoData[1]}:{c:real,v:{}};}
+function lvl(n){return n===0?0:n<=2?1:n<=5?2:3;}
+function render(){
+ var d=cur(),q=document.getElementById('q').value.trim(),h='',tot=0,vil=0,ver=0;
+ names.forEach(function(p){var n=(d.c[p[1]]||0);tot+=n;ver+=(d.v[p[1]]||0);if(n>0)vil++;});
+ Object.keys(V).forEach(function(g){
+  var t='';
+  V[g].forEach(function(nm){
+   if(q&&nm.indexOf(q)<0)return;
+   var n=(d.c[nm]||0),vv=(d.v[nm]||0);
+   t+='<button type="button" class="tile l'+lvl(n)+'" data-v="'+nm+'" aria-label="'+nm+': '+n+' צווים"><span>'+nm+'</span><span><b>'+n+'</b>'+(n>0?' <small>('+vv+' נבדקו)</small>':'')+'</span></button>';
+  });
+  if(t)h+='<div class="group">'+g+'</div><div class="tiles">'+t+'</div>';
+ });
+ if(!h)h='<p class="hint">לא נמצא כפר בשם הזה.</p>';
+ document.getElementById('tiles').innerHTML=h;
+ document.getElementById('sTotal').textContent=tot;document.getElementById('sVill').textContent=vil;document.getElementById('sVer').textContent=ver;
+}
+document.getElementById('q').addEventListener('input',render);
+document.getElementById('demo').addEventListener('change',function(e){DEMO=e.target.checked;document.getElementById('demonote').style.display=DEMO?'block':'none';render();});
+document.getElementById('tiles').addEventListener('click',function(e){var b=e.target.closest('.tile');if(!b)return;var s=document.getElementById('village');s.value=b.getAttribute('data-v');document.getElementById('report').scrollIntoView({behavior:'smooth'});s.focus({preventScroll:true});});
+var cnt=document.getElementById('cnt');
+document.getElementById('plus').onclick=function(){cnt.value=Math.min(50,(+cnt.value||0)+1);};
+document.getElementById('minus').onclick=function(){cnt.value=Math.max(1,(+cnt.value||2)-1);};
+var today=new Date();document.getElementById('dt').max=today.toISOString().slice(0,10);
+var TN={pinui:'פינוי קרקע',admin:'הריסה מנהלי',court:'הריסה של בית משפט',stop:'הפסקת עבודה או איסור שימוש',fine:'קנס או היטל',warn:'הודעה או אזהרה',other:'אחר'};
+document.getElementById('form').addEventListener('submit',function(e){
+ e.preventDefault();var err=document.getElementById('err');err.textContent='';
+ var vil=document.getElementById('village').value,ts=[].slice.call(document.querySelectorAll('input[name=t]:checked')).map(function(x){return x.value;}),n=Math.max(1,Math.min(50,+cnt.value||1));
+ if(!vil){err.textContent='בחרו כפר.';document.getElementById('village').focus();return;}
+ if(!ts.length){err.textContent='סמנו לפחות סוג צו אחד, או "אחר".';return;}
+ if(!document.getElementById('ok').checked){err.textContent='כדי לשלוח צריך לאשר את התיבה האחרונה.';return;}
+ if(DEMO&&vil!=='other'){demoData[0][vil]=(demoData[0][vil]||0)+n;render();}
+ document.getElementById('tsum').textContent='סימנו '+n+' '+(n===1?'צו':'צווים')+' בכפר '+(vil==='other'?'שלא ברשימה':vil)+': '+ts.map(function(t){return TN[t];}).join(', ')+'.';
+ document.getElementById('form').style.display='none';var t=document.getElementById('thanks');t.style.display='block';t.focus();
+});
+document.getElementById('again').onclick=function(){document.getElementById('form').reset();cnt.value=1;document.getElementById('form').style.display='';document.getElementById('thanks').style.display='none';document.getElementById('village').focus();};
+render();
+})();
+</script>
+<script>(function(){var b=document.getElementById('navtoggle'),n=document.getElementById('navlinks');if(!b||!n)return;
+b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});
+n.addEventListener('click',function(e){if(e.target.closest('a')){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});})();</script>
+</body></html>
