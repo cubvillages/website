@@ -12,5 +12,6 @@
   function go() { window.scrollTo({ top: y, left: 0, behavior: 'instant' }); }
   go();
   window.addEventListener('DOMContentLoaded', go);
+  window.addEventListener('pageshow', function (e) { if (e.persisted) go(); });
   window.addEventListener('load', function () { go(); setTimeout(go, 300); setTimeout(go, 1000); });
 })();
