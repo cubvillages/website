@@ -59,6 +59,7 @@ section[id]{scroll-margin-top:12px}
 }
 @media(max-width:900px){
 .problem-slide{padding:24px 20px}
+.problem-per-person-values span{font-size:14px}
 .problem-intro{font-size:clamp(28px,4vw,36px);margin-bottom:28px}
 .pl-gap{grid-template-columns:1fr;gap:18px}
 .problem-stats{position:static;width:100%;padding:20px 24px}
@@ -168,7 +169,7 @@ section[id]{scroll-margin-top:12px}
 .mi-sum strong{font-weight:800}
 
 </style>
-<style>html{scroll-behavior:smooth} :root{color-scheme:light}</style><script src="/assets/a11y.js" defer></script>
+<style>html{scroll-behavior:smooth} :root{color-scheme:light}</style><script src="/assets/a11y.js" defer></script><script src="/assets/restore-scroll.js"></script>
 <link rel="stylesheet" href="/assets/site-scale.css">
 
 <style>.problem-stat-row>div:first-child{white-space:normal;flex-wrap:wrap;row-gap:0}.problem-stat-row strong{max-width:100%}.problem-stats{position:static;width:auto;grid-column:2;grid-row:1}.problem-map{align-self:center}@media(max-width:900px){.problem-stats{grid-column:1;grid-row:auto}}</style>
@@ -219,9 +220,10 @@ section[id]{scroll-margin-top:12px}
 <img src="/assets/img/nahala-render-v2.jpg" alt="تصوّر لأرض عائلية تضمّ مساكن ومزرعة صغيرة، تحيط بها أراضي العائلات المجاورة" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 55%"><span style="position: absolute; z-index: 2; bottom: 12px; inset-inline-end: 12px; background: rgba(59,29,18,0.8); color: #FFF4D6; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px">تصوّر بالذكاء الاصطناعي</span>
 <div style="position: absolute; inset: 0; background: rgba(40,20,10,0.62)"></div>
 <div style="position: relative; max-width: 1180px; width: 100%; margin: 0 auto; padding: clamp(38px,6vh,64px) 24px clamp(46px,7vh,76px); color: #FFFFFF">
-<h1 style="font-family: 'Noto Sans Arabic',sans-serif; font-weight: 800; font-size: clamp(36px, 4.4vw, 60px); line-height: 1.08; margin: 0 0 16px; max-width: 820px">خطة المجالس الإقليمية:<br>من البقاء إلى الازدهار</h1>
-<ul style="font-size: clamp(17px, 1.55vw, 22px); font-weight: 700; line-height: 1.4; max-width: 1020px; margin: 0; padding: 0 22px 0 0; list-style: disc; text-shadow: 0 1px 3px rgba(0,0,0,0.45)"><li style="margin: 0 0 5px">تعيش نحو 30 ألف أسرة في قرى غير معترف بها في النقب، تفتقر إلى البنية التحتية والخدمات الأساسية، تحت تهديد دائم بهدم بيوتها.</li><li style="margin: 0 0 5px">أخفقت محاولات نقل السكان إلى البلدات على مدى 55 عامًا. فقد ارتفع عدد سكان القرى من 25 ألفًا إلى 150 ألفًا، ولا يزال يزداد بنحو 4 آلاف نسمة سنويًا.</li><li style="margin: 0 0 5px">يكلّف الوضع القائم الاقتصاد عشرات مليارات الشواقل من الناتج المفقود سنويًا، وترافقه أضرار اجتماعية جسيمة، وإنفاذ قاسٍ للقانون، ويأس واغتراب.</li></ul>
-<p style="font-size: clamp(17px, 1.55vw, 22px); font-weight: 700; line-height: 1.4; max-width: 1020px; margin: 14px 0 0; color: #F5B321; text-shadow: 0 1px 3px rgba(0,0,0,0.45)">تهدف «خطة المجالس الإقليمية» إلى تغيير هذا الوضع من جذوره، والنهوض باقتصاد النقب وتحقيق الازدهار لجميع سكانه، يهودًا وعربًا.</p>
+<div style="font-size: clamp(16px, 1.5vw, 20px); font-weight: 700; color: #F5B321; margin: 0 0 8px; text-shadow: 0 1px 3px rgba(0,0,0,0.45)">خطة المجالس الإقليمية</div>
+<h1 style="font-family: 'Noto Sans Arabic',sans-serif; font-weight: 800; font-size: clamp(30px, 3.2vw, 46px); line-height: 1.12; margin: 0 0 16px; max-width: 1132px">من البقاء إلى الازدهار: خطة اقتصادية–اجتماعية للاعتراف بالقرى غير المعترف بها وتطويرها</h1>
+<ul style="font-size: clamp(17px, 1.55vw, 22px); font-weight: 700; line-height: 1.4; max-width: 1020px; margin: 0; padding: 0 22px 0 0; list-style: disc; text-shadow: 0 1px 3px rgba(0,0,0,0.45)"><li style="margin: 0 0 5px">نحو 30 ألف أسرة تعيش بلا بنية تحتية وخدمات أساسية، وتحت تهديد دائم بهدم بيوتها</li><li style="margin: 0 0 5px">سياسة التمدين فشلت: ارتفع عدد سكان القرى من 25 ألفًا إلى 150 ألفًا، ويواصل الارتفاع بنحو 4 آلاف سنويًا</li><li style="margin: 0 0 5px">ثمن الوضع القائم: خسارة ناتج بمليارات الشواقل سنويًا، أضرار اجتماعية جسيمة، إنفاذ فظ، ويأس واغتراب</li></ul>
+<p style="font-size: clamp(18px, 2.2vw, 30px); font-weight: 700; line-height: 1.35; max-width: 1020px; margin: 22px 0 0; text-align: right; color: #F5B321; text-shadow: 0 1px 3px rgba(0,0,0,0.45)">«خطة المجالس الإقليمية» ستدفع اقتصاد النقب إلى الأمام وتجلب الازدهار لجميع سكانه، يهودًا وعربًا</p>
 </div>
 </header>
 <div style="background: #FFFFFF; border-bottom: 1px solid #EBD3A0"><div style="max-width: 1180px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px"><span style="font-size: 15px; font-weight: 700; color: #4F3226">بالشراكة مع</span><img src="/assets/img/logo-keshet2.png" alt="جمعية كيشت للمجتمع والثقافة والبيئة" style="height: 46px; width: auto; display: block"><img src="/assets/img/logo-forum-h.png" alt="منتدى التعايش السلمي في النقب من أجل المساواة المدنية" style="height: 43px; width: auto; max-width: 100%; object-fit: contain; display: block"></div></div>
@@ -367,59 +369,89 @@ section[id]{scroll-margin-top:12px}
 
 
 
-<section id="village" style="background: #FBE7B5">
-<div style="max-width: 1180px; margin: 0 auto; padding: 52px 24px">
-<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">07 · هكذا يبدو الأمر على الأرض</div>
-<h2 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(26px, 2.7vw, 34px); line-height: 1.2; margin: 0 0 14px">نحال حَفاه: السكان رسموا قريتهم بأنفسهم</h2>
-<div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
-<div style="flex: 1 1 460px; min-width: 0">
-<p style="margin: 0 0 16px">تقع نحال حَفاه (الأفضاي) بجانب شارع 40، بين متسبيه رامون وسديه بوكر. يسكنها 196 نسمة، 12 عائلة ممتدة من عشيرة السراحين.</p>
-<p style="margin: 0 0 16px">بين كانون الأول 2024 ونيسان 2025 جلس معماريون من جمعية كيشت مع ممثل عن كل عائلة، في الشِّق، فوق صورة جوية للقرية. كل عائلة حدّدت أرضها وقالت ما ينقصها: روضة أطفال، صرف صحي، طريق معبّدة، غرف ضيافة للسياح.</p>
-<p style="margin: 0">قال جميع المشاركين إنهم يريدون الحفاظ على القرية كما هي: تقليدية، هادئة وقريبة من الصحراء. إحدى البدائل الأربعة التي أعدّها المخطِّطون تُظهر كيف يمكن ذلك.</p>
+<section id="gain" style="background: linear-gradient(180deg, #FFF4D6 0%, #EAF0D0 100%)">
+<div style="max-width: 1180px; margin: 0 auto; padding: clamp(28px, 4.4vh, 40px) 24px">
+<div style="font-size: 16px; font-weight: 700; color: #2F6B2A; margin-bottom: 4px">07 · ماذا تربح الدولة</div>
+<h2 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.2; margin: 0 0 12px">اقتصاد، لا صدقة</h2>
+<div style="background: #DCE8BE; border-inline-start: 6px solid #2F6B2A; border-radius: 10px; padding: 14px 20px; margin-bottom: 14px; color: #3B1D12">
+<p style="margin: 0; font-size: clamp(20px, 2vw, 26px); line-height: 1.3; font-weight: 800"><span style="color: #2F6B2A"><span dir="ltr">20–30</span> مليار ₪ في السنة:</span> الزيادة المقدَّرة في الناتج في النقب عند التطبيق الكامل لـ«خطة المجالس الإقليمية»</p>
+<p style="margin: 6px 0 0; font-size: 17px; line-height: 1.45">في ورقة الموقف التي قدّمها المجلس إلى الأحزاب وأصحاب القرار، يدعو المجلس الدولة إلى إجراء بحث اقتصادي معمّق في جميع البنود، للحصول على معطيات دقيقة.</p>
 </div>
-<div style="flex: 1 1 420px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
-<img src="/assets/img/survey-men.jpg" alt="سكان ومخطِّطون منحنون فوق صورة جوية للقرية" style="width: 100%; height: 230px; object-fit: cover; border-radius: 12px">
-<img src="/assets/img/fire.jpg" alt="تحضير القهوة على النار في الشِّق" style="width: 100%; height: 230px; object-fit: cover; border-radius: 12px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 255px), 1fr)); gap: 12px">
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
+<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">مخصصات أقل، ضرائب أكثر</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">دافعو ضرائب بدل متلقّي المخصصات</p>
+</div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
+<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">التعليم في سن مبكرة</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">3,200 طفل بلا روضة. كل شيكل يعيد <span dir="ltr">7–10</span> شواكل</p>
+</div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
+<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">تسرّب أقل</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">المؤسسات التعليمية داخل القرى</p>
+</div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
+<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">تشغيل النساء</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">من 25% اليوم، مقابل قرابة 80% لدى اليهوديات</p>
+</div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
+<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">تشغيل الشباب والشابات</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">عاطلون أقل، وعاملون ودافعو ضرائب أكثر</p>
+</div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
+<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">آلاف المصالح الجديدة</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">مزارع مساندة ومئات المجمّعات السياحية</p>
+</div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
+<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">إيرادات للمجالس</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">طاقة شمسية، أرنونا، مناطق صناعية وتجارية</p>
+</div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
+<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">جريمة وهدم أقل</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">ضرر اقتصادي ونفقات إنفاذ وهدم أقل</p>
 </div>
 </div>
-
-<p style="margin: 22px 0 0; max-width: 820px; font-weight: 700">الخارطة موجودة. السكان شركاء فيها. لا عائق تخطيطي. ينقص فقط قرار حكومي، و«خطة المجالس» تطالب باتخاذه خلال 60 يومًا.</p>
 </div>
 </section>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: 52px 24px">
-<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">08 · خطة نحال حَفاه</div>
-<div style="background: #FFFFFF; border-radius: 16px; padding: 24px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 18px">
-<h3 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 700; font-size: 24px; margin: 0"><span id="mt">القرية وفق البديل 3 للمخطِّطين</span></h3>
+<section id="village" style="background: #FBE7B5">
+<div style="max-width: 1180px; margin: 0 auto; padding: clamp(28px, 4.4vh, 40px) 24px">
+<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 4px">08 · هكذا يبدو الأمر على الأرض</div>
+<h2 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.2; margin: 0 0 10px">نحال حَفاه: السكان رسموا قريتهم بأنفسهم</h2>
+<p style="margin: 0 0 14px; max-width: 1000px">تقع قرية نحال حَفاه (الأفضاي) بجانب شارع 40، بين متسبيه رامون وسديه بوكر. يسكنها 12 عائلة ممتدة من عشيرة السراحين، نحو 200 نسمة. بين كانون الأول 2024 ونيسان 2025 جلس معماريون من جمعية كيشت مع ممثلين عن كل عائلة، في الشِّق، فوق صورة جوية. حدّد الممثلون القطع العائلية وقالوا ما ينقص: روضة أطفال، صرف صحي، طريق معبّدة، وحدات ضيافة. وطلب الجميع الحفاظ على القرية تقليدية، هادئة وقريبة من الصحراء.</p>
+<div style="background: #FFFFFF; border-radius: 16px; padding: 18px 22px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px">
+<h3 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 700; font-size: 22px; margin: 0"><span id="mt">خطة جمعية كيشت لتطوير نحال حَفاه</span></h3>
 <div style="display: flex; gap: 6px; background: #FBE7B5; padding: 5px; border-radius: 999px">
-<button type="button" id="bNow" onclick="sv(0)" style="font-family: Heebo, sans-serif; font-weight: 700; font-size: 16px; border: 0; border-radius: 999px; padding: 10px 20px; min-height: 44px; cursor: pointer;background:transparent;color:#3B1D12">اليوم</button>
-<button type="button" id="bPlan" onclick="sv(1)" style="font-family: Heebo, sans-serif; font-weight: 700; font-size: 16px; border: 0; border-radius: 999px; padding: 10px 20px; min-height: 44px; cursor: pointer;background:#3B1D12;color:#FFFFFF">وفق الخطة</button>
+<button type="button" id="bNow" onclick="sv(0)" style="font-family: Heebo, sans-serif; font-weight: 700; font-size: 16px; border: 0; border-radius: 999px; padding: 8px 20px; min-height: 44px; cursor: pointer;background:transparent;color:#3B1D12">اليوم</button>
+<button type="button" id="bPlan" onclick="sv(1)" style="font-family: Heebo, sans-serif; font-weight: 700; font-size: 16px; border: 0; border-radius: 999px; padding: 8px 20px; min-height: 44px; cursor: pointer;background:#3B1D12;color:#FFFFFF">وفق الخطة</button>
 </div>
 </div>
-<div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start">
-<div style="flex: 1 1 300px; min-width: 0; max-width: 310px">
+<div style="display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start">
+<div class="vmap" style="flex: 1 1 300px; min-width: 0; max-width: 300px">
 <div class="vNow" style="display:none">
-<img src="/assets/img/existing.jpg" alt="خريطة الوضع القائم في نحال حَفاه: 12 قطعة عائلية" data-zoom="1" title="انقروا للتكبير" style="cursor: zoom-in; width: 100%; height: auto; border-radius: 10px; display: block">
+<img src="/assets/img/existing.jpg" alt="خارطة الوضع القائم في نحال حَفاه: 12 قطعة عائلية" data-zoom="1" title="انقر للتكبير" style="cursor: zoom-in; width: 100%; height: auto; border-radius: 10px; display: block">
 </div>
 <div class="vPlan">
-<img src="/assets/img/alt3.jpg" alt="البديل 3 لنحال حَفاه: قسائم سكن، أراضٍ زراعية، سياحة ومركز عام" data-zoom="1" title="انقروا للتكبير" style="cursor: zoom-in; width: 100%; height: auto; border-radius: 10px; display: block">
+<img src="/assets/img/alt3.jpg" alt="خطة جمعية كيشت لنحال حَفاه: قسائم سكن، أراضٍ زراعية، سياحة ومركز عام" data-zoom="1" title="انقر للتكبير" style="cursor: zoom-in; width: 100%; height: auto; border-radius: 10px; display: block">
 </div>
-<div style="font-size: 14px; color: #4F3226; margin-top: 8px">من «مخطط هيكلي للقرى البدوية في جبل النقب – قرية نحال حَفاه»، جمعية كيشت، تشرين الثاني 2025 (أسماء الخريطة بالعبرية)</div>
+<div style="font-size: 14px; color: #4F3226; margin-top: 6px">من «مخطط هيكلي للقرى البدوية في جبل النقب – قرية نحال حَفاه»، جمعية كيشت، تشرين الثاني 2025 (أسماء الخريطة بالعبرية)</div>
 </div>
-<div style="flex: 1 1 320px; min-width: 0">
+<div style="flex: 1 1 420px; min-width: 0">
 <div class="vNow" style="display:none">
 <p style="margin: 0 0 14px">12 قطعة عائلية، في كل منها بيوت وشِق وحظائر وأشجار. كل شيء متداخل، بلا طريق منظّمة وبلا مبانٍ عامة، باستثناء المسجد وساحات الأعراس.</p>
 <p style="margin: 0">53 أسرة تعيش هنا اليوم. ومع الجيلين الثاني والثالث ستصبح 102.</p>
 </div>
 <div class="vPlan">
-<div style="display: flex; flex-direction: column; gap: 14px">
-<div style="display: flex; gap: 12px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #F9D77E; margin-top: 4px"></span><span><b>قسيمة سكن</b> لكل أسرة نووية، داخل أرض العائلة الممتدة.</span></div>
-<div style="display: flex; gap: 12px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #C98A2E; margin-top: 4px"></span><span><b>قسيمة عائلية</b> لشِق العائلة الممتدة، ويمكن أن تُستخدم للضيافة أيضًا.</span></div>
-<div style="display: flex; gap: 12px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #8FDC8F; margin-top: 4px"></span><span><b>زراعة ومواشٍ</b> في مساحة مشتركة للعائلة. الوديان تُحفظ للمصاطب الزراعية.</span></div>
-<div style="display: flex; gap: 12px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #F27BA0; margin-top: 4px"></span><span><b>سياحة</b> في أطراف القرية، على امتداد الشارع.</span></div>
-<div style="display: flex; gap: 12px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #8C6A45; margin-top: 4px"></span><span><b>مركز القرية</b>: روضة أطفال، مبانٍ عامة، دكان وساحة للأعراس.</span></div>
-<div style="display: flex; gap: 12px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #9AA0A6; margin-top: 4px"></span><span><b>طريق منظّمة</b> تصل إلى كل قسيمة، مع مياه وكهرباء وصرف صحي.</span><blockquote style="margin: 24px 0 0; padding: 0 22px 0 0; border-right: 4px solid #B8451F; max-width: 820px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px 22px">
+<div style="display: flex; gap: 10px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #F9D77E; margin-top: 3px"></span><span><b>قسيمة سكن</b> لكل أسرة نووية، داخل أرض العائلة الممتدة.</span></div>
+<div style="display: flex; gap: 10px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #C98A2E; margin-top: 3px"></span><span><b>قسيمة عائلية</b> لشِق العائلة الممتدة، ويمكن أن تُستخدم للضيافة أيضًا.</span></div>
+<div style="display: flex; gap: 10px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #8FDC8F; margin-top: 3px"></span><span><b>زراعة ومواشٍ</b> في مساحة مشتركة للعائلة. الوديان تُحفظ للمصاطب الزراعية.</span></div>
+<div style="display: flex; gap: 10px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #F27BA0; margin-top: 3px"></span><span><b>سياحة</b> في أطراف القرية، على امتداد الشارع.</span></div>
+<div style="display: flex; gap: 10px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #8C6A45; margin-top: 3px"></span><span><b>مركز القرية</b>: روضة أطفال، مبانٍ عامة، دكان وساحة للأعراس.</span></div>
+<div style="display: flex; gap: 10px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #9AA0A6; margin-top: 3px"></span><span><b>طريق منظّمة</b> تصل إلى كل قسيمة، مع مياه وكهرباء وصرف صحي.</span></div>
+</div>
+<blockquote style="margin: 12px 0 0; padding: 12px 0 0; border-top: 4px solid #B8451F; max-width: 820px">
 <p style="margin: 0 0 6px; font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 700; font-size: 18px; line-height: 1.4">«يتبيّن من فحص الخرائط الهيكلية القطرية واللوائية أنه لا يوجد أي قيد تخطيطي–قانوني في منطقة القرية».</p>
 <footer style="font-size: 16px; color: #4F3226">من عرض المخطِّطين للسكان</footer>
 </blockquote>
@@ -427,66 +459,41 @@ section[id]{scroll-margin-top:12px}
 </div>
 </div>
 </div>
+<p style="margin: 14px 0 0; max-width: 1000px; font-weight: 700">الخطة موجودة، وينقص فقط قرار حكومي. و«خطة المجالس الإقليمية» تطالب باتخاذه خلال 60 يومًا.</p>
+<div style="margin-top: 8px; font-size: 14px; color: #4F3226">خارطة نحال حَفاه: جمعية كيشت؛ المهندسة المعمارية كيرن إنغلمان، المهندس المعماري أمتاي هار–طوف، مهندس المناظر الطبيعية نوف ميخائيل عوزرمان</div>
 </div>
-</div>
-
-
-<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px 28px; font-size: 14px; color: #4F3226">خارطة نحال حَفاه: جمعية كيشت؛ المهندسة المعمارية كيرن إنغلمان، المهندس المعماري أمتاي هار–طوف، مهندس المناظر الطبيعية نوف ميخائيل عوزرمان</div>
 </section>
 
-<section style="background: #FBE7B5">
+<section id="village-build" style="max-width: 1180px; margin: 0 auto; padding: clamp(28px, 4.4vh, 40px) 24px">
+<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 4px">09 · بناء صحراوي واقتصاد محلي</div>
+<h2 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.2; margin: 0 0 14px">بيوت نبتت من المشهد، وقرية تعيش من أرضها</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px 36px; align-items: start">
+<div>
+<h3 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 20px; margin: 0 0 6px; color: #A63A17">كيف سيبدو ذلك</h3>
+<p style="margin: 0 0 12px">في 2022 خرج ممثلون عن مجتمعات جبل النقب في جولة إلى القرى البدوية في سيناء، وعادوا بأمثلة على بيوت من حجر وطوب طيني ولياسة طين. بدل الصفيح، بيوت تبدو كأنها نبتت من المشهد، بمواد وألوان الصحراء.</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<figure style="margin: 0"><img src="/assets/img/b-sinai.jpg" alt="بيوت حجرية بدوية في وادي الطلاح في سيناء" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">بيوت حجرية في وادي الطلاح، سيناء. جولة الإلهام، 2022</figcaption></figure>
+<figure style="margin: 0"><img src="/assets/img/b-mud.jpg" alt="بيت من الطوب الطيني ولياسة الطين في الصحراء" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">بيت من الطوب الطيني ولياسة الطين، العربة</figcaption></figure>
+<figure style="margin: 0"><img src="/assets/img/b-interior.jpg" alt="داخل بيت حجري بسقف من عوارض خشبية" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">من الداخل: حجر وخشب وضوء</figcaption></figure>
+<figure style="margin: 0"><img src="/assets/img/b-gan.jpg" alt="تصوّر لروضة أطفال مبنية بالطين وبقبة" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">تصوّر: روضة أطفال في القرية</figcaption></figure>
+</div>
+</div>
+<div>
+<h3 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 20px; margin: 0 0 6px; color: #A63A17">القرية تعيش من الأرض منذ الآن</h3>
+<p style="margin: 0 0 12px">أغنام، جمال، زيتون وضيافة. الخطة لا تخترع اقتصادًا جديدًا. إنها تمنح الاقتصاد القائم عنوانًا قانونيًا ومجالًا للنمو. ومديرية التخطيط نفسها تقترح مواقع ضيافة في الشِّق والخيام، وتعمل على الترويج لـ«درب الخيام» في المنطقة.</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<figure style="margin: 0"><img src="/assets/img/sheep.jpg" alt="قطيع أغنام في حظيرة" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">أغنام</figcaption></figure>
+<figure style="margin: 0"><img src="/assets/img/camels.jpg" alt="جمال في القرية" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">جمال</figcaption></figure>
+<figure style="margin: 0"><img src="/assets/img/olives.jpg" alt="أشجار زيتون فتية في ساحة بيت" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">زراعة للبيت</figcaption></figure>
+<figure style="margin: 0"><img src="/assets/img/tent.jpg" alt="خيمة ضيافة بدوية" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">ضيافة سياح</figcaption></figure>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background: #F8E1D2">
 <div style="max-width: 1180px; margin: 0 auto; padding: 52px 24px">
-<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">09 · بناء صحراوي</div>
-<h2 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(26px, 2.7vw, 34px); line-height: 1.2; margin: 0 0 14px">كيف سيبدو ذلك</h2>
-<p style="margin: 0 0 20px; max-width: 780px">طلب جميع المشاركين في المسح البناء بمواد وألوان الصحراء. في 2022 خرج ممثلون عن مجتمعات جبل النقب في جولة إلى القرى البدوية في سيناء، وعادوا بالإلهام: بيوت من حجر، طوب طيني ولياسة طين. بدل الصفيح، بيوت تبدو كأنها نبتت من المشهد.</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px">
-<figure style="margin: 0"><img src="/assets/img/b-sinai.jpg" alt="بيوت حجرية بدوية في وادي الطلاح في سيناء" style="width: 100%; height: 170px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">بيوت حجرية في وادي الطلاح، سيناء. صُوّرت في جولة الإلهام، 2022</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/b-mud.jpg" alt="بيت من الطوب الطيني ولياسة الطين في الصحراء" style="width: 100%; height: 170px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">بيت من الطوب الطيني ولياسة الطين، العربة</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/b-interior.jpg" alt="داخل بيت حجري بسقف من عوارض خشبية" style="width: 100%; height: 170px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">من الداخل: حجر وخشب وضوء</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/b-gan.jpg" alt="تصوّر لروضة أطفال من بناء طيني بقبة" style="width: 100%; height: 170px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">تصوّر: روضة أطفال في القرية</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/b-makolet.jpg" alt="تصوّر لدكان صغير من بناء طيني" style="width: 100%; height: 170px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">تصوّر: دكان في مركز القرية</figcaption></figure>
-</div>
-</div>
-</section>
-
-<section style="max-width: 1180px; margin: 0 auto; padding: 52px 24px">
-<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">10 · اقتصاد محلي</div>
-<h2 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(26px, 2.7vw, 34px); line-height: 1.2; margin: 0 0 14px">القرية تعتاش من الأرض منذ الآن</h2>
-<p style="margin: 0 0 20px; max-width: 760px">أغنام، جمال، زيتون وضيافة في الخيمة. الخطة لا تخترع اقتصادًا جديدًا. إنها تمنح الاقتصاد القائم عنوانًا قانونيًا ومجالًا للنمو. ومديرية التخطيط نفسها تقترح مواقع ضيافة في الشِّق والخيام، وتدفع «طريق الخيام» في منطقة عبدة وجنوبًا، على امتداد الشارع نفسه.</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px">
-<figure style="margin: 0"><img src="/assets/img/sheep.jpg" alt="قطيع أغنام في حظيرة" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">أغنام</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/camels.jpg" alt="جمال في القرية" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">جمال</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/olives.jpg" alt="أشجار زيتون فتية في ساحة البيت" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">زراعة للبيت</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/tent.jpg" alt="خيمة ضيافة بدوية" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">ضيافة سياح</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/terraces-wall.jpg" alt="بقايا جدران مصاطب زراعية قديمة" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">مصاطب قديمة على طريق البخور</figcaption></figure>
-</div>
-</section>
-
-<section id="gain" style="background: #3B1D12; color: #FFF4D6">
-<div style="max-width: 1180px; margin: 0 auto; padding: 52px 24px">
-<div style="font-size: 16px; font-weight: 700; color: #F5B321; margin-bottom: 8px">11 · ماذا تربح الدولة</div>
-<h2 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(26px, 2.7vw, 34px); line-height: 1.2; margin: 0 0 24px">اقتصاد، لا صدقة</h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px">
-<div>
-<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 42px; line-height: 1; color: #F5B321">25%</div>
-<p style="margin: 10px 0 0">نسبة تشغيل النساء البدويات. لدى النساء اليهوديات: قرابة 80%. المزرعة بجانب البيت هي مكان عمل بجانب البيت.</p>
-</div>
-<div>
-<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 42px; line-height: 1; color: #F5B321">0 من 35</div>
-<p style="margin: 10px 0 0">بدويًا من النقب قُتلوا في 2025 وكانوا يسكنون في قرية غير معترف بها. 32 منهم سكنوا في رهط والبلدات. التمدين لم يجلب الأمان.</p>
-</div>
-<div>
-<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 42px; line-height: 1; color: #F5B321">20–30 مليار ₪</div>
-<p style="margin: 10px 0 0">زيادة في الناتج السنوي في النقب عند التطبيق الكامل. هذا تقدير، ولذلك تطالب الخطة بأن تقيسه الدولة بنفسها.</p>
-</div>
-</div>
-<p style="margin: 44px 0 0; max-width: 780px">المجلس لا يطلب من الحكومة أن تصدّق أرقامه. إنه يطلب بحثًا اقتصاديًا مستقلًا منذ اليوم الأول، يحدّد أهدافًا قابلة للقياس للتطبيق.</p>
-</div>
-</section>
-
-<section style="max-width: 1180px; margin: 0 auto; padding: 52px 24px">
-<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">12 · ما لا تطلبه الخطة</div>
-<h2 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(26px, 2.7vw, 34px); line-height: 1.2; margin: 0 0 32px">أسئلة وأجوبة</h2>
+<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 24px">10 · أسئلة وأجوبة</div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px">
 <div>
 <h3 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 700; font-size: 22px; margin: 0 0 8px">وماذا عن دعاوى الملكية؟</h3>
@@ -501,11 +508,12 @@ section[id]{scroll-margin-top:12px}
 <p style="margin: 0">بالعكس. حين يكون لكل عائلة مكان قانوني للبناء، يتضح المسموح والممنوع، ويصبح تطبيق القانون سهلًا ورخيصًا.</p>
 </div>
 </div>
+</div>
 </section>
 
 <section id="steps" style="background: #FBE7B5">
 <div style="max-width: 1180px; margin: 0 auto; padding: 52px 24px">
-<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">13 · ما المطلوب</div>
+<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">11 · ما المطلوب</div>
 <h2 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(26px, 2.7vw, 34px); line-height: 1.2; margin: 0 0 24px">الجدول الزمني للحكومة القادمة</h2>
 <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px">
 <li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">اليوم الأول</div><p style="margin: 6px 0 0; font-size: 17px">وقف الهدم.</p></li>
@@ -537,7 +545,7 @@ section[id]{scroll-margin-top:12px}
 </footer>
 
 </div>
-<script>function sv(p){document.querySelectorAll('.vNow').forEach(e=>e.style.display=p?'none':'');document.querySelectorAll('.vPlan').forEach(e=>e.style.display=p?'':'none');var a=document.getElementById('bPlan'),b=document.getElementById('bNow');[a,b].forEach(x=>{x.style.background='transparent';x.style.color='#3B1D12'});var s=p?a:b;s.style.background='#3B1D12';s.style.color='#FFFFFF';document.getElementById('mt').textContent=p?'القرية وفق البديل 3 للمخطِّطين':'القرية اليوم: 12 قطعة عائلية';}</script><script>function se(o){document.querySelectorAll('.eOld').forEach(e=>e.style.display=o?'':'none');document.querySelectorAll('.eNew').forEach(e=>e.style.display=o?'none':'');var a=document.getElementById('eOld'),b=document.getElementById('eNew');[a,b].forEach(x=>{x.style.background='transparent';x.style.color='#3B1D12'});var s=o?a:b;s.style.background='#3B1D12';s.style.color='#FFFFFF';}</script><script>try{if('scrollRestoration' in history)history.scrollRestoration='manual';}catch(e){}if(!location.hash){window.scrollTo(0,0);window.addEventListener('load',function(){window.scrollTo(0,0);});}</script><script>
+<script>function sv(p){document.querySelectorAll('.vNow').forEach(e=>e.style.display=p?'none':'');document.querySelectorAll('.vPlan').forEach(e=>e.style.display=p?'':'none');var a=document.getElementById('bPlan'),b=document.getElementById('bNow');[a,b].forEach(x=>{x.style.background='transparent';x.style.color='#3B1D12'});var s=p?a:b;s.style.background='#3B1D12';s.style.color='#FFFFFF';document.getElementById('mt').textContent=p?'خطة جمعية كيشت لتطوير نحال حَفاه':'القرية اليوم: 12 قطعة عائلية';}</script><script>try{if('scrollRestoration' in history)history.scrollRestoration='manual';}catch(e){}if(!location.hash){window.scrollTo(0,0);window.addEventListener('load',function(){window.scrollTo(0,0);});}</script><script>
 (function(){var b=document.getElementById('navtoggle'),n=document.getElementById('navlinks');if(!b||!n)return;
 b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});
 n.addEventListener('click',function(e){if(e.target.closest('a')){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});})();

@@ -59,6 +59,7 @@ section[id]{scroll-margin-top:12px}
 }
 @media(max-width:900px){
 .problem-slide{padding:24px 20px}
+.problem-per-person-values span{font-size:14px}
 .problem-intro{font-size:clamp(28px,4vw,36px);margin-bottom:28px}
 .pl-gap{grid-template-columns:1fr;gap:18px}
 .problem-stats{position:static;width:100%;padding:20px 24px}
@@ -168,7 +169,7 @@ section[id]{scroll-margin-top:12px}
 .mi-sum strong{font-weight:800}
 
 </style>
-<style>html{scroll-behavior:smooth} :root{color-scheme:light}</style><script src="/assets/a11y.js" defer></script>
+<style>html{scroll-behavior:smooth} :root{color-scheme:light}</style><script src="/assets/a11y.js" defer></script><script src="/assets/restore-scroll.js"></script>
 <link rel="stylesheet" href="/assets/site-scale.css">
 
 <style>.problem-stat-row>div:first-child{white-space:normal;flex-wrap:wrap;row-gap:0}.problem-stat-row strong{max-width:100%}.problem-stats{position:static;width:auto;grid-column:2;grid-row:1}.problem-map{align-self:center}@media(max-width:900px){.problem-stats{grid-column:1;grid-row:auto}}</style>
@@ -218,9 +219,10 @@ section[id]{scroll-margin-top:12px}
 <img src="/assets/img/nahala-render-v2.jpg" alt="Rendering of a family homestead with homes and a small farm, surrounded by neighboring homesteads" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 55%"><span style="position: absolute; z-index: 2; bottom: 12px; inset-inline-end: 12px; background: rgba(59,29,18,0.8); color: #FFF4D6; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px">AI illustration</span>
 <div style="position: absolute; inset: 0; background: rgba(40,20,10,0.62)"></div>
 <div style="position: relative; max-width: 1180px; width: 100%; margin: 0 auto; padding: clamp(38px,6vh,64px) 24px clamp(46px,7vh,76px); color: #FFFFFF">
-<h1 style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: clamp(36px, 4.4vw, 60px); line-height: 1.08; margin: 0 0 16px; max-width: 820px">The Regional Councils Plan:<br>From survival to prosperity</h1>
-<ul style="font-size: clamp(17px, 1.55vw, 22px); font-weight: 700; line-height: 1.4; max-width: 1020px; margin: 0; padding: 0 0 0 22px; list-style: disc; text-shadow: 0 1px 3px rgba(0,0,0,0.45)"><li style="margin: 0 0 5px">About 30,000 families live in unrecognized villages in the Negev without basic infrastructure or services, under constant threat of home demolition.</li><li style="margin: 0 0 5px">After 55 years of attempts to move villagers into towns, the village population has grown from 25,000 to 150,000 and continues to grow by about 4,000 a year.</li><li style="margin: 0 0 5px">The cost of the status quo includes tens of billions of shekels in lost output each year, severe social harm, harsh enforcement, despair and alienation.</li></ul>
-<p style="font-size: clamp(17px, 1.55vw, 22px); font-weight: 700; line-height: 1.4; max-width: 1020px; margin: 14px 0 0; color: #F5B321; text-shadow: 0 1px 3px rgba(0,0,0,0.45)">The “Regional Councils Plan” aims to change these conditions, boost the Negev economy and bring prosperity to all its residents, Jewish and Arab.</p>
+<div style="font-size: clamp(16px, 1.5vw, 20px); font-weight: 700; color: #F5B321; margin: 0 0 8px; text-shadow: 0 1px 3px rgba(0,0,0,0.45)">The Regional Councils Plan</div>
+<h1 style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: clamp(30px, 3.2vw, 46px); line-height: 1.12; margin: 0 0 16px; max-width: 1132px">From survival to prosperity: a <span style="white-space: nowrap">socio-economic</span> plan for the recognition and development of the unrecognized villages</h1>
+<ul style="font-size: clamp(17px, 1.55vw, 22px); font-weight: 700; line-height: 1.4; max-width: 1020px; margin: 0; padding: 0 0 0 22px; list-style: disc; text-shadow: 0 1px 3px rgba(0,0,0,0.45)"><li style="margin: 0 0 5px">About 30,000 families live without basic infrastructure and services, under constant threat of home demolition</li><li style="margin: 0 0 5px">The urbanization policy failed: the village population has grown from 25,000 to 150,000 and keeps growing by about 4,000 a year</li><li style="margin: 0 0 5px">The cost of the status quo: billions of shekels in lost output a year, heavy social harm, brutal enforcement, despair and alienation</li></ul>
+<p style="font-size: clamp(18px, 2.2vw, 30px); font-weight: 700; line-height: 1.35; max-width: 1020px; margin: 22px 0 0; text-align: left; color: #F5B321; text-shadow: 0 1px 3px rgba(0,0,0,0.45)">“The Regional Councils Plan” will propel the Negev economy and bring prosperity to all its residents, Jewish and Arab</p>
 </div>
 </header>
 <div style="background: #FFFFFF; border-bottom: 1px solid #EBD3A0"><div style="max-width: 1180px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px"><span style="font-size: 15px; font-weight: 700; color: #4F3226">In partnership with</span><img src="/assets/img/logo-keshet2.png" alt="Keshet Association for Community, Culture and Environment" style="height: 46px; width: auto; display: block"><img src="/assets/img/logo-forum-h.png" alt="Negev Coexistence Forum for Civil Equality" style="height: 43px; width: auto; max-width: 100%; object-fit: contain; display: block"></div></div>
@@ -366,126 +368,131 @@ section[id]{scroll-margin-top:12px}
 
 
 
-<section id="village" style="background: #FBE7B5">
-<div style="max-width: 1180px; margin: 0 auto; padding: 52px 24px">
-<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">07 · What it looks like on the ground</div>
-<h2 style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: clamp(26px, 2.7vw, 34px); line-height: 1.2; margin: 0 0 14px">Nahal Hava: the residents have already drawn their village</h2>
-<div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
-<div style="flex: 1 1 460px; min-width: 0">
-<p style="margin: 0 0 16px">Nahal Hava (al-Afdai) sits beside Route 40, between Mitzpe Ramon and Sde Boker. It is home to 196 people: 12 extended families of the Sarahin tribe.</p>
-<p style="margin: 0 0 16px">Between December 2024 and April 2025, architects from the Keshet association sat with a representative of every family in the shig (the guest tent), over an aerial photo of the village. Each family marked its plot and said what it lacks: a kindergarten, sewage, a paved road, guest cabins for tourists.</p>
-<p style="margin: 0">Every participant said they want to keep the village as it is: traditional, quiet and close to the desert. One of the four alternatives the planners prepared shows how.</p>
+<section id="gain" style="background: linear-gradient(180deg, #FFF4D6 0%, #EAF0D0 100%)">
+<div style="max-width: 1180px; margin: 0 auto; padding: clamp(28px, 4.4vh, 40px) 24px">
+<div style="font-size: 16px; font-weight: 700; color: #2F6B2A; margin-bottom: 4px">07 · What the state gains</div>
+<h2 style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.2; margin: 0 0 12px">Economics, not charity</h2>
+<div style="background: #DCE8BE; border-inline-start: 6px solid #2F6B2A; border-radius: 10px; padding: 14px 20px; margin-bottom: 14px; color: #3B1D12">
+<p style="margin: 0; font-size: clamp(20px, 2vw, 26px); line-height: 1.3; font-weight: 800"><span style="color: #2F6B2A"><span dir="ltr">20–30</span> billion NIS a year:</span> Estimated added output in the Negev under full implementation of “The Regional Councils Plan”</p>
+<p style="margin: 6px 0 0; font-size: 17px; line-height: 1.45">In the position paper the Council submitted to the parties and decision-makers, it calls on the state to carry out an in-depth economic study of all the items, to obtain accurate figures.</p>
 </div>
-<div style="flex: 1 1 420px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
-<img src="/assets/img/survey-men.jpg" alt="Residents and planners leaning over an aerial photo of the village" style="width: 100%; height: 230px; object-fit: cover; border-radius: 12px">
-<img src="/assets/img/fire.jpg" alt="Making coffee over a fire in the shig" style="width: 100%; height: 230px; object-fit: cover; border-radius: 12px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 255px), 1fr)); gap: 12px">
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
+<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">Fewer benefits, more taxes</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">Taxpayers instead of benefit recipients</p>
+</div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
+<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">Early childhood education</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">3,200 children without a kindergarten. Every shekel returns <span dir="ltr">7–10</span> shekels</p>
+</div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
+<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">Fewer dropouts</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">Schools inside the villages</p>
+</div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
+<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">Women’s employment</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">From 25% today, versus almost 80% among Jewish women</p>
+</div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
+<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">Youth employment</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">Fewer idle youth, more workers and taxpayers</p>
+</div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
+<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">Thousands of new businesses</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">Farm plots and hundreds of tourism sites</p>
+</div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
+<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">Revenue for the councils</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">Solar power, property tax, industrial and commercial zones</p>
+</div>
+<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
+<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">Less crime and fewer demolitions</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">Less economic damage, enforcement and demolition costs</p>
 </div>
 </div>
-
-<p style="margin: 22px 0 0; max-width: 820px; font-weight: 700">The plan exists. The residents are partners in it. There is no planning obstacle. All that’s missing is a government decision, and "The Regional Councils Plan" calls for it within 60 days.</p>
 </div>
 </section>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: 52px 24px">
-<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">08 · The plan for Nahal Hava</div>
-<div style="background: #FFFFFF; border-radius: 16px; padding: 24px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 18px">
-<h3 style="font-family: 'Heebo', sans-serif; font-weight: 700; font-size: 24px; margin: 0"><span id="mt">The village under the planners’ Alternative 3</span></h3>
+<section id="village" style="background: #FBE7B5">
+<div style="max-width: 1180px; margin: 0 auto; padding: clamp(28px, 4.4vh, 40px) 24px">
+<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 4px">08 · What it looks like on the ground</div>
+<h2 style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.2; margin: 0 0 10px">Nahal Hava: the residents have already drawn their village</h2>
+<p style="margin: 0 0 14px; max-width: 1000px">The village of Nahal Hava (al-Afdai) sits beside Route 40, between Mitzpe Ramon and Sde Boker. It is home to 12 extended families of the Sarahin tribe, about 200 residents. Between December 2024 and April 2025, architects from the Keshet association sat with representatives of every family, in the shig, over an aerial photo. The representatives marked the family plots and said what is missing: a kindergarten, sewage, a paved road, guest cabins. Everyone asked to keep the village traditional, quiet and close to the desert.</p>
+<div style="background: #FFFFFF; border-radius: 16px; padding: 18px 22px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px">
+<h3 style="font-family: 'Heebo', sans-serif; font-weight: 700; font-size: 22px; margin: 0"><span id="mt">Keshet association plan for developing Nahal Hava</span></h3>
 <div style="display: flex; gap: 6px; background: #FBE7B5; padding: 5px; border-radius: 999px">
-<button type="button" id="bNow" onclick="sv(0)" style="font-family: Heebo, sans-serif; font-weight: 700; font-size: 16px; border: 0; border-radius: 999px; padding: 10px 20px; min-height: 44px; cursor: pointer;background:transparent;color:#3B1D12">Today</button>
-<button type="button" id="bPlan" onclick="sv(1)" style="font-family: Heebo, sans-serif; font-weight: 700; font-size: 16px; border: 0; border-radius: 999px; padding: 10px 20px; min-height: 44px; cursor: pointer;background:#3B1D12;color:#FFFFFF">Under the plan</button>
+<button type="button" id="bNow" onclick="sv(0)" style="font-family: Heebo, sans-serif; font-weight: 700; font-size: 16px; border: 0; border-radius: 999px; padding: 8px 20px; min-height: 44px; cursor: pointer;background:transparent;color:#3B1D12">Today</button>
+<button type="button" id="bPlan" onclick="sv(1)" style="font-family: Heebo, sans-serif; font-weight: 700; font-size: 16px; border: 0; border-radius: 999px; padding: 8px 20px; min-height: 44px; cursor: pointer;background:#3B1D12;color:#FFFFFF">Under the plan</button>
 </div>
 </div>
-<div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start">
-<div style="flex: 1 1 300px; min-width: 0; max-width: 310px">
+<div style="display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start">
+<div class="vmap" style="flex: 1 1 300px; min-width: 0; max-width: 300px">
 <div class="vNow" style="display:none">
-<img src="/assets/img/existing.jpg" alt="Map of current conditions in Nahal Hava: 12 family plots" data-zoom="1" title="Click to enlarge" style="cursor: zoom-in; width: 100%; height: auto; border-radius: 10px; display: block">
+<img src="/assets/img/existing.jpg" alt="Map of Nahal Hava today: 12 family plots" data-zoom="1" title="Click to enlarge" style="cursor: zoom-in; width: 100%; height: auto; border-radius: 10px; display: block">
 </div>
 <div class="vPlan">
-<img src="/assets/img/alt3.jpg" alt="Alternative 3 for Nahal Hava: residential plots, farmland, tourism and a public center" data-zoom="1" title="Click to enlarge" style="cursor: zoom-in; width: 100%; height: auto; border-radius: 10px; display: block">
+<img src="/assets/img/alt3.jpg" alt="Keshet association plan for Nahal Hava: residential plots, farmland, tourism and a public center" data-zoom="1" title="Click to enlarge" style="cursor: zoom-in; width: 100%; height: auto; border-radius: 10px; display: block">
 </div>
-<div style="font-size: 14px; color: #4F3226; margin-top: 8px">From "Master Plan for the Bedouin Villages of the Negev Highlands – Nahal Hava," Keshet association, November 2025 (map labels in Hebrew)</div>
+<div style="font-size: 14px; color: #4F3226; margin-top: 6px">From “Master Plan for the Bedouin Villages of the Negev Highlands – Nahal Hava,” Keshet association, November 2025 (map labels in Hebrew)</div>
 </div>
-<div style="flex: 1 1 320px; min-width: 0">
+<div style="flex: 1 1 420px; min-width: 0">
 <div class="vNow" style="display:none">
 <p style="margin: 0 0 14px">12 family plots, each with homes, a shig, pens and trees. Everything is intermixed, with no proper road and no public buildings apart from a mosque and wedding grounds.</p>
 <p style="margin: 0">53 households live here today. With the second and third generations, there will be 102.</p>
 </div>
 <div class="vPlan">
-<div style="display: flex; flex-direction: column; gap: 14px">
-<div style="display: flex; gap: 12px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #F9D77E; margin-top: 4px"></span><span><b>Residential plot</b> for each nuclear family, within the extended family’s land.</span></div>
-<div style="display: flex; gap: 12px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #C98A2E; margin-top: 4px"></span><span><b>Family plot</b> for the extended family’s shig, which can also host guests.</span></div>
-<div style="display: flex; gap: 12px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #8FDC8F; margin-top: 4px"></span><span><b>Farming and livestock</b> on land shared by the family. The wadis are kept for terraces.</span></div>
-<div style="display: flex; gap: 12px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #F27BA0; margin-top: 4px"></span><span><b>Tourism</b> on the village’s edge, along the road.</span></div>
-<div style="display: flex; gap: 12px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #8C6A45; margin-top: 4px"></span><span><b>Village center</b>: kindergarten, public buildings, grocery and wedding square.</span></div>
-<div style="display: flex; gap: 12px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #9AA0A6; margin-top: 4px"></span><span><b>A proper road</b> reaching every plot, with water, electricity and sewage.</span><blockquote style="margin: 24px 0 0; padding: 0 0 0 22px; border-left: 4px solid #B8451F; max-width: 820px">
-<p style="margin: 0 0 6px; font-family: 'Heebo', sans-serif; font-weight: 700; font-size: 18px; line-height: 1.4">"A review of the national and district master plans shows that there is no statutory planning restriction on the village’s land."</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px 22px">
+<div style="display: flex; gap: 10px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #F9D77E; margin-top: 3px"></span><span><b>Residential plot</b> for each nuclear family, within the extended family’s land.</span></div>
+<div style="display: flex; gap: 10px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #C98A2E; margin-top: 3px"></span><span><b>Family plot</b> for the extended family’s shig, which can also host guests.</span></div>
+<div style="display: flex; gap: 10px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #8FDC8F; margin-top: 3px"></span><span><b>Farming and livestock</b> on land shared by the family. The wadis are kept for terraces.</span></div>
+<div style="display: flex; gap: 10px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #F27BA0; margin-top: 3px"></span><span><b>Tourism</b> on the village’s edge, along the road.</span></div>
+<div style="display: flex; gap: 10px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #8C6A45; margin-top: 3px"></span><span><b>Village center</b>: kindergarten, public buildings, grocery and wedding square.</span></div>
+<div style="display: flex; gap: 10px; align-items: flex-start"><span style="flex: none; width: 22px; height: 22px; border-radius: 5px; background: #9AA0A6; margin-top: 3px"></span><span><b>A proper road</b> reaching every plot, with water, electricity and sewage.</span></div>
+</div>
+<blockquote style="margin: 12px 0 0; padding: 12px 0 0; border-top: 4px solid #B8451F; max-width: 820px">
+<p style="margin: 0 0 6px; font-family: 'Heebo', sans-serif; font-weight: 700; font-size: 18px; line-height: 1.4">“A review of the national and district master plans shows that there is no statutory planning restriction on the village’s land.”</p>
 <footer style="font-size: 16px; color: #4F3226">From the planners’ presentation to the residents</footer>
 </blockquote>
 </div>
 </div>
 </div>
 </div>
+<p style="margin: 14px 0 0; max-width: 1000px; font-weight: 700">The plan exists. All that’s missing is a government decision. “The Regional Councils Plan” asks to get it within 60 days.</p>
+<div style="margin-top: 8px; font-size: 14px; color: #4F3226">Nahal Hava plan: Keshet association; architects Keren Engelman and Amitai Har-Tov, landscape architect Nof Michael Ozerman</div>
 </div>
-</div>
-
-
-<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px 28px; font-size: 14px; color: #4F3226">Nahal Hava plan: Keshet association; architects Keren Engelman and Amitai Har-Tov, landscape architect Nof Michael Ozerman</div>
 </section>
 
-<section style="background: #FBE7B5">
+<section id="village-build" style="max-width: 1180px; margin: 0 auto; padding: clamp(28px, 4.4vh, 40px) 24px">
+<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 4px">09 · Desert building and the local economy</div>
+<h2 style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.2; margin: 0 0 14px">Homes that grew out of the landscape, a village that lives off the land</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px 36px; align-items: start">
+<div>
+<h3 style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 20px; margin: 0 0 6px; color: #A63A17">What it will look like</h3>
+<p style="margin: 0 0 12px">In 2022, representatives of the Negev Highlands communities toured Bedouin villages in Sinai and came back with examples of stone houses, mud bricks and mud plaster. Instead of tin, homes that look as if they grew out of the landscape, in the materials and shades of the desert.</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<figure style="margin: 0"><img src="/assets/img/b-sinai.jpg" alt="Bedouin stone houses in Wadi al-Talah, Sinai" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">Stone houses in Wadi al-Talah, Sinai. The inspiration tour, 2022</figcaption></figure>
+<figure style="margin: 0"><img src="/assets/img/b-mud.jpg" alt="A house of mud bricks and mud plaster in the desert" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">A mud-brick, mud-plastered house, Arava</figcaption></figure>
+<figure style="margin: 0"><img src="/assets/img/b-interior.jpg" alt="Interior of a stone house with a timber-beam ceiling" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">Inside: stone, wood and light</figcaption></figure>
+<figure style="margin: 0"><img src="/assets/img/b-gan.jpg" alt="Rendering of a mud-built kindergarten with a dome" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">Rendering: a village kindergarten</figcaption></figure>
+</div>
+</div>
+<div>
+<h3 style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 20px; margin: 0 0 6px; color: #A63A17">The village already lives off the land</h3>
+<p style="margin: 0 0 12px">Sheep, camels, olives, hospitality. The plan doesn’t invent a new economy. It gives the existing one a legal address and room to grow. The Planning Administration itself proposes hospitality sites in shigs and tents, and is promoting a “Route of Tents” in the area.</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<figure style="margin: 0"><img src="/assets/img/sheep.jpg" alt="A flock of sheep in a pen" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">Sheep</figcaption></figure>
+<figure style="margin: 0"><img src="/assets/img/camels.jpg" alt="Camels in the village" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">Camels</figcaption></figure>
+<figure style="margin: 0"><img src="/assets/img/olives.jpg" alt="Young olive trees in a yard" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">Home-grown crops</figcaption></figure>
+<figure style="margin: 0"><img src="/assets/img/tent.jpg" alt="A Bedouin guest tent" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">Hosting tourists</figcaption></figure>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background: #F8E1D2">
 <div style="max-width: 1180px; margin: 0 auto; padding: 52px 24px">
-<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">09 · Desert building</div>
-<h2 style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: clamp(26px, 2.7vw, 34px); line-height: 1.2; margin: 0 0 14px">What it will look like</h2>
-<p style="margin: 0 0 20px; max-width: 780px">Every participant in the survey asked to build with the materials and colors of the desert. In 2022, representatives of the Negev Highlands communities toured Bedouin villages in Sinai and came back inspired: stone houses, mud bricks and mud plaster. Instead of tin, homes that look as if they grew out of the landscape.</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px">
-<figure style="margin: 0"><img src="/assets/img/b-sinai.jpg" alt="Bedouin stone houses in Wadi al-Talah in Sinai" style="width: 100%; height: 170px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">Stone houses in Wadi al-Talah, Sinai. Photographed on the inspiration tour, 2022</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/b-mud.jpg" alt="A mud-brick, mud-plastered house in the desert" style="width: 100%; height: 170px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">A mud-brick, mud-plastered house, Arava</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/b-interior.jpg" alt="Inside a stone house with a wooden-beam ceiling" style="width: 100%; height: 170px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">Inside: stone, wood and light</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/b-gan.jpg" alt="Rendering of a domed mud-built kindergarten" style="width: 100%; height: 170px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">Rendering: a village kindergarten</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/b-makolet.jpg" alt="Rendering of a small mud-built grocery" style="width: 100%; height: 170px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">Rendering: a grocery in the village center</figcaption></figure>
-</div>
-</div>
-</section>
-
-<section style="max-width: 1180px; margin: 0 auto; padding: 52px 24px">
-<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">10 · Local economy</div>
-<h2 style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: clamp(26px, 2.7vw, 34px); line-height: 1.2; margin: 0 0 14px">The village already lives off the land</h2>
-<p style="margin: 0 0 20px; max-width: 760px">Sheep, camels, olives and tent hospitality. The plan doesn’t invent a new economy. It gives the existing one a legal address and room to grow. The Planning Administration itself proposes hospitality sites in shigs and tents, and is promoting a "Route of Tents" around Avdat and southward, along the same road.</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px">
-<figure style="margin: 0"><img src="/assets/img/sheep.jpg" alt="A flock of sheep in a pen" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">Sheep</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/camels.jpg" alt="Camels in the village" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">Camels</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/olives.jpg" alt="Young olive trees in a yard" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">Home-grown crops</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/tent.jpg" alt="A Bedouin hospitality tent" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">Hosting tourists</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/terraces-wall.jpg" alt="Remains of ancient agricultural terrace walls" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 15px; margin-top: 6px">Ancient terraces on the Incense Route</figcaption></figure>
-</div>
-</section>
-
-<section id="gain" style="background: #3B1D12; color: #FFF4D6">
-<div style="max-width: 1180px; margin: 0 auto; padding: 52px 24px">
-<div style="font-size: 16px; font-weight: 700; color: #F5B321; margin-bottom: 8px">11 · What the state gains</div>
-<h2 style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: clamp(26px, 2.7vw, 34px); line-height: 1.2; margin: 0 0 24px">Economics, not charity</h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px">
-<div>
-<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 42px; line-height: 1; color: #F5B321">25%</div>
-<p style="margin: 10px 0 0">employment rate of Bedouin women. Among Jewish women: almost 80%. A farm next to home is a workplace next to home.</p>
-</div>
-<div>
-<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 42px; line-height: 1; color: #F5B321">0 of 35</div>
-<p style="margin: 10px 0 0">Negev Bedouin murdered in 2025 who lived in an unrecognized village. 32 of them lived in Rahat and the townships. Urbanization did not bring safety.</p>
-</div>
-<div>
-<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 42px; line-height: 1; color: #F5B321">NIS 20–30 billion</div>
-<p style="margin: 10px 0 0">in added annual output in the Negev under full implementation. This is an estimate, which is why the plan demands that the state measure it itself.</p>
-</div>
-</div>
-<p style="margin: 44px 0 0; max-width: 780px">The Council does not ask the government to believe its numbers. It asks for an independent economic study on day one, to set measurable targets for implementation.</p>
-</div>
-</section>
-
-<section style="max-width: 1180px; margin: 0 auto; padding: 52px 24px">
-<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">12 · What the plan does not ask for</div>
-<h2 style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: clamp(26px, 2.7vw, 34px); line-height: 1.2; margin: 0 0 32px">Questions and answers</h2>
+<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 24px">10 · Questions and answers</div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px">
 <div>
 <h3 style="font-family: 'Heebo', sans-serif; font-weight: 700; font-size: 22px; margin: 0 0 8px">What about the ownership claims?</h3>
@@ -500,11 +507,12 @@ section[id]{scroll-margin-top:12px}
 <p style="margin: 0">The opposite. When every family has a legal place to build, it is clear what is allowed and what is not, and enforcement becomes easy and cheap.</p>
 </div>
 </div>
+</div>
 </section>
 
 <section id="steps" style="background: #FBE7B5">
 <div style="max-width: 1180px; margin: 0 auto; padding: 52px 24px">
-<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">13 · What must happen</div>
+<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">11 · What must happen</div>
 <h2 style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: clamp(26px, 2.7vw, 34px); line-height: 1.2; margin: 0 0 24px">A timetable for the next government</h2>
 <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px">
 <li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">Day one</div><p style="margin: 6px 0 0; font-size: 17px">Stop the demolitions.</p></li>
@@ -536,7 +544,7 @@ section[id]{scroll-margin-top:12px}
 </footer>
 
 </div>
-<script>function sv(p){document.querySelectorAll('.vNow').forEach(e=>e.style.display=p?'none':'');document.querySelectorAll('.vPlan').forEach(e=>e.style.display=p?'':'none');var a=document.getElementById('bPlan'),b=document.getElementById('bNow');[a,b].forEach(x=>{x.style.background='transparent';x.style.color='#3B1D12'});var s=p?a:b;s.style.background='#3B1D12';s.style.color='#FFFFFF';document.getElementById('mt').textContent=p?'The village under the planners’ Alternative 3':'The village today: 12 family plots';}</script><script>function se(o){document.querySelectorAll('.eOld').forEach(e=>e.style.display=o?'':'none');document.querySelectorAll('.eNew').forEach(e=>e.style.display=o?'none':'');var a=document.getElementById('eOld'),b=document.getElementById('eNew');[a,b].forEach(x=>{x.style.background='transparent';x.style.color='#3B1D12'});var s=o?a:b;s.style.background='#3B1D12';s.style.color='#FFFFFF';}</script><script>try{if('scrollRestoration' in history)history.scrollRestoration='manual';}catch(e){}if(!location.hash){window.scrollTo(0,0);window.addEventListener('load',function(){window.scrollTo(0,0);});}</script><script>
+<script>function sv(p){document.querySelectorAll('.vNow').forEach(e=>e.style.display=p?'none':'');document.querySelectorAll('.vPlan').forEach(e=>e.style.display=p?'':'none');var a=document.getElementById('bPlan'),b=document.getElementById('bNow');[a,b].forEach(x=>{x.style.background='transparent';x.style.color='#3B1D12'});var s=p?a:b;s.style.background='#3B1D12';s.style.color='#FFFFFF';document.getElementById('mt').textContent=p?'Keshet association plan for developing Nahal Hava':'The village today: 12 family plots';}</script><script>try{if('scrollRestoration' in history)history.scrollRestoration='manual';}catch(e){}if(!location.hash){window.scrollTo(0,0);window.addEventListener('load',function(){window.scrollTo(0,0);});}</script><script>
 (function(){var b=document.getElementById('navtoggle'),n=document.getElementById('navlinks');if(!b||!n)return;
 b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});
 n.addEventListener('click',function(e){if(e.target.closest('a')){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});})();
