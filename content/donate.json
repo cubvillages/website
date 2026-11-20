@@ -121,14 +121,14 @@
     "ar": "قبل أن تتبرعوا"
   },
   "trust1_title": {
-    "he": "ארגון נבחר",
-    "en": "A council elected by the villages",
-    "ar": "منظمة منتخبة من القرى"
+    "he": "היישות המשפטית",
+    "en": "Legal entity",
+    "ar": "الكيان القانوني"
   },
   "trust1_text": {
-    "he": "המועצה מייצגת את ועדי הכפרים, כחברה לתועלת הציבור (חל\"צ 513813584)",
-    "en": "We represent the village committees, as a registered public-benefit company (Israeli registration no. 513813584)",
-    "ar": "يمثّل المجلس لجان القرى، كشركة لمنفعة الجمهور (رقم التسجيل 513813584)"
+    "he": "המועצה היא חברה לתועלת הציבור (חל\"צ 513813584)",
+    "en": "The Council is a registered public-benefit company (Israeli registration no. 513813584)",
+    "ar": "المجلس شركة لمنفعة الجمهور (رقم التسجيل 513813584)"
   },
   "trust2_title": {
     "he": "התרומה עוברת דרך NIF",
