@@ -162,7 +162,7 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 
 <section class="card" id="map" aria-labelledby="mt">
 <h2 id="mt">כמה צווים סומנו, ובאיזה כפר</h2>
-<p class="sub">הספירה היא לפי כפר. נקודה מוצגת על המפה רק אם מי שדיווח בחר בכך, ושם המדווח מוצג רק אם הוא בחר בכך.</p>
+<p class="sub">הספירה היא לפי כפר. נקודה מוצגת על המפה רק אם מי שדיווח בחר בכך, ושם המדווח מוצג רק אם הוא בחר בכך. לחיצה על כפר מראה אותו על המפה.</p>
 <div class="stats" aria-live="polite">
 <div class="stat"><strong id="sTotal">0</strong><span>צווים שדווחו</span></div>
 <div class="stat"><strong id="sVill">0</strong><span>כפרים עם דיווח</span></div>
@@ -304,7 +304,12 @@ function render(){
 }
 document.getElementById('q').addEventListener('input',render);
 document.getElementById('demo').addEventListener('change',function(e){DEMO=e.target.checked;document.getElementById('demonote').style.display=DEMO?'block':'none';render();});
-document.getElementById('tiles').addEventListener('click',function(e){var b=e.target.closest('.tile');if(!b)return;var s=document.getElementById('village');s.value=b.getAttribute('data-v');document.getElementById('report').scrollIntoView({behavior:'smooth'});s.focus({preventScroll:true});});
+document.getElementById('tiles').addEventListener('click',function(e){var b=e.target.closest('.tile');if(!b)return;var n=b.getAttribute('data-v');
+ document.getElementById('locate').scrollIntoView({behavior:'smooth'});
+ var m=window.__lmap;if(!m||!XY[n])return;var j=document.getElementById('jump');if(j)j.value=n;
+ var pts=realPts.filter(function(p){return p.village===n&&isFinite(p.lat)&&isFinite(p.lng);});
+ setTimeout(function(){m.invalidateSize();if(pts.length)m.fitBounds(L.latLngBounds(pts.map(function(p){return [p.lat,p.lng];})).extend(XY[n]),{maxZoom:16,padding:[50,50]});else m.flyTo(XY[n],15,{duration:1.1});},350);
+});
 var cnt=document.getElementById('cnt');
 function syncNm(){var c=document.getElementById('shownm'),on=!!sel&&pubEl.checked&&document.getElementById('nm').value.trim()!=='';c.disabled=!on;if(!on)c.checked=false;}
 pubEl.addEventListener('change',syncNm);document.getElementById('nm').addEventListener('input',syncNm);
