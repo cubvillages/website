@@ -250,11 +250,6 @@
     "en": "Enlarged image",
     "ar": "صورة مكبّرة"
   },
-  "lb_close": {
-    "he": "סגירה",
-    "en": "Close",
-    "ar": "إغلاق"
-  },
   "lb_prev": {
     "he": "התמונה הקודמת",
     "en": "Previous image",
@@ -309,5 +304,10 @@
     "he": "אדם צועד בין הריסות בתים בכפר א-סר",
     "en": "A man walks among the ruins of homes in Al-Sir",
     "ar": "رجل يمشي بين أنقاض المنازل في قرية السر"
+  },
+  "more_photos": {
+    "he": "עוד תמונות",
+    "en": "More photos",
+    "ar": "المزيد من الصور"
   }
 }
