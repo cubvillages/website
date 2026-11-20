@@ -131,29 +131,29 @@
     "ar": "نائب رئيس المجلس معيجل الهواشلة (على اليسار) في حديث مع القاضي علي أبو عتيّج السراعية، في قرية بات السراعية"
   },
   "trust_title": {
-    "he": "למה לתרום דרכנו",
-    "en": "Why give through us",
-    "ar": "لماذا التبرع عبرنا"
+    "he": "לפני שתתרמו",
+    "en": "Before you give",
+    "ar": "قبل أن تتبرعوا"
   },
   "trust1_title": {
-    "he": "ארגון נבחר",
+    "he": "ארגון שנבחר על ידי הכפרים",
     "en": "A council elected by the villages",
-    "ar": "منظمة منتخبة"
+    "ar": "منظمة منتخبة من القرى"
   },
   "trust1_text": {
-    "he": "המועצה מייצגת את ועדי הכפרים, ופועלת כחברה לתועלת הציבור (חל\"צ 513813584)",
+    "he": "המועצה מייצגת את ועדי הכפרים ופועלת כחברה לתועלת הציבור (חל\"צ 513813584)",
     "en": "We represent the village committees, and operate as a registered public-benefit company (Israeli registration no. 513813584)",
     "ar": "يمثّل المجلس لجان القرى، ويعمل كشركة لمنفعة الجمهور (رقم التسجيل 513813584)"
   },
   "trust2_title": {
-    "he": "תרומה דרך הקרן החדשה לישראל",
-    "en": "Giving through the New Israel Fund",
-    "ar": "التبرع عبر الصندوق الجديد لإسرائيل"
+    "he": "התרומה עוברת דרך NIF",
+    "en": "Your gift goes through NIF",
+    "ar": "التبرع يمرّ عبر NIF"
   },
   "trust2_text": {
-    "he": "הטופס מנוהל על ידי NIF, אחת מהקרנות שתומכות בנו",
-    "en": "The form is run by NIF, one of the foundations that support us",
-    "ar": "النموذج تديره NIF، إحدى المؤسسات التي تدعمنا"
+    "he": "הטופס מנוהל על ידי הקרן החדשה לישראל (NIF), אחת מהקרנות שתומכות בנו",
+    "en": "The form is run by the New Israel Fund (NIF), one of the foundations that support us",
+    "ar": "النموذج يديره الصندوق الجديد لإسرائيل (NIF)، أحد الصناديق التي تدعمنا"
   },
   "trust3_title": {
     "he": "שקיפות",
@@ -161,9 +161,9 @@
     "ar": "شفافية"
   },
   "trust3_text": {
-    "he": "כל המספרים באתר מגובים במקורות, ומי שמוצא טעות מקבל תיקון",
-    "en": "Every number on our site is backed by sources, and if you find an error we correct it",
-    "ar": "كل الأرقام في الموقع مدعومة بمصادر، ومن يجد خطأً يحصل على تصحيح"
+    "he": "המידע והנתונים באתר מגובים במקורות. מצאתם טעות? נשמח לתקן",
+    "en": "The information and figures on our site are backed by sources. Found an error? We'll gladly correct it",
+    "ar": "المعلومات والأرقام في الموقع مدعومة بمصادر. وجدتم خطأً؟ يسعدنا تصحيحه"
   },
   "why_title": {
     "he": "מדוע חשוב לתמוך במועצה?",
