@@ -153,12 +153,12 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 </section>
 
 <section class="card" id="locate" aria-labelledby="lt">
-<h2 id="lt">מצאו את מקבץ הבתים שלכם בצילום האוויר</h2>
+<h2 id="lt">מצאו את השכונה שלכם בצילום האוויר</h2>
 <p class="sub">הכפרים פרוסים על שטח גדול, ולכן המקום המדויק חשוב. בחרו כפר, הגדילו עד שרואים את הבתים, ולחצו על המקום שלכם.</p>
 <div class="tools"><label for="jump">קפיצה לכפר</label><select id="jump"><option value="">בחרו כפר</option></select></div>
 <div class="lwrap" id="lwrap">
 <div id="lmap" role="application" aria-label="מפת צילום אוויר של הכפרים"></div>
-<div class="lbar" id="lbar"><span id="lsel" role="status" aria-live="polite">עדיין לא סומן מקום. הגדילו את המפה ולחצו על מקבץ הבתים שלכם.</span>
+<div class="lbar" id="lbar"><span id="lsel" role="status" aria-live="polite">עדיין לא סומן מקום. הגדילו את המפה ולחצו על השכונה שלכם.</span>
 <span class="lbtns"><button type="button" class="btn" id="lgo" hidden>המשך לטופס</button><button type="button" class="btn ghost" id="lclear" hidden>ביטול הסימון</button><button type="button" class="btn ghost" id="lfull">מסך מלא</button></span></div>
 </div>
 <div class="legend lg2" aria-hidden="true" style="margin-top:12px"><span><i style="background:#B8451F"></i>לא מוכר</span><span><i style="background:#2F6B2A"></i>מוכר</span><span><i style="background:#C58A00"></i>בהליכי הכרה או הקמה</span><span><i style="background:#6B6B6B"></i>הוחרב</span></div>
@@ -191,7 +191,7 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <p class="hint">בחרו את הכפר. אם סימנתם מקום במפה, הכפר הקרוב נבחר לבד, ואפשר לשנות.</p></fieldset>
 
 <fieldset><legend>מקום על המפה (לא חובה)</legend>
-<p id="locsum" class="hint" style="margin:0 0 10px;font-size:15px">לא סומן מקום. <a href="#locate">חזרו למפה</a> ולחצו על מקבץ הבתים שלכם.</p>
+<p id="locsum" class="hint" style="margin:0 0 10px;font-size:15px">לא סומן מקום. <a href="#locate">חזרו למפה</a> ולחצו על השכונה שלכם.</p>
 <label class="consent"><input type="checkbox" id="pub" disabled> להציג את הנקודה שסימנתי על המפה הציבורית</label>
 <p class="hint">אם התיבה לא מסומנת, הדיווח ייספר רק כנתון סטטיסטי לכפר או לאזור, והנקודה לא תוצג לציבור.</p></fieldset>
 
@@ -392,8 +392,8 @@ var GC={'לא מוכרים':'#B8451F','מוכרים (אל־קסום ונווה �
   lsel.textContent=msg;locsum.textContent='סומן מקום על המפה. '+(has&&nb[1]<=15?'הכפר הקרוב: '+nb[0]+'.':'');
   lgo.hidden=false;lclear.hidden=false;pubEl.disabled=false;
  }
- map.on('click',function(e){if(map.getZoom()<13){map.setView(e.latlng,15);lsel.textContent='הגדלנו. עכשיו לחצו על מקבץ הבתים שלכם.';return;}setPick(e.latlng);});
- lclear.addEventListener('click',function(){if(pin){map.removeLayer(pin);pin=null;}sel=null;pubEl.checked=false;pubEl.disabled=true;lgo.hidden=true;lclear.hidden=true;lsel.textContent='עדיין לא סומן מקום. הגדילו את המפה ולחצו על מקבץ הבתים שלכם.';locsum.innerHTML='לא סומן מקום. <a href="#locate">חזרו למפה</a> ולחצו על מקבץ הבתים שלכם.';});
+ map.on('click',function(e){if(map.getZoom()<13){map.setView(e.latlng,15);lsel.textContent='הגדלנו. עכשיו לחצו על השכונה שלכם.';return;}setPick(e.latlng);});
+ lclear.addEventListener('click',function(){if(pin){map.removeLayer(pin);pin=null;}sel=null;pubEl.checked=false;pubEl.disabled=true;lgo.hidden=true;lclear.hidden=true;lsel.textContent='עדיין לא סומן מקום. הגדילו את המפה ולחצו על השכונה שלכם.';locsum.innerHTML='לא סומן מקום. <a href="#locate">חזרו למפה</a> ולחצו על השכונה שלכם.';});
  var wrap=document.getElementById('lwrap'),lfull=document.getElementById('lfull');
  function full(on){wrap.classList.toggle('full',on);document.body.style.overflow=on?'hidden':'';lfull.textContent=on?'סגירת מסך מלא':'מסך מלא';if(on||!mobile)map.dragging.enable();if(!on&&mobile)map.dragging.disable();on?map.scrollWheelZoom.enable():map.scrollWheelZoom.disable();setTimeout(function(){map.invalidateSize();},50);}
  lfull.addEventListener('click',function(){full(!wrap.classList.contains('full'));});
