@@ -86,14 +86,14 @@
     "ar": "النموذج لا يظهر؟ تبرّعوا عبر صفحة الصندوق الجديد لإسرائيل"
   },
   "photo1_alt": {
-    "he": "בתים שנהרסו בשכונת אבו ואדי מצפון לרהט",
-    "en": "Demolished homes in the Abu Wadi neighborhood north of Rahat",
-    "ar": "منازل مهدومة في حي أبو وادي شمال رهط"
+    "he": "בני משפחה יושבים על מזרן וצופים בהריסת בתים בשכונת אבו ואדי",
+    "en": "Family members sit on a mattress and watch homes being demolished in the Abu Wadi neighborhood",
+    "ar": "أفراد من العائلة جالسون على فراش يشاهدون هدم المنازل في حي أبو وادي"
   },
   "photo1_caption": {
-    "he": "הריסת 40 בתי מגורים בשכונת אבו ואדי מצפון לרהט, אוקטובר 2026",
-    "en": "Demolition of 40 homes in the Abu Wadi neighborhood north of Rahat, October 2026",
-    "ar": "هدم 40 منزلًا في حي أبو وادي شمال رهط، تشرين الأول/أكتوبر 2026"
+    "he": "בני משפחת אבו ואדי צופים בהרס 40 בתים בשכונה, אוקטובר 2026",
+    "en": "Members of the Abu Wadi family watch the demolition of 40 homes in the neighborhood, October 2026",
+    "ar": "أفراد من عائلة أبو وادي يشاهدون هدم 40 منزلاً في الحي، تشرين الأول 2026"
   },
   "act1_text": {
     "he": "ליווי וסיוע לכפרים בסכנת מחיקה: נוכחות קבועה באתרי הריסות, תיעוד ההריסות וסיוע לתושבים",
@@ -309,5 +309,15 @@
     "he": "עוד תמונות",
     "en": "More photos",
     "ar": "المزيد من الصور"
+  },
+  "ph_mosque": {
+    "he": "הריסת המסגד של שכונת אבו ואדי מצפון לרהט, אוקטובר 2026",
+    "en": "Demolition of the mosque of the Abu Wadi neighborhood north of Rahat, October 2026",
+    "ar": "هدم مسجد حي أبو وادي شمال رهط، تشرين الأول 2026"
+  },
+  "ph_mosque_alt": {
+    "he": "דחפורים הורסים את המסגד בשכונת אבו ואדי, בנוכחות כוחות משטרה",
+    "en": "Bulldozers demolish the mosque in the Abu Wadi neighborhood as police stand by",
+    "ar": "جرافات تهدم المسجد في حي أبو وادي بحضور قوات الشرطة"
   }
 }
