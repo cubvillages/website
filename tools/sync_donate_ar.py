@@ -58,6 +58,7 @@ AR={'© 2026 המועצה למען הכפרים הבדואיים הלא מוכר
 "שולחים...":"جارٍ الإرسال...",
 "תודה! אם לא הגיע אליכם מייל אישור בדקות הקרובות, כדאי להציץ בספאם":"شكرًا! إذا لم تصلكم رسالة تأكيد خلال دقائق، يُرجى فحص مجلد الرسائل غير المرغوب فيها",
 "משהו השתבש. אפשר לנסות שוב, או לכתוב לנו":"حدث خطأ. يمكنكم المحاولة مرة أخرى أو مراسلتنا",
+"מיפוי":"خريطة الأوامر",
 }
 # Arabic texts of the donate page live in content/donate.json (key -> he/en/ar); they win over the dictionary above.
 try:
@@ -93,7 +94,7 @@ def main():
     s=s.replace("'Heebo', system-ui, sans-serif","'Noto Sans Arabic', 'Heebo', system-ui, sans-serif").replace("'Heebo', sans-serif","'Noto Kufi Arabic', sans-serif")
     s=re.sub(r'<link rel="stylesheet" href="https://fonts.googleapis.com/css2\?[^"]*">','<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;600;700;800&amp;family=Noto+Sans+Arabic:wght@400;500;600;700;800&amp;family=Heebo:wght@400;500;600;700;800&amp;display=swap">',s)
     # links
-    for a,b in (('href="/plan/"','href="/ar/plan/"'),('href="/projects/"','href="/ar/projects/"'),('href="/#','href="/ar/#'),('href="/privacy/"','href="/ar/privacy/"'),('href="/accessibility/"','href="/ar/accessibility/"')):
+    for a,b in (('href="/plan/"','href="/ar/plan/"'),('href="/mapping/"','href="/ar/mapping/"'),('href="/projects/"','href="/ar/projects/"'),('href="/#','href="/ar/#'),('href="/privacy/"','href="/ar/privacy/"'),('href="/accessibility/"','href="/ar/accessibility/"')):
         s=s.replace(a,b)
     s=re.sub(r'<a href="/" ',r'<a href="/ar/" ',s)           # logos
     s=s.replace('href="/ar/#','href="/ar/#')
