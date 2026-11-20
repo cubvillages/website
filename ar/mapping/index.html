@@ -174,7 +174,7 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <span class="lbtns"><button type="button" class="btn" id="lgo" hidden>المتابعة إلى النموذج</button><button type="button" class="btn ghost" id="lclear" hidden>إلغاء التحديد</button><button type="button" class="btn ghost" id="lfull">ملء الشاشة</button></span></div>
 </div>
 <div class="legend lg2" aria-hidden="true" style="margin-top:12px"><span><i style="background:#B8451F"></i>غير معترف بها</span><span><i style="background:#2F6B2A"></i>معترف بها</span><span><i style="background:#C58A00"></i>قيد الاعتراف أو التأسيس</span><span><i style="background:#6B6B6B"></i>هُدمت</span></div>
-<p class="hint">على الهاتف: إصبع واحد يمرّر الصفحة، وإصبعان تحرّكان الخريطة وتكبّرانها. يمكنكم أيضًا الضغط على «ملء الشاشة». صورة الجو: Esri, Vantor, Earthstar Geographics. مواقع القرى: منتدى التعايش في النقب / نقبية. المواقع تقريبية.</p>
+<p class="hint">على الهاتف: إصبع واحد يمرّر الصفحة، وإصبعان تحرّكان الخريطة وتكبّرانها. يمكنكم أيضًا الضغط على «ملء الشاشة». صورة الجو: Esri, Vantor, Earthstar Geographics.</p>
 </section>
 
 <section class="card" id="map" aria-labelledby="mt">
@@ -344,7 +344,7 @@ var GCL=['#B8451F','#2F6B2A','#C58A00','#6B6B6B'];
  var map=L.map(mapEl,{center:[31.2,34.95],zoom:9,minZoom:8,maxZoom:19,scrollWheelZoom:false,dragging:!mobile,tap:false});
  map.setMaxBounds([[30.4,34.3],[31.7,35.5]]);
  map.fitBounds(L.latLngBounds(Object.keys(XY).map(function(n){return XY[n];})),{padding:[16,16]});
- L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxNativeZoom:17,maxZoom:19,attribution:'صورة الجو: Esri, Vantor, Earthstar Geographics · مواقع القرى: منتدى التعايش في النقب / نقبية'}).addTo(map);
+ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxNativeZoom:17,maxZoom:19,attribution:'صورة الجو: Esri, Vantor, Earthstar Geographics'}).addTo(map);
  var gOf={},mk={};Object.keys(V).forEach(function(g,i){V[g].forEach(function(n){gOf[n]=GCL[i];});});
  Object.keys(XY).forEach(function(n){
   mk[n]=L.circleMarker(XY[n],{radius:6,color:'#fff',weight:2,fillColor:gOf[n]||'#B8451F',fillOpacity:.95,interactive:false}).addTo(map);

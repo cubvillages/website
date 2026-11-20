@@ -155,7 +155,7 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 
 <section class="card" id="locate" aria-labelledby="lt">
 <h2 id="lt">מצאו את השכונה שלכם בצילום האוויר</h2>
-<p class="sub">הכפרים פרוסים על שטח גדול, ולכן המיקום המדויק חשוב. בחרו כפר, הגדילו עד שרואים את הבתים, ולחצו על המקום שלכם.</p>
+<p class="sub">הכפרים פרוסים על שטח גדול, ולכן המיקום המדויק חשוב. בחרו כפר, הגדילו עד שרואים את הבתים, ולחצו על המיקום שלכם.</p>
 <div class="tools"><label for="jump">קפיצה לכפר</label><select id="jump"><option value="">בחרו כפר</option></select></div>
 <div class="lwrap" id="lwrap">
 <div id="lmap" role="application" aria-label="מפת צילום אוויר של הכפרים"></div>
@@ -163,7 +163,7 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <span class="lbtns"><button type="button" class="btn" id="lgo" hidden>המשך לטופס</button><button type="button" class="btn ghost" id="lclear" hidden>ביטול הסימון</button><button type="button" class="btn ghost" id="lfull">מסך מלא</button></span></div>
 </div>
 <div class="legend lg2" aria-hidden="true" style="margin-top:12px"><span><i style="background:#B8451F"></i>לא מוכר</span><span><i style="background:#2F6B2A"></i>מוכר</span><span><i style="background:#C58A00"></i>בהליכי הכרה או הקמה</span><span><i style="background:#6B6B6B"></i>הוחרב</span></div>
-<p class="hint">בנייד: אצבע אחת גוללת את העמוד, ושתי אצבעות מזיזות ומגדילות את המפה. אפשר גם ללחוץ "מסך מלא". צילום אוויר: Esri, Vantor, Earthstar Geographics. מיקומי הכפרים: פורום דו־קיום בנגב / נגביה. המיקומים משוערים.</p>
+<p class="hint">בנייד: אצבע אחת גוללת את העמוד, ושתי אצבעות מזיזות ומגדילות את המפה. אפשר גם ללחוץ "מסך מלא". צילום אוויר: Esri, Vantor, Earthstar Geographics.</p>
 </section>
 
 <section class="card" id="map" aria-labelledby="mt">
@@ -376,7 +376,7 @@ var GC={'לא מוכרים':'#B8451F','מוכרים (אל־קסום ונווה �
  var map=L.map(mapEl,{center:[31.2,34.95],zoom:9,minZoom:8,maxZoom:19,scrollWheelZoom:false,dragging:!mobile,tap:false});
  map.setMaxBounds([[30.4,34.3],[31.7,35.5]]);
  map.fitBounds(L.latLngBounds(Object.keys(XY).map(function(n){return XY[n];})),{padding:[16,16]});
- L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxNativeZoom:17,maxZoom:19,attribution:'צילום אוויר: Esri, Vantor, Earthstar Geographics · מיקומי כפרים: פורום דו־קיום בנגב / נגביה'}).addTo(map);
+ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxNativeZoom:17,maxZoom:19,attribution:'צילום אוויר: Esri, Vantor, Earthstar Geographics'}).addTo(map);
  var gOf={},mk={};Object.keys(V).forEach(function(g){V[g].forEach(function(n){gOf[n]=g;});});
  Object.keys(XY).forEach(function(n){
   mk[n]=L.circleMarker(XY[n],{radius:6,color:'#fff',weight:2,fillColor:GC[gOf[n]]||'#B8451F',fillOpacity:.95,interactive:false}).addTo(map);
