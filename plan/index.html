@@ -95,6 +95,7 @@ section[id]{scroll-margin-top:12px}
 /* Center each complete data group between its dividers. */
 .problem-stats{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:repeat(3,minmax(0,1fr));padding:0!important}
 .problem-stats>div{box-sizing:border-box;min-height:0;display:flex;flex-direction:column;justify-content:center;margin:0!important;padding:12px 18px!important}
+#problem .problem-stats{background:transparent;border:0;border-radius:0}
 .problem-stats>div{position:relative}
 .problem-stats>div+div{border-top:0}
 .problem-stats>div+div::before{content:"";position:absolute;top:0;inset-inline:18px;border-top:1px solid #EBD3A0}
@@ -231,7 +232,7 @@ section[id]{scroll-margin-top:12px}
 <section id="problem" class="problem-slide" aria-labelledby="problem-title">
 <div class="problem-kicker">01 · שורש הבעיה</div>
 <h2 id="problem-title">פער גדול בהקצאת קרקעות להתיישבות כפרית בצפון הנגב</h2>
-<div class="pl-gap">
+<div class="pl-gap macro-grid">
 <figure class="problem-map">
 <img src="../assets/img/councils.jpg" alt="מפת המועצות האזוריות בצפון הנגב: מועצות יהודיות גדולות במערב, ושטחי המועצות הבדואיות ככתמים קטנים בכתום מזרחית לבאר שבע" data-zoom="1" title="לחצו להגדלה" width="1918" height="1078">
 <figcaption class="problem-map-caption">רצף מוניציפלי למועצות היהודיות, איים (כתומים) למועצות הבדואיות, בתוך "שטח גלילי", נטול רשות מוניציפלית</figcaption>
