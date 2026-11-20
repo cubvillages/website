@@ -151,9 +151,9 @@
     "ar": "التبرع يمرّ عبر NIF"
   },
   "trust2_text": {
-    "he": "הטופס מנוהל על ידי הקרן החדשה לישראל (NIF), אחת מהקרנות שתומכות בנו",
-    "en": "The form is run by the New Israel Fund (NIF), one of the foundations that support us",
-    "ar": "النموذج يديره الصندوق الجديد لإسرائيل (NIF)، أحد الصناديق التي تدعمنا"
+    "he": "הטופס מנוהל על ידי הקרן החדשה לישראל (NIF), התומכת בנו",
+    "en": "The form is run by the New Israel Fund (NIF), which supports us",
+    "ar": "النموذج يديره الصندوق الجديد لإسرائيل (NIF)، الداعم لنا"
   },
   "trust3_title": {
     "he": "שקיפות",
