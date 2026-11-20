@@ -70,12 +70,12 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 .why-card .why-punch{margin:32px 0 0;padding-top:18px;border-top:3px solid #F5B321;font-weight:800;font-size:clamp(19px,2.2vw,24px);line-height:1.35}
 .strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:28px}
 .strip .ph{aspect-ratio:4/3;cursor:zoom-in}
-.strip .ph figcaption{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.strip .ph figcaption{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-top:14px}
 .strip .ph.extra{display:none}
 .strip.open .ph.extra{display:block}
 .more-ph{display:block;margin:18px auto 0;background:#fff;color:#3B1D12;border:2px solid #B8451F;border-radius:999px;padding:10px 26px;font:700 16px inherit;font-family:inherit;cursor:pointer}
 .more-ph:hover{background:#FFF4D6}
-@media(max-width:700px){.strip{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.strip .ph figcaption{font-size:12px;-webkit-line-clamp:4}}
+@media(max-width:700px){.strip{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.strip .ph figcaption{font-size:12px}}
 @media(max-width:860px){.why-hd{grid-template-columns:1fr}}
 @media(max-width:760px){.acts{grid-template-columns:1fr}}
 #top .hero>div>p a{color:#F5B321;font-weight:700;text-decoration:underline}
@@ -278,7 +278,7 @@ L.setAttribute('aria-label',rtl?d.getAttribute('data-next'):d.getAttribute('data
 function show(i){idx=(i+list.length)%list.length;var g=list[idx],f=g.closest('figure'),c=f&&f.querySelector('figcaption');im.src=g.currentSrc||g.src;im.alt=g.alt;cp.textContent=c?c.textContent:'';ct.textContent=(idx+1)+' / '+list.length;}
 function step(n){show(idx+n)}
 function goLeft(){step(rtl?1:-1)}function goRight(){step(rtl?-1:1)}
-document.querySelector('main').addEventListener('click',function(e){var i=e.target.closest('img');if(!i||i.closest('a')||i.closest('#lb')||i.closest('.nifwrap'))return;
+document.querySelector('main').addEventListener('click',function(e){var i=e.target.closest('img');if(!i){var fg=e.target.closest('figure.ph');i=fg&&fg.querySelector('img')}if(!i||i.closest('a')||i.closest('#lb')||i.closest('.nifwrap'))return;
 list=Array.prototype.filter.call(document.querySelectorAll('main img'),function(x){return !x.closest('a')&&!x.closest('.nifwrap')&&!x.closest('#lb')});
 show(list.indexOf(i));L.hidden=Rb.hidden=list.length<2;d.showModal();});
 L.addEventListener('click',goLeft);Rb.addEventListener('click',goRight);
