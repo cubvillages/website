@@ -134,9 +134,9 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 #lb .nav.l{left:max(10px,env(safe-area-inset-left,0px))}#lb .nav.r{right:max(10px,env(safe-area-inset-right,0px))}
 @media(max-width:700px){#lb .nav{width:40px;height:40px;top:42%}}
 .flag{background:#fff;border:1px solid #EBD3A0;border-radius:16px;overflow:hidden}
-.flag-in{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:stretch;padding:26px}
+.flag-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px;align-items:stretch;padding:26px}
 .flag-in p{align-self:center}
-@media(min-width:861px){.flag .ph{aspect-ratio:auto;min-height:100%}}
+@media(min-width:861px){.flag .ph{aspect-ratio:auto;min-height:240px;width:100%}.flag .ph img{position:absolute;inset:0}}
 .flag-in p{margin:0;font-size:18px;line-height:1.65;color:#3B1D12}
 .flag-in p a{color:#B8451F;font-weight:700;text-decoration:underline}
 .flag .ph{margin:0;position:relative;overflow:hidden;border-radius:12px;aspect-ratio:3/2;background:#E9D7AB}
