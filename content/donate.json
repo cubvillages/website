@@ -96,29 +96,14 @@
     "ar": "هدم 40 منزلًا في حي أبو وادي شمال رهط، تشرين الأول/أكتوبر 2026"
   },
   "act1_text": {
-    "he": "ליווי וסיוע לכפרים הנתונים בסכנת מחיקה",
-    "en": "Accompanying and assisting villages facing erasure",
-    "ar": "مرافقة ومساعدة القرى المهدَّدة بالمحو"
-  },
-  "act2_text": {
-    "he": "נוכחות קבועה באתרי הריסות בתים וכפרים, תיעוד ההריסות והגשת סיוע לתושבים",
-    "en": "A regular presence at home and village demolition sites, documenting the demolitions and assisting residents",
-    "ar": "حضور دائم في مواقع هدم البيوت والقرى، وتوثيق عمليات الهدم وتقديم العون للسكان"
+    "he": "ליווי וסיוע לכפרים בסכנת מחיקה: נוכחות קבועה באתרי הריסות, תיעוד ההריסות וסיוע לתושבים",
+    "en": "Accompanying and assisting villages facing erasure: a regular presence at demolition sites, documenting the demolitions and assisting residents",
+    "ar": "مرافقة ومساعدة القرى المهدَّدة بالمحو: حضور دائم في مواقع الهدم، توثيق عمليات الهدم ومساعدة السكان"
   },
   "act3_text": {
-    "he": "התמודדות יומיומית עם שקרים והסתה קשה נגד החברה הבדואית",
-    "en": "Daily response to lies and vicious incitement against the Bedouin community",
-    "ar": "التصدي اليومي للأكاذيب والتحريض الشديد ضد المجتمع البدوي"
-  },
-  "act4_text": {
-    "he": "חשיפת סיפור הכפרים ותושביו בתקשורת ההמונים ולכ-30 אלף עוקבים ברשתות החברתיות",
-    "en": "Telling the story of the villages and their residents in the mass media and to some 30,000 followers on social media",
-    "ar": "إبراز قصة القرى وسكانها في وسائل الإعلام الجماهيرية ولنحو 30 ألف متابع على الشبكات الاجتماعية"
-  },
-  "act5_text": {
-    "he": "ארגון הפגנות ואירועים ציבוריים",
-    "en": "Organizing demonstrations and public events",
-    "ar": "تنظيم المظاهرات والفعاليات العامة"
+    "he": "מאבק בשקרים ובהסתה, וחשיפת סיפור הכפרים בתקשורת ובקרב כ־30 אלף עוקבים ברשתות",
+    "en": "Fighting lies and incitement, and telling the villages’ story in the media and to some 30,000 followers on social media",
+    "ar": "مواجهة الأكاذيب والتحريض، وكشف قصة القرى في الإعلام ولدى نحو 30 ألف متابع في الشبكات الاجتماعية"
   },
   "photo2_alt": {
     "he": "שני גברים משוחחים בתוך מבנה פח בכפר בדואי בנגב",
@@ -176,34 +161,24 @@
     "ar": "وضع القرى غير المعترف بها تذكير مؤلم بعيوب الديمقراطية الإسرائيلية. عندما يُعترف بالقرى ويتمتع سكانها بمساواة مدنية كاملة، سنعرف أن حال إسرائيل كلها قد تحسّن."
   },
   "acts_intro": {
-    "he": "אנו ארגון קטן והמשימות שלנו רבות ומורכבות:",
-    "en": "We are a small organization, and our tasks are many and complex:",
-    "ar": "نحن منظمة صغيرة ومهامنا كثيرة ومعقّدة:"
+    "he": "מה אנחנו עושים",
+    "en": "What we do",
+    "ar": "ماذا نفعل"
   },
   "act6_text": {
-    "he": "אדבוקציה שוטפת בכנסת, בממשלה, בוועדות תכנון ומול גופים נוספים",
-    "en": "Ongoing advocacy in the Knesset, the government, planning committees and other bodies",
-    "ar": "عمل مناصِر متواصل في الكنيست والحكومة ولجان التخطيط وأمام جهات أخرى"
+    "he": "אדבוקציה בכנסת, בממשלה ובוועדות התכנון, לצד ארגון הפגנות ואירועים ציבוריים",
+    "en": "Advocacy in the Knesset, the government and the planning committees, alongside organizing demonstrations and public events",
+    "ar": "عمل مناصرة في الكنيست والحكومة ولجان التخطيط، إلى جانب تنظيم المظاهرات والفعاليات العامة"
   },
   "act7_text": {
-    "he": "מענה לפניות דחופות של תושבי הכפרים",
-    "en": "Responding to urgent requests from village residents",
-    "ar": "الاستجابة للمناشدات العاجلة من سكان القرى"
-  },
-  "act8_text": {
-    "he": "סיוע בגיוסי כספים דחופים למאבקי כפרים ולתושבים במצוקה",
-    "en": "Helping raise urgent funds for village struggles and residents in distress",
-    "ar": "المساعدة في جمع تبرعات عاجلة لنضالات القرى والسكان في ضائقة"
-  },
-  "act9_text": {
-    "he": "סיוע משפטי למיצוי זכויות של תושבי הכפרים",
-    "en": "Legal aid so village residents can exercise their rights",
-    "ar": "مساعدة قانونية لتمكين سكان القرى من استيفاء حقوقهم"
+    "he": "מענה לפניות דחופות של תושבים: סיוע משפטי למיצוי זכויות, וגיוס כספים למשפחות ולכפרים במצוקה",
+    "en": "Responding to residents’ urgent requests: legal aid to realize their rights, and raising funds for families and villages in distress",
+    "ar": "الاستجابة لطلبات السكان العاجلة: مساعدة قانونية لتحقيق الحقوق، وجمع الأموال للعائلات والقرى المتضرّرة"
   },
   "act10_text": {
-    "he": "קידום והכשרת מנהיגות מקומית",
-    "en": "Developing and training local leadership",
-    "ar": "تعزيز القيادات المحلية وتأهيلها"
+    "he": "קידום והכשרת מנהיגות מקומית: עבודה משותפת עם הוועדים וקידום מנהיגות נשית",
+    "en": "Developing and training local leadership: working jointly with the village committees and promoting women’s leadership",
+    "ar": "تطوير وتأهيل قيادة محلية: عمل مشترك مع اللجان وتعزيز القيادة النسائية"
   },
   "why_punch": {
     "he": "מאז קמה המועצה לכפרים הלא מוכרים ב-1997 היא לא קיבלה אפילו שקל מהמדינה, וכל פעילותה מתקיימת מתרומות",
@@ -304,5 +279,20 @@
     "he": "הדמיה: נחלה משפחתית למגורים ופרנסה לפי תוכנית המועצות",
     "en": "Visualization: a family homestead for housing and livelihood, under the Councils Plan",
     "ar": "تصوّر: مزرعة عائلية للسكن وكسب الرزق وفق خطة المجالس"
+  },
+  "hero_elected": {
+    "he": "הארגון הנבחר היחיד שמייצג את הכפריים הבדואים בנגב",
+    "en": "The only elected organization representing the Bedouin villagers of the Negev",
+    "ar": "الجهة المنتخبة الوحيدة التي تمثّل سكان القرى البدوية في النقب"
+  },
+  "elected_title": {
+    "he": "ארגון נבחר, והיחיד שמייצג את הקהילה",
+    "en": "An elected organization, and the only one that represents the community",
+    "ar": "منظمة منتخبة، والوحيدة التي تمثّل المجتمع"
+  },
+  "elected_text": {
+    "he": "המועצה היא הגוף הנבחר היחיד של תושבי הכפרים הבדואיים בנגב, המקבלת לגיטימציה ישירה מהוועדים המקומיים שלהם. יו\"ר המועצה, עטיה אלאעסם, הוא חבר פורום ההנהגה המצומצם של כל החברה הבדואית בנגב, לצד חברי כנסת; ראש עיריית רהט, המכהן גם כיו\"ר פורום ראשי הרשויות; וראש ועדת ההיגוי העליונה לערביי הנגב.",
+    "en": "The Council is the only elected body of the residents of the Bedouin villages in the Negev, drawing its legitimacy directly from their local committees. Council chair Atiya Al-Asam is a member of the narrow leadership forum of the entire Bedouin community in the Negev, alongside Knesset members; the mayor of Rahat, who also chairs the forum of Bedouin local authority heads; and the head of the Supreme Steering Committee of the Negev Arabs.",
+    "ar": "المجلس هو الجهة المنتخبة الوحيدة لسكان القرى البدوية في النقب، ويستمد شرعيته مباشرة من لجانهم المحلية. ورئيس المجلس، عطية الأعسم، عضو في منتدى القيادة المصغّر لكل المجتمع البدوي في النقب، إلى جانب أعضاء كنيست؛ ورئيس بلدية رهط، الذي يرأس أيضًا منتدى رؤساء السلطات المحلية البدوية؛ ورئيس لجنة التوجيه العليا لعرب النقب."
   }
 }
