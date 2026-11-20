@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;600;700;800&amp;family=Noto+Sans+Arabic:wght@400;500;600;700;800&amp;family=Heebo:wght@400;500;600;700;800&amp;display=swap">
 <link rel="stylesheet" href="/assets/site-scale.css">
+<link rel="stylesheet" href="/assets/leaflet/leaflet.css">
 <style>
 
 body{margin:0;background:#FFF4D6}
@@ -90,9 +91,23 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 .notes ul{margin:0;padding:0 20px 0 0;line-height:1.6;font-size:16px}
 .notes li{margin:0 0 6px}
 .notes a{overflow-wrap:anywhere}
+.lwrap{position:relative}
+#lmap{height:min(68vh,560px);min-height:380px;border-radius:14px;border:1px solid #D6B88C;background:#E9DDBF;z-index:0;direction:ltr}
+.lbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;margin-top:12px}
+#lsel{font-weight:700;font-size:16px;line-height:1.45;flex:1 1 260px}
+.lbtns{display:flex;flex-wrap:wrap;gap:8px}
+.lbtns .btn{font-size:16px;padding:11px 22px}.lbtns .btn.ghost{padding:9px 18px}
+.lwrap.full{position:fixed;inset:0;z-index:3000;background:#fff;padding:0;display:flex;flex-direction:column}
+.lwrap.full #lmap{height:auto;flex:1;border-radius:0;border:0}
+.lwrap.full .lbar{margin:0;padding:10px 14px;background:#fff;border-top:1px solid #EBD3A0}
+.vl{background:rgba(255,255,255,.88);border:0;box-shadow:none;font:700 12px/1.2 'Heebo',sans-serif;color:#3B1D12;padding:1px 5px;direction:rtl}
+.vl:before{display:none}
+#lmap.zlow .vl{display:none}
+.lg2 i{border-radius:50%}
 @media(max-width:760px){.stats,.steps,.types,.row2{grid-template-columns:1fr}.tiles{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}}
 
 </style>
+<script src="/assets/leaflet/leaflet.js"></script>
 <script src="/assets/a11y.js" defer></script>
 </head>
 <body>
@@ -136,6 +151,8 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 </div>
 </div>
 
+<div style="background:#FFFFFF;border-bottom:1px solid #EBD3A0"><div style="max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px"><span style="font-size:15px;font-weight:700;color:#4F3226">بالشراكة مع</span><img src="/assets/img/logo-forum-h.png" alt="منتدى التعايش السلمي في النقب من أجل المساواة المدنية" style="height:43px;width:auto;max-width:100%;object-fit:contain;display:block"></div></div>
+
 <main class="om" id="main">
 <div class="draftbar">مسودة عمل · الصفحة غير منشورة بعد ولا تحفظ أي بيانات. النموذج في المسودة لا يرسل شيئًا، والخريطة تعرض بيانات تجريبية فقط إذا فعّلتموها. أسماء القرى والمصطلحات القانونية بانتظار مراجعة ناطق بالعربية ومحامٍ قبل النشر.</div>
 
@@ -143,12 +160,25 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <div class="kick">خريطة الأوامر · تسجيل مجهول، دقيقة واحدة</div>
 <h1 id="t">وصلكم أمر؟ <span>سجّلوه على الخريطة.</span></h1>
 <p>كل أمر يُسجَّل يتحوّل من قصة عائلة واحدة إلى رقم لا يمكن تجاهله. يجمع المجلس البلاغات، ويفحصها، ويعرض على الصحفيين وصانعي القرار كم أمرًا وصل إلى كل قرية. بلا أسماء وبلا عناوين.</p>
-<a class="btn" href="#report">لتسجيل أمر</a> <a class="btn ghost" href="#map">لرؤية الخريطة</a>
+<a class="btn" href="#locate">اعثروا على بيتكم على الخريطة</a> <a class="btn ghost" href="#report">لتسجيل أمر</a>
+</section>
+
+<section class="card" id="locate" aria-labelledby="lt">
+<h2 id="lt">اعثروا على حيّكم في صورة الجو</h2>
+<p class="sub">القرى منتشرة على مساحة كبيرة، ولذلك الموقع الدقيق مهم. اختاروا القرية، وكبّروا الخريطة حتى تروا البيوت، ثم اضغطوا على حيّكم.</p>
+<div class="tools"><label for="jump">الانتقال إلى قرية</label><select id="jump"><option value="">اختاروا قرية</option></select></div>
+<div class="lwrap" id="lwrap">
+<div id="lmap" role="application" aria-label="خريطة بصور جوية للقرى"></div>
+<div class="lbar" id="lbar"><span id="lsel" role="status" aria-live="polite">لم يُحدَّد مكان بعد. كبّروا الخريطة واضغطوا على حيّكم.</span>
+<span class="lbtns"><button type="button" class="btn" id="lgo" hidden>المتابعة إلى النموذج</button><button type="button" class="btn ghost" id="lclear" hidden>إلغاء التحديد</button><button type="button" class="btn ghost" id="lfull">ملء الشاشة</button></span></div>
+</div>
+<div class="legend lg2" aria-hidden="true" style="margin-top:12px"><span><i style="background:#B8451F"></i>غير معترف بها</span><span><i style="background:#2F6B2A"></i>معترف بها</span><span><i style="background:#C58A00"></i>قيد الاعتراف أو التأسيس</span><span><i style="background:#6B6B6B"></i>هُدمت</span></div>
+<p class="hint">على الهاتف: إصبع واحد يمرّر الصفحة، وإصبعان تحرّكان الخريطة وتكبّرانها. يمكنكم أيضًا الضغط على «ملء الشاشة». صورة الجو: Esri, Vantor, Earthstar Geographics. مواقع القرى: منتدى التعايش في النقب / نقبية. المواقع تقريبية.</p>
 </section>
 
 <section class="card" id="map" aria-labelledby="mt">
 <h2 id="mt">كم أمرًا سُجّل، وفي أي قرية</h2>
-<p class="sub">العدّ بحسب القرية فقط. من يبلّغ لا يظهر، ولا يُسجَّل أي بيت على حدة.</p>
+<p class="sub">العدّ بحسب القرية. من يبلّغ لا يظهر، وتظهر نقطة على الخريطة فقط إذا اختار المبلّغ ذلك.</p>
 <div class="stats" aria-live="polite">
 <div class="stat"><strong id="sTotal">0</strong><span>أوامر تم الإبلاغ عنها</span></div>
 <div class="stat"><strong id="sVill">0</strong><span>قرى فيها بلاغات</span></div>
@@ -161,7 +191,6 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <div class="demonote" id="demonote" role="status">هذه بيانات تجريبية عشوائية لتوضيح شكل الخريطة. لا يوجد فيها أي بلاغ حقيقي.</div>
 <div class="legend" aria-hidden="true"><span><i style="background:#fff"></i>لا بلاغات</span><span><i style="background:#FFE9B0"></i>1–2</span><span><i style="background:#F5B321"></i>3–5</span><span><i style="background:#B8451F"></i>6 فأكثر</span></div>
 <div id="tiles"></div>
-<p class="hint">ستأتي خريطة جغرافية بموقع كل قرية في المرحلة القادمة، عندما تتوفر إحداثيات مركز كل قرية. حتى ذلك الحين تُعرض القرى كقائمة بحسب الوضع القانوني.</p>
 </section>
 
 <section class="card" id="report" aria-labelledby="rt">
@@ -169,8 +198,14 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <p class="sub">خمسة أسئلة قصيرة. لا حاجة لأي اسم أو عنوان.</p>
 <form class="rep" id="form" novalidate>
 <fieldset><legend><label for="village">1. في أي قرية؟</label></legend>
-<select id="village" required><option value="">اختاروا القرية</option><optgroup label="غير معترف بها"><option>أم نميلة</option><option>أم رتام</option><option>أم بدون</option><option>الزعرورة</option><option>الزرنوق</option><option>الباط</option><option>الباط الغربي</option><option>الباطل</option><option>البحيرة</option><option>البقيعة</option><option>الجورف</option><option>القطامات</option><option>المطهر</option><option>القرين (العقبي)</option><option>الحمرة</option><option>الفخاري</option><option>المذبح</option><option>المزرعة (الشهبا)</option><option>المكيمن</option><option>المساعدية</option><option>السرة</option><option>الغزة</option><option>الغرة</option><option>الروئيس</option><option>السدير</option><option>السر</option><option>باط الصرايعة</option><option>بير الحمام</option><option>بير المشاش</option><option>ظحية</option><option>وادي المشاش</option><option>خربة الوطن</option><option>خربة زبالة</option><option>راس جرابا</option><option>طويل أبو جرول</option><option>كركور</option><option>وادي أريحا</option><option>نحل حوا</option><option>سهل البقار</option><option>صواوين</option><option>عوجان</option><option>عتير</option><option>تل الملح</option><option>تل عراد</option></optgroup><optgroup label="معترف بها (مجلسا القسوم ونيفيه مدبار الإقليميان)"><option>أم بطين</option><option>السيد</option><option>دريجات</option><option>كحلة</option><option>سعوة</option><option>مكحول</option><option>ترابين الصانع</option><option>أبو تلول الشهبي</option><option>أبو قرينات</option><option>بير هداج</option><option>قصر السر</option></optgroup><optgroup label="قيد الاعتراف أو التأسيس"><option>خشم زنة</option><option>عبدة</option><option>رخمة</option><option>وادي النعم</option><option>الفرعة</option></optgroup><optgroup label="هُدمت"><option>العراقيب</option></optgroup><option value="other">قرية أخرى، أو غير موجودة في القائمة</option></select>
-<p class="hint">اختاروا القرية، وليس الحيّ أو القسيمة.</p></fieldset>
+<select id="village" required><option value="">اختاروا القرية</option><optgroup label="غير معترف بها"><option>أم نميلة</option><option>أم رتام</option><option>أم بدون</option><option>الزعرورة</option><option>الزرنوق</option><option>الباط</option><option>الباط الغربي</option><option>الباطل</option><option>البحيرة</option><option>البقيعة</option><option>الجورف</option><option>القطامات</option><option>المطهر</option><option>القرين (العقبي)</option><option>الحمرة</option><option>الفخاري</option><option>المذبح</option><option>المزرعة (الشهبا)</option><option>المكيمن</option><option>المساعدية</option><option>السرة</option><option>الغزة</option><option>الغرة</option><option>الروئيس</option><option>السدير</option><option>السر</option><option>باط الصرايعة</option><option>بير الحمام</option><option>بير المشاش</option><option>ظحية</option><option>وادي المشاش</option><option>خربة الوطن</option><option>خربة زبالة</option><option>راس جرابا</option><option>طويل أبو جرول</option><option>كركور</option><option>وادي أريحا</option><option>نحل حوا</option><option>سهل البقار</option><option>صواوين</option><option>عوجان</option><option>عتير</option><option>تل الملح</option><option>تل عراد</option></optgroup><optgroup label="معترف بها (مجلسا القسوم ونيفيه مدبار الإقليميان)"><option>أم بطين</option><option>السيد</option><option>دريجات</option><option>كحلة</option><option>سعوة</option><option>مكحول</option><option>ترابين الصانع</option><option>أبو تلول الشهبي</option><option>أبو قرينات</option><option>بير هداج</option><option>قصر السر</option></optgroup><optgroup label="قيد الاعتراف أو التأسيس"><option>خشم زنة</option><option>عبدة</option><option>رخمة</option><option>وادي النعم</option><option>الفرعة</option></optgroup><optgroup label="هُدمت"><option>العراقيب</option></optgroup><option value="other">أخرى (مكان غير موجود في القائمة)</option></select>
+<p class="hint">اختاروا القرية. إذا حدّدتم مكانًا على الخريطة تُختار أقرب قرية تلقائيًا، ويمكن تغييرها. إذا كنتم تسكنون في مكان غير موجود في القائمة، اختاروا «أخرى».</p>
+<div id="otherbox" hidden style="margin-top:10px"><label for="othername" style="font-weight:700;font-size:15px;display:block;margin-bottom:4px">ما اسم المكان؟ (اختياري)</label><input id="othername" type="text" placeholder="اسم المكان أو الحيّ أو المنطقة" autocomplete="off" maxlength="80"></div></fieldset>
+
+<fieldset><legend>مكان على الخريطة (اختياري)</legend>
+<p id="locsum" class="hint" style="margin:0 0 10px;font-size:15px">لم يُحدَّد مكان. <a href="#locate">ارجعوا إلى الخريطة</a> واضغطوا على حيّكم.</p>
+<label class="consent"><input type="checkbox" id="pub" disabled> عرض النقطة التي حدّدتُها على الخريطة العامة</label>
+<p class="hint">إذا لم تُحدَّد هذه الخانة، يُحتسب البلاغ كرقم إحصائي للقرية أو للمنطقة فقط، ولا تُعرض النقطة للجمهور.</p></fieldset>
 
 <fieldset><legend>2. ما نوع الأمر؟ يمكن اختيار أكثر من نوع</legend>
 <div class="types">
@@ -199,8 +234,8 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <input id="ct" type="text" placeholder="رقم هاتف أو واتساب" autocomplete="off" inputmode="tel">
 <p class="hint">تُحفظ بيانات الاتصال بمعزل عن الخريطة ولا تظهر فيها بأي شكل.</p></fieldset>
 
-<div class="privbox">قبل الإرسال: <b>لا تكتبوا اسمًا أو رقم هوية أو عنوانًا دقيقًا.</b> لتسجيل الأمر على الخريطة يكفي أن نعرف في أي قرية وصل.</div>
-<label class="consent"><input type="checkbox" id="ok"> أفهم أن البلاغ سيُضاف كرقم تراكمي للقرية، دون اسم ودون موقع دقيق.</label>
+<div class="privbox">قبل الإرسال: <b>لا تكتبوا اسمًا أو رقم هوية أو عنوانًا دقيقًا.</b> إذا اخترتم عرض نقطة على الخريطة العامة، فسيرى الجميع مكانها، بما في ذلك السلطات. إذا كان لديكم شك، اتركوا الخانة غير محدّدة.</div>
+<label class="consent"><input type="checkbox" id="ok"> أفهم أن البلاغ سيُضاف كرقم تراكمي للقرية، وأن النقطة على الخريطة لن تُعرض للجمهور إلا إذا حدّدتُ ذلك صراحةً.</label>
 <div class="err" id="err" role="alert"></div>
 <div><button class="btn" type="submit">إرسال البلاغ</button></div>
 </form>
@@ -255,6 +290,7 @@ var names=[];Object.keys(V).forEach(function(g){V[g].forEach(function(n){names.p
 function seed(){var s=7;function r(){s=(s*9301+49297)%233280;return s/233280;}
  var c={},v={};names.forEach(function(p){var x=r();var n=x<.45?0:x<.7?1+Math.floor(r()*2):x<.9?3+Math.floor(r()*3):6+Math.floor(r()*8);c[p[1]]=n;v[p[1]]=Math.floor(n*r()*.8);});return [c,v];}
 var demoData=seed();
+var paintMarkers=function(){},addPub=function(){},sel=null,pubEl=document.getElementById('pub');
 function cur(){return DEMO?{c:demoData[0],v:demoData[1]}:{c:real,v:{}};}
 function lvl(n){return n===0?0:n<=2?1:n<=5?2:3;}
 function render(){
@@ -271,12 +307,14 @@ function render(){
  });
  if(!h)h='<p class="hint">لم يتم العثور على قرية بهذا الاسم.</p>';
  document.getElementById('tiles').innerHTML=h;
- document.getElementById('sTotal').textContent=tot;document.getElementById('sVill').textContent=vil;document.getElementById('sVer').textContent=ver;
+ document.getElementById('sTotal').textContent=tot;document.getElementById('sVill').textContent=vil;document.getElementById('sVer').textContent=ver;paintMarkers(d);
 }
 document.getElementById('q').addEventListener('input',render);
 document.getElementById('demo').addEventListener('change',function(e){DEMO=e.target.checked;document.getElementById('demonote').style.display=DEMO?'block':'none';render();});
 document.getElementById('tiles').addEventListener('click',function(e){var b=e.target.closest('.tile');if(!b)return;var s=document.getElementById('village');s.value=b.getAttribute('data-v');document.getElementById('report').scrollIntoView({behavior:'smooth'});s.focus({preventScroll:true});});
 var cnt=document.getElementById('cnt');
+function toggleOther(){document.getElementById('otherbox').hidden=document.getElementById('village').value!=='other';}
+document.getElementById('village').addEventListener('change',toggleOther);
 document.getElementById('plus').onclick=function(){cnt.value=Math.min(50,(+cnt.value||0)+1);};
 document.getElementById('minus').onclick=function(){cnt.value=Math.max(1,(+cnt.value||2)-1);};
 var today=new Date();document.getElementById('dt').max=today.toISOString().slice(0,10);
@@ -288,10 +326,51 @@ document.getElementById('form').addEventListener('submit',function(e){
  if(!ts.length){err.textContent='حدّدوا نوع أمر واحدًا على الأقل، أو "غير ذلك".';return;}
  if(!document.getElementById('ok').checked){err.textContent='لإرسال البلاغ يجب الموافقة على الخانة الأخيرة.';return;}
  if(DEMO&&vil!=='other'){demoData[0][vil]=(demoData[0][vil]||0)+n;render();}
- document.getElementById('tsum').textContent='سجّلنا '+(n===1?'أمرًا واحدًا':n+(n===2?' أمرين':' أوامر'))+' '+(vil==='other'?'في قرية غير موجودة في القائمة':'في قرية '+vil)+': '+ts.map(function(t){return TN[t];}).join('، ')+'.';
+ if(DEMO&&sel&&pubEl.checked)addPub(sel);
+ document.getElementById('tsum').textContent='سجّلنا '+(n===1?'أمرًا واحدًا':n+(n===2?' أمرين':' أوامر'))+' '+(vil==='other'?'في مكان غير موجود في القائمة'+(document.getElementById('othername').value.trim()?' ('+document.getElementById('othername').value.trim()+')':''):'في قرية '+vil)+': '+ts.map(function(t){return TN[t];}).join('، ')+'.'+(sel?(pubEl.checked?' ستُعرض النقطة التي حدّدتموها على الخريطة العامة.':' لن تُعرض النقطة للجمهور. سيُحتسب البلاغ كرقم للقرية أو للمنطقة فقط.'):'');
  document.getElementById('form').style.display='none';var t=document.getElementById('thanks');t.style.display='block';t.focus();
 });
-document.getElementById('again').onclick=function(){document.getElementById('form').reset();cnt.value=1;document.getElementById('form').style.display='';document.getElementById('thanks').style.display='none';document.getElementById('village').focus();};
+document.getElementById('again').onclick=function(){document.getElementById('form').reset();cnt.value=1;toggleOther();document.getElementById('form').style.display='';document.getElementById('thanks').style.display='none';document.getElementById('village').focus();};
+var XY={"أم نميلة": [31.41255, 34.77207], "أم رتام": [31.11644, 35.02141], "أم بدون": [31.24546, 35.25646], "الزعرورة": [31.23728, 35.11814], "الزرنوق": [31.20355, 34.92451], "الباط": [31.27024, 35.03338], "الباط الغربي": [31.26924, 35.02016], "الباطل": [31.34647, 34.76732], "البحيرة": [31.21761, 35.08982], "البقيعة": [31.30246, 35.26515], "الجورف": [31.23103, 35.04713], "القطامات": [31.17304, 35.09831], "المطهر": [31.18778, 35.08336], "القرين (العقبي)": [31.28317, 34.93076], "الحمرة": [31.2635, 35.09276], "المذبح": [31.17984, 34.96425], "المزرعة (الشهبا)": [31.15012, 35.07817], "المكيمن": [31.29686, 34.8555], "المساعدية": [31.33912, 34.85842], "السرة": [31.23622, 35.02295], "الغزة": [31.21031, 35.13685], "الغرة": [31.23808, 34.96828], "الروئيس": [31.25691, 34.92321], "السدير": [31.18013, 34.98047], "السر": [31.19742, 34.80619], "باط الصرايعة": [31.25932, 35.02513], "بير الحمام": [31.23147, 34.9004], "بير المشاش": [31.1947, 34.95438], "ظحية": [31.42897, 34.77789], "وادي المشاش": [31.08352, 34.84451], "خربة الوطن": [31.25536, 34.92378], "خربة زبالة": [31.40862, 34.74995], "راس جرابا": [31.06565, 35.06273], "طويل أبو جرول": [31.33384, 34.80261], "كركور": [31.31867, 34.75915], "وادي أريحا": [30.68612, 34.7829], "نحل حوا": [30.75044, 34.77831], "سهل البقار": [30.849, 34.7363], "صواوين": [31.18451, 34.88055], "عوجان": [31.3064, 34.84758], "عتير": [31.32314, 35.02622], "تل الملح": [31.23194, 35.00378], "تل عراد": [31.29131, 35.14518], "أم بطين": [31.27573, 34.88378], "السيد": [31.28328, 34.91305], "دريجات": [31.30059, 35.07544], "كحلة": [31.28695, 35.04969], "سعوة": [31.25823, 34.98242], "مكحول": [31.28834, 35.07544], "ترابين الصانع": [31.34363, 34.73701], "أبو تلول الشهبي": [31.18607, 34.91304], "أبو قرينات": [31.14214, 34.96325], "بير هداج": [31.02417, 34.70417], "قصر السر": [31.07944, 34.9848], "خشم زنة": [31.20264, 34.88307], "عبدة": [30.8071, 34.75594], "رخمة": [31.00862, 34.95579], "وادي النعم": [31.16339, 34.82215], "الفرعة": [31.23335, 35.14423], "العراقيب": [31.34596, 34.77814], "الفخاري": [31.35136, 34.8111]};
+var GCL=['#B8451F','#2F6B2A','#C58A00','#6B6B6B'];
+(function(){
+ var mapEl=document.getElementById('lmap');if(!window.L||!mapEl)return;
+ var mobile=L.Browser.mobile;
+ var map=L.map(mapEl,{center:[31.2,34.95],zoom:9,minZoom:8,maxZoom:19,scrollWheelZoom:false,dragging:!mobile,tap:false});
+ map.setMaxBounds([[30.4,34.3],[31.7,35.5]]);
+ map.fitBounds(L.latLngBounds(Object.keys(XY).map(function(n){return XY[n];})),{padding:[16,16]});
+ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxNativeZoom:17,maxZoom:19,attribution:'صورة الجو: Esri, Vantor, Earthstar Geographics · مواقع القرى: منتدى التعايش في النقب / نقبية'}).addTo(map);
+ var gOf={},mk={};Object.keys(V).forEach(function(g,i){V[g].forEach(function(n){gOf[n]=GCL[i];});});
+ Object.keys(XY).forEach(function(n){
+  mk[n]=L.circleMarker(XY[n],{radius:6,color:'#fff',weight:2,fillColor:gOf[n]||'#B8451F',fillOpacity:.95,interactive:false}).addTo(map);
+  mk[n].bindTooltip(n,{permanent:true,direction:'top',offset:[0,-9],className:'vl',interactive:false});
+ });
+ var pubLayer=L.layerGroup().addTo(map);
+ addPub=function(ll){L.circleMarker(ll,{radius:7,color:'#fff',weight:2,fillColor:'#F5B321',fillOpacity:1}).addTo(pubLayer);};
+ paintMarkers=function(d){Object.keys(mk).forEach(function(n){mk[n].setRadius(6+2*lvl(d.c[n]||0));});if(!DEMO)pubLayer.clearLayers();};
+ function zc(){mapEl.classList.toggle('zlow',map.getZoom()<11);}map.on('zoomend',zc);zc();
+ var j=document.getElementById('jump');
+ Object.keys(V).forEach(function(g){var og=document.createElement('optgroup');og.label=g;V[g].forEach(function(n){if(XY[n]){var o=document.createElement('option');o.textContent=n;og.appendChild(o);}});if(og.children.length)j.appendChild(og);});
+ j.addEventListener('change',function(){var n=j.value;if(XY[n])map.flyTo(XY[n],15,{duration:1.1});});
+ var pin=null,lsel=document.getElementById('lsel'),lgo=document.getElementById('lgo'),lclear=document.getElementById('lclear'),locsum=document.getElementById('locsum'),vs=document.getElementById('village');
+ var T0='لم يُحدَّد مكان بعد. كبّروا الخريطة واضغطوا على حيّكم.';
+ function nearest(ll){var b=null,bd=1e12;Object.keys(XY).forEach(function(n){var d=map.distance(ll,XY[n]);if(d<bd){bd=d;b=n;}});return [b,bd/1000];}
+ function setPick(ll){
+  sel=ll;if(pin)pin.setLatLng(ll);else pin=L.circleMarker(ll,{radius:11,color:'#fff',weight:3,fillColor:'#B8451F',fillOpacity:1,interactive:false}).addTo(map);
+  var nb=nearest(ll),has=[].some.call(vs.options,function(o){return o.value===nb[0];}),msg='تم تحديد مكان.';
+  if(has&&nb[1]<=15&&vs.value!=='other'){vs.value=nb[0];msg+=' أقرب قرية: '+nb[0]+'. إذا لم تكن قريتكم، يمكن تغييرها في النموذج.';}
+  lsel.textContent=msg;locsum.textContent='تم تحديد مكان على الخريطة. '+(has&&nb[1]<=15?'أقرب قرية: '+nb[0]+'.':'');
+  lgo.hidden=false;lclear.hidden=false;pubEl.disabled=false;
+ }
+ map.on('click',function(e){if(map.getZoom()<13){map.setView(e.latlng,15);lsel.textContent='تم التكبير. الآن اضغطوا على حيّكم.';return;}setPick(e.latlng);});
+ lclear.addEventListener('click',function(){if(pin){map.removeLayer(pin);pin=null;}sel=null;pubEl.checked=false;pubEl.disabled=true;lgo.hidden=true;lclear.hidden=true;lsel.textContent=T0;locsum.innerHTML='لم يُحدَّد مكان. <a href="#locate">ارجعوا إلى الخريطة</a> واضغطوا على حيّكم.';});
+ var wrap=document.getElementById('lwrap'),lfull=document.getElementById('lfull');
+ function full(on){wrap.classList.toggle('full',on);document.body.style.overflow=on?'hidden':'';lfull.textContent=on?'إغلاق ملء الشاشة':'ملء الشاشة';if(on||!mobile)map.dragging.enable();if(!on&&mobile)map.dragging.disable();on?map.scrollWheelZoom.enable():map.scrollWheelZoom.disable();setTimeout(function(){map.invalidateSize();},50);}
+ lfull.addEventListener('click',function(){full(!wrap.classList.contains('full'));});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&wrap.classList.contains('full'))full(false);});
+ lgo.addEventListener('click',function(){full(false);document.getElementById('report').scrollIntoView({behavior:'smooth'});});
+ window.__lmap=map;window.__setPick=setPick;
+})();
 render();
 })();
 </script>
