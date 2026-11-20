@@ -367,6 +367,7 @@ var GC={'לא מוכרים':'#B8451F','מוכרים (אל־קסום ונווה �
  var mobile=L.Browser.mobile;
  var map=L.map(mapEl,{center:[31.2,34.95],zoom:9,minZoom:8,maxZoom:19,scrollWheelZoom:false,dragging:!mobile,tap:false});
  map.setMaxBounds([[30.4,34.3],[31.7,35.5]]);
+ map.fitBounds(L.latLngBounds(Object.keys(XY).map(function(n){return XY[n];})),{padding:[16,16]});
  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxNativeZoom:17,maxZoom:19,attribution:'צילום אוויר: Esri, Vantor, Earthstar Geographics · מיקומי כפרים: פורום דו־קיום בנגב / נגביה'}).addTo(map);
  var gOf={},mk={};Object.keys(V).forEach(function(g){V[g].forEach(function(n){gOf[n]=g;});});
  Object.keys(XY).forEach(function(n){
