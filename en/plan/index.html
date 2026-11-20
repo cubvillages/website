@@ -42,7 +42,7 @@ section[id]{scroll-margin-top:12px}
 .problem-per-person-values strong{display:block;font-size:22px;font-weight:800;line-height:1.25;margin-bottom:2px}
 .problem-per-person-values span{display:block;font-size:12px;font-weight:500;line-height:1.4}
 .problem-stats>div+div{border-top:1px solid #EBD3A0;margin-top:20px;padding-top:18px}
-.problem-stat-group h3{font-size:13px;font-weight:600;line-height:1.4;margin:0 0 8px}
+.problem-stat-group h3{font-size:17px;font-weight:600;line-height:1.4;margin:0 0 8px}
 .problem-stat-row>div:first-child{display:flex;align-items:baseline;gap:5px;white-space:nowrap}
 .problem-stat-row+.problem-stat-row{margin-top:7px}
 .problem-stat-row strong{font-size:21px;font-weight:700;line-height:1.2;white-space:nowrap}
@@ -73,7 +73,7 @@ section[id]{scroll-margin-top:12px}
 .problem-ratio strong{font-size:32px}
 .problem-ratio{margin-bottom:8px}
 .problem-per-person-values strong{font-size:20px}
-.problem-stat-group h3{font-size:12px;margin-bottom:7px}
+.problem-stat-group h3{font-size:16px;margin-bottom:7px}
 .problem-intro{font-size:clamp(28px,2.6vw,36px)}
 }
 .fuhari-slide{max-width:1180px;margin:0 auto;padding:24px}
@@ -93,9 +93,12 @@ section[id]{scroll-margin-top:12px}
 @media(max-width:700px){.fuhari-slide{padding:20px}.fuhari-copy{padding:22px 20px}.fuhari-shade{background:rgba(12,24,10,.68)}.fuhari-gallery figure{flex-basis:78vw;height:190px}}
 
 /* Center each complete data group between its dividers. */
-.problem-stats{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));padding:0!important}
+.problem-stats{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:repeat(3,minmax(0,1fr));padding:0!important}
 .problem-stats>div{box-sizing:border-box;min-height:0;display:flex;flex-direction:column;justify-content:center;margin:0!important;padding:12px 18px!important}
-.problem-stats>div+div{border-top:1px solid #EBD3A0}
+#problem .problem-stats{background:transparent;border:0;border-radius:0}
+.problem-stats>div{position:relative}
+.problem-stats>div+div{border-top:0}
+.problem-stats>div+div::before{content:"";position:absolute;top:0;inset-inline:18px;border-top:1px solid #EBD3A0}
 .fuhari-hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:center;gap:20px;padding:clamp(18px,3vh,32px);min-height:min(510px,68vh)}
 .fuhari-copy{padding:8px}
 .fuhari-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:clamp(92px,15vh,130px);gap:8px;max-height:calc(clamp(92px,15vh,130px)*4 + 24px);overflow:auto;scroll-snap-type:y proximity;margin:0;padding:0 4px;scrollbar-width:thin;scrollbar-color:rgba(245,179,33,.75) transparent}
@@ -118,7 +121,7 @@ section[id]{scroll-margin-top:12px}
 .fic-big{font-weight:800;line-height:1.05;color:#F5B321;font-size:clamp(44px,5.2vw,64px);margin:4px 0}
 .fic-side--end{grid-column:3}
 .fic-big--2{margin-top:10px}.fic-big sup{font-size:.45em;vertical-align:top}
-.fic-punch{grid-column:1/-1;margin:clamp(10px,2vh,18px) 0 0;font-weight:800;font-size:clamp(18px,2vw,23px);line-height:1.4;color:#F5B321}
+.fic-punch{grid-column:1/-1;margin:clamp(10px,2vh,18px) 0 0;font-weight:800;font-size:clamp(22px,2.5vw,32px);line-height:1.3;color:#F5B321;text-wrap:balance}
 .fic-foot{margin:10px 0 0;font-size:13px;color:#6B4A3A}
 @media(max-width:700px){.fic-slide{padding:20px}.fic-banner{grid-template-columns:1fr;gap:12px;min-height:0}.fic-side--end{grid-column:1}}
 
@@ -131,7 +134,7 @@ section[id]{scroll-margin-top:12px}
 /* Fuhari key line, macro and micro text columns. */
 .fuhari-slide>h2{font-size:clamp(26px,2.7vw,36px);font-weight:800;line-height:1.2;margin:0 0 clamp(12px,2vh,18px);color:#3B1D12}
 .fuhari-copy .fuhari-punch{line-height:1.3}
-.fuhari-key{display:block;margin-top:4px;font-size:clamp(22px,2.5vw,30px);line-height:1.25}
+.fuhari-key{display:block;margin-top:4px;font-size:clamp(28px,3.2vw,42px);line-height:1.25;text-wrap:balance}
 .fuhari-gallery img[src*="fuhari-girl-private"]{object-position:center 6%}
 .macro-facts{align-self:stretch;height:auto;display:flex;flex-direction:column;gap:0;font-size:16px;font-weight:500;line-height:1.45}
 .mf{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:16px;padding:clamp(10px,1.8vh,16px) 0;border-top:1px solid #EBD3A0}
@@ -156,7 +159,7 @@ section[id]{scroll-margin-top:12px}
 @media(max-width:900px){.mf{grid-template-columns:1fr;gap:4px}}
 /* Round: Fuhari text larger, macro/micro side columns aligned to the map/render */
 .fuhari-copy p{font-size:clamp(17px,2.8vh,21px);line-height:1.55}
-.fuhari-copy .fuhari-punch{margin-top:clamp(26px,4.5vh,40px);font-size:clamp(19px,2.1vw,25px)}
+.fuhari-copy .fuhari-punch{margin-top:clamp(26px,4.5vh,40px);font-size:clamp(20px,2.1vw,27px)}
 .macro-grid{align-items:stretch}
 .macro-facts{align-self:stretch;height:auto;display:flex;flex-direction:column;justify-content:space-between;padding:10px 0 34px}
 .mf{display:block;padding:0}
@@ -168,6 +171,7 @@ section[id]{scroll-margin-top:12px}
 .mi-sum{margin:0;padding-top:clamp(10px,1.8vh,16px);border-top:1px solid #EBD3A0;font-size:clamp(16px,1.4vw,19px);line-height:1.5}
 .mi-sum strong{font-weight:800}
 
+@media(max-width:900px){.problem-stat-group h3{font-size:18px}}
 </style>
 <style>html{scroll-behavior:smooth} :root{color-scheme:light}</style><script src="/assets/a11y.js" defer></script><script src="/assets/restore-scroll.js"></script>
 <link rel="stylesheet" href="/assets/site-scale.css">
@@ -227,25 +231,24 @@ section[id]{scroll-margin-top:12px}
 </header>
 <div style="background: #FFFFFF; border-bottom: 1px solid #EBD3A0"><div style="max-width: 1180px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px"><span style="font-size: 15px; font-weight: 700; color: #4F3226">In partnership with</span><img src="/assets/img/logo-keshet2.png" alt="Keshet Association for Community, Culture and Environment" style="height: 46px; width: auto; display: block"><img src="/assets/img/logo-forum-h.png" alt="Negev Coexistence Forum for Civil Equality" style="height: 43px; width: auto; max-width: 100%; object-fit: contain; display: block"></div></div>
 <div class="pl-grid"><div class="pl-main">
-<div class="intro-band"><div class="intro-inner"><p class="problem-intro">The story of the Bedouin villages in the Negev begins with land. <span>With real estate.</span></p></div></div>
 <section id="problem" class="problem-slide" aria-labelledby="problem-title">
 <div class="problem-kicker">01 · The root of the problem</div>
 <h2 id="problem-title">A wide gap in land allocated to rural communities in the northern Negev</h2>
-<div class="pl-gap">
+<div class="pl-gap macro-grid">
 <figure class="problem-map">
 <img src="/assets/img/councils.jpg" alt="Northern Negev regional councils: large Jewish council areas in the west and small orange patches of Bedouin council land east of Beersheba" data-zoom="1" title="Click to enlarge" width="1918" height="1078">
 <figcaption class="problem-map-caption">Jewish councils have contiguous territory. Bedouin council areas appear as orange islands within land outside any local authority’s jurisdiction.</figcaption>
 </figure>
 <div class="problem-stats" aria-label="Land and population disparities">
 <div class="problem-stat-group">
-<h3>Regional council land in the northern Negev</h3>
-<div class="problem-stat-row"><div><strong class="stat-jewish">1.875 million</strong> dunams for Jewish residents <span class="stat-jewish">(96.4%)</span></div><div class="problem-bar stat-jewish" style="width:96.4%" aria-hidden="true"></div></div>
-<div class="problem-stat-row"><div><strong class="stat-bedouin">71,000</strong> dunams for Bedouin residents <span class="stat-bedouin">(3.6%)</span></div><div class="problem-bar stat-bedouin" style="width:3.6%" aria-hidden="true"></div></div>
-</div>
-<div class="problem-stat-group">
 <h3>About 217,000 rural residents in the northern Negev</h3>
 <div class="problem-stat-row"><div><strong class="stat-jewish">67,000</strong> Jewish residents <span class="stat-jewish">(31%)</span></div><div class="problem-bar stat-jewish" style="width:31%" aria-hidden="true"></div></div>
 <div class="problem-stat-row"><div><strong class="stat-bedouin">150,000</strong> Bedouin residents <span class="stat-bedouin">(69%)</span></div><div class="problem-bar stat-bedouin" style="width:69%" aria-hidden="true"></div></div>
+</div>
+<div class="problem-stat-group">
+<h3>Regional council land in the northern Negev</h3>
+<div class="problem-stat-row"><div><strong class="stat-jewish">1.875 million</strong> dunams for Jewish residents <span class="stat-jewish">(96.4%)</span></div><div class="problem-bar stat-jewish" style="width:96.4%" aria-hidden="true"></div></div>
+<div class="problem-stat-row"><div><strong class="stat-bedouin">71,000</strong> dunams for Bedouin residents <span class="stat-bedouin">(3.6%)</span></div><div class="problem-bar stat-bedouin" style="width:3.6%" aria-hidden="true"></div></div>
 </div>
 <div class="problem-per-person">
 <div class="problem-ratio"><span>Per-person gap</span><strong>56-fold</strong></div>
@@ -280,7 +283,7 @@ section[id]{scroll-margin-top:12px}
 <img src="/assets/img/gal-rasjraba.jpg" alt="Sheet-metal homes in an unrecognized village near Dimona, with the city skyline behind them" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 62%">
 <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(18,10,4,0.68) 0%, rgba(18,10,4,0.55) 50%, rgba(18,10,4,0.32) 100%)"></div>
 <div style="position: relative; width: 100%; padding: clamp(14px, 2.6vh, 24px) 30px">
-<p style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: clamp(22px, min(2.9vw, 5vh), 38px); line-height: 1.15; margin: 0; max-width: 980px; text-shadow: 0 2px 10px rgba(0,0,0,0.65)"><span style="color: #F5B321">The status quo costs Israel tens of billions of shekels every year.</span> It also causes social harm. Some of these problems have given rise to the rhetoric of “governance”</p>
+<p style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: clamp(22px, min(2.9vw, 5vh), 38px); line-height: 1.15; margin: 0; max-width: 980px; text-shadow: 0 2px 10px rgba(0,0,0,0.65)"><span style="color: #F5B321">The status quo costs Israel tens of billions of shekels every year.</span> It also causes heavy social harm</p>
 </div>
 </div>
 <div style="position: relative; overflow: hidden">
@@ -288,7 +291,7 @@ section[id]{scroll-margin-top:12px}
 <div style="position: absolute; inset: 0; background: rgba(18,10,4,0.66)"></div>
 <div style="position: relative; padding: clamp(14px, 2.6vh, 24px) clamp(16px, 3vw, 30px) clamp(16px, 3vh, 28px)">
 <div style="display: inline-block; background: #F5B321; color: #2A1608; font-family: 'Heebo', sans-serif; font-weight: 800; font-size: clamp(18px, min(5vw, 3.4vh), 24px); padding: 5px 22px; border-radius: 999px; margin: -4px 0 clamp(24px, 4vh, 36px)">Social and economic losses</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(max(120px, 18%), 1fr)); gap: clamp(28px, 4.5vh, 42px) 18px"><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/blocks.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">3,200 children without kindergarten</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/bubbles.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">Limited knowledge of Hebrew</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/briefcase.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">Tens of thousands neither working nor studying</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/banknote.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">Welfare payments</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/coins.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">Lost tax revenue</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/bus.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">Lack of transport infrastructure</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/bulldozer.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">Home demolitions</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/health.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">Healthcare costs</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/police.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">Crime</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/trash.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">Environmental damage</div></div></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(max(120px, 18%), 1fr)); gap: clamp(28px, 4.5vh, 42px) 18px"><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/blocks.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">Thousands of children without kindergarten</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/bubbles.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">Limited knowledge of Hebrew</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/briefcase.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">Tens of thousands neither working nor studying</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/banknote.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">Welfare payments</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/coins.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">Lost tax revenue</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/bus.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">Lack of transport infrastructure</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/bulldozer.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">Home demolitions</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/health.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">Healthcare costs</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/police.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">Crime</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/trash.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">Environmental damage</div></div></div>
 </div>
 </div>
 </div>
@@ -374,40 +377,32 @@ section[id]{scroll-margin-top:12px}
 <h2 style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.2; margin: 0 0 12px">Economics, not charity</h2>
 <div style="background: #DCE8BE; border-inline-start: 6px solid #2F6B2A; border-radius: 10px; padding: 14px 20px; margin-bottom: 14px; color: #3B1D12">
 <p style="margin: 0; font-size: clamp(20px, 2vw, 26px); line-height: 1.3; font-weight: 800"><span style="color: #2F6B2A"><span dir="ltr">20–30</span> billion NIS a year:</span> Estimated added output in the Negev under full implementation of “The Regional Councils Plan”</p>
-<p style="margin: 6px 0 0; font-size: 17px; line-height: 1.45">In the position paper the Council submitted to the parties and decision-makers, it calls on the state to carry out an in-depth economic study of all the items, to obtain accurate figures.</p>
+<p style="margin: 6px 0 0; font-size: 17px; line-height: 1.45">In the position paper the Council submitted to the parties and decision-makers, it calls on the state to carry out an in-depth economic study of all the items, to obtain a well-founded estimate</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 255px), 1fr)); gap: 12px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr)); gap: 12px">
 <div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
-<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">Fewer benefits, more taxes</div>
-<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">Taxpayers instead of benefit recipients</p>
-</div>
-<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
-<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">Early childhood education</div>
-<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">3,200 children without a kindergarten. Every shekel returns <span dir="ltr">7–10</span> shekels</p>
+<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">Building instead of home demolitions</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">Hundreds of millions saved every year for the state and the residents, less stress and more economic productivity</p>
 </div>
 <div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
-<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">Fewer dropouts</div>
-<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">Schools inside the villages</p>
+<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">Laying the foundations for success</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">Frameworks for thousands of kindergarten-age children who sit at home. Every shekel invested returns <span dir="ltr">7–10</span> shekels</p>
 </div>
 <div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
-<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">Women’s employment</div>
-<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">From 25% today, versus almost 80% among Jewish women</p>
+<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">Fewer dropouts, better achievement</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">Schools inside the villages, strong authorities able to invest in them</p>
 </div>
 <div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
-<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">Youth employment</div>
-<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">Fewer idle youth, more workers and taxpayers</p>
+<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">Property tax revenue for the councils</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">Solar fields, industrial and employment zones, commercial routes, tourism, agriculture and more</p>
 </div>
 <div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
-<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">Thousands of new businesses</div>
-<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">Farm plots and hundreds of tourism sites</p>
+<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">Employment of women and young people</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">Better education, local businesses and transport infrastructure: tens of thousands of new taxpayers</p>
 </div>
 <div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
-<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">Revenue for the councils</div>
-<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">Solar power, property tax, industrial and commercial zones</p>
-</div>
-<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
-<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">Less crime and fewer demolitions</div>
-<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">Less economic damage, enforcement and demolition costs</p>
+<div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">Less alienation and crime</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">Satisfaction with the policy, less economic damage from property crime, less violence</p>
 </div>
 </div>
 </div>
@@ -417,7 +412,7 @@ section[id]{scroll-margin-top:12px}
 <div style="max-width: 1180px; margin: 0 auto; padding: clamp(28px, 4.4vh, 40px) 24px">
 <div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 4px">08 · What it looks like on the ground</div>
 <h2 style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.2; margin: 0 0 10px">Nahal Hava: the residents have already drawn their village</h2>
-<p style="margin: 0 0 14px; max-width: 1000px">The village of Nahal Hava (al-Afdai) sits beside Route 40, between Mitzpe Ramon and Sde Boker. It is home to 12 extended families of the Sarahin tribe, about 200 residents. Between December 2024 and April 2025, architects from the Keshet association sat with representatives of every family, in the shig, over an aerial photo. The representatives marked the family plots and said what is missing: a kindergarten, sewage, a paved road, guest cabins. Everyone asked to keep the village traditional, quiet and close to the desert.</p>
+<p style="margin: 0 0 14px; max-width: 1000px">The village of Nahal Hava (al-Afdai) sits beside Route 40, between Mitzpe Ramon and Sde Boker. It is home to 12 extended families of the Sarahin tribe, about 200 residents. For half a year, architects from the Keshet association sat with representatives of every family, in the shig, over an aerial photo. The representatives marked the family plots and said what is missing: a kindergarten, sewage, a paved road, guest cabins. Everyone asked to keep the village traditional, quiet and close to the desert.</p>
 <div style="background: #FFFFFF; border-radius: 16px; padding: 18px 22px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px">
 <h3 style="font-family: 'Heebo', sans-serif; font-weight: 700; font-size: 22px; margin: 0"><span id="mt">Keshet association plan for developing Nahal Hava</span></h3>
@@ -427,14 +422,14 @@ section[id]{scroll-margin-top:12px}
 </div>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start">
-<div class="vmap" style="flex: 1 1 300px; min-width: 0; max-width: 300px">
+<div class="vmap" style="flex: 1 1 300px; min-width: 0; max-width: 300px; position: relative">
 <div class="vNow" style="display:none">
 <img src="/assets/img/existing.jpg" alt="Map of Nahal Hava today: 12 family plots" data-zoom="1" title="Click to enlarge" style="cursor: zoom-in; width: 100%; height: auto; border-radius: 10px; display: block">
 </div>
 <div class="vPlan">
 <img src="/assets/img/alt3.jpg" alt="Keshet association plan for Nahal Hava: residential plots, farmland, tourism and a public center" data-zoom="1" title="Click to enlarge" style="cursor: zoom-in; width: 100%; height: auto; border-radius: 10px; display: block">
 </div>
-<div style="font-size: 14px; color: #4F3226; margin-top: 6px">From “Master Plan for the Bedouin Villages of the Negev Highlands – Nahal Hava,” Keshet association, November 2025 (map labels in Hebrew)</div>
+<div aria-hidden="true" style="position: absolute; bottom: 8px; inset-inline-end: 8px; width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.92); box-shadow: 0 1px 5px rgba(0,0,0,0.35); display: flex; align-items: center; justify-content: center; pointer-events: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B1D12" stroke-width="2.4" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21M10.5 7.5v6M7.5 10.5h6"/></svg></div>
 </div>
 <div style="flex: 1 1 420px; min-width: 0">
 <div class="vNow" style="display:none">
@@ -458,25 +453,15 @@ section[id]{scroll-margin-top:12px}
 </div>
 </div>
 </div>
-<p style="margin: 14px 0 0; max-width: 1000px; font-weight: 700">The plan exists. All that’s missing is a government decision. “The Regional Councils Plan” asks to get it within 60 days.</p>
-<div style="margin-top: 8px; font-size: 14px; color: #4F3226">Nahal Hava plan: Keshet association; architects Keren Engelman and Amitai Har-Tov, landscape architect Nof Michael Ozerman</div>
+<p style="margin: 18px 0 0; max-width: 1100px; font-family: 'Heebo', sans-serif; font-weight: 800; font-size: clamp(19px, 1.75vw, 26px); line-height: 1.25; color: #B8451F">The plan exists. All that’s missing is a government decision. “The Regional Councils Plan” asks to get it within 60 days</p>
+<div style="margin-top: 8px; font-size: 14px; color: #4F3226">“Master Plan for the Bedouin Villages of the Negev Highlands – Nahal Hava Village,” Keshet association, November 2025; architects Keren Engelman and Amitai Har-Tov, landscape architect Nof Michael Ozerman</div>
 </div>
 </section>
 
 <section id="village-build" style="max-width: 1180px; margin: 0 auto; padding: clamp(28px, 4.4vh, 40px) 24px">
 <div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 4px">09 · Desert building and the local economy</div>
-<h2 style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.2; margin: 0 0 14px">Homes that grew out of the landscape, a village that lives off the land</h2>
+<h2 style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.2; margin: 0 0 14px">Homes that grew out of the landscape</h2>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px 36px; align-items: start">
-<div>
-<h3 style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 20px; margin: 0 0 6px; color: #A63A17">What it will look like</h3>
-<p style="margin: 0 0 12px">In 2022, representatives of the Negev Highlands communities toured Bedouin villages in Sinai and came back with examples of stone houses, mud bricks and mud plaster. Instead of tin, homes that look as if they grew out of the landscape, in the materials and shades of the desert.</p>
-<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
-<figure style="margin: 0"><img src="/assets/img/b-sinai.jpg" alt="Bedouin stone houses in Wadi al-Talah, Sinai" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">Stone houses in Wadi al-Talah, Sinai. The inspiration tour, 2022</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/b-mud.jpg" alt="A house of mud bricks and mud plaster in the desert" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">A mud-brick, mud-plastered house, Arava</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/b-interior.jpg" alt="Interior of a stone house with a timber-beam ceiling" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">Inside: stone, wood and light</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/b-gan.jpg" alt="Rendering of a mud-built kindergarten with a dome" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">Rendering: a village kindergarten</figcaption></figure>
-</div>
-</div>
 <div>
 <h3 style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 20px; margin: 0 0 6px; color: #A63A17">The village already lives off the land</h3>
 <p style="margin: 0 0 12px">Sheep, camels, olives, hospitality. The plan doesn’t invent a new economy. It gives the existing one a legal address and room to grow. The Planning Administration itself proposes hospitality sites in shigs and tents, and is promoting a “Route of Tents” in the area.</p>
@@ -485,6 +470,16 @@ section[id]{scroll-margin-top:12px}
 <figure style="margin: 0"><img src="/assets/img/camels.jpg" alt="Camels in the village" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">Camels</figcaption></figure>
 <figure style="margin: 0"><img src="/assets/img/olives.jpg" alt="Young olive trees in a yard" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">Home-grown crops</figcaption></figure>
 <figure style="margin: 0"><img src="/assets/img/tent.jpg" alt="A Bedouin guest tent" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">Hosting tourists</figcaption></figure>
+</div>
+</div>
+<div>
+<h3 style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 20px; margin: 0 0 6px; color: #A63A17">What it will look like</h3>
+<p style="margin: 0 0 12px">In 2022, representatives of the Negev Highlands communities went on an inspiration tour of Bedouin villages in Sinai and came back with examples of stone houses, mud bricks and mud plaster. Instead of tin, homes that look as if they grew out of the landscape, in the materials and shades of the desert.</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<figure style="margin: 0"><img src="/assets/img/b-sinai.jpg" alt="Bedouin stone houses in Wadi al-Talah, Sinai" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">Stone houses in Wadi al-Talah, Sinai</figcaption></figure>
+<figure style="margin: 0"><img src="/assets/img/b-mud.jpg" alt="A house of mud bricks and mud plaster in the desert" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">A mud-brick, mud-plastered house, Arava</figcaption></figure>
+<figure style="margin: 0"><img src="/assets/img/b-interior.jpg" alt="Interior of a stone house with a timber-beam ceiling" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">Inside: stone, wood and light</figcaption></figure>
+<figure style="margin: 0"><img src="/assets/img/b-gan.jpg" alt="Rendering of a mud-built kindergarten with a dome" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">Rendering: a village kindergarten</figcaption></figure>
 </div>
 </div>
 </div>
@@ -500,7 +495,7 @@ section[id]{scroll-margin-top:12px}
 </div>
 <div>
 <h3 style="font-family: 'Heebo', sans-serif; font-weight: 700; font-size: 22px; margin: 0 0 8px">Is land taken from Jewish communities?</h3>
-<p style="margin: 0">No. Most of the land belongs to no local authority. Only at the margins will small areas pass from Arad, Yeruham and Tamar, in places where the villages already stand.</p>
+<p style="margin: 0">No. Most of the land belongs to no local authority. Only at the margins will small areas pass from Arad, Yeruham and Tamar, in places where villages already stand.</p>
 </div>
 <div>
 <h3 style="font-family: 'Heebo', sans-serif; font-weight: 700; font-size: 22px; margin: 0 0 8px">Won’t this lead to lawlessness?</h3>
@@ -512,15 +507,17 @@ section[id]{scroll-margin-top:12px}
 
 <section id="steps" style="background: #FBE7B5">
 <div style="max-width: 1180px; margin: 0 auto; padding: 52px 24px">
-<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">11 · What must happen</div>
-<h2 style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: clamp(26px, 2.7vw, 34px); line-height: 1.2; margin: 0 0 24px">A timetable for the next government</h2>
+<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">11 · What needs to happen</div>
+<h2 style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: clamp(26px, 2.7vw, 34px); line-height: 1.2; margin: 0 0 24px">The timetable for the next government</h2>
 <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px">
-<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">Day one</div><p style="margin: 6px 0 0; font-size: 17px">Stop the demolitions.</p></li>
-<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">Within 14 days</div><p style="margin: 6px 0 0; font-size: 17px">Adopt the plan’s principles, instruct the Interior Minister to prepare the council expansion, and launch the economic study.</p></li>
-<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">30 days</div><p style="margin: 6px 0 0; font-size: 17px">An inter-ministerial implementation team starts writing the rules for the interim period.</p></li>
-<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">60 days</div><p style="margin: 6px 0 0; font-size: 17px">The pilot plans get under way, Nahal Hava among them.</p></li>
-<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">120 days</div><p style="margin: 6px 0 0; font-size: 17px">A decision on council boundaries and on allocating land for the farms.</p></li>
-<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">30 months</div><p style="margin: 6px 0 0; font-size: 17px">Plans for every village are submitted for deposit.</p></li>
+<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">Day one</div><p style="margin: 6px 0 0; font-size: 17px">Stop the demolitions</p></li>
+<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">Within 14 days</div><p style="margin: 6px 0 0; font-size: 17px">Adopting the plan’s principles, instructing the Interior Minister to prepare the expansion of the councils, launching the economic study</p></li>
+<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">30 days</div><p style="margin: 6px 0 0; font-size: 17px">Start of drafting the “Life Now” plan: rules for building in the interim period until the settlement is completed</p></li>
+<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">60 days</div><p style="margin: 6px 0 0; font-size: 17px">Pioneer plans: starting to implement existing plans, in villages such as Nahal Hava, Tel Arad, al-Baqi’a, Nahal Arikha and Karkur</p></li>
+<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">90 days</div><p style="margin: 6px 0 0; font-size: 17px">“Life Now” is approved and gets under way. Services and infrastructure are available before development is completed</p></li>
+ <li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">120 days</div><p style="margin: 6px 0 0; font-size: 17px">Decision on the councils’ boundaries and on allocating land for housing and the farm plots</p></li>
+<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">24 months</div><p style="margin: 6px 0 0; font-size: 17px">The Bedouin Authority is closed in its current form. Local planning powers pass to the councils</p></li>
+ <li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Heebo', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">30 months</div><p style="margin: 6px 0 0; font-size: 17px">Plans for all the villages are submitted for deposit</p></li>
 </ol>
 </div>
 </section>
@@ -543,7 +540,7 @@ section[id]{scroll-margin-top:12px}
 </footer>
 
 </div>
-<script>function sv(p){document.querySelectorAll('.vNow').forEach(e=>e.style.display=p?'none':'');document.querySelectorAll('.vPlan').forEach(e=>e.style.display=p?'':'none');var a=document.getElementById('bPlan'),b=document.getElementById('bNow');[a,b].forEach(x=>{x.style.background='transparent';x.style.color='#3B1D12'});var s=p?a:b;s.style.background='#3B1D12';s.style.color='#FFFFFF';document.getElementById('mt').textContent=p?'Keshet association plan for developing Nahal Hava':'The village today: 12 family plots';}</script><script>try{if('scrollRestoration' in history)history.scrollRestoration='manual';}catch(e){}if(!location.hash){window.scrollTo(0,0);window.addEventListener('load',function(){window.scrollTo(0,0);});}</script><script>
+<script>function sv(p){document.querySelectorAll('.vNow').forEach(e=>e.style.display=p?'none':'');document.querySelectorAll('.vPlan').forEach(e=>e.style.display=p?'':'none');var a=document.getElementById('bPlan'),b=document.getElementById('bNow');[a,b].forEach(x=>{x.style.background='transparent';x.style.color='#3B1D12'});var s=p?a:b;s.style.background='#3B1D12';s.style.color='#FFFFFF';document.getElementById('mt').textContent=p?'Keshet association plan for developing Nahal Hava':'The village today: 12 family plots';}</script><script>
 (function(){var b=document.getElementById('navtoggle'),n=document.getElementById('navlinks');if(!b||!n)return;
 b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});
 n.addEventListener('click',function(e){if(e.target.closest('a')){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});})();

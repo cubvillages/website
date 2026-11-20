@@ -42,7 +42,7 @@ section[id]{scroll-margin-top:12px}
 .problem-per-person-values strong{display:block;font-size:22px;font-weight:800;line-height:1.25;margin-bottom:2px}
 .problem-per-person-values span{display:block;font-size:12px;font-weight:500;line-height:1.4}
 .problem-stats>div+div{border-top:1px solid #EBD3A0;margin-top:20px;padding-top:18px}
-.problem-stat-group h3{font-size:13px;font-weight:600;line-height:1.4;margin:0 0 8px}
+.problem-stat-group h3{font-size:17px;font-weight:600;line-height:1.4;margin:0 0 8px}
 .problem-stat-row>div:first-child{display:flex;align-items:baseline;gap:5px;white-space:nowrap}
 .problem-stat-row+.problem-stat-row{margin-top:7px}
 .problem-stat-row strong{font-size:21px;font-weight:700;line-height:1.2;white-space:nowrap}
@@ -73,7 +73,7 @@ section[id]{scroll-margin-top:12px}
 .problem-ratio strong{font-size:32px}
 .problem-ratio{margin-bottom:8px}
 .problem-per-person-values strong{font-size:20px}
-.problem-stat-group h3{font-size:12px;margin-bottom:7px}
+.problem-stat-group h3{font-size:16px;margin-bottom:7px}
 .problem-intro{font-size:clamp(28px,2.6vw,36px)}
 }
 .fuhari-slide{max-width:1180px;margin:0 auto;padding:24px}
@@ -93,9 +93,12 @@ section[id]{scroll-margin-top:12px}
 @media(max-width:700px){.fuhari-slide{padding:20px}.fuhari-copy{padding:22px 20px}.fuhari-shade{background:rgba(12,24,10,.68)}.fuhari-gallery figure{flex-basis:78vw;height:190px}}
 
 /* Center each complete data group between its dividers. */
-.problem-stats{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));padding:0!important}
+.problem-stats{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:repeat(3,minmax(0,1fr));padding:0!important}
 .problem-stats>div{box-sizing:border-box;min-height:0;display:flex;flex-direction:column;justify-content:center;margin:0!important;padding:12px 18px!important}
-.problem-stats>div+div{border-top:1px solid #EBD3A0}
+#problem .problem-stats{background:transparent;border:0;border-radius:0}
+.problem-stats>div{position:relative}
+.problem-stats>div+div{border-top:0}
+.problem-stats>div+div::before{content:"";position:absolute;top:0;inset-inline:18px;border-top:1px solid #EBD3A0}
 .fuhari-hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:center;gap:20px;padding:clamp(18px,3vh,32px);min-height:min(510px,68vh)}
 .fuhari-copy{padding:8px}
 .fuhari-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:clamp(92px,15vh,130px);gap:8px;max-height:calc(clamp(92px,15vh,130px)*4 + 24px);overflow:auto;scroll-snap-type:y proximity;margin:0;padding:0 4px;scrollbar-width:thin;scrollbar-color:rgba(245,179,33,.75) transparent}
@@ -118,7 +121,7 @@ section[id]{scroll-margin-top:12px}
 .fic-big{font-weight:800;line-height:1.05;color:#F5B321;font-size:clamp(44px,5.2vw,64px);margin:4px 0}
 .fic-side--end{grid-column:3}
 .fic-big--2{margin-top:10px}.fic-big sup{font-size:.45em;vertical-align:top}
-.fic-punch{grid-column:1/-1;margin:clamp(10px,2vh,18px) 0 0;font-weight:800;font-size:clamp(18px,2vw,23px);line-height:1.4;color:#F5B321}
+.fic-punch{grid-column:1/-1;margin:clamp(10px,2vh,18px) 0 0;font-weight:800;font-size:clamp(22px,2.5vw,32px);line-height:1.3;color:#F5B321;text-wrap:balance}
 .fic-foot{margin:10px 0 0;font-size:13px;color:#6B4A3A}
 @media(max-width:700px){.fic-slide{padding:20px}.fic-banner{grid-template-columns:1fr;gap:12px;min-height:0}.fic-side--end{grid-column:1}}
 
@@ -131,7 +134,7 @@ section[id]{scroll-margin-top:12px}
 /* Fuhari key line, macro and micro text columns. */
 .fuhari-slide>h2{font-size:clamp(26px,2.7vw,36px);font-weight:800;line-height:1.2;margin:0 0 clamp(12px,2vh,18px);color:#3B1D12}
 .fuhari-copy .fuhari-punch{line-height:1.3}
-.fuhari-key{display:block;margin-top:4px;font-size:clamp(22px,2.5vw,30px);line-height:1.25}
+.fuhari-key{display:block;margin-top:4px;font-size:clamp(28px,3.2vw,42px);line-height:1.25;text-wrap:balance}
 .fuhari-gallery img[src*="fuhari-girl-private"]{object-position:center 6%}
 .macro-facts{align-self:stretch;height:auto;display:flex;flex-direction:column;gap:0;font-size:16px;font-weight:500;line-height:1.45}
 .mf{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:16px;padding:clamp(10px,1.8vh,16px) 0;border-top:1px solid #EBD3A0}
@@ -156,7 +159,7 @@ section[id]{scroll-margin-top:12px}
 @media(max-width:900px){.mf{grid-template-columns:1fr;gap:4px}}
 /* Round: Fuhari text larger, macro/micro side columns aligned to the map/render */
 .fuhari-copy p{font-size:clamp(17px,2.8vh,21px);line-height:1.55}
-.fuhari-copy .fuhari-punch{margin-top:clamp(26px,4.5vh,40px);font-size:clamp(19px,2.1vw,25px)}
+.fuhari-copy .fuhari-punch{margin-top:clamp(26px,4.5vh,40px);font-size:clamp(20px,2.1vw,27px)}
 .macro-grid{align-items:stretch}
 .macro-facts{align-self:stretch;height:auto;display:flex;flex-direction:column;justify-content:space-between;padding:10px 0 34px}
 .mf{display:block;padding:0}
@@ -168,6 +171,7 @@ section[id]{scroll-margin-top:12px}
 .mi-sum{margin:0;padding-top:clamp(10px,1.8vh,16px);border-top:1px solid #EBD3A0;font-size:clamp(16px,1.4vw,19px);line-height:1.5}
 .mi-sum strong{font-weight:800}
 
+@media(max-width:900px){.problem-stat-group h3{font-size:18px}}
 </style>
 <style>html{scroll-behavior:smooth} :root{color-scheme:light}</style><script src="/assets/a11y.js" defer></script><script src="/assets/restore-scroll.js"></script>
 <link rel="stylesheet" href="/assets/site-scale.css">
@@ -228,25 +232,24 @@ section[id]{scroll-margin-top:12px}
 </header>
 <div style="background: #FFFFFF; border-bottom: 1px solid #EBD3A0"><div style="max-width: 1180px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px"><span style="font-size: 15px; font-weight: 700; color: #4F3226">بالشراكة مع</span><img src="/assets/img/logo-keshet2.png" alt="جمعية كيشت للمجتمع والثقافة والبيئة" style="height: 46px; width: auto; display: block"><img src="/assets/img/logo-forum-h.png" alt="منتدى التعايش السلمي في النقب من أجل المساواة المدنية" style="height: 43px; width: auto; max-width: 100%; object-fit: contain; display: block"></div></div>
 <div class="pl-grid"><div class="pl-main">
-<div class="intro-band"><div class="intro-inner"><p class="problem-intro">قصة القرى البدوية في النقب هي في المقام الأول قصة أرض. <span>قصة عقارات.</span></p></div></div>
 <section id="problem" class="problem-slide" aria-labelledby="problem-title">
 <div class="problem-kicker">01 · أصل المشكلة</div>
 <h2 id="problem-title">فجوة كبيرة في تخصيص الأراضي للتجمعات الريفية في شمال النقب</h2>
-<div class="pl-gap">
+<div class="pl-gap macro-grid">
 <figure class="problem-map">
 <img src="/assets/img/councils.jpg" alt="المجالس الإقليمية في شمال النقب: مساحات واسعة للمجالس اليهودية غربًا، وبقع برتقالية صغيرة تمثّل أراضي المجالس البدوية شرق بئر السبع" data-zoom="1" title="اضغط للتكبير" width="1918" height="1078">
 <figcaption class="problem-map-caption">تتمتع المجالس اليهودية بتواصل جغرافي، بينما تظهر أراضي المجالس البدوية كجزر برتقالية وسط أراضٍ خارج نطاق نفوذ أي سلطة محلية.</figcaption>
 </figure>
 <div class="problem-stats" aria-label="الفجوات في الأرض والسكان">
 <div class="problem-stat-group">
-<h3>مساحة المجالس الإقليمية في شمال النقب</h3>
-<div class="problem-stat-row"><div><strong class="stat-jewish">1.875 مليون</strong> دونم للسكان اليهود <span class="stat-jewish">(96.4%)</span></div><div class="problem-bar stat-jewish" style="width:96.4%" aria-hidden="true"></div></div>
-<div class="problem-stat-row"><div><strong class="stat-bedouin">71 ألف</strong> دونم للسكان البدو <span class="stat-bedouin">(3.6%)</span></div><div class="problem-bar stat-bedouin" style="width:3.6%" aria-hidden="true"></div></div>
-</div>
-<div class="problem-stat-group">
 <h3>نحو 217 ألف نسمة في ريف شمال النقب</h3>
 <div class="problem-stat-row"><div><strong class="stat-jewish">67 ألف</strong> يهودي <span class="stat-jewish">(31%)</span></div><div class="problem-bar stat-jewish" style="width:31%" aria-hidden="true"></div></div>
 <div class="problem-stat-row"><div><strong class="stat-bedouin">150 ألف</strong> بدوي <span class="stat-bedouin">(69%)</span></div><div class="problem-bar stat-bedouin" style="width:69%" aria-hidden="true"></div></div>
+</div>
+<div class="problem-stat-group">
+<h3>مساحة المجالس الإقليمية في شمال النقب</h3>
+<div class="problem-stat-row"><div><strong class="stat-jewish">1.875 مليون</strong> دونم للسكان اليهود <span class="stat-jewish">(96.4%)</span></div><div class="problem-bar stat-jewish" style="width:96.4%" aria-hidden="true"></div></div>
+<div class="problem-stat-row"><div><strong class="stat-bedouin">71 ألف</strong> دونم للسكان البدو <span class="stat-bedouin">(3.6%)</span></div><div class="problem-bar stat-bedouin" style="width:3.6%" aria-hidden="true"></div></div>
 </div>
 <div class="problem-per-person">
 <div class="problem-ratio"><span>الفجوة للفرد</span><strong>56 ضعفًا</strong></div>
@@ -281,7 +284,7 @@ section[id]{scroll-margin-top:12px}
 <img src="/assets/img/gal-rasjraba.jpg" alt="بيوت من الصفيح في قرية غير معترف بها قرب ديمونا، وتظهر مباني المدينة خلفها" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 62%">
 <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(18,10,4,0.68) 0%, rgba(18,10,4,0.55) 50%, rgba(18,10,4,0.32) 100%)"></div>
 <div style="position: relative; width: 100%; padding: clamp(14px, 2.6vh, 24px) 30px">
-<p style="font-family: 'Noto Sans Arabic',sans-serif; font-weight: 800; font-size: clamp(22px, min(2.9vw, 5vh), 38px); line-height: 1.15; margin: 0; max-width: 980px; text-shadow: 0 2px 10px rgba(0,0,0,0.65)"><span style="color: #F5B321">تخسر دولة إسرائيل عشرات مليارات الشواقل سنويًا بسبب الوضع القائم.</span> وترافق ذلك أضرار اجتماعية نشأ عن بعضها خطاب «الحوكمة».</p>
+<p style="font-family: 'Noto Sans Arabic',sans-serif; font-weight: 800; font-size: clamp(22px, min(2.9vw, 5vh), 38px); line-height: 1.15; margin: 0; max-width: 980px; text-shadow: 0 2px 10px rgba(0,0,0,0.65)"><span style="color: #F5B321">تخسر دولة إسرائيل عشرات مليارات الشواقل سنويًا بسبب الوضع القائم.</span> وترافق ذلك أضرار اجتماعية جسيمة.</p>
 </div>
 </div>
 <div style="position: relative; overflow: hidden">
@@ -289,7 +292,7 @@ section[id]{scroll-margin-top:12px}
 <div style="position: absolute; inset: 0; background: rgba(18,10,4,0.66)"></div>
 <div style="position: relative; padding: clamp(14px, 2.6vh, 24px) clamp(16px, 3vw, 30px) clamp(16px, 3vh, 28px)">
 <div style="display: inline-block; background: #F5B321; color: #2A1608; font-family: 'Noto Sans Arabic',sans-serif; font-weight: 800; font-size: clamp(18px, min(5vw, 3.4vh), 24px); padding: 5px 22px; border-radius: 999px; margin: -4px 0 clamp(24px, 4vh, 36px)">الخسائر الاجتماعية والاقتصادية</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(max(120px, 18%), 1fr)); gap: clamp(28px, 4.5vh, 42px) 18px"><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/blocks.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">3,200 طفل بلا روضة</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/bubbles.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">عدم إتقان العبرية</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/briefcase.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">عشرات الآلاف خارج أطر العمل والتعليم</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/banknote.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">مدفوعات المخصّصات</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/coins.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">خسارة إيرادات ضريبية</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/bus.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">غياب البنية التحتية للنقل</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/bulldozer.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">هدم المنازل</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/health.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">تكاليف الرعاية الصحية</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/police.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">الجريمة</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/trash.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">الضرر البيئي</div></div></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(max(120px, 18%), 1fr)); gap: clamp(28px, 4.5vh, 42px) 18px"><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/blocks.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">آلاف الأطفال بلا روضة</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/bubbles.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">عدم إتقان العبرية</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/briefcase.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">عشرات الآلاف خارج أطر العمل والتعليم</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/banknote.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">مدفوعات المخصّصات</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/coins.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">خسارة إيرادات ضريبية</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/bus.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">غياب البنية التحتية للنقل</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/bulldozer.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">هدم المنازل</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/health.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">تكاليف الرعاية الصحية</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/police.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">الجريمة</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center"><img src="/assets/img/loss/trash.png" alt="" width="104" height="104" loading="lazy" style="width: clamp(56px, min(8vw, 10.5vh), 100px); height: clamp(56px, min(8vw, 10.5vh), 100px); display: block"><div style="font-weight: 700; font-size: clamp(15px, min(4.6vw, 2.6vh), 20px); line-height: 1.25; text-shadow: 0 2px 10px rgba(0,0,0,0.65)">الضرر البيئي</div></div></div>
 </div>
 </div>
 </div>
@@ -375,40 +378,32 @@ section[id]{scroll-margin-top:12px}
 <h2 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.2; margin: 0 0 12px">اقتصاد، لا صدقة</h2>
 <div style="background: #DCE8BE; border-inline-start: 6px solid #2F6B2A; border-radius: 10px; padding: 14px 20px; margin-bottom: 14px; color: #3B1D12">
 <p style="margin: 0; font-size: clamp(20px, 2vw, 26px); line-height: 1.3; font-weight: 800"><span style="color: #2F6B2A"><span dir="ltr">20–30</span> مليار ₪ في السنة:</span> الزيادة المقدَّرة في الناتج في النقب عند التطبيق الكامل لـ«خطة المجالس الإقليمية»</p>
-<p style="margin: 6px 0 0; font-size: 17px; line-height: 1.45">في ورقة الموقف التي قدّمها المجلس إلى الأحزاب وأصحاب القرار، يدعو المجلس الدولة إلى إجراء بحث اقتصادي معمّق في جميع البنود، للحصول على معطيات دقيقة.</p>
+<p style="margin: 6px 0 0; font-size: 17px; line-height: 1.45">في ورقة الموقف التي قدّمها المجلس إلى الأحزاب وأصحاب القرار، يدعو المجلس الدولة إلى إجراء بحث اقتصادي معمّق في جميع البنود، للحصول على تقدير مدروس</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 255px), 1fr)); gap: 12px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr)); gap: 12px">
 <div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
-<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">مخصصات أقل، ضرائب أكثر</div>
-<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">دافعو ضرائب بدل متلقّي المخصصات</p>
-</div>
-<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
-<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">التعليم في سن مبكرة</div>
-<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">3,200 طفل بلا روضة. كل شيكل يعيد <span dir="ltr">7–10</span> شواكل</p>
+<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">بناء بدل هدم البيوت</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">توفير مئات الملايين سنويًا للدولة والسكان، توتر أقل وإنتاجية اقتصادية أعلى</p>
 </div>
 <div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
-<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">تسرّب أقل</div>
-<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">المؤسسات التعليمية داخل القرى</p>
+<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">إرساء أسس النجاح</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">أطر لآلاف أطفال الروضات الجالسين في البيت. كل شيكل يُستثمر يعيد <span dir="ltr">7–10</span> شواكل</p>
 </div>
 <div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
-<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">تشغيل النساء</div>
-<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">من 25% اليوم، مقابل قرابة 80% لدى اليهوديات</p>
+<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">تسرّب أقل، وتحصيل أعلى</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">مؤسسات تعليمية داخل القرى، وسلطات قوية قادرة على الاستثمار فيها</p>
 </div>
 <div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
-<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">تشغيل الشباب والشابات</div>
-<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">عاطلون أقل، وعاملون ودافعو ضرائب أكثر</p>
+<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">إيرادات أرنونا للمجالس</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">حقول شمسية، مناطق صناعة وتشغيل، طرق تجارية، سياحة، زراعة وغير ذلك</p>
 </div>
 <div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
-<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">آلاف المصالح الجديدة</div>
-<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">مزارع مساندة ومئات المجمّعات السياحية</p>
+<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">تشغيل النساء والشباب</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">تعليم أفضل، أعمال محلية وبنى تحتية للمواصلات: عشرات آلاف دافعي الضرائب الجدد</p>
 </div>
 <div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
-<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">إيرادات للمجالس</div>
-<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">طاقة شمسية، أرنونا، مناطق صناعية وتجارية</p>
-</div>
-<div style="background: #FFFFFF; border-radius: 12px; border-top: 5px solid #2F6B2A; padding: 10px 14px; box-shadow: 0 1px 6px rgba(59,29,18,0.08)">
-<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">جريمة وهدم أقل</div>
-<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">ضرر اقتصادي ونفقات إنفاذ وهدم أقل</p>
+<div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2; color: #B8451F">تقليص الاغتراب والجريمة</div>
+<p style="margin: 3px 0 0; font-size: 16px; line-height: 1.35">الرضا عن السياسة، تقليص الأضرار الاقتصادية من جرائم الممتلكات، وتقليص العنف</p>
 </div>
 </div>
 </div>
@@ -418,7 +413,7 @@ section[id]{scroll-margin-top:12px}
 <div style="max-width: 1180px; margin: 0 auto; padding: clamp(28px, 4.4vh, 40px) 24px">
 <div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 4px">08 · هكذا يبدو الأمر على الأرض</div>
 <h2 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.2; margin: 0 0 10px">نحال حَفاه: السكان رسموا قريتهم بأنفسهم</h2>
-<p style="margin: 0 0 14px; max-width: 1000px">تقع قرية نحال حَفاه (الأفضاي) بجانب شارع 40، بين متسبيه رامون وسديه بوكر. يسكنها 12 عائلة ممتدة من عشيرة السراحين، نحو 200 نسمة. بين كانون الأول 2024 ونيسان 2025 جلس معماريون من جمعية كيشت مع ممثلين عن كل عائلة، في الشِّق، فوق صورة جوية. حدّد الممثلون القطع العائلية وقالوا ما ينقص: روضة أطفال، صرف صحي، طريق معبّدة، وحدات ضيافة. وطلب الجميع الحفاظ على القرية تقليدية، هادئة وقريبة من الصحراء.</p>
+<p style="margin: 0 0 14px; max-width: 1000px">تقع قرية نحال حَفاه (الأفضاي) بجانب شارع 40، بين متسبيه رامون وسديه بوكر. يسكنها 12 عائلة ممتدة من عشيرة السراحين، نحو 200 نسمة. طوال نصف عام جلس معماريون من جمعية كيشت مع ممثلين عن كل عائلة، في الشِّق، فوق صورة جوية. حدّد الممثلون القطع العائلية وقالوا ما ينقص: روضة أطفال، صرف صحي، طريق معبّدة، وحدات ضيافة. وطلب الجميع الحفاظ على القرية تقليدية، هادئة وقريبة من الصحراء.</p>
 <div style="background: #FFFFFF; border-radius: 16px; padding: 18px 22px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px">
 <h3 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 700; font-size: 22px; margin: 0"><span id="mt">خطة جمعية كيشت لتطوير نحال حَفاه</span></h3>
@@ -428,14 +423,14 @@ section[id]{scroll-margin-top:12px}
 </div>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start">
-<div class="vmap" style="flex: 1 1 300px; min-width: 0; max-width: 300px">
+<div class="vmap" style="flex: 1 1 300px; min-width: 0; max-width: 300px; position: relative">
 <div class="vNow" style="display:none">
 <img src="/assets/img/existing.jpg" alt="خارطة الوضع القائم في نحال حَفاه: 12 قطعة عائلية" data-zoom="1" title="انقر للتكبير" style="cursor: zoom-in; width: 100%; height: auto; border-radius: 10px; display: block">
 </div>
 <div class="vPlan">
 <img src="/assets/img/alt3.jpg" alt="خطة جمعية كيشت لنحال حَفاه: قسائم سكن، أراضٍ زراعية، سياحة ومركز عام" data-zoom="1" title="انقر للتكبير" style="cursor: zoom-in; width: 100%; height: auto; border-radius: 10px; display: block">
 </div>
-<div style="font-size: 14px; color: #4F3226; margin-top: 6px">من «مخطط هيكلي للقرى البدوية في جبل النقب – قرية نحال حَفاه»، جمعية كيشت، تشرين الثاني 2025 (أسماء الخريطة بالعبرية)</div>
+<div aria-hidden="true" style="position: absolute; bottom: 8px; inset-inline-end: 8px; width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.92); box-shadow: 0 1px 5px rgba(0,0,0,0.35); display: flex; align-items: center; justify-content: center; pointer-events: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B1D12" stroke-width="2.4" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21M10.5 7.5v6M7.5 10.5h6"/></svg></div>
 </div>
 <div style="flex: 1 1 420px; min-width: 0">
 <div class="vNow" style="display:none">
@@ -459,25 +454,15 @@ section[id]{scroll-margin-top:12px}
 </div>
 </div>
 </div>
-<p style="margin: 14px 0 0; max-width: 1000px; font-weight: 700">الخطة موجودة، وينقص فقط قرار حكومي. و«خطة المجالس الإقليمية» تطالب باتخاذه خلال 60 يومًا.</p>
-<div style="margin-top: 8px; font-size: 14px; color: #4F3226">خارطة نحال حَفاه: جمعية كيشت؛ المهندسة المعمارية كيرن إنغلمان، المهندس المعماري أمتاي هار–طوف، مهندس المناظر الطبيعية نوف ميخائيل عوزرمان</div>
+<p style="margin: 18px 0 0; max-width: 1100px; font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(19px, 1.75vw, 26px); line-height: 1.25; color: #B8451F">الخطة موجودة، وينقص فقط قرار حكومي. و«خطة المجالس الإقليمية» تطالب باتخاذه خلال 60 يومًا</p>
+<div style="margin-top: 8px; font-size: 14px; color: #4F3226">«مخطط هيكلي للقرى البدوية في جبل النقب – قرية نحال حَفاه»، جمعية كيشت، تشرين الثاني 2025؛ المهندسة المعمارية كيرن إنغلمان، المهندس المعماري أمتاي هار–طوف، مهندس المشهد نوف ميخائيل أوزرمان</div>
 </div>
 </section>
 
 <section id="village-build" style="max-width: 1180px; margin: 0 auto; padding: clamp(28px, 4.4vh, 40px) 24px">
 <div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 4px">09 · بناء صحراوي واقتصاد محلي</div>
-<h2 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.2; margin: 0 0 14px">بيوت نبتت من المشهد، وقرية تعيش من أرضها</h2>
+<h2 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.2; margin: 0 0 14px">بيوت نبتت من المشهد</h2>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px 36px; align-items: start">
-<div>
-<h3 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 20px; margin: 0 0 6px; color: #A63A17">كيف سيبدو ذلك</h3>
-<p style="margin: 0 0 12px">في 2022 خرج ممثلون عن مجتمعات جبل النقب في جولة إلى القرى البدوية في سيناء، وعادوا بأمثلة على بيوت من حجر وطوب طيني ولياسة طين. بدل الصفيح، بيوت تبدو كأنها نبتت من المشهد، بمواد وألوان الصحراء.</p>
-<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
-<figure style="margin: 0"><img src="/assets/img/b-sinai.jpg" alt="بيوت حجرية بدوية في وادي الطلاح في سيناء" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">بيوت حجرية في وادي الطلاح، سيناء. جولة الإلهام، 2022</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/b-mud.jpg" alt="بيت من الطوب الطيني ولياسة الطين في الصحراء" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">بيت من الطوب الطيني ولياسة الطين، العربة</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/b-interior.jpg" alt="داخل بيت حجري بسقف من عوارض خشبية" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">من الداخل: حجر وخشب وضوء</figcaption></figure>
-<figure style="margin: 0"><img src="/assets/img/b-gan.jpg" alt="تصوّر لروضة أطفال مبنية بالطين وبقبة" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">تصوّر: روضة أطفال في القرية</figcaption></figure>
-</div>
-</div>
 <div>
 <h3 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 20px; margin: 0 0 6px; color: #A63A17">القرية تعيش من الأرض منذ الآن</h3>
 <p style="margin: 0 0 12px">أغنام، جمال، زيتون وضيافة. الخطة لا تخترع اقتصادًا جديدًا. إنها تمنح الاقتصاد القائم عنوانًا قانونيًا ومجالًا للنمو. ومديرية التخطيط نفسها تقترح مواقع ضيافة في الشِّق والخيام، وتعمل على الترويج لـ«درب الخيام» في المنطقة.</p>
@@ -486,6 +471,16 @@ section[id]{scroll-margin-top:12px}
 <figure style="margin: 0"><img src="/assets/img/camels.jpg" alt="جمال في القرية" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">جمال</figcaption></figure>
 <figure style="margin: 0"><img src="/assets/img/olives.jpg" alt="أشجار زيتون فتية في ساحة بيت" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">زراعة للبيت</figcaption></figure>
 <figure style="margin: 0"><img src="/assets/img/tent.jpg" alt="خيمة ضيافة بدوية" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">ضيافة سياح</figcaption></figure>
+</div>
+</div>
+<div>
+<h3 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 20px; margin: 0 0 6px; color: #A63A17">كيف سيبدو ذلك</h3>
+<p style="margin: 0 0 12px">في 2022 خرج ممثلون عن مجتمعات جبل النقب في جولة إلهام إلى القرى البدوية في سيناء، وعادوا بأمثلة على بيوت من حجر وطوب طيني ولياسة طين. بدل الصفيح، بيوت تبدو كأنها نبتت من المشهد، بمواد وألوان الصحراء.</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<figure style="margin: 0"><img src="/assets/img/b-sinai.jpg" alt="بيوت حجرية بدوية في وادي الطلاح في سيناء" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">بيوت حجرية في وادي الطلاح، سيناء</figcaption></figure>
+<figure style="margin: 0"><img src="/assets/img/b-mud.jpg" alt="بيت من الطوب الطيني ولياسة الطين في الصحراء" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">بيت من الطوب الطيني ولياسة الطين، العربة</figcaption></figure>
+<figure style="margin: 0"><img src="/assets/img/b-interior.jpg" alt="داخل بيت حجري بسقف من عوارض خشبية" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">من الداخل: حجر وخشب وضوء</figcaption></figure>
+<figure style="margin: 0"><img src="/assets/img/b-gan.jpg" alt="تصوّر لروضة أطفال مبنية بالطين وبقبة" style="width: 100%; height: clamp(100px, 17vh, 150px); object-fit: cover; border-radius: 10px; display: block"><figcaption style="font-size: 14px; margin-top: 4px">تصوّر: روضة أطفال في القرية</figcaption></figure>
 </div>
 </div>
 </div>
@@ -501,7 +496,7 @@ section[id]{scroll-margin-top:12px}
 </div>
 <div>
 <h3 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 700; font-size: 22px; margin: 0 0 8px">هل تُؤخذ أرض من بلدات يهودية؟</h3>
-<p style="margin: 0">لا. معظم المساحة لا تتبع أي سلطة محلية. فقط في الأطراف ستُنقل مساحات صغيرة من عراد ويروحام وتمار، في أماكن تقع فيها القرى أصلًا.</p>
+<p style="margin: 0">لا. معظم المساحة لا تتبع أي سلطة محلية. فقط في الأطراف ستُنقل مساحات صغيرة من عراد ويروحام وتمار، في أماكن تقع فيها قرى أصلًا.</p>
 </div>
 <div>
 <h3 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 700; font-size: 22px; margin: 0 0 8px">ألن يتحوّل هذا إلى فوضى؟</h3>
@@ -513,15 +508,17 @@ section[id]{scroll-margin-top:12px}
 
 <section id="steps" style="background: #FBE7B5">
 <div style="max-width: 1180px; margin: 0 auto; padding: 52px 24px">
-<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">11 · ما المطلوب</div>
+<div style="font-size: 16px; font-weight: 700; color: #A63A17; margin-bottom: 8px">11 · ما الذي يجب أن يحدث</div>
 <h2 style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: clamp(26px, 2.7vw, 34px); line-height: 1.2; margin: 0 0 24px">الجدول الزمني للحكومة القادمة</h2>
 <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px">
-<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">اليوم الأول</div><p style="margin: 6px 0 0; font-size: 17px">وقف الهدم.</p></li>
-<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">حتى 14 يومًا</div><p style="margin: 6px 0 0; font-size: 17px">تبنّي مبادئ الخطة، وتوجيه وزير الداخلية لإعداد توسيع المجالس، وإطلاق البحث الاقتصادي.</p></li>
-<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">30 يومًا</div><p style="margin: 6px 0 0; font-size: 17px">طاقم تطبيق مشترك للوزارات يبدأ بكتابة قواعد الفترة الانتقالية.</p></li>
-<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">60 يومًا</div><p style="margin: 6px 0 0; font-size: 17px">انطلاق الخطط الريادية، ومنها نحال حَفاه.</p></li>
-<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">120 يومًا</div><p style="margin: 6px 0 0; font-size: 17px">قرار بشأن حدود المجالس وتخصيص الأرض للمزارع.</p></li>
-<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">30 شهرًا</div><p style="margin: 6px 0 0; font-size: 17px">تقديم خرائط لجميع القرى للإيداع.</p></li>
+<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">اليوم الأول</div><p style="margin: 6px 0 0; font-size: 17px">وقف عمليات الهدم</p></li>
+<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">خلال 14 يومًا</div><p style="margin: 6px 0 0; font-size: 17px">اعتماد مبادئ الخطة، وتكليف وزير الداخلية بإعداد توسيع المجالس، والانطلاق في الدراسة الاقتصادية</p></li>
+<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">30 يومًا</div><p style="margin: 6px 0 0; font-size: 17px">بدء صياغة خطة «الحياة الآن»: قواعد للبناء في الفترة الانتقالية حتى استكمال التسوية</p></li>
+<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">60 يومًا</div><p style="margin: 6px 0 0; font-size: 17px">خطط رائدة: بدء تنفيذ خطط قائمة، في قرى مثل نحال حَفاه وتل عراد والبقيعة ونحال أريخا وكركور</p></li>
+<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">90 يومًا</div><p style="margin: 6px 0 0; font-size: 17px">تُقَرّ خطة «الحياة الآن» وتنطلق. الخدمات والبنى التحتية متاحة قبل انتهاء التطوير</p></li>
+ <li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">120 يومًا</div><p style="margin: 6px 0 0; font-size: 17px">قرار بشأن حدود المجالس وتخصيص الأرض للسكن وللمزارع المساندة</p></li>
+<li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">24 شهرًا</div><p style="margin: 6px 0 0; font-size: 17px">تُغلَق سلطة البدو بصيغتها الحالية. وتنتقل صلاحيات التخطيط المحلي إلى المجالس</p></li>
+ <li style="background: #FFF4D6; border-radius: 12px; padding: 22px"><div style="font-family: 'Noto Kufi Arabic', sans-serif; font-weight: 800; font-size: 22px; color: #2F6B2A">30 شهرًا</div><p style="margin: 6px 0 0; font-size: 17px">تُقدَّم خطط جميع القرى للإيداع</p></li>
 </ol>
 </div>
 </section>
@@ -544,7 +541,7 @@ section[id]{scroll-margin-top:12px}
 </footer>
 
 </div>
-<script>function sv(p){document.querySelectorAll('.vNow').forEach(e=>e.style.display=p?'none':'');document.querySelectorAll('.vPlan').forEach(e=>e.style.display=p?'':'none');var a=document.getElementById('bPlan'),b=document.getElementById('bNow');[a,b].forEach(x=>{x.style.background='transparent';x.style.color='#3B1D12'});var s=p?a:b;s.style.background='#3B1D12';s.style.color='#FFFFFF';document.getElementById('mt').textContent=p?'خطة جمعية كيشت لتطوير نحال حَفاه':'القرية اليوم: 12 قطعة عائلية';}</script><script>try{if('scrollRestoration' in history)history.scrollRestoration='manual';}catch(e){}if(!location.hash){window.scrollTo(0,0);window.addEventListener('load',function(){window.scrollTo(0,0);});}</script><script>
+<script>function sv(p){document.querySelectorAll('.vNow').forEach(e=>e.style.display=p?'none':'');document.querySelectorAll('.vPlan').forEach(e=>e.style.display=p?'':'none');var a=document.getElementById('bPlan'),b=document.getElementById('bNow');[a,b].forEach(x=>{x.style.background='transparent';x.style.color='#3B1D12'});var s=p?a:b;s.style.background='#3B1D12';s.style.color='#FFFFFF';document.getElementById('mt').textContent=p?'خطة جمعية كيشت لتطوير نحال حَفاه':'القرية اليوم: 12 قطعة عائلية';}</script><script>
 (function(){var b=document.getElementById('navtoggle'),n=document.getElementById('navlinks');if(!b||!n)return;
 b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});
 n.addEventListener('click',function(e){if(e.target.closest('a')){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});})();
