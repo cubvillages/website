@@ -78,10 +78,6 @@ legend{font-weight:800;font-size:18px;padding:0;margin:0 0 8px}
 details{border-top:1px solid #EBD3A0;padding:12px 0}details:first-of-type{border-top:0}
 summary{cursor:pointer;font-weight:800;font-size:17px;line-height:1.4}
 details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
-.notes h3{font-size:18px;font-weight:800;margin:18px 0 6px;color:#A63A17}
-.notes ul{margin:0;padding:0 20px 0 0;line-height:1.6;font-size:16px}
-.notes li{margin:0 0 6px}
-.notes a{overflow-wrap:anywhere}
 .lwrap{position:relative}
 #lmap{height:min(68vh,560px);min-height:380px;border-radius:14px;border:1px solid #D6B88C;background:#E9DDBF;z-index:0;direction:ltr}
 .lbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;margin-top:12px}
@@ -267,49 +263,6 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <details><summary>מה יעשו עם המספרים?</summary><p>המועצה תשתמש בהם בפניות לעיתונאים, למשרדי הממשלה ולגורמים משפטיים, כדי להראות את ההיקף האמיתי של האכיפה בכל כפר.</p></details>
 </section>
 
-<section class="card notes" id="notes" aria-labelledby="nt">
-<h2 id="nt">הערות עבודה (יוסרו לפני פרסום)</h2>
-<p class="sub">מה למדתי מפרויקטים דומים, מה החלטתי לבד בזמן שלא היית זמין, ומה פתוח.</p>
-
-<h3>מה למדתי מפרויקטים דומים</h3>
-<ul>
-<li><b>פרטיות לפני הכול.</b> חומרי הלקחים של Ushahidi, הפלטפורמה הידועה למיפוי דיווחי אזרחים, מדגישים שבסביבה רגישה צריך להגן על זהות המדווחים. בדיון על תקני הגנת נתונים בהתאגדויות הומניטריות מומלץ להפריד בין מאגר שמכיל פרטים מזהים לבין המפה הציבורית. <b>יישום כאן:</b> רק סכום לכל כפר, ופרטי קשר ותמונה נשמרים בנפרד ואינם מוצגים.</li>
-<li><b>אימות.</b> Ushahidi ממליצה להבחין בין דיווח "לא מאומת" ל"מאומת". מאגר ההריסות של האו"ם בגדה המערבית נשען על ביקורי שטח, עדויות ותצלומים, ומוצג לפי קהילות ולא לפי בתים. <b>יישום כאן:</b> המפה מציגה את שני המספרים, וסך הדיווחים נפרד ממה שצוות המועצה בדק.</li>
-<li><b>נגישות לכל מדווח.</b> Ushahidi מדווחת שהיה צורך בגרסה "קלה" לחיבורים איטיים. <b>יישום כאן:</b> עמוד קל, טופס אחד, שדות גדולים לטלפון.</li>
-<li><b>אנונימיות.</b> פרויקט המיפוי נגד פינויים (Anti-Eviction Mapping Project) מבקש מהמדווחים להשתמש בדפדפן Tor כשאפשר, ומגדיר מסמך שימוש בנתונים. <b>יישום כאן:</b> אין עוגיות מעקב ואין חשבונות.</li>
-<li><b>מוטיבציה ואמון.</b> לקחי Ushahidi מראים שמיפוי אזרחי מצליח כשיש תגובה למדווחים, ושקשה לשמור על מתנדבים לאורך זמן. <b>יישום כאן:</b> אפשרות להשאיר פרטי קשר כדי שנציג המועצה יחזור, והבטחה מדויקת מה קורה עם הדיווח.</li>
-<li><b>תקדים מקומי.</b> פורום דו־קיום בנגב מפרסם מדי שנה דוחות הריסות ורשימות הריסות מדווחות, ויש לו מפה אינטראקטיבית של הכפרים. מומלץ לתאם מולו כדי להצליב ולא לפעול במקביל.</li>
-</ul>
-
-<h3>מה החלטתי לבד</h3>
-<ul>
-<li>העמוד בעברית בלבד, מקושר מהתפריט (מיפוי), עם <code>noindex</code> עד הפרסום. תרגום לערבית אחרי שתאשר את הקונספט, כי הערבית היא השפה שבה התושבים ידווחו בפועל.</li>
-<li>רשימת הכפרים לקוחה מ"רשימת הכפרים - סיווג מאוחד" בפרויקט, בלי הכוכביות. שלושה כפרים בה עדיין לא אומתו, ויש צורך להוסיף יישובים מוכרים אחרים שיש בהם צווים.</li>
-<li>סוגי הצווים הם ניחוש שלי לפי הצו שצילמת ושיחות קודמות, וצריך לאמת אותם מול עורך דין.</li>
-<li>מדד "נבדקו על ידי צוות המועצה" מבוסס על כך שיש מי שיבדוק. אם אין, כדאי להסיר אותו.</li>
-<li>הטופס לא שולח כלום, ונתוני ההדגמה אקראיים ונשמרים רק בדפדפן שלך.</li>
-</ul>
-
-<h3>מה פתוח, ומה צריך ממך</h3>
-<ul>
-<li><b>אחסון הדיווחים: הוחלט מסמך Google.</b> אתר סטטי לא יכול לכתוב למסמך לבד, וצריך סקריפט קטן (Google Apps Script) שמופעל מחשבון המועצה ומקבל את הדיווחים. עד שיוגדר, הטופס לא שולח. הנקודות המדויקות נשמרות שם, והמפה הציבורית מציגה רק נקודות שמי שדיווח בחר להציג.</li>
-<li><b>ערוץ דיווח בוואטסאפ?</b> בכפרים רבים זה הערוץ הטבעי, וכבר יש לך קבוצות עם כ־1,400 חברים. אפשר להוסיף כפתור "לדווח בוואטסאפ" לצד הטופס.</li>
-<li><b>מי בודק את הדיווחים,</b> ובתוך כמה זמן. בלי בודק, המפה תתמלא בנתונים לא מהימנים וזה יפגע באמינות שהיא נכס המרכזי.</li>
-<li><b>מפה גאוגרפית.</b> נבנתה עם צילום אוויר. מיקומי 55 כפרים נלקחו ממפת פורום דו־קיום ונגביה, ו־6 מקישורי גוגל ששלחת (נחל חווה, אל־פוח׳ארי, כרכור, אל־חומרה, אל־מזרעה, ח׳רבת זבאלה). <b>לבדוק:</b> תנאי השימוש בצילום האוויר של Esri באתר ציבורי.</li>
-<li><b>ייעוץ משפטי</b> על הניסוח ב"קיבלתם צו? כדאי לדעת", ועל חובות המועצה כמי שאוספת מידע אישי (חוק הגנת הפרטיות). סימנתי "לאימות משפטי".</li>
-<li><b>תרגום לערבית</b> בידי דובר ערבית שמכיר את המונחים המשפטיים, ולא תרגום מכונה.</li>
-</ul>
-
-<h3>מקורות</h3>
-<ul>
-<li><a href="https://mediashift.org/2012/09/lessons-ushahidi-learned-from-knight-crowdglobe-reports251" rel="noopener">מדיה־שיפט: מה Ushahidi למדה מדוחות Knight ו־CrowdGlobe</a></li>
-<li><a href="https://www.thenewhumanitarian.org/node/253830" rel="noopener">The New Humanitarian: אימות מידע שנאסף מהקהל</a></li>
-<li><a href="https://irevolutions.org/category/social-media/page/21" rel="noopener">iRevolutions: מיפוי משבר והגנת נתונים</a></li>
-<li><a href="https://antievictionmap.com/data-use-agreement" rel="noopener">Anti-Eviction Mapping Project: הסכם שימוש בנתונים</a></li>
-<li><a href="https://ochaopt.org/data/demolition" rel="noopener">OCHA: נתוני הריסות ועקירה בגדה המערבית</a></li>
-<li><a href="https://www.dukium.org/articles-reports/house-demolitions-and-destruction-of-crops/house-demolitions/" rel="noopener">פורום דו־קיום בנגב: הריסות בתים</a></li>
-</ul>
-</section>
 </main>
 <footer style="background: #FFF4D6; border-top: 1px solid #EBD3A0; font-weight: 400">
 <div class="ftrow" style="max-width: 1160px; margin: 0 auto; padding: 22px 24px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px"><a href="/donate/" style="background: #B8451F; color: #FFFFFF; font-weight: 800; text-decoration: none; padding: 11px 24px; border-radius: 999px; font-size: 15px">תרמו למועצה</a><nav aria-label="רשתות חברתיות" style="display: flex; flex-wrap: wrap; gap: 10px"><a href="https://www.facebook.com/rcuvn" target="_blank" rel="noopener" aria-label="פייסבוק" title="פייסבוק" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #1877F2"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21z"/></svg></a><a href="https://www.instagram.com/negevrcuv" target="_blank" rel="noopener" aria-label="אינסטגרם" title="אינסטגרם" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(45deg,#F58529,#DD2A7B 55%,#8134AF)"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r="1" fill="#fff" stroke="none"/></svg></a><a href="https://www.twitter.com/rcuvnegev" target="_blank" rel="noopener" aria-label="X" title="X" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #000"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#fff" d="M17.8 3.5h3l-6.6 7.5 7.8 9.5h-6.1l-4.8-6-5.4 6h-3l7-8L2 3.5h6.2l4.3 5.5zm-1 15.2h1.7L7.3 5.2H5.5z"/></svg></a><a href="https://www.tiktok.com/@negev.villages" target="_blank" rel="noopener" aria-label="טיקטוק" title="טיקטוק" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #000"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M16.6 3c.4 2.1 1.7 3.5 3.9 3.7v3a7 7 0 0 1-3.8-1.2v6.4A5.9 5.9 0 1 1 10.8 9v3.1a2.9 2.9 0 1 0 2.8 2.9V3z"/></svg></a><a href="https://chat.whatsapp.com/BRg2BQ8WIedFiJMSqSYUYo" target="_blank" rel="noopener" aria-label="הצטרפו לעדכוני המועצה בוואטסאפ" title="הצטרפו לעדכוני המועצה בוואטסאפ" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #25D366"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm0 16.3a7.3 7.3 0 0 1-3.7-1l-.3-.2-2.7.7.7-2.6-.2-.3A7.3 7.3 0 1 1 12 19.3zm4-5.5c-.2-.1-1.3-.7-1.5-.7-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6 6 0 0 1-3-2.6c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.4a.8.8 0 0 0-.6.3 2.5 2.5 0 0 0-.8 1.9c0 1.1.8 2.2.9 2.3.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.3-.6 1.5-1.1.2-.5.2-1 .1-1.1l-.6-.4z"/></svg></a></nav></div>
