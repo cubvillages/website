@@ -183,6 +183,24 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <p class="hint">على الهاتف: إصبع واحد يمرّر الصفحة، وإصبعان تحرّكان الخريطة وتكبّرانها. يمكنكم أيضًا الضغط على "ملء الشاشة". صورة الجو: Esri, Vantor, Earthstar Geographics.</p>
 </section>
 
+<section class="card" id="map" aria-labelledby="mt">
+<h2 id="mt">كم أمرًا وإنذارًا أُبلغ عنها، وفي أي قرية</h2>
+<div class="stats" aria-live="polite">
+<div class="stat"><strong id="sVill">0</strong><span>قرى فيها بلاغات</span></div>
+<div class="stat"><strong id="sTotal">0</strong><span>أوامر وإنذارات تم الإبلاغ عنها</span></div>
+</div>
+<p style="margin:0 0 14px"><button type="button" class="btn ghost" id="morebtn" aria-expanded="false" aria-controls="moreinfo">معلومات إضافية</button></p>
+<div id="moreinfo" hidden>
+<div class="tools">
+<label for="q">بحث عن قرية</label><input id="q" type="search" placeholder="اكتبوا اسم القرية" autocomplete="off">
+<label class="demo"><input id="demo" type="checkbox"> عرض بيانات تجريبية (غير حقيقية)</label>
+</div>
+<div class="demonote" id="demonote" role="status">هذه بيانات تجريبية عشوائية لتوضيح شكل الخريطة. لا يوجد فيها أي بلاغ حقيقي.</div>
+<div class="legend" aria-hidden="true"><span><i style="background:#fff"></i>لا بلاغات</span><span><i style="background:#FFE9B0"></i>1–2</span><span><i style="background:#F5B321"></i>3–5</span><span><i style="background:#B8451F"></i>6 فأكثر</span></div>
+<div id="tiles"></div>
+</div>
+</section>
+
 <section class="card" id="report" aria-labelledby="rt">
 <h2 id="rt">الإبلاغ عن أمر أو إنذار</h2>
 <form class="rep" id="form" novalidate>
@@ -297,23 +315,7 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <details><summary>ماذا ستفعلون بالأرقام؟</summary><p>قدر الإمكان، ستكون الخطوة الأولى التواصل معكم وعرض الإرشاد والمساعدة. اليوم لا نعلم بجزء من الأوامر والإنذارات التي توزَّع. المعلومات الإجمالية المتجمعة هنا لازمة لفهم حجم الظاهرة، وللعمل مع المنتخبين والصحفيين والموظفين والجهات القانونية.</p></details>
 </section>
 
-<section class="card" id="map" aria-labelledby="mt">
-<h2 id="mt">كم أمرًا وإنذارًا أُبلغ عنها، وفي أي قرية</h2>
-<div class="stats" aria-live="polite">
-<div class="stat"><strong id="sVill">0</strong><span>قرى فيها بلاغات</span></div>
-<div class="stat"><strong id="sTotal">0</strong><span>أوامر وإنذارات تم الإبلاغ عنها</span></div>
-</div>
-<p style="margin:0 0 14px"><button type="button" class="btn ghost" id="morebtn" aria-expanded="false" aria-controls="moreinfo">معلومات إضافية</button></p>
-<div id="moreinfo" hidden>
-<div class="tools">
-<label for="q">بحث عن قرية</label><input id="q" type="search" placeholder="اكتبوا اسم القرية" autocomplete="off">
-<label class="demo"><input id="demo" type="checkbox"> عرض بيانات تجريبية (غير حقيقية)</label>
-</div>
-<div class="demonote" id="demonote" role="status">هذه بيانات تجريبية عشوائية لتوضيح شكل الخريطة. لا يوجد فيها أي بلاغ حقيقي.</div>
-<div class="legend" aria-hidden="true"><span><i style="background:#fff"></i>لا بلاغات</span><span><i style="background:#FFE9B0"></i>1–2</span><span><i style="background:#F5B321"></i>3–5</span><span><i style="background:#B8451F"></i>6 فأكثر</span></div>
-<div id="tiles"></div>
-</div>
-</section>
+
 
 </main>
 <footer style="background: #FFF4D6; border-top: 1px solid #EBD3A0; font-weight: 400">

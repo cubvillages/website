@@ -183,6 +183,24 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <p class="hint">בנייד: אצבע אחת גוללת את העמוד, ושתי אצבעות מזיזות ומגדילות את המפה. אפשר גם ללחוץ "מסך מלא". צילום אוויר: Esri, Vantor, Earthstar Geographics.</p>
 </section>
 
+<section class="card" id="map" aria-labelledby="mt">
+<h2 id="mt">כמה צווים והתראות דווחו, ובאיזה כפר</h2>
+<div class="stats" aria-live="polite">
+<div class="stat"><strong id="sVill">0</strong><span>כפרים עם דיווח</span></div>
+<div class="stat"><strong id="sTotal">0</strong><span>צווים והתראות שדווחו</span></div>
+</div>
+<p style="margin:0 0 14px"><button type="button" class="btn ghost" id="morebtn" aria-expanded="false" aria-controls="moreinfo">מידע נוסף</button></p>
+<div id="moreinfo" hidden>
+<div class="tools">
+<label for="q">חיפוש כפר</label><input id="q" type="search" placeholder="הקלידו שם כפר" autocomplete="off">
+<label class="demo"><input id="demo" type="checkbox"> הצגת נתוני הדגמה (לא אמיתיים)</label>
+</div>
+<div class="demonote" id="demonote" role="status">אלה נתוני הדגמה אקראיים כדי להראות איך המפה תיראה. אין בהם אף דיווח אמיתי.</div>
+<div class="legend" aria-hidden="true"><span><i style="background:#fff"></i>אין דיווח</span><span><i style="background:#FFE9B0"></i>1–2</span><span><i style="background:#F5B321"></i>3–5</span><span><i style="background:#B8451F"></i>6 ומעלה</span></div>
+<div id="tiles"></div>
+</div>
+</section>
+
 <section class="card" id="report" aria-labelledby="rt">
 <h2 id="rt">דיווח על צו או התראה</h2>
 <form class="rep" id="form" novalidate>
@@ -297,23 +315,7 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <details><summary>מה תעשו עם המספרים?</summary><p>ככל שנוכל, הצעד הראשון יהיה לפנות אליכם ולהציע הדרכה ועזרה. כיום איננו מודעים לחלק מהצווים וההתראות המחולקים. המידע הכולל המצטבר כאן דרוש כדי להבין את היקף התופעה, לצורך העבודה מול נבחרי ציבור, עיתונאים, פקידים וגורמי משפט.</p></details>
 </section>
 
-<section class="card" id="map" aria-labelledby="mt">
-<h2 id="mt">כמה צווים והתראות דווחו, ובאיזה כפר</h2>
-<div class="stats" aria-live="polite">
-<div class="stat"><strong id="sVill">0</strong><span>כפרים עם דיווח</span></div>
-<div class="stat"><strong id="sTotal">0</strong><span>צווים והתראות שדווחו</span></div>
-</div>
-<p style="margin:0 0 14px"><button type="button" class="btn ghost" id="morebtn" aria-expanded="false" aria-controls="moreinfo">מידע נוסף</button></p>
-<div id="moreinfo" hidden>
-<div class="tools">
-<label for="q">חיפוש כפר</label><input id="q" type="search" placeholder="הקלידו שם כפר" autocomplete="off">
-<label class="demo"><input id="demo" type="checkbox"> הצגת נתוני הדגמה (לא אמיתיים)</label>
-</div>
-<div class="demonote" id="demonote" role="status">אלה נתוני הדגמה אקראיים כדי להראות איך המפה תיראה. אין בהם אף דיווח אמיתי.</div>
-<div class="legend" aria-hidden="true"><span><i style="background:#fff"></i>אין דיווח</span><span><i style="background:#FFE9B0"></i>1–2</span><span><i style="background:#F5B321"></i>3–5</span><span><i style="background:#B8451F"></i>6 ומעלה</span></div>
-<div id="tiles"></div>
-</div>
-</section>
+
 
 </main>
 <footer style="background: #FFF4D6; border-top: 1px solid #EBD3A0; font-weight: 400">
