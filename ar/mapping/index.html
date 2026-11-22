@@ -1,23 +1,14 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>خريطة الأوامر (مسودة) | المجلس من أجل القرى البدوية غير المعترف بها</title>
-<meta name="robots" content="noindex,nofollow">
-<meta name="referrer" content="no-referrer">
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>خريطة الأوامر (مسودة) | المجلس من أجل القرى البدوية غير المعترف بها</title><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">
 <link rel="icon" href="/assets/img/logo-home.png">
 <link rel="alternate" hreflang="he" href="https://negevvillages.org/mapping/">
 <link rel="alternate" hreflang="ar" href="https://negevvillages.org/ar/mapping/">
 <link rel="alternate" hreflang="x-default" href="https://negevvillages.org/mapping/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;600;700;800&amp;family=Noto+Sans+Arabic:wght@400;500;600;700;800&amp;family=Heebo:wght@400;500;600;700;800&amp;display=swap">
 <link rel="stylesheet" href="/assets/site-scale.css">
 <link rel="stylesheet" href="/assets/leaflet/leaflet.css">
 <style>
 html,body{overflow-x:clip;max-width:100%}
-
 body{margin:0;background:#FFF4D6}
 a{color:#2F6B2A}a:hover{color:#1F4D1B}
 .navtoggle{display:none}
@@ -43,7 +34,7 @@ main.om{max-width:1100px;margin:0 auto;padding:24px 24px 8px;font-weight:500;col
 .card{background:#fff;border:1px solid #EBD3A0;border-radius:16px;padding:clamp(18px,2.4vw,28px);margin-bottom:26px}
 .card>h2{font-size:clamp(22px,2.2vw,30px);font-weight:800;line-height:1.2;margin-bottom:6px}
 .card .sub{font-size:16px;color:#6B4A3A;margin:0 0 16px;line-height:1.5}
-.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 16px}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0 0 16px}
 .stat{border:1px solid #EBD3A0;border-top:4px solid #F5B321;border-radius:12px;padding:12px 16px;background:#FFFBEF}
 .stat strong{display:block;font-size:clamp(26px,3vw,38px);font-weight:800;line-height:1.05;color:#B8451F}
 .stat span{font-size:15px;font-weight:600}
@@ -54,6 +45,16 @@ main.om{max-width:1100px;margin:0 auto;padding:24px 24px 8px;font-weight:500;col
 .demo{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;cursor:pointer}
 .demo input{width:22px;height:22px;accent-color:#2F6B2A}
 .demonote{display:none;background:#FFE9B0;border:1px solid #F5B321;border-radius:10px;padding:8px 14px;font-weight:700;font-size:15px;margin:0 0 14px}
+#locsum:empty{display:none}
+.mapcount{margin:0 0 12px;font-size:17px;font-weight:600}.mapcount b{color:#B8451F;font-size:20px;font-weight:800}
+.how{margin-top:4px}.how-t{font-weight:800;font-size:17px;margin:0 0 8px}
+.how ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;counter-reset:h}
+.how li{counter-increment:h;display:flex;gap:10px;align-items:flex-start;background:rgba(255,255,255,.7);border:1px solid #EBD3A0;border-radius:12px;padding:10px 12px;font-size:15px;line-height:1.4;font-weight:600}
+.how li:before{content:counter(h);flex:none;width:26px;height:26px;border-radius:50%;background:#F5B321;color:#3B1D12;font-weight:800;display:inline-flex;align-items:center;justify-content:center;font-size:14px}
+#jumplist{position:absolute;top:100%;inset-inline:0;z-index:600;margin:4px 0 0;padding:4px 0;list-style:none;background:#fff;border:2px solid #D6B88C;border-radius:10px;max-height:260px;overflow:auto;box-shadow:0 8px 16px rgba(0,0,0,.12)}
+#jumplist li{padding:10px 14px;font-size:16px;font-weight:600;cursor:pointer}
+#jumplist li.on,#jumplist li:hover{background:#FFF4D6}
+#jumplist li.none{cursor:default;color:#6B4A3A;font-weight:500}
 .legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;font-weight:600;margin:0 0 14px;align-items:center}
 .legend i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid #D6B88C;vertical-align:-3px;margin-inline-end:5px}
 .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
@@ -68,6 +69,7 @@ fieldset{border:0;padding:0;margin:0;min-width:0}
 legend{font-weight:800;font-size:18px;padding:0;margin:0 0 8px}
 .hint{font-size:14px;color:#6B4A3A;font-weight:500;margin:4px 0 0;line-height:1.45}
 .types{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.types.cm{grid-template-rows:repeat(6,auto);grid-auto-flow:column}
 .types label{display:flex;gap:10px;align-items:flex-start;border:2px solid #E6D0A5;border-radius:10px;padding:10px 12px;font-size:16px;font-weight:600;cursor:pointer;line-height:1.35}
 .types input{width:22px;height:22px;margin:1px 0 0;accent-color:#2F6B2A;flex:none}
 .types label:has(input:checked){border-color:#2F6B2A;background:#EEF6E8}
@@ -97,17 +99,15 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 .lwrap.full{position:fixed;inset:0;z-index:3000;background:#fff;padding:0;display:flex;flex-direction:column}
 .lwrap.full #lmap{height:auto;flex:1;border-radius:0;border:0}
 .lwrap.full .lbar{margin:0;padding:10px 14px;background:#fff;border-top:1px solid #EBD3A0}
-.vl{background:rgba(255,255,255,.88);border:0;box-shadow:none;font:700 12px/1.2 'Heebo',sans-serif;color:#3B1D12;padding:1px 5px;direction:rtl}
+.vl{background:rgba(255,255,255,.88);border:0;box-shadow:none;font:700 12px/1.2 'Noto Sans Arabic','Heebo',sans-serif;color:#3B1D12;padding:1px 5px;direction:rtl}
 .vl:before{display:none}
 #lmap.zlow .vl{display:none}
 .lg2 i{border-radius:50%}
-@media(max-width:760px){.stats,.steps,.types,.row2{grid-template-columns:1fr}.tiles{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}}
-
+@media(max-width:760px){.stats,.steps,.types,.row2,.how ol{grid-template-columns:1fr}.types.cm{grid-template-rows:none;grid-auto-flow:row}.tiles{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}}
 </style>
 <script src="/assets/leaflet/leaflet.js"></script>
 <script src="/assets/a11y.js" defer></script>
-</head>
-<body>
+</head><body>
 <div dir="rtl" style="font-family: 'Noto Sans Arabic', 'Heebo', system-ui, sans-serif; font-weight: 600; color: #3B1D12; background: #FFF4D6; font-size: 18px; line-height: 1.6; width: 100%">
 
 <div style="font-weight: 400; font-size: 16px; line-height: 1.55">
@@ -153,100 +153,114 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <main class="om" id="main">
 
 <section class="om-hero" aria-labelledby="t">
-<div class="kick">خريطة الأوامر · تسجيل مجهول، دقيقة واحدة</div>
-<h1 id="t">وصلكم أمر؟ <span>سجّلوه على الخريطة.</span></h1>
-<p>كل أمر يُسجَّل يتحوّل من قصة عائلة واحدة إلى رقم لا يمكن تجاهله. يجمع المجلس البلاغات، ويفحصها، ويعرض على الصحفيين وصانعي القرار كم أمرًا وصل إلى كل قرية. بلا أسماء وبلا عناوين.</p>
-<div class="hbtns"><a class="btn" href="#locate">اعثروا على بيتكم على الخريطة</a> <a class="btn ghost" href="#report">لتسجيل أمر</a></div>
+<div class="kick">رصد الأوامر والإنذارات</div>
+<h1 id="t">وصلكم أمر أو إنذار؟ <span>خذوا لحظة للإبلاغ</span></h1>
+<p>كل أمر أو إنذار هو قصة عائلة تعيش في عدم يقين وقلق. بعد سنوات صعبة، هذا هو وضع آلاف أو عشرات آلاف العائلات في القرى. لتحسين قدرتنا على النضال والمساعدة، من الضروري أن تكون لدينا الصورة الكاملة. لا تخشوا الإبلاغ: يمكن ذلك بهوية مجهولة تمامًا</p>
+<div class="how" role="group" aria-labelledby="howt"><div class="how-t" id="howt">كيف يعمل ذلك؟</div>
+<ol>
+<li>نحدّد على الخريطة مكان تسليم الأمر أو الإنذار</li>
+<li>نملأ نموذجًا بالتفاصيل ونختار ما يُعرض وما لا يُعرض</li>
+<li>نتوجّه للاستشارة والإرشاد الأوليين عبر زر الواتساب في الأسفل</li>
+</ol></div>
 </section>
 
 <section class="card" id="locate" aria-labelledby="lt">
-<h2 id="lt">اعثروا على حيّكم في صورة الجو</h2>
-<p class="sub">القرى منتشرة على مساحة كبيرة، ولذلك الموقع الدقيق مهم. اختاروا القرية، وكبّروا الخريطة حتى تروا البيوت، ثم اضغطوا على حيّكم.</p>
-<div class="tools"><label for="jump">الانتقال إلى قرية</label><select id="jump"><option value="">اختاروا قرية</option></select></div>
+<h2 id="lt">اعثروا على بيتكم في صورة الجو</h2>
+<p class="sub">اختاروا القرية، وكبّروا الخريطة حتى تروا بيتكم، واضغطوا على الموقع ثم على «المتابعة إلى النموذج»</p>
+<div class="tools"><div style="position:relative;width:100%"><input id="jump" type="search" role="combobox" aria-expanded="false" aria-controls="jumplist" aria-autocomplete="list" aria-label="الانتقال إلى قرية" placeholder="اكتبوا اسم القرية" autocomplete="off" style="width:100%"><ul id="jumplist" role="listbox" hidden></ul></div></div>
+<p class="mapcount" id="mapcount" aria-live="polite"></p>
 <div class="lwrap" id="lwrap">
 <div id="lmap" role="application" aria-label="خريطة بصور جوية للقرى"></div>
-<div class="lbar" id="lbar"><span id="lsel" role="status" aria-live="polite">لم يُحدَّد مكان بعد. كبّروا الخريطة واضغطوا على حيّكم.</span>
+<div class="lbar" id="lbar"><span id="lsel" role="status" aria-live="polite">لم يُحدَّد مكان بعد. كبّروا الخريطة واضغطوا على بيتكم.</span>
 <span class="lbtns"><button type="button" class="btn" id="lgo" hidden>المتابعة إلى النموذج</button><button type="button" class="btn ghost" id="lclear" hidden>إلغاء التحديد</button><button type="button" class="btn ghost" id="lfull">ملء الشاشة</button></span></div>
 </div>
-<div class="legend lg2" aria-hidden="true" style="margin-top:12px"><span><i style="background:#B8451F"></i>غير معترف بها</span><span><i style="background:#2F6B2A"></i>معترف بها</span><span><i style="background:#C58A00"></i>قيد الاعتراف أو التأسيس</span><span><i style="background:#6B6B6B"></i>هُدمت</span></div>
-<p class="hint">على الهاتف: إصبع واحد يمرّر الصفحة، وإصبعان تحرّكان الخريطة وتكبّرانها. يمكنكم أيضًا الضغط على «ملء الشاشة». صورة الجو: Esri, Vantor, Earthstar Geographics.</p>
-</section>
-
-<section class="card" id="map" aria-labelledby="mt">
-<h2 id="mt">كم أمرًا سُجّل، وفي أي قرية</h2>
-<p class="sub">العدّ بحسب القرية. تظهر نقطة على الخريطة فقط إذا اختار المبلّغ ذلك، ويظهر اسمه فقط إذا اختار ذلك أيضًا. الضغط على قرية يعرضها على الخريطة.</p>
-<div class="stats" aria-live="polite">
-<div class="stat"><strong id="sTotal">0</strong><span>أوامر تم الإبلاغ عنها</span></div>
-<div class="stat"><strong id="sVill">0</strong><span>قرى فيها بلاغات</span></div>
-<div class="stat"><strong id="sVer">0</strong><span>منها فحصها طاقم المجلس</span></div>
-</div>
-<div class="tools">
-<label for="q">بحث عن قرية</label><input id="q" type="search" placeholder="اكتبوا اسم القرية" autocomplete="off">
-<label class="demo"><input id="demo" type="checkbox"> عرض بيانات تجريبية (غير حقيقية)</label>
-</div>
-<div class="demonote" id="demonote" role="status">هذه بيانات تجريبية عشوائية لتوضيح شكل الخريطة. لا يوجد فيها أي بلاغ حقيقي.</div>
-<div class="legend" aria-hidden="true"><span><i style="background:#fff"></i>لا بلاغات</span><span><i style="background:#FFE9B0"></i>1–2</span><span><i style="background:#F5B321"></i>3–5</span><span><i style="background:#B8451F"></i>6 فأكثر</span></div>
-<div id="tiles"></div>
+<div class="legend lg2" aria-hidden="true" style="margin-top:12px"><span><i style="background:#B8451F"></i>غير معترف بها</span><span><i style="background:#2F6B2A"></i>معترف بها</span><span><i style="background:#C58A00"></i>قيد الاعتراف أو التأسيس</span><span><i style="background:#6B6B6B"></i>هُدمت</span><span><i style="background:#1F6FB5"></i>الإبلاغ عن أمر أو إنذار</span><span><i style="background:#1F6FB5;border:3px solid #2F6B2A"></i>بلاغ تم فحصه</span></div>
+<p class="hint">على الهاتف: إصبع واحد يمرّر الصفحة، وإصبعان تحرّكان الخريطة وتكبّرانها. يمكنكم أيضًا الضغط على "ملء الشاشة". صورة الجو: Esri, Vantor, Earthstar Geographics.</p>
 </section>
 
 <section class="card" id="report" aria-labelledby="rt">
-<h2 id="rt">تسجيل أمر</h2>
-<p class="sub">بضعة أسئلة قصيرة. الاسم والعنوان غير مطلوبين.</p>
+<h2 id="rt">الإبلاغ عن أمر أو إنذار</h2>
 <form class="rep" id="form" novalidate>
 <fieldset><legend><label for="village">1. في أي قرية؟</label></legend>
 <select id="village" required><option value="">اختاروا القرية</option><optgroup label="غير معترف بها"><option>أم نميلة</option><option>أم رتام</option><option>أم بدون</option><option>الزعرورة</option><option>الزرنوق</option><option>الباط</option><option>الباط الغربي</option><option>الباطل</option><option>البحيرة</option><option>البقيعة</option><option>الجورف</option><option>القطامات</option><option>المطهر</option><option>القرين (العقبي)</option><option>الحمرة</option><option>الفخاري</option><option>المذبح</option><option>المزرعة (الشهبا)</option><option>المكيمن</option><option>المساعدية</option><option>السرة</option><option>الغزة</option><option>الغرة</option><option>الروئيس</option><option>السدير</option><option>السر</option><option>باط الصرايعة</option><option>بير الحمام</option><option>بير المشاش</option><option>ظحية</option><option>وادي المشاش</option><option>خربة الوطن</option><option>خربة زبالة</option><option>راس جرابا</option><option>طويل أبو جرول</option><option>كركور</option><option>وادي أريحا</option><option>نحل حوا</option><option>سهل البقار</option><option>صواوين</option><option>عوجان</option><option>عتير</option><option>تل الملح</option><option>تل عراد الشرقي</option><option>تل عراد الغربي</option></optgroup><optgroup label="معترف بها (مجلسا القسوم ونيفيه مدبار الإقليميان)"><option>أم بطين</option><option>السيد</option><option>دريجات</option><option>كحلة</option><option>سعوة</option><option>مكحول</option><option>ترابين الصانع</option><option>أبو تلول الشهبي</option><option>أبو قرينات (أم متنان)</option><option>بير هداج</option><option>قصر السر</option></optgroup><optgroup label="قيد الاعتراف أو التأسيس"><option>خشم زنة</option><option>عبدة</option><option>رخمة</option><option>وادي النعم</option><option>الفرعة</option></optgroup><optgroup label="هُدمت"><option>العراقيب</option></optgroup><option value="other">أخرى (مكان غير موجود في القائمة)</option></select>
-<p class="hint">اختاروا القرية. إذا حدّدتم مكانًا على الخريطة تُختار أقرب قرية تلقائيًا، ويمكن تغييرها. إذا كنتم تسكنون في مكان غير موجود في القائمة، اختاروا «أخرى».</p>
+<p class="hint">يمكن تغيير اسم القرية المختارة عند الضغط على الخريطة</p>
 <div id="otherbox" hidden style="margin-top:10px"><label for="othername" style="font-weight:700;font-size:15px;display:block;margin-bottom:4px">ما اسم المكان؟ (اختياري)</label><input id="othername" type="text" placeholder="اسم المكان أو الحيّ أو المنطقة" autocomplete="off" maxlength="80"></div></fieldset>
 
-<fieldset><legend>مكان على الخريطة (اختياري)</legend>
-<p id="locsum" class="hint" style="margin:0 0 10px;font-size:15px">لم يُحدَّد مكان. <a href="#locate">ارجعوا إلى الخريطة</a> واضغطوا على حيّكم.</p>
-<label class="consent"><input type="checkbox" id="pub" disabled> عرض النقطة التي حدّدتُها على الخريطة العامة</label>
-<p class="hint">إذا لم تُحدَّد هذه الخانة، يُحتسب البلاغ كرقم إحصائي للقرية أو للمنطقة فقط، ولا تُعرض النقطة للجمهور.</p>
-<div style="margin-top:12px"><label for="nm" style="font-weight:700;font-size:15px;display:block;margin-bottom:4px">الاسم (اختياري)</label><input id="nm" type="text" maxlength="60" autocomplete="off" placeholder="الاسم الأول أو لقب"></div>
-<label class="consent" style="margin-top:14px"><input type="checkbox" id="shownm" disabled> عرض اسمي بجانب النقطة على الخريطة العامة</label>
-<p class="hint">يُعرض الاسم فقط إذا حدّدتم نقطة، واخترتم عرضها، وحدّدتم هذه الخانة أيضًا. وإلا يبقى لدى طاقم المجلس فقط.</p></fieldset>
+<fieldset><legend>الموقع على الخريطة</legend>
+<p id="locsum" class="hint" style="margin:0 0 10px;font-size:15px"></p>
+<label class="consent"><input type="checkbox" id="pub" disabled> عدم عرض النقطة التي حدّدتها على الخريطة العامة</label>
+<div style="margin-top:12px"><label for="nm" style="font-weight:700;font-size:15px;display:block;margin-bottom:4px">الاسم الأول أو اللقب</label><input id="nm" type="text" maxlength="60" autocomplete="off" placeholder="يصل الاسم إلينا فقط ولن يُعرض علنًا، إلا إذا اخترتم غير ذلك"></div>
+<label class="consent" style="margin-top:14px"><input type="checkbox" id="shownm" disabled> أوافق على عرض اسمي كمُبلِّغ بجانب النقطة على الخريطة العامة</label>
+</fieldset>
 <div style="position:absolute;opacity:0;width:0;height:0;overflow:hidden;pointer-events:none" aria-hidden="true"><label>لا تملؤوا هذا الحقل<input id="hp" type="text" tabindex="-1" autocomplete="off"></label></div>
 
-<fieldset><legend>2. ما نوع الأمر؟ يمكن اختيار أكثر من نوع</legend>
-<div class="types">
-<label><input type="checkbox" name="t" value="pinui"> أمر إخلاء أرض (دائرة أراضي إسرائيل)</label>
+<fieldset><legend>2. أي وثيقة أو أمر وصل؟</legend>
+<p class="hint" style="margin:0 0 8px">يمكن اختيار أكثر من خيار، بحسب الوثائق التي وصلت</p>
+<div class="types cm">
 <label><input type="checkbox" name="t" value="admin"> أمر هدم إداري</label>
-<label><input type="checkbox" name="t" value="court"> أمر هدم صادر عن المحكمة</label>
-<label><input type="checkbox" name="t" value="stop"> أمر وقف عمل أو منع استخدام</label>
-<label><input type="checkbox" name="t" value="fine"> غرامة أو رسوم</label>
-<label><input type="checkbox" name="t" value="warn"> إشعار أو تحذير خطي</label>
+<label><input type="checkbox" name="t" value="c212"> أمر هدم قضائي بدون إدانة أو بدون إجراء جنائي — وفق المادة 212 أو المادة 239 من قانون التخطيط والبناء، بما في ذلك أمر صدر بحضور طرف واحد</label>
+<label><input type="checkbox" name="t" value="cother"> أمر هدم قضائي آخر — بما في ذلك أمر هدم صدر ضمن حكم</label>
+<label><input type="checkbox" name="t" value="pinui"> أمر إزالة يد وإخلاء أراضٍ عامة — وفق قانون الأراضي العامة (إخلاء أرض)، بما في ذلك أمر صادر عن دائرة أراضي إسرائيل</label>
+<label><input type="checkbox" name="t" value="judg"> حكم أو أمر قضائي بإخلاء أرض أو إزالة يد</label>
+<label><input type="checkbox" name="t" value="demand"> مطالبة أو إنذار بإخلاء أرض وإزالة يد — بما في ذلك من دائرة أراضي إسرائيل أو الدورية الخضراء</label>
+<label><input type="checkbox" name="t" value="stop"> أمر بوقف العمل أو وقف الاستخدام أو منع الاستخدام — إداري أو قضائي</label>
+<label><input type="checkbox" name="t" value="warn"> إنذار أو تحذير خطي بشأن البناء أو استخدام الأرض — بما في ذلك إنذار ثانٍ أو إنذار قبل فرض غرامة</label>
+<label><input type="checkbox" name="t" value="fine"> إشعار بفرض غرامة</label>
+<label><input type="checkbox" name="t" value="summ"> استدعاء للتحقيق بشأن البناء أو الاستخدام أو الحيازة في الأرض</label>
+<label><input type="checkbox" name="t" value="verbal"> إنذار أو إبلاغ شفهي</label>
 <label><input type="checkbox" name="t" value="other"> غير ذلك، لست متأكدًا</label>
-</div></fieldset>
+</div>
+<div id="exbox" hidden style="margin-top:14px"><div id="exq" style="font-weight:800;font-size:16px;margin-bottom:6px">هل صدر الأمر القضائي بحضور طرف واحد؟</div>
+<div class="types" role="radiogroup" aria-labelledby="exq" style="grid-template-columns:repeat(3,minmax(0,1fr))"><label><input type="radio" name="ex" value="نعم"> نعم</label><label><input type="radio" name="ex" value="لا"> لا</label><label><input type="radio" name="ex" value="غير معروف"> غير معروف</label></div>
+<p class="hint">إذا كنتم لا تعرفون، اختاروا «غير معروف»</p></div></fieldset>
+
+<fieldset><legend>3. التواريخ</legend>
+<div class="row2"><div><label for="dt" style="font-weight:700;font-size:15px;display:block;margin-bottom:4px">تاريخ الوثيقة</label><input id="dt" type="date"></div><div><label for="dr" style="font-weight:700;font-size:15px;display:block;margin-bottom:4px">متى وصل أو لُصق</label><input id="dr" type="date"></div></div>
+<p class="hint">بقدر ما هو معروف. يكفي تاريخ تقريبي</p></fieldset>
+
+<fieldset><legend><label for="ph">4. يرجى إرفاق صورة للأمر أو الإنذار</label></legend>
+<input id="ph" type="file" accept="image/*">
+<label class="consent" style="margin-top:12px"><input type="checkbox" id="hideph"> عدم عرض الأمر أو الإنذار على الخريطة العامة</label></fieldset>
 
 <div class="row2">
-<fieldset><legend><label for="cnt">3. كم أمرًا وصل؟</label></legend>
-<div class="stepper"><button type="button" id="minus" aria-label="أقل">−</button><input id="cnt" type="number" min="1" max="50" value="1" inputmode="numeric"><button type="button" id="plus" aria-label="أكثر">+</button></div>
-<p class="hint">أمر واحد لكل بيت أو مبنى أو قسيمة.</p></fieldset>
-<fieldset><legend><label for="dt">4. متى وصل؟</label></legend>
-<input id="dt" type="date"><p class="hint">يكفي التاريخ التقريبي.</p></fieldset>
+<fieldset><legend><label for="cnt">5. كم أمرًا أو وثيقة وصلت؟</label></legend>
+<div class="stepper"><button type="button" id="minus" aria-label="أقل">−</button><input id="cnt" type="number" min="1" max="50" value="1" inputmode="numeric"><button type="button" id="plus" aria-label="أكثر">+</button></div></fieldset>
+<fieldset><legend><label for="bld">6. إلى كم مبنى يشير الأمر أو الإنذار؟</label></legend>
+<div class="stepper"><button type="button" id="bminus" aria-label="أقل">−</button><input id="bld" type="number" min="1" max="50" value="1" inputmode="numeric"><button type="button" id="bplus" aria-label="أكثر">+</button></div></fieldset>
 </div>
 
-<fieldset><legend>5. يمكنكم إرفاق صورة للأمر (اختياري)</legend>
-<input id="ph" type="file" accept="image/*">
-<p class="hint">لن تُنشر الصورة ولن تظهر على الخريطة. تُحفظ في مجلد خاص لا يراه إلا طاقم المجلس، وتُستخدم للفحص فقط.</p></fieldset>
+<fieldset><legend>7. نوع المبنى الذي يشير إليه الأمر أو الإنذار</legend>
+<p class="hint" style="margin:0 0 8px">يمكن اختيار أكثر من واحد</p>
+<div class="types">
+<label><input type="checkbox" name="b" value="house"> بيت سكن</label>
+<label><input type="checkbox" name="b" value="shig"> شيج</label>
+<label><input type="checkbox" name="b" value="pen"> حظيرة</label>
+<label><input type="checkbox" name="b" value="kitchen"> مطبخ</label>
+<label><input type="checkbox" name="b" value="coop"> قنّ دجاج</label>
+<label><input type="checkbox" name="b" value="wc"> مراحيض خارجية</label>
+<label><input type="checkbox" name="b" value="fence"> سياج</label>
+<label><input type="checkbox" name="b" value="shed"> سقيفة</label>
+<label><input type="checkbox" name="b" value="orchard"> أشجار (بستان)</label>
+<label><input type="checkbox" name="b" value="concrete"> أرضية باطون</label>
+<label><input type="checkbox" name="b" value="berm"> ساتر ترابي</label>
+<label><input type="checkbox" name="b" value="bother"> أخرى</label>
+</div></fieldset>
 
-<fieldset><legend><label for="freetext">هل هناك شيء آخر مهم تريدون إخبارنا به؟ (اختياري)</label></legend>
-<textarea id="freetext" rows="4" maxlength="1500" placeholder="مثلًا: ما المكتوب في الأمر، ومن أصدره، وما الموعد المحدد. بدون أسماء وبدون عنوان دقيق."></textarea>
-<p class="hint">النص لا يُنشر. فقط طاقم المجلس يقرأه.</p></fieldset>
+<fieldset><legend><label for="freetext">تفاصيل إضافية</label><span class="hint" style="display:block;margin-top:2px">تصل المعلومات إلينا فقط ولن تظهر في الصفحة العامة</span></legend>
+<textarea id="freetext" rows="4" maxlength="1500" placeholder="مثلًا: ما المكتوب في الأمر، ومن أصدره، وما الموعد المحدد."></textarea></fieldset>
 
-<fieldset><legend><label for="ct">هل تريدون أن نتواصل معكم؟ (اختياري)</label></legend>
+<fieldset><legend><label for="ct">رقم الهاتف</label></legend>
 <input id="ct" type="text" placeholder="رقم هاتف أو واتساب" autocomplete="off" inputmode="tel">
-<p class="hint">تُحفظ بيانات الاتصال بمعزل عن الخريطة ولا تظهر فيها بأي شكل.</p></fieldset>
+<p class="hint">تُحفظ بيانات الاتصال بمعزل عن الخريطة ولا تظهر فيها بأي شكل</p></fieldset>
 
-<div class="privbox">قبل الإرسال: <b>لا تكتبوا رقم هوية أو عنوانًا دقيقًا.</b> إذا اخترتم عرض نقطة على الخريطة العامة، فسيرى الجميع مكانها، بما في ذلك السلطات، وإذا اخترتم عرض الاسم فسيرونه أيضًا. إذا كان لديكم شك، اتركوا الخانات غير محدّدة.</div>
-<label class="consent"><input type="checkbox" id="ok"> أفهم أن البلاغ سيُضاف كرقم تراكمي للقرية، وأن النقطة على الخريطة لن تُعرض للجمهور إلا إذا حدّدتُ ذلك صراحةً.</label>
+<label class="consent"><input type="checkbox" id="ok"> أفهم أن البلاغ سيُضاف كرقم تراكمي للقرية، وأن النقطة التي حدّدتها ستُعرض على الخريطة العامة ما لم أختر عدم عرضها.</label>
 <div class="err" id="err" role="alert"></div>
 <div><button class="btn" type="submit">إرسال البلاغ</button></div>
 </form>
 <div class="thanks" id="thanks" role="status" tabindex="-1">
 <h3>شكرًا. استلمنا البلاغ.</h3>
 <p id="tsum" style="margin:0 0 10px;font-size:17px;line-height:1.55"></p>
-<p class="hint" style="margin:0 0 14px">أُرسل البلاغ إلى طاقم المجلس. البلاغ الذي لم يُفحص بعد يُعلَّم بذلك على الخريطة.</p>
+<p class="hint" style="margin:0 0 14px">أُرسل البلاغ إلى طاقم المجلس. البلاغ الذي لم يُفحص بعد يُعلَّم بذلك على الخريطة</p>
 <button type="button" class="btn ghost" id="again">بلاغ آخر</button>
 </div>
 </section>
@@ -254,32 +268,50 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <section class="card" aria-labelledby="ht">
 <h2 id="ht">ماذا يحدث بعد البلاغ</h2>
 <ol class="steps">
-<li><strong>يصل البلاغ إلى الطاقم</strong>طاقم المجلس فقط يرى بيانات الاتصال والنص الحر والصورة.</li>
-<li><strong>نفحصه</strong>البلاغ الذي فُحص يُعلَّم بشكل منفصل، حتى لا يمكن إدخال بيانات غير صحيحة إلى الخريطة.</li>
-<li><strong>يدخل في رقم القرية</strong>يُعرض المجموع لكل قرية. تُعرض النقطة والاسم فقط لمن اختار ذلك.</li>
+<li><strong>يصل البلاغ إلينا</strong>نحن فقط نرى التفاصيل التي اخترتم عدم عرضها على الخريطة العامة</li>
+<li><strong>نفحصه</strong>للحفاظ على مصداقية الخريطة</li>
+<li><strong>يُضاف البلاغ إلى القرية</strong>للحصول على صورة كاملة عن عدد الأوامر والإنذارات في كل قرية</li>
 </ol>
 </section>
 
 <section class="card" aria-labelledby="st">
-<h2 id="st">وصلكم أمر؟ من المفيد أن تعرفوا</h2>
+<h2 id="st">الزاوية القانونية</h2>
 <ul style="margin:0;padding:0 22px 0 0;font-size:17px;line-height:1.65;font-weight:600">
-<li><b>لا تنتظروا.</b> في أوامر إخلاء الأراضي العامة مواعيد قصيرة للاعتراض وللتوجه إلى المحكمة، وتبدأ من يوم تسليم الأمر أو لصقه. <span class="chip">بانتظار مراجعة قانونية</span></li>
+<li><b>لا تنتظروا.</b> في أوامر إخلاء الأراضي العامة مواعيد قصيرة للاعتراض وللتوجه إلى المحكمة، وتبدأ من يوم تسليم الأمر أو لصقه.</li>
 <li>صوّروا الأمر والمكان الذي وُجد فيه، مع التاريخ.</li>
-<li>لا تبنوا ولا تحرثوا ولا تغيّروا شيئًا في المكان قبل أن تتحدثوا مع محامٍ. قد يؤدي ذلك إلى تسريع التنفيذ. <span class="chip">بانتظار مراجعة قانونية</span></li>
-<li>تسجيل الأمر على الخريطة ليس بديلًا عن الاستشارة القانونية.</li>
+<li>لا تبنوا ولا تحرثوا ولا تزرعوا في المكان قبل أن تتحدثوا مع محامٍ. قد يؤدي ذلك إلى تسريع التنفيذ.</li>
+<li>التبليغ على الخريطة ليس بديلًا عن الاستشارة القانونية.</li>
 </ul>
+<p style="margin:20px 0 0"><a href="https://wa.me/972524152031?text=%D9%84%D9%84%D8%A7%D8%B3%D8%AA%D9%8A%D8%B6%D8%A7%D8%AD%20%D9%88%D8%A7%D9%84%D8%A5%D8%B1%D8%B4%D8%A7%D8%AF%20%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%D9%8A%D9%8A%D9%86%20%D8%A7%D9%84%D8%A3%D9%88%D9%84%D9%8A%D9%8A%D9%86" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: #25D366"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm0 16.3a7.3 7.3 0 0 1-3.7-1l-.3-.2-2.7.7.7-2.6-.2-.3A7.3 7.3 0 1 1 12 19.3zm4-5.5c-.2-.1-1.3-.7-1.5-.7-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6 6 0 0 1-3-2.6c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.4a.8.8 0 0 0-.6.3 2.5 2.5 0 0 0-.8 1.9c0 1.1.8 2.2.9 2.3.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.3-.6 1.5-1.1.2-.5.2-1 .1-1.1l-.6-.4z"/></svg></span>للاستيضاح والإرشاد القانونيين الأوليين</a></p>
 </section>
 
 <section class="card" aria-labelledby="ft">
 <h2 id="ft" style="margin-bottom:8px">أسئلة وأجوبة</h2>
-<details><summary>من يرى ما أبلّغ عنه؟</summary><p>طاقم المجلس يرى كل شيء. الجمهور يرى عدد الأوامر في كل قرية، ونقطة على الخريطة فقط إذا اختار المبلّغ عرضها. يُعرض الاسم فقط إذا اختير ذلك صراحةً. بيانات الاتصال والنص الحر وصورة الأمر لا تُعرض أبدًا.</p></details>
-<details><summary>هل يمكن التبليغ دون ترك رقم هاتف؟</summary><p>نعم. بيانات الاتصال اختيارية، وهي ضرورية فقط إذا أردتم أن نتواصل معكم.</p></details>
-<details><summary>تلقيت إبلاغًا شفهيًا وليس أمرًا مكتوبًا. ماذا أختار؟</summary><p>اختاروا "إشعار أو تحذير"، أو "غير ذلك". سيراجع الطاقم الأمر.</p></details>
-<details><summary>هل أبلّغ عن أمر وصل إلى الجار أو أحد الأقارب؟</summary><p>نعم، إذا كنتم تعرفون التفاصيل. لا تذكروا اسمه ولا تصوّروا الأمر دون موافقته.</p></details>
-<details><summary>ماذا سيُفعل بالأرقام؟</summary><p>سيستخدمها المجلس في مخاطبة الصحفيين والوزارات والجهات القانونية، لإظهار الحجم الحقيقي للتنفيذ في كل قرية.</p></details>
+<details><summary>من يرى ما أبلّغ عنه؟</summary><p>نحن فقط نتلقى رقم الهاتف والمعلومات الإضافية في خانة الملاحظات وكل معلومة حدّدتم أنكم لا تريدونها علنية.</p></details>
+<details><summary>تلقيت إبلاغًا شفهيًا وليس أمرًا مكتوبًا. ماذا أختار؟</summary><p>اختاروا الخيار «إنذار أو إبلاغ شفهي» وأضيفوا التفاصيل في خانة النص الحر.</p></details>
+<details><summary>هل أبلّغ عن أمر وصل إلى الجار أو أحد الأقارب؟</summary><p>نعم، إذا كنتم تعرفون التفاصيل، وفقط إذا وافق.</p></details>
+<details><summary>ماذا ستفعلون بالأرقام؟</summary><p>قدر الإمكان، ستكون الخطوة الأولى التواصل معكم وعرض الإرشاد والمساعدة. اليوم لا نعلم بجزء من الأوامر والإنذارات التي توزَّع. المعلومات الإجمالية المتجمعة هنا لازمة لفهم حجم الظاهرة، وللعمل مع المنتخبين والصحفيين والموظفين والجهات القانونية.</p></details>
 </section>
-</main>
 
+<section class="card" id="map" aria-labelledby="mt">
+<h2 id="mt">كم أمرًا وإنذارًا أُبلغ عنها، وفي أي قرية</h2>
+<div class="stats" aria-live="polite">
+<div class="stat"><strong id="sVill">0</strong><span>قرى فيها بلاغات</span></div>
+<div class="stat"><strong id="sTotal">0</strong><span>أوامر وإنذارات تم الإبلاغ عنها</span></div>
+</div>
+<p style="margin:0 0 14px"><button type="button" class="btn ghost" id="morebtn" aria-expanded="false" aria-controls="moreinfo">معلومات إضافية</button></p>
+<div id="moreinfo" hidden>
+<div class="tools">
+<label for="q">بحث عن قرية</label><input id="q" type="search" placeholder="اكتبوا اسم القرية" autocomplete="off">
+<label class="demo"><input id="demo" type="checkbox"> عرض بيانات تجريبية (غير حقيقية)</label>
+</div>
+<div class="demonote" id="demonote" role="status">هذه بيانات تجريبية عشوائية لتوضيح شكل الخريطة. لا يوجد فيها أي بلاغ حقيقي.</div>
+<div class="legend" aria-hidden="true"><span><i style="background:#fff"></i>لا بلاغات</span><span><i style="background:#FFE9B0"></i>1–2</span><span><i style="background:#F5B321"></i>3–5</span><span><i style="background:#B8451F"></i>6 فأكثر</span></div>
+<div id="tiles"></div>
+</div>
+</section>
+
+</main>
 <footer style="background: #FFF4D6; border-top: 1px solid #EBD3A0; font-weight: 400">
 <div class="ftrow" style="max-width: 1160px; margin: 0 auto; padding: 22px 24px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px"><a href="/ar/donate/" style="background: #B8451F; color: #FFFFFF; font-weight: 800; text-decoration: none; padding: 11px 24px; border-radius: 999px; font-size: 15px">تبرعوا</a><nav aria-label="شبكات التواصل" style="display: flex; flex-wrap: wrap; gap: 10px"><a href="https://www.facebook.com/rcuvn" target="_blank" rel="noopener" aria-label="فيسبوك" title="فيسبوك" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #1877F2"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21z"/></svg></a><a href="https://www.instagram.com/negevrcuv" target="_blank" rel="noopener" aria-label="إنستغرام" title="إنستغرام" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(45deg,#F58529,#DD2A7B 55%,#8134AF)"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r="1" fill="#fff" stroke="none"/></svg></a><a href="https://www.twitter.com/rcuvnegev" target="_blank" rel="noopener" aria-label="X" title="X" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #000"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#fff" d="M17.8 3.5h3l-6.6 7.5 7.8 9.5h-6.1l-4.8-6-5.4 6h-3l7-8L2 3.5h6.2l4.3 5.5zm-1 15.2h1.7L7.3 5.2H5.5z"/></svg></a><a href="https://www.tiktok.com/@negev.villages" target="_blank" rel="noopener" aria-label="تيك توك" title="تيك توك" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #000"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M16.6 3c.4 2.1 1.7 3.5 3.9 3.7v3a7 7 0 0 1-3.8-1.2v6.4A5.9 5.9 0 1 1 10.8 9v3.1a2.9 2.9 0 1 0 2.8 2.9V3z"/></svg></a><a href="https://chat.whatsapp.com/BRg2BQ8WIedFiJMSqSYUYo" target="_blank" rel="noopener" aria-label="انضموا إلى تحديثات المجلس عبر واتساب" title="انضموا إلى تحديثات المجلس عبر واتساب" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #25D366"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm0 16.3a7.3 7.3 0 0 1-3.7-1l-.3-.2-2.7.7.7-2.6-.2-.3A7.3 7.3 0 1 1 12 19.3zm4-5.5c-.2-.1-1.3-.7-1.5-.7-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6 6 0 0 1-3-2.6c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.4a.8.8 0 0 0-.6.3 2.5 2.5 0 0 0-.8 1.9c0 1.1.8 2.2.9 2.3.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.3-.6 1.5-1.1.2-.5.2-1 .1-1.1l-.6-.4z"/></svg></a></nav></div>
 <div style="max-width: 1160px; margin: 0 auto; padding: 8px 24px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0 26px; font-size: 14px"><a href="/ar/privacy/" style="color: #3B1D12; font-weight: 700; padding: 10px 0">سياسة الخصوصية</a><a href="/ar/accessibility/" style="color: #3B1D12; font-weight: 700; padding: 10px 0">بيان إمكانية الوصول</a></div>
@@ -289,9 +321,8 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <script>
 (function(){
 var V={"غير معترف بها": ["أم نميلة", "أم رتام", "أم بدون", "الزعرورة", "الزرنوق", "الباط", "الباط الغربي", "الباطل", "البحيرة", "البقيعة", "الجورف", "القطامات", "المطهر", "القرين (العقبي)", "الحمرة", "الفخاري", "المذبح", "المزرعة (الشهبا)", "المكيمن", "المساعدية", "السرة", "الغزة", "الغرة", "الروئيس", "السدير", "السر", "باط الصرايعة", "بير الحمام", "بير المشاش", "ظحية", "وادي المشاش", "خربة الوطن", "خربة زبالة", "راس جرابا", "طويل أبو جرول", "كركور", "وادي أريحا", "نحل حوا", "سهل البقار", "صواوين", "عوجان", "عتير", "تل الملح", "تل عراد الشرقي", "تل عراد الغربي"], "معترف بها (مجلسا القسوم ونيفيه مدبار الإقليميان)": ["أم بطين", "السيد", "دريجات", "كحلة", "سعوة", "مكحول", "ترابين الصانع", "أبو تلول الشهبي", "أبو قرينات (أم متنان)", "بير هداج", "قصر السر"], "قيد الاعتراف أو التأسيس": ["خشم زنة", "عبدة", "رخمة", "وادي النعم", "الفرعة"], "هُدمت": ["العراقيب"]};
+var A2H={"أم نميلة": "אם נמילה", "أم رتام": "אום רתאם", "أم بدون": "אום אלבדון", "الزعرورة": "אז־זערורה", "الزرنوق": "אז־זרנוג", "الباط": "אל־באט", "الباط الغربي": "אל־באט אל־ע׳רבי", "الباطل": "אל־באטל", "البحيرة": "אל־בחירה", "البقيعة": "אל־בקיעה", "الجورف": "אל־ג׳ורף", "القطامات": "גטמאת", "المطهر": "אל־מטהר", "القرين (العقبي)": "אל־גרין (אל־עוקבי)", "الحمرة": "אל־חומרה", "الفخاري": "אל־פוח׳ארי", "المذبح": "אל־מד׳בח", "المزرعة (الشهبا)": "אל־מזרעה (אל־שהבא)", "المكيمن": "אל־מכימן", "المساعدية": "אל־מסאעדיה", "السرة": "אל־סרה", "الغزة": "אל־ע׳זה", "الغرة": "אלע׳רה", "الروئيس": "ארואיס", "السدير": "אס־סדיר", "السر": "אל־סר", "باط الصرايعة": "באט אל־סראיעה", "بير الحمام": "ביר אל־חמאם", "بير المشاش": "ביר אל־משאש", "ظحية": "דחייה", "وادي المشاش": "ואדי אל־משאש", "خربة الوطن": "ח׳רבת אל־וטן", "خربة زبالة": "ח׳רבת זבאלה", "راس جرابا": "ראס ג׳ראבא", "طويل أبو جرول": "טויל אבו ג׳רול", "كركور": "כרכור", "وادي أريحا": "נחל אריכא", "نحل حوا": "נחל חווה", "سهل البقار": "סהל אלבגאר", "صواوين": "סוואווין", "عوجان": "עווג׳אן", "عتير": "עתיר", "تل الملح": "תל אל־מלח", "تل عراد الشرقي": "תל ערד מזרח", "تل عراد الغربي": "תל ערד מערב", "أم بطين": "אום בטין", "السيد": "א־סייד", "دريجات": "דריג׳את", "كحلة": "כוחלה", "سعوة": "מולדה", "مكحول": "מכחול", "ترابين الصانع": "תראבין א־צאנע", "أبو تلول الشهبي": "אבו תלול", "أبو قرينات (أم متنان)": "אבו קרינאת (אם מתנאן)", "بير هداج": "ביר הדאג׳", "قصر السر": "קסר א־סר", "خشم زنة": "ח׳שם זנה", "عبدة": "עבדה", "رخمة": "רח׳מה", "وادي النعم": "ואדי אן־נעם", "الفرعة": "אל־פורעה", "العراقيب": "אל־עראקיב"};var H2A={"אם נמילה": "أم نميلة", "אום רתאם": "أم رتام", "אום אלבדון": "أم بدون", "אז־זערורה": "الزعرورة", "אז־זרנוג": "الزرنوق", "אל־באט": "الباط", "אל־באט אל־ע׳רבי": "الباط الغربي", "אל־באטל": "الباطل", "אל־בחירה": "البحيرة", "אל־בקיעה": "البقيعة", "אל־ג׳ורף": "الجورف", "גטמאת": "القطامات", "אל־מטהר": "المطهر", "אל־גרין (אל־עוקבי)": "القرين (العقبي)", "אל־חומרה": "الحمرة", "אל־פוח׳ארי": "الفخاري", "אל־מד׳בח": "المذبح", "אל־מזרעה (אל־שהבא)": "المزرعة (الشهبا)", "אל־מכימן": "المكيمن", "אל־מסאעדיה": "المساعدية", "אל־סרה": "السرة", "אל־ע׳זה": "الغزة", "אלע׳רה": "الغرة", "ארואיס": "الروئيس", "אס־סדיר": "السدير", "אל־סר": "السر", "באט אל־סראיעה": "باط الصرايعة", "ביר אל־חמאם": "بير الحمام", "ביר אל־משאש": "بير المشاش", "דחייה": "ظحية", "ואדי אל־משאש": "وادي المشاش", "ח׳רבת אל־וטן": "خربة الوطن", "ח׳רבת זבאלה": "خربة زبالة", "ראס ג׳ראבא": "راس جرابا", "טויל אבו ג׳רול": "طويل أبو جرول", "כרכור": "كركور", "נחל אריכא": "وادي أريحا", "נחל חווה": "نحل حوا", "סהל אלבגאר": "سهل البقار", "סוואווין": "صواوين", "עווג׳אן": "عوجان", "עתיר": "عتير", "תל אל־מלח": "تل الملح", "תל ערד מזרח": "تل عراد الشرقي", "תל ערד מערב": "تل عراد الغربي", "אום בטין": "أم بطين", "א־סייד": "السيد", "דריג׳את": "دريجات", "כוחלה": "كحلة", "מולדה": "سعوة", "מכחול": "مكحول", "תראבין א־צאנע": "ترابين الصانع", "אבו תלול": "أبو تلول الشهبي", "אבו קרינאת (אם מתנאן)": "أبو قرينات (أم متنان)", "ביר הדאג׳": "بير هداج", "קסר א־סר": "قصر السر", "ח׳שם זנה": "خشم زنة", "עבדה": "عبدة", "רח׳מה": "رخمة", "ואדי אן־נעם": "وادي النعم", "אל־פורעה": "الفرعة", "אל־עראקיב": "العراقيب"};
 var ENDPOINT='https://script.google.com/macros/s/AKfycby5bYVX15Al-2gZxsIhQVjT10XLZaXqHheqvFSFHlPA7VGkDEqgltpAgjFQCYBQwb9S/exec';
-var A2H={"أم نميلة": "אם נמילה", "أم رتام": "אום רתאם", "أم بدون": "אום אלבדון", "الزعرورة": "אז־זערורה", "الزرنوق": "אז־זרנוג", "الباط": "אל־באט", "الباط الغربي": "אל־באט אל־ע׳רבי", "الباطل": "אל־באטל", "البحيرة": "אל־בחירה", "البقيعة": "אל־בקיעה", "الجورف": "אל־ג׳ורף", "القطامات": "גטמאת", "المطهر": "אל־מטהר", "القرين (العقبي)": "אל־גרין (אל־עוקבי)", "الحمرة": "אל־חומרה", "الفخاري": "אל־פוח׳ארי", "المذبح": "אל־מד׳בח", "المزرعة (الشهبا)": "אל־מזרעה (אל־שהבא)", "المكيمن": "אל־מכימן", "المساعدية": "אל־מסאעדיה", "السرة": "אל־סרה", "الغزة": "אל־ע׳זה", "الغرة": "אלע׳רה", "الروئيس": "ארואיס", "السدير": "אס־סדיר", "السر": "אל־סר", "باط الصرايعة": "באט אל־סראיעה", "بير الحمام": "ביר אל־חמאם", "بير المشاش": "ביר אל־משאש", "ظحية": "דחייה", "وادي المشاش": "ואדי אל־משאש", "خربة الوطن": "ח׳רבת אל־וטן", "خربة زبالة": "ח׳רבת זבאלה", "راس جرابا": "ראס ג׳ראבא", "طويل أبو جرول": "טויל אבו ג׳רול", "كركور": "כרכור", "وادي أريحا": "נחל אריכא", "نحل حوا": "נחל חווה", "سهل البقار": "סהל אלבגאר", "صواوين": "סוואווין", "عوجان": "עווג׳אן", "عتير": "עתיר", "تل الملح": "תל אל־מלח", "تل عراد الشرقي": "תל ערד מזרח", "تل عراد الغربي": "תל ערד מערב", "أم بطين": "אום בטין", "السيد": "א־סייד", "دريجات": "דריג׳את", "كحلة": "כוחלה", "سعوة": "מולדה", "مكحول": "מכחול", "ترابين الصانع": "תראבין א־צאנע", "أبو تلول الشهبي": "אבו תלול", "أبو قرينات (أم متنان)": "אבו קרינאת (אם מתנאן)", "بير هداج": "ביר הדאג׳", "قصر السر": "קסר א־סר", "خشم زنة": "ח׳שם זנה", "عبدة": "עבדה", "رخمة": "רח׳מה", "وادي النعم": "ואדי אן־נעם", "الفرعة": "אל־פורעה", "العراقيب": "אל־עראקיב"},H2A={};Object.keys(A2H).forEach(function(a){H2A[A2H[a]]=a;});
-var TNH={pinui:'פינוי קרקע',admin:'הריסה מנהלי',court:'הריסה של בית משפט',stop:'הפסקת עבודה או איסור שימוש',fine:'קנס או היטל',warn:'הודעה או אזהרה',other:'אחר'};
 var COUNTS={},VER={},DEMO=false,real={},realPts=[],drawReal=function(){};
 var names=[];Object.keys(V).forEach(function(g){V[g].forEach(function(n){names.push([g,n]);});});
 function seed(){var s=7;function r(){s=(s*9301+49297)%233280;return s/233280;}
@@ -308,15 +339,16 @@ function render(){
   V[g].forEach(function(nm){
    if(q&&nm.indexOf(q)<0)return;
    var n=(d.c[nm]||0),vv=(d.v[nm]||0);
-   t+='<button type="button" class="tile l'+lvl(n)+'" data-v="'+nm+'" aria-label="'+nm+': '+n+' (عدد الأوامر)"><span>'+nm+'</span><span><b>'+n+'</b>'+(n>0?' <small>('+vv+' تم فحصها)</small>':'')+'</span></button>';
+   t+='<button type="button" class="tile l'+lvl(n)+'" data-v="'+nm+'" aria-label="'+nm+': '+n+' أوامر"><span>'+nm+'</span><span><b>'+n+'</b>'+(n>0?' <small>('+vv+' فُحصت)</small>':'')+'</span></button>';
   });
   if(t)h+='<div class="group">'+g+'</div><div class="tiles">'+t+'</div>';
  });
- if(!h)h='<p class="hint">لم يتم العثور على قرية بهذا الاسم.</p>';
+ if(!h)h='<p class="hint">لم يُعثر على قرية بهذا الاسم.</p>';
  document.getElementById('tiles').innerHTML=h;
- document.getElementById('sTotal').textContent=tot;document.getElementById('sVill').textContent=vil;document.getElementById('sVer').textContent=ver;paintMarkers(d);
+ var mc=document.getElementById('mapcount');if(mc)mc.innerHTML='حتى الآن أُبلغ عن <b>'+tot+'</b> أوامر وإنذارات في <b>'+vil+'</b> '+(vil===1?'قرية':'قرى')+'.';document.getElementById('sTotal').textContent=tot;document.getElementById('sVill').textContent=vil;paintMarkers(d);
 }
 document.getElementById('q').addEventListener('input',render);
+document.getElementById('morebtn').addEventListener('click',function(){var m=document.getElementById('moreinfo'),o=m.hidden;m.hidden=!o;this.setAttribute('aria-expanded',o?'true':'false');});
 document.getElementById('demo').addEventListener('change',function(e){DEMO=e.target.checked;document.getElementById('demonote').style.display=DEMO?'block':'none';render();});
 document.getElementById('tiles').addEventListener('click',function(e){var b=e.target.closest('.tile');if(!b)return;var n=b.getAttribute('data-v');
  document.getElementById('locate').scrollIntoView({behavior:'smooth'});
@@ -325,45 +357,59 @@ document.getElementById('tiles').addEventListener('click',function(e){var b=e.ta
  setTimeout(function(){m.invalidateSize();if(pts.length)m.fitBounds(L.latLngBounds(pts.map(function(p){return [p.lat,p.lng];})).extend(XY[n]),{maxZoom:16,padding:[50,50]});else m.flyTo(XY[n],15,{duration:1.1});},350);
 });
 var cnt=document.getElementById('cnt');
-function syncNm(){var c=document.getElementById('shownm'),on=!!sel&&pubEl.checked&&document.getElementById('nm').value.trim()!=='';c.disabled=!on;if(!on)c.checked=false;}
+function syncNm(){var c=document.getElementById('shownm'),on=!!sel&&!pubEl.checked&&document.getElementById('nm').value.trim()!=='';c.disabled=!on;if(!on)c.checked=false;}
 pubEl.addEventListener('change',syncNm);document.getElementById('nm').addEventListener('input',syncNm);
 function toggleOther(){document.getElementById('otherbox').hidden=document.getElementById('village').value!=='other';}
 document.getElementById('village').addEventListener('change',toggleOther);
 document.getElementById('plus').onclick=function(){cnt.value=Math.min(50,(+cnt.value||0)+1);};
 document.getElementById('minus').onclick=function(){cnt.value=Math.max(1,(+cnt.value||2)-1);};
-var today=new Date();document.getElementById('dt').max=today.toISOString().slice(0,10);
-var TN={pinui:'إخلاء أرض',admin:'هدم إداري',court:'هدم صادر عن المحكمة',stop:'وقف عمل أو منع استخدام',fine:'غرامة أو رسوم',warn:'إشعار أو تحذير',other:'غير ذلك'};
+var today=new Date();document.getElementById('dt').max=today.toISOString().slice(0,10);document.getElementById('dr').max=today.toISOString().slice(0,10);
+var bld=document.getElementById('bld');
+document.getElementById('bplus').onclick=function(){bld.value=Math.min(50,(+bld.value||0)+1);};
+document.getElementById('bminus').onclick=function(){bld.value=Math.max(1,(+bld.value||2)-1);};
+var JUD=['c212','cother','judg'];
+function toggleEx(){var on=JUD.some(function(v){var el=document.querySelector('input[name=t][value='+v+']');return el&&el.checked;});document.getElementById('exbox').hidden=!on;if(!on){[].forEach.call(document.querySelectorAll('input[name=ex]'),function(r){r.checked=false;});}}
+[].forEach.call(document.querySelectorAll('input[name=t]'),function(el){el.addEventListener('change',toggleEx);});
+var TNH={admin:'צו הריסה מינהלי',c212:'צו הריסה שיפוטי ללא הרשעה (סעיף 212 או 239)',cother:'צו הריסה שיפוטי אחר',pinui:'צו לסילוק יד ולפינוי מקרקעי ציבור',judg:'פסק דין או צו שיפוטי לפינוי מקרקעין',demand:'דרישה או התראה לפינוי מקרקעין',stop:'צו להפסקת עבודה, הפסקת שימוש או איסור שימוש',warn:'התראה או אזהרה בכתב',fine:'הודעה על הטלת קנס',summ:'זימון לחקירה',verbal:'התראה או הודעה בעל פה',other:'אחר'};
+var TN={admin:'أمر هدم إداري',c212:'أمر هدم قضائي بدون إدانة (المادة 212 أو 239)',cother:'أمر هدم قضائي آخر',pinui:'أمر إزالة يد وإخلاء أراضٍ عامة',judg:'حكم أو أمر قضائي بإخلاء أرض',demand:'مطالبة أو إنذار بإخلاء أرض',stop:'أمر بوقف العمل أو وقف الاستخدام أو منع الاستخدام',warn:'إنذار أو تحذير خطي',fine:'إشعار بفرض غرامة',summ:'استدعاء للتحقيق',verbal:'إنذار أو إبلاغ شفهي',other:'غير ذلك'};
+var BNH={house:'בית מגורים',shig:'שיג',pen:'מכלאה',kitchen:'מטבח',coop:'לול',wc:'שירותים חיצוניים',fence:'גדר',shed:'סככה',orchard:'עצים (מטע)',concrete:'רצפת בטון',berm:'סוללת עפר',bother:'אחר'};
+var BN={house:'بيت سكن',shig:'شيج',pen:'حظيرة',kitchen:'مطبخ',coop:'قنّ دجاج',wc:'مراحيض خارجية',fence:'سياج',shed:'سقيفة',orchard:'أشجار (بستان)',concrete:'أرضية باطون',berm:'ساتر ترابي',bother:'أخرى'};
 function readPhoto(file){return new Promise(function(res,rej){var img=new Image(),u=URL.createObjectURL(file);
  img.onload=function(){var m=1800,k=Math.min(1,m/Math.max(img.width,img.height)),c=document.createElement('canvas');c.width=Math.round(img.width*k);c.height=Math.round(img.height*k);c.getContext('2d').drawImage(img,0,0,c.width,c.height);URL.revokeObjectURL(u);res(c.toDataURL('image/jpeg',0.82).split(',')[1]);};
  img.onerror=function(){rej();};img.src=u;});}
 document.getElementById('form').addEventListener('submit',function(e){
  e.preventDefault();var err=document.getElementById('err');err.textContent='';
- var vil=document.getElementById('village').value,ts=[].slice.call(document.querySelectorAll('input[name=t]:checked')).map(function(x){return x.value;}),n=Math.max(1,Math.min(50,+cnt.value||1));
- if(!vil){err.textContent='اختاروا قرية.';document.getElementById('village').focus();return;}
- if(!ts.length){err.textContent='حدّدوا نوع أمر واحدًا على الأقل، أو "غير ذلك".';return;}
+ var vil=document.getElementById('village').value,ts=[].slice.call(document.querySelectorAll('input[name=t]:checked')).map(function(x){return x.value;}),n=Math.max(1,Math.min(50,+cnt.value||1)),bn=Math.max(1,Math.min(50,+bld.value||1)),
+  bts=[].slice.call(document.querySelectorAll('input[name=b]:checked')).map(function(x){return BNH[x.value];}),
+  nm=document.getElementById('nm').value.trim();
+ if(!vil){err.textContent='اختاروا القرية.';document.getElementById('village').focus();return;}
+ if(!nm){err.textContent='اكتبوا اسمكم.';document.getElementById('nm').focus();return;}
+ if(!ts.length){err.textContent='حدّدوا وثيقة أو أمرًا واحدًا على الأقل، أو «غير ذلك».';return;}
  if(!document.getElementById('ok').checked){err.textContent='لإرسال البلاغ يجب الموافقة على الخانة الأخيرة.';return;}
  var oname=document.getElementById('othername').value.trim();
- var summary='سجّلنا '+(n===1?'أمرًا واحدًا':n+(n===2?' أمرين':' أوامر'))+' '+(vil==='other'?'في مكان غير موجود في القائمة'+(oname?' ('+oname+')':''):'في قرية '+vil)+': '+ts.map(function(t){return TN[t];}).join('، ')+'.'+(sel?(pubEl.checked?' ستُعرض النقطة التي حدّدتموها على الخريطة العامة.':' لن تُعرض النقطة للجمهور. سيُحتسب البلاغ كرقم للقرية أو للمنطقة فقط.'):'');
+ var summary='أبلغتم عن '+n+' '+(n===1?'أمر أو وثيقة':'أوامر أو وثائق')+' في قرية '+(vil==='other'?'ليست في القائمة'+(oname?' ('+oname+')':''):vil)+': '+ts.map(function(t){return TN[t];}).join(', ')+'.'+(sel?(pubEl.checked?' لن تُعرض النقطة للجمهور. سيُحتسب البلاغ فقط كرقم للقرية أو للمنطقة.':' ستُعرض النقطة التي حدّدتموها على الخريطة العامة.'):'');
  function done(){document.getElementById('tsum').textContent=summary;document.getElementById('form').style.display='none';var t=document.getElementById('thanks');t.style.display='block';t.focus();}
- if(DEMO){ if(vil!=='other'){demoData[0][vil]=(demoData[0][vil]||0)+n;render();} if(sel&&pubEl.checked)addPub(sel); done(); return; }
+ if(DEMO){ if(vil!=='other'){demoData[0][vil]=(demoData[0][vil]||0)+n;render();} if(sel&&!pubEl.checked)addPub(sel); done(); return; }
  var btn=e.target.querySelector('button[type=submit]');btn.disabled=true;var old=btn.textContent;btn.textContent='جارٍ الإرسال...';
- var pub=!!(sel&&pubEl.checked);
- var payload={village:vil==='other'?('אחר'+(oname?': '+oname:'')):(A2H[vil]||vil),orderType:ts.map(function(t){return TNH[t];}).join(', '),count:n,date:document.getElementById('dt').value,
-  lat:sel?sel.lat:'',lng:sel?sel.lng:'',publicPoint:pub,showName:pub&&document.getElementById('shownm').checked,name:document.getElementById('nm').value.trim(),
-  contact:document.getElementById('ct').value.trim(),freeText:document.getElementById('freetext').value.trim(),consent:true,website:document.getElementById('hp').value,lang:'ar'};
+ var pub=!!(sel&&!pubEl.checked);
+ var exEl=document.querySelector('input[name=ex]:checked');
+ var payload={village:vil==='other'?('אחר'+(oname?': '+oname:'')):(A2H[vil]||vil),orderType:ts.map(function(t){return TNH[t];}).join(', '),count:n,date:document.getElementById('dt').value,receivedDate:document.getElementById('dr').value,
+  exParte:(exEl&&!document.getElementById('exbox').hidden)?exEl.value:'',buildings:bn,buildingTypes:bts.join(', '),hidePhoto:document.getElementById('hideph').checked,
+  lat:sel?sel.lat:'',lng:sel?sel.lng:'',publicPoint:pub,showName:pub&&document.getElementById('shownm').checked,name:nm,
+  contact:document.getElementById('ct').value.trim(),freeText:document.getElementById('freetext').value.trim(),consent:true,website:document.getElementById('hp').value};
  function send(){
   fetch(ENDPOINT,{method:'POST',body:JSON.stringify(payload)}).then(function(r){return r.json();}).then(function(j){
    if(!j||!j.ok)throw new Error((j&&j.error)||'fail');
    btn.disabled=false;btn.textContent=old;done();loadReal();
-  }).catch(function(){btn.disabled=false;btn.textContent=old;err.textContent='فشل الإرسال. تحققوا من الاتصال وحاولوا مرة أخرى. لم يُحفظ البلاغ.';});
+  }).catch(function(){btn.disabled=false;btn.textContent=old;err.textContent='فشل الإرسال. تحقّقوا من الاتصال وحاولوا مرة أخرى. لم يُحفظ البلاغ.';});
  }
  var file=document.getElementById('ph').files[0];
  if(!file){send();return;}
- readPhoto(file).then(function(b64){payload.photo={data:b64};send();}).catch(function(){btn.disabled=false;btn.textContent=old;err.textContent='لم نتمكن من قراءة الصورة. يمكنكم الإرسال بدونها أو تجربة صورة أخرى.';});
+ readPhoto(file).then(function(b64){payload.photo={data:b64};send();}).catch(function(){btn.disabled=false;btn.textContent=old;err.textContent='لم ننجح في قراءة الصورة. يمكنكم الإرسال بدونها أو تجربة صورة أخرى.';});
 });
-document.getElementById('again').onclick=function(){document.getElementById('form').reset();cnt.value=1;toggleOther();document.getElementById('form').style.display='';document.getElementById('thanks').style.display='none';document.getElementById('village').focus();};
-var XY={"أم نميلة": [31.41255, 34.77207], "أم رتام": [31.11644, 35.02141], "أم بدون": [31.24546, 35.25646], "الزعرورة": [31.23728, 35.11814], "الزرنوق": [31.20355, 34.92451], "الباط": [31.27024, 35.03338], "الباط الغربي": [31.26924, 35.02016], "الباطل": [31.34647, 34.76732], "البحيرة": [31.21761, 35.08982], "البقيعة": [31.30246, 35.26515], "الجورف": [31.23103, 35.04713], "القطامات": [31.17304, 35.09831], "المطهر": [31.18778, 35.08336], "القرين (العقبي)": [31.28317, 34.93076], "الحمرة": [31.2635, 35.09276], "المذبح": [31.17984, 34.96425], "المزرعة (الشهبا)": [31.15012, 35.07817], "المكيمن": [31.29686, 34.8555], "المساعدية": [31.33912, 34.85842], "السرة": [31.24205, 35.03165], "الغزة": [31.21031, 35.13685], "الغرة": [31.23808, 34.96828], "الروئيس": [31.22952, 34.94826], "السدير": [31.18013, 34.98047], "السر": [31.19742, 34.80619], "باط الصرايعة": [31.25932, 35.02513], "بير الحمام": [31.23147, 34.9004], "بير المشاش": [31.20038, 34.95242], "ظحية": [31.42659, 34.76777], "وادي المشاش": [31.08352, 34.84451], "خربة الوطن": [31.25536, 34.92378], "خربة زبالة": [31.40862, 34.74995], "راس جرابا": [31.06565, 35.06273], "طويل أبو جرول": [31.33384, 34.80261], "كركور": [31.31867, 34.75915], "وادي أريحا": [30.68612, 34.7829], "نحل حوا": [30.75044, 34.77831], "سهل البقار": [30.849, 34.7363], "صواوين": [31.18451, 34.88055], "عوجان": [31.3064, 34.84758], "عتير": [31.32314, 35.02622], "تل الملح": [31.23194, 35.00378], "أم بطين": [31.27573, 34.88378], "السيد": [31.28328, 34.91305], "دريجات": [31.30059, 35.07544], "كحلة": [31.28695, 35.04969], "سعوة": [31.25823, 34.98242], "مكحول": [31.28834, 35.07544], "ترابين الصانع": [31.34363, 34.73701], "أبو تلول الشهبي": [31.18607, 34.91304], "بير هداج": [31.02417, 34.70417], "قصر السر": [31.07944, 34.9848], "خشم زنة": [31.20264, 34.88307], "عبدة": [30.8071, 34.75594], "رخمة": [31.00862, 34.95579], "وادي النعم": [31.16339, 34.82215], "الفرعة": [31.22986, 35.1656], "العراقيب": [31.34596, 34.77814], "الفخاري": [31.35136, 34.8111], "تل عراد الشرقي": [31.29131, 35.14518], "أبو قرينات (أم متنان)": [31.12523, 34.96332], "تل عراد الغربي": [31.29562, 35.11939]};
-var GCL=['#B8451F','#2F6B2A','#C58A00','#6B6B6B'];
+document.getElementById('again').onclick=function(){document.getElementById('form').reset();cnt.value=1;bld.value=1;toggleOther();toggleEx();document.getElementById('form').style.display='';document.getElementById('thanks').style.display='none';document.getElementById('village').focus();};
+var XY={"أم نميلة": [31.41255, 34.77207], "أم رتام": [31.11644, 35.02141], "أم بدون": [31.24546, 35.25646], "الزعرورة": [31.23728, 35.11814], "الزرنوق": [31.20355, 34.92451], "الباط": [31.27024, 35.03338], "الباط الغربي": [31.26924, 35.02016], "الباطل": [31.34647, 34.76732], "البحيرة": [31.21761, 35.08982], "البقيعة": [31.30246, 35.26515], "الجورف": [31.23103, 35.04713], "القطامات": [31.17304, 35.09831], "المطهر": [31.18778, 35.08336], "القرين (العقبي)": [31.28317, 34.93076], "المذبح": [31.17984, 34.96425], "المكيمن": [31.29686, 34.8555], "المساعدية": [31.33912, 34.85842], "السرة": [31.24205, 35.03165], "الغزة": [31.21031, 35.13685], "الغرة": [31.23808, 34.96828], "الروئيس": [31.22952, 34.94826], "السدير": [31.18013, 34.98047], "باط الصرايعة": [31.25932, 35.02513], "بير الحمام": [31.23147, 34.9004], "بير المشاش": [31.20038, 34.95242], "ظحية": [31.42659, 34.76777], "وادي المشاش": [31.08352, 34.84451], "خربة الوطن": [31.25536, 34.92378], "راس جرابا": [31.06565, 35.06273], "طويل أبو جرول": [31.33384, 34.80261], "وادي أريحا": [30.68612, 34.7829], "نحل حوا": [30.75044, 34.77831], "سهل البقار": [30.849, 34.7363], "صواوين": [31.18451, 34.88055], "عوجان": [31.3064, 34.84758], "عتير": [31.32314, 35.02622], "تل الملح": [31.23194, 35.00378], "أم بطين": [31.27573, 34.88378], "السيد": [31.28328, 34.91305], "دريجات": [31.30059, 35.07544], "كحلة": [31.28695, 35.04969], "سعوة": [31.25823, 34.98242], "مكحول": [31.28834, 35.07544], "ترابين الصانع": [31.34363, 34.73701], "أبو تلول الشهبي": [31.18607, 34.91304], "بير هداج": [31.02417, 34.70417], "قصر السر": [31.07944, 34.9848], "خشم زنة": [31.20264, 34.88307], "عبدة": [30.8071, 34.75594], "رخمة": [31.00862, 34.95579], "وادي النعم": [31.16339, 34.82215], "الفرعة": [31.22986, 35.1656], "العراقيب": [31.34596, 34.77814], "الفخاري": [31.35136, 34.8111], "كركور": [31.31867, 34.75915], "المزرعة (الشهبا)": [31.15012, 35.07817], "الحمرة": [31.2635, 35.09276], "خربة زبالة": [31.40862, 34.74995], "السر": [31.19742, 34.80619], "تل عراد الشرقي": [31.29131, 35.14518], "أبو قرينات (أم متنان)": [31.12523, 34.96332], "تل عراد الغربي": [31.29562, 35.11939]};
+var GC={'غير معترف بها':'#B8451F','معترف بها (مجلسا القسوم ونيفيه مدبار الإقليميان)':'#2F6B2A','قيد الاعتراف أو التأسيس':'#C58A00','هُدمت':'#6B6B6B'};
 (function(){
  var mapEl=document.getElementById('lmap');if(!window.L||!mapEl)return;
  var mobile=L.Browser.mobile;
@@ -371,40 +417,66 @@ var GCL=['#B8451F','#2F6B2A','#C58A00','#6B6B6B'];
  map.setMaxBounds([[30.4,34.3],[31.7,35.5]]);
  map.fitBounds(L.latLngBounds(Object.keys(XY).map(function(n){return XY[n];})),{padding:[16,16]});
  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxNativeZoom:17,maxZoom:19,attribution:'صورة الجو: Esri, Vantor, Earthstar Geographics'}).addTo(map);
- var gOf={},mk={};Object.keys(V).forEach(function(g,i){V[g].forEach(function(n){gOf[n]=GCL[i];});});
+ var gOf={},mk={};Object.keys(V).forEach(function(g){V[g].forEach(function(n){gOf[n]=g;});});
  Object.keys(XY).forEach(function(n){
-  mk[n]=L.circleMarker(XY[n],{radius:6,color:'#fff',weight:2,fillColor:gOf[n]||'#B8451F',fillOpacity:.95,interactive:false}).addTo(map);
+  mk[n]=L.circleMarker(XY[n],{radius:6,color:'#fff',weight:2,fillColor:GC[gOf[n]]||'#B8451F',fillOpacity:.95,interactive:false}).addTo(map);
   mk[n].bindTooltip(n,{permanent:true,direction:'top',offset:[0,-9],className:'vl',interactive:false});
  });
  var pubLayer=L.layerGroup().addTo(map);
- addPub=function(ll){L.circleMarker(ll,{radius:7,color:'#fff',weight:2,fillColor:'#F5B321',fillOpacity:1}).addTo(pubLayer);};
+ addPub=function(ll){L.circleMarker(ll,{radius:7,color:'#fff',weight:2,fillColor:'#1F6FB5',fillOpacity:1}).addTo(pubLayer);};
  paintMarkers=function(d){Object.keys(mk).forEach(function(n){mk[n].setRadius(6+2*lvl(d.c[n]||0));});if(!DEMO)pubLayer.clearLayers();drawReal();};
  var realLayer=L.layerGroup().addTo(map);
- function fmtDate(x){if(!x)return '';var d=new Date(x);if(isNaN(d))return String(x);return d.toLocaleDateString('ar-u-nu-latn',{timeZone:'Asia/Jerusalem'});}
  function typeAr(t){var inv={};Object.keys(TNH).forEach(function(k){inv[TNH[k]]=TN[k];});return String(t||'').split(', ').map(function(x){return inv[x]||x;}).join('، ');}
+ function fmtDate(x){if(!x)return '';var d=new Date(x);if(isNaN(d))return String(x);return d.toLocaleDateString('ar-u-nu-latn',{timeZone:'Asia/Jerusalem'});}
  function popupFor(p){var el=document.createElement('div');el.style.cssText='direction:rtl;font-family:inherit;line-height:1.5';
   function row(t,b){var d=document.createElement('div');if(b)d.style.fontWeight='700';d.textContent=t;el.appendChild(d);}
   row(p.vAr,true);row(typeAr(p.orderType));row(p.count===1?'أمر واحد':p.count+' أوامر');var dt=fmtDate(p.date);if(dt)row('التاريخ: '+dt);
-  if(p.name)row('المبلّغ/ة: '+p.name);
-  var st=document.createElement('div');st.style.cssText='margin-top:4px;font-weight:700;color:'+(p.status==='נבדק'?'#2F6B2A':'#8A5A00');st.textContent=p.status==='נבדק'?'تم فحصه من طاقم المجلس':'لم يُفحص بعد';el.appendChild(st);return el;}
+  if(p.name)row('المُبلِّغ: '+p.name);
+  var st=document.createElement('div');st.style.cssText='margin-top:4px;font-weight:700;color:'+(p.status==='נבדק'?'#2F6B2A':'#1F6FB5');st.textContent=p.status==='נבדק'?'فحصه طاقم المجلس':'لم يُفحص';el.appendChild(st);return el;}
  drawReal=function(){realLayer.clearLayers();if(DEMO)return;realPts.forEach(function(p){if(!isFinite(p.lat)||!isFinite(p.lng))return;
-  L.circleMarker([p.lat,p.lng],{radius:8,color:'#fff',weight:2,fillColor:p.status==='נבדק'?'#2F6B2A':'#F5B321',fillOpacity:1}).bindPopup(popupFor(p)).addTo(realLayer);});};
+  L.circleMarker([p.lat,p.lng],{radius:8,color:p.status==='נבדק'?'#2F6B2A':'#fff',weight:p.status==='נבדק'?4:2,fillColor:'#1F6FB5',fillOpacity:1}).bindPopup(popupFor(p)).addTo(realLayer);});};
  function zc(){mapEl.classList.toggle('zlow',map.getZoom()<11);}map.on('zoomend',zc);zc();
- var j=document.getElementById('jump');
- Object.keys(V).forEach(function(g){var og=document.createElement('optgroup');og.label=g;V[g].forEach(function(n){if(XY[n]){var o=document.createElement('option');o.textContent=n;og.appendChild(o);}});if(og.children.length)j.appendChild(og);});
- j.addEventListener('change',function(){var n=j.value;if(XY[n])map.flyTo(XY[n],15,{duration:1.1});});
+ // village search
+ var jin=document.getElementById('jump'),jl=document.getElementById('jumplist'),jn=[],ji=-1;
+ Object.keys(V).forEach(function(g){V[g].forEach(function(n){if(XY[n])jn.push(n);});});
+ function nz(x){return String(x).replace(/[־'׳"״\-\s]/g,'');}
+ function jhide(){jl.hidden=true;jin.setAttribute('aria-expanded','false');}
+ var jon=false,jall=L.latLngBounds(Object.keys(XY).map(function(n){return XY[n];}));
+ function jpick(n){jin.value=n;jhide();jon=true;map.flyTo(XY[n],15,{duration:1.1});}
+ function jreset(){if(jon){jon=false;map.closePopup(ppop);map.flyToBounds(jall,{padding:[16,16],duration:1.1});}}
+ function jshow(){var q=nz(jin.value);jl.innerHTML='';ji=-1;
+  var m=jn.filter(function(n){return !q||nz(n).indexOf(q)>=0;});
+  m.forEach(function(n){var li=document.createElement('li');li.setAttribute('role','option');li.textContent=n;li.addEventListener('mousedown',function(e){e.preventDefault();jpick(n);});jl.appendChild(li);});
+  if(!m.length){var li=document.createElement('li');li.className='none';li.textContent='لم يُعثر على قرية بهذا الاسم';jl.appendChild(li);}
+  jl.hidden=false;jin.setAttribute('aria-expanded','true');}
+ function jmark(it){it.forEach(function(x,i){x.classList.toggle('on',i===ji);});if(it[ji])it[ji].scrollIntoView({block:'nearest'});}
+ jin.addEventListener('input',function(){if(!jin.value.trim())jreset();jshow();});jin.addEventListener('focus',jshow);jin.addEventListener('blur',function(){setTimeout(jhide,150);});
+ jin.addEventListener('keydown',function(e){var it=[].slice.call(jl.querySelectorAll('li[role=option]'));
+  if(e.key==='ArrowDown'){e.preventDefault();if(jl.hidden)jshow();else{ji=Math.min(it.length-1,ji+1);jmark(it);}}
+  else if(e.key==='ArrowUp'){e.preventDefault();ji=Math.max(0,ji-1);jmark(it);}
+  else if(e.key==='Enter'){e.preventDefault();var p=it[ji>=0?ji:0];if(p)jpick(p.textContent);}
+  else if(e.key==='Escape'){jhide();}});
+ // pick a spot
  var pin=null,lsel=document.getElementById('lsel'),lgo=document.getElementById('lgo'),lclear=document.getElementById('lclear'),locsum=document.getElementById('locsum'),vs=document.getElementById('village');
- var T0='لم يُحدَّد مكان بعد. كبّروا الخريطة واضغطوا على حيّكم.';
  function nearest(ll){var b=null,bd=1e12;Object.keys(XY).forEach(function(n){var d=map.distance(ll,XY[n]);if(d<bd){bd=d;b=n;}});return [b,bd/1000];}
+ var pbox=document.createElement('div');pbox.style.cssText='direction:rtl;font-family:inherit;line-height:1.45;min-width:200px';
+ var plab=document.createElement('label');plab.style.cssText='display:flex;gap:8px;align-items:flex-start;font-weight:700;font-size:14px;cursor:pointer';
+ var pchk=document.createElement('input');pchk.type='checkbox';pchk.style.cssText='width:20px;height:20px;margin:0;flex:none;accent-color:#2F6B2A';
+ plab.appendChild(pchk);plab.appendChild(document.createTextNode('عدم عرض النقطة التي حدّدتها على الخريطة العامة'));
+ var pnote=document.createElement('div');pnote.style.cssText='font-size:12px;font-weight:500;margin-top:4px;color:#6B4A3A';pnote.textContent='سيُعرض البلاغ فقط ضمن البيانات العامة للقرية';
+ pbox.appendChild(plab);pbox.appendChild(pnote);
+ var ppop=L.popup({closeOnClick:false,autoClose:false,offset:[0,-6],minWidth:210}).setContent(pbox);
+ pchk.addEventListener('change',function(){pubEl.checked=pchk.checked;syncNm();});
+ pubEl.addEventListener('change',function(){pchk.checked=pubEl.checked;});
  function setPick(ll){
   sel=ll;if(pin)pin.setLatLng(ll);else pin=L.circleMarker(ll,{radius:11,color:'#fff',weight:3,fillColor:'#B8451F',fillOpacity:1,interactive:false}).addTo(map);
-  var nb=nearest(ll),has=[].some.call(vs.options,function(o){return o.value===nb[0];}),msg='تم تحديد مكان.';
-  if(has&&nb[1]<=15&&vs.value!=='other'){vs.value=nb[0];msg+=' أقرب قرية: '+nb[0]+'. إذا لم تكن قريتكم، يمكن تغييرها في النموذج.';}
-  lsel.textContent=msg;locsum.textContent='تم تحديد مكان على الخريطة. '+(has&&nb[1]<=15?'أقرب قرية: '+nb[0]+'.':'');
-  lgo.hidden=false;lclear.hidden=false;pubEl.disabled=false;syncNm();
+  var nb=nearest(ll),has=[].some.call(vs.options,function(o){return o.value===nb[0];}),msg='حُدّد مكان.';
+  if(has&&nb[1]<=15&&vs.value!=='other'){vs.value=nb[0];msg+=' أقرب قرية: '+nb[0]+'. إذا لم تكن هذه قريتكم، يمكن تغييرها في النموذج.';}
+  lsel.textContent=msg;locsum.textContent='حُدّد مكان على الخريطة. '+(has&&nb[1]<=15?'أقرب قرية: '+nb[0]+'.':'');
+  lgo.hidden=false;lclear.hidden=false;pubEl.disabled=false;syncNm();ppop.setLatLng(ll);pchk.checked=pubEl.checked;ppop.openOn(map);
  }
- map.on('click',function(e){if(map.getZoom()<13){map.setView(e.latlng,15);lsel.textContent='تم التكبير. الآن اضغطوا على حيّكم.';return;}setPick(e.latlng);});
- lclear.addEventListener('click',function(){if(pin){map.removeLayer(pin);pin=null;}sel=null;pubEl.checked=false;pubEl.disabled=true;syncNm();lgo.hidden=true;lclear.hidden=true;lsel.textContent=T0;locsum.innerHTML='لم يُحدَّد مكان. <a href="#locate">ارجعوا إلى الخريطة</a> واضغطوا على حيّكم.';});
+ map.on('click',function(e){if(map.getZoom()<13){map.setView(e.latlng,15);lsel.textContent='كبّرنا الخريطة. الآن اضغطوا على بيتكم.';return;}setPick(e.latlng);});
+ lclear.addEventListener('click',function(){if(pin){map.removeLayer(pin);pin=null;}map.closePopup(ppop);sel=null;pubEl.checked=false;pubEl.disabled=true;syncNm();lgo.hidden=true;lclear.hidden=true;lsel.textContent='لم يُحدَّد مكان بعد. كبّروا الخريطة واضغطوا على بيتكم.';locsum.textContent='';});
  var wrap=document.getElementById('lwrap'),lfull=document.getElementById('lfull');
  function full(on){wrap.classList.toggle('full',on);document.body.style.overflow=on?'hidden':'';lfull.textContent=on?'إغلاق ملء الشاشة':'ملء الشاشة';if(on||!mobile)map.dragging.enable();if(!on&&mobile)map.dragging.disable();on?map.scrollWheelZoom.enable():map.scrollWheelZoom.disable();setTimeout(function(){map.invalidateSize();},50);}
  lfull.addEventListener('click',function(){full(!wrap.classList.contains('full'));});
@@ -413,8 +485,7 @@ var GCL=['#B8451F','#2F6B2A','#C58A00','#6B6B6B'];
  window.__lmap=map;window.__setPick=setPick;
 })();
 function loadReal(){fetch(ENDPOINT).then(function(r){return r.json();}).then(function(j){
- real={};VER={};var vs=j.villages||{};Object.keys(vs).forEach(function(k){var a=H2A[k];if(!a)return;real[a]=vs[k].orders||0;VER[a]=vs[k].checked||0;});
- realPts=(j.points||[]).map(function(p){p.vAr=H2A[p.village]||p.village;return p;});render();
+ real={};VER={};var vs=j.villages||{};Object.keys(vs).forEach(function(k){var a=H2A[k];if(!a)return;real[a]=vs[k].orders||0;VER[a]=vs[k].checked||0;});realPts=(j.points||[]).map(function(p){p.vAr=H2A[p.village]||p.village;return p;});render();
 }).catch(function(){});}
 render();loadReal();
 })();
