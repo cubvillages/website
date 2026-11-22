@@ -229,7 +229,7 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <label><input type="checkbox" name="t" value="cother"> أمر هدم قضائي آخر — بما في ذلك أمر هدم صدر ضمن حكم</label>
 <label><input type="checkbox" name="t" value="pinui"> أمر إزالة يد وإخلاء أراضٍ عامة — وفق قانون الأراضي العامة (إخلاء أرض)، بما في ذلك أمر صادر عن دائرة أراضي إسرائيل</label>
 <label><input type="checkbox" name="t" value="judg"> حكم أو أمر قضائي بإخلاء أرض أو إزالة يد</label>
-<label><input type="checkbox" name="t" value="demand"> مطالبة أو إنذار بإخلاء أرض وإزالة يد</label>
+<label><input type="checkbox" name="t" value="demand"> مطالبة أو إنذار بإزالة يد وإخلاء أرض</label>
 <label><input type="checkbox" name="t" value="stop"> أمر بوقف العمل أو وقف الاستخدام أو منع الاستخدام — إداري أو قضائي</label>
 <label><input type="checkbox" name="t" value="warn"> إنذار أو تحذير خطي بشأن البناء أو استخدام الأرض — بما في ذلك إنذار ثانٍ أو إنذار قبل فرض غرامة</label>
 <label><input type="checkbox" name="t" value="fine"> إشعار بفرض غرامة</label>
@@ -252,11 +252,13 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <div class="row2">
 <fieldset><legend><label for="cnt">5. كم وثيقة وصلتكم؟</label></legend>
 <div class="stepper"><button type="button" id="minus" aria-label="أقل">−</button><input id="cnt" type="number" min="1" max="50" value="1" inputmode="numeric"><button type="button" id="plus" aria-label="أكثر">+</button></div></fieldset>
-<fieldset><legend><label for="bld">6. إلى كم مبنى يشير الأمر أو الإنذار؟</label></legend>
+<fieldset><legend><label for="fam">6. إلى كم عائلة يشير الأمر أو المطالبة أو الإنذار؟</label></legend>
+<div class="stepper"><button type="button" id="fminus" aria-label="أقل">−</button><input id="fam" type="number" min="1" max="50" value="1" inputmode="numeric"><button type="button" id="fplus" aria-label="أكثر">+</button></div></fieldset>
+<fieldset><legend><label for="bld">7. إلى كم مبنى يشير الأمر أو الإنذار؟</label></legend>
 <div class="stepper"><button type="button" id="bminus" aria-label="أقل">−</button><input id="bld" type="number" min="1" max="50" value="1" inputmode="numeric"><button type="button" id="bplus" aria-label="أكثر">+</button></div></fieldset>
 </div>
 
-<fieldset><legend>7. نوع المبنى الذي يشير إليه الأمر أو الإنذار</legend>
+<fieldset><legend>8. أنواع المباني التي يشير إليها الأمر أو المطالبة أو الإنذار</legend>
 <p class="hint" style="margin:0 0 8px">يمكن اختيار أكثر من واحد</p>
 <div class="types">
 <label><input type="checkbox" name="b" value="house"> بيت سكن</label>
@@ -374,14 +376,17 @@ document.getElementById('village').addEventListener('change',toggleOther);
 document.getElementById('plus').onclick=function(){cnt.value=Math.min(50,(+cnt.value||0)+1);};
 document.getElementById('minus').onclick=function(){cnt.value=Math.max(1,(+cnt.value||2)-1);};
 var today=new Date();document.getElementById('dt').max=today.toISOString().slice(0,10);document.getElementById('dr').max=today.toISOString().slice(0,10);
+var fam=document.getElementById('fam');
+document.getElementById('fplus').onclick=function(){fam.value=Math.min(50,(+fam.value||0)+1);};
+document.getElementById('fminus').onclick=function(){fam.value=Math.max(1,(+fam.value||2)-1);};
 var bld=document.getElementById('bld');
 document.getElementById('bplus').onclick=function(){bld.value=Math.min(50,(+bld.value||0)+1);};
 document.getElementById('bminus').onclick=function(){bld.value=Math.max(1,(+bld.value||2)-1);};
 var JUD=['c212','cother','judg'];
 function toggleEx(){var on=JUD.some(function(v){var el=document.querySelector('input[name=t][value='+v+']');return el&&el.checked;});document.getElementById('exbox').hidden=!on;if(!on){[].forEach.call(document.querySelectorAll('input[name=ex]'),function(r){r.checked=false;});}}
 [].forEach.call(document.querySelectorAll('input[name=t]'),function(el){el.addEventListener('change',toggleEx);});
-var TNH={admin:'צו הריסה מינהלי',c212:'צו הריסה שיפוטי ללא הרשעה (סעיף 212 או 239)',cother:'צו הריסה שיפוטי אחר',pinui:'צו לסילוק יד ולפינוי מקרקעי ציבור',judg:'פסק דין או צו שיפוטי לפינוי מקרקעין',demand:'דרישה או התראה לפינוי מקרקעין',stop:'צו להפסקת עבודה, הפסקת שימוש או איסור שימוש',warn:'התראה או אזהרה בכתב',fine:'הודעה על הטלת קנס',summ:'זימון לחקירה',verbal:'התראה או הודעה בעל פה',other:'אחר'};
-var TN={admin:'أمر هدم إداري',c212:'أمر هدم قضائي بدون إدانة (المادة 212 أو 239)',cother:'أمر هدم قضائي آخر',pinui:'أمر إزالة يد وإخلاء أراضٍ عامة',judg:'حكم أو أمر قضائي بإخلاء أرض',demand:'مطالبة أو إنذار بإخلاء أرض',stop:'أمر بوقف العمل أو وقف الاستخدام أو منع الاستخدام',warn:'إنذار أو تحذير خطي',fine:'إشعار بفرض غرامة',summ:'استدعاء للتحقيق',verbal:'إنذار أو إبلاغ شفهي',other:'غير ذلك'};
+var TNH={admin:'צו הריסה מינהלי',c212:'צו הריסה שיפוטי ללא הרשעה (סעיף 212 או 239)',cother:'צו הריסה שיפוטי אחר',pinui:'צו לסילוק יד ולפינוי מקרקעי ציבור',judg:'פסק דין או צו שיפוטי לפינוי מקרקעין',demand:'דרישה או התראה לסילוק יד ולפינוי מקרקעין',stop:'צו להפסקת עבודה, הפסקת שימוש או איסור שימוש',warn:'התראה או אזהרה בכתב',fine:'הודעה על הטלת קנס',summ:'זימון לחקירה',verbal:'התראה או הודעה בעל פה',other:'אחר'};
+var TN={admin:'أمر هدم إداري',c212:'أمر هدم قضائي بدون إدانة (المادة 212 أو 239)',cother:'أمر هدم قضائي آخر',pinui:'أمر إزالة يد وإخلاء أراضٍ عامة',judg:'حكم أو أمر قضائي بإخلاء أرض',demand:'مطالبة أو إنذار بإزالة يد وإخلاء أرض',stop:'أمر بوقف العمل أو وقف الاستخدام أو منع الاستخدام',warn:'إنذار أو تحذير خطي',fine:'إشعار بفرض غرامة',summ:'استدعاء للتحقيق',verbal:'إنذار أو إبلاغ شفهي',other:'غير ذلك'};
 var BNH={house:'בית מגורים',shig:'שיג',pen:'מכלאה',kitchen:'מטבח',coop:'לול',wc:'שירותים חיצוניים',fence:'גדר',shed:'סככה',orchard:'עצים (מטע)',concrete:'רצפת בטון',berm:'סוללת עפר',bother:'אחר'};
 var BN={house:'بيت سكن',shig:'شيج',pen:'حظيرة',kitchen:'مطبخ',coop:'قنّ دجاج',wc:'مراحيض خارجية',fence:'سياج',shed:'سقيفة',orchard:'أشجار (بستان)',concrete:'أرضية باطون',berm:'ساتر ترابي',bother:'أخرى'};
 function readPhoto(file){return new Promise(function(res,rej){var img=new Image(),u=URL.createObjectURL(file);
@@ -404,7 +409,7 @@ document.getElementById('form').addEventListener('submit',function(e){
  var pub=!!(sel&&!pubEl.checked);
  var exEl=document.querySelector('input[name=ex]:checked');
  var payload={village:vil==='other'?('אחר'+(oname?': '+oname:'')):(A2H[vil]||vil),orderType:ts.map(function(t){return TNH[t];}).join(', '),count:n,date:document.getElementById('dt').value,receivedDate:document.getElementById('dr').value,
-  exParte:(exEl&&!document.getElementById('exbox').hidden)?exEl.value:'',buildings:bn,buildingTypes:bts.join(', '),hidePhoto:document.getElementById('hideph').checked,
+  exParte:(exEl&&!document.getElementById('exbox').hidden)?exEl.value:'',families:Math.max(1,Math.min(50,+fam.value||1)),buildings:bn,buildingTypes:bts.join(', '),hidePhoto:document.getElementById('hideph').checked,
   lat:sel?sel.lat:'',lng:sel?sel.lng:'',publicPoint:pub,showName:pub&&document.getElementById('shownm').checked,name:nm,
   contact:document.getElementById('ct').value.trim(),freeText:document.getElementById('freetext').value.trim(),consent:true,website:document.getElementById('hp').value};
  function send(){
@@ -417,7 +422,7 @@ document.getElementById('form').addEventListener('submit',function(e){
  if(!file){send();return;}
  readPhoto(file).then(function(b64){payload.photo={data:b64};send();}).catch(function(){btn.disabled=false;btn.textContent=old;err.textContent='لم ننجح في قراءة الصورة. يمكنكم الإرسال بدونها أو تجربة صورة أخرى.';});
 });
-document.getElementById('again').onclick=function(){document.getElementById('form').reset();cnt.value=1;bld.value=1;toggleOther();toggleEx();document.getElementById('form').style.display='';document.getElementById('thanks').style.display='none';document.getElementById('lclear').click();var jj=document.getElementById('jump');if(jj){jj.value='';}document.getElementById('locate').scrollIntoView({behavior:'smooth'});};
+document.getElementById('again').onclick=function(){document.getElementById('form').reset();cnt.value=1;fam.value=1;bld.value=1;toggleOther();toggleEx();document.getElementById('form').style.display='';document.getElementById('thanks').style.display='none';document.getElementById('lclear').click();var jj=document.getElementById('jump');if(jj){jj.value='';}document.getElementById('locate').scrollIntoView({behavior:'smooth'});};
 var XY={"أم نميلة": [31.41255, 34.77207], "أم رتام": [31.11644, 35.02141], "أم بدون": [31.24546, 35.25646], "الزعرورة": [31.23728, 35.11814], "الزرنوق": [31.20355, 34.92451], "الباط": [31.27024, 35.03338], "الباط الغربي": [31.26924, 35.02016], "الباطل": [31.34647, 34.76732], "البحيرة": [31.21761, 35.08982], "البقيعة": [31.30246, 35.26515], "الجورف": [31.23103, 35.04713], "القطامات": [31.17304, 35.09831], "المطهر": [31.18778, 35.08336], "القرين (العقبي)": [31.28317, 34.93076], "المذبح": [31.17984, 34.96425], "المكيمن": [31.29686, 34.8555], "المساعدية": [31.33912, 34.85842], "السرة": [31.24205, 35.03165], "الغزة": [31.21031, 35.13685], "الغرة": [31.23808, 34.96828], "الروئيس": [31.22952, 34.94826], "السدير": [31.18013, 34.98047], "باط الصرايعة": [31.25932, 35.02513], "بير الحمام": [31.23147, 34.9004], "بير المشاش": [31.20038, 34.95242], "ظحية": [31.42659, 34.76777], "وادي المشاش": [31.08352, 34.84451], "خربة الوطن": [31.25536, 34.92378], "راس جرابا": [31.06565, 35.06273], "طويل أبو جرول": [31.33384, 34.80261], "وادي أريحا": [30.68612, 34.7829], "نحل حوا": [30.75044, 34.77831], "البقار": [30.849, 34.7363], "صواوين": [31.18451, 34.88055], "عوجان": [31.3064, 34.84758], "عتير": [31.32314, 35.02622], "تل الملح": [31.23194, 35.00378], "أم بطين": [31.27573, 34.88378], "السيد": [31.28328, 34.91305], "دريجات": [31.30059, 35.07544], "كحلة": [31.28695, 35.04969], "سعوة": [31.25823, 34.98242], "مكحول": [31.28834, 35.07544], "ترابين الصانع": [31.34363, 34.73701], "أبو تلول الشهبي": [31.18607, 34.91304], "بير هداج": [31.02417, 34.70417], "قصر السر": [31.07944, 34.9848], "خشم زنة": [31.20264, 34.88307], "عبدة": [30.8071, 34.75594], "رخمة": [31.00862, 34.95579], "وادي النعم": [31.16339, 34.82215], "الفرعة": [31.22986, 35.1656], "العراقيب": [31.34596, 34.77814], "الفخاري": [31.35136, 34.8111], "كركور": [31.31867, 34.75915], "المزرعة (الشهبا)": [31.15012, 35.07817], "الحمرة": [31.2635, 35.09276], "خربة زبالة": [31.40862, 34.74995], "السر": [31.19742, 34.80619], "تل عراد الشرقي": [31.29131, 35.14518], "أبو قرينات (أم متنان)": [31.12523, 34.96332], "تل عراد الغربي": [31.29562, 35.11939]};
 var GC={'غير معترف بها':'#B8451F','معترف بها (مجلسا القسوم ونيفيه مدبار الإقليميان)':'#2F6B2A','قيد الاعتراف أو التأسيس':'#C58A00','هُدمت':'#6B6B6B'};
 (function(){
