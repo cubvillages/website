@@ -51,6 +51,10 @@ main.om{max-width:1100px;margin:0 auto;padding:24px 24px 8px;font-weight:500;col
 .how ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;counter-reset:h}
 .how li{counter-increment:h;display:flex;gap:10px;align-items:flex-start;background:rgba(255,255,255,.7);border:1px solid #EBD3A0;border-radius:12px;padding:10px 12px;font-size:15px;line-height:1.4;font-weight:600}
 .how li:before{content:counter(h);flex:none;width:26px;height:26px;border-radius:50%;background:#F5B321;color:#3B1D12;font-weight:800;display:inline-flex;align-items:center;justify-content:center;font-size:14px}
+#jumplist{position:absolute;top:100%;inset-inline:0;z-index:600;margin:4px 0 0;padding:4px 0;list-style:none;background:#fff;border:2px solid #D6B88C;border-radius:10px;max-height:260px;overflow:auto;box-shadow:0 8px 16px rgba(0,0,0,.12)}
+#jumplist li{padding:10px 14px;font-size:16px;font-weight:600;cursor:pointer}
+#jumplist li.on,#jumplist li:hover{background:#FFF4D6}
+#jumplist li.none{cursor:default;color:#6B4A3A;font-weight:500}
 .legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;font-weight:600;margin:0 0 14px;align-items:center}
 .legend i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid #D6B88C;vertical-align:-3px;margin-inline-end:5px}
 .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
@@ -163,7 +167,7 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <section class="card" id="locate" aria-labelledby="lt">
 <h2 id="lt">מצאו את הבית שלכם בצילום האוויר</h2>
 <p class="sub">בחרו כפר, הגדילו עד שתראו את הבית שלכם, לחצו על המיקום ואז על ״המשך לטופס״</p>
-<div class="tools"><select id="jump" aria-label="קפיצה לכפר"><option value="">בחרו כפר</option></select></div>
+<div class="tools"><div style="position:relative;width:100%"><input id="jump" type="search" role="combobox" aria-expanded="false" aria-controls="jumplist" aria-autocomplete="list" aria-label="קפיצה לכפר" placeholder="הקלידו שם כפר" autocomplete="off" style="width:100%"><ul id="jumplist" role="listbox" hidden></ul></div></div>
 <p class="mapcount" id="mapcount" aria-live="polite"></p>
 <div class="lwrap" id="lwrap">
 <div id="lmap" role="application" aria-label="מפת צילום אוויר של הכפרים"></div>
@@ -428,22 +432,45 @@ var GC={'לא מוכרים':'#B8451F','מוכרים (אל־קסום ונווה �
  drawReal=function(){realLayer.clearLayers();if(DEMO)return;realPts.forEach(function(p){if(!isFinite(p.lat)||!isFinite(p.lng))return;
   L.circleMarker([p.lat,p.lng],{radius:8,color:p.status==='נבדק'?'#2F6B2A':'#fff',weight:p.status==='נבדק'?4:2,fillColor:'#1F6FB5',fillOpacity:1}).bindPopup(popupFor(p)).addTo(realLayer);});};
  function zc(){mapEl.classList.toggle('zlow',map.getZoom()<11);}map.on('zoomend',zc);zc();
- // jump list
- var j=document.getElementById('jump');
- Object.keys(V).forEach(function(g){var og=document.createElement('optgroup');og.label=g;V[g].forEach(function(n){if(XY[n]){var o=document.createElement('option');o.textContent=n;og.appendChild(o);}});if(og.children.length)j.appendChild(og);});
- j.addEventListener('change',function(){var n=j.value;if(XY[n])map.flyTo(XY[n],15,{duration:1.1});});
+ // village search
+ var jin=document.getElementById('jump'),jl=document.getElementById('jumplist'),jn=[],ji=-1;
+ Object.keys(V).forEach(function(g){V[g].forEach(function(n){if(XY[n])jn.push(n);});});
+ function nz(x){return String(x).replace(/[־'׳"״\-\s]/g,'');}
+ function jhide(){jl.hidden=true;jin.setAttribute('aria-expanded','false');}
+ function jpick(n){jin.value=n;jhide();map.flyTo(XY[n],15,{duration:1.1});}
+ function jshow(){var q=nz(jin.value);jl.innerHTML='';ji=-1;
+  var m=jn.filter(function(n){return !q||nz(n).indexOf(q)>=0;});
+  m.forEach(function(n){var li=document.createElement('li');li.setAttribute('role','option');li.textContent=n;li.addEventListener('mousedown',function(e){e.preventDefault();jpick(n);});jl.appendChild(li);});
+  if(!m.length){var li=document.createElement('li');li.className='none';li.textContent='לא נמצא כפר בשם הזה';jl.appendChild(li);}
+  jl.hidden=false;jin.setAttribute('aria-expanded','true');}
+ function jmark(it){it.forEach(function(x,i){x.classList.toggle('on',i===ji);});if(it[ji])it[ji].scrollIntoView({block:'nearest'});}
+ jin.addEventListener('input',jshow);jin.addEventListener('focus',jshow);jin.addEventListener('blur',function(){setTimeout(jhide,150);});
+ jin.addEventListener('keydown',function(e){var it=[].slice.call(jl.querySelectorAll('li[role=option]'));
+  if(e.key==='ArrowDown'){e.preventDefault();if(jl.hidden)jshow();else{ji=Math.min(it.length-1,ji+1);jmark(it);}}
+  else if(e.key==='ArrowUp'){e.preventDefault();ji=Math.max(0,ji-1);jmark(it);}
+  else if(e.key==='Enter'){e.preventDefault();var p=it[ji>=0?ji:0];if(p)jpick(p.textContent);}
+  else if(e.key==='Escape'){jhide();}});
  // pick a spot
  var pin=null,lsel=document.getElementById('lsel'),lgo=document.getElementById('lgo'),lclear=document.getElementById('lclear'),locsum=document.getElementById('locsum'),vs=document.getElementById('village');
  function nearest(ll){var b=null,bd=1e12;Object.keys(XY).forEach(function(n){var d=map.distance(ll,XY[n]);if(d<bd){bd=d;b=n;}});return [b,bd/1000];}
+ var pbox=document.createElement('div');pbox.style.cssText='direction:rtl;font-family:inherit;line-height:1.45;min-width:200px';
+ var plab=document.createElement('label');plab.style.cssText='display:flex;gap:8px;align-items:flex-start;font-weight:700;font-size:14px;cursor:pointer';
+ var pchk=document.createElement('input');pchk.type='checkbox';pchk.style.cssText='width:20px;height:20px;margin:0;flex:none;accent-color:#2F6B2A';
+ plab.appendChild(pchk);plab.appendChild(document.createTextNode('לא להציג את הנקודה שסימנתי על המפה הציבורית'));
+ var pnote=document.createElement('div');pnote.style.cssText='font-size:12px;font-weight:500;margin-top:4px;color:#6B4A3A';pnote.textContent='הדיווח יוצג רק כחלק מהנתונים הכלליים של הכפר';
+ pbox.appendChild(plab);pbox.appendChild(pnote);
+ var ppop=L.popup({closeOnClick:false,autoClose:false,offset:[0,-6],minWidth:210}).setContent(pbox);
+ pchk.addEventListener('change',function(){pubEl.checked=pchk.checked;syncNm();});
+ pubEl.addEventListener('change',function(){pchk.checked=pubEl.checked;});
  function setPick(ll){
   sel=ll;if(pin)pin.setLatLng(ll);else pin=L.circleMarker(ll,{radius:11,color:'#fff',weight:3,fillColor:'#B8451F',fillOpacity:1,interactive:false}).addTo(map);
   var nb=nearest(ll),has=[].some.call(vs.options,function(o){return o.value===nb[0];}),msg='סומן מקום.';
   if(has&&nb[1]<=15&&vs.value!=='other'){vs.value=nb[0];msg+=' הכפר הקרוב: '+nb[0]+'. אם זה לא הכפר שלכם, אפשר לשנות בטופס.';}
   lsel.textContent=msg;locsum.textContent='סומן מקום על המפה. '+(has&&nb[1]<=15?'הכפר הקרוב: '+nb[0]+'.':'');
-  lgo.hidden=false;lclear.hidden=false;pubEl.disabled=false;syncNm();
+  lgo.hidden=false;lclear.hidden=false;pubEl.disabled=false;syncNm();ppop.setLatLng(ll);pchk.checked=pubEl.checked;ppop.openOn(map);
  }
  map.on('click',function(e){if(map.getZoom()<13){map.setView(e.latlng,15);lsel.textContent='הגדלנו. עכשיו לחצו על הבית שלכם.';return;}setPick(e.latlng);});
- lclear.addEventListener('click',function(){if(pin){map.removeLayer(pin);pin=null;}sel=null;pubEl.checked=false;pubEl.disabled=true;syncNm();lgo.hidden=true;lclear.hidden=true;lsel.textContent='עדיין לא סומן מקום. הגדילו את המפה ולחצו על הבית שלכם.';locsum.textContent='';});
+ lclear.addEventListener('click',function(){if(pin){map.removeLayer(pin);pin=null;}map.closePopup(ppop);sel=null;pubEl.checked=false;pubEl.disabled=true;syncNm();lgo.hidden=true;lclear.hidden=true;lsel.textContent='עדיין לא סומן מקום. הגדילו את המפה ולחצו על הבית שלכם.';locsum.textContent='';});
  var wrap=document.getElementById('lwrap'),lfull=document.getElementById('lfull');
  function full(on){wrap.classList.toggle('full',on);document.body.style.overflow=on?'hidden':'';lfull.textContent=on?'סגירת מסך מלא':'מסך מלא';if(on||!mobile)map.dragging.enable();if(!on&&mobile)map.dragging.disable();on?map.scrollWheelZoom.enable():map.scrollWheelZoom.disable();setTimeout(function(){map.invalidateSize();},50);}
  lfull.addEventListener('click',function(){full(!wrap.classList.contains('full'));});
