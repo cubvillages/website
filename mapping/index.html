@@ -172,31 +172,30 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <p class="hint">בחרו את הכפר. אם סימנתם מקום במפה, הכפר הקרוב נבחר לבד, ואפשר לשנות. אם אתם גרים במקום שאינו ברשימה, בחרו "אחר".</p>
 <div id="otherbox" hidden style="margin-top:10px"><label for="othername" style="font-weight:700;font-size:15px;display:block;margin-bottom:4px">איך קוראים למקום? (לא חובה)</label><input id="othername" type="text" placeholder="שם המקום, השכונה או האזור" autocomplete="off" maxlength="80"></div></fieldset>
 
-<fieldset><legend>מקום על המפה (לא חובה)</legend>
+<fieldset><legend>מיקום על המפה</legend>
 <p id="locsum" class="hint" style="margin:0 0 10px;font-size:15px">לא סומן מקום. <a href="#locate">חזרו למפה</a> ולחצו על הבית שלכם.</p>
 <label class="consent"><input type="checkbox" id="pub" disabled> לא להציג את הנקודה שסימנתי על המפה הציבורית</label>
 <p class="hint">אם התיבה מסומנת, הדיווח ייספר רק כנתון סטטיסטי לכפר או לאזור, והנקודה לא תוצג לציבור.</p>
 <div style="margin-top:12px"><label for="nm" style="font-weight:700;font-size:15px;display:block;margin-bottom:4px">שם</label><input id="nm" type="text" maxlength="60" autocomplete="off" placeholder="שם פרטי או כינוי"></div>
-<div style="margin-top:12px"><label for="ad" style="font-weight:700;font-size:15px;display:block;margin-bottom:4px">כתובת</label><input id="ad" type="text" maxlength="120" autocomplete="off" placeholder="למשל: הכפר והשכונה, או כתובת הבית"></div>
 <label class="consent" style="margin-top:14px"><input type="checkbox" id="shownm" disabled> להציג את שמי ליד הנקודה על המפה הציבורית</label>
-<p class="hint">הכתובת אינה מוצגת לעולם. השם מוצג רק אם הנקודה מוצגת וסימנתם גם כאן.</p></fieldset>
+<p class="hint">השם מוצג רק אם הנקודה מוצגת וסימנתם גם כאן.</p></fieldset>
 <div style="position:absolute;opacity:0;width:0;height:0;overflow:hidden;pointer-events:none" aria-hidden="true"><label>אל תמלאו שדה זה<input id="hp" type="text" tabindex="-1" autocomplete="off"></label></div>
 
 <fieldset><legend>2. איזה מסמך או צו התקבל?</legend>
 <p class="hint" style="margin:0 0 8px">ניתן לסמן יותר מאפשרות אחת, בהתאם למסמכים שהתקבלו.</p>
 <div class="types">
-<label><input type="checkbox" name="t" value="admin"> צו הריסה מינהלי.</label>
-<label><input type="checkbox" name="t" value="c212"> צו הריסה שיפוטי ללא הרשעה או ללא הליך פלילי — לפי סעיף 212 או סעיף 239 לחוק התכנון והבנייה, לרבות צו שניתן במעמד צד אחד.</label>
-<label><input type="checkbox" name="t" value="cother"> צו הריסה שיפוטי אחר — לרבות צו הריסה שניתן במסגרת גזר דין.</label>
-<label><input type="checkbox" name="t" value="pinui"> צו לסילוק יד ולפינוי מקרקעי ציבור — לפי חוק מקרקעי ציבור (פינוי קרקע), לרבות צו מטעם רשות מקרקעי ישראל.</label>
-<label><input type="checkbox" name="t" value="judg"> פסק דין או צו שיפוטי לפינוי מקרקעין או לסילוק יד.</label>
-<label><input type="checkbox" name="t" value="demand"> דרישה או התראה לפינוי מקרקעין ולסילוק יד — לרבות מטעם רשות מקרקעי ישראל או הסיירת הירוקה.</label>
-<label><input type="checkbox" name="t" value="stop"> צו להפסקת עבודה, להפסקת שימוש או לאיסור שימוש — מינהלי או שיפוטי.</label>
-<label><input type="checkbox" name="t" value="warn"> התראה או אזהרה בכתב בעניין בנייה או שימוש במקרקעין — לרבות התראה שנייה או התראה לפני הטלת קנס.</label>
-<label><input type="checkbox" name="t" value="fine"> הודעה על הטלת קנס.</label>
-<label><input type="checkbox" name="t" value="summ"> זימון לחקירה בעניין בנייה, שימוש או החזקה במקרקעין.</label>
-<label><input type="checkbox" name="t" value="verbal"> התראה או הודעה בעל פה.</label>
-<label><input type="checkbox" name="t" value="other"> אחר, לא בטוחים.</label>
+<label><input type="checkbox" name="t" value="admin"> צו הריסה מינהלי</label>
+<label><input type="checkbox" name="t" value="c212"> צו הריסה שיפוטי ללא הרשעה או ללא הליך פלילי — לפי סעיף 212 או סעיף 239 לחוק התכנון והבנייה, לרבות צו שניתן במעמד צד אחד</label>
+<label><input type="checkbox" name="t" value="cother"> צו הריסה שיפוטי אחר — לרבות צו הריסה שניתן במסגרת גזר דין</label>
+<label><input type="checkbox" name="t" value="pinui"> צו לסילוק יד ולפינוי מקרקעי ציבור — לפי חוק מקרקעי ציבור (פינוי קרקע), לרבות צו מטעם רשות מקרקעי ישראל</label>
+<label><input type="checkbox" name="t" value="judg"> פסק דין או צו שיפוטי לפינוי מקרקעין או לסילוק יד</label>
+<label><input type="checkbox" name="t" value="demand"> דרישה או התראה לפינוי מקרקעין ולסילוק יד — לרבות מטעם רשות מקרקעי ישראל או הסיירת הירוקה</label>
+<label><input type="checkbox" name="t" value="stop"> צו להפסקת עבודה, להפסקת שימוש או לאיסור שימוש — מינהלי או שיפוטי</label>
+<label><input type="checkbox" name="t" value="warn"> התראה או אזהרה בכתב בעניין בנייה או שימוש במקרקעין — לרבות התראה שנייה או התראה לפני הטלת קנס</label>
+<label><input type="checkbox" name="t" value="fine"> הודעה על הטלת קנס</label>
+<label><input type="checkbox" name="t" value="summ"> זימון לחקירה בעניין בנייה, שימוש או החזקה במקרקעין</label>
+<label><input type="checkbox" name="t" value="verbal"> התראה או הודעה בעל פה</label>
+<label><input type="checkbox" name="t" value="other"> אחר, לא בטוחים</label>
 </div>
 <div id="exbox" hidden style="margin-top:14px"><div id="exq" style="font-weight:800;font-size:16px;margin-bottom:6px">האם הצו השיפוטי ניתן במעמד צד אחד?</div>
 <div class="types" role="radiogroup" aria-labelledby="exq" style="grid-template-columns:repeat(3,minmax(0,1fr))"><label><input type="radio" name="ex" value="כן"> כן</label><label><input type="radio" name="ex" value="לא"> לא</label><label><input type="radio" name="ex" value="לא ידוע"> לא ידוע</label></div>
@@ -288,7 +287,7 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <li>אל תבנו, אל תחרשו ואל תטעו במקום עד שדיברתם עם עורך דין. פעולה כזאת יכולה להאיץ את הביצוע.</li>
 <li>הדיווח על המפה אינו תחליף לייעוץ משפטי.</li>
 </ul>
-<p style="margin:20px 0 0"><a class="btn" href="https://wa.me/972524152031?text=%D7%9C%D7%91%D7%99%D7%A8%D7%95%D7%A8%20%D7%95%D7%94%D7%9B%D7%95%D7%95%D7%A0%D7%94%20%D7%9E%D7%A9%D7%A4%D7%98%D7%99%D7%99%D7%9D%20%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%99%D7%99%D7%9D" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:#2F6B2A;flex-wrap:wrap;line-height:1.3"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" style="flex:none"><path fill="#fff" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm0 16.3a7.3 7.3 0 0 1-3.7-1l-.3-.2-2.7.7.7-2.6-.2-.3A7.3 7.3 0 1 1 12 19.3zm4-5.5c-.2-.1-1.3-.7-1.5-.7-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6 6 0 0 1-3-2.6c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.4a.8.8 0 0 0-.6.3 2.5 2.5 0 0 0-.8 1.9c0 1.1.8 2.2.9 2.3.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.3-.6 1.5-1.1.2-.5.2-1 .1-1.1l-.6-.4z"/></svg><span>לבירור והכוונה משפטיים ראשוניים בוואטסאפ</span><bdi dir="ltr" style="font-weight:700;opacity:.95">+972 52-415-2031</bdi></a></p>
+<p style="margin:20px 0 0"><a href="https://wa.me/972524152031?text=%D7%9C%D7%91%D7%99%D7%A8%D7%95%D7%A8%20%D7%95%D7%94%D7%9B%D7%95%D7%95%D7%A0%D7%94%20%D7%9E%D7%A9%D7%A4%D7%98%D7%99%D7%99%D7%9D%20%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%99%D7%99%D7%9D" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; padding-inline: 8px 18px; background: #FFFFFF; border: 1px solid #EAD9B0; border-radius: 999px; color: #3B1D12; text-decoration: none; font-weight: 700; font-size: 16px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: #25D366"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm0 16.3a7.3 7.3 0 0 1-3.7-1l-.3-.2-2.7.7.7-2.6-.2-.3A7.3 7.3 0 1 1 12 19.3zm4-5.5c-.2-.1-1.3-.7-1.5-.7-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6 6 0 0 1-3-2.6c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.4a.8.8 0 0 0-.6.3 2.5 2.5 0 0 0-.8 1.9c0 1.1.8 2.2.9 2.3.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.3-.6 1.5-1.1.2-.5.2-1 .1-1.1l-.6-.4z"/></svg></span>לבירור והכוונה משפטיים ראשוניים <bdi dir="ltr" style="font-weight: 500">+972 52-415-2031</bdi></a></p>
 </section>
 
 <section class="card" aria-labelledby="ft">
@@ -365,10 +364,9 @@ document.getElementById('form').addEventListener('submit',function(e){
  e.preventDefault();var err=document.getElementById('err');err.textContent='';
  var vil=document.getElementById('village').value,ts=[].slice.call(document.querySelectorAll('input[name=t]:checked')).map(function(x){return x.value;}),n=Math.max(1,Math.min(50,+cnt.value||1)),bn=Math.max(1,Math.min(50,+bld.value||1)),
   bts=[].slice.call(document.querySelectorAll('input[name=b]:checked')).map(function(x){return BN[x.value];}),
-  nm=document.getElementById('nm').value.trim(),ad=document.getElementById('ad').value.trim();
+  nm=document.getElementById('nm').value.trim();
  if(!vil){err.textContent='בחרו כפר.';document.getElementById('village').focus();return;}
  if(!nm){err.textContent='כתבו את שמכם.';document.getElementById('nm').focus();return;}
- if(!ad){err.textContent='כתבו כתובת.';document.getElementById('ad').focus();return;}
  if(!ts.length){err.textContent='סמנו לפחות מסמך או צו אחד, או "אחר".';return;}
  if(!document.getElementById('ok').checked){err.textContent='כדי לשלוח צריך לאשר את התיבה האחרונה.';return;}
  var oname=document.getElementById('othername').value.trim();
@@ -379,7 +377,7 @@ document.getElementById('form').addEventListener('submit',function(e){
  var pub=!!(sel&&!pubEl.checked);
  var exEl=document.querySelector('input[name=ex]:checked');
  var payload={village:vil==='other'?('אחר'+(oname?': '+oname:'')):vil,orderType:ts.map(function(t){return TN[t];}).join(', '),count:n,date:document.getElementById('dt').value,receivedDate:document.getElementById('dr').value,
-  exParte:(exEl&&!document.getElementById('exbox').hidden)?exEl.value:'',buildings:bn,buildingTypes:bts.join(', '),address:ad,hidePhoto:document.getElementById('hideph').checked,
+  exParte:(exEl&&!document.getElementById('exbox').hidden)?exEl.value:'',buildings:bn,buildingTypes:bts.join(', '),hidePhoto:document.getElementById('hideph').checked,
   lat:sel?sel.lat:'',lng:sel?sel.lng:'',publicPoint:pub,showName:pub&&document.getElementById('shownm').checked,name:nm,
   contact:document.getElementById('ct').value.trim(),freeText:document.getElementById('freetext').value.trim(),consent:true,website:document.getElementById('hp').value};
  function send(){
