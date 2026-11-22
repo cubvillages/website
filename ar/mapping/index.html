@@ -90,6 +90,10 @@ legend{font-weight:800;font-size:18px;padding:0;margin:0 0 8px}
 details{border-top:1px solid #EBD3A0;padding:12px 0}details:first-of-type{border-top:0}
 summary{cursor:pointer;font-weight:800;font-size:17px;line-height:1.4}
 details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
+.pbar{max-width:1160px;margin:0 auto;padding:12px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px}
+.pbar span{font-size:15px;font-weight:700;color:#4F3226}
+.pbar img{height:43px;width:auto;max-width:100%;object-fit:contain;display:block}
+@media(max-width:640px){.pbar{flex-wrap:wrap;gap:6px 14px}.pbar span{flex:0 0 100%;font-size:13px}.pbar img{height:auto;width:0;min-width:0;max-width:none;max-height:43px}.pbar img.pf{flex:5.22 1 0}.pbar img.pa{flex:4.65 1 0}}
 .lwrap{position:relative}
 #lmap{height:min(68vh,560px);min-height:380px;border-radius:14px;border:1px solid #D6B88C;background:#E9DDBF;z-index:0;direction:ltr}
 .lbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;margin-top:12px}
@@ -153,7 +157,7 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 </div>
 </div>
 
-<div style="background:#FFFFFF;border-bottom:1px solid #EBD3A0"><div style="max-width:1160px;margin:0 auto;padding:12px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px"><span style="font-size:15px;font-weight:700;color:#4F3226">بالشراكة مع</span><img src="/assets/img/logo-forum-h-narrow.png" alt="منتدى التعايش السلمي في النقب من أجل المساواة المدنية" style="height:43px;width:auto;max-width:100%;object-fit:contain;display:block"><img src="/assets/img/logo-adalah.png" alt="عدالة — المركز القانوني لحقوق الأقلية العربية في إسرائيل" style="height:43px;width:auto;max-width:100%;object-fit:contain;display:block"></div></div>
+<div style="background:#FFFFFF;border-bottom:1px solid #EBD3A0"><div class="pbar"><span>بالشراكة مع</span><img src="/assets/img/logo-forum-h-narrow.png" alt="منتدى التعايش السلمي في النقب من أجل المساواة المدنية" class="pf"><img src="/assets/img/logo-adalah.png" alt="عدالة — المركز القانوني لحقوق الأقلية العربية في إسرائيل" class="pa"></div></div>
 
 <main class="om" id="main">
 
