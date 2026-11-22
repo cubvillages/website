@@ -45,6 +45,7 @@ main.om{max-width:1100px;margin:0 auto;padding:24px 24px 8px;font-weight:500;col
 .demo{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;cursor:pointer}
 .demo input{width:22px;height:22px;accent-color:#2F6B2A}
 .demonote{display:none;background:#FFE9B0;border:1px solid #F5B321;border-radius:10px;padding:8px 14px;font-weight:700;font-size:15px;margin:0 0 14px}
+#locsum:empty{display:none}
 .mapcount{margin:0 0 12px;font-size:17px;font-weight:600}.mapcount b{color:#B8451F;font-size:20px;font-weight:800}
 .how{margin-top:4px}.how-t{font-weight:800;font-size:17px;margin:0 0 8px}
 .how ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;counter-reset:h}
@@ -64,6 +65,7 @@ fieldset{border:0;padding:0;margin:0;min-width:0}
 legend{font-weight:800;font-size:18px;padding:0;margin:0 0 8px}
 .hint{font-size:14px;color:#6B4A3A;font-weight:500;margin:4px 0 0;line-height:1.45}
 .types{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.types.cm{grid-template-rows:repeat(6,auto);grid-auto-flow:column}
 .types label{display:flex;gap:10px;align-items:flex-start;border:2px solid #E6D0A5;border-radius:10px;padding:10px 12px;font-size:16px;font-weight:600;cursor:pointer;line-height:1.35}
 .types input{width:22px;height:22px;margin:1px 0 0;accent-color:#2F6B2A;flex:none}
 .types label:has(input:checked){border-color:#2F6B2A;background:#EEF6E8}
@@ -97,7 +99,7 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 .vl:before{display:none}
 #lmap.zlow .vl{display:none}
 .lg2 i{border-radius:50%}
-@media(max-width:760px){.stats,.steps,.types,.row2,.how ol{grid-template-columns:1fr}.tiles{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}}
+@media(max-width:760px){.stats,.steps,.types,.row2,.how ol{grid-template-columns:1fr}.types.cm{grid-template-rows:none;grid-auto-flow:row}.tiles{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}}
 </style>
 <script src="/assets/leaflet/leaflet.js"></script>
 <script src="/assets/a11y.js" defer></script>
@@ -174,25 +176,23 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 
 <section class="card" id="report" aria-labelledby="rt">
 <h2 id="rt">דיווח על צו או התראה</h2>
-<p class="sub">כמה שאלות קצרות.</p>
 <form class="rep" id="form" novalidate>
 <fieldset><legend><label for="village">1. באיזה כפר?</label></legend>
 <select id="village" required><option value="">בחרו כפר</option><optgroup label="לא מוכרים"><option>אם נמילה</option><option>אום רתאם</option><option>אום אלבדון</option><option>אז־זערורה</option><option>אז־זרנוג</option><option>אל־באט</option><option>אל־באט אל־ע׳רבי</option><option>אל־באטל</option><option>אל־בחירה</option><option>אל־בקיעה</option><option>אל־ג׳ורף</option><option>גטמאת</option><option>אל־מטהר</option><option>אל־גרין (אל־עוקבי)</option><option>אל־חומרה</option><option>אל־פוח׳ארי</option><option>אל־מד׳בח</option><option>אל־מזרעה (אל־שהבא)</option><option>אל־מכימן</option><option>אל־מסאעדיה</option><option>אל־סרה</option><option>אל־ע׳זה</option><option>אלע׳רה</option><option>ארואיס</option><option>אס־סדיר</option><option>אל־סר</option><option>באט אל־סראיעה</option><option>ביר אל־חמאם</option><option>ביר אל־משאש</option><option>דחייה</option><option>ואדי אל־משאש</option><option>ח׳רבת אל־וטן</option><option>ח׳רבת זבאלה</option><option>ראס ג׳ראבא</option><option>טויל אבו ג׳רול</option><option>כרכור</option><option>נחל אריכא</option><option>נחל חווה</option><option>סהל אלבגאר</option><option>סוואווין</option><option>עווג׳אן</option><option>עתיר</option><option>תל אל־מלח</option><option>תל ערד מזרח</option><option>תל ערד מערב</option></optgroup><optgroup label="מוכרים (אל־קסום ונווה מדבר)"><option>אום בטין</option><option>א־סייד</option><option>דריג׳את</option><option>כוחלה</option><option>מולדה</option><option>מכחול</option><option>תראבין א־צאנע</option><option>אבו תלול</option><option>אבו קרינאת (אם מתנאן)</option><option>ביר הדאג׳</option><option>קסר א־סר</option></optgroup><optgroup label="בהליכי הכרה או הקמה"><option>ח׳שם זנה</option><option>עבדה</option><option>רח׳מה</option><option>ואדי אן־נעם</option><option>אל־פורעה</option></optgroup><optgroup label="הוחרבו"><option>אל־עראקיב</option></optgroup><option value="other">אחר (מקום שאינו ברשימה)</option></select>
-<p class="hint">בחרו את הכפר. אם סימנתם מקום במפה, הכפר הקרוב נבחר לבד, ואפשר לשנות. אם אתם גרים במקום שאינו ברשימה, בחרו "אחר".</p>
+<p class="hint">אפשר לשנות את שם הכפר שנבחר כאשר לחצתם על המפה</p>
 <div id="otherbox" hidden style="margin-top:10px"><label for="othername" style="font-weight:700;font-size:15px;display:block;margin-bottom:4px">איך קוראים למקום? (לא חובה)</label><input id="othername" type="text" placeholder="שם המקום, השכונה או האזור" autocomplete="off" maxlength="80"></div></fieldset>
 
 <fieldset><legend>מיקום על המפה</legend>
-<p id="locsum" class="hint" style="margin:0 0 10px;font-size:15px">לא סומן מקום. <a href="#locate">חזרו למפה</a> ולחצו על הבית שלכם.</p>
+<p id="locsum" class="hint" style="margin:0 0 10px;font-size:15px"></p>
 <label class="consent"><input type="checkbox" id="pub" disabled> לא להציג את הנקודה שסימנתי על המפה הציבורית</label>
-<p class="hint">אם התיבה מסומנת, הדיווח ייספר רק כנתון סטטיסטי לכפר או לאזור, והנקודה לא תוצג לציבור.</p>
 <div style="margin-top:12px"><label for="nm" style="font-weight:700;font-size:15px;display:block;margin-bottom:4px">שם</label><input id="nm" type="text" maxlength="60" autocomplete="off" placeholder="שם פרטי או כינוי"></div>
-<label class="consent" style="margin-top:14px"><input type="checkbox" id="shownm" disabled> להציג את שמי ליד הנקודה על המפה הציבורית</label>
-<p class="hint">השם מוצג רק אם הנקודה מוצגת וסימנתם גם כאן.</p></fieldset>
+<label class="consent" style="margin-top:14px"><input type="checkbox" id="shownm" disabled> להציג את שמי כמדווח ליד הנקודה במפה הציבורית</label>
+</fieldset>
 <div style="position:absolute;opacity:0;width:0;height:0;overflow:hidden;pointer-events:none" aria-hidden="true"><label>אל תמלאו שדה זה<input id="hp" type="text" tabindex="-1" autocomplete="off"></label></div>
 
 <fieldset><legend>2. איזה מסמך או צו התקבל?</legend>
 <p class="hint" style="margin:0 0 8px">ניתן לסמן יותר מאפשרות אחת, בהתאם למסמכים שהתקבלו.</p>
-<div class="types">
+<div class="types cm">
 <label><input type="checkbox" name="t" value="admin"> צו הריסה מינהלי</label>
 <label><input type="checkbox" name="t" value="c212"> צו הריסה שיפוטי ללא הרשעה או ללא הליך פלילי — לפי סעיף 212 או סעיף 239 לחוק התכנון והבנייה, לרבות צו שניתן במעמד צד אחד</label>
 <label><input type="checkbox" name="t" value="cother"> צו הריסה שיפוטי אחר — לרבות צו הריסה שניתן במסגרת גזר דין</label>
@@ -441,7 +441,7 @@ var GC={'לא מוכרים':'#B8451F','מוכרים (אל־קסום ונווה �
   lgo.hidden=false;lclear.hidden=false;pubEl.disabled=false;syncNm();
  }
  map.on('click',function(e){if(map.getZoom()<13){map.setView(e.latlng,15);lsel.textContent='הגדלנו. עכשיו לחצו על הבית שלכם.';return;}setPick(e.latlng);});
- lclear.addEventListener('click',function(){if(pin){map.removeLayer(pin);pin=null;}sel=null;pubEl.checked=false;pubEl.disabled=true;syncNm();lgo.hidden=true;lclear.hidden=true;lsel.textContent='עדיין לא סומן מקום. הגדילו את המפה ולחצו על הבית שלכם.';locsum.innerHTML='לא סומן מקום. <a href="#locate">חזרו למפה</a> ולחצו על הבית שלכם.';});
+ lclear.addEventListener('click',function(){if(pin){map.removeLayer(pin);pin=null;}sel=null;pubEl.checked=false;pubEl.disabled=true;syncNm();lgo.hidden=true;lclear.hidden=true;lsel.textContent='עדיין לא סומן מקום. הגדילו את המפה ולחצו על הבית שלכם.';locsum.textContent='';});
  var wrap=document.getElementById('lwrap'),lfull=document.getElementById('lfull');
  function full(on){wrap.classList.toggle('full',on);document.body.style.overflow=on?'hidden':'';lfull.textContent=on?'סגירת מסך מלא':'מסך מלא';if(on||!mobile)map.dragging.enable();if(!on&&mobile)map.dragging.disable();on?map.scrollWheelZoom.enable():map.scrollWheelZoom.disable();setTimeout(function(){map.invalidateSize();},50);}
  lfull.addEventListener('click',function(){full(!wrap.classList.contains('full'));});
