@@ -253,9 +253,9 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <fieldset><legend><label for="cnt">5. כמה מסמכים קיבלתם?</label></legend>
 <div class="stepper"><button type="button" id="minus" aria-label="פחות">−</button><input id="cnt" type="number" min="1" max="50" value="1" inputmode="numeric"><button type="button" id="plus" aria-label="יותר">+</button></div></fieldset>
 <fieldset><legend><label for="fam">6. לכמה משפחות מתייחסים הצו, הדרישה או ההתראה?</label></legend>
-<div class="stepper"><button type="button" id="fminus" aria-label="פחות">−</button><input id="fam" type="number" min="1" max="50" value="1" inputmode="numeric"><button type="button" id="fplus" aria-label="יותר">+</button></div></fieldset>
+<div class="stepper"><button type="button" id="fminus" aria-label="פחות">−</button><input id="fam" type="number" min="1" max="999" value="1" inputmode="numeric"><button type="button" id="fplus" aria-label="יותר">+</button></div></fieldset>
 <fieldset><legend><label for="bld">7. לכמה מבנים מתייחסים הצו או ההתראה?</label></legend>
-<div class="stepper"><button type="button" id="bminus" aria-label="פחות">−</button><input id="bld" type="number" min="1" max="50" value="1" inputmode="numeric"><button type="button" id="bplus" aria-label="יותר">+</button></div></fieldset>
+<div class="stepper"><button type="button" id="bminus" aria-label="פחות">−</button><input id="bld" type="number" min="1" max="999" value="1" inputmode="numeric"><button type="button" id="bplus" aria-label="יותר">+</button></div></fieldset>
 </div>
 
 <fieldset><legend>8. סוגי המבנים שאליהם מתייחסים הצו, הדרישה או ההתראה</legend>
@@ -376,10 +376,10 @@ document.getElementById('plus').onclick=function(){cnt.value=Math.min(50,(+cnt.v
 document.getElementById('minus').onclick=function(){cnt.value=Math.max(1,(+cnt.value||2)-1);};
 var today=new Date();document.getElementById('dt').max=today.toISOString().slice(0,10);document.getElementById('dr').max=today.toISOString().slice(0,10);
 var fam=document.getElementById('fam');
-document.getElementById('fplus').onclick=function(){fam.value=Math.min(50,(+fam.value||0)+1);};
+document.getElementById('fplus').onclick=function(){fam.value=Math.min(999,(+fam.value||0)+1);};
 document.getElementById('fminus').onclick=function(){fam.value=Math.max(1,(+fam.value||2)-1);};
 var bld=document.getElementById('bld');
-document.getElementById('bplus').onclick=function(){bld.value=Math.min(50,(+bld.value||0)+1);};
+document.getElementById('bplus').onclick=function(){bld.value=Math.min(999,(+bld.value||0)+1);};
 document.getElementById('bminus').onclick=function(){bld.value=Math.max(1,(+bld.value||2)-1);};
 var JUD=['c212','cother','judg'];
 function toggleEx(){var on=JUD.some(function(v){var el=document.querySelector('input[name=t][value='+v+']');return el&&el.checked;});document.getElementById('exbox').hidden=!on;if(!on){[].forEach.call(document.querySelectorAll('input[name=ex]'),function(r){r.checked=false;});}}
@@ -391,7 +391,7 @@ function readPhoto(file){return new Promise(function(res,rej){var img=new Image(
  img.onerror=function(){rej();};img.src=u;});}
 document.getElementById('form').addEventListener('submit',function(e){
  e.preventDefault();var err=document.getElementById('err');err.textContent='';
- var vil=document.getElementById('village').value,ts=[].slice.call(document.querySelectorAll('input[name=t]:checked')).map(function(x){return x.value;}),n=Math.max(1,Math.min(50,+cnt.value||1)),bn=Math.max(1,Math.min(50,+bld.value||1)),
+ var vil=document.getElementById('village').value,ts=[].slice.call(document.querySelectorAll('input[name=t]:checked')).map(function(x){return x.value;}),n=Math.max(1,Math.min(50,+cnt.value||1)),bn=Math.max(1,Math.min(999,+bld.value||1)),
   bts=[].slice.call(document.querySelectorAll('input[name=b]:checked')).map(function(x){return BN[x.value];}),
   nm=document.getElementById('nm').value.trim();
  if(!vil){err.textContent='בחרו כפר.';document.getElementById('village').focus();return;}
@@ -406,7 +406,7 @@ document.getElementById('form').addEventListener('submit',function(e){
  var pub=!!(sel&&!pubEl.checked);
  var exEl=document.querySelector('input[name=ex]:checked');
  var payload={village:vil==='other'?('אחר'+(oname?': '+oname:'')):vil,orderType:ts.map(function(t){return TN[t];}).join(', '),count:n,date:document.getElementById('dt').value,receivedDate:document.getElementById('dr').value,
-  exParte:(exEl&&!document.getElementById('exbox').hidden)?exEl.value:'',families:Math.max(1,Math.min(50,+fam.value||1)),buildings:bn,buildingTypes:bts.join(', '),hidePhoto:document.getElementById('hideph').checked,
+  exParte:(exEl&&!document.getElementById('exbox').hidden)?exEl.value:'',families:Math.max(1,Math.min(999,+fam.value||1)),buildings:bn,buildingTypes:bts.join(', '),hidePhoto:document.getElementById('hideph').checked,
   lat:sel?sel.lat:'',lng:sel?sel.lng:'',publicPoint:pub,showName:pub&&document.getElementById('shownm').checked,name:nm,
   contact:document.getElementById('ct').value.trim(),freeText:document.getElementById('freetext').value.trim(),consent:true,website:document.getElementById('hp').value};
  function send(){
