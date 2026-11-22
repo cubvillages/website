@@ -161,6 +161,7 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <section class="card" id="locate" aria-labelledby="lt">
 <h2 id="lt">מצאו את הבית שלכם בצילום האוויר</h2>
 <p class="sub">בחרו כפר, הגדילו עד שתראו את הבית שלכם, לחצו על המיקום ואז על ״המשך לטופס״</p>
+<div class="tools"><select id="jump" aria-label="קפיצה לכפר"><option value="">בחרו כפר</option></select></div>
 <p class="mapcount" id="mapcount" aria-live="polite"></p>
 <div class="lwrap" id="lwrap">
 <div id="lmap" role="application" aria-label="מפת צילום אוויר של הכפרים"></div>
@@ -344,7 +345,7 @@ document.getElementById('q').addEventListener('input',render);
 document.getElementById('demo').addEventListener('change',function(e){DEMO=e.target.checked;document.getElementById('demonote').style.display=DEMO?'block':'none';render();});
 document.getElementById('tiles').addEventListener('click',function(e){var b=e.target.closest('.tile');if(!b)return;var n=b.getAttribute('data-v');
  document.getElementById('locate').scrollIntoView({behavior:'smooth'});
- var m=window.__lmap;if(!m||!XY[n])return;
+ var m=window.__lmap;if(!m||!XY[n])return;var j=document.getElementById('jump');if(j)j.value=n;
  var pts=realPts.filter(function(p){return p.village===n&&isFinite(p.lat)&&isFinite(p.lng);});
  setTimeout(function(){m.invalidateSize();if(pts.length)m.fitBounds(L.latLngBounds(pts.map(function(p){return [p.lat,p.lng];})).extend(XY[n]),{maxZoom:16,padding:[50,50]});else m.flyTo(XY[n],15,{duration:1.1});},350);
 });
@@ -425,6 +426,10 @@ var GC={'לא מוכרים':'#B8451F','מוכרים (אל־קסום ונווה �
  drawReal=function(){realLayer.clearLayers();if(DEMO)return;realPts.forEach(function(p){if(!isFinite(p.lat)||!isFinite(p.lng))return;
   L.circleMarker([p.lat,p.lng],{radius:8,color:p.status==='נבדק'?'#2F6B2A':'#fff',weight:p.status==='נבדק'?4:2,fillColor:'#1F6FB5',fillOpacity:1}).bindPopup(popupFor(p)).addTo(realLayer);});};
  function zc(){mapEl.classList.toggle('zlow',map.getZoom()<11);}map.on('zoomend',zc);zc();
+ // jump list
+ var j=document.getElementById('jump');
+ Object.keys(V).forEach(function(g){var og=document.createElement('optgroup');og.label=g;V[g].forEach(function(n){if(XY[n]){var o=document.createElement('option');o.textContent=n;og.appendChild(o);}});if(og.children.length)j.appendChild(og);});
+ j.addEventListener('change',function(){var n=j.value;if(XY[n])map.flyTo(XY[n],15,{duration:1.1});});
  // pick a spot
  var pin=null,lsel=document.getElementById('lsel'),lgo=document.getElementById('lgo'),lclear=document.getElementById('lclear'),locsum=document.getElementById('locsum'),vs=document.getElementById('village');
  function nearest(ll){var b=null,bd=1e12;Object.keys(XY).forEach(function(n){var d=map.distance(ll,XY[n]);if(d<bd){bd=d;b=n;}});return [b,bd/1000];}
