@@ -102,6 +102,10 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 .vl{background:rgba(255,255,255,.88);border:0;box-shadow:none;font:700 12px/1.2 'Noto Sans Arabic','Heebo',sans-serif;color:#3B1D12;padding:1px 5px;direction:rtl}
 .vl:before{display:none}
 #lmap.zlow .vl{display:none}
+#lmap.onlyrep .vl,#lmap.onlyrep path.vdot{display:none}
+.onlyc{background:#fff;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.4);padding:7px 10px;font:700 14px/1.2 inherit;color:#3B1D12;direction:rtl}
+.onlyc label{display:flex;align-items:center;gap:7px;cursor:pointer;margin:0}
+.onlyc input{width:18px;height:18px;margin:0;accent-color:#2F6B2A}
 .lg2 i{border-radius:50%}
 @media(max-width:760px){.stats,.steps,.types,.row2,.how ol{grid-template-columns:1fr}.types.cm{grid-template-rows:none;grid-auto-flow:row}.tiles{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}}
 </style>
@@ -418,7 +422,7 @@ var GC={'غير معترف بها':'#B8451F','معترف بها (مجلسا ال
  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxNativeZoom:17,maxZoom:19,attribution:'صورة الجو: Esri, Vantor, Earthstar Geographics'}).addTo(map);
  var gOf={},mk={};Object.keys(V).forEach(function(g){V[g].forEach(function(n){gOf[n]=g;});});
  Object.keys(XY).forEach(function(n){
-  mk[n]=L.circleMarker(XY[n],{radius:6,color:'#fff',weight:2,fillColor:GC[gOf[n]]||'#B8451F',fillOpacity:.95,interactive:false}).addTo(map);
+  mk[n]=L.circleMarker(XY[n],{radius:6,color:'#fff',weight:2,fillColor:GC[gOf[n]]||'#B8451F',fillOpacity:.95,interactive:false,className:'vdot'}).addTo(map);
   mk[n].bindTooltip(n,{permanent:true,direction:'top',offset:[0,-9],className:'vl',interactive:false});
  });
  var pubLayer=L.layerGroup().addTo(map);
@@ -439,6 +443,8 @@ var GC={'غير معترف بها':'#B8451F','معترف بها (مجلسا ال
   hit.on('mouseout',function(){if(!hit._stick)hit.closePopup();});
   hit.on('click',function(){hit._stick=true;});
   hit.on('popupclose',function(){hit._stick=false;});});};
+ var onlyC=L.control({position:'topright'});onlyC.onAdd=function(){var d=L.DomUtil.create('div','onlyc');d.innerHTML='<label><input type="checkbox" id="onlyrep"> عرض البلاغات فقط</label>';L.DomEvent.disableClickPropagation(d);return d;};onlyC.addTo(map);
+ document.getElementById('onlyrep').addEventListener('change',function(){mapEl.classList.toggle('onlyrep',this.checked);});
  function zc(){mapEl.classList.toggle('zlow',map.getZoom()<11);}map.on('zoomend',zc);zc();
  // village search
  var jin=document.getElementById('jump'),jl=document.getElementById('jumplist'),jn=[],ji=-1;
