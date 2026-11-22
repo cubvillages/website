@@ -108,6 +108,7 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 .onlyc input{width:18px;height:18px;margin:0;accent-color:#2F6B2A}
 .lg2 i{border-radius:50%}
 @media(max-width:760px){.stats,.steps,.types,.row2,.how ol{grid-template-columns:1fr}.types.cm{grid-template-rows:none;grid-auto-flow:row}.tiles{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}}
+.pflip .leaflet-popup-tip-container{position:absolute;top:-20px;left:50%;margin-left:-20px;transform:rotate(180deg)}
 </style>
 <script src="/assets/leaflet/leaflet.js"></script>
 <script src="/assets/a11y.js" defer></script>
@@ -439,6 +440,12 @@ var GC={'לא מוכרים':'#B8451F','מוכרים (אל־קסום ונווה �
   hit.on('mouseout',function(){if(!hit._stick)hit.closePopup();});
   hit.on('click',function(){hit._stick=true;});
   hit.on('popupclose',function(){hit._stick=false;});});};
+ function pflip(pp){var c=pp&&pp._container;if(!c||!pp._map||pp.options.autoPan!==false)return;
+  var oy=pp.options.offset.y;c.classList.remove('pflip');c.style.bottom=(-oy)+'px';
+  var y=map.latLngToContainerPoint(pp.getLatLng()).y;
+  if(y-(c.offsetHeight+20)-8<0){c.classList.add('pflip');var want=mapEl.getBoundingClientRect().top+y+26;for(var k=0;k<4;k++){var d=want-c.getBoundingClientRect().top;if(Math.abs(d)<1)break;c.style.bottom=((parseFloat(c.style.bottom)||0)-d)+'px';}}}
+ map.on('popupopen',function(e){pflip(e.popup);});
+ map.on('zoomend moveend',function(){map.eachLayer(function(l){if(l instanceof L.Popup)pflip(l);});});
  var onlyC=L.control({position:'topright'});onlyC.onAdd=function(){var d=L.DomUtil.create('div','onlyc');d.innerHTML='<label><input type="checkbox" id="onlyrep"> להציג רק דיווחים</label>';L.DomEvent.disableClickPropagation(d);return d;};onlyC.addTo(map);
  document.getElementById('onlyrep').addEventListener('change',function(){mapEl.classList.toggle('onlyrep',this.checked);});
  function zc(){mapEl.classList.toggle('zlow',map.getZoom()<11);}map.on('zoomend',zc);zc();
