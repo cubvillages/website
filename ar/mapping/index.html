@@ -358,7 +358,7 @@ function render(){
  var mc=document.getElementById('mapcount');if(mc)mc.innerHTML='حتى الآن أُبلغ عن <b>'+tot+'</b> أوامر وإنذارات في <b>'+vil+'</b> '+(vil===1?'قرية':'قرى')+'.';document.getElementById('sTotal').textContent=tot;document.getElementById('sVill').textContent=vil;paintMarkers(d);
 }
 document.getElementById('q').addEventListener('input',render);
-document.getElementById('morebtn').addEventListener('click',function(){var m=document.getElementById('moreinfo'),o=m.hidden;m.hidden=!o;this.setAttribute('aria-expanded',o?'true':'false');});
+document.getElementById('morebtn').addEventListener('click',function(){var m=document.getElementById('moreinfo'),o=m.hidden;m.hidden=!o;this.setAttribute('aria-expanded',o?'true':'false');this.textContent=o?'إغلاق':'معلومات إضافية';});
 document.getElementById('demo').addEventListener('change',function(e){DEMO=e.target.checked;document.getElementById('demonote').style.display=DEMO?'block':'none';render();});
 document.getElementById('tiles').addEventListener('click',function(e){var b=e.target.closest('.tile');if(!b)return;var n=b.getAttribute('data-v');
  document.getElementById('locate').scrollIntoView({behavior:'smooth'});
