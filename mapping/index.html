@@ -46,6 +46,10 @@ main.om{max-width:1100px;margin:0 auto;padding:24px 24px 8px;font-weight:500;col
 .demo input{width:22px;height:22px;accent-color:#2F6B2A}
 .demonote{display:none;background:#FFE9B0;border:1px solid #F5B321;border-radius:10px;padding:8px 14px;font-weight:700;font-size:15px;margin:0 0 14px}
 .mapcount{margin:0 0 12px;font-size:17px;font-weight:600}.mapcount b{color:#B8451F;font-size:20px;font-weight:800}
+.how{margin-top:4px}.how-t{font-weight:800;font-size:17px;margin:0 0 8px}
+.how ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;counter-reset:h}
+.how li{counter-increment:h;display:flex;gap:10px;align-items:flex-start;background:rgba(255,255,255,.7);border:1px solid #EBD3A0;border-radius:12px;padding:10px 12px;font-size:15px;line-height:1.4;font-weight:600}
+.how li:before{content:counter(h);flex:none;width:26px;height:26px;border-radius:50%;background:#F5B321;color:#3B1D12;font-weight:800;display:inline-flex;align-items:center;justify-content:center;font-size:14px}
 .legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;font-weight:600;margin:0 0 14px;align-items:center}
 .legend i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid #D6B88C;vertical-align:-3px;margin-inline-end:5px}
 .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
@@ -93,7 +97,7 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 .vl:before{display:none}
 #lmap.zlow .vl{display:none}
 .lg2 i{border-radius:50%}
-@media(max-width:760px){.stats,.steps,.types,.row2{grid-template-columns:1fr}.tiles{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}}
+@media(max-width:760px){.stats,.steps,.types,.row2,.how ol{grid-template-columns:1fr}.tiles{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}}
 </style>
 <script src="/assets/leaflet/leaflet.js"></script>
 <script src="/assets/a11y.js" defer></script>
@@ -143,15 +147,20 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <main class="om" id="main">
 
 <section class="om-hero" aria-labelledby="t">
-<div class="kick">מפת הצווים וההתראות · דיווח של דקה אחת</div>
-<h1 id="t">קיבלתם צו? <span>סמנו אותו על המפה.</span></h1>
-<p>כל צו שמסומן הופך מסיפור של משפחה אחת לנתון שאי אפשר להתעלם ממנו. המועצה אוספת את הדיווחים, בודקת אותם ומציגה לעיתונאים ולמקבלי ההחלטות כמה צווים והתראות מתקבלים בכל כפר. הפרטים האישיים שלכם נשארים אצלנו, ועל המפה הציבורית יופיע רק מה שבחרתם להציג.</p>
-<div class="hbtns"><a class="btn" href="#locate">למצוא את הבית שלכם על המפה</a> <a class="btn ghost" href="#report">לדיווח על צו או התראה</a></div>
+<div class="kick">מיפוי צווים והתראות</div>
+<h1 id="t">קיבלתם צו או התראה? <span>קחו רגע לדווח</span></h1>
+<p>כל צו או התראה הם סיפור של משפחה שחיה באי ודאות וחרדה. אחרי כמה שנים קשות, זהו מצבן של אלפי או עשרות אלפי משפחות בכפרים. כדי לשפר את יכולתנו להיאבק ולהשפיע על מקבלי ההחלטות והתקשורת, הכרחי שתהיה לנו התמונה המלאה. אל תחששו לדווח: ניתן לעשות זאת באנונימיות מוחלטת</p>
+<div class="how" role="group" aria-labelledby="howt"><div class="how-t" id="howt">איך זה עובד?</div>
+<ol>
+<li>מסמנים על המפה היכן ניתנו הצו או ההתראה</li>
+<li>ממלאים טופס עם הפרטים ובוחרים מה להציג ולא להציג</li>
+<li>פונים לייעוץ והכוונה ראשוניים דרך כפתור הווטסאפ שכאן למטה</li>
+</ol></div>
 </section>
 
 <section class="card" id="locate" aria-labelledby="lt">
 <h2 id="lt">מצאו את הבית שלכם בצילום האוויר</h2>
-<p class="sub">הכפרים פרוסים על שטח גדול, ולכן המיקום המדויק חשוב. בחרו כפר, הגדילו עד שרואים את הבתים, ולחצו על המיקום שלכם.</p>
+<p class="sub">הכפרים פרוסים על שטח גדול, ולכן המיקום המדויק חשוב. בחרו כפר, הגדילו עד שרואים את הבתים, ולחצו על המיקום שלכם</p>
 <div class="tools"><label for="jump">קפיצה לכפר</label><select id="jump"><option value="">בחרו כפר</option></select></div>
 <p class="mapcount" id="mapcount" aria-live="polite"></p>
 <div class="lwrap" id="lwrap">
