@@ -422,7 +422,7 @@ var GC={'غير معترف بها':'#B8451F','معترف بها (مجلسا ال
   mk[n].bindTooltip(n,{permanent:true,direction:'top',offset:[0,-9],className:'vl',interactive:false});
  });
  var pubLayer=L.layerGroup().addTo(map);
- addPub=function(ll){L.circleMarker(ll,{radius:7,color:'#fff',weight:2,fillColor:'#1F6FB5',fillOpacity:1}).addTo(pubLayer);};
+ addPub=function(ll){L.circleMarker(ll,{radius:7,color:'#fff',weight:2,fillColor:'#1F6FB5',fillOpacity:1,bubblingMouseEvents:false}).addTo(pubLayer);};
  paintMarkers=function(d){Object.keys(mk).forEach(function(n){mk[n].setRadius(6+2*lvl(d.c[n]||0));});if(!DEMO)pubLayer.clearLayers();drawReal();};
  var realLayer=L.layerGroup().addTo(map);
  function typeAr(t){var inv={};Object.keys(TNH).forEach(function(k){inv[TNH[k]]=TN[k];});return String(t||'').split(', ').map(function(x){return inv[x]||x;}).join('، ');}
@@ -433,7 +433,12 @@ var GC={'غير معترف بها':'#B8451F','معترف بها (مجلسا ال
   if(p.name)row('المُبلِّغ: '+p.name);
   var st=document.createElement('div');st.style.cssText='margin-top:4px;font-weight:700;color:'+(p.status==='נבדק'?'#2F6B2A':'#1F6FB5');st.textContent=p.status==='נבדק'?'فحصه طاقم المجلس':'لم يُفحص';el.appendChild(st);return el;}
  drawReal=function(){realLayer.clearLayers();if(DEMO)return;realPts.forEach(function(p){if(!isFinite(p.lat)||!isFinite(p.lng))return;
-  L.circleMarker([p.lat,p.lng],{radius:8,color:p.status==='נבדק'?'#2F6B2A':'#fff',weight:p.status==='נבדק'?4:2,fillColor:'#1F6FB5',fillOpacity:1}).bindPopup(popupFor(p)).addTo(realLayer);});};
+  L.circleMarker([p.lat,p.lng],{radius:8,color:p.status==='נבדק'?'#2F6B2A':'#fff',weight:p.status==='נבדק'?4:2,fillColor:'#1F6FB5',fillOpacity:1,interactive:false}).addTo(realLayer);
+  var hit=L.circleMarker([p.lat,p.lng],{radius:16,stroke:false,fillColor:'#000',fillOpacity:0,bubblingMouseEvents:false}).bindPopup(popupFor(p),{autoPan:false,offset:[0,-4]}).addTo(realLayer);
+  hit.on('mouseover',function(){hit.openPopup();});
+  hit.on('mouseout',function(){if(!hit._stick)hit.closePopup();});
+  hit.on('click',function(){hit._stick=true;});
+  hit.on('popupclose',function(){hit._stick=false;});});};
  function zc(){mapEl.classList.toggle('zlow',map.getZoom()<11);}map.on('zoomend',zc);zc();
  // village search
  var jin=document.getElementById('jump'),jl=document.getElementById('jumplist'),jn=[],ji=-1;
