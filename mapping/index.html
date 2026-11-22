@@ -45,6 +45,7 @@ main.om{max-width:1100px;margin:0 auto;padding:24px 24px 8px;font-weight:500;col
 .demo{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;cursor:pointer}
 .demo input{width:22px;height:22px;accent-color:#2F6B2A}
 .demonote{display:none;background:#FFE9B0;border:1px solid #F5B321;border-radius:10px;padding:8px 14px;font-weight:700;font-size:15px;margin:0 0 14px}
+.mapcount{margin:0 0 12px;font-size:17px;font-weight:600}.mapcount b{color:#B8451F;font-size:20px;font-weight:800}
 .legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;font-weight:600;margin:0 0 14px;align-items:center}
 .legend i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid #D6B88C;vertical-align:-3px;margin-inline-end:5px}
 .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
@@ -142,30 +143,122 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <main class="om" id="main">
 
 <section class="om-hero" aria-labelledby="t">
-<div class="kick">מפת הצווים · סימון אנונימי, דקה אחת</div>
+<div class="kick">מפת הצווים וההתראות · דיווח של דקה אחת</div>
 <h1 id="t">קיבלתם צו? <span>סמנו אותו על המפה.</span></h1>
-<p>כל צו שמסומן הופך מסיפור של משפחה אחת לנתון שאי אפשר להתעלם ממנו. המועצה אוספת את הדיווחים, בודקת אותם ומציגה לעיתונאים ולמקבלי ההחלטות כמה צווים מתקבלים בכל כפר. בלי שמות, בלי כתובות.</p>
-<div class="hbtns"><a class="btn" href="#locate">למצוא את הבית שלכם על המפה</a> <a class="btn ghost" href="#report">לסימון צו</a></div>
+<p>כל צו שמסומן הופך מסיפור של משפחה אחת לנתון שאי אפשר להתעלם ממנו. המועצה אוספת את הדיווחים, בודקת אותם ומציגה לעיתונאים ולמקבלי ההחלטות כמה צווים והתראות מתקבלים בכל כפר. הפרטים האישיים שלכם נשארים אצלנו, ועל המפה הציבורית יופיע רק מה שבחרתם להציג.</p>
+<div class="hbtns"><a class="btn" href="#locate">למצוא את הבית שלכם על המפה</a> <a class="btn ghost" href="#report">לדיווח על צו או התראה</a></div>
 </section>
 
 <section class="card" id="locate" aria-labelledby="lt">
-<h2 id="lt">מצאו את השכונה שלכם בצילום האוויר</h2>
+<h2 id="lt">מצאו את הבית שלכם בצילום האוויר</h2>
 <p class="sub">הכפרים פרוסים על שטח גדול, ולכן המיקום המדויק חשוב. בחרו כפר, הגדילו עד שרואים את הבתים, ולחצו על המיקום שלכם.</p>
 <div class="tools"><label for="jump">קפיצה לכפר</label><select id="jump"><option value="">בחרו כפר</option></select></div>
+<p class="mapcount" id="mapcount" aria-live="polite"></p>
 <div class="lwrap" id="lwrap">
 <div id="lmap" role="application" aria-label="מפת צילום אוויר של הכפרים"></div>
-<div class="lbar" id="lbar"><span id="lsel" role="status" aria-live="polite">עדיין לא סומן מקום. הגדילו את המפה ולחצו על השכונה שלכם.</span>
+<div class="lbar" id="lbar"><span id="lsel" role="status" aria-live="polite">עדיין לא סומן מקום. הגדילו את המפה ולחצו על הבית שלכם.</span>
 <span class="lbtns"><button type="button" class="btn" id="lgo" hidden>המשך לטופס</button><button type="button" class="btn ghost" id="lclear" hidden>ביטול הסימון</button><button type="button" class="btn ghost" id="lfull">מסך מלא</button></span></div>
 </div>
-<div class="legend lg2" aria-hidden="true" style="margin-top:12px"><span><i style="background:#B8451F"></i>לא מוכר</span><span><i style="background:#2F6B2A"></i>מוכר</span><span><i style="background:#C58A00"></i>בהליכי הכרה או הקמה</span><span><i style="background:#6B6B6B"></i>הוחרב</span></div>
+<div class="legend lg2" aria-hidden="true" style="margin-top:12px"><span><i style="background:#B8451F"></i>לא מוכר</span><span><i style="background:#2F6B2A"></i>מוכר</span><span><i style="background:#C58A00"></i>בהליכי הכרה או הקמה</span><span><i style="background:#6B6B6B"></i>הוחרב</span><span><i style="background:#1F6FB5"></i>דיווח על צו או התראה</span><span><i style="background:#1F6FB5;border:3px solid #2F6B2A"></i>דיווח שנבדק</span></div>
 <p class="hint">בנייד: אצבע אחת גוללת את העמוד, ושתי אצבעות מזיזות ומגדילות את המפה. אפשר גם ללחוץ "מסך מלא". צילום אוויר: Esri, Vantor, Earthstar Geographics.</p>
 </section>
 
+<section class="card" id="report" aria-labelledby="rt">
+<h2 id="rt">דיווח על צו או התראה</h2>
+<p class="sub">כמה שאלות קצרות.</p>
+<form class="rep" id="form" novalidate>
+<fieldset><legend><label for="village">1. באיזה כפר?</label></legend>
+<select id="village" required><option value="">בחרו כפר</option><optgroup label="לא מוכרים"><option>אם נמילה</option><option>אום רתאם</option><option>אום אלבדון</option><option>אז־זערורה</option><option>אז־זרנוג</option><option>אל־באט</option><option>אל־באט אל־ע׳רבי</option><option>אל־באטל</option><option>אל־בחירה</option><option>אל־בקיעה</option><option>אל־ג׳ורף</option><option>גטמאת</option><option>אל־מטהר</option><option>אל־גרין (אל־עוקבי)</option><option>אל־חומרה</option><option>אל־פוח׳ארי</option><option>אל־מד׳בח</option><option>אל־מזרעה (אל־שהבא)</option><option>אל־מכימן</option><option>אל־מסאעדיה</option><option>אל־סרה</option><option>אל־ע׳זה</option><option>אלע׳רה</option><option>ארואיס</option><option>אס־סדיר</option><option>אל־סר</option><option>באט אל־סראיעה</option><option>ביר אל־חמאם</option><option>ביר אל־משאש</option><option>דחייה</option><option>ואדי אל־משאש</option><option>ח׳רבת אל־וטן</option><option>ח׳רבת זבאלה</option><option>ראס ג׳ראבא</option><option>טויל אבו ג׳רול</option><option>כרכור</option><option>נחל אריכא</option><option>נחל חווה</option><option>סהל אלבגאר</option><option>סוואווין</option><option>עווג׳אן</option><option>עתיר</option><option>תל אל־מלח</option><option>תל ערד מזרח</option><option>תל ערד מערב</option></optgroup><optgroup label="מוכרים (אל־קסום ונווה מדבר)"><option>אום בטין</option><option>א־סייד</option><option>דריג׳את</option><option>כוחלה</option><option>מולדה</option><option>מכחול</option><option>תראבין א־צאנע</option><option>אבו תלול</option><option>אבו קרינאת (אם מתנאן)</option><option>ביר הדאג׳</option><option>קסר א־סר</option></optgroup><optgroup label="בהליכי הכרה או הקמה"><option>ח׳שם זנה</option><option>עבדה</option><option>רח׳מה</option><option>ואדי אן־נעם</option><option>אל־פורעה</option></optgroup><optgroup label="הוחרבו"><option>אל־עראקיב</option></optgroup><option value="other">אחר (מקום שאינו ברשימה)</option></select>
+<p class="hint">בחרו את הכפר. אם סימנתם מקום במפה, הכפר הקרוב נבחר לבד, ואפשר לשנות. אם אתם גרים במקום שאינו ברשימה, בחרו "אחר".</p>
+<div id="otherbox" hidden style="margin-top:10px"><label for="othername" style="font-weight:700;font-size:15px;display:block;margin-bottom:4px">איך קוראים למקום? (לא חובה)</label><input id="othername" type="text" placeholder="שם המקום, השכונה או האזור" autocomplete="off" maxlength="80"></div></fieldset>
+
+<fieldset><legend>מקום על המפה (לא חובה)</legend>
+<p id="locsum" class="hint" style="margin:0 0 10px;font-size:15px">לא סומן מקום. <a href="#locate">חזרו למפה</a> ולחצו על הבית שלכם.</p>
+<label class="consent"><input type="checkbox" id="pub" disabled> לא להציג את הנקודה שסימנתי על המפה הציבורית</label>
+<p class="hint">אם התיבה מסומנת, הדיווח ייספר רק כנתון סטטיסטי לכפר או לאזור, והנקודה לא תוצג לציבור.</p>
+<div style="margin-top:12px"><label for="nm" style="font-weight:700;font-size:15px;display:block;margin-bottom:4px">שם</label><input id="nm" type="text" maxlength="60" autocomplete="off" placeholder="שם פרטי או כינוי"></div>
+<div style="margin-top:12px"><label for="ad" style="font-weight:700;font-size:15px;display:block;margin-bottom:4px">כתובת</label><input id="ad" type="text" maxlength="120" autocomplete="off" placeholder="למשל: הכפר והשכונה, או כתובת הבית"></div>
+<label class="consent" style="margin-top:14px"><input type="checkbox" id="shownm" disabled> להציג את שמי ליד הנקודה על המפה הציבורית</label>
+<p class="hint">הכתובת אינה מוצגת לעולם. השם מוצג רק אם הנקודה מוצגת וסימנתם גם כאן.</p></fieldset>
+<div style="position:absolute;opacity:0;width:0;height:0;overflow:hidden;pointer-events:none" aria-hidden="true"><label>אל תמלאו שדה זה<input id="hp" type="text" tabindex="-1" autocomplete="off"></label></div>
+
+<fieldset><legend>2. איזה מסמך או צו התקבל?</legend>
+<p class="hint" style="margin:0 0 8px">ניתן לסמן יותר מאפשרות אחת, בהתאם למסמכים שהתקבלו.</p>
+<div class="types">
+<label><input type="checkbox" name="t" value="admin"> צו הריסה מינהלי.</label>
+<label><input type="checkbox" name="t" value="c212"> צו הריסה שיפוטי ללא הרשעה או ללא הליך פלילי — לפי סעיף 212 או סעיף 239 לחוק התכנון והבנייה, לרבות צו שניתן במעמד צד אחד.</label>
+<label><input type="checkbox" name="t" value="cother"> צו הריסה שיפוטי אחר — לרבות צו הריסה שניתן במסגרת גזר דין.</label>
+<label><input type="checkbox" name="t" value="pinui"> צו לסילוק יד ולפינוי מקרקעי ציבור — לפי חוק מקרקעי ציבור (פינוי קרקע), לרבות צו מטעם רשות מקרקעי ישראל.</label>
+<label><input type="checkbox" name="t" value="judg"> פסק דין או צו שיפוטי לפינוי מקרקעין או לסילוק יד.</label>
+<label><input type="checkbox" name="t" value="demand"> דרישה או התראה לפינוי מקרקעין ולסילוק יד — לרבות מטעם רשות מקרקעי ישראל או הסיירת הירוקה.</label>
+<label><input type="checkbox" name="t" value="stop"> צו להפסקת עבודה, להפסקת שימוש או לאיסור שימוש — מינהלי או שיפוטי.</label>
+<label><input type="checkbox" name="t" value="warn"> התראה או אזהרה בכתב בעניין בנייה או שימוש במקרקעין — לרבות התראה שנייה או התראה לפני הטלת קנס.</label>
+<label><input type="checkbox" name="t" value="fine"> הודעה על הטלת קנס.</label>
+<label><input type="checkbox" name="t" value="summ"> זימון לחקירה בעניין בנייה, שימוש או החזקה במקרקעין.</label>
+<label><input type="checkbox" name="t" value="verbal"> התראה או הודעה בעל פה.</label>
+<label><input type="checkbox" name="t" value="other"> אחר, לא בטוחים.</label>
+</div>
+<div id="exbox" hidden style="margin-top:14px"><div id="exq" style="font-weight:800;font-size:16px;margin-bottom:6px">האם הצו השיפוטי ניתן במעמד צד אחד?</div>
+<div class="types" role="radiogroup" aria-labelledby="exq" style="grid-template-columns:repeat(3,minmax(0,1fr))"><label><input type="radio" name="ex" value="כן"> כן</label><label><input type="radio" name="ex" value="לא"> לא</label><label><input type="radio" name="ex" value="לא ידוע"> לא ידוע</label></div>
+<p class="hint">אם אינכם יודעים, בחרו ״לא ידוע״.</p></div></fieldset>
+
+<fieldset><legend>3. תאריכים</legend>
+<div class="row2"><div><label for="dt" style="font-weight:700;font-size:15px;display:block;margin-bottom:4px">תאריך המסמך</label><input id="dt" type="date"></div><div><label for="dr" style="font-weight:700;font-size:15px;display:block;margin-bottom:4px">מתי התקבל או הודבק</label><input id="dr" type="date"></div></div>
+<p class="hint">ככל שהם ידועים. תאריך משוער מספיק.</p></fieldset>
+
+<fieldset><legend><label for="ph">4. נא צרפו צילום של הצו או ההתראה</label></legend>
+<input id="ph" type="file" accept="image/*">
+<label class="consent" style="margin-top:12px"><input type="checkbox" id="hideph"> לא להציג את הצו או ההתראה על המפה הציבורית</label></fieldset>
+
+<div class="row2">
+<fieldset><legend><label for="cnt">5. כמה צווים או מסמכים התקבלו?</label></legend>
+<div class="stepper"><button type="button" id="minus" aria-label="פחות">−</button><input id="cnt" type="number" min="1" max="50" value="1" inputmode="numeric"><button type="button" id="plus" aria-label="יותר">+</button></div>
+<p class="hint">סופרים כל צו או מסמך נפרד פעם אחת. מסמך אחד שכולל כמה דברים, למשל התראה וגם זימון לחקירה, נספר כמסמך אחד.</p></fieldset>
+<fieldset><legend><label for="bld">6. לכמה מבנים מתייחסים הצו או ההתראה?</label></legend>
+<div class="stepper"><button type="button" id="bminus" aria-label="פחות">−</button><input id="bld" type="number" min="1" max="50" value="1" inputmode="numeric"><button type="button" id="bplus" aria-label="יותר">+</button></div></fieldset>
+</div>
+
+<fieldset><legend>7. סוג המבנה שאליו מתייחסים הצו או ההתראה</legend>
+<p class="hint" style="margin:0 0 8px">אפשר לסמן כמה.</p>
+<div class="types">
+<label><input type="checkbox" name="b" value="house"> בית מגורים</label>
+<label><input type="checkbox" name="b" value="shig"> שיג</label>
+<label><input type="checkbox" name="b" value="pen"> מכלאה</label>
+<label><input type="checkbox" name="b" value="kitchen"> מטבח</label>
+<label><input type="checkbox" name="b" value="coop"> לול</label>
+<label><input type="checkbox" name="b" value="wc"> שירותים חיצוניים</label>
+<label><input type="checkbox" name="b" value="fence"> גדר</label>
+<label><input type="checkbox" name="b" value="shed"> סככה</label>
+<label><input type="checkbox" name="b" value="orchard"> עצים (מטע)</label>
+<label><input type="checkbox" name="b" value="concrete"> רצפת בטון</label>
+<label><input type="checkbox" name="b" value="berm"> סוללת עפר</label>
+<label><input type="checkbox" name="b" value="bother"> אחר</label>
+</div></fieldset>
+
+<fieldset><legend><label for="freetext">עוד משהו שחשוב לספר? מה שתכתבו יישלח אלינו בלבד ולא יופיע בעמוד הפומבי</label></legend>
+<textarea id="freetext" rows="4" maxlength="1500" placeholder="למשל: מה כתוב בצו, מי הוציא אותו, מה המועד שנקבע."></textarea></fieldset>
+
+<fieldset><legend><label for="ct">מספר טלפון</label></legend>
+<input id="ct" type="text" placeholder="מספר טלפון או וואטסאפ" autocomplete="off" inputmode="tel">
+<p class="hint">פרטי הקשר נשמרים בנפרד מהמפה ואינם מופיעים בה בשום צורה.</p></fieldset>
+
+<label class="consent"><input type="checkbox" id="ok"> אני מבין שהדיווח יתווסף כנתון מצטבר לכפר, ושהנקודה שסימנתי תוצג על המפה הציבורית אלא אם סימנתי שלא להציג אותה.</label>
+<div class="err" id="err" role="alert"></div>
+<div><button class="btn" type="submit">שליחת הדיווח</button></div>
+</form>
+<div class="thanks" id="thanks" role="status" tabindex="-1">
+<h3>תודה. הדיווח התקבל.</h3>
+<p id="tsum" style="margin:0 0 10px;font-size:17px;line-height:1.55"></p>
+<p class="hint" style="margin:0 0 14px">הדיווח נשלח לצוות המועצה. דיווח שעדיין לא נבדק מסומן כך במפה.</p>
+<button type="button" class="btn ghost" id="again">דיווח נוסף</button>
+</div>
+</section>
+
 <section class="card" id="map" aria-labelledby="mt">
-<h2 id="mt">כמה צווים סומנו, ובאיזה כפר</h2>
-<p class="sub">הספירה היא לפי כפר. נקודה מוצגת על המפה רק אם מי שדיווח בחר בכך, ושם המדווח מוצג רק אם הוא בחר בכך. לחיצה על כפר מראה אותו על המפה.</p>
+<h2 id="mt">כמה צווים והתראות דווחו, ובאיזה כפר</h2>
+<p class="sub">הספירה היא לפי כפר. נקודה מוצגת על המפה אלא אם מי שדיווח בחר שלא להציג אותה, ושם המדווח מוצג רק אם הוא בחר בכך. לחיצה על כפר מראה אותו על המפה.</p>
 <div class="stats" aria-live="polite">
-<div class="stat"><strong id="sTotal">0</strong><span>צווים שדווחו</span></div>
+<div class="stat"><strong id="sTotal">0</strong><span>צווים והתראות שדווחו</span></div>
 <div class="stat"><strong id="sVill">0</strong><span>כפרים עם דיווח</span></div>
 <div class="stat"><strong id="sVer">0</strong><span>מתוכם נבדקו על ידי צוות המועצה</span></div>
 </div>
@@ -178,94 +271,31 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <div id="tiles"></div>
 </section>
 
-<section class="card" id="report" aria-labelledby="rt">
-<h2 id="rt">סימון צו</h2>
-<p class="sub">כמה שאלות קצרות. שם וכתובת לא נדרשים.</p>
-<form class="rep" id="form" novalidate>
-<fieldset><legend><label for="village">1. באיזה כפר?</label></legend>
-<select id="village" required><option value="">בחרו כפר</option><optgroup label="לא מוכרים"><option>אם נמילה</option><option>אום רתאם</option><option>אום אלבדון</option><option>אז־זערורה</option><option>אז־זרנוג</option><option>אל־באט</option><option>אל־באט אל־ע׳רבי</option><option>אל־באטל</option><option>אל־בחירה</option><option>אל־בקיעה</option><option>אל־ג׳ורף</option><option>גטמאת</option><option>אל־מטהר</option><option>אל־גרין (אל־עוקבי)</option><option>אל־חומרה</option><option>אל־פוח׳ארי</option><option>אל־מד׳בח</option><option>אל־מזרעה (אל־שהבא)</option><option>אל־מכימן</option><option>אל־מסאעדיה</option><option>אל־סרה</option><option>אל־ע׳זה</option><option>אלע׳רה</option><option>ארואיס</option><option>אס־סדיר</option><option>אל־סר</option><option>באט אל־סראיעה</option><option>ביר אל־חמאם</option><option>ביר אל־משאש</option><option>דחייה</option><option>ואדי אל־משאש</option><option>ח׳רבת אל־וטן</option><option>ח׳רבת זבאלה</option><option>ראס ג׳ראבא</option><option>טויל אבו ג׳רול</option><option>כרכור</option><option>נחל אריכא</option><option>נחל חווה</option><option>סהל אלבגאר</option><option>סוואווין</option><option>עווג׳אן</option><option>עתיר</option><option>תל אל־מלח</option><option>תל ערד מזרח</option><option>תל ערד מערב</option></optgroup><optgroup label="מוכרים (אל־קסום ונווה מדבר)"><option>אום בטין</option><option>א־סייד</option><option>דריג׳את</option><option>כוחלה</option><option>מולדה</option><option>מכחול</option><option>תראבין א־צאנע</option><option>אבו תלול</option><option>אבו קרינאת (אם מתנאן)</option><option>ביר הדאג׳</option><option>קסר א־סר</option></optgroup><optgroup label="בהליכי הכרה או הקמה"><option>ח׳שם זנה</option><option>עבדה</option><option>רח׳מה</option><option>ואדי אן־נעם</option><option>אל־פורעה</option></optgroup><optgroup label="הוחרבו"><option>אל־עראקיב</option></optgroup><option value="other">אחר (מקום שאינו ברשימה)</option></select>
-<p class="hint">בחרו את הכפר. אם סימנתם מקום במפה, הכפר הקרוב נבחר לבד, ואפשר לשנות. אם אתם גרים במקום שאינו ברשימה, בחרו "אחר".</p>
-<div id="otherbox" hidden style="margin-top:10px"><label for="othername" style="font-weight:700;font-size:15px;display:block;margin-bottom:4px">איך קוראים למקום? (לא חובה)</label><input id="othername" type="text" placeholder="שם המקום, השכונה או האזור" autocomplete="off" maxlength="80"></div></fieldset>
-
-<fieldset><legend>מקום על המפה (לא חובה)</legend>
-<p id="locsum" class="hint" style="margin:0 0 10px;font-size:15px">לא סומן מקום. <a href="#locate">חזרו למפה</a> ולחצו על השכונה שלכם.</p>
-<label class="consent"><input type="checkbox" id="pub" disabled> להציג את הנקודה שסימנתי על המפה הציבורית</label>
-<p class="hint">אם התיבה לא מסומנת, הדיווח ייספר רק כנתון סטטיסטי לכפר או לאזור, והנקודה לא תוצג לציבור.</p>
-<div style="margin-top:12px"><label for="nm" style="font-weight:700;font-size:15px;display:block;margin-bottom:4px">שם (לא חובה)</label><input id="nm" type="text" maxlength="60" autocomplete="off" placeholder="שם פרטי, או כינוי"></div>
-<label class="consent" style="margin-top:14px"><input type="checkbox" id="shownm" disabled> להציג את שמי ליד הנקודה על המפה הציבורית</label>
-<p class="hint">השם מוצג רק אם סימנתם נקודה, בחרתם להציג אותה, וסימנתם גם כאן. אחרת הוא נשמר אצל צוות המועצה בלבד.</p></fieldset>
-<div style="position:absolute;opacity:0;width:0;height:0;overflow:hidden;pointer-events:none" aria-hidden="true"><label>אל תמלאו שדה זה<input id="hp" type="text" tabindex="-1" autocomplete="off"></label></div>
-
-<fieldset><legend>2. איזה סוג צו? אפשר לסמן כמה</legend>
-<div class="types">
-<label><input type="checkbox" name="t" value="pinui"> צו לפינוי קרקע (רשות מקרקעי ישראל)</label>
-<label><input type="checkbox" name="t" value="admin"> צו הריסה מנהלי</label>
-<label><input type="checkbox" name="t" value="court"> צו הריסה של בית משפט</label>
-<label><input type="checkbox" name="t" value="stop"> צו הפסקת עבודה או איסור שימוש</label>
-<label><input type="checkbox" name="t" value="fine"> קנס או היטל</label>
-<label><input type="checkbox" name="t" value="warn"> הודעה או אזהרה בכתב</label>
-<label><input type="checkbox" name="t" value="other"> אחר, לא בטוחים</label>
-</div></fieldset>
-
-<div class="row2">
-<fieldset><legend><label for="cnt">3. כמה צווים התקבלו?</label></legend>
-<div class="stepper"><button type="button" id="minus" aria-label="פחות">−</button><input id="cnt" type="number" min="1" max="50" value="1" inputmode="numeric"><button type="button" id="plus" aria-label="יותר">+</button></div>
-<p class="hint">צו אחד לכל בית, מבנה או חלקה.</p></fieldset>
-<fieldset><legend><label for="dt">4. מתי התקבל?</label></legend>
-<input id="dt" type="date"><p class="hint">התאריך המשוער מספיק.</p></fieldset>
-</div>
-
-<fieldset><legend><label for="ph">5. אפשר לצרף צילום של הצו (לא חובה)</label></legend>
-<input id="ph" type="file" accept="image/*">
-<p class="hint">הצילום לא יפורסם ולא יופיע במפה. הוא נשמר בתיקייה פרטית שרק צוות המועצה רואה, ומשמש לבדיקה בלבד.</p></fieldset>
-
-<fieldset><legend><label for="freetext">עוד משהו שחשוב לספר? (לא חובה)</label></legend>
-<textarea id="freetext" rows="4" maxlength="1500" placeholder="למשל: מה כתוב בצו, מי הוציא אותו, מה המועד שנקבע. בלי שמות ובלי כתובת מדויקת."></textarea>
-<p class="hint">הטקסט לא מפורסם. רק צוות המועצה קורא אותו.</p></fieldset>
-
-<fieldset><legend><label for="ct">רוצים שנחזור אליכם? (לא חובה)</label></legend>
-<input id="ct" type="text" placeholder="מספר טלפון או וואטסאפ" autocomplete="off" inputmode="tel">
-<p class="hint">פרטי הקשר נשמרים בנפרד מהמפה ואינם מופיעים בה בשום צורה.</p></fieldset>
-
-<div class="privbox">לפני שליחה: <b>אל תכתבו מספר זהות או כתובת מדויקת.</b> אם בחרתם להציג נקודה על המפה הציבורית, כל אחד יראה איפה היא, גם רשויות, ואם בחרתם להציג שם, גם אותו. אם יש ספק, השאירו את התיבות לא מסומנות.</div>
-<label class="consent"><input type="checkbox" id="ok"> אני מבין שהדיווח יתווסף כנתון מצטבר לכפר, ושנקודה על המפה תוצג לציבור רק אם סימנתי זאת במפורש.</label>
-<div class="err" id="err" role="alert"></div>
-<div><button class="btn" type="submit">שליחת הדיווח</button></div>
-</form>
-<div class="thanks" id="thanks" role="status" tabindex="-1">
-<h3>תודה. הדיווח התקבל.</h3>
-<p id="tsum" style="margin:0 0 10px;font-size:17px;line-height:1.55"></p>
-<p class="hint" style="margin:0 0 14px">הדיווח נשלח לצוות המועצה. דיווח שעדיין לא נבדק מסומן כך במפה.</p>
-<button type="button" class="btn ghost" id="again">דיווח נוסף</button>
-</div>
-</section>
-
 <section class="card" aria-labelledby="ht">
 <h2 id="ht">מה קורה אחרי הדיווח</h2>
 <ol class="steps">
-<li><strong>הדיווח מגיע לצוות</strong>רק צוות המועצה רואה את פרטי הקשר, את הטקסט החופשי ואת הצילום.</li>
-<li><strong>בודקים אותו</strong>דיווח שנבדק מסומן בנפרד, כדי שלא יהיה אפשר להכניס למפה נתונים שלא קרו.</li>
-<li><strong>נכנס למספר של הכפר</strong>מוצג הסכום לכל כפר. נקודה ושם מוצגים רק למי שבחר בכך.</li>
+<li><strong>הדיווח מגיע אלינו</strong>רק אנחנו רואים את הפרטים שבחרתם לא להציג על המפה הציבורית.</li>
+<li><strong>אנחנו בודקים</strong>כדי לשמור על אמינות המפה.</li>
+<li><strong>הדיווח מתווסף לכפר</strong>לשם קבלת תמונה מלאה על מספר הצווים וההתראות בכל כפר.</li>
 </ol>
 </section>
 
 <section class="card" aria-labelledby="st">
 <h2 id="st">קיבלתם צו? כדאי לדעת</h2>
 <ul style="margin:0;padding:0 22px 0 0;font-size:17px;line-height:1.65;font-weight:600">
-<li><b>אל תחכו.</b> בצו לפינוי קרקע ציבורית יש מועדים קצרים להשגות ולפנייה לבית משפט, שמתחילים ביום שהצו נמסר או הודבק. <span class="chip">לאימות משפטי</span></li>
+<li><b>אל תחכו.</b> בצו לפינוי קרקע ציבורית יש מועדים קצרים להשגות ולפנייה לבית משפט, שמתחילים ביום שהצו נמסר או הודבק.</li>
 <li>צלמו את הצו ואת המקום שבו נמצא, כולל התאריך.</li>
-<li>אל תבנו, אל תחרשו ואל תטעו במקום עד שדיברתם עם עורך דין. פעולה כזאת יכולה להאיץ את הביצוע. <span class="chip">לאימות משפטי</span></li>
-<li>סימון הצו על המפה אינו תחליף לייעוץ משפטי.</li>
+<li>אל תבנו, אל תחרשו ואל תטעו במקום עד שדיברתם עם עורך דין. פעולה כזאת יכולה להאיץ את הביצוע.</li>
+<li>הדיווח על המפה אינו תחליף לייעוץ משפטי.</li>
 </ul>
 </section>
 
 <section class="card" aria-labelledby="ft">
 <h2 id="ft" style="margin-bottom:8px">שאלות ותשובות</h2>
-<details><summary>מי רואה את מה שאני מדווח?</summary><p>צוות המועצה רואה הכול. הציבור רואה את מספר הצווים בכל כפר, ונקודה על המפה רק אם מי שדיווח בחר להציג אותה. שם מוצג רק אם נבחר במפורש. פרטי קשר, טקסט חופשי וצילום הצו לא מוצגים לעולם.</p></details>
-<details><summary>אפשר לדווח בלי להשאיר טלפון?</summary><p>כן. פרטי קשר הם לא חובה, והם נחוצים רק אם תרצו שנחזור אליכם.</p></details>
-<details><summary>קיבלתי הודעה בעל פה ולא צו בכתב. מה לסמן?</summary><p>סמנו "הודעה או אזהרה", או "אחר". הצוות יעבור על זה.</p></details>
-<details><summary>לדווח על צו שקיבל השכן או קרוב משפחה?</summary><p>כן, אם אתם יודעים את הפרטים. אל תצרפו את שמו ואל תצלמו את הצו בלי אישור שלו.</p></details>
-<details><summary>מה יעשו עם המספרים?</summary><p>המועצה תשתמש בהם בפניות לעיתונאים, למשרדי הממשלה ולגורמים משפטיים, כדי להראות את ההיקף האמיתי של האכיפה בכל כפר.</p></details>
+<details><summary>מי רואה את מה שאני מדווח?</summary><p>רק אנחנו מקבלים את מספר הטלפון, את המידע הנוסף בתיבת ההערות, וכל מידע שסימנתם שאינכם רוצים שיהיה פומבי.</p></details>
+<details><summary>קיבלתי הודעה בעל פה ולא צו בכתב. מה לסמן?</summary><p>סמנו את האפשרות ״התראה או הודעה בעל פה״ והוסיפו פרטים בתיבת הטקסט החופשי.</p></details>
+<details><summary>לדווח על צו שקיבל שכן או קרוב משפחה?</summary><p>כן, אם אתם יודעים את הפרטים, ורק אם הוא מאשר.</p></details>
+<details><summary>מה תעשו עם המספרים?</summary><p>ככל שנוכל, הצעד הראשון יהיה לפנות אליכם ולהציע הדרכה ועזרה. כיום איננו מודעים לחלק מהצווים וההתראות המחולקים. המידע הכולל המצטבר כאן דרוש כדי להבין את היקף התופעה, לצורך העבודה מול נבחרי ציבור, עיתונאים, פקידים וגורמי משפט.</p></details>
 </section>
 
 </main>
@@ -301,7 +331,7 @@ function render(){
  });
  if(!h)h='<p class="hint">לא נמצא כפר בשם הזה.</p>';
  document.getElementById('tiles').innerHTML=h;
- document.getElementById('sTotal').textContent=tot;document.getElementById('sVill').textContent=vil;document.getElementById('sVer').textContent=ver;paintMarkers(d);
+ var mc=document.getElementById('mapcount');if(mc)mc.innerHTML='עד כה דווחו <b>'+tot+'</b> צווים והתראות ב־<b>'+vil+'</b> '+(vil===1?'כפר':'כפרים')+'.';document.getElementById('sTotal').textContent=tot;document.getElementById('sVill').textContent=vil;document.getElementById('sVer').textContent=ver;paintMarkers(d);
 }
 document.getElementById('q').addEventListener('input',render);
 document.getElementById('demo').addEventListener('change',function(e){DEMO=e.target.checked;document.getElementById('demonote').style.display=DEMO?'block':'none';render();});
@@ -312,31 +342,44 @@ document.getElementById('tiles').addEventListener('click',function(e){var b=e.ta
  setTimeout(function(){m.invalidateSize();if(pts.length)m.fitBounds(L.latLngBounds(pts.map(function(p){return [p.lat,p.lng];})).extend(XY[n]),{maxZoom:16,padding:[50,50]});else m.flyTo(XY[n],15,{duration:1.1});},350);
 });
 var cnt=document.getElementById('cnt');
-function syncNm(){var c=document.getElementById('shownm'),on=!!sel&&pubEl.checked&&document.getElementById('nm').value.trim()!=='';c.disabled=!on;if(!on)c.checked=false;}
+function syncNm(){var c=document.getElementById('shownm'),on=!!sel&&!pubEl.checked&&document.getElementById('nm').value.trim()!=='';c.disabled=!on;if(!on)c.checked=false;}
 pubEl.addEventListener('change',syncNm);document.getElementById('nm').addEventListener('input',syncNm);
 function toggleOther(){document.getElementById('otherbox').hidden=document.getElementById('village').value!=='other';}
 document.getElementById('village').addEventListener('change',toggleOther);
 document.getElementById('plus').onclick=function(){cnt.value=Math.min(50,(+cnt.value||0)+1);};
 document.getElementById('minus').onclick=function(){cnt.value=Math.max(1,(+cnt.value||2)-1);};
-var today=new Date();document.getElementById('dt').max=today.toISOString().slice(0,10);
-var TN={pinui:'פינוי קרקע',admin:'הריסה מנהלי',court:'הריסה של בית משפט',stop:'הפסקת עבודה או איסור שימוש',fine:'קנס או היטל',warn:'הודעה או אזהרה',other:'אחר'};
+var today=new Date();document.getElementById('dt').max=today.toISOString().slice(0,10);document.getElementById('dr').max=today.toISOString().slice(0,10);
+var bld=document.getElementById('bld');
+document.getElementById('bplus').onclick=function(){bld.value=Math.min(50,(+bld.value||0)+1);};
+document.getElementById('bminus').onclick=function(){bld.value=Math.max(1,(+bld.value||2)-1);};
+var JUD=['c212','cother','judg'];
+function toggleEx(){var on=JUD.some(function(v){var el=document.querySelector('input[name=t][value='+v+']');return el&&el.checked;});document.getElementById('exbox').hidden=!on;if(!on){[].forEach.call(document.querySelectorAll('input[name=ex]'),function(r){r.checked=false;});}}
+[].forEach.call(document.querySelectorAll('input[name=t]'),function(el){el.addEventListener('change',toggleEx);});
+var TN={admin:'צו הריסה מינהלי',c212:'צו הריסה שיפוטי ללא הרשעה (סעיף 212 או 239)',cother:'צו הריסה שיפוטי אחר',pinui:'צו לסילוק יד ולפינוי מקרקעי ציבור',judg:'פסק דין או צו שיפוטי לפינוי מקרקעין',demand:'דרישה או התראה לפינוי מקרקעין',stop:'צו להפסקת עבודה, הפסקת שימוש או איסור שימוש',warn:'התראה או אזהרה בכתב',fine:'הודעה על הטלת קנס',summ:'זימון לחקירה',verbal:'התראה או הודעה בעל פה',other:'אחר'};
+var BN={house:'בית מגורים',shig:'שיג',pen:'מכלאה',kitchen:'מטבח',coop:'לול',wc:'שירותים חיצוניים',fence:'גדר',shed:'סככה',orchard:'עצים (מטע)',concrete:'רצפת בטון',berm:'סוללת עפר',bother:'אחר'};
 function readPhoto(file){return new Promise(function(res,rej){var img=new Image(),u=URL.createObjectURL(file);
  img.onload=function(){var m=1800,k=Math.min(1,m/Math.max(img.width,img.height)),c=document.createElement('canvas');c.width=Math.round(img.width*k);c.height=Math.round(img.height*k);c.getContext('2d').drawImage(img,0,0,c.width,c.height);URL.revokeObjectURL(u);res(c.toDataURL('image/jpeg',0.82).split(',')[1]);};
  img.onerror=function(){rej();};img.src=u;});}
 document.getElementById('form').addEventListener('submit',function(e){
  e.preventDefault();var err=document.getElementById('err');err.textContent='';
- var vil=document.getElementById('village').value,ts=[].slice.call(document.querySelectorAll('input[name=t]:checked')).map(function(x){return x.value;}),n=Math.max(1,Math.min(50,+cnt.value||1));
+ var vil=document.getElementById('village').value,ts=[].slice.call(document.querySelectorAll('input[name=t]:checked')).map(function(x){return x.value;}),n=Math.max(1,Math.min(50,+cnt.value||1)),bn=Math.max(1,Math.min(50,+bld.value||1)),
+  bts=[].slice.call(document.querySelectorAll('input[name=b]:checked')).map(function(x){return BN[x.value];}),
+  nm=document.getElementById('nm').value.trim(),ad=document.getElementById('ad').value.trim();
  if(!vil){err.textContent='בחרו כפר.';document.getElementById('village').focus();return;}
- if(!ts.length){err.textContent='סמנו לפחות סוג צו אחד, או "אחר".';return;}
+ if(!nm){err.textContent='כתבו את שמכם.';document.getElementById('nm').focus();return;}
+ if(!ad){err.textContent='כתבו כתובת.';document.getElementById('ad').focus();return;}
+ if(!ts.length){err.textContent='סמנו לפחות מסמך או צו אחד, או "אחר".';return;}
  if(!document.getElementById('ok').checked){err.textContent='כדי לשלוח צריך לאשר את התיבה האחרונה.';return;}
  var oname=document.getElementById('othername').value.trim();
- var summary='סימנו '+n+' '+(n===1?'צו':'צווים')+' בכפר '+(vil==='other'?'שלא ברשימה'+(oname?' ('+oname+')':''):vil)+': '+ts.map(function(t){return TN[t];}).join(', ')+'.'+(sel?(pubEl.checked?' הנקודה שסימנתם תוצג על המפה הציבורית.':' הנקודה לא תוצג לציבור. הדיווח ייספר רק כנתון לכפר או לאזור.'):'');
+ var summary='דיווחתם על '+n+' '+(n===1?'צו או מסמך':'צווים או מסמכים')+' בכפר '+(vil==='other'?'שלא ברשימה'+(oname?' ('+oname+')':''):vil)+': '+ts.map(function(t){return TN[t];}).join(', ')+'.'+(sel?(pubEl.checked?' הנקודה לא תוצג לציבור. הדיווח ייספר רק כנתון לכפר או לאזור.':' הנקודה שסימנתם תוצג על המפה הציבורית.'):'');
  function done(){document.getElementById('tsum').textContent=summary;document.getElementById('form').style.display='none';var t=document.getElementById('thanks');t.style.display='block';t.focus();}
- if(DEMO){ if(vil!=='other'){demoData[0][vil]=(demoData[0][vil]||0)+n;render();} if(sel&&pubEl.checked)addPub(sel); done(); return; }
+ if(DEMO){ if(vil!=='other'){demoData[0][vil]=(demoData[0][vil]||0)+n;render();} if(sel&&!pubEl.checked)addPub(sel); done(); return; }
  var btn=e.target.querySelector('button[type=submit]');btn.disabled=true;var old=btn.textContent;btn.textContent='שולחים...';
- var pub=!!(sel&&pubEl.checked);
- var payload={village:vil==='other'?('אחר'+(oname?': '+oname:'')):vil,orderType:ts.map(function(t){return TN[t];}).join(', '),count:n,date:document.getElementById('dt').value,
-  lat:sel?sel.lat:'',lng:sel?sel.lng:'',publicPoint:pub,showName:pub&&document.getElementById('shownm').checked,name:document.getElementById('nm').value.trim(),
+ var pub=!!(sel&&!pubEl.checked);
+ var exEl=document.querySelector('input[name=ex]:checked');
+ var payload={village:vil==='other'?('אחר'+(oname?': '+oname:'')):vil,orderType:ts.map(function(t){return TN[t];}).join(', '),count:n,date:document.getElementById('dt').value,receivedDate:document.getElementById('dr').value,
+  exParte:(exEl&&!document.getElementById('exbox').hidden)?exEl.value:'',buildings:bn,buildingTypes:bts.join(', '),address:ad,hidePhoto:document.getElementById('hideph').checked,
+  lat:sel?sel.lat:'',lng:sel?sel.lng:'',publicPoint:pub,showName:pub&&document.getElementById('shownm').checked,name:nm,
   contact:document.getElementById('ct').value.trim(),freeText:document.getElementById('freetext').value.trim(),consent:true,website:document.getElementById('hp').value};
  function send(){
   fetch(ENDPOINT,{method:'POST',body:JSON.stringify(payload)}).then(function(r){return r.json();}).then(function(j){
@@ -348,7 +391,7 @@ document.getElementById('form').addEventListener('submit',function(e){
  if(!file){send();return;}
  readPhoto(file).then(function(b64){payload.photo={data:b64};send();}).catch(function(){btn.disabled=false;btn.textContent=old;err.textContent='לא הצלחנו לקרוא את הצילום. אפשר לשלוח בלעדיו או לנסות צילום אחר.';});
 });
-document.getElementById('again').onclick=function(){document.getElementById('form').reset();cnt.value=1;toggleOther();document.getElementById('form').style.display='';document.getElementById('thanks').style.display='none';document.getElementById('village').focus();};
+document.getElementById('again').onclick=function(){document.getElementById('form').reset();cnt.value=1;bld.value=1;toggleOther();toggleEx();document.getElementById('form').style.display='';document.getElementById('thanks').style.display='none';document.getElementById('village').focus();};
 var XY={"אם נמילה": [31.41255, 34.77207], "אום רתאם": [31.11644, 35.02141], "אום אלבדון": [31.24546, 35.25646], "אז־זערורה": [31.23728, 35.11814], "אז־זרנוג": [31.20355, 34.92451], "אל־באט": [31.27024, 35.03338], "אל־באט אל־ע׳רבי": [31.26924, 35.02016], "אל־באטל": [31.34647, 34.76732], "אל־בחירה": [31.21761, 35.08982], "אל־בקיעה": [31.30246, 35.26515], "אל־ג׳ורף": [31.23103, 35.04713], "גטמאת": [31.17304, 35.09831], "אל־מטהר": [31.18778, 35.08336], "אל־גרין (אל־עוקבי)": [31.28317, 34.93076], "אל־מד׳בח": [31.17984, 34.96425], "אל־מכימן": [31.29686, 34.8555], "אל־מסאעדיה": [31.33912, 34.85842], "אל־סרה": [31.24205, 35.03165], "אל־ע׳זה": [31.21031, 35.13685], "אלע׳רה": [31.23808, 34.96828], "ארואיס": [31.22952, 34.94826], "אס־סדיר": [31.18013, 34.98047], "באט אל־סראיעה": [31.25932, 35.02513], "ביר אל־חמאם": [31.23147, 34.9004], "ביר אל־משאש": [31.20038, 34.95242], "דחייה": [31.42659, 34.76777], "ואדי אל־משאש": [31.08352, 34.84451], "ח׳רבת אל־וטן": [31.25536, 34.92378], "ראס ג׳ראבא": [31.06565, 35.06273], "טויל אבו ג׳רול": [31.33384, 34.80261], "נחל אריכא": [30.68612, 34.7829], "נחל חווה": [30.75044, 34.77831], "סהל אלבגאר": [30.849, 34.7363], "סוואווין": [31.18451, 34.88055], "עווג׳אן": [31.3064, 34.84758], "עתיר": [31.32314, 35.02622], "תל אל־מלח": [31.23194, 35.00378], "אום בטין": [31.27573, 34.88378], "א־סייד": [31.28328, 34.91305], "דריג׳את": [31.30059, 35.07544], "כוחלה": [31.28695, 35.04969], "מולדה": [31.25823, 34.98242], "מכחול": [31.28834, 35.07544], "תראבין א־צאנע": [31.34363, 34.73701], "אבו תלול": [31.18607, 34.91304], "ביר הדאג׳": [31.02417, 34.70417], "קסר א־סר": [31.07944, 34.9848], "ח׳שם זנה": [31.20264, 34.88307], "עבדה": [30.8071, 34.75594], "רח׳מה": [31.00862, 34.95579], "ואדי אן־נעם": [31.16339, 34.82215], "אל־פורעה": [31.22986, 35.1656], "אל־עראקיב": [31.34596, 34.77814], "אל־פוח׳ארי": [31.35136, 34.8111], "כרכור": [31.31867, 34.75915], "אל־מזרעה (אל־שהבא)": [31.15012, 35.07817], "אל־חומרה": [31.2635, 35.09276], "ח׳רבת זבאלה": [31.40862, 34.74995], "אל־סר": [31.19742, 34.80619], "תל ערד מזרח": [31.29131, 35.14518], "אבו קרינאת (אם מתנאן)": [31.12523, 34.96332], "תל ערד מערב": [31.29562, 35.11939]};
 var GC={'לא מוכרים':'#B8451F','מוכרים (אל־קסום ונווה מדבר)':'#2F6B2A','בהליכי הכרה או הקמה':'#C58A00','הוחרבו':'#6B6B6B'};
 (function(){
@@ -364,7 +407,7 @@ var GC={'לא מוכרים':'#B8451F','מוכרים (אל־קסום ונווה �
   mk[n].bindTooltip(n,{permanent:true,direction:'top',offset:[0,-9],className:'vl',interactive:false});
  });
  var pubLayer=L.layerGroup().addTo(map);
- addPub=function(ll){L.circleMarker(ll,{radius:7,color:'#fff',weight:2,fillColor:'#F5B321',fillOpacity:1}).addTo(pubLayer);};
+ addPub=function(ll){L.circleMarker(ll,{radius:7,color:'#fff',weight:2,fillColor:'#1F6FB5',fillOpacity:1}).addTo(pubLayer);};
  paintMarkers=function(d){Object.keys(mk).forEach(function(n){mk[n].setRadius(6+2*lvl(d.c[n]||0));});if(!DEMO)pubLayer.clearLayers();drawReal();};
  var realLayer=L.layerGroup().addTo(map);
  function fmtDate(x){if(!x)return '';var d=new Date(x);if(isNaN(d))return String(x);return d.toLocaleDateString('he-IL',{timeZone:'Asia/Jerusalem'});}
@@ -372,9 +415,9 @@ var GC={'לא מוכרים':'#B8451F','מוכרים (אל־קסום ונווה �
   function row(t,b){var d=document.createElement('div');if(b)d.style.fontWeight='700';d.textContent=t;el.appendChild(d);}
   row(p.village,true);row(p.orderType);row(p.count+' '+(p.count===1?'צו':'צווים'));var dt=fmtDate(p.date);if(dt)row('תאריך: '+dt);
   if(p.name)row('מדווח/ת: '+p.name);
-  var st=document.createElement('div');st.style.cssText='margin-top:4px;font-weight:700;color:'+(p.status==='נבדק'?'#2F6B2A':'#8A5A00');st.textContent=p.status==='נבדק'?'נבדק על ידי צוות המועצה':'לא נבדק';el.appendChild(st);return el;}
+  var st=document.createElement('div');st.style.cssText='margin-top:4px;font-weight:700;color:'+(p.status==='נבדק'?'#2F6B2A':'#1F6FB5');st.textContent=p.status==='נבדק'?'נבדק על ידי צוות המועצה':'לא נבדק';el.appendChild(st);return el;}
  drawReal=function(){realLayer.clearLayers();if(DEMO)return;realPts.forEach(function(p){if(!isFinite(p.lat)||!isFinite(p.lng))return;
-  L.circleMarker([p.lat,p.lng],{radius:8,color:'#fff',weight:2,fillColor:p.status==='נבדק'?'#2F6B2A':'#F5B321',fillOpacity:1}).bindPopup(popupFor(p)).addTo(realLayer);});};
+  L.circleMarker([p.lat,p.lng],{radius:8,color:p.status==='נבדק'?'#2F6B2A':'#fff',weight:p.status==='נבדק'?4:2,fillColor:'#1F6FB5',fillOpacity:1}).bindPopup(popupFor(p)).addTo(realLayer);});};
  function zc(){mapEl.classList.toggle('zlow',map.getZoom()<11);}map.on('zoomend',zc);zc();
  // jump list
  var j=document.getElementById('jump');
@@ -390,8 +433,8 @@ var GC={'לא מוכרים':'#B8451F','מוכרים (אל־קסום ונווה �
   lsel.textContent=msg;locsum.textContent='סומן מקום על המפה. '+(has&&nb[1]<=15?'הכפר הקרוב: '+nb[0]+'.':'');
   lgo.hidden=false;lclear.hidden=false;pubEl.disabled=false;syncNm();
  }
- map.on('click',function(e){if(map.getZoom()<13){map.setView(e.latlng,15);lsel.textContent='הגדלנו. עכשיו לחצו על השכונה שלכם.';return;}setPick(e.latlng);});
- lclear.addEventListener('click',function(){if(pin){map.removeLayer(pin);pin=null;}sel=null;pubEl.checked=false;pubEl.disabled=true;syncNm();lgo.hidden=true;lclear.hidden=true;lsel.textContent='עדיין לא סומן מקום. הגדילו את המפה ולחצו על השכונה שלכם.';locsum.innerHTML='לא סומן מקום. <a href="#locate">חזרו למפה</a> ולחצו על השכונה שלכם.';});
+ map.on('click',function(e){if(map.getZoom()<13){map.setView(e.latlng,15);lsel.textContent='הגדלנו. עכשיו לחצו על הבית שלכם.';return;}setPick(e.latlng);});
+ lclear.addEventListener('click',function(){if(pin){map.removeLayer(pin);pin=null;}sel=null;pubEl.checked=false;pubEl.disabled=true;syncNm();lgo.hidden=true;lclear.hidden=true;lsel.textContent='עדיין לא סומן מקום. הגדילו את המפה ולחצו על הבית שלכם.';locsum.innerHTML='לא סומן מקום. <a href="#locate">חזרו למפה</a> ולחצו על הבית שלכם.';});
  var wrap=document.getElementById('lwrap'),lfull=document.getElementById('lfull');
  function full(on){wrap.classList.toggle('full',on);document.body.style.overflow=on?'hidden':'';lfull.textContent=on?'סגירת מסך מלא':'מסך מלא';if(on||!mobile)map.dragging.enable();if(!on&&mobile)map.dragging.disable();on?map.scrollWheelZoom.enable():map.scrollWheelZoom.disable();setTimeout(function(){map.invalidateSize();},50);}
  lfull.addEventListener('click',function(){full(!wrap.classList.contains('full'));});
