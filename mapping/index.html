@@ -460,9 +460,7 @@ var GC={'לא מוכרים':'#B8451F','מוכרים (אל־קסום ונווה �
  var pchk=document.createElement('input');pchk.type='checkbox';pchk.style.cssText='width:20px;height:20px;margin:0;flex:none;accent-color:#2F6B2A';
  plab.appendChild(pchk);plab.appendChild(document.createTextNode('לא להציג את הנקודה שסימנתי על המפה הציבורית'));
  var pnote=document.createElement('div');pnote.style.cssText='font-size:12px;font-weight:500;margin-top:4px;color:#6B4A3A';pnote.textContent='הדיווח יוצג רק כחלק מהנתונים הכלליים של הכפר';
- var px=document.createElement('button');px.type='button';px.setAttribute('aria-label','סגירה');px.textContent='×';px.style.cssText='position:absolute;top:-6px;inset-inline-start:-6px;width:24px;height:24px;border:0;border-radius:50%;background:#FFF4D6;color:#3B1D12;font-size:18px;line-height:22px;cursor:pointer;padding:0';
- px.addEventListener('click',function(){map.closePopup(ppop);});
- pbox.style.position='relative';pbox.style.paddingTop='6px';pbox.appendChild(px);pbox.appendChild(plab);pbox.appendChild(pnote);
+ pbox.appendChild(plab);pbox.appendChild(pnote);
  var ppop=L.popup({closeOnClick:false,autoClose:false,offset:[0,-6],minWidth:210}).setContent(pbox);
  pchk.addEventListener('change',function(){pubEl.checked=pchk.checked;syncNm();});
  pubEl.addEventListener('change',function(){pchk.checked=pubEl.checked;});
