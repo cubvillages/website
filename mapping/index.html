@@ -13,7 +13,7 @@ body{margin:0;background:#FFF4D6}
 a{color:#2F6B2A}a:hover{color:#1F4D1B}
 .navtoggle{display:none}
 .mobilebar{display:none}
-@media (max-width: 860px){.navlinks{display:none!important}.navlinks.open{display:flex!important;position:absolute;top:100%;left:0;right:0;z-index:20;flex-direction:column;align-items:stretch!important;gap:0!important;background:#FFFFFF;padding:4px 24px 10px;border-bottom:4px solid #F5B321;box-shadow:0 8px 16px rgba(0,0,0,0.10)}.navlinks.open a{padding:14px 0!important;border-bottom:1px solid #F3E2B8}.navlinks.open a:last-child{border-bottom:0}.navtoggle{display:inline-flex}.hdrname{font-size:14px!important}.deskonly{display:none!important}.mobilebar{display:flex!important}}
+@media (max-width: 1200px){.navlinks{display:none!important}.navlinks.open{display:flex!important;position:absolute;top:100%;left:0;right:0;z-index:20;flex-direction:column;align-items:stretch!important;gap:0!important;background:#FFFFFF;padding:4px 24px 10px;border-bottom:4px solid #F5B321;box-shadow:0 8px 16px rgba(0,0,0,0.10)}.navlinks.open a{padding:14px 0!important;border-bottom:1px solid #F3E2B8}.navlinks.open a:last-child{border-bottom:0}.navtoggle{display:inline-flex}.hdrname{font-size:14px!important}.deskonly{display:none!important}.mobilebar{display:flex!important}}
 section[id]{scroll-margin-top:12px}
 .pl-grid{display:block}
 .pl-main{min-width:0}
@@ -124,19 +124,22 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 
 <div style="font-weight: 400; font-size: 16px; line-height: 1.55">
 <header style="position: relative; z-index: 20; background: #FFFFFF; border-bottom: 4px solid #F5B321">
-<div style="max-width: 1160px; margin: 0 auto; padding: 10px 24px; display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 8px 16px">
+<div style="max-width: 1360px; margin: 0 auto; padding: 10px 24px; display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 8px 16px">
 <a href="/" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #3B1D12">
 <img src="/assets/img/logo-home.png" alt="" style="width: 56px; height: 56px; object-fit: contain; flex-shrink: 0">
 <span class="hdrname" style="font-size: 15px; font-weight: 700; line-height: 1.25; white-space: nowrap">המועצה למען הכפרים<br>הבדואיים הלא מוכרים</span>
 </a>
-<nav id="navlinks" class="navlinks" aria-label="ניווט ראשי" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2px">
-<a href="/plan/" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">תוכנית המועצות האזוריות</a>
-<a href="/projects/" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">הפרויקטים שלנו</a>
-<a href="/mapping/" aria-current="page" style="padding: 12px 10px; font-size: 15px; font-weight: 800; color: #B8451F; text-decoration: none">מיפוי</a>
-<a href="/#goals" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">המטרות שלנו</a>
-<a href="/#team" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">צוות</a>
-<a href="/#donors" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">תורמים</a>
-<a href="/#contact" style="padding: 12px 10px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none">צרו קשר</a>
+<nav id="navlinks" class="navlinks" aria-label="ניווט ראשי" style="display: flex; flex-wrap: nowrap; align-items: center; gap: 0">
+<a href="/plan/" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">תוכנית המועצות האזוריות</a>
+<a href="/#vision" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">חזון</a>
+<a href="/#about" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">אודות</a>
+<a href="/#goals" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">מטרות</a>
+<a href="/projects/" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">פרויקטים</a>
+<a href="/#demolitions" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">הריסות</a>
+<a href="/mapping/" aria-current="page" style="padding: 12px 7px; font-size: 15px; font-weight: 800; color: #B8451F; text-decoration: none; white-space: nowrap">מיפוי</a>
+<a href="/#team" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">צוות</a>
+<a href="/#donors" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">תורמים</a>
+<a href="/#contact" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">צרו קשר</a>
 </nav>
 <div style="display: flex; align-items: center; gap: 6px; flex: none">
 <button type="button" class="navtoggle" aria-label="תפריט" aria-controls="navlinks" aria-expanded="false" id="navtoggle" style="align-items: center; justify-content: center; width: 44px; height: 44px; border: 0; border-radius: 8px; background: transparent; color: #3B1D12; cursor: pointer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
