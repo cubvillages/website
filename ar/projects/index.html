@@ -26,7 +26,13 @@ body{margin:0}
 a{color:#A63A17}a:hover{color:#7A2A10}
 .navtoggle{display:none}
 .mobilebar{display:none}
-@media (max-width: 860px){.navlinks{display:none!important}.navlinks.open{display:flex!important;position:absolute;top:100%;left:0;right:0;z-index:20;flex-direction:column;align-items:stretch!important;gap:0!important;background:#FFFFFF;padding:4px 24px 10px;border-bottom:4px solid #F5B321;box-shadow:0 8px 16px rgba(0,0,0,0.10)}.navlinks.open a{padding:14px 0!important;border-bottom:1px solid #F3E2B8}.navlinks.open a:last-child{border-bottom:0}.navtoggle{display:inline-flex}.hdrname{font-size:14px!important}.deskonly{display:none!important}.mobilebar{display:flex!important}}
+@media (max-width: 1000px){.navlinks{display:none!important}.navlinks.open{display:flex!important;position:absolute;top:100%;left:0;right:0;z-index:20;flex-direction:column;align-items:stretch!important;gap:0!important;background:#FFFFFF;padding:4px 24px 10px;border-bottom:4px solid #F5B321;box-shadow:0 8px 16px rgba(0,0,0,0.10)}.navlinks.open a{padding:14px 0!important;border-bottom:1px solid #F3E2B8}.navlinks.open a:last-child{border-bottom:0}.navtoggle{display:inline-flex}.hdrname{font-size:14px!important}.deskonly{display:none!important}.mobilebar{display:flex!important}}
+@media (min-width: 1001px){.navlinks{margin-inline-end:auto}}
+.navdd{position:relative}.navdd-t{display:inline-flex;align-items:center;gap:4px;cursor:pointer}.navdd-t svg{transition:transform .15s}
+.navdd-m{display:none;position:absolute;top:100%;right:0;min-width:170px;flex-direction:column;background:#FFFFFF;border:1px solid #F3E2B8;border-top:3px solid #F5B321;border-radius:0 0 10px 10px;box-shadow:0 10px 20px rgba(0,0,0,0.12);z-index:30;padding:4px 0}
+.navdd:hover .navdd-m,.navdd:focus-within .navdd-m,.navdd.open .navdd-m{display:flex}.navdd:hover .navdd-t svg,.navdd:focus-within .navdd-t svg{transform:rotate(180deg)}
+.navdd-m a{padding:11px 18px!important;font-size:15px!important}.navdd-m a:hover{background:#FFF4D6}
+@media (max-width: 1000px){.navdd-m{display:flex;position:static;border:0;box-shadow:none;border-radius:0;padding:0 16px 0 0;min-width:0;border-bottom:1px solid #F3E2B8}.navdd-t{display:flex!important}.navdd-t svg{display:none}.navdd-m a{padding:14px 0!important}.navdd-m a:last-child{border-bottom:0!important}.navdd-m a:hover{background:transparent}}
 html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 #zoombox::backdrop{background:rgba(35,17,8,.82)}
 @media (max-width: 860px){#zoombox .zx{top:6px!important;inset-inline-end:6px!important}}
@@ -70,25 +76,31 @@ button.ph{border:0;padding:0;width:100%;cursor:zoom-in;font:inherit}
 @media(max-width:820px){.prj-grid{grid-template-columns:1fr}.prj-card.wide{display:block}#mapbox .x{top:6px;inset-inline-end:6px}}
 </style>
 <script src="/assets/a11y.js" defer></script>
+<script src="/assets/to-top.js" defer></script>
 <link rel="stylesheet" href="/assets/site-scale.css">
 </head>
 <body>
 <div dir="rtl" style="font-family: 'Noto Sans Arabic', 'Heebo', system-ui, sans-serif; color: #3B1D12; background: #FFFFFF; line-height: 1.55">
 
 <header style="position: relative; z-index: 20; background: #FFFFFF; border-bottom: 4px solid #F5B321">
-<div style="max-width: 1160px; margin: 0 auto; padding: 10px 24px; display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 8px 16px">
+<div style="max-width: 1360px; margin: 0 auto; padding: 10px 24px; display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 8px 16px">
 <a href="/ar/" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #3B1D12">
 <img src="/assets/img/logo-home.png" alt="" style="width: 56px; height: 56px; object-fit: contain; flex-shrink: 0">
 <span class="hdrname" style="font-size: 15px; font-weight: 700; line-height: 1.25; white-space: nowrap">المجلس من أجل القرى<br>البدوية غير المعترف بها</span>
 </a>
-<nav id="navlinks" class="navlinks" aria-label="التنقل الرئيسي" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2px">
-<a href="/ar/plan/" style="padding: 12px 8px; font-size: 14.5px; white-space: nowrap; font-weight: 500; color: #3B1D12; text-decoration: none">خطة المجالس الإقليمية</a>
-<a href="/ar/projects/" aria-current="page" style="padding: 12px 8px; font-size: 14.5px; white-space: nowrap; font-weight: 800; color: #B8451F; text-decoration: none">مشاريعنا</a>
-<a href="/ar/mapping/" style="padding: 12px 8px; font-size: 14.5px; white-space: nowrap; font-weight: 500; color: #3B1D12; text-decoration: none">خريطة الأوامر</a>
-<a href="/ar/#goals" style="padding: 12px 8px; font-size: 14.5px; white-space: nowrap; font-weight: 500; color: #3B1D12; text-decoration: none">أهدافنا</a>
-<a href="/ar/#team" style="padding: 12px 8px; font-size: 14.5px; white-space: nowrap; font-weight: 500; color: #3B1D12; text-decoration: none">الطاقم</a>
-<a href="/ar/#donors" style="padding: 12px 8px; font-size: 14.5px; white-space: nowrap; font-weight: 500; color: #3B1D12; text-decoration: none">المتبرعون</a>
-<a href="/ar/#contact" style="padding: 12px 8px; font-size: 14.5px; white-space: nowrap; font-weight: 500; color: #3B1D12; text-decoration: none">اتصل بنا</a>
+<nav id="navlinks" class="navlinks" aria-label="التنقل الرئيسي" style="display: flex; flex-wrap: nowrap; align-items: center; gap: 0">
+<div class="navdd"><a class="navdd-t" href="/ar/#about" aria-haspopup="true" style="padding: 12px 7px; font-size: 15px; font-weight: 800; color: #B8451F; text-decoration: none; white-space: nowrap">عن المجلس <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5"/></svg></a><div class="navdd-m">
+<a href="/ar/#vision" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">الرؤية</a>
+<a href="/ar/#goals" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">الأهداف</a>
+<a href="/ar/projects/" aria-current="page" style="padding: 12px 7px; font-size: 15px; font-weight: 800; color: #B8451F; text-decoration: none; white-space: nowrap">المشاريع</a>
+<a href="/ar/#team" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">الطاقم</a>
+<a href="/ar/#donors" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">المتبرعون</a>
+</div></div>
+<a href="/ar/plan/" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #B8451F; text-decoration: none; white-space: nowrap">خطة المجالس الإقليمية</a>
+<a href="/ar/#demolitions" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">الهدم</a>
+<a href="/ar/mapping/" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">خريطة الأوامر</a>
+<a href="/ar/#social" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">تابعونا</a>
+<a href="/ar/#contact" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">اتصل بنا</a>
 </nav>
 <div style="display: flex; align-items: center; gap: 6px; flex: none">
 <button type="button" class="navtoggle" aria-label="القائمة" aria-controls="navlinks" aria-expanded="false" id="navtoggle" style="align-items: center; justify-content: center; width: 44px; height: 44px; border: 0; border-radius: 8px; background: transparent; color: #3B1D12; cursor: pointer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
