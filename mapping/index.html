@@ -106,6 +106,7 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 .vl{background:rgba(255,255,255,.88);border:0;box-shadow:none;font:700 12px/1.2 'Heebo',sans-serif;color:#3B1D12;padding:1px 5px;direction:rtl}
 .vl:before{display:none}
 #lmap.zlow .vl{display:none}
+#lmap .vhalf i{display:block;width:100%;height:100%;border-radius:50%;border:2px solid #fff;box-sizing:border-box}
 #lmap.onlyrep .vl,#lmap.onlyrep path.vdot{display:none}
 .onlyc{background:#fff;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.4);padding:7px 10px;font:700 14px/1.2 inherit;color:#3B1D12;direction:rtl}
 .onlyc label{display:flex;align-items:center;gap:7px;cursor:pointer;margin:0}
@@ -334,7 +335,7 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 (function(){
 var V={"לא מוכרים": ["אם נמילה", "אום רתאם", "אום אלבדון", "אז־זערורה", "אז־זרנוג", "אל־באט", "אל־באט אל־ע׳רבי", "אל־באטל", "אל־בחירה", "אל־בקיעה", "אל־ג׳ורף", "גטמאת", "אל־מטהר", "אל־גרין (אל־עוקבי)", "אל־חומרה", "אל־פוח׳ארי", "אל־מד׳בח", "אל־מזרעה (אל־שהבא)", "אל־מכימן", "אל־מסאעדיה", "אל־סרה", "אל־ע׳זה", "אלע׳רה", "ארואיס", "אס־סדיר", "אל־סר", "באט אל־סראיעה", "ביר אל־חמאם", "ביר אל־משאש", "דחייה", "ואדי אל־משאש", "ח׳רבת אל־וטן", "ח׳רבת זבאלה", "ראס ג׳ראבא", "טויל אבו ג׳רול", "כרכור", "נחל אריכא", "נחל חווה", "סהל אלבגאר", "סוואווין", "עווג׳אן", "עתיר", "תל אל־מלח", "תל ערד מזרח", "תל ערד מערב"], "מוכרים (אל־קסום ונווה מדבר)": ["אום בטין", "א־סייד", "דריג׳את", "כוחלה", "מולדה", "מכחול", "תראבין א־צאנע", "אבו תלול", "אבו קרינאת (אם מתנאן)", "ביר הדאג׳", "קסר א־סר"], "בהליכי הכרה או הקמה": ["ח׳שם זנה", "עבדה", "רח׳מה", "ואדי אן־נעם", "אל־פורעה"], "הוחרבו": ["אל־עראקיב"]};
 var ENDPOINT='https://script.google.com/macros/s/AKfycby5bYVX15Al-2gZxsIhQVjT10XLZaXqHheqvFSFHlPA7VGkDEqgltpAgjFQCYBQwb9S/exec';
-var COUNTS={},VER={},DEMO=false,real={},realPts=[],drawReal=function(){};
+var COUNTS={},VER={},DEMO=false,real={},realPts=[],vst={},hid={},drawReal=function(){};
 var names=[];Object.keys(V).forEach(function(g){V[g].forEach(function(n){names.push([g,n]);});});
 function seed(){var s=7;function r(){s=(s*9301+49297)%233280;return s/233280;}
  var c={},v={};names.forEach(function(p){var x=r();var n=x<.45?0:x<.7?1+Math.floor(r()*2):x<.9?3+Math.floor(r()*3):6+Math.floor(r()*8);c[p[1]]=n;v[p[1]]=Math.floor(n*r()*.8);});return [c,v];}
@@ -420,7 +421,7 @@ document.getElementById('form').addEventListener('submit',function(e){
  readPhoto(file).then(function(b64){payload.photo={data:b64};send();}).catch(function(){btn.disabled=false;btn.textContent=old;err.textContent='לא הצלחנו לקרוא את הצילום. אפשר לשלוח בלעדיו או לנסות צילום אחר.';});
 });
 document.getElementById('again').onclick=function(){document.getElementById('form').reset();cnt.value=1;fam.value=1;bld.value=1;toggleOther();toggleEx();document.getElementById('form').style.display='';document.getElementById('thanks').style.display='none';document.getElementById('lclear').click();var jj=document.getElementById('jump');if(jj){jj.value='';}document.getElementById('locate').scrollIntoView({behavior:'smooth'});};
-var XY={"אם נמילה": [31.41255, 34.77207], "אום רתאם": [31.11644, 35.02141], "אום אלבדון": [31.24546, 35.25646], "אז־זערורה": [31.23728, 35.11814], "אז־זרנוג": [31.20355, 34.92451], "אל־באט": [31.27024, 35.03338], "אל־באט אל־ע׳רבי": [31.26924, 35.02016], "אל־באטל": [31.34647, 34.76732], "אל־בחירה": [31.21761, 35.08982], "אל־בקיעה": [31.30246, 35.26515], "אל־ג׳ורף": [31.23103, 35.04713], "גטמאת": [31.17304, 35.09831], "אל־מטהר": [31.18778, 35.08336], "אל־גרין (אל־עוקבי)": [31.28317, 34.93076], "אל־מד׳בח": [31.17984, 34.96425], "אל־מכימן": [31.29686, 34.8555], "אל־מסאעדיה": [31.33912, 34.85842], "אל־סרה": [31.24205, 35.03165], "אל־ע׳זה": [31.21031, 35.13685], "אלע׳רה": [31.23808, 34.96828], "ארואיס": [31.22952, 34.94826], "אס־סדיר": [31.18013, 34.98047], "באט אל־סראיעה": [31.25932, 35.02513], "ביר אל־חמאם": [31.23147, 34.9004], "ביר אל־משאש": [31.20038, 34.95242], "דחייה": [31.42659, 34.76777], "ואדי אל־משאש": [31.08352, 34.84451], "ח׳רבת אל־וטן": [31.25536, 34.92378], "ראס ג׳ראבא": [31.06565, 35.06273], "טויל אבו ג׳רול": [31.33384, 34.80261], "נחל אריכא": [30.68612, 34.7829], "נחל חווה": [30.75044, 34.77831], "סהל אלבגאר": [30.849, 34.7363], "סוואווין": [31.18451, 34.88055], "עווג׳אן": [31.3064, 34.84758], "עתיר": [31.32314, 35.02622], "תל אל־מלח": [31.23194, 35.00378], "אום בטין": [31.27573, 34.88378], "א־סייד": [31.28328, 34.91305], "דריג׳את": [31.30059, 35.07544], "כוחלה": [31.28695, 35.04969], "מולדה": [31.25823, 34.98242], "מכחול": [31.28834, 35.07544], "תראבין א־צאנע": [31.34363, 34.73701], "אבו תלול": [31.18607, 34.91304], "ביר הדאג׳": [31.02417, 34.70417], "קסר א־סר": [31.07944, 34.9848], "ח׳שם זנה": [31.20264, 34.88307], "עבדה": [30.8071, 34.75594], "רח׳מה": [31.00862, 34.95579], "ואדי אן־נעם": [31.16339, 34.82215], "אל־פורעה": [31.22986, 35.1656], "אל־עראקיב": [31.34596, 34.77814], "אל־פוח׳ארי": [31.35136, 34.8111], "כרכור": [31.31867, 34.75915], "אל־מזרעה (אל־שהבא)": [31.15012, 35.07817], "אל־חומרה": [31.2635, 35.09276], "ח׳רבת זבאלה": [31.40862, 34.74995], "אל־סר": [31.19742, 34.80619], "תל ערד מזרח": [31.29131, 35.14518], "אבו קרינאת (אם מתנאן)": [31.12523, 34.96332], "תל ערד מערב": [31.29562, 35.11939]};
+var XY={"אם נמילה": [31.41255, 34.77207], "אום רתאם": [31.11644, 35.02141], "אום אלבדון": [31.24546, 35.25646], "אז־זערורה": [31.23728, 35.11814], "אז־זרנוג": [31.20355, 34.92451], "אל־באט": [31.27024, 35.03338], "אל־באט אל־ע׳רבי": [31.26924, 35.02016], "אל־באטל": [31.34647, 34.76732], "אל־בחירה": [31.21761, 35.08982], "אל־בקיעה": [31.30246, 35.26515], "אל־ג׳ורף": [31.23103, 35.04713], "גטמאת": [31.17304, 35.09831], "אל־מטהר": [31.18778, 35.08336], "אל־גרין (אל־עוקבי)": [31.28317, 34.93076], "אל־מד׳בח": [31.17984, 34.96425], "אל־מכימן": [31.29686, 34.8555], "אל־מסאעדיה": [31.33912, 34.85842], "אל־סרה": [31.24205, 35.03165], "אל־ע׳זה": [31.21031, 35.13685], "אלע׳רה": [31.23808, 34.96828], "ארואיס": [31.22952, 34.94826], "אס־סדיר": [31.18013, 34.98047], "באט אל־סראיעה": [31.25932, 35.02513], "ביר אל־חמאם": [31.23147, 34.9004], "ביר אל־משאש": [31.20038, 34.95242], "דחייה": [31.42659, 34.76777], "ואדי אל־משאש": [31.08352, 34.84451], "ח׳רבת אל־וטן": [31.25536, 34.92378], "ראס ג׳ראבא": [31.06565, 35.06273], "טויל אבו ג׳רול": [31.33384, 34.80261], "נחל אריכא": [30.68612, 34.7829], "נחל חווה": [30.75044, 34.77831], "סהל אלבגאר": [30.849, 34.7363], "סוואווין": [31.18451, 34.88055], "עווג׳אן": [31.3064, 34.84758], "עתיר": [31.32314, 35.02622], "תל אל־מלח": [31.23194, 35.00378], "אום בטין": [31.27573, 34.88378], "א־סייד": [31.28328, 34.91305], "דריג׳את": [31.30059, 35.07544], "כוחלה": [31.28695, 35.04969], "מולדה": [31.25823, 34.98242], "מכחול": [31.28834, 35.07544], "תראבין א־צאנע": [31.34363, 34.73701], "אבו תלול": [31.18607, 34.91304], "ביר הדאג׳": [31.02417, 34.70417], "קסר א־סר": [31.07944, 34.9848], "ח׳שם זנה": [31.20264, 34.88307], "עבדה": [30.8071, 34.75594], "רח׳מה": [31.00862, 34.95356], "ואדי אן־נעם": [31.16339, 34.82215], "אל־פורעה": [31.22986, 35.1656], "אל־עראקיב": [31.34596, 34.77814], "אל־פוח׳ארי": [31.35136, 34.8111], "כרכור": [31.31867, 34.75915], "אל־מזרעה (אל־שהבא)": [31.15012, 35.07817], "אל־חומרה": [31.2635, 35.09276], "ח׳רבת זבאלה": [31.40862, 34.74995], "אל־סר": [31.19742, 34.80619], "תל ערד מזרח": [31.29131, 35.14518], "אבו קרינאת (אם מתנאן)": [31.12523, 34.96332], "תל ערד מערב": [31.29562, 35.11939]};
 var GC={'לא מוכרים':'#B8451F','מוכרים (אל־קסום ונווה מדבר)':'#2F6B2A','בהליכי הכרה או הקמה':'#C58A00','הוחרבו':'#6B6B6B'};
 (function(){
  var mapEl=document.getElementById('lmap');if(!window.L||!mapEl)return;
@@ -436,7 +437,7 @@ var GC={'לא מוכרים':'#B8451F','מוכרים (אל־קסום ונווה �
  });
  var pubLayer=L.layerGroup().addTo(map);
  addPub=function(ll){L.circleMarker(ll,{radius:7,color:'#fff',weight:2,fillColor:'#1F6FB5',fillOpacity:1,bubblingMouseEvents:false}).addTo(pubLayer);};
- paintMarkers=function(d){Object.keys(mk).forEach(function(n){mk[n].setRadius(6+2*lvl(d.c[n]||0));});if(!DEMO)pubLayer.clearLayers();drawReal();};
+ paintMarkers=function(d){Object.keys(mk).forEach(function(n){mk[n].setRadius(6+2*lvl(d.c[n]||0));mk[n].setStyle(hid[n]&&!DEMO?{opacity:0,fillOpacity:0}:{opacity:1,fillOpacity:.95});});if(!DEMO)pubLayer.clearLayers();drawReal();};
  var realLayer=L.layerGroup().addTo(map);
  function fmtDate(x){if(!x)return '';var d=new Date(x);if(isNaN(d))return String(x);return d.toLocaleDateString('he-IL',{timeZone:'Asia/Jerusalem'});}
  function popupFor(p){var el=document.createElement('div');el.style.cssText='direction:rtl;font-family:inherit;line-height:1.5';
@@ -444,13 +445,18 @@ var GC={'לא מוכרים':'#B8451F','מוכרים (אל־קסום ונווה �
   row(p.village,true);row(p.orderType);row(p.count+' '+(p.count===1?'צו':'צווים'));var dt=fmtDate(p.date);if(dt)row('תאריך: '+dt);
   if(p.name)row('מדווח/ת: '+p.name);
   var st=document.createElement('div');st.style.cssText='margin-top:4px;font-weight:700;color:'+(p.status==='נבדק'?'#2F6B2A':'#1F6FB5');st.textContent=p.status==='נבדק'?'נבדק על ידי צוות המועצה':'לא נבדק';el.appendChild(st);return el;}
+function cnt1(x,a,b){return x+' '+(x===1?a:b);}function vpop(n){var el=document.createElement('div');el.style.cssText='direction:rtl;font-family:inherit;line-height:1.5';var t=vst[n]||{};function row(x,b){var d=document.createElement('div');if(b)d.style.fontWeight='700';d.textContent=x;el.appendChild(d);}row(n,true);if(t.orders>0)row(cnt1(t.orders,'מסמך','מסמכים'));if(t.families>0)row(cnt1(t.families,'משפחה','משפחות'));if(t.buildings>0)row(cnt1(t.buildings,'מבנה','מבנים'));return el;}
+ function drawHalf(){Object.keys(hid).forEach(function(n){if(!XY[n])return;var r=6+2*lvl(real[n]||0),sz=2*r+2,col=GC[gOf[n]]||'#B8451F';
+  L.marker(XY[n],{icon:L.divIcon({className:'vhalf',iconSize:[sz,sz],html:'<i style="background:linear-gradient(90deg,#1F6FB5 50%,'+col+' 50%)"></i>'}),interactive:false,keyboard:false}).addTo(realLayer);
+  var hit=L.circleMarker(XY[n],{radius:r+8,stroke:false,fillColor:'#000',fillOpacity:0,bubblingMouseEvents:false}).bindPopup(vpop(n),{autoPan:false,offset:[0,-4]}).addTo(realLayer);
+  hit.on('mouseover',function(){hit.openPopup();});hit.on('mouseout',function(){if(!hit._stick)hit.closePopup();});hit.on('click',function(){hit._stick=true;});hit.on('popupclose',function(){hit._stick=false;});});}
  drawReal=function(){realLayer.clearLayers();if(DEMO)return;realPts.forEach(function(p){if(!isFinite(p.lat)||!isFinite(p.lng))return;
   L.circleMarker([p.lat,p.lng],{radius:8,color:p.status==='נבדק'?'#2F6B2A':'#fff',weight:p.status==='נבדק'?4:2,fillColor:'#1F6FB5',fillOpacity:1,interactive:false}).addTo(realLayer);
   var hit=L.circleMarker([p.lat,p.lng],{radius:16,stroke:false,fillColor:'#000',fillOpacity:0,bubblingMouseEvents:false}).bindPopup(popupFor(p),{autoPan:false,offset:[0,-4]}).addTo(realLayer);
   hit.on('mouseover',function(){hit.openPopup();});
   hit.on('mouseout',function(){if(!hit._stick)hit.closePopup();});
   hit.on('click',function(){hit._stick=true;});
-  hit.on('popupclose',function(){hit._stick=false;});});};
+  hit.on('popupclose',function(){hit._stick=false;});});drawHalf();};
  function pflip(pp){var c=pp&&pp._container;if(!c||!pp._map||pp.options.autoPan!==false)return;
   var oy=pp.options.offset.y;c.classList.remove('pflip');c.style.bottom=(-oy)+'px';
   var y=map.latLngToContainerPoint(pp.getLatLng()).y;
@@ -509,7 +515,7 @@ var GC={'לא מוכרים':'#B8451F','מוכרים (אל־קסום ונווה �
  window.__lmap=map;window.__setPick=setPick;
 })();
 function loadReal(){fetch(ENDPOINT).then(function(r){return r.json();}).then(function(j){
- real={};VER={};var vs=j.villages||{};Object.keys(vs).forEach(function(k){real[k]=vs[k].orders||0;VER[k]=vs[k].checked||0;});realPts=j.points||[];render();
+ real={};VER={};var vs=j.villages||{};Object.keys(vs).forEach(function(k){real[k]=vs[k].orders||0;VER[k]=vs[k].checked||0;});realPts=j.points||[];vst={};hid={};var pc={};realPts.forEach(function(q){pc[q.village]=(pc[q.village]||0)+1;});Object.keys(vs).forEach(function(k){vst[k]=vs[k];if((vs[k].reports||0)>(pc[k]||0))hid[k]=1;});render();
 }).catch(function(){});}
 render();loadReal();
 })();
