@@ -21,7 +21,11 @@ html{scroll-behavior:smooth}:root{color-scheme:light}
 .h-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to left,rgba(22,10,5,.86),rgba(22,10,5,.66) 58%,rgba(22,10,5,.34))}
 .h-hero .h-wrap{padding-top:clamp(56px,10vh,110px);padding-bottom:clamp(48px,9vh,96px)}
 .h-kicker{font-weight:700;font-size:16px;color:#F5B321;margin:0 0 10px}
-.h-hero h1{font-weight:900;font-size:clamp(46px,7.4vw,92px);line-height:1.02;margin:0 0 20px;letter-spacing:-.01em}
+.h-hero .h-kicker{font-weight:800;font-size:clamp(34px,5.3vw,66px);line-height:1.05;color:#F5B321;margin:0 0 6px}
+.h-hero h1{font-weight:900;font-size:clamp(46px,7.4vw,92px);line-height:1.02;margin:0 0 20px;letter-spacing:.01em}
+.h-hero h1 .gap{margin-inline-end:.09em}
+.h-hero .h-research{display:inline-block;margin:22px 0 0;padding:12px 20px;border-inline-start:5px solid #F5B321;background:rgba(22,10,5,.45);font-weight:700;font-size:clamp(17px,1.9vw,22px);line-height:1.45;color:#FFF4D6}
+.h-hero .h-research b{color:#F5B321;font-weight:800}
 .h-hero .h-lead{font-weight:500;font-size:clamp(19px,2.2vw,26px);line-height:1.5;max-width:760px;margin:0 0 8px}
 .h-hero .h-credit{font-weight:400;font-size:14px;color:#F3E2B8;margin:26px 0 0}
 
@@ -176,9 +180,10 @@ figure.doc.full{margin:22px 0 0}
 <header class="h-hero">
 <img src="/assets/img/aerial1945-hq.jpg" alt="">
 <div class="h-wrap">
-<p class="h-kicker">הנגב לפני 1948</p>
-<h1>הנגב לא היה ריק</h1>
+<p class="h-kicker">לפני 48,</p>
+<h1>הנ<span class="gap">ג</span>ב לא היה ריק</h1>
 <p class="h-lead">המסמכים כאן לא נכתבו בידי בדואים. הם נכתבו בידי העות'מאנים, הבריטים והמוסדות הציוניים. והם מתארים נגב מעובד, מיושב ובבעלות: שדות, בתים, שטרות מכר ותשלומי מס.</p>
+<p class="h-research">העמוד מבוסס על מחקריהם של <b>אורן יפתחאל, אחמד אמארה, סנדי קידר</b> ואחרים</p>
 <p class="h-credit">אל־נקע, בקעת באר שבע, 1945. צילום אוויר מתקופת המנדט</p>
 </div>
 </header>
