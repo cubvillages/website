@@ -113,6 +113,41 @@ figure.doc.full{margin:12px 0 0;max-width:460px}
 .src ul{margin:0;padding-inline-start:20px;font-size:14px;line-height:1.65;font-weight:500}
 .src li{margin-bottom:4px}
 
+
+/* part A cards */
+.qa{max-width:960px;margin:0 auto;padding:34px 24px 4px}
+.qa .h-wrap{padding:0}
+.qa .h-kicker{color:#A63A17}
+.qa-h{font-weight:800;font-size:clamp(24px,2.6vw,32px);line-height:1.15;margin:0 0 22px}
+.gh{display:flex;align-items:center;gap:10px;margin:26px 0 10px}
+.gh .rg{font-size:13px;font-weight:600;color:#6B4A3A}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px}
+.qc{position:relative;background:#FFF;border:1px solid #EBD3A0;border-top:5px solid #F5B321;border-radius:12px;padding:14px 18px 14px;display:flex;flex-direction:column;box-shadow:0 4px 14px rgba(59,29,18,.06)}
+.qh{display:flex;align-items:center;gap:10px}
+.y2{font-weight:900;font-size:22px;line-height:1;color:#B8451F}
+.qc .cx{font-weight:500;font-size:14.5px;line-height:1.5;color:#5A3A2C;margin:9px 0 10px}
+.qc blockquote{margin:0;font-weight:700;font-size:clamp(17px,1.7vw,20px);line-height:1.34}
+.qc blockquote em{font-style:normal;background:linear-gradient(transparent 62%,#FBD97A 62%)}
+.qc .bg{font-weight:900;font-size:clamp(22px,2.3vw,28px);line-height:1.15;color:#B8451F;margin:0}
+.qc .wh{font-weight:600;font-size:13px;line-height:1.4;margin:10px 0 0}
+.qc .more{margin-top:auto;padding-top:10px;font-weight:700;font-size:13.5px;color:#2F6B2A;text-decoration:none}
+.qc .more::after{content:" \2193"}
+.gal-wrap{max-width:960px;margin:0 auto;padding:46px 24px 8px}
+.gal-wrap .h-wrap{padding:0}
+.gal{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:110px 110px;gap:10px}
+.ph{border:1.5px dashed #C98F0A;background:#FDEFC2;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:#7A5200}
+.ph.big{grid-row:span 2}
+.p2{max-width:100%;margin:46px auto 0}
+.p2>summary{list-style:none;cursor:pointer;max-width:960px;margin:0 auto;padding:16px 24px;border-top:3px solid #F5B321;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:clamp(17px,1.6vw,20px);font-weight:700}
+.p2>summary::-webkit-details-marker{display:none}
+.p2>summary b{color:#A63A17;margin-inline-end:8px}
+.p2>summary small{display:block;font-size:13px;font-weight:500;color:#6B4A3A;margin-top:3px}
+.p2>summary .btn{border:1.5px solid #3B1D12;border-radius:999px;padding:4px 18px;font-size:14px;font-weight:700;white-space:nowrap;background:#FFF}
+.p2 .t-open{display:none}.p2[open] .t-open{display:inline}.p2[open] .t-closed{display:none}
+.chap{margin-top:34px;border-top:1px solid #EBD3A0;padding:22px 0 4px}
+.chap .h-wrap{display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:center}
+.chap h2{margin:0;font-weight:900;font-size:clamp(22px,2.4vw,30px);line-height:1.1}
+.chap p{grid-column:1/-1;margin:6px 0 0;font-size:14px;font-weight:500;color:#6B4A3A}
 @media(max-width:900px){
  .h-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
  .qpair{grid-template-columns:1fr}
@@ -198,67 +233,83 @@ figure.doc.full{margin:12px 0 0;max-width:460px}
 <p>אפשר לבדוק את זה בלי להסתמך על אף בדואי. מספיק לקרוא מי כתב מה, ומתי.</p>
 <div class="h-key" aria-label="מקרא מקורות"><span>בכל ציטוט מסומן מי כתב אותו:</span><span class="chip c-ott">שלטון עות'מאני</span><span class="chip c-brit">שלטון בריטי</span><span class="chip c-zion">גוף ציוני</span><span class="chip c-isr">מדינת ישראל</span></div>
 </section>
-
-<!-- ===== 1596 ===== -->
-<section class="stop" id="y1596">
-<div class="when"><span class="yr">1596</span><span class="lbl">המפקד העות'מאני</span></div>
-<div class="what">
-<h2>יותר ממאה שטחי עיבוד בדואיים</h2>
-<p>מפקד המס העות'מאני מ־1596 תיעד יותר ממאה שטחי עיבוד, "מזרעות", בדרום הר חברון, במרחב שחופף בחלקו לצפון הנגב. כבר לפני יותר מארבע מאות שנה היו בדואים שעיבדו שם אדמה</p>
-<figure class="doc full"><img src="/assets/img/history/ottoman-census-1596.jpg" alt="מפת הנגב הצפוני עם עיגולים המסמנים מזרעות, שטחי עיבוד, לפי המפקד העות'מאני של 1596" loading="lazy"><figcaption>מפקד המס העות'מאני, 1596: שטחי עיבוד ("מזרעות") בצפון הנגב ובדרום הר חברון. מפה: הוטרוט ועבד אל־פתאח, 1977</figcaption></figure>
+<!-- ===== PART A ===== -->
+<section class="qa" id="partA">
+<div class="h-wrap">
+<p class="h-kicker">חלק א</p>
+<h2 class="qa-h">במילים שלהם</h2>
+<div class="gh"><span class="chip c-zion">התנועה הציונית</span><span class="rg">1920–1948</span></div>
+<div class="cards">
+<article class="qc"><div class="qh"><span class="y2">1920</span><span class="chip c-zion">גוף ציוני</span></div>
+<p class="cx">הסקר הציוני הראשון של הנגב תיעד 92 שבטים וייחס לבדואים בעלות על כ־2.66 מיליון דונם באזור באר שבע, כ־35% מהם מעובדים. כך תיאר את שבטי התיאהא:</p>
+<blockquote>בעיקר עובדי אדמה, <em>בדרך להפוך לפלאחים</em>. הם חיים על אדמתם ועוזבים אותה רק לצורך רעייה</blockquote>
+<p class="wh">סקר החברה להכשרת היישוב, 1920</p>
+<a class="more" href="#y1920">להקשר המלא</a></article>
+<article class="qc"><div class="qh"><span class="y2">1925</span><span class="chip c-zion">גוף ציוני</span></div>
+<p class="cx">בכירי ההתיישבות הציונית דנו ברכישת קרקע בנגב. כשנשאל יהושע חנקין, מרוכשי הקרקע הבולטים של התנועה, מי הבעלים, ענה:</p>
+<blockquote>שבטים. <em>אבל צריך לקנות מכל אחד ואחד</em>, צריך קושאן לכל אחד ואחד מהמחזיקים בקרקע</blockquote>
+<p class="wh">יהושע חנקין, בישיבה בראשות אוסישקין, 1925</p>
+<a class="more" href="#y1925">להקשר המלא</a></article>
+<article class="qc"><div class="qh"><span class="y2">1939</span><span class="chip c-zion">גוף ציוני</span></div>
+<p class="cx">סקר של אליהו אפשטיין העריך כמה מהנגב הצפוני עובד בפועל:</p>
+<p class="bg">2.1–3.5 מיליון דונם</p>
+<p class="wh">אליהו אפשטיין, 1939</p>
+<a class="more" href="#y1939">להקשר המלא</a></article>
+</div>
+<div class="gh"><span class="chip c-ott">העות'מאנים</span><span class="rg">עד 1917</span></div>
+<div class="cards">
+<article class="qc"><div class="qh"><span class="y2">1891</span><span class="chip c-ott">שלטון עות'מאני</span></div>
+<p class="cx">מועצת המדינה העות'מאנית תיעדה החזקה בדואית רבת שנים בנפת עזה, ולא הציעה להפקיע אותה אלא למדוד ולרשום:</p>
+<p class="bg">כ־5 מיליון דונם</p>
+<p class="wh">מועצת המדינה העות'מאנית, 4.5.1891</p>
+<a class="more" href="#y1891">להקשר המלא</a></article>
+<article class="qc"><div class="qh"><span class="y2">תחילת המאה ה־20</span><span class="chip c-ott">שלטון עות'מאני</span></div>
+<p class="cx">כשהקימו את באר שבע, העות'מאנים לא הפקיעו את הקרקע. הם קנו אותה, בשטר שמפרט גבולות ובעלים:</p>
+<p class="bg">כ־2,000 דונם נרכשו משבטי אל־עזאזמה</p>
+<p class="wh">שטר הרכישה להקמת באר שבע</p>
+<a class="more" href="#y1900">להקשר המלא</a></article>
+</div>
+<div class="gh"><span class="chip c-brit">הבריטים</span><span class="rg">1917–1948</span></div>
+<div class="cards">
+<article class="qc"><div class="qh"><span class="y2">1921</span><span class="chip c-brit">שלטון בריטי</span></div>
+<p class="cx">בירושלים, בפגישה עם שייח'ים מנפת באר שבע, אישש שר המושבות את הבטחת הנציב העליון:</p>
+<blockquote><em>שהזכויות המיוחדות והמנהגים של שבטי הבדואים של באר שבע לא יופרו</em></blockquote>
+<p class="wh">וינסטון צ'רצ'יל, 29.3.1921</p>
+<a class="more" href="#y1921">להקשר המלא</a></article>
+<article class="qc"><div class="qh"><span class="y2">1937</span><span class="chip c-brit">שלטון בריטי</span></div>
+<p class="cx">הסוכנות היהודית ביקשה להתיישב בנגב בטענה שרוב הקרקע שם "מוואת", שוממה. ממשלת המנדט השיבה:</p>
+<blockquote>הקרקע הראויה לעיבוד בנפת באר שבע נחשבת כשייכת לשבטי הבדואים <em>מכוח חזקה מימים ימימה</em></blockquote>
+<p class="wh">ממשלת המנדט, בתשובה לסוכנות היהודית, 1937</p>
+<a class="more" href="#y1937">להקשר המלא</a></article>
+</div>
+<div class="gh"><span class="chip c-isr">מדינת ישראל</span><span class="rg">1948 ואילך</span></div>
+<div class="cards">
+<article class="qc"><div class="qh"><span class="y2">1951</span><span class="chip c-isr">צה"ל</span></div>
+<p class="cx">אלוף פיקוד הדרום כתב מה ההעברה של הבדואים משטח שובל לתל־ערד עושה לזכויותיהם:</p>
+<blockquote>העברת הבדואים לשטחים חדשים <em>תבטל את זכותם כבעלי הקרקע</em> והם יהיו כחוכרים אדמות הממשלה</blockquote>
+<p class="wh">משה דיין, מכתב מ־25.9.1951</p>
+<a class="more" href="#y1951">להקשר המלא</a></article>
+<article class="qc"><div class="qh"><span class="y2">1952</span><span class="chip c-isr">מדינת ישראל</span></div>
+<p class="cx">ועדה של משרד המשפטים בדקה אילו זכויות להכיר אצל הבדואים שנותרו בישראל. היא קבעה שבתקופת המנדט נרשמו על שמם שטחים נכבדים שעיבדו, וחלקם הועבר אחר כך לקרן הקיימת וליהודים:</p>
+<blockquote>ישנם <em>מאות תקדימים</em>, ואנו סבורים <em>שממשלת ישראל לא תוכל, ואינה צריכה להתעלם מהם</em></blockquote>
+<p class="wh">ועדת השלושה של משרד המשפטים, אוקטובר 1952</p>
+<a class="more" href="#y1952">להקשר המלא</a></article>
+</div>
 </div>
 </section>
-
-<!-- ===== 19th century travellers ===== -->
-<section class="stop" id="y1863">
-<div class="when"><span class="yr sm nw">1863–1883</span><span class="lbl">חוקרים בריטיים בדרך</span></div>
-<div class="what">
-<h2>מי שעבר שם ראה שדות</h2>
-<p>חוקרים שחצו את אזור באר שבע במאה ה־19 תיארו אותו בלי להתכוון לתת עדות משפטית</p>
-<div class="qpair">
-<div class="q"><blockquote>סימן אחד בולט המציין את אזור באר שבע כגבול בין המדבר לבין ארץ הגבעות: <em>גידול תבואה על ידי הערבים בחלקות גדולות, לא גדורות</em>. זה המקום הראשון שמצאנו בו אדמות מעובדות.</blockquote>
-<div class="by"><span class="chip c-brit">חוקר בריטי</span><span><span class="who">הנרי טריסטרם</span>, 1863–1864</span></div></div>
-<div class="q"><blockquote>היקף הקרקע המעובדת כאן, כמו גם כל הדרך לעזה, <em>הוא עצום</em>, וכולל תבואות כגון חיטה, שעורה ותירס, עולים בהרבה על צרכי התושבים.</blockquote>
-<div class="by"><span class="chip c-brit">גאולוג בריטי</span><span><span class="who">אדוארד האל</span>, בדרך מבאר שבע לעזה, 1883</span></div></div>
-</div>
-<p style="margin-top:10px">לא כולם ראו שדות. חלק מהנוסעים, כמו אדוארד פאלמר, תיארו שממה, אבל מסלוליהם עברו מזרחית לבאר שבע, באזורים צחיחים יותר, שם הבדואים אכן ישבו בצפיפות נמוכה יותר.</p>
-</div>
-</section>
-
-<!-- ===== 1891 ===== -->
-<section class="stop" id="y1891">
-<div class="when"><span class="yr">1891</span><span class="lbl">מועצת המדינה העות'מאנית</span></div>
-<div class="what">
-<h2>האימפריה מתעדת 5 מיליון דונם</h2>
-<div class="split">
-<div>
-<p>ב־4 במאי 1891 תיעדה מועצת המדינה העות'מאנית החזקה בדואית רבת שנים בכ־5 מיליון דונם עות'מאניים בנפת עזה.</p>
-<p>המועצה לא הציעה להפקיע אותם. היא הציעה מנגנון למדידת האדמות ולרישומן, בשיתוף נציגים בדואים.</p>
-<p class="punch">השלטון ידע שיש כאן קרקע עם בעלים. <em>השאלה שלו הייתה איך לרשום אותה.</em></p>
-</div>
-<figure class="doc" style="max-width:160px"><img src="/assets/img/history/ottoman-decision-1891.jpg" alt="עמוד מהחלטת מועצת המדינה העות'מאנית מ־1891, כתב יד עות'מאני עם חותמות" loading="lazy"><figcaption>החלטת מועצת המדינה העות'מאנית, 4.5.1891. ארכיון ראש הממשלה העות'מאני, איסטנבול (İ.MMS 122/5229)</figcaption></figure>
+<!-- ===== GALLERY ===== -->
+<section class="gal-wrap" id="gallery">
+<div class="h-wrap">
+<h2 class="qa-h" style="font-size:clamp(19px,1.9vw,23px)">גלריה: חיי הבדואים לפני 1948</h2>
+<div class="gal">
+<div class="ph big">תמונה ראשית</div><div class="ph">תמונה</div><div class="ph">תמונה</div><div class="ph">תמונה</div><div class="ph">תמונה</div>
 </div>
 </div>
 </section>
-
-<!-- ===== Beersheba purchase ===== -->
-<section class="stop" id="y1900">
-<div class="when"><span class="yr sm">תחילת המאה ה־20</span><span class="lbl">הקמת באר שבע</span></div>
-<div class="what">
-<h2>האימפריה קונה את באר שבע</h2>
-<div class="split wide">
-<div>
-<p>כשהעות'מאנים הקימו את באר שבע, הם לא הפקיעו את הקרקע. הם רכשו כ־2,000 דונם משבטי אל־עזאזמה. שטר הרכישה מפרט את גבולות השטח ואת שמות בעלי הזכויות.</p>
-<p class="punch">אימפריה לא קונה אדמה <em>שאין לה בעלים.</em></p>
-<p style="margin-top:10px">גם בין הבדואים עצמם נערכו עסקאות בשטרות, "סנדים", שנחתמו בפני עדים ופירטו גבולות ובעלים. בתמונה: שטר מכר מאל־עראקיב משנת 1911.</p>
-</div>
-<figure class="doc"><img src="/assets/img/history/beersheba-purchase.jpg" alt="שטר הרכישה העות'מאני של אדמת באר שבע, בתרגום עברי לצד המקור" loading="lazy"><figcaption>שטר הרכישה להקמת באר שבע, בתרגום עברי לצד המקור. ארכיון טוביהו בנגב, אוסף ששון בר־צבי</figcaption></figure>
-</div>
-<figure class="doc" style="max-width:170px;margin-top:12px"><img src="/assets/img/history/sanad-1911.jpg" alt="שטר מכר (סנד) בכתב ערבית מאל־עראקיב, 1911, עם חתימות עדים וחותמות" loading="lazy"><figcaption>שטר מכר (סנד) מאל־עראקיב, 1911. ארכיון משפחת אל־עוקבי</figcaption></figure>
-</div>
-</section>
-
-<!-- ===== 1920 ===== -->
+<!-- ===== PART B ===== -->
+<details class="p2" id="part2">
+<summary><span><b>חלק ב</b> המסמכים, המפות והציר המלא<small>למי שרוצה לקרוא ולבדוק בעצמו</small></span><span class="btn"><span class="t-closed">פתח</span><span class="t-open">סגור</span></span></summary>
+<div class="chap"><div class="h-wrap"><span class="chip c-zion">התנועה הציונית</span><h2>הסוקרים והקונים</h2><p>הסקר הציוני, ההתייעצויות על רכישת הקרקע וההערכות מהצד הציוני</p></div></div>
 <section class="stop" id="y1920">
 <div class="when"><span class="yr">1920</span><span class="lbl">הסקר הציוני הראשון</span></div>
 <div class="what">
@@ -272,26 +323,11 @@ figure.doc.full{margin:12px 0 0;max-width:460px}
 <div>
 <h3 style="font-weight:800;font-size:17px;margin:0 0 6px">דוגמה: שבט אל־עוקבי</h3>
 <p>בסקר מופיע שבט "ערב עקבנה", בראשות השייח' מוחמד אל־עוקבי: 100 בתים (כולל אוהלים), כ־26 אלף דונם, כ־10,000 מהם מעובדים בחיטה, דורה ושעורה, ושתי בארות מים.</p>
-<p>שנה אחר כך, ביולי 1921, ועדת אברמסון, שהוקמה בידי הנציב העליון הבריטי כדי לברר אילו קרקעות אפשר לרשום כאדמות מדינה, מצאה כ־2.8 מיליון דונם בבעלות ובעיבוד בדואי באזור באר שבע.</p>
 </div>
 <figure class="doc"><img src="/assets/img/history/hakhshara-uqbi-1920.jpg" alt="עמוד מודפס מסקר החברה להכשרת היישוב, 1920, על שבט אל־עוקבי: 100 בתים, 15,000 חבלים, 40% מעובדים בחיטה, דורה ושעורה" loading="lazy"><figcaption>הדף על שבט אל־עוקבי בסקר החברה להכשרת היישוב, 1920. הארכיון הציוני המרכזי</figcaption></figure>
 </div>
 </div>
 </section>
-
-<!-- ===== Churchill 1921 ===== -->
-<section class="stop" id="y1921">
-<div class="when"><span class="yr sm">29 במרץ 1921</span><span class="lbl">ירושלים</span></div>
-<div class="what">
-<h2>צ'רצ'יל מבטיח לשייח'ים</h2>
-<div class="q big" style="margin-bottom:12px"><blockquote>אישש מחדש את הביטחונות שניתנו בבאר שבע על ידי הנציב העליון לשייח'ים, <em>שהזכויות המיוחדות והמנהגים של שבטי הבדואים של באר שבע לא יופרו.</em></blockquote>
-<p class="orig">…the special rights and customs of the Bedouin Tribes of Beersheba will not be interfered with.</p>
-<div class="by"><span class="chip c-brit">שלטון בריטי</span><span><span class="who">וינסטון צ'רצ'יל</span>, שר המושבות, בפגישה עם שייח'ים מנפת באר שבע</span></div></div>
-<figure class="doc" style="max-width:280px"><img src="/assets/img/history/churchill-1921.jpg" alt="הדו״ח הרשמי על פגישת שר המושבות עם שייח'ים בדואים מבאר שבע, 29 במרץ 1921" loading="lazy"><figcaption>התיעוד הרשמי של הפגישה, 29.3.1921. הארכיון הלאומי של בריטניה (CO 733/2)</figcaption></figure>
-</div>
-</section>
-
-<!-- ===== 1925-1948 purchases ===== -->
 <section class="stop" id="y1925">
 <div class="when"><span class="yr sm nw">1925–1948</span><span class="lbl">רכישות הקרקע היהודיות</span></div>
 <div class="what">
@@ -309,8 +345,83 @@ figure.doc.full{margin:12px 0 0;max-width:460px}
 </div>
 </div>
 </section>
-
-<!-- ===== 1931-1945 ===== -->
+<section class="stop" id="y1939">
+<div class="when"><span class="yr">1939</span><span class="lbl">הערכה ציונית</span></div>
+<div class="what">
+<h2>מיליוני דונם מעובדים</h2>
+<p>ב־1939 העריך אליהו אפשטיין שבצפון הנגב עובדו בין 2.1 ל־3.5 מיליון דונם.</p>
+</div>
+</section>
+<div class="chap"><div class="h-wrap"><span class="chip c-ott">העות'מאנים</span><h2>עד 1917</h2><p>מפקד, החלטה ושטרות מהשלטון שקדם לבריטים</p></div></div>
+<section class="stop" id="y1596">
+<div class="when"><span class="yr">1596</span><span class="lbl">המפקד העות'מאני</span></div>
+<div class="what">
+<h2>יותר ממאה שטחי עיבוד בדואיים</h2>
+<p>מפקד המס העות'מאני מ־1596 תיעד יותר ממאה שטחי עיבוד, "מזרעות", בדרום הר חברון, במרחב שחופף בחלקו לצפון הנגב. כבר לפני יותר מארבע מאות שנה היו בדואים שעיבדו שם אדמה</p>
+<figure class="doc full"><img src="/assets/img/history/ottoman-census-1596.jpg" alt="מפת הנגב הצפוני עם עיגולים המסמנים מזרעות, שטחי עיבוד, לפי המפקד העות'מאני של 1596" loading="lazy"><figcaption>מפקד המס העות'מאני, 1596: שטחי עיבוד ("מזרעות") בצפון הנגב ובדרום הר חברון. מפה: הוטרוט ועבד אל־פתאח, 1977</figcaption></figure>
+</div>
+</section>
+<section class="stop" id="y1863">
+<div class="when"><span class="yr sm nw">1863–1883</span><span class="lbl">חוקרים בריטיים בדרך</span></div>
+<div class="what">
+<h2>מי שעבר שם ראה שדות</h2>
+<p>חוקרים שחצו את אזור באר שבע במאה ה־19 תיארו אותו בלי להתכוון לתת עדות משפטית</p>
+<div class="qpair">
+<div class="q"><blockquote>סימן אחד בולט המציין את אזור באר שבע כגבול בין המדבר לבין ארץ הגבעות: <em>גידול תבואה על ידי הערבים בחלקות גדולות, לא גדורות</em>. זה המקום הראשון שמצאנו בו אדמות מעובדות.</blockquote>
+<div class="by"><span class="chip c-brit">חוקר בריטי</span><span><span class="who">הנרי טריסטרם</span>, 1863–1864</span></div></div>
+<div class="q"><blockquote>היקף הקרקע המעובדת כאן, כמו גם כל הדרך לעזה, <em>הוא עצום</em>, וכולל תבואות כגון חיטה, שעורה ותירס, עולים בהרבה על צרכי התושבים.</blockquote>
+<div class="by"><span class="chip c-brit">גאולוג בריטי</span><span><span class="who">אדוארד האל</span>, בדרך מבאר שבע לעזה, 1883</span></div></div>
+</div>
+<p style="margin-top:10px">לא כולם ראו שדות. חלק מהנוסעים, כמו אדוארד פאלמר, תיארו שממה, אבל מסלוליהם עברו מזרחית לבאר שבע, באזורים צחיחים יותר, שם הבדואים אכן ישבו בצפיפות נמוכה יותר.</p>
+</div>
+</section>
+<section class="stop" id="y1891">
+<div class="when"><span class="yr">1891</span><span class="lbl">מועצת המדינה העות'מאנית</span></div>
+<div class="what">
+<h2>האימפריה מתעדת 5 מיליון דונם</h2>
+<div class="split">
+<div>
+<p>ב־4 במאי 1891 תיעדה מועצת המדינה העות'מאנית החזקה בדואית רבת שנים בכ־5 מיליון דונם עות'מאניים בנפת עזה.</p>
+<p>המועצה לא הציעה להפקיע אותם. היא הציעה מנגנון למדידת האדמות ולרישומן, בשיתוף נציגים בדואים.</p>
+<p class="punch">השלטון ידע שיש כאן קרקע עם בעלים. <em>השאלה שלו הייתה איך לרשום אותה.</em></p>
+</div>
+<figure class="doc" style="max-width:160px"><img src="/assets/img/history/ottoman-decision-1891.jpg" alt="עמוד מהחלטת מועצת המדינה העות'מאנית מ־1891, כתב יד עות'מאני עם חותמות" loading="lazy"><figcaption>החלטת מועצת המדינה העות'מאנית, 4.5.1891. ארכיון ראש הממשלה העות'מאני, איסטנבול (İ.MMS 122/5229)</figcaption></figure>
+</div>
+</div>
+</section>
+<section class="stop" id="y1900">
+<div class="when"><span class="yr sm">תחילת המאה ה־20</span><span class="lbl">הקמת באר שבע</span></div>
+<div class="what">
+<h2>האימפריה קונה את באר שבע</h2>
+<div class="split wide">
+<div>
+<p>כשהעות'מאנים הקימו את באר שבע, הם לא הפקיעו את הקרקע. הם רכשו כ־2,000 דונם משבטי אל־עזאזמה. שטר הרכישה מפרט את גבולות השטח ואת שמות בעלי הזכויות.</p>
+<p class="punch">אימפריה לא קונה אדמה <em>שאין לה בעלים.</em></p>
+<p style="margin-top:10px">גם בין הבדואים עצמם נערכו עסקאות בשטרות, "סנדים", שנחתמו בפני עדים ופירטו גבולות ובעלים. בתמונה: שטר מכר מאל־עראקיב משנת 1911.</p>
+</div>
+<figure class="doc"><img src="/assets/img/history/beersheba-purchase.jpg" alt="שטר הרכישה העות'מאני של אדמת באר שבע, בתרגום עברי לצד המקור" loading="lazy"><figcaption>שטר הרכישה להקמת באר שבע, בתרגום עברי לצד המקור. ארכיון טוביהו בנגב, אוסף ששון בר־צבי</figcaption></figure>
+</div>
+<figure class="doc" style="max-width:170px;margin-top:12px"><img src="/assets/img/history/sanad-1911.jpg" alt="שטר מכר (סנד) בכתב ערבית מאל־עראקיב, 1911, עם חתימות עדים וחותמות" loading="lazy"><figcaption>שטר מכר (סנד) מאל־עראקיב, 1911. ארכיון משפחת אל־עוקבי</figcaption></figure>
+</div>
+</section>
+<div class="chap"><div class="h-wrap"><span class="chip c-brit">הבריטים</span><h2>1917–1948</h2><p>הבטחה, ועדה, מפקד ותשובה לסוכנות</p></div></div>
+<section class="stop" id="y1921">
+<div class="when"><span class="yr sm">29 במרץ 1921</span><span class="lbl">ירושלים</span></div>
+<div class="what">
+<h2>צ'רצ'יל מבטיח לשייח'ים</h2>
+<div class="q big" style="margin-bottom:12px"><blockquote>אישש מחדש את הביטחונות שניתנו בבאר שבע על ידי הנציב העליון לשייח'ים, <em>שהזכויות המיוחדות והמנהגים של שבטי הבדואים של באר שבע לא יופרו.</em></blockquote>
+<p class="orig">…the special rights and customs of the Bedouin Tribes of Beersheba will not be interfered with.</p>
+<div class="by"><span class="chip c-brit">שלטון בריטי</span><span><span class="who">וינסטון צ'רצ'יל</span>, שר המושבות, בפגישה עם שייח'ים מנפת באר שבע</span></div></div>
+<figure class="doc" style="max-width:280px"><img src="/assets/img/history/churchill-1921.jpg" alt="הדו״ח הרשמי על פגישת שר המושבות עם שייח'ים בדואים מבאר שבע, 29 במרץ 1921" loading="lazy"><figcaption>התיעוד הרשמי של הפגישה, 29.3.1921. הארכיון הלאומי של בריטניה (CO 733/2)</figcaption></figure>
+</div>
+</section>
+<section class="stop" id="y1921a">
+<div class="when"><span class="yr sm">יולי 1921</span><span class="lbl">ועדת אברמסון</span></div>
+<div class="what">
+<h2>ועדה בריטית מוצאת 2.8 מיליון דונם בעיבוד בדואי</h2>
+<p>ועדת אברמסון, שהוקמה בידי הנציב העליון הבריטי כדי לברר אילו קרקעות אפשר לרשום כאדמות מדינה, מצאה כ־2.8 מיליון דונם בבעלות ובעיבוד בדואי באזור באר שבע.</p>
+</div>
+</section>
 <section class="stop" id="y1937">
 <div class="when"><span class="yr sm nw">1931–1945</span><span class="lbl">הבריטים סופרים וממפים</span></div>
 <div class="what">
@@ -319,11 +430,23 @@ figure.doc.full{margin:12px 0 0;max-width:460px}
 <div class="q big"><blockquote>הקרקע הראויה לעיבוד בנפת באר שבע נחשבת כשייכת לשבטי הבדואים <em>מכוח חזקה מימים ימימה.</em></blockquote>
 <p class="orig">The cultivable land in the Beersheba sub-district is regarded as belonging to the Bedouin tribes by virtue of possession from time immemorial.</p>
 <div class="by"><span class="chip c-brit">שלטון בריטי</span><span><span class="who">ממשלת המנדט</span>, בתשובה לסוכנות היהודית, 1937</span></div></div>
-<p>ב־1939 העריך אליהו אפשטיין שבצפון הנגב עובדו בין 2.1 ל־3.5 מיליון דונם. ומפה בריטית מ־1945, שנוצרה מתצלומי אוויר, מסמנת מקבצי אוהלים ומבנים בכל צפון הנגב. בהצלבה עם מקורות נוספים נמצא שבמקבצים הגדולים היו בדרך כלל גם בתי אבן או בוץ ומבני אחסון חקלאיים.</p>
+<p>מפה בריטית מ־1945, שנוצרה מתצלומי אוויר, מסמנת מקבצי אוהלים ומבנים בכל צפון הנגב. בהצלבה עם מקורות נוספים נמצא שבמקבצים הגדולים היו בדרך כלל גם בתי אבן או בוץ ומבני אחסון חקלאיים.</p>
 <figure class="doc full"><img src="/assets/img/history/tents-map-1945.jpg" alt="מפת האוהלים הבריטית של הנגב מ־1945, אלפי סימני אוהלים ומבנים, ועליה נקודות אדומות של יישובי היום" loading="lazy"><figcaption>מפת האוהלים הבריטית (על בסיס תצלומי אוויר, 1945). בשחור: אוהלים ומבנים. בנקודות אדומות: יישובים בדואיים של היום. גנזך המדינה</figcaption></figure>
 </div>
 </section>
-
+<div class="chap"><div class="h-wrap"><span class="chip c-isr">מדינת ישראל</span><h2>1948 ואילך</h2><p>מה כתבו אנשי המדינה עצמם, ומה נעשה בפועל</p></div></div>
+<section class="stop" id="y1951">
+<div class="when"><span class="yr">1951</span><span class="lbl">פיקוד הדרום</span></div>
+<div class="what">
+<h2>דיין: ההעברה מבטלת את הבעלות</h2>
+<p>ב־25 בספטמבר 1951 כתב אלוף פיקוד הדרום, משה דיין, מכתב על העברת הבדואים משטח שובל לתל־ערד. בסעיף 4 הסביר מה ההעברה עושה לזכויותיהם:</p>
+<div class="split dayan" style="margin:18px 0">
+<div class="q big" style="margin:0"><blockquote>העברת הבדואים לשטחים חדשים <em>תבטל את זכותם כבעלי הקרקע</em> והם יהיו כחוכרים אדמות הממשלה.</blockquote>
+<div class="by"><span class="chip c-isr">מדינת ישראל</span><span><span class="who">משה דיין</span>, אלוף פיקוד הדרום, 25 בספטמבר 1951, במכתב על העברת הבדואים משטח שובל לתל־ערד</span></div></div>
+<figure class="doc" style="max-width:130px"><img src="/assets/img/history/dayan-letter-1951.jpg" alt="מכתבו של אלוף משה דיין, מפקד פיקוד הדרום, מ־25 בספטמבר 1951, בנושא העברת הבדואים משטח שובל לתל־ערד, וסעיף 4 בו" loading="lazy"><figcaption>מכתבו של האלוף משה דיין, 25.9.1951. הציטוט בסעיף 4</figcaption></figure>
+</div>
+</div>
+</section>
 <!-- ===== 1952: the state's own committee (band) ===== -->
 <section class="band" id="y1952">
 <img src="/assets/img/aerial1945-hq.jpg" alt="">
@@ -335,25 +458,16 @@ figure.doc.full{margin:12px 0 0;max-width:460px}
 <p class="after">הוועדה המליצה שהמדינה תכיר בזכויות בעלות בשטחים שהבדואים שנותרו בישראל יוכלו להוכיח שעיבדו לאורך תקופת ההתיישנות.</p>
 </div>
 </section>
-
-<!-- ===== After ===== -->
 <section class="after-wrap">
-<p class="h-kicker" style="color:#A63A17">ואז</p>
 <h2>מה עשו עם זה אחרי 1948</h2>
 <ul class="tl">
 <li><b>1948</b><span>לפי החוקרים, כ־80% מתושבי נפת באר שבע הבדואים ברחו או גורשו, ונמנעה חזרתם. בשנות ה־50 המוקדמות ריכז הממשל הצבאי רבים מהנשארים באזור הסייג.</span></li>
 <li><b>1951</b><span>המושל הצבאי הורה לבני שבט אל־עוקבי להתפנות מאל־עראקיב. ההעברה הוצגה כזמנית, ובני השבט ביקשו לשוב. ב־1954 הפקיעה המדינה את הקרקע.</span></li>
-</ul>
-<div class="split dayan" style="margin:18px 0">
-<div class="q big" style="margin:0"><blockquote>העברת הבדואים לשטחים חדשים <em>תבטל את זכותם כבעלי הקרקע</em> והם יהיו כחוכרים אדמות הממשלה.</blockquote>
-<div class="by"><span class="chip c-isr">מדינת ישראל</span><span><span class="who">משה דיין</span>, אלוף פיקוד הדרום, 25 בספטמבר 1951, במכתב על העברת הבדואים משטח שובל לתל־ערד</span></div></div>
-<figure class="doc" style="max-width:130px"><img src="/assets/img/history/dayan-letter-1951.jpg" alt="מכתבו של אלוף משה דיין, מפקד פיקוד הדרום, מ־25 בספטמבר 1951, בנושא העברת הבדואים משטח שובל לתל־ערד, וסעיף 4 בו" loading="lazy"><figcaption>מכתבו של האלוף משה דיין, 25.9.1951. הציטוט בסעיף 4</figcaption></figure>
-</div>
-<ul class="tl">
 <li><b style="white-space:nowrap">1971–1979</b><span>בהסדר המקרקעין בצפון הנגב הוגשו 3,220 תביעות בעלות. בירורן הוקפא בפועל במשך עשרות שנים.</span></li>
 <li><b>2015</b><span>בית המשפט העליון דחה את ערעור משפחת אל־עוקבי על שש חלקות באזור אל־עראקיב. הוא ראה בהבטחת צ'רצ'יל אמירה כללית ועמומה והבחין בין רישום עסקאות מכר בתקופת המנדט לבין הוכחת בעלות בקרקע שטרם הוסדרה.</span></li>
 </ul>
 </section>
+</details>
 
 <!-- ===== Sources ===== -->
 <section class="src">
@@ -367,6 +481,13 @@ figure.doc.full{margin:12px 0 0;max-width:460px}
 <p style="font-size:14px;font-weight:500;color:#6B4A3A;margin:12px 0 0">דונם עות'מאני הוא כ־919 מ"ר. נתוני הסקרים, המפקדים והרכישות מובאים כפי שמצוטטים בספר, ולא חושבו מחדש.</p>
 </section>
 
+<script>
+(function(){var d=document.getElementById('part2');if(!d)return;
+function go(id){d.open=true;var el=document.getElementById(id);if(el)setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'})},40)}
+document.querySelectorAll('a.more').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();go(a.getAttribute('href').slice(1))})});
+if(location.hash){var el=document.getElementById(location.hash.slice(1));if(el&&d.contains(el)){d.open=true}}
+})();
+</script>
 
 <footer style="background: #FFF4D6; border-top: 1px solid #EBD3A0; font-weight: 400">
 <div class="ftrow" style="max-width: 1160px; margin: 0 auto; padding: 22px 24px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px"><a href="/donate/" style="background: #B8451F; color: #FFFFFF; font-weight: 800; text-decoration: none; padding: 11px 24px; border-radius: 999px; font-size: 15px">תרמו למועצה</a><nav aria-label="רשתות חברתיות" style="display: flex; flex-wrap: wrap; gap: 10px"><a href="https://www.facebook.com/rcuvn" target="_blank" rel="noopener" aria-label="פייסבוק" title="פייסבוק" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #1877F2"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21z"/></svg></a><a href="https://www.instagram.com/negevrcuv" target="_blank" rel="noopener" aria-label="אינסטגרם" title="אינסטגרם" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(45deg,#F58529,#DD2A7B 55%,#8134AF)"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r="1" fill="#fff" stroke="none"/></svg></a><a href="https://www.twitter.com/rcuvnegev" target="_blank" rel="noopener" aria-label="X" title="X" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #000"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#fff" d="M17.8 3.5h3l-6.6 7.5 7.8 9.5h-6.1l-4.8-6-5.4 6h-3l7-8L2 3.5h6.2l4.3 5.5zm-1 15.2h1.7L7.3 5.2H5.5z"/></svg></a><a href="https://www.tiktok.com/@negev.villages" target="_blank" rel="noopener" aria-label="טיקטוק" title="טיקטוק" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #000"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M16.6 3c.4 2.1 1.7 3.5 3.9 3.7v3a7 7 0 0 1-3.8-1.2v6.4A5.9 5.9 0 1 1 10.8 9v3.1a2.9 2.9 0 1 0 2.8 2.9V3z"/></svg></a><a href="https://chat.whatsapp.com/BRg2BQ8WIedFiJMSqSYUYo" target="_blank" rel="noopener" aria-label="הצטרפו לעדכוני המועצה בוואטסאפ" title="הצטרפו לעדכוני המועצה בוואטסאפ" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #25D366"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm0 16.3a7.3 7.3 0 0 1-3.7-1l-.3-.2-2.7.7.7-2.6-.2-.3A7.3 7.3 0 1 1 12 19.3zm4-5.5c-.2-.1-1.3-.7-1.5-.7-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6 6 0 0 1-3-2.6c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.4a.8.8 0 0 0-.6.3 2.5 2.5 0 0 0-.8 1.9c0 1.1.8 2.2.9 2.3.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.3-.6 1.5-1.1.2-.5.2-1 .1-1.1l-.6-.4z"/></svg></a></nav></div>
@@ -374,9 +495,3 @@ figure.doc.full{margin:12px 0 0;max-width:460px}
 <div style="max-width: 1160px; margin: 0 auto; padding: 6px 24px 22px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 14px; color: #4F3226"><a href="/" aria-label="לעמוד הבית" style="display: inline-flex; flex: none"><img src="/assets/img/logo-home.png" alt="" style="width: 30px; height: 30px; object-fit: contain; display: block"></a><span>© 2026 המועצה למען הכפרים הבדואיים הלא מוכרים · negevvillages.org</span></div>
 </footer>
 </div>
-
-<script>(function(){var b=document.getElementById('navtoggle'),n=document.getElementById('navlinks');if(!b||!n)return;
-b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});
-n.addEventListener('click',function(e){if(e.target.closest('a')){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});})();</script>
-<script src="/assets/lightbox.js" defer></script>
-</body></html>
