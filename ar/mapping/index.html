@@ -184,7 +184,7 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <div class="lbar" id="lbar"><span id="lsel" role="status" aria-live="polite">لم يُحدَّد مكان بعد. كبّروا الخريطة واضغطوا على بيتكم.</span>
 <span class="lbtns"><button type="button" class="btn" id="lgo" hidden>المتابعة إلى النموذج</button><button type="button" class="btn ghost" id="lclear" hidden>إلغاء التحديد</button><button type="button" class="btn ghost" id="lfull">ملء الشاشة</button></span></div>
 </div>
-<div class="legend lg2" aria-hidden="true" style="margin-top:12px"><span><i style="background:#B8451F"></i>غير معترف بها</span><span><i style="background:#2F6B2A"></i>معترف بها</span><span><i style="background:#C58A00"></i>قيد الاعتراف أو التأسيس</span><span><i style="background:#6B6B6B"></i>هُدمت</span><span><i style="background:#1F6FB5"></i>الإبلاغ عن أمر أو إنذار</span><span><i style="background:#1F6FB5;border:3px solid #2F6B2A"></i>بلاغ تم فحصه</span></div>
+<div class="legend lg2" aria-hidden="true" style="margin-top:12px"><span><i style="background:#B8451F"></i>غير معترف بها</span><span><i style="background:#2F6B2A"></i>معترف بها</span><span><i style="background:#C58A00"></i>قيد الاعتراف أو التأسيس</span><span><i style="background:#6B6B6B"></i>هُدمت</span><span><i style="background:#1F6FB5"></i>الإبلاغ عن أمر أو إنذار</span></div>
 <p class="hint">على الهاتف: إصبع واحد يمرّر الصفحة، وإصبعان تحرّكان الخريطة وتكبّرانها. يمكنكم أيضًا الضغط على "ملء الشاشة". صورة الجو: Esri, Vantor, Earthstar Geographics.</p>
 </section>
 
@@ -290,7 +290,7 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <div class="thanks" id="thanks" role="status" tabindex="-1">
 <h3>شكرًا. استلمنا البلاغ.</h3>
 <p id="tsum" style="margin:0 0 10px;font-size:17px;line-height:1.55"></p>
-<p class="hint" style="margin:0 0 14px">أُرسل البلاغ إلى طاقم المجلس. البلاغ الذي لم يُفحص بعد يُعلَّم بذلك على الخريطة</p>
+<p class="hint" style="margin:0 0 14px">أُرسل البلاغ إلى طاقم المجلس</p>
 <button type="button" class="btn ghost" id="again">بلاغ آخر</button>
 </div>
 </section>
@@ -299,7 +299,6 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <h2 id="ht">ماذا يحدث بعد البلاغ</h2>
 <ol class="steps">
 <li><strong>يصل البلاغ إلينا</strong>نحن فقط نرى التفاصيل التي اخترتم عدم عرضها على الخريطة العامة</li>
-<li><strong>نفحصه</strong>للحفاظ على مصداقية الخريطة</li>
 <li><strong>يُضاف البلاغ إلى القرية</strong>للحصول على صورة كاملة عن عدد الأوامر والإنذارات في كل قرية</li>
 </ol>
 </section>
@@ -354,7 +353,7 @@ function render(){
   V[g].forEach(function(nm){
    if(q&&nm.indexOf(q)<0)return;
    var n=(d.c[nm]||0),vv=(d.v[nm]||0);
-   t+='<button type="button" class="tile l'+lvl(Math.max(n,fv(nm)))+'" data-v="'+nm+'" aria-label="'+nm+': '+n+' أوامر"><span>'+nm+'</span><span><b>'+n+'</b>'+(n>0?' <small>('+vv+' فُحصت)</small>':'')+'</span></button>';
+   t+='<button type="button" class="tile l'+lvl(Math.max(n,fv(nm)))+'" data-v="'+nm+'" aria-label="'+nm+': '+n+' أوامر"><span>'+nm+'</span><span><b>'+n+'</b>'+'</span></button>';
   });
   if(t)h+='<div class="group">'+g+'</div><div class="tiles">'+t+'</div>';
  });
@@ -450,14 +449,14 @@ var GC={'غير معترف بها':'#B8451F','معترف بها (مجلسا ال
   function row(t,b){var d=document.createElement('div');if(b)d.style.fontWeight='700';d.textContent=t;el.appendChild(d);}
   row(p.vAr,true);row(typeAr(p.orderType));row(p.count===1?'أمر واحد':p.count+' أوامر');var dt=fmtDate(p.date);if(dt)row('التاريخ: '+dt);
   if(p.name)row('المُبلِّغ: '+p.name);
-  var st=document.createElement('div');st.style.cssText='margin-top:4px;font-weight:700;color:'+(p.status==='נבדק'?'#2F6B2A':'#1F6FB5');st.textContent=p.status==='נבדק'?'فحصه طاقم المجلس':'لم يُفحص';el.appendChild(st);return el;}
+  return el;}
 function ar1(x,s,d,p,q){return x===1?s:x===2?d:x<=10?x+' '+p:x+' '+q;}function vpop(n){var el=document.createElement('div');el.style.cssText='direction:rtl;font-family:inherit;line-height:1.5';var t=vst[n]||{};function row(x,b){var d=document.createElement('div');if(b)d.style.fontWeight='700';d.textContent=x;el.appendChild(d);}row(n,true);if(t.orders>0)row(ar1(t.orders,'وثيقة واحدة','وثيقتان','وثائق','وثيقة'));if(t.families>0)row(ar1(t.families,'عائلة واحدة','عائلتان','عائلات','عائلة'));if(t.buildings>0&&!(t.buildings<Math.max(t.orders||0,t.families||0)))row(ar1(t.buildings,'مبنى واحد','مبنيان','مباني','مبنى'));return el;}
  function drawHalf(){Object.keys(hid).forEach(function(n){if(!XY[n])return;var r=6+2*lvl(Math.max(real[n]||0,fv(n))),sz=2*r+2,col=GC[gOf[n]]||'#B8451F';
   L.marker(XY[n],{icon:L.divIcon({className:'vhalf',iconSize:[sz,sz],html:'<i style="background:linear-gradient(90deg,#1F6FB5 50%,'+col+' 50%)"></i>'}),interactive:false,keyboard:false}).addTo(realLayer);
   var hit=L.circleMarker(XY[n],{radius:r+8,stroke:false,fillColor:'#000',fillOpacity:0,bubblingMouseEvents:false}).bindPopup(vpop(n),{autoPan:false,offset:[0,-4]}).addTo(realLayer);
   hit.on('mouseover',function(){hit.openPopup();});hit.on('mouseout',function(){if(!hit._stick)hit.closePopup();});hit.on('click',function(){hit._stick=true;});hit.on('popupclose',function(){hit._stick=false;});});}
  drawReal=function(){realLayer.clearLayers();if(DEMO)return;realPts.forEach(function(p){if(!isFinite(p.lat)||!isFinite(p.lng))return;
-  L.circleMarker([p.lat,p.lng],{radius:8,color:p.status==='נבדק'?'#2F6B2A':'#fff',weight:p.status==='נבדק'?4:2,fillColor:'#1F6FB5',fillOpacity:1,interactive:false}).addTo(realLayer);
+  L.circleMarker([p.lat,p.lng],{radius:8,color:'#fff',weight:2,fillColor:'#1F6FB5',fillOpacity:1,interactive:false}).addTo(realLayer);
   var hit=L.circleMarker([p.lat,p.lng],{radius:16,stroke:false,fillColor:'#000',fillOpacity:0,bubblingMouseEvents:false}).bindPopup(popupFor(p),{autoPan:false,offset:[0,-4]}).addTo(realLayer);
   hit.on('mouseover',function(){hit.openPopup();});
   hit.on('mouseout',function(){if(!hit._stick)hit.closePopup();});
