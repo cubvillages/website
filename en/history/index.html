@@ -1,0 +1,512 @@
+<!doctype html><html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Negev Was Not Empty | The Council for the Unrecognized Bedouin Villages</title><meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Agriculture, ownership and Bedouin villages in the Negev before 1948, according to Ottoman, British and Zionist documents.">
+<link rel="icon" href="/assets/img/logo-home.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&amp;display=swap">
+<style>
+body{margin:0;background:#FFF4D6}
+a{color:#2F6B2A}a:hover{color:#1F4D1B}
+.navtoggle{display:none}
+.mobilebar{display:none}
+@media (max-width: 860px){.navlinks{display:none!important}.navlinks.open{display:flex!important;position:absolute;top:100%;left:0;right:0;z-index:20;flex-direction:column;align-items:stretch!important;gap:0!important;background:#FFFFFF;padding:4px 24px 10px;border-bottom:4px solid #F5B321;box-shadow:0 8px 16px rgba(0,0,0,0.10)}.navlinks.open a{padding:14px 0!important;border-bottom:1px solid #F3E2B8}.navlinks.open a:last-child{border-bottom:0}.navtoggle{display:inline-flex}.hdrname{font-size:14px!important}.deskonly{display:none!important}.mobilebar{display:flex!important}}
+html{scroll-behavior:smooth}:root{color-scheme:light}
+
+/* ---------- page ---------- */
+.h-wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+/* hero: photo with a partly transparent overlay */
+.h-hero{position:relative;isolation:isolate;overflow:hidden;color:#FFF}
+.h-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;z-index:-2}
+.h-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to left,rgba(22,10,5,.86),rgba(22,10,5,.66) 58%,rgba(22,10,5,.34))}
+.h-hero .h-wrap{padding-top:clamp(28px,5vh,48px);padding-bottom:clamp(40px,6vh,56px)}
+.h-kicker{font-weight:700;font-size:14px;color:#F5B321;margin:0 0 6px}
+.h-hero .h-kicker{font-weight:800;font-size:clamp(24px,2.9vw,36px);line-height:1.05;color:#F5B321;margin:0 0 3px}
+.h-hero h1{font-weight:900;font-size:clamp(34px,4.4vw,54px);line-height:1.04;margin:0 0 12px;letter-spacing:.01em}
+.h-hero h1 .gap{margin-inline-end:.09em}
+.h-hero .h-research{display:inline-block;margin:12px 0 0;padding:4px 11px;border-inline-start:3px solid #F5B321;background:rgba(22,10,5,.45);font-weight:600;font-size:12.5px;line-height:1.45;color:#FFF4D6}
+.h-hero .h-research b{color:#F5B321;font-weight:800}
+.h-hero .h-lead{font-weight:500;font-size:clamp(15px,1.5vw,17px);line-height:1.5;max-width:640px;margin:0}
+.h-hero .h-credit{font-weight:400;font-size:12.5px;color:#F3E2B8;margin:14px 0 0}
+
+/* numbers */
+.h-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:-26px;position:relative;z-index:2}
+.h-stat{background:#FFF;border:1px solid #EBD3A0;border-top:4px solid #F5B321;border-radius:10px;padding:10px 12px 12px;box-shadow:0 4px 12px rgba(59,29,18,.08)}
+.h-stat b{display:block;font-weight:900;font-size:clamp(20px,2vw,25px);line-height:1.05;white-space:nowrap;color:#B8451F}
+.h-stat span{display:block;margin-top:5px;font-weight:500;font-size:13px;line-height:1.4}
+.h-stat small{display:block;margin-top:4px;font-weight:600;font-size:12px;color:#6B4A3A}
+
+/* claim */
+.h-claim{max-width:820px;margin:0 auto;padding:30px 24px 8px}
+.h-claim .h-kicker{color:#A63A17}
+.h-claim p{font-size:clamp(20px,1.9vw,23px);line-height:1.55;font-weight:600;margin:0 0 10px}
+.h-claim p strong{color:#B8451F;font-weight:800}
+.h-key{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;margin-top:12px;font-size:13px;font-weight:500}
+
+/* source chips */
+.chip{display:inline-block;border-radius:999px;padding:1px 10px;font-size:12px;font-weight:800;line-height:1.7;white-space:nowrap;border:1.5px solid}
+.c-zion{background:#E7F0DF;border-color:#2F6B2A;color:#245220}
+.c-brit{background:#FBE3D6;border-color:#B8451F;color:#8F3213}
+.c-ott{background:#FDEFC2;border-color:#C98F0A;color:#7A5200}
+.c-isr{background:#FFF;border-color:#3B1D12;color:#3B1D12}
+
+/* timeline */
+.stop{display:grid;grid-template-columns:120px minmax(0,1fr);max-width:960px;margin:0 auto;padding:0 24px}
+.when{position:relative;padding:24px 0 24px 16px;border-inline-end:3px solid #F5B321}
+.when::after{content:"";position:absolute;top:32px;inset-inline-end:-8px;width:13px;height:13px;border-radius:50%;background:#B8451F;border:3px solid #FFF4D6;box-sizing:border-box}
+.yr{display:block;font-weight:900;font-size:clamp(26px,2.5vw,32px);line-height:1;color:#B8451F;letter-spacing:-.02em}
+.yr.sm{font-size:clamp(16px,1.5vw,18px);line-height:1.15}.yr.nw{white-space:nowrap}
+.lbl{display:block;margin-top:5px;font-weight:600;font-size:12.5px;line-height:1.35;color:#6B4A3A}
+.what{padding:22px 0 26px 0;padding-inline-start:22px;min-width:0}
+.what h2{font-weight:800;font-size:clamp(19px,1.9vw,23px);line-height:1.2;margin:0 0 8px}
+.what p{font-weight:500;font-size:16px;line-height:1.6;margin:0 0 9px;max-width:700px}
+.what p.punch{font-weight:800;font-size:clamp(17px,1.6vw,19px);line-height:1.35;margin:10px 0 0;color:#3B1D12}
+.what p.punch em{font-style:normal;color:#B8451F}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(150px,210px);gap:20px;align-items:start}
+.split.wide{grid-template-columns:minmax(0,1fr) minmax(160px,230px)}
+.split>div>p:last-child{margin-bottom:0}
+
+figure.doc{margin:0}
+figure.doc img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid #E3CC98;background:#FFF;box-shadow:0 3px 10px rgba(59,29,18,.10);cursor:zoom-in}
+figure.doc figcaption{font-size:12px;line-height:1.45;font-weight:500;color:#5A3A2C;margin-top:6px}
+figure.doc.full{margin:12px 0 0;max-width:460px}
+
+/* the big quotes */
+.q{position:relative;background:#FFF;border:1px solid #EBD3A0;border-inline-start:7px solid #F5B321;border-radius:5px 12px 12px 5px;padding:24px 22px 14px;margin:4px 0 12px;box-shadow:0 4px 14px rgba(59,29,18,.07)}
+.q::before{content:"\201D";position:absolute;top:-4px;inset-inline-start:16px;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:64px;line-height:1;color:#F5B321;opacity:.55;pointer-events:none}
+.q.stat::before{display:none}
+.q blockquote{margin:0;font-weight:700;font-size:clamp(17px,1.7vw,20px);line-height:1.36;letter-spacing:-.005em;position:relative}
+.q blockquote em{font-style:normal;background:linear-gradient(transparent 62%,#FBD97A 62%)}
+.q .orig{margin:8px 0 0;font-size:12.5px;line-height:1.45;color:#6B4A3A;font-weight:500;direction:ltr;text-align:left;font-family:Georgia,'Times New Roman',serif;font-style:italic}
+.q .by{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin-top:10px;font-size:13px;font-weight:600;line-height:1.4}
+.q .by .who{font-weight:800}
+.q.big blockquote{font-size:clamp(19px,2vw,24px);line-height:1.3}
+.qpair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:4px 0 2px}
+.qpair .q{margin:0}
+.qpair .q blockquote{font-size:clamp(15px,1.4vw,16.5px)}
+.qpair .q::before{font-size:46px}
+
+/* band: the state's own committee, over a photo */
+.band{position:relative;isolation:isolate;overflow:hidden;color:#FFF;margin-top:4px}
+.band>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;z-index:-2}
+.band::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to left,rgba(22,10,5,.88),rgba(22,10,5,.7))}
+.band .h-wrap{padding-top:clamp(28px,5vh,44px);padding-bottom:clamp(28px,5vh,44px)}
+.band .h-kicker{color:#F5B321}
+.band h2{font-weight:900;font-size:clamp(20px,2.2vw,27px);line-height:1.1;margin:0 0 12px}
+.band blockquote{margin:0;font-weight:700;font-size:clamp(16px,1.6vw,19px);line-height:1.42;max-width:820px;text-shadow:0 1px 3px rgba(0,0,0,.35)}
+.band blockquote em{font-style:normal;color:#F5B321}
+.band .by{margin-top:12px;font-size:13.5px;font-weight:500;line-height:1.55;max-width:760px;color:#FFF4D6}
+.band .by b{color:#FFF;font-weight:800}
+.band .chip{margin-inline-end:6px}
+.band p.after{font-weight:500;font-size:15px;line-height:1.55;max-width:720px;margin:14px 0 0;color:#FFF4D6}
+
+/* after */
+.after-wrap{max-width:780px;margin:0 auto;padding:30px 24px 8px}
+.after-wrap h2{font-weight:800;font-size:clamp(19px,1.9vw,23px);line-height:1.2;margin:0 0 10px}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:88px minmax(0,1fr);gap:12px;padding:8px 0;border-top:1px solid #EBD3A0;font-size:15px;line-height:1.55;font-weight:500}
+.tl li:last-child{border-bottom:1px solid #EBD3A0}
+.tl b{font-weight:900;font-size:17px;color:#B8451F;line-height:1.35}
+
+/* sources */
+.src{max-width:780px;margin:0 auto;padding:18px 24px 24px}
+.src h2{font-weight:800;font-size:18px;margin:0 0 8px}
+.src ul{margin:0;padding-inline-start:20px;font-size:14px;line-height:1.65;font-weight:500}
+.src li{margin-bottom:4px}
+
+
+/* part A cards */
+.qa{max-width:960px;margin:0 auto;padding:34px 24px 4px}
+.qa .h-wrap{padding:0}
+.qa .h-kicker{color:#A63A17}
+.qa-h{font-weight:800;font-size:clamp(24px,2.6vw,32px);line-height:1.15;margin:0 0 22px}
+.gh{display:flex;align-items:center;gap:10px;margin:26px 0 10px}
+.gh .rg{font-size:13px;font-weight:600;color:#6B4A3A}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px}
+.qc{position:relative;background:#FFF;border:1px solid #EBD3A0;border-top:5px solid #F5B321;border-radius:12px;padding:14px 18px 14px;display:flex;flex-direction:column;box-shadow:0 4px 14px rgba(59,29,18,.06)}
+.qh{display:flex;align-items:center;gap:10px}
+.y2{font-weight:900;font-size:22px;line-height:1;color:#B8451F}
+.qc .cx b{font-weight:800;color:#3B1D12}
+.qc .cx{font-weight:500;font-size:14.5px;line-height:1.5;color:#5A3A2C;margin:9px 0 10px}
+.qc blockquote{margin:0;font-weight:700;font-size:clamp(17px,1.7vw,20px);line-height:1.34}
+.qc blockquote em{font-style:normal;background:linear-gradient(transparent 62%,#FBD97A 62%)}
+.qc .bg{font-weight:900;font-size:clamp(22px,2.3vw,28px);line-height:1.15;color:#B8451F;margin:0}
+.qc .wh{font-weight:600;font-size:13px;line-height:1.4;margin:10px 0 0}
+.qc .more{margin-top:auto;padding-top:10px;font-weight:700;font-size:13.5px;color:#2F6B2A;text-decoration:none}
+.qc .more::after{content:" \2193"}
+.gal-wrap{max-width:960px;margin:0 auto;padding:46px 24px 8px}
+.gal-wrap .h-wrap{padding:0}
+.gal-intro{font-weight:500;font-size:15px;line-height:1.6;color:#4A2E22;margin:0 0 20px;max-width:780px}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gal figure{margin:0}
+.gal img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:8px;border:1px solid #E3CC98;box-shadow:0 3px 10px rgba(59,29,18,.10);cursor:zoom-in;background:#EEE}
+.gal figcaption{font-size:12px;line-height:1.4;font-weight:500;color:#5A3A2C;margin-top:5px}
+.gal-src{font-size:12px;font-weight:600;color:#6B4A3A;margin:16px 0 0}
+@media(max-width:820px){.gal{grid-template-columns:repeat(2,1fr)}}
+.p2{max-width:100%;margin:46px auto 0}
+.p2>summary{list-style:none;cursor:pointer;max-width:960px;margin:0 auto;padding:16px 24px;border-top:3px solid #F5B321;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:clamp(17px,1.6vw,20px);font-weight:700}
+.p2>summary::-webkit-details-marker{display:none}
+.p2>summary b{color:#A63A17;margin-inline-end:8px}
+.p2>summary small{display:block;font-size:13px;font-weight:500;color:#6B4A3A;margin-top:3px}
+.p2>summary .btn{border:1.5px solid #3B1D12;border-radius:999px;padding:4px 18px;font-size:14px;font-weight:700;white-space:nowrap;background:#FFF}
+.p2 .t-open{display:none}.p2[open] .t-open{display:inline}.p2[open] .t-closed{display:none}
+.chap{margin-top:34px;border-top:1px solid #EBD3A0;padding:22px 0 4px}
+.chap .h-wrap{display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:center}
+.chap h2{margin:0;font-weight:900;font-size:clamp(22px,2.4vw,30px);line-height:1.1}
+.chap p{grid-column:1/-1;margin:6px 0 0;font-size:14px;font-weight:500;color:#6B4A3A}
+@media(max-width:900px){
+ .h-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .qpair{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+ .stop{grid-template-columns:1fr;padding:0 20px}
+ .when{border-inline-end:0;padding:20px 0 0;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+ .when::after{display:none}
+ .lbl{margin-top:0}
+ .what{padding:6px 0 18px}
+ .split,.split.wide{grid-template-columns:1fr;gap:12px}
+ .split figure.doc{max-width:280px}
+ .q{padding:14px 16px 12px}
+ .tl li{grid-template-columns:76px minmax(0,1fr);gap:10px}
+ .h-stats{margin-top:-20px}
+}
+.h-hero::before{background:linear-gradient(to right,rgba(22,10,5,.86),rgba(22,10,5,.66) 58%,rgba(22,10,5,.34))}
+.band::before{background:linear-gradient(to right,rgba(22,10,5,.88),rgba(22,10,5,.7))}
+.q::before{content:"\201C"}
+</style>
+<script src="/assets/a11y.js" defer></script>
+<script src="/assets/to-top.js" defer></script>
+<script src="/assets/lightbox.js" defer></script>
+<link rel="stylesheet" href="/assets/site-scale.css">
+</head><body>
+<div dir="ltr" style="font-family: 'Heebo', system-ui, sans-serif; color: #3B1D12; background: #FFFFFF; line-height: 1.55">
+
+<header style="position: relative; z-index: 20; background: #FFFFFF; border-bottom: 4px solid #F5B321">
+<div style="max-width: 1360px; margin: 0 auto; padding: 10px 24px; display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 8px 16px">
+<a href="/en/" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #3B1D12">
+<img src="/assets/img/logo-home.png" alt="" style="width: 56px; height: 56px; object-fit: contain; flex-shrink: 0">
+<span class="hdrname" style="font-size: 15px; font-weight: 700; line-height: 1.25; white-space: nowrap">The Council for the<br>Unrecognized Bedouin Villages</span>
+</a>
+<nav id="navlinks" class="navlinks" aria-label="Main navigation" style="display: flex; flex-wrap: nowrap; align-items: center; gap: 0">
+<div class="navdd"><a class="navdd-t" href="/en/#about" aria-haspopup="true" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">About <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5"/></svg></a><div class="navdd-m">
+<a href="/en/#vision" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">Vision</a>
+<a href="/en/#goals" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">Goals</a>
+<a href="/en/projects/" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">Projects</a>
+<a href="/en/#team" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">Team</a>
+<a href="/en/#donors" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">Donors</a>
+</div></div>
+<a href="/en/plan/" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #B8451F; text-decoration: none; white-space: nowrap">Regional Councils Plan</a>
+<a href="/en/#demolitions" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">Demolitions</a>
+<a href="/en/#social" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">Follow us</a>
+<a href="/en/#contact" style="padding: 12px 7px; font-size: 15px; font-weight: 500; color: #3B1D12; text-decoration: none; white-space: nowrap">Contact</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 6px; flex: none">
+<button type="button" class="navtoggle" aria-label="Menu" aria-controls="navlinks" aria-expanded="false" id="navtoggle" style="align-items: center; justify-content: center; width: 44px; height: 44px; border: 0; border-radius: 8px; background: transparent; color: #3B1D12; cursor: pointer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<div class="deskonly" aria-label="Language" style="display: flex; align-items: center; gap: 2px; font-size: 14px">
+<a href="/history/" lang="he" style="padding: 12px 8px; color: #6B4A3A; text-decoration: none">עב</a>
+<a href="/ar/history/" lang="ar" style="padding: 12px 8px; color: #6B4A3A; text-decoration: none">عر</a>
+<a href="/en/history/" aria-current="true" style="padding: 12px 8px; font-weight: 800; color: #3B1D12; text-decoration: none">En</a>
+</div>
+<a class="deskonly" href="/en/donate/" style="padding: 10px 22px; background: #B8451F; color: #FFFFFF; font-size: 15px; font-weight: 700; border-radius: 999px; text-decoration: none">Donate</a>
+</div>
+</div>
+</header>
+
+<div class="mobilebar" style="background: #FFF4D6; border-bottom: 1px solid #F3E2B8">
+<div style="width: 100%; max-width: 1160px; margin: 0 auto; padding: 4px 24px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<div aria-label="Language" style="display: flex; align-items: center; gap: 2px; font-size: 14px">
+<a href="/history/" lang="he" style="padding: 10px 8px; color: #6B4A3A; text-decoration: none">עב</a>
+<a href="/ar/history/" lang="ar" style="padding: 10px 8px; color: #6B4A3A; text-decoration: none">عر</a>
+<a href="/en/history/" aria-current="true" style="padding: 10px 8px; font-weight: 800; color: #3B1D12; text-decoration: none">En</a>
+</div>
+<a href="/en/donate/" style="padding: 7px 18px; background: #B8451F; color: #FFFFFF; font-size: 14px; font-weight: 700; border-radius: 999px; text-decoration: none">Donate</a>
+</div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="h-hero">
+<img src="/assets/img/aerial1945-hq.jpg" alt="">
+<div class="h-wrap">
+<p class="h-kicker">Before ’48</p>
+<h1>The Negev Was Not Empty</h1>
+<p class="h-lead">These documents were not written by Bedouin. They were written by the Ottomans, the British and the Zionist institutions, and they describe a Negev that was cultivated, settled and owned: fields, houses, sale deeds and tax payments</p>
+<p class="h-research">This page is based on the research of <b>Oren Yiftachel, Atawa Abu Freih, Ahmad Amara, Sandy Kedar</b> and others</p>
+<p class="h-credit">Background: divided, cultivated fields in the Beersheba Valley, 1945. Aerial photograph from the Mandate period</p>
+</div>
+</header>
+
+<div class="h-wrap">
+<div class="h-stats" role="list">
+<div class="h-stat" role="listitem"><b>5 million</b><span>dunams: long-standing Bedouin possession, as recorded by the Ottoman Council of State</span><small>1891</small></div>
+<div class="h-stat" role="listitem"><b>2.66 million</b><span>dunams under Bedouin ownership in the Beersheba area, according to the Palestine Land Development Company survey</span><small>1920</small></div>
+<div class="h-stat" role="listitem"><b>89.3%</b><span>of the Bedouin surveyed in the Beersheba area gave agriculture as their main source of livelihood</span><small>1931 census</small></div>
+<div class="h-stat" role="listitem"><b>100,000+</b><span>dunams bought from Bedouin in deals with Jewish buyers by the end of the Mandate</span><small>1920–1948</small></div>
+</div>
+</div>
+
+<!-- ===== THE CLAIM ===== -->
+<section class="h-claim">
+<p>In court, the state argues that the Negev was <strong>“dead land”</strong>: desolate, without farming or settlement, with Bedouin wandering through it until the 1940s.</p>
+<p>You can check this without relying on a single Bedouin. All it takes is reading who wrote what, and when.</p>
+</section>
+<!-- ===== PART A ===== -->
+<section class="qa" id="partA">
+<div class="h-wrap">
+<p class="h-kicker">Part A</p>
+<h2 class="qa-h">In Their Own Words</h2>
+<div class="gh"><span class="chip c-zion">The Zionist movement</span><span class="rg">1920–1948</span></div>
+<div class="cards">
+<article class="qc"><div class="qh"><span class="y2">1920</span><span class="chip c-zion">Zionist body</span></div>
+<p class="cx">The first Zionist survey of the Negev documented 92 tribes and credited the Bedouin with <b>ownership of about 2.66 million dunams in the Beersheba area</b>, about 35% of it cultivated. This is how it described the Tiyaha tribes:</p>
+<blockquote>Mainly tillers of the soil, <em>on the way to becoming fellahin</em>. They live on their land and leave it only for grazing</blockquote>
+<p class="wh">Palestine Land Development Company survey, 1920</p>
+<a class="more" href="#y1920">To the full context</a></article>
+<article class="qc"><div class="qh"><span class="y2">1925</span><span class="chip c-zion">Zionist body</span></div>
+<p class="cx">Senior figures of Zionist settlement discussed buying land in the Negev. Asked by Yehoshua Hankin, one of the movement’s leading land buyers, <b>who the owners are</b>, he answered:</p>
+<blockquote>Tribes. <em>But you have to buy from each and every one</em>, you need a title deed from each and every holder of the land</blockquote>
+<p class="wh">Yehoshua Hankin, at a meeting chaired by Ussishkin, 1925</p>
+<a class="more" href="#y1925">To the full context</a></article>
+<article class="qc"><div class="qh"><span class="y2">1939</span><span class="chip c-zion">Zionist body</span></div>
+<p class="cx">A survey by Eliyahu Epstein estimated how much of the northern Negev was actually under cultivation:</p>
+<p class="bg">2.1–3.5 million dunams</p>
+<p class="wh">Eliyahu Epstein, 1939</p>
+<a class="more" href="#y1939">To the full context</a></article>
+</div>
+<div class="gh"><span class="chip c-ott">The Ottomans</span><span class="rg">until 1917</span></div>
+<div class="cards">
+<article class="qc"><div class="qh"><span class="y2">1891</span><span class="chip c-ott">Ottoman rule</span></div>
+<p class="cx">The Ottoman Council of State recorded long-standing Bedouin possession in the Gaza district, and proposed not to expropriate it but to measure and register it:</p>
+<p class="bg">About 5 million dunams</p>
+<p class="wh">Ottoman Council of State, 4.5.1891</p>
+<a class="more" href="#y1891">To the full context</a></article>
+<article class="qc"><div class="qh"><span class="y2">Early 20th century</span><span class="chip c-ott">Ottoman rule</span></div>
+<p class="cx">When Beersheba was founded, the Ottomans did not expropriate the land. They bought it, with a deed specifying boundaries and owners.</p>
+<p class="bg">About 2,000 dunams bought from the Azazma tribes</p>
+<p class="wh">The purchase deed for founding Beersheba</p>
+<a class="more" href="#y1900">To the full context</a></article>
+</div>
+<div class="gh"><span class="chip c-brit">The British</span><span class="rg">1917–1948</span></div>
+<div class="cards">
+<article class="qc"><div class="qh"><span class="y2">1921</span><span class="chip c-brit">British rule</span></div>
+<p class="cx">In Jerusalem, meeting sheikhs from the Beersheba district, Colonial Secretary Churchill confirmed the High Commissioner’s promise:</p>
+<blockquote><em>The special rights and customs of the Bedouin tribes of Beersheba will not be interfered with</em></blockquote>
+<p class="wh">Winston Churchill, 29.3.1921</p>
+<a class="more" href="#y1921">To the full context</a></article>
+<article class="qc"><div class="qh"><span class="y2">1937</span><span class="chip c-brit">British rule</span></div>
+<p class="cx">The Jewish Agency asked to settle the Negev, arguing that <b>most of the land there is “mawat,” desolate</b>. The Mandate government replied:</p>
+<blockquote>The cultivable land in the Beersheba sub-district is regarded as belonging to the Bedouin tribes <em>by virtue of possession from time immemorial</em></blockquote>
+<p class="wh">Mandate government, in reply to the Jewish Agency, 1937</p>
+<a class="more" href="#y1937">To the full context</a></article>
+</div>
+<div class="gh"><span class="chip c-isr">The State of Israel</span><span class="rg">1948 onward</span></div>
+<div class="cards">
+<article class="qc"><div class="qh"><span class="y2">1951</span><span class="chip c-isr">IDF</span></div>
+<p class="cx">Moshe Dayan, then Southern Command chief, <b>explained why it matters to move the Bedouin from the Shoval area to Tel Arad</b>:</p>
+<blockquote>Moving the Bedouin to new areas <em>will cancel their right as owners of the land</em>, and they will be tenants of government land</blockquote>
+<p class="wh">Moshe Dayan, letter of 25.9.1951</p>
+<a class="more" href="#y1951">To the full context</a></article>
+<article class="qc"><div class="qh"><span class="y2">1952</span><span class="chip c-isr">The State of Israel</span></div>
+<p class="cx">A Justice Ministry committee examined which rights to recognize among the Bedouin who remained in Israel. It found that during the Mandate, large cultivated areas had been registered in their names, and that part of them were later transferred to the Jewish National Fund and to Jews:</p>
+<blockquote>There are <em>hundreds of precedents</em>, and we believe that <em>the Government of Israel cannot, and need not, ignore them</em></blockquote>
+<p class="wh">Justice Ministry three-member committee, October 1952</p>
+<a class="more" href="#y1952">To the full context</a></article>
+</div>
+</div>
+</section>
+<!-- ===== GALLERY ===== -->
+<section class="gal-wrap" id="gallery">
+<div class="h-wrap">
+<h2 class="qa-h" style="font-size:clamp(19px,1.9vw,23px)">Gallery: Bedouin Life Before 1948</h2>
+<p class="gal-intro">May 1940, north of Beersheba. A horse and camel race, the first of its kind in Palestine, was held there. According to the newspaper Al-Difa’, some 5,000 Bedouin tribespeople from the area came, and High Commissioner Harold MacMichael handed out the prizes. Ninety Arabian horses and 40 camels took part. The report notes that the Beersheba tribes keep the purest horses, and that they refused to sell the mares. Among those photographed: Sheikh Fraih Abu Madin, Sheikh Salman al-Huzayyil and Sheikh Ibrahim al-Uqbi.</p>
+<div class="gal" data-gallery><figure><img src="/assets/img/history/gallery/g01.jpg" alt="A soldier in an Australian hat on a camel, surrounded by Bedouin who came to watch the race" loading="lazy"><figcaption>A soldier in an Australian hat on a camel, surrounded by Bedouin who came to watch the race</figcaption></figure><figure><img src="/assets/img/history/gallery/g02.jpg" alt="Two guests talking in the stand, with tribal leaders behind them" loading="lazy"><figcaption>Two guests talking in the stand, with tribal leaders behind them</figcaption></figure><figure><img src="/assets/img/history/gallery/g03.jpg" alt="Bedouin, soldiers and policemen watch the race" loading="lazy"><figcaption>Bedouin, soldiers and policemen watch the race</figcaption></figure><figure><img src="/assets/img/history/gallery/g04.jpg" alt="Dignitaries on a stand beside the track" loading="lazy"><figcaption>Dignitaries on a stand beside the track</figcaption></figure><figure><img src="/assets/img/history/gallery/g05.jpg" alt="A senior British officer talks with a guest, with a Bedouin man standing behind them" loading="lazy"><figcaption>A senior British officer talks with a guest, with a Bedouin man standing behind them</figcaption></figure><figure><img src="/assets/img/history/gallery/g06.jpg" alt="The horse heat under way, with a line of spectators along the track" loading="lazy"><figcaption>The horse heat under way, with a line of spectators along the track</figcaption></figure><figure><img src="/assets/img/history/gallery/g07.jpg" alt="Tribal leaders and dignitaries in the grandstand" loading="lazy"><figcaption>Tribal leaders and dignitaries in the grandstand</figcaption></figure><figure><img src="/assets/img/history/gallery/g08.jpg" alt="Camel riders before the heat" loading="lazy"><figcaption>Camel riders before the heat</figcaption></figure><figure><img src="/assets/img/history/gallery/g09.jpg" alt="The grandstand and the guests’ tent" loading="lazy"><figcaption>The grandstand and the guests’ tent</figcaption></figure><figure><img src="/assets/img/history/gallery/g10.jpg" alt="A young rider on an Arabian horse" loading="lazy"><figcaption>A young rider on an Arabian horse</figcaption></figure><figure><img src="/assets/img/history/gallery/g11.jpg" alt="Tribespeople along the track fence" loading="lazy"><figcaption>Tribespeople along the track fence</figcaption></figure><figure><img src="/assets/img/history/gallery/g12.jpg" alt="Tribal leaders in the grandstand" loading="lazy"><figcaption>Tribal leaders in the grandstand</figcaption></figure></div>
+<p class="gal-src">Photographs: Library of Congress, Washington. Brought to publication by Mahdi Abu Hdoba</p>
+</div>
+</section>
+<!-- ===== PART B ===== -->
+<details class="p2" id="part2" data-gallery>
+<summary><span><b>Part B</b> The documents, the maps and the full timeline<small>For those who want to read and check for themselves</small></span><span class="btn"><span class="t-closed">Open</span><span class="t-open">Close</span></span></summary>
+<div class="chap"><div class="h-wrap"><span class="chip c-zion">The Zionist movement</span><h2>The Surveyors and the Buyers</h2><p>The Zionist survey, the consultations on buying land, and the estimates from the Zionist side</p></div></div>
+<section class="stop" id="y1920">
+<div class="when"><span class="yr">1920</span><span class="lbl">The first Zionist survey</span></div>
+<div class="what">
+<h2>The Zionists Survey the Negev: 92 Tribes</h2>
+<p>The Palestine Land Development Company (Hakhsharat HaYishuv), a Zionist land-purchasing body headed by Dr. Jacob Thon, published in 1920 the first comprehensive survey of the Negev. The survey documented 92 tribes, their land holdings, their cultivated areas and their patterns of residence.</p>
+<div class="q big stat"><blockquote>According to the summary figures, the survey credited the Bedouin with ownership of <em>about 2.66 million dunams</em> in the Beersheba area, <em>about 35% of it cultivated</em></blockquote>
+<div class="by"><span class="chip c-zion">Zionist body</span><span><span class="who">Palestine Land Development Company survey</span>, 1920</span></div></div>
+<div class="q big"><blockquote>Mainly tillers of the soil, <em>on the way to becoming fellahin</em>. They live on their land and leave it only for grazing.</blockquote>
+<div class="by"><span class="chip c-zion">Zionist body</span><span>On the Tiyaha tribes, from the <span class="who">Palestine Land Development Company survey</span>, 1920 (translated from English)</span></div></div>
+<div class="split" style="margin-top:14px">
+<div>
+<h3 style="font-weight:800;font-size:17px;margin:0 0 6px">An example: the al-Uqbi tribe</h3>
+<p>The survey lists the tribe “Arab Aqbana,” headed by Sheikh Muhammad al-Uqbi: 100 houses (including tents), about 26,000 dunams, about 10,000 of them cultivated with wheat, durra and barley, and two water wells.</p>
+</div>
+<figure class="doc"><img src="/assets/img/history/hakhshara-uqbi-1920.jpg" alt="A printed page from the 1920 Palestine Land Development Company survey, on the al-Uqbi tribe: 100 houses, 15,000 ropes, 40% cultivated with wheat, durra and barley" loading="lazy"><figcaption>The page on the al-Uqbi tribe in the Palestine Land Development Company survey, 1920. Central Zionist Archives</figcaption></figure>
+</div>
+</div>
+</section>
+<section class="stop" id="y1925">
+<div class="when"><span class="yr sm nw">1925–1948</span><span class="lbl">Jewish land purchases</span></div>
+<div class="what">
+<h2>The Buyers Knew Who the Owners Were</h2>
+<p>In 1925 senior figures of Zionist settlement met to discuss buying land in the Negev. Asked by Yehoshua Hankin, one of the movement’s leading land buyers, who owned the land, he answered in one line.</p>
+<div class="q big"><blockquote>Tribes. <em>But you have to buy from each and every one</em>, you need a title deed from each and every holder of the land.</blockquote>
+<div class="by"><span class="chip c-zion">Zionist body</span><span><span class="who">Yehoshua Hankin</span>, at a meeting chaired by Menachem Ussishkin, head of the Jewish National Fund, 1925 (translated from English)</span></div></div>
+<div class="split" style="margin-top:14px">
+<div>
+<p>By the end of the Mandate, more than 100,000 dunams were bought from Bedouin in deals with Jewish buyers, private and institutional. About 65,000 dunams were registered in the name of the JNF. A large part of the land was used to found Revivim, Hatzerim, Nir Yitzhak, Dorot, Negba, Be’eri, Mishmar HaNegev, Shoval and Ruhama.</p>
+<p class="punch">In 1926 Mishmar HaNegev bought land near al-Araqib, <em>and the deal was recognized.</em></p>
+<p style="margin-top:10px">The residents of al-Araqib, who had bought land from the al-Uqbi family a few years earlier, were defined as trespassers, and their homes are demolished again and again.</p>
+</div>
+<figure class="doc"><img src="/assets/img/history/kkl-purchases-map.jpg" alt="Map of Jewish land purchases in the Negev before 1948, JNF land and other Jewish-owned land in stripes" loading="lazy"><figcaption>Jewish land purchases in the Negev before 1948: land of the JNF or other Jewish-owned land (striped), 1946. After Hanina Porat</figcaption></figure>
+</div>
+</div>
+</section>
+<section class="stop" id="y1939">
+<div class="when"><span class="yr">1939</span><span class="lbl">A Zionist estimate</span></div>
+<div class="what">
+<h2>Millions of Cultivated Dunams</h2>
+<p>In 1939 Eliyahu Epstein estimated that between 2.1 and 3.5 million dunams were cultivated in the northern Negev.</p>
+</div>
+</section>
+<div class="chap"><div class="h-wrap"><span class="chip c-ott">The Ottomans</span><h2>Until 1917</h2><p>A census, a decision and deeds from the rule that preceded the British</p></div></div>
+<section class="stop" id="y1596">
+<div class="when"><span class="yr">1596</span><span class="lbl">The Ottoman census</span></div>
+<div class="what">
+<h2>More Than a Hundred Bedouin Cultivated Areas</h2>
+<p>The Ottoman tax census of 1596 recorded more than a hundred cultivated areas, “mazra’at,” in the southern Hebron hills, in an area that partly overlaps the northern Negev. More than four hundred years ago, there were already Bedouin cultivating land there</p>
+<figure class="doc full"><img src="/assets/img/history/ottoman-census-1596.jpg" alt="Map of the northern Negev with circles marking mazra’at, cultivated areas, according to the Ottoman census of 1596" loading="lazy"><figcaption>The Ottoman tax census, 1596: cultivated areas (“mazra’at”) in the northern Negev and the southern Hebron hills. Map: Hütteroth and Abdulfattah, 1977</figcaption></figure>
+</div>
+</section>
+<section class="stop" id="y1863">
+<div class="when"><span class="yr sm nw">1863–1883</span><span class="lbl">British explorers passing through</span></div>
+<div class="what">
+<h2>Those Who Passed Through Saw Fields</h2>
+<p>Explorers who crossed the Beersheba area in the 19th century described it without meaning to give legal testimony</p>
+<div class="qpair">
+<div class="q"><blockquote>One marked sign of the Beersheba region as the border between the desert and the hill country: <em>the growing of grain by the Arabs in large, unfenced plots</em>. This is the first place where we found cultivated land.</blockquote>
+<div class="by"><span class="chip c-brit">British explorer</span><span><span class="who">Henry Tristram</span>, 1863–1864</span></div></div>
+<div class="q"><blockquote>The extent of cultivated land here, as well as all the way to Gaza, <em>is immense</em>, and includes crops such as wheat, barley and maize, far exceeding the needs of the inhabitants.</blockquote>
+<div class="by"><span class="chip c-brit">British geologist</span><span><span class="who">Edward Hull</span>, on the road from Beersheba to Gaza, 1883</span></div></div>
+</div>
+<p style="margin-top:10px">Not everyone saw fields. Some travelers, such as Edward Palmer, described a wasteland, but their routes ran east of Beersheba, in more arid areas, where the Bedouin did indeed live at lower density.</p>
+</div>
+</section>
+<section class="stop" id="y1891">
+<div class="when"><span class="yr">1891</span><span class="lbl">The Ottoman Council of State</span></div>
+<div class="what">
+<h2>The Empire Records 5 Million Dunams</h2>
+<div class="split">
+<div>
+<p>On 4 May 1891 the Ottoman Council of State recorded long-standing Bedouin possession of about 5 million Ottoman dunams in the Gaza district.</p>
+<p>The Council did not propose to expropriate them. It proposed a mechanism for measuring and registering the lands, with the participation of Bedouin representatives.</p>
+<p class="punch">The authorities knew this was land with owners. <em>Their question was how to register it.</em></p>
+</div>
+<figure class="doc" style="max-width:160px"><img src="/assets/img/history/ottoman-decision-1891.jpg" alt="A page from the 1891 decision of the Ottoman Council of State, an Ottoman manuscript with seals" loading="lazy"><figcaption>Decision of the Ottoman Council of State, 4.5.1891. Ottoman Prime Ministry Archive, Istanbul (İ.MMS 122/5229)</figcaption></figure>
+</div>
+</div>
+</section>
+<section class="stop" id="y1900">
+<div class="when"><span class="yr sm">Early 20th century</span><span class="lbl">The founding of Beersheba</span></div>
+<div class="what">
+<h2>The Empire Buys Beersheba</h2>
+<div class="split wide">
+<div>
+<p>When the Ottomans founded Beersheba, they did not expropriate the land. They bought about 2,000 dunams from the Azazma tribes. The purchase deed specifies the boundaries of the plot and the names of the rights-holders.</p>
+<p class="punch">An empire does not buy land <em>that has no owner.</em></p>
+<p style="margin-top:10px">Deals were also made among the Bedouin themselves, by deeds, “sanads,” signed before witnesses and specifying boundaries and owners. In the picture: a sale deed from al-Araqib dated 1911.</p>
+</div>
+<figure class="doc"><img src="/assets/img/history/beersheba-purchase.jpg" alt="The Ottoman purchase deed for the Beersheba land, with a Hebrew translation beside the original" loading="lazy"><figcaption>The purchase deed for founding Beersheba, with a Hebrew translation beside the original. Tuviyahu in the Negev Archive, Sasson Bar-Zvi collection</figcaption></figure>
+</div>
+<figure class="doc" style="max-width:170px;margin-top:12px"><img src="/assets/img/history/sanad-1911.jpg" alt="A sale deed (sanad) in Arabic script from al-Araqib, 1911, with witness signatures and seals" loading="lazy"><figcaption>A sale deed (sanad) from al-Araqib, 1911. Al-Uqbi family archive</figcaption></figure>
+</div>
+</section>
+<div class="chap"><div class="h-wrap"><span class="chip c-brit">The British</span><h2>1917–1948</h2><p>A promise, a committee, a census and a reply to the Agency</p></div></div>
+<section class="stop" id="y1921">
+<div class="when"><span class="yr sm">29 March 1921</span><span class="lbl">Jerusalem</span></div>
+<div class="what">
+<h2>Churchill Promises the Sheikhs</h2>
+<div class="q big" style="margin-bottom:12px"><blockquote>Reaffirmed the assurances given in Beersheba by the High Commissioner to the sheikhs, <em>that the special rights and customs of the Bedouin tribes of Beersheba will not be interfered with.</em></blockquote>
+<p class="orig">…the special rights and customs of the Bedouin Tribes of Beersheba will not be interfered with.</p>
+<div class="by"><span class="chip c-brit">British rule</span><span><span class="who">Winston Churchill</span>, Colonial Secretary, at a meeting with sheikhs from the Beersheba district</span></div></div>
+<figure class="doc" style="max-width:280px"><img src="/assets/img/history/churchill-1921.jpg" alt="The official report on the Colonial Secretary’s meeting with Bedouin sheikhs from Beersheba, 29 March 1921" loading="lazy"><figcaption>The official record of the meeting, 29.3.1921. The National Archives, UK (CO 733/2)</figcaption></figure>
+</div>
+</section>
+<section class="stop" id="y1921a">
+<div class="when"><span class="yr sm">July 1921</span><span class="lbl">The Abramson Commission</span></div>
+<div class="what">
+<h2>A British Commission Finds 2.8 Million Dunams Under Bedouin Cultivation</h2>
+<p>The Abramson Commission, set up by the British High Commissioner to determine which lands could be registered as state land, found about 2.8 million dunams in Bedouin ownership and cultivation in the Beersheba area.</p>
+</div>
+</section>
+<section class="stop" id="y1937">
+<div class="when"><span class="yr sm nw">1931–1945</span><span class="lbl">The British count and map</span></div>
+<div class="what">
+<h2>British Rule Knew Too</h2>
+<p>In the 1931 census, 89.3% of the Bedouin surveyed in the Beersheba area gave agriculture as their main livelihood. In 1937 the Jewish Agency, headed by Ben-Gurion, approached the Mandate government and asked to settle the Negev on the claim that most of the land there is “mawat,” desolate. The reply:</p>
+<div class="q big"><blockquote>The cultivable land in the Beersheba sub-district is regarded as belonging to the Bedouin tribes <em>by virtue of possession from time immemorial.</em></blockquote>
+<p class="orig">The cultivable land in the Beersheba sub-district is regarded as belonging to the Bedouin tribes by virtue of possession from time immemorial.</p>
+<div class="by"><span class="chip c-brit">British rule</span><span><span class="who">Mandate government</span>, in reply to the Jewish Agency, 1937</span></div></div>
+<p>A British map of 1945, produced from aerial photographs, marks clusters of tents and buildings across the northern Negev. Cross-checking with other sources shows that the large clusters usually also had stone or mud houses and agricultural storage buildings.</p>
+<figure class="doc full"><img src="/assets/img/history/tents-map-1945.jpg" alt="The 1945 British tent map of the Negev, thousands of tent and building marks, with red dots for today’s communities" loading="lazy"><figcaption>The British tent map (based on aerial photographs, 1945). In black: tents and buildings. Red dots: today’s Bedouin communities. Israel State Archives</figcaption></figure>
+</div>
+</section>
+<div class="chap"><div class="h-wrap"><span class="chip c-isr">The State of Israel</span><h2>1948 onward</h2><p>What the state’s own officials wrote, and what was actually done</p></div></div>
+<section class="stop" id="y1951">
+<div class="when"><span class="yr">1951</span><span class="lbl">Southern Command</span></div>
+<div class="what">
+<h2>Dayan: The Transfer Cancels Ownership</h2>
+<p>On 25 September 1951 the Southern Command chief, Moshe Dayan, wrote a letter on moving the Bedouin from the Shoval area to Tel Arad. In clause 4 he explained what the transfer does to their rights:</p>
+<div class="split dayan" style="margin:18px 0">
+<div class="q big" style="margin:0"><blockquote>Moving the Bedouin to new areas <em>will cancel their right as owners of the land</em>, and they will be tenants of government land.</blockquote>
+<div class="by"><span class="chip c-isr">The State of Israel</span><span><span class="who">Moshe Dayan</span>, Southern Command chief, 25 September 1951, in a letter on moving the Bedouin from the Shoval area to Tel Arad</span></div></div>
+<figure class="doc" style="max-width:130px"><img src="/assets/img/history/dayan-letter-1951.jpg" alt="Letter from Maj. Gen. Moshe Dayan, Southern Command chief, 25 September 1951, on moving the Bedouin from the Shoval area to Tel Arad, with clause 4" loading="lazy"><figcaption>Letter of Southern Command chief Moshe Dayan, 25.9.1951. The quotation is in clause 4</figcaption></figure>
+</div>
+</div>
+</section>
+<!-- ===== 1952: the state's own committee (band) ===== -->
+<section class="band" id="y1952">
+<img src="/assets/img/aerial1945-hq.jpg" alt="">
+<div class="h-wrap">
+<p class="h-kicker">October 1952</p>
+<h2>The State Already Knew</h2>
+<blockquote>“It is a known fact that during the Mandate, very large areas were registered in the names of the Bedouin, on the basis of proof that they had cultivated these areas throughout the prescription period, and an important part of these lands was transferred, after their registration, to the Keren Kayemet, to other Jewish companies and to private Jews. So in this matter there are <em>hundreds of precedents</em>, and we believe that <em>the Government of Israel cannot, and need not, ignore them.”</em></blockquote>
+<div class="by"><span class="chip c-isr" style="background:rgba(255,255,255,.92)">The State of Israel</span><b>The Justice Ministry’s three-member committee</b>: Yosef Weitz, a senior figure at the Jewish National Fund, Yehoshua Palmon, the Prime Minister’s adviser on Arab affairs, and Binyamin Fishman, of the Land Registration and Settlement Department</div>
+<p class="after">The committee recommended that the state recognize ownership rights in areas where the Bedouin remaining in Israel could prove they had cultivated throughout the prescription period.</p>
+</div>
+</section>
+<section class="after-wrap">
+<h2>What Was Done With It After 1948</h2>
+<ul class="tl">
+<li><b>1948</b><span>According to researchers, about 80% of the Bedouin residents of the Beersheba district fled or were expelled, and were prevented from returning. In the early 1950s the military government concentrated many of those who remained in the Siyag area.</span></li>
+<li><b>1951</b><span>The military governor ordered the members of the al-Uqbi tribe to evacuate al-Araqib. The transfer was presented as temporary, and the tribe asked to return. In 1954 the state expropriated the land.</span></li>
+<li><b style="white-space:nowrap">1971–1979</b><span>In the land settlement process in the northern Negev, 3,220 ownership claims were filed. Their adjudication was in effect frozen for decades.</span></li>
+<li><b>2015</b><span>The Supreme Court rejected the al-Uqbi family’s appeal over six plots in the al-Araqib area. It saw Churchill’s promise as a general and vague statement, and distinguished between the registration of sale deals during the Mandate and proof of ownership of land not yet settled.</span></li>
+</ul>
+</section>
+</details>
+
+<!-- ===== Sources ===== -->
+<section class="src">
+<h2>Sources</h2>
+<ul>
+<li>Alexandre Kedar, Ahmad Amara and Oren Yiftachel, <span dir="ltr">Emptied Lands: A Legal Geography of Bedouin Rights in the Negev</span>, Stanford University Press, 2018. The documents and maps are taken from the book’s appendices.</li>
+<li>“Master Plan for the Recognition of the Unrecognized Villages in the Negev,” historical background chapter.</li>
+<li>Launch lecture by Prof. Oren Yiftachel, Hebrew edition of “Emptied Lands,” Segev Shalom community center.</li>
+<li>Judgment in Civil Appeal 4220/12 (Al-Uqbi v. State of Israel), Supreme Court, 2015.</li>
+</ul>
+<p style="font-size:14px;font-weight:500;color:#6B4A3A;margin:12px 0 0">An Ottoman dunam is about 919 sq m. The figures from the surveys, censuses and purchases are given as quoted in the book, and were not recalculated.</p>
+</section>
+
+<script>
+(function(){var d=document.getElementById('part2');if(!d)return;
+function go(id){d.open=true;var el=document.getElementById(id);if(el)setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'})},40)}
+document.querySelectorAll('a.more').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();go(a.getAttribute('href').slice(1))})});
+if(location.hash){var el=document.getElementById(location.hash.slice(1));if(el&&d.contains(el)){d.open=true}}
+})();
+</script>
+
+<footer style="background: #FFF4D6; border-top: 1px solid #EBD3A0; font-weight: 400">
+<div class="ftrow" style="max-width: 1160px; margin: 0 auto; padding: 22px 24px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px"><a href="/en/donate/" style="background: #B8451F; color: #FFFFFF; font-weight: 800; text-decoration: none; padding: 11px 24px; border-radius: 999px; font-size: 15px">Donate</a><nav aria-label="Social media" style="display: flex; flex-wrap: wrap; gap: 10px"><a href="https://www.facebook.com/rcuvn" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #1877F2"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21z"/></svg></a><a href="https://www.instagram.com/negevrcuv" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(45deg,#F58529,#DD2A7B 55%,#8134AF)"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r="1" fill="#fff" stroke="none"/></svg></a><a href="https://www.twitter.com/rcuvnegev" target="_blank" rel="noopener" aria-label="X" title="X" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #000"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#fff" d="M17.8 3.5h3l-6.6 7.5 7.8 9.5h-6.1l-4.8-6-5.4 6h-3l7-8L2 3.5h6.2l4.3 5.5zm-1 15.2h1.7L7.3 5.2H5.5z"/></svg></a><a href="https://www.tiktok.com/@negev.villages" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #000"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M16.6 3c.4 2.1 1.7 3.5 3.9 3.7v3a7 7 0 0 1-3.8-1.2v6.4A5.9 5.9 0 1 1 10.8 9v3.1a2.9 2.9 0 1 0 2.8 2.9V3z"/></svg></a><a href="https://chat.whatsapp.com/BRg2BQ8WIedFiJMSqSYUYo" target="_blank" rel="noopener" aria-label="Join the council's updates on WhatsApp" title="Join the council's updates on WhatsApp" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #25D366"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm0 16.3a7.3 7.3 0 0 1-3.7-1l-.3-.2-2.7.7.7-2.6-.2-.3A7.3 7.3 0 1 1 12 19.3zm4-5.5c-.2-.1-1.3-.7-1.5-.7-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6 6 0 0 1-3-2.6c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.4a.8.8 0 0 0-.6.3 2.5 2.5 0 0 0-.8 1.9c0 1.1.8 2.2.9 2.3.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.3-.6 1.5-1.1.2-.5.2-1 .1-1.1l-.6-.4z"/></svg></a></nav></div>
+<div style="max-width: 1160px; margin: 0 auto; padding: 8px 24px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0 26px; font-size: 14px"><a href="/en/privacy/" style="color: #3B1D12; font-weight: 700; padding: 10px 0">Privacy policy</a><a href="/en/accessibility/" style="color: #3B1D12; font-weight: 700; padding: 10px 0">Accessibility statement</a></div>
+<div style="max-width: 1160px; margin: 0 auto; padding: 6px 24px 22px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 14px; color: #4F3226"><a href="/en/" aria-label="Home page" style="display: inline-flex; flex: none"><img src="/assets/img/logo-home.png" alt="" style="width: 30px; height: 30px; object-fit: contain; display: block"></a><span>© 2026 The Council for the Unrecognized Bedouin Villages · negevvillages.org</span></div>
+</footer>
+</div>
