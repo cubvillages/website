@@ -34,7 +34,7 @@ main.om{max-width:1100px;margin:0 auto;padding:24px 24px 8px;font-weight:500;col
 .card{background:#fff;border:1px solid #EBD3A0;border-radius:16px;padding:clamp(18px,2.4vw,28px);margin-bottom:26px}
 .card>h2{font-size:clamp(22px,2.2vw,30px);font-weight:800;line-height:1.2;margin-bottom:6px}
 .card .sub{font-size:16px;color:#6B4A3A;margin:0 0 16px;line-height:1.5}
-.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:16px 0 16px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0 16px}
 .stat{border:1px solid #EBD3A0;border-top:4px solid #F5B321;border-radius:12px;padding:12px 16px;background:#FFFBEF}
 .stat strong{display:block;font-size:clamp(26px,3vw,38px);font-weight:800;line-height:1.05;color:#B8451F}
 .stat span{font-size:15px;font-weight:600}
@@ -193,6 +193,7 @@ details p{margin:8px 0 0;font-size:16px;line-height:1.6;font-weight:500}
 <div class="stats" aria-live="polite">
 <div class="stat"><strong id="sVill">0</strong><span>כפרים עם דיווח</span></div>
 <div class="stat"><strong id="sTotal">0</strong><span>צווים והתראות שדווחו</span></div>
+<div class="stat" id="sFamBox" hidden><strong id="sFam">0</strong><span>משפחות שדווחו</span></div>
 </div>
 <p style="margin:0 0 14px"><button type="button" class="btn ghost" id="morebtn" aria-expanded="false" aria-controls="moreinfo">מידע נוסף</button></p>
 <div id="moreinfo" hidden>
@@ -342,6 +343,7 @@ function seed(){var s=7;function r(){s=(s*9301+49297)%233280;return s/233280;}
 var demoData=seed();
 var paintMarkers=function(){},addPub=function(){},sel=null,pubEl=document.getElementById('pub');
 function cur(){return DEMO?{c:demoData[0],v:demoData[1]}:{c:real,v:VER};}
+function fv(k){return (vst[k]&&vst[k].families)||0;}
 function lvl(n){return n===0?0:n<=2?1:n<=5?2:3;}
 function render(){
  var d=cur(),q=document.getElementById('q').value.trim(),h='',tot=0,vil=0,ver=0;
@@ -351,13 +353,13 @@ function render(){
   V[g].forEach(function(nm){
    if(q&&nm.indexOf(q)<0)return;
    var n=(d.c[nm]||0),vv=(d.v[nm]||0);
-   t+='<button type="button" class="tile l'+lvl(n)+'" data-v="'+nm+'" aria-label="'+nm+': '+n+' צווים"><span>'+nm+'</span><span><b>'+n+'</b>'+(n>0?' <small>('+vv+' נבדקו)</small>':'')+'</span></button>';
+   t+='<button type="button" class="tile l'+lvl(Math.max(n,fv(nm)))+'" data-v="'+nm+'" aria-label="'+nm+': '+n+' צווים"><span>'+nm+'</span><span><b>'+n+'</b>'+(n>0?' <small>('+vv+' נבדקו)</small>':'')+'</span></button>';
   });
   if(t)h+='<div class="group">'+g+'</div><div class="tiles">'+t+'</div>';
  });
  if(!h)h='<p class="hint">לא נמצא כפר בשם הזה.</p>';
  document.getElementById('tiles').innerHTML=h;
- var mc=document.getElementById('mapcount');if(mc)mc.innerHTML='עד כה דווחו <b>'+tot+'</b> צווים והתראות ב־<b>'+vil+'</b> '+(vil===1?'כפר':'כפרים')+'.';document.getElementById('sTotal').textContent=tot;document.getElementById('sVill').textContent=vil;paintMarkers(d);
+ var mc=document.getElementById('mapcount');if(mc)mc.innerHTML='עד כה דווחו <b>'+tot+'</b> צווים והתראות ב־<b>'+vil+'</b> '+(vil===1?'כפר':'כפרים')+'.';document.getElementById('sTotal').textContent=tot;document.getElementById('sVill').textContent=vil;var tf=0;if(!DEMO)Object.keys(vst).forEach(function(k){tf+=(+vst[k].families||0);});document.getElementById('sFam').textContent=tf;document.getElementById('sFamBox').hidden=!(tf>0);paintMarkers(d);
 }
 document.getElementById('q').addEventListener('input',render);
 document.getElementById('morebtn').addEventListener('click',function(){var m=document.getElementById('moreinfo'),o=m.hidden;m.hidden=!o;this.setAttribute('aria-expanded',o?'true':'false');this.textContent=o?'סגירה':'מידע נוסף';});
@@ -437,7 +439,7 @@ var GC={'לא מוכרים':'#B8451F','מוכרים (אל־קסום ונווה �
  });
  var pubLayer=L.layerGroup().addTo(map);
  addPub=function(ll){L.circleMarker(ll,{radius:7,color:'#fff',weight:2,fillColor:'#1F6FB5',fillOpacity:1,bubblingMouseEvents:false}).addTo(pubLayer);};
- paintMarkers=function(d){Object.keys(mk).forEach(function(n){mk[n].setRadius(6+2*lvl(d.c[n]||0));mk[n].setStyle(hid[n]&&!DEMO?{opacity:0,fillOpacity:0}:{opacity:1,fillOpacity:.95});});if(!DEMO)pubLayer.clearLayers();drawReal();};
+ paintMarkers=function(d){Object.keys(mk).forEach(function(n){mk[n].setRadius(6+2*lvl(Math.max(d.c[n]||0,fv(n))));mk[n].setStyle(hid[n]&&!DEMO?{opacity:0,fillOpacity:0}:{opacity:1,fillOpacity:.95});});if(!DEMO)pubLayer.clearLayers();drawReal();};
  var realLayer=L.layerGroup().addTo(map);
  function fmtDate(x){if(!x)return '';var d=new Date(x);if(isNaN(d))return String(x);return d.toLocaleDateString('he-IL',{timeZone:'Asia/Jerusalem'});}
  function popupFor(p){var el=document.createElement('div');el.style.cssText='direction:rtl;font-family:inherit;line-height:1.5';
@@ -446,7 +448,7 @@ var GC={'לא מוכרים':'#B8451F','מוכרים (אל־קסום ונווה �
   if(p.name)row('מדווח/ת: '+p.name);
   var st=document.createElement('div');st.style.cssText='margin-top:4px;font-weight:700;color:'+(p.status==='נבדק'?'#2F6B2A':'#1F6FB5');st.textContent=p.status==='נבדק'?'נבדק על ידי צוות המועצה':'לא נבדק';el.appendChild(st);return el;}
 function cnt1(x,a,b){return x+' '+(x===1?a:b);}function vpop(n){var el=document.createElement('div');el.style.cssText='direction:rtl;font-family:inherit;line-height:1.5';var t=vst[n]||{};function row(x,b){var d=document.createElement('div');if(b)d.style.fontWeight='700';d.textContent=x;el.appendChild(d);}row(n,true);if(t.orders>0)row(cnt1(t.orders,'מסמך','מסמכים'));if(t.families>0)row(cnt1(t.families,'משפחה','משפחות'));if(t.buildings>0)row(cnt1(t.buildings,'מבנה','מבנים'));return el;}
- function drawHalf(){Object.keys(hid).forEach(function(n){if(!XY[n])return;var r=6+2*lvl(real[n]||0),sz=2*r+2,col=GC[gOf[n]]||'#B8451F';
+ function drawHalf(){Object.keys(hid).forEach(function(n){if(!XY[n])return;var r=6+2*lvl(Math.max(real[n]||0,fv(n))),sz=2*r+2,col=GC[gOf[n]]||'#B8451F';
   L.marker(XY[n],{icon:L.divIcon({className:'vhalf',iconSize:[sz,sz],html:'<i style="background:linear-gradient(90deg,#1F6FB5 50%,'+col+' 50%)"></i>'}),interactive:false,keyboard:false}).addTo(realLayer);
   var hit=L.circleMarker(XY[n],{radius:r+8,stroke:false,fillColor:'#000',fillOpacity:0,bubblingMouseEvents:false}).bindPopup(vpop(n),{autoPan:false,offset:[0,-4]}).addTo(realLayer);
   hit.on('mouseover',function(){hit.openPopup();});hit.on('mouseout',function(){if(!hit._stick)hit.closePopup();});hit.on('click',function(){hit._stick=true;});hit.on('popupclose',function(){hit._stick=false;});});}
