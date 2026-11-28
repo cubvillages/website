@@ -18,16 +18,16 @@ CSS = '''
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
 .job{border:1px solid #EBD3A0;border-radius:14px;background:#FFFFFF;overflow:hidden}
 .job[open]{border-color:#F5B321;box-shadow:0 6px 18px rgba(59,29,18,.12)}
-.job summary{list-style:none;cursor:pointer;position:relative;isolation:isolate;display:flex;align-items:flex-end;gap:14px;min-height:175px;box-sizing:border-box;padding:18px 20px;background:#B8451F var(--img) center/cover no-repeat}
+.job summary{list-style:none;cursor:pointer;position:relative;isolation:isolate;display:flex;align-items:center;justify-content:center;text-align:center;min-height:200px;box-sizing:border-box;padding:26px 20px 40px;background:#B8451F var(--img) center/cover no-repeat}
 .job summary::-webkit-details-marker{display:none}
 .job summary:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(59,29,18,.82),rgba(59,29,18,.45))}
 .job summary:focus-visible{outline:3px solid #F5B321;outline-offset:-3px}
 .job .t{display:block;font-size:22px;font-weight:800;color:#FFFFFF;line-height:1.25}
-.job .m{display:flex;align-items:center;gap:8px;margin-top:7px;font-size:16px;color:#FFFFFF;font-weight:700;line-height:1.3}
-.job .m:first-of-type{margin-top:10px}
+.job .m{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:10px;font-size:16px;color:#FFFFFF;font-weight:700;line-height:1.3}
+.job .m:first-of-type{margin-top:16px}
 .job .m svg{flex:none;color:#F5B321}
-.job summary:after{content:"";flex:none;margin-inline-start:auto;margin-bottom:6px;width:10px;height:10px;border-right:3px solid #F5B321;border-bottom:3px solid #F5B321;transform:rotate(45deg);transition:transform .15s}
-.job[open] summary:after{transform:rotate(-135deg);margin-bottom:2px}
+.job summary:after{content:"";position:absolute;bottom:16px;left:calc(50% - 7px);width:10px;height:10px;border-right:3px solid #F5B321;border-bottom:3px solid #F5B321;transform:rotate(45deg);transition:transform .15s}
+.job[open] summary:after{transform:rotate(-135deg);bottom:12px}
 .job .b{padding:18px 20px 22px}
 .job .b p{font-size:17px}
 .job .b p.lead{font-weight:700;color:#3B1D12}
@@ -39,7 +39,7 @@ CSS = '''
 .more{margin-top:28px;padding:22px;background:#FFF4D6;border-radius:12px}
 .vol .note{margin-top:22px;font-size:15px;color:#6B4A3A}
 @media (max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:700px){.vol h1{font-size:32px}.hero .in{padding:44px 20px 40px}.grid{grid-template-columns:1fr}.job summary{min-height:120px}.job .t{font-size:20px}}
+@media (max-width:700px){.vol h1{font-size:32px}.hero .in{padding:44px 20px 40px}.grid{grid-template-columns:1fr}.job summary{min-height:170px}.job .t{font-size:20px}}
 </style>'''
 
 ICON = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg>'
