@@ -18,12 +18,14 @@ CSS = '''
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
 .job{border:1px solid #EBD3A0;border-radius:14px;background:#FFFFFF;overflow:hidden}
 .job[open]{border-color:#F5B321;box-shadow:0 6px 18px rgba(59,29,18,.12)}
-.job summary{list-style:none;cursor:pointer;position:relative;isolation:isolate;display:flex;align-items:flex-end;gap:14px;min-height:150px;box-sizing:border-box;padding:18px 20px;background:#B8451F var(--img) center/cover no-repeat}
+.job summary{list-style:none;cursor:pointer;position:relative;isolation:isolate;display:flex;align-items:flex-end;gap:14px;min-height:175px;box-sizing:border-box;padding:18px 20px;background:#B8451F var(--img) center/cover no-repeat}
 .job summary::-webkit-details-marker{display:none}
 .job summary:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(59,29,18,.82),rgba(59,29,18,.45))}
 .job summary:focus-visible{outline:3px solid #F5B321;outline-offset:-3px}
 .job .t{display:block;font-size:22px;font-weight:800;color:#FFFFFF;line-height:1.25}
-.job .m{display:block;margin-top:6px;font-size:15px;color:#FFE9B0;font-weight:500}
+.job .m{display:flex;align-items:center;gap:8px;margin-top:7px;font-size:16px;color:#FFFFFF;font-weight:700;line-height:1.3}
+.job .m:first-of-type{margin-top:10px}
+.job .m svg{flex:none;color:#F5B321}
 .job summary:after{content:"";flex:none;margin-inline-start:auto;margin-bottom:6px;width:10px;height:10px;border-right:3px solid #F5B321;border-bottom:3px solid #F5B321;transform:rotate(45deg);transition:transform .15s}
 .job[open] summary:after{transform:rotate(-135deg);margin-bottom:2px}
 .job .b{padding:18px 20px 22px}
@@ -52,7 +54,7 @@ L = {
   more='לא מצאתם משרה שמתאימה? כתבו לנו מה אתם יודעים לעשות', morebtn='כתבו לנו',
   note='כל התפקידים בהתנדבות, ללא שכר',
   jobs=[
-   ('צוות התקשורת: כתבים וכתבות מתנדבים','בשטח או מרחוק · מחצי שעה עד חצי יום בשבוע',
+   ('צוות התקשורת: כתבים ותחקירנים','בשטח או מרחוק · מחצי שעה עד חצי יום בשבוע',
     'למדתם תקשורת, אוהבים לכתוב או נמצאים כבר בשטח? הצטרפו לצוות התקשורת של המועצה, בליווי והדרכה צמודים של דובר המועצה',
     ['ראיון מוקלט קצר עם פונים למועצה (אפשר בערבית)','כתיבת אייטם מהתחלה ועד הסוף, כולל ויזואליה','ראיונות שטח עם מי שיש להם סיפור להוציא','סיוע בצילומי שטח ואירועים','איסוף מידע ממקורות שונים'],
     'חלק מהמשימות בכפרים, חלקן מרחוק מהטלפון או מהמחשב. כל מתנדב יופעל בדרך המתאימה לו'),
@@ -74,7 +76,7 @@ L = {
   more="Don't see a fit? Tell us what you can do", morebtn='Write to us',
   note='All roles are voluntary and unpaid',
   jobs=[
-   ('Media team: volunteer reporters','In the field or remote · half an hour to half a day a week',
+   ('Media team: reporters and investigators','In the field or remote · half an hour to half a day a week',
     "Did you study media, love writing, or already work in the field? Join the council's media team, with close guidance from the council's spokesperson",
     ['A short recorded interview with people who contact the council (Arabic is fine)','Writing an item from start to finish, including visuals','Field interviews with people who have a story to tell','Helping with field photography and events','Gathering information from different sources'],
     'Some tasks are in the villages, some are remote from a phone or computer. Each volunteer is matched to what suits them'),
@@ -96,7 +98,7 @@ L = {
   more='لم تجدوا ما يناسبكم؟ أخبرونا بما تجيدونه', morebtn='راسلونا',
   note='جميع المهام تطوعية وبلا أجر',
   jobs=[
-   ('الطاقم الإعلامي: مراسلون ومراسلات متطوعون','في الميدان أو عن بُعد · من نصف ساعة إلى نصف يوم أسبوعيًا',
+   ('الطاقم الإعلامي: مراسلون ومحقّقون صحفيون','في الميدان أو عن بُعد · من نصف ساعة إلى نصف يوم أسبوعيًا',
     'هل درستم الإعلام، أو تحبون الكتابة، أو تعملون أصلًا في الميدان؟ انضموا إلى الطاقم الإعلامي للمجلس بمرافقة وإرشاد مباشرين من الناطق باسم المجلس',
     ['مقابلة مسجّلة قصيرة مع من يتوجهون إلى المجلس (ويمكن أن تكون بالعربية)','كتابة مادة إعلامية من البداية حتى النهاية، بما في ذلك الجانب البصري','مقابلات ميدانية مع أصحاب القصص','المساعدة في التصوير الميداني وتغطية الفعاليات','جمع معلومات من مصادر مختلفة'],
     'بعض المهام في القرى وبعضها عن بُعد من الهاتف أو الحاسوب. يُكلَّف كل متطوع بما يناسبه'),
@@ -114,17 +116,21 @@ L = {
 SRC = {'he':'accessibility/index.html','en':'en/accessibility/index.html','ar':'ar/accessibility/index.html'}
 OUT = {'he':'volunteer/index.html','en':'en/volunteer/index.html','ar':'ar/volunteer/index.html'}
 e = html.escape
+PIN = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>'
+CLOCK = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>'
 IMGS = ['/assets/img/gal-arouis.jpg','/assets/img/vision-village.jpg','/assets/img/olives.jpg','/assets/img/tent.jpg']
 
 def job(c, i, j):
     title, meta, intro, items, note = j
     wa = f"https://wa.me/{WA}?text=" + urllib.parse.quote(c['wa'] + title)
     mail = f"mailto:{MAIL}?subject=" + urllib.parse.quote(c['subj'] + title)
+    place, _, when = meta.partition(' · ')
+    metas = f'<span class="m">{PIN}{e(place)}</span><span class="m">{CLOCK}{e(when[:1].upper()+when[1:])}</span>'
     lis = ''.join(f'<li>{e(x)}</li>' for x in items)
     extra = f'<p>{e(note)}</p>' if note else ''
     dummy = '' if i == 0 else '<!-- DUMMY posting: example only, replace or delete -->\n'
     return f'''{dummy}<details class="job">
-<summary style="--img:url({IMGS[i % len(IMGS)]})"><span><span class="t">{e(title)}</span><span class="m">{e(meta)}</span></span></summary>
+<summary style="--img:url({IMGS[i % len(IMGS)]})"><span style="display:block"><span class="t">{e(title)}</span>{metas}</span></summary>
 <div class="b">
 <p class="lead">{e(intro)}</p>
 <ul>{lis}</ul>

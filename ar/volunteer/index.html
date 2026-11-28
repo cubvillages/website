@@ -40,12 +40,14 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
 .job{border:1px solid #EBD3A0;border-radius:14px;background:#FFFFFF;overflow:hidden}
 .job[open]{border-color:#F5B321;box-shadow:0 6px 18px rgba(59,29,18,.12)}
-.job summary{list-style:none;cursor:pointer;position:relative;isolation:isolate;display:flex;align-items:flex-end;gap:14px;min-height:150px;box-sizing:border-box;padding:18px 20px;background:#B8451F var(--img) center/cover no-repeat}
+.job summary{list-style:none;cursor:pointer;position:relative;isolation:isolate;display:flex;align-items:flex-end;gap:14px;min-height:175px;box-sizing:border-box;padding:18px 20px;background:#B8451F var(--img) center/cover no-repeat}
 .job summary::-webkit-details-marker{display:none}
 .job summary:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(59,29,18,.82),rgba(59,29,18,.45))}
 .job summary:focus-visible{outline:3px solid #F5B321;outline-offset:-3px}
 .job .t{display:block;font-size:22px;font-weight:800;color:#FFFFFF;line-height:1.25}
-.job .m{display:block;margin-top:6px;font-size:15px;color:#FFE9B0;font-weight:500}
+.job .m{display:flex;align-items:center;gap:8px;margin-top:7px;font-size:16px;color:#FFFFFF;font-weight:700;line-height:1.3}
+.job .m:first-of-type{margin-top:10px}
+.job .m svg{flex:none;color:#F5B321}
 .job summary:after{content:"";flex:none;margin-inline-start:auto;margin-bottom:6px;width:10px;height:10px;border-right:3px solid #F5B321;border-bottom:3px solid #F5B321;transform:rotate(45deg);transition:transform .15s}
 .job[open] summary:after{transform:rotate(-135deg);margin-bottom:2px}
 .job .b{padding:18px 20px 22px}
@@ -121,16 +123,16 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 <h2>فرص التطوع المتاحة</h2>
 <div class="grid">
 <details class="job">
-<summary style="--img:url(/assets/img/gal-arouis.jpg)"><span><span class="t">الطاقم الإعلامي: مراسلون ومراسلات متطوعون</span><span class="m">في الميدان أو عن بُعد · من نصف ساعة إلى نصف يوم أسبوعيًا</span></span></summary>
+<summary style="--img:url(/assets/img/gal-arouis.jpg)"><span style="display:block"><span class="t">الطاقم الإعلامي: مراسلون ومحقّقون صحفيون</span><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>في الميدان أو عن بُعد</span><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>من نصف ساعة إلى نصف يوم أسبوعيًا</span></span></summary>
 <div class="b">
 <p class="lead">هل درستم الإعلام، أو تحبون الكتابة، أو تعملون أصلًا في الميدان؟ انضموا إلى الطاقم الإعلامي للمجلس بمرافقة وإرشاد مباشرين من الناطق باسم المجلس</p>
 <ul><li>مقابلة مسجّلة قصيرة مع من يتوجهون إلى المجلس (ويمكن أن تكون بالعربية)</li><li>كتابة مادة إعلامية من البداية حتى النهاية، بما في ذلك الجانب البصري</li><li>مقابلات ميدانية مع أصحاب القصص</li><li>المساعدة في التصوير الميداني وتغطية الفعاليات</li><li>جمع معلومات من مصادر مختلفة</li></ul>
-<p>بعض المهام في القرى وبعضها عن بُعد من الهاتف أو الحاسوب. يُكلَّف كل متطوع بما يناسبه</p><div class="cta"><a class="btn" href="https://wa.me/972542550085?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20%D9%86%D8%A7%D8%AA%D9%8A%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%B7%D9%88%D8%B9%3A%20%D8%A7%D9%84%D8%B7%D8%A7%D9%82%D9%85%20%D8%A7%D9%84%D8%A5%D8%B9%D9%84%D8%A7%D9%85%D9%8A%3A%20%D9%85%D8%B1%D8%A7%D8%B3%D9%84%D9%88%D9%86%20%D9%88%D9%85%D8%B1%D8%A7%D8%B3%D9%84%D8%A7%D8%AA%20%D9%85%D8%AA%D8%B7%D9%88%D8%B9%D9%88%D9%86" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg> قدّموا عبر واتساب</a><a class="alt" href="mailto:ntiyft@gmail.com?subject=%D8%A7%D9%84%D8%AA%D8%B7%D9%88%D8%B9%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%85%D8%AC%D9%84%D8%B3%3A%20%D8%A7%D9%84%D8%B7%D8%A7%D9%82%D9%85%20%D8%A7%D9%84%D8%A5%D8%B9%D9%84%D8%A7%D9%85%D9%8A%3A%20%D9%85%D8%B1%D8%A7%D8%B3%D9%84%D9%88%D9%86%20%D9%88%D9%85%D8%B1%D8%A7%D8%B3%D9%84%D8%A7%D8%AA%20%D9%85%D8%AA%D8%B7%D9%88%D8%B9%D9%88%D9%86">أو عبر البريد الإلكتروني</a></div>
+<p>بعض المهام في القرى وبعضها عن بُعد من الهاتف أو الحاسوب. يُكلَّف كل متطوع بما يناسبه</p><div class="cta"><a class="btn" href="https://wa.me/972542550085?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20%D9%86%D8%A7%D8%AA%D9%8A%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%B7%D9%88%D8%B9%3A%20%D8%A7%D9%84%D8%B7%D8%A7%D9%82%D9%85%20%D8%A7%D9%84%D8%A5%D8%B9%D9%84%D8%A7%D9%85%D9%8A%3A%20%D9%85%D8%B1%D8%A7%D8%B3%D9%84%D9%88%D9%86%20%D9%88%D9%85%D8%AD%D9%82%D9%91%D9%82%D9%88%D9%86%20%D8%B5%D8%AD%D9%81%D9%8A%D9%88%D9%86" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg> قدّموا عبر واتساب</a><a class="alt" href="mailto:ntiyft@gmail.com?subject=%D8%A7%D9%84%D8%AA%D8%B7%D9%88%D8%B9%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%85%D8%AC%D9%84%D8%B3%3A%20%D8%A7%D9%84%D8%B7%D8%A7%D9%82%D9%85%20%D8%A7%D9%84%D8%A5%D8%B9%D9%84%D8%A7%D9%85%D9%8A%3A%20%D9%85%D8%B1%D8%A7%D8%B3%D9%84%D9%88%D9%86%20%D9%88%D9%85%D8%AD%D9%82%D9%91%D9%82%D9%88%D9%86%20%D8%B5%D8%AD%D9%81%D9%8A%D9%88%D9%86">أو عبر البريد الإلكتروني</a></div>
 </div>
 </details>
 <!-- DUMMY posting: example only, replace or delete -->
 <details class="job">
-<summary style="--img:url(/assets/img/vision-village.jpg)"><span><span class="t">متطوعو جمع التبرعات في الولايات المتحدة</span><span class="m">عن بُعد · نحو ساعتين أسبوعيًا</span></span></summary>
+<summary style="--img:url(/assets/img/vision-village.jpg)"><span style="display:block"><span class="t">متطوعو جمع التبرعات في الولايات المتحدة</span><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>عن بُعد</span><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>نحو ساعتين أسبوعيًا</span></span></summary>
 <div class="b">
 <p class="lead">ساعدونا في بناء قاعدة من الداعمين الشهريين في الجالية اليهودية في الولايات المتحدة</p>
 <ul><li>التواصل مع الأصدقاء والجاليات والمنظمات</li><li>تنظيم لقاءات منزلية وأمسيات توعية</li><li>نشر الحملة في وسائل التواصل الاجتماعي</li></ul>
@@ -139,7 +141,7 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 </details>
 <!-- DUMMY posting: example only, replace or delete -->
 <details class="job">
-<summary style="--img:url(/assets/img/olives.jpg)"><span><span class="t">مترجمون ومترجمات</span><span class="m">عن بُعد · حسب التوفر</span></span></summary>
+<summary style="--img:url(/assets/img/olives.jpg)"><span style="display:block"><span class="t">مترجمون ومترجمات</span><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>عن بُعد</span><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>حسب التوفر</span></span></summary>
 <div class="b">
 <p class="lead">ترجمة مضامين المجلس بين العبرية والعربية والإنجليزية</p>
 <ul><li>ترجمة المنشورات والتحديثات</li><li>تدقيق الترجمات الموجودة</li><li>ترجمة صفحات الموقع</li></ul>
@@ -148,7 +150,7 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 </details>
 <!-- DUMMY posting: example only, replace or delete -->
 <details class="job">
-<summary style="--img:url(/assets/img/tent.jpg)"><span><span class="t">مصوّرون ومحرّرو فيديو</span><span class="m">في الميدان · حسب الفعاليات</span></span></summary>
+<summary style="--img:url(/assets/img/tent.jpg)"><span style="display:block"><span class="t">مصوّرون ومحرّرو فيديو</span><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>في الميدان</span><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>حسب الفعاليات</span></span></summary>
 <div class="b">
 <p class="lead">توثيق الحياة في القرى وفعاليات المجلس</p>
 <ul><li>تصوير السكان والقرى والفعاليات</li><li>مونتاج فيديوهات قصيرة لوسائل التواصل</li><li>فرز المواد ورفعها إلى الأرشيف</li></ul>
