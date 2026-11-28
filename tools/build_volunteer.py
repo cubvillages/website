@@ -33,8 +33,8 @@ CSS = '''
 .job .b p.lead{font-weight:700;color:#3B1D12}
 .job ul{margin:0 0 14px;padding-inline-start:22px}.job li{margin-bottom:6px;font-size:17px}
 .cta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin-top:6px}
-.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;box-sizing:border-box;padding:10px 24px;border-radius:999px;font-size:17px;font-weight:800;text-decoration:none;background:#B8451F;color:#FFFFFF}
-.btn:hover{background:#963714;color:#FFFFFF}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;box-sizing:border-box;padding:10px 18px;background:#F5B321;color:#3B1D12;font-size:16px;font-weight:800;border-radius:999px;text-decoration:none}
+.btn:hover{background:#E5A515;color:#3B1D12}
 .alt{font-size:16px;font-weight:700}
 .more{margin-top:28px;padding:22px;background:#FFF4D6;border-radius:12px}
 .vol .note{margin-top:22px;font-size:15px;color:#6B4A3A}
@@ -42,7 +42,7 @@ CSS = '''
 @media (max-width:700px){.vol h1{font-size:32px}.hero .in{padding:44px 20px 40px}.grid{grid-template-columns:1fr}.job summary{min-height:170px}.job .t{font-size:20px;min-height:0}}
 </style>'''
 
-ICON = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg>'
+ICON = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>'
 
 # Each language: ui strings + jobs. First job is real; the rest are DUMMY examples.
 L = {
