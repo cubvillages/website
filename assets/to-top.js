@@ -1,4 +1,4 @@
-/* חץ "חזרה לראש העמוד": דסקטופ בלבד, מופיע אחרי גלילה, כמעט שקוף */
+/* חץ "חזרה לראש העמוד": מופיע אחרי גלילה, כמעט שקוף; בנייד קטן יותר */
 (function () {
   var lang = (document.documentElement.lang || 'he').slice(0, 2);
   var label = { he: 'חזרה לראש העמוד', ar: 'العودة إلى أعلى الصفحة', en: 'Back to top' }[lang] || 'Back to top';
@@ -7,7 +7,7 @@
     'opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}' +
     '#totop.show{opacity:.4;visibility:visible}#totop.show:hover,#totop.show:focus-visible{opacity:.9}' +
     '#totop:focus-visible{outline:3px solid #F5B321;outline-offset:2px}' +
-    '@media (max-width:1000px){#totop{display:none}}';
+    '@media (max-width:1000px){#totop{width:34px;height:34px;bottom:20px;inset-inline-start:14px}#totop svg{width:16px;height:16px}#totop:after{content:"";position:absolute;inset:-8px}#totop.show{opacity:.35}}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
   var b = document.createElement('button');
   b.id = 'totop'; b.type = 'button'; b.setAttribute('aria-label', label); b.title = label;
