@@ -22,8 +22,8 @@ CSS = '''
 .job summary::-webkit-details-marker{display:none}
 .job summary:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(59,29,18,.82),rgba(59,29,18,.45))}
 .job summary:focus-visible{outline:3px solid #F5B321;outline-offset:-3px}
-.job .t{display:flex;align-items:center;justify-content:center;min-height:56px;font-size:22px;font-weight:800;color:#FFFFFF;line-height:1.25}
-.job .ms{display:flex;flex-direction:column;align-items:flex-start;gap:10px;width:min(100%,290px);margin:14px auto 0;text-align:start}
+.job .t{display:flex;align-items:flex-start;justify-content:flex-start;text-align:start;min-height:56px;font-size:22px;font-weight:800;color:#FFFFFF;line-height:1.25}
+.job .ms{display:flex;flex-direction:column;align-items:flex-start;gap:10px;width:100%;margin:14px 0 0;text-align:start}
 .job .m{display:flex;align-items:center;gap:8px;font-size:16px;color:#FFFFFF;font-weight:700;line-height:1.3}
 .job .m svg{flex:none;color:#F5B321}
 .job summary:after{content:"";position:absolute;bottom:16px;left:calc(50% - 7px);width:10px;height:10px;border-right:3px solid #F5B321;border-bottom:3px solid #F5B321;transform:rotate(45deg);transition:transform .15s}
@@ -130,7 +130,7 @@ def job(c, i, j):
     extra = f'<p>{e(note)}</p>' if note else ''
     dummy = '' if i == 0 else '<!-- DUMMY posting: example only, replace or delete -->\n'
     return f'''{dummy}<details class="job">
-<summary style="--img:url({IMGS[i % len(IMGS)]})"><span style="display:block;width:100%"><span class="t">{e(title)}</span>{metas}</span></summary>
+<summary style="--img:url({IMGS[i % len(IMGS)]})"><span style="display:block;width:min(100%,300px);text-align:start"><span class="t">{e(title)}</span>{metas}</span></summary>
 <div class="b">
 <p class="lead">{e(intro)}</p>
 <ul>{lis}</ul>
