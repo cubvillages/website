@@ -22,8 +22,8 @@ CSS = '''
 .job summary::-webkit-details-marker{display:none}
 .job summary:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(59,29,18,.82),rgba(59,29,18,.45))}
 .job summary:focus-visible{outline:3px solid #F5B321;outline-offset:-3px}
-.job .t{display:block;font-size:22px;font-weight:800;color:#FFFFFF;line-height:1.25}
-.job .ms{display:inline-flex;flex-direction:column;align-items:flex-start;gap:10px;margin-top:16px;text-align:start}
+.job .t{display:flex;align-items:center;justify-content:center;min-height:56px;font-size:22px;font-weight:800;color:#FFFFFF;line-height:1.25}
+.job .ms{display:flex;flex-direction:column;align-items:flex-start;gap:10px;width:min(100%,290px);margin:14px auto 0;text-align:start}
 .job .m{display:flex;align-items:center;gap:8px;font-size:16px;color:#FFFFFF;font-weight:700;line-height:1.3}
 .job .m svg{flex:none;color:#F5B321}
 .job summary:after{content:"";position:absolute;bottom:16px;left:calc(50% - 7px);width:10px;height:10px;border-right:3px solid #F5B321;border-bottom:3px solid #F5B321;transform:rotate(45deg);transition:transform .15s}
@@ -39,7 +39,7 @@ CSS = '''
 .more{margin-top:28px;padding:22px;background:#FFF4D6;border-radius:12px}
 .vol .note{margin-top:22px;font-size:15px;color:#6B4A3A}
 @media (max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:700px){.vol h1{font-size:32px}.hero .in{padding:44px 20px 40px}.grid{grid-template-columns:1fr}.job summary{min-height:170px}.job .t{font-size:20px}}
+@media (max-width:700px){.vol h1{font-size:32px}.hero .in{padding:44px 20px 40px}.grid{grid-template-columns:1fr}.job summary{min-height:170px}.job .t{font-size:20px;min-height:0}}
 </style>'''
 
 ICON = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg>'
@@ -130,7 +130,7 @@ def job(c, i, j):
     extra = f'<p>{e(note)}</p>' if note else ''
     dummy = '' if i == 0 else '<!-- DUMMY posting: example only, replace or delete -->\n'
     return f'''{dummy}<details class="job">
-<summary style="--img:url({IMGS[i % len(IMGS)]})"><span style="display:block"><span class="t">{e(title)}</span>{metas}</span></summary>
+<summary style="--img:url({IMGS[i % len(IMGS)]})"><span style="display:block;width:100%"><span class="t">{e(title)}</span>{metas}</span></summary>
 <div class="b">
 <p class="lead">{e(intro)}</p>
 <ul>{lis}</ul>
