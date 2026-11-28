@@ -33,8 +33,9 @@ CSS = '''
 .job .b p.lead{font-weight:700;color:#3B1D12}
 .job ul{margin:0 0 14px;padding-inline-start:22px}.job li{margin-bottom:6px;font-size:17px}
 .cta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin-top:6px}
-.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;box-sizing:border-box;padding:10px 18px;background:#F5B321;color:#3B1D12;font-size:16px;font-weight:800;border-radius:999px;text-decoration:none}
-.btn:hover{background:#E5A515;color:#3B1D12}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:44px;box-sizing:border-box;padding:8px 18px 8px 8px;padding-inline:8px 18px;background:#FFFFFF;border:1px solid #EAD9B0;border-radius:999px;color:#3B1D12;text-decoration:none;font-weight:700;font-size:16px}
+.btn:hover{background:#FFF4D6;color:#3B1D12}
+.btn .wi{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:#25D366;flex:none}
 .alt{font-size:16px;font-weight:700}
 .more{margin-top:28px;padding:22px;background:#FFF4D6;border-radius:12px}
 .vol .note{margin-top:22px;font-size:15px;color:#6B4A3A}
@@ -42,7 +43,7 @@ CSS = '''
 @media (max-width:700px){.vol h1{font-size:32px}.hero .in{padding:44px 20px 40px}.grid{grid-template-columns:1fr}.job summary{min-height:170px}.job .t{font-size:20px;min-height:0}}
 </style>'''
 
-ICON = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>'
+ICON = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm0 16.3a7.3 7.3 0 0 1-3.7-1l-.3-.2-2.7.7.7-2.6-.2-.3A7.3 7.3 0 1 1 12 19.3zm4-5.5c-.2-.1-1.3-.7-1.5-.7-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6 6 0 0 1-3-2.6c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.4a.8.8 0 0 0-.6.3 2.5 2.5 0 0 0-.8 1.9c0 1.1.8 2.2.9 2.3.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.3-.6 1.5-1.1.2-.5.2-1 .1-1.1l-.6-.4z"/></svg>'
 
 # Each language: ui strings + jobs. First job is real; the rest are DUMMY examples.
 L = {
@@ -134,7 +135,7 @@ def job(c, i, j):
 <div class="b">
 <p class="lead">{e(intro)}</p>
 <ul>{lis}</ul>
-{extra}<div class="cta"><a class="btn" href="{wa}" target="_blank" rel="noopener">{ICON} {e(c['apply'])}</a><a class="alt" href="{mail}">{e(c['email'])}</a></div>
+{extra}<div class="cta"><a class="btn" href="{wa}" target="_blank" rel="noopener"><span class="wi">{ICON}</span>{e(c['apply'])}</a><a class="alt" href="{mail}">{e(c['email'])}</a></div>
 </div>
 </details>'''
 
@@ -157,7 +158,7 @@ for lang, c in L.items():
 <div class="grid">
 {jobs}
 </div>
-<div class="more"><p style="margin-bottom:12px"><strong>{e(c['more'])}</strong></p><a class="btn" href="{wa_more}" target="_blank" rel="noopener">{ICON} {e(c['morebtn'])}</a></div>
+<div class="more"><p style="margin-bottom:12px"><strong>{e(c['more'])}</strong></p><a class="btn" href="{wa_more}" target="_blank" rel="noopener"><span class="wi">{ICON}</span>{e(c['morebtn'])}</a></div>
 <p class="note">{e(c['note'])}</p>
 </div>
 </main>'''
