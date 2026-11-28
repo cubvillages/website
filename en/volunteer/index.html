@@ -45,8 +45,8 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 .job summary:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(59,29,18,.82),rgba(59,29,18,.45))}
 .job summary:focus-visible{outline:3px solid #F5B321;outline-offset:-3px}
 .job .t{display:block;font-size:22px;font-weight:800;color:#FFFFFF;line-height:1.25}
-.job .m{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:10px;font-size:16px;color:#FFFFFF;font-weight:700;line-height:1.3}
-.job .m:first-of-type{margin-top:16px}
+.job .ms{display:inline-flex;flex-direction:column;align-items:flex-start;gap:10px;margin-top:16px;text-align:start}
+.job .m{display:flex;align-items:center;gap:8px;font-size:16px;color:#FFFFFF;font-weight:700;line-height:1.3}
 .job .m svg{flex:none;color:#F5B321}
 .job summary:after{content:"";position:absolute;bottom:16px;left:calc(50% - 7px);width:10px;height:10px;border-right:3px solid #F5B321;border-bottom:3px solid #F5B321;transform:rotate(45deg);transition:transform .15s}
 .job[open] summary:after{transform:rotate(-135deg);bottom:12px}
@@ -122,7 +122,7 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 <h2>Open positions</h2>
 <div class="grid">
 <details class="job">
-<summary style="--img:url(/assets/img/gal-arouis.jpg)"><span style="display:block"><span class="t">Media team: reporters and investigators</span><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>In the field or remote</span><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Half an hour to half a day a week</span></span></summary>
+<summary style="--img:url(/assets/img/gal-arouis.jpg)"><span style="display:block"><span class="t">Media team: reporters and investigators</span><span class="ms"><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>In the field or remote</span><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Half an hour to half a day a week</span></span></span></summary>
 <div class="b">
 <p class="lead">Did you study media, love writing, or already work in the field? Join the council&#x27;s media team, with close guidance from the council&#x27;s spokesperson</p>
 <ul><li>A short recorded interview with people who contact the council (Arabic is fine)</li><li>Writing an item from start to finish, including visuals</li><li>Field interviews with people who have a story to tell</li><li>Helping with field photography and events</li><li>Gathering information from different sources</li></ul>
@@ -131,7 +131,7 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 </details>
 <!-- DUMMY posting: example only, replace or delete -->
 <details class="job">
-<summary style="--img:url(/assets/img/vision-village.jpg)"><span style="display:block"><span class="t">Fundraising volunteers in the United States</span><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Remote</span><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>About two hours a week</span></span></summary>
+<summary style="--img:url(/assets/img/vision-village.jpg)"><span style="display:block"><span class="t">Fundraising volunteers in the United States</span><span class="ms"><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Remote</span><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>About two hours a week</span></span></span></summary>
 <div class="b">
 <p class="lead">Help us build a base of monthly supporters in the American Jewish community</p>
 <ul><li>Reaching out to friends, communities and organizations</li><li>Organizing house meetings and information evenings</li><li>Spreading the campaign on social media</li></ul>
@@ -140,7 +140,7 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 </details>
 <!-- DUMMY posting: example only, replace or delete -->
 <details class="job">
-<summary style="--img:url(/assets/img/olives.jpg)"><span style="display:block"><span class="t">Translators</span><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Remote</span><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Flexible hours</span></span></summary>
+<summary style="--img:url(/assets/img/olives.jpg)"><span style="display:block"><span class="t">Translators</span><span class="ms"><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Remote</span><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Flexible hours</span></span></span></summary>
 <div class="b">
 <p class="lead">Translate the council&#x27;s content between Hebrew, Arabic and English</p>
 <ul><li>Translating posts and updates</li><li>Proofreading existing translations</li><li>Translating website pages</li></ul>
@@ -149,7 +149,7 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 </details>
 <!-- DUMMY posting: example only, replace or delete -->
 <details class="job">
-<summary style="--img:url(/assets/img/tent.jpg)"><span style="display:block"><span class="t">Photographers and video editors</span><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>In the field</span><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Per event</span></span></summary>
+<summary style="--img:url(/assets/img/tent.jpg)"><span style="display:block"><span class="t">Photographers and video editors</span><span class="ms"><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>In the field</span><span class="m"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Per event</span></span></span></summary>
 <div class="b">
 <p class="lead">Document life in the villages and the council&#x27;s events</p>
 <ul><li>Photographing residents, villages and events</li><li>Editing short videos for social media</li><li>Sorting and uploading material to the archive</li></ul>

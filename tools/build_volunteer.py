@@ -23,8 +23,8 @@ CSS = '''
 .job summary:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(59,29,18,.82),rgba(59,29,18,.45))}
 .job summary:focus-visible{outline:3px solid #F5B321;outline-offset:-3px}
 .job .t{display:block;font-size:22px;font-weight:800;color:#FFFFFF;line-height:1.25}
-.job .m{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:10px;font-size:16px;color:#FFFFFF;font-weight:700;line-height:1.3}
-.job .m:first-of-type{margin-top:16px}
+.job .ms{display:inline-flex;flex-direction:column;align-items:flex-start;gap:10px;margin-top:16px;text-align:start}
+.job .m{display:flex;align-items:center;gap:8px;font-size:16px;color:#FFFFFF;font-weight:700;line-height:1.3}
 .job .m svg{flex:none;color:#F5B321}
 .job summary:after{content:"";position:absolute;bottom:16px;left:calc(50% - 7px);width:10px;height:10px;border-right:3px solid #F5B321;border-bottom:3px solid #F5B321;transform:rotate(45deg);transition:transform .15s}
 .job[open] summary:after{transform:rotate(-135deg);bottom:12px}
@@ -125,7 +125,7 @@ def job(c, i, j):
     wa = f"https://wa.me/{WA}?text=" + urllib.parse.quote(c['wa'] + title)
     mail = f"mailto:{MAIL}?subject=" + urllib.parse.quote(c['subj'] + title)
     place, _, when = meta.partition(' · ')
-    metas = f'<span class="m">{PIN}{e(place)}</span><span class="m">{CLOCK}{e(when[:1].upper()+when[1:])}</span>'
+    metas = f'<span class="ms"><span class="m">{PIN}{e(place)}</span><span class="m">{CLOCK}{e(when[:1].upper()+when[1:])}</span></span>'
     lis = ''.join(f'<li>{e(x)}</li>' for x in items)
     extra = f'<p>{e(note)}</p>' if note else ''
     dummy = '' if i == 0 else '<!-- DUMMY posting: example only, replace or delete -->\n'
