@@ -28,6 +28,7 @@ CSS = '''
 .job[open] summary:after{transform:rotate(-135deg);margin-bottom:2px}
 .job .b{padding:18px 20px 22px}
 .job .b p{font-size:17px}
+.job .b p.lead{font-weight:700;color:#3B1D12}
 .job ul{margin:0 0 14px;padding-inline-start:22px}.job li{margin-bottom:6px;font-size:17px}
 .cta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin-top:6px}
 .btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;box-sizing:border-box;padding:10px 24px;border-radius:999px;font-size:17px;font-weight:800;text-decoration:none;background:#B8451F;color:#FFFFFF}
@@ -52,7 +53,7 @@ L = {
   note='כל התפקידים בהתנדבות, ללא שכר',
   jobs=[
    ('צוות התקשורת: כתבים וכתבות מתנדבים','בשטח או מרחוק · מחצי שעה עד חצי יום בשבוע',
-    'למדתם תקשורת, אוהבים לכתוב או נמצאים כבר בשטח? הצטרפו לצוות התקשורת של המועצה, בליווי והדרכה צמודים של נתי יפת, דובר המועצה',
+    'למדתם תקשורת, אוהבים לכתוב או נמצאים כבר בשטח? הצטרפו לצוות התקשורת של המועצה, בליווי והדרכה צמודים של דובר המועצה',
     ['ראיון מוקלט קצר עם פונים למועצה (אפשר בערבית)','כתיבת אייטם מהתחלה ועד הסוף, כולל ויזואליה','ראיונות שטח עם מי שיש להם סיפור להוציא','סיוע בצילומי שטח ואירועים','איסוף מידע ממקורות שונים'],
     'חלק מהמשימות בכפרים, חלקן מרחוק מהטלפון או מהמחשב. כל מתנדב יופעל בדרך המתאימה לו'),
    ('מתנדבי גיוס כספים בארצות הברית','מרחוק · כשעתיים בשבוע',
@@ -74,7 +75,7 @@ L = {
   note='All roles are voluntary and unpaid',
   jobs=[
    ('Media team: volunteer reporters','In the field or remote · half an hour to half a day a week',
-    "Did you study media, love writing, or already work in the field? Join the council's media team, with close guidance from Nati Yafet, the council's spokesperson",
+    "Did you study media, love writing, or already work in the field? Join the council's media team, with close guidance from the council's spokesperson",
     ['A short recorded interview with people who contact the council (Arabic is fine)','Writing an item from start to finish, including visuals','Field interviews with people who have a story to tell','Helping with field photography and events','Gathering information from different sources'],
     'Some tasks are in the villages, some are remote from a phone or computer. Each volunteer is matched to what suits them'),
    ('Fundraising volunteers in the United States','Remote · about two hours a week',
@@ -96,7 +97,7 @@ L = {
   note='جميع المهام تطوعية وبلا أجر',
   jobs=[
    ('الطاقم الإعلامي: مراسلون ومراسلات متطوعون','في الميدان أو عن بُعد · من نصف ساعة إلى نصف يوم أسبوعيًا',
-    'هل درستم الإعلام، أو تحبون الكتابة، أو تعملون أصلًا في الميدان؟ انضموا إلى الطاقم الإعلامي للمجلس بمرافقة وإرشاد مباشرين من ناتي يافت، الناطق باسم المجلس',
+    'هل درستم الإعلام، أو تحبون الكتابة، أو تعملون أصلًا في الميدان؟ انضموا إلى الطاقم الإعلامي للمجلس بمرافقة وإرشاد مباشرين من الناطق باسم المجلس',
     ['مقابلة مسجّلة قصيرة مع من يتوجهون إلى المجلس (ويمكن أن تكون بالعربية)','كتابة مادة إعلامية من البداية حتى النهاية، بما في ذلك الجانب البصري','مقابلات ميدانية مع أصحاب القصص','المساعدة في التصوير الميداني وتغطية الفعاليات','جمع معلومات من مصادر مختلفة'],
     'بعض المهام في القرى وبعضها عن بُعد من الهاتف أو الحاسوب. يُكلَّف كل متطوع بما يناسبه'),
    ('متطوعو جمع التبرعات في الولايات المتحدة','عن بُعد · نحو ساعتين أسبوعيًا',
@@ -125,7 +126,7 @@ def job(c, i, j):
     return f'''{dummy}<details class="job">
 <summary style="--img:url({IMGS[i % len(IMGS)]})"><span><span class="t">{e(title)}</span><span class="m">{e(meta)}</span></span></summary>
 <div class="b">
-<p>{e(intro)}</p>
+<p class="lead">{e(intro)}</p>
 <ul>{lis}</ul>
 {extra}<div class="cta"><a class="btn" href="{wa}" target="_blank" rel="noopener">{ICON} {e(c['apply'])}</a><a class="alt" href="{mail}">{e(c['email'])}</a></div>
 </div>
