@@ -48,7 +48,7 @@ ICON = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path
 # Each language: ui strings + jobs. First job is real; the rest are DUMMY examples.
 L = {
  'he': dict(path='/volunteer/', title='התנדבות | המועצה למען הכפרים הבדואיים הלא מוכרים',
-  h1='מתנדבים עם המועצה',
+  h1='התנדבו במועצה',
   hero='הצרכים שלנו רבים והידיים מעטות. יש לכם זמן, כישורים ורצון לסייע? נשמח להתחיל מיד',
   h2='מודעות דרושים', apply='הגשת מועמדות בוואטסאפ', email='או במייל',
   wa='שלום נתי, אני מעוניין/ת להתנדב: ', subj='התנדבות במועצה: ',
