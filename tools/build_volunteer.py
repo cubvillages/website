@@ -12,27 +12,31 @@ CSS = '''
 .vol p{margin:0 0 12px}
 .hero{position:relative;background:#3B1D12 url(/assets/img/strip-village.jpg) center/cover no-repeat}
 .hero:before{content:"";position:absolute;inset:0;background:rgba(59,29,18,.62)}
-.hero .in{position:relative;max-width:860px;margin:0 auto;padding:64px 24px 56px}
+.hero .in{position:relative;max-width:1160px;margin:0 auto;padding:64px 24px 56px}
 .hero p{font-size:21px;color:#FFF4D6;max-width:680px;margin:0}
-.wrap{max-width:860px;margin:0 auto;padding:44px 24px 56px}
-.job{border:1px solid #EBD3A0;border-radius:12px;background:#FFFFFF;margin-bottom:14px;overflow:hidden}
-.job[open]{border-color:#F5B321;box-shadow:0 4px 14px rgba(59,29,18,.08)}
-.job summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:16px;padding:20px 22px;min-height:44px}
+.wrap{max-width:1160px;margin:0 auto;padding:44px 24px 56px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+.job{border:1px solid #EBD3A0;border-radius:14px;background:#FFFFFF;overflow:hidden}
+.job[open]{border-color:#F5B321;box-shadow:0 6px 18px rgba(59,29,18,.12)}
+.job summary{list-style:none;cursor:pointer;position:relative;isolation:isolate;display:flex;align-items:flex-end;gap:14px;min-height:150px;box-sizing:border-box;padding:18px 20px;background:#B8451F var(--img) center/cover no-repeat}
 .job summary::-webkit-details-marker{display:none}
+.job summary:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(59,29,18,.82),rgba(59,29,18,.45))}
 .job summary:focus-visible{outline:3px solid #F5B321;outline-offset:-3px}
-.job .t{font-size:21px;font-weight:800;color:#3B1D12;line-height:1.3}
-.job .m{display:block;margin-top:2px;font-size:15px;color:#6B4A3A;font-weight:500}
-.job summary:after{content:"";margin-inline-start:auto;flex:none;width:10px;height:10px;border-right:3px solid #B8451F;border-bottom:3px solid #B8451F;transform:rotate(45deg);transition:transform .15s}
-.job[open] summary:after{transform:rotate(-135deg)}
-.job .b{padding:0 22px 22px;border-top:1px solid #F3E2B8;padding-top:18px}
-.job ul{margin:0 0 14px;padding-inline-start:22px}.job li{margin-bottom:6px}
+.job .t{display:block;font-size:22px;font-weight:800;color:#FFFFFF;line-height:1.25}
+.job .m{display:block;margin-top:6px;font-size:15px;color:#FFE9B0;font-weight:500}
+.job summary:after{content:"";flex:none;margin-inline-start:auto;margin-bottom:6px;width:10px;height:10px;border-right:3px solid #F5B321;border-bottom:3px solid #F5B321;transform:rotate(45deg);transition:transform .15s}
+.job[open] summary:after{transform:rotate(-135deg);margin-bottom:2px}
+.job .b{padding:18px 20px 22px}
+.job .b p{font-size:17px}
+.job ul{margin:0 0 14px;padding-inline-start:22px}.job li{margin-bottom:6px;font-size:17px}
 .cta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin-top:6px}
 .btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;box-sizing:border-box;padding:10px 24px;border-radius:999px;font-size:17px;font-weight:800;text-decoration:none;background:#B8451F;color:#FFFFFF}
 .btn:hover{background:#963714;color:#FFFFFF}
 .alt{font-size:16px;font-weight:700}
 .more{margin-top:28px;padding:22px;background:#FFF4D6;border-radius:12px}
 .vol .note{margin-top:22px;font-size:15px;color:#6B4A3A}
-@media (max-width:700px){.vol h1{font-size:32px}.hero .in{padding:44px 20px 40px}.job summary{padding:16px}.job .t{font-size:19px}.job .b{padding:16px 16px 18px}}
+@media (max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:700px){.vol h1{font-size:32px}.hero .in{padding:44px 20px 40px}.grid{grid-template-columns:1fr}.job summary{min-height:120px}.job .t{font-size:20px}}
 </style>'''
 
 ICON = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg>'
@@ -109,6 +113,7 @@ L = {
 SRC = {'he':'accessibility/index.html','en':'en/accessibility/index.html','ar':'ar/accessibility/index.html'}
 OUT = {'he':'volunteer/index.html','en':'en/volunteer/index.html','ar':'ar/volunteer/index.html'}
 e = html.escape
+IMGS = ['/assets/img/gal-arouis.jpg','/assets/img/vision-village.jpg','/assets/img/olives.jpg','/assets/img/tent.jpg']
 
 def job(c, i, j):
     title, meta, intro, items, note = j
@@ -118,7 +123,7 @@ def job(c, i, j):
     extra = f'<p>{e(note)}</p>' if note else ''
     dummy = '' if i == 0 else '<!-- DUMMY posting: example only, replace or delete -->\n'
     return f'''{dummy}<details class="job">
-<summary><span><span class="t">{e(title)}</span><span class="m">{e(meta)}</span></span></summary>
+<summary style="--img:url({IMGS[i % len(IMGS)]})"><span><span class="t">{e(title)}</span><span class="m">{e(meta)}</span></span></summary>
 <div class="b">
 <p>{e(intro)}</p>
 <ul>{lis}</ul>
@@ -142,7 +147,9 @@ for lang, c in L.items():
 </div></section>
 <div class="wrap">
 <h2>{e(c['h2'])}</h2>
+<div class="grid">
 {jobs}
+</div>
 <div class="more"><p style="margin-bottom:12px"><strong>{e(c['more'])}</strong></p><a class="btn" href="{wa_more}" target="_blank" rel="noopener">{ICON} {e(c['morebtn'])}</a></div>
 <p class="note">{e(c['note'])}</p>
 </div>

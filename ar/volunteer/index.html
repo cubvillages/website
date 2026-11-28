@@ -34,27 +34,31 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 .vol p{margin:0 0 12px}
 .hero{position:relative;background:#3B1D12 url(/assets/img/strip-village.jpg) center/cover no-repeat}
 .hero:before{content:"";position:absolute;inset:0;background:rgba(59,29,18,.62)}
-.hero .in{position:relative;max-width:860px;margin:0 auto;padding:64px 24px 56px}
+.hero .in{position:relative;max-width:1160px;margin:0 auto;padding:64px 24px 56px}
 .hero p{font-size:21px;color:#FFF4D6;max-width:680px;margin:0}
-.wrap{max-width:860px;margin:0 auto;padding:44px 24px 56px}
-.job{border:1px solid #EBD3A0;border-radius:12px;background:#FFFFFF;margin-bottom:14px;overflow:hidden}
-.job[open]{border-color:#F5B321;box-shadow:0 4px 14px rgba(59,29,18,.08)}
-.job summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:16px;padding:20px 22px;min-height:44px}
+.wrap{max-width:1160px;margin:0 auto;padding:44px 24px 56px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+.job{border:1px solid #EBD3A0;border-radius:14px;background:#FFFFFF;overflow:hidden}
+.job[open]{border-color:#F5B321;box-shadow:0 6px 18px rgba(59,29,18,.12)}
+.job summary{list-style:none;cursor:pointer;position:relative;isolation:isolate;display:flex;align-items:flex-end;gap:14px;min-height:150px;box-sizing:border-box;padding:18px 20px;background:#B8451F var(--img) center/cover no-repeat}
 .job summary::-webkit-details-marker{display:none}
+.job summary:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(59,29,18,.82),rgba(59,29,18,.45))}
 .job summary:focus-visible{outline:3px solid #F5B321;outline-offset:-3px}
-.job .t{font-size:21px;font-weight:800;color:#3B1D12;line-height:1.3}
-.job .m{display:block;margin-top:2px;font-size:15px;color:#6B4A3A;font-weight:500}
-.job summary:after{content:"";margin-inline-start:auto;flex:none;width:10px;height:10px;border-right:3px solid #B8451F;border-bottom:3px solid #B8451F;transform:rotate(45deg);transition:transform .15s}
-.job[open] summary:after{transform:rotate(-135deg)}
-.job .b{padding:0 22px 22px;border-top:1px solid #F3E2B8;padding-top:18px}
-.job ul{margin:0 0 14px;padding-inline-start:22px}.job li{margin-bottom:6px}
+.job .t{display:block;font-size:22px;font-weight:800;color:#FFFFFF;line-height:1.25}
+.job .m{display:block;margin-top:6px;font-size:15px;color:#FFE9B0;font-weight:500}
+.job summary:after{content:"";flex:none;margin-inline-start:auto;margin-bottom:6px;width:10px;height:10px;border-right:3px solid #F5B321;border-bottom:3px solid #F5B321;transform:rotate(45deg);transition:transform .15s}
+.job[open] summary:after{transform:rotate(-135deg);margin-bottom:2px}
+.job .b{padding:18px 20px 22px}
+.job .b p{font-size:17px}
+.job ul{margin:0 0 14px;padding-inline-start:22px}.job li{margin-bottom:6px;font-size:17px}
 .cta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin-top:6px}
 .btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;box-sizing:border-box;padding:10px 24px;border-radius:999px;font-size:17px;font-weight:800;text-decoration:none;background:#B8451F;color:#FFFFFF}
 .btn:hover{background:#963714;color:#FFFFFF}
 .alt{font-size:16px;font-weight:700}
 .more{margin-top:28px;padding:22px;background:#FFF4D6;border-radius:12px}
 .vol .note{margin-top:22px;font-size:15px;color:#6B4A3A}
-@media (max-width:700px){.vol h1{font-size:32px}.hero .in{padding:44px 20px 40px}.job summary{padding:16px}.job .t{font-size:19px}.job .b{padding:16px 16px 18px}}
+@media (max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:700px){.vol h1{font-size:32px}.hero .in{padding:44px 20px 40px}.grid{grid-template-columns:1fr}.job summary{min-height:120px}.job .t{font-size:20px}}
 </style>
 <script src="/assets/a11y.js" defer></script>
 <script src="/assets/to-top.js" defer></script>
@@ -114,8 +118,9 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 </div></section>
 <div class="wrap">
 <h2>فرص التطوع المتاحة</h2>
+<div class="grid">
 <details class="job">
-<summary><span><span class="t">الطاقم الإعلامي: مراسلون ومراسلات متطوعون</span><span class="m">في الميدان أو عن بُعد · من نصف ساعة إلى نصف يوم أسبوعيًا</span></span></summary>
+<summary style="--img:url(/assets/img/gal-arouis.jpg)"><span><span class="t">الطاقم الإعلامي: مراسلون ومراسلات متطوعون</span><span class="m">في الميدان أو عن بُعد · من نصف ساعة إلى نصف يوم أسبوعيًا</span></span></summary>
 <div class="b">
 <p>هل درستم الإعلام، أو تحبون الكتابة، أو تعملون أصلًا في الميدان؟ انضموا إلى الطاقم الإعلامي للمجلس بمرافقة وإرشاد مباشرين من ناتي يافت، الناطق باسم المجلس</p>
 <ul><li>مقابلة مسجّلة قصيرة مع من يتوجهون إلى المجلس (ويمكن أن تكون بالعربية)</li><li>كتابة مادة إعلامية من البداية حتى النهاية، بما في ذلك الجانب البصري</li><li>مقابلات ميدانية مع أصحاب القصص</li><li>المساعدة في التصوير الميداني وتغطية الفعاليات</li><li>جمع معلومات من مصادر مختلفة</li></ul>
@@ -124,7 +129,7 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 </details>
 <!-- DUMMY posting: example only, replace or delete -->
 <details class="job">
-<summary><span><span class="t">متطوعو جمع التبرعات في الولايات المتحدة</span><span class="m">عن بُعد · نحو ساعتين أسبوعيًا</span></span></summary>
+<summary style="--img:url(/assets/img/vision-village.jpg)"><span><span class="t">متطوعو جمع التبرعات في الولايات المتحدة</span><span class="m">عن بُعد · نحو ساعتين أسبوعيًا</span></span></summary>
 <div class="b">
 <p>ساعدونا في بناء قاعدة من الداعمين الشهريين في الجالية اليهودية في الولايات المتحدة</p>
 <ul><li>التواصل مع الأصدقاء والجاليات والمنظمات</li><li>تنظيم لقاءات منزلية وأمسيات توعية</li><li>نشر الحملة في وسائل التواصل الاجتماعي</li></ul>
@@ -133,7 +138,7 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 </details>
 <!-- DUMMY posting: example only, replace or delete -->
 <details class="job">
-<summary><span><span class="t">مترجمون ومترجمات</span><span class="m">عن بُعد · حسب التوفر</span></span></summary>
+<summary style="--img:url(/assets/img/olives.jpg)"><span><span class="t">مترجمون ومترجمات</span><span class="m">عن بُعد · حسب التوفر</span></span></summary>
 <div class="b">
 <p>ترجمة مضامين المجلس بين العبرية والعربية والإنجليزية</p>
 <ul><li>ترجمة المنشورات والتحديثات</li><li>تدقيق الترجمات الموجودة</li><li>ترجمة صفحات الموقع</li></ul>
@@ -142,13 +147,14 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:8px}
 </details>
 <!-- DUMMY posting: example only, replace or delete -->
 <details class="job">
-<summary><span><span class="t">مصوّرون ومحرّرو فيديو</span><span class="m">في الميدان · حسب الفعاليات</span></span></summary>
+<summary style="--img:url(/assets/img/tent.jpg)"><span><span class="t">مصوّرون ومحرّرو فيديو</span><span class="m">في الميدان · حسب الفعاليات</span></span></summary>
 <div class="b">
 <p>توثيق الحياة في القرى وفعاليات المجلس</p>
 <ul><li>تصوير السكان والقرى والفعاليات</li><li>مونتاج فيديوهات قصيرة لوسائل التواصل</li><li>فرز المواد ورفعها إلى الأرشيف</li></ul>
 <div class="cta"><a class="btn" href="https://wa.me/972542550085?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20%D9%86%D8%A7%D8%AA%D9%8A%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%B7%D9%88%D8%B9%3A%20%D9%85%D8%B5%D9%88%D9%91%D8%B1%D9%88%D9%86%20%D9%88%D9%85%D8%AD%D8%B1%D9%91%D8%B1%D9%88%20%D9%81%D9%8A%D8%AF%D9%8A%D9%88" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg> قدّموا عبر واتساب</a><a class="alt" href="mailto:ntiyft@gmail.com?subject=%D8%A7%D9%84%D8%AA%D8%B7%D9%88%D8%B9%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%85%D8%AC%D9%84%D8%B3%3A%20%D9%85%D8%B5%D9%88%D9%91%D8%B1%D9%88%D9%86%20%D9%88%D9%85%D8%AD%D8%B1%D9%91%D8%B1%D9%88%20%D9%81%D9%8A%D8%AF%D9%8A%D9%88">أو عبر البريد الإلكتروني</a></div>
 </div>
 </details>
+</div>
 <div class="more"><p style="margin-bottom:12px"><strong>لم تجدوا ما يناسبكم؟ أخبرونا بما تجيدونه</strong></p><a class="btn" href="https://wa.me/972542550085?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20%D9%86%D8%A7%D8%AA%D9%8A%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%B7%D9%88%D8%B9%3A%20" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg> راسلونا</a></div>
 <p class="note">جميع المهام تطوعية وبلا أجر</p>
 </div>
